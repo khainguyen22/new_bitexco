@@ -1,0 +1,130 @@
+.slick-arrow {
+    position: absolute;
+    top: 47%;
+
+    &::before {
+        font-size: 30px;
+    }
+
+    &.slick-next {
+        right: -47px;
+
+        @media(max-width:1100px) {
+            right: -20px;
+        }
+
+    }
+
+    &.slick-prev {
+        left: -40px;
+
+        @media(max-width:1100px) {
+            left: -20px;
+        }
+    }
+}
+
+.slider-card-wrapper {
+    background: #F6F8FC;
+    padding: 60px;
+
+    .container {
+        max-width: 1270px;
+
+        h4 {
+            padding: 0 15px;
+
+            @media(max-width:767px) {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 130%;
+            }
+        }
+
+        .slider-cards {
+            margin-top: 20px;
+
+            @media(max-width:767px) {
+                margin-top: 13px;
+
+            }
+
+            .slick-track {
+                display: flex;
+                justify-content: space-between;
+
+                @media(max-width:767px) {
+                    left: 70px;
+                    justify-content: start;
+                }
+
+                .card-custom.card {
+                    width: 394px !important;
+                    border-radius: 2px;
+                    border: unset;
+                    margin: 0 15px;
+                    background-color: #FFFFFF;
+
+                    @media(max-width:1200px) {
+                        width: 291px !important;
+                    }
+
+                    @media(max-width:1024px) {
+                        width: inherit !important;
+                    }
+
+                    @media(max-width:767px) {
+                        width: 278px !important;
+                    }
+
+                    img.card-img-top {
+                        height: 223px;
+
+                        @media(max-width:1200px) {
+                            height: 165px;
+                        }
+                    }
+
+                    .card-body {
+                        padding: 25px 20px 15px;
+
+                        @media(max-width:1200px) {
+                            padding: 25px 20px 6px;
+                        }
+
+                        .card-title {
+                            margin-bottom: 14px;
+                        }
+
+                        span.icon {
+                            max-width: 24px;
+                            max-height: 24px;
+                        }
+
+                        ul li.content {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .slick-list {
+        display: flex;
+    }
+
+    @media(max-width:1200px) {
+        padding: 70px 85px 108px;
+    }
+
+    @media(max-width:1024px) {
+        padding: 70px 20px 108px;
+    }
+
+    @media(max-width:767px) {
+        padding: 32px 0px 18px;
+    }
+}

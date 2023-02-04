@@ -1,0 +1,39 @@
+.kinh-doanh-dien {
+    section.electricity-business {
+        padding: 0 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+}
+
+
+@media (max-width: 1024px) {
+    .kinh-doanh-dien {
+        section.electricity-business {
+            padding: 0 64px;
+        }
+    }
+    
+}
+
+
+@media (max-width: 880px) {
+    .kinh-doanh-dien {
+        section.electricity-business {
+            padding: 0 48px;
+        }
+    }
+    
+}
+
+
+@media (max-width: 767px) {
+    .kinh-doanh-dien {
+        section.electricity-business {
+            padding: 0 20px;
+        }
+    }
+    
+}

@@ -1,0 +1,293 @@
+.tru-so {
+    .banner {
+        background-image: url('./../../access/images/banner-tru-so.png');
+        min-height: 400px;
+
+        .container .content {
+            p {
+                max-width: 543px;
+            }
+
+            @media(max-width:1366px) {}
+        }
+    }
+
+    .main {
+        background: #fff;
+        padding: 40px 0 134px;
+
+        .group-tabs {
+            .head {
+                .nav-tabs {
+                    border: unset;
+
+                    li {
+                        position: relative;
+                        font-family: 'Manrope';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 22px;
+                        line-height: 130%;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+                        margin-right: 40px;
+                        padding: 10px 0;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 2px;
+                            width: 0%;
+                            background: #DAA622;
+                            display: block;
+                            transition: all 1s;
+                        }
+
+                        &.active {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        &:hover {
+                            &::after {
+                                width: 100%;
+                                transition: all 1s;
+                            }
+                        }
+
+                        @media(max-width:991px) {
+                            margin-right: 20px;
+                        }
+
+                        @media(max-width:767px) {
+                            margin-right: 0px;
+                            font-size: 18px;
+                            line-height: 160%;
+                        }
+                    }
+
+                    @media(max-width:767px) {
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 0 20px;
+                    }
+                }
+
+                .btn-detail {
+                    line-height: 2;
+                    background: #DAA622;
+                    color: #FFFFFF;
+
+                    &:hover {
+                        border: 1px solid #DAA622;
+                        background: transparent;
+                        color: #DAA622;
+
+                        svg,
+                        path {
+                            fill: #DAA622;
+                            stroke: #DAA622;
+                        }
+                    }
+
+                    @media(max-width:767px) {
+                        line-height: 1.4;
+                    }
+                }
+            }
+
+            @media(max-width:767px) {
+                position: relative;
+
+                .col-right {
+                    padding: 120px 0 0;
+
+                }
+
+                .btn.btn-detail {
+                    position: absolute;
+                    bottom: 520px;
+                    z-index: 1;
+                    left: 0%;
+                    left: 20px;
+                    width: auto;
+                    right: 20px;
+                }
+            }
+        }
+
+        .tab-content {
+            margin-top: 46px;
+
+            .accordion {
+                .card-body {
+                    padding: 0;
+
+                    * {
+                        font-weight: 300;
+                        font-size: 16px;
+                        line-height: 160%;
+                        letter-spacing: 0.01em;
+                        color: #434449;
+
+                        a:hover {
+                            color: #DAA622;
+                        }
+                    }
+
+                    .address,
+                    .phone,
+                    .fax,
+                    .email {
+                        margin-bottom: 16px;
+                    }
+                }
+
+                * {
+                    background: unset;
+
+                }
+
+                .collapsible-link {
+                    width: 100%;
+                    position: relative;
+                    text-align: left;
+                    padding: 20px 0;
+
+                    &[aria-expanded="false"] {
+                        border-bottom: 1px solid #D1D5DB;
+
+                    }
+                }
+
+                .btn.collapsible-link {
+                    text-align: left;
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 22px;
+                    line-height: 130%;
+                    letter-spacing: 0.01em;
+                    color: #141518;
+                    overflow: hidden;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .item .icon {
+                line-height: 32px;
+                display: none;
+
+                &.deactive {
+                    display: none;
+                }
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            .item {
+                .icon {}
+
+                &.show {
+                    .icon-down {
+                        display: none;
+                    }
+
+                    .icon-up {
+                        display: block;
+                    }
+                }
+
+                .icon-down {
+                    display: block;
+                }
+
+                .icon-up {
+                    display: none;
+                }
+            }
+
+            .tab-pane {
+                .col-right {
+                    .map * {
+                        max-width: 710px;
+                        max-height: 473px;
+                        width: 100%;
+                    }
+
+                    .map.active {
+                        display: block;
+                    }
+
+                    .map {
+                        display: none;
+
+                    }
+                }
+            }
+        }
+
+        @media(max-width:1366px) {
+            padding: 60px 100px 77px;
+
+            .tab-content {
+                .tab-pane {
+                    .col-left {
+                        max-width: 530px;
+                    }
+
+                    .col-right {
+                        max-width: 460px;
+                        flex: 1;
+                    }
+                }
+
+                .accordion .collapsible-link {
+                    padding: 15px 0;
+                }
+            }
+        }
+
+        @media(max-width:991px) {
+            padding: 60px 20px 77px;
+
+            .tab-content {
+                .tab-pane {
+                    .col-left {
+                        max-width: 100%;
+                    }
+
+                    .col-right {
+                        max-width: 100%;
+                        flex: auto
+                    }
+                }
+            }
+        }
+
+        @media(max-width:767px) {
+            padding: 40px 0 0 0;
+
+            @media(max-width:767px) {
+                .tab-content {
+                    .tab-pane {
+                        .row {
+                            margin: 0;
+
+                            .col-left {
+                                padding: 0 35px;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

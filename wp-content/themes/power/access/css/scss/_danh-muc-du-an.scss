@@ -1,0 +1,154 @@
+.du-an {
+    .du-an-head {
+        padding: 60px 20px 0;
+
+        .content {
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+
+            h3 {
+                font-family: 'Manrope';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 40px;
+                line-height: 120%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #141518;
+                margin-bottom: 17px;
+
+                @media (max-width:767px) {
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 130%;
+                    margin-bottom: 12px;
+                }
+            }
+
+            p {
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 160%;
+                text-align: center;
+                letter-spacing: 0.01em;
+                color: #434449;
+            }
+        }
+    }
+
+    .filter-post-section {
+        background-color: #F6F8FC;
+
+        .filter-post-container {
+            .small-form-filter {
+
+                .form {
+                    flex-wrap: nowrap;
+
+                    .form-filter-search,
+                    .form-filter-type,
+                    .form-filter-area,
+                    .form-filter-company {
+                        max-width: 228px;
+                        max-height: 48px;
+                        width: 100%;
+                    }
+
+                    @media (max-width:1133px) {
+
+                        .form-filter-type,
+                        .form-filter-area,
+                        .form-filter-company {
+                            max-width: 128px;
+                        }
+                    }
+
+                    @media (max-width:1024px) {
+
+                        flex-wrap: wrap;
+                        margin-right: -15px;
+
+                        .form-filter-search,
+                        .form-filter-type,
+                        .form-filter-area,
+                        .form-filter-company {
+                            max-width: 47.68%;
+                        }
+
+                        .button-submit,
+                        .button-reset {
+                            width: fit-content;
+                        }
+                    }
+
+                    @media (max-width:767px) {
+                        margin-right: 0;
+
+                        .form-filter-search,
+                        .form-filter-type,
+                        .form-filter-area,
+                        .form-filter-company {
+                            margin-right: 0;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .filter-content {
+                margin-top: 50px;
+                justify-content: start;
+                gap: 30px;
+
+                .filter-item {
+                    .item-content {
+                        padding: 26px 24px 60px 21px;
+
+                        .content-title.icon {
+                            margin-top: -18px;
+                            margin-right: -6px;
+                        }
+
+                        .icon_svg {
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                        }
+
+                        .filter-company,
+                        .content-time {
+                            margin-bottom: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.filter-content {
+    .filter-item {
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: #DAA622;
+            transition: all 1s ease-in;
+            display: block;
+            position: absolute;
+            bottom: 0;
+        }
+
+        &:hover::after {
+            display: block;
+            width: 100%;
+            transition: all 1s ease-in;
+        }
+    }
+}

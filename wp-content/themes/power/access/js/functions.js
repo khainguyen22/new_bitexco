@@ -1,0 +1,329 @@
+
+jQuery(document).ready(function ($) {
+	// $('#upload_file_home_san_xuat_kinh_doanh').on('click', function () {
+	// 	upload()
+	// })
+	// $(document).ready(function () {
+	// 	upload();
+	// });
+	// function upload() {
+	// 	var files = document.querySelector('#upload_file_home_san_xuat_kinh_doanh input').files;
+	// 	// var files = 'https://power.dtts.com.vn/wp-content/uploads/2023/01/file-1.xlsx';
+	// 	if (files.length == 0) {
+	// 		alert("Please choose any file...");
+	// 		return;
+	// 	}
+	// 	var filename = files[0].name;
+	// 	var extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
+	// 	if (extension == '.XLS' || extension == '.XLSX') {
+	// 		//Here calling another method to read excel file into json
+	// 		excelFileToJSON(files[0]);
+	// 	} else {
+	// 		alert("Please select a valid excel file.");
+	// 	}
+	// }
+
+	// //Method to read excel file and convert it into JSON 
+	// function excelFileToJSON(file) {
+	// 	try {
+	// 		var reader = new FileReader();
+	// 		reader.readAsBinaryString(file);
+	// 		reader.onload = function (e) {
+
+	// 			var data = e.target.result;
+	// 			var workbook = XLSX.read(data, {
+	// 				type: 'binary'
+	// 			});
+	// 			var result = {};
+	// 			var firstSheetName = workbook.SheetNames[0];
+	// 			//reading only first sheet data
+	// 			var jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
+	// 			//displaying the json result into HTML table
+	// 			displayJsonToHtmlTable(jsonData);
+	// 		}
+	// 	} catch (e) {
+	// 		console.error(e);
+	// 	}
+	// }
+
+	// //Method to display the data in HTML Table
+	// function displayJsonToHtmlTable(jsonData) {
+	// 	var table = document.getElementById("excel_data");
+	// 	if (jsonData.length > 0) {
+	// 		var htmlData = '<tr><th>Sản lượng ngày</th><th>Sản lượng tháng</th><th>Sản lượng năm</th></tr>';
+	// 		for (var i = 0; i < jsonData.length; i++) {
+	// 			var row = jsonData[i];
+	// 			htmlData += '<tr><td>' + row["Sản lượng ngày"] + '</td><td>' + row["Sản lượng tháng"]
+	// 				+ '</td><td>' + row["Sản lượng năm"] + '</td></tr>';
+	// 		}
+	// 		table.innerHTML = htmlData;
+	// 	} else {
+	// 		table.innerHTML = 'There is no data in Excel';
+	// 	}
+	// }
+
+	// $("#upload_file_home_san_xuat_kinh_doanh").on('click', function (event) {
+
+
+
+	function change_single_select_tax($select) {
+		jQuery('#' + $select + ' input').each(function () {
+			this.type = 'radio';
+		});
+		jQuery('.' + $select + '-checklist input').each(function () {
+			this.type = 'radio';
+		});
+		jQuery('#' + $select + '-all input').each(function () {
+			this.type = 'radio';
+		});
+	}
+	$(document).ready(function () {
+		change_single_select_tax('project_type');
+		change_single_select_tax('project_company');
+		change_single_select_tax('project_location');
+		change_single_select_tax('location_company_member');
+		change_single_select_tax('type_events_status');
+		change_single_select_tax('type_events_location');
+		change_single_select_tax('type_events_formality');
+		change_single_select_tax('vacancies_location');
+
+	});
+	$(document).on('click', '.tru-so .nav-tabs .item', function (e) {
+		$('.tru-so .nav-tabs .item').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	$(document).on('click', '.tru-so .tab-content .item', function (e) {
+		$('.tru-so .tab-content .item').removeClass('active');
+		$('.tru-so .tab-content .item').removeClass('show');
+		$('.tru-so .tab-content .item[data-number=0]').addClass('active');
+		$('.tru-so .tab-content .item[data-number=0] .collapse').addClass('show')
+		$('.tru-so .tab-content .item .icon-up').removeClass('active');
+		$('.tru-so .tab-content .item .icon-down').addClass('active');
+		$(this).addClass('active');
+		if ($(this).hasClass('active')) {
+			$('.tru-so .tab-content .item .collapse').removeClass('show');
+			$('.tru-so .tab-content .item .collapse').removeClass('active')
+			$(this).addClass('show');
+		}
+		const map_active = $(this).attr('data-number');
+		if ($(this).hasClass('active')) {
+			console.log(map_active);
+		}
+		$('.tru-so .tab-content .map.active').removeClass('active');
+		$('.tru-so .tab-content .map[data-number=' + map_active + ']').addClass('active');
+	});
+
+	$(document).on('click', '.nav-item-icon-search', function (e) {
+		$(this).addClass("is-active");
+		$('.navbar').addClass("nav-is-active");
+		$(".search").addClass("is-active");
+		$(".close-button").addClass("is-active");
+		$('.burger').removeClass("is-active");
+		$(".menu-main-container").removeClass("is-active");
+
+	});
+
+	$(document).on('click', '.nav-item-icon-search.is-active', function () {
+		$('.nav-item-icon-search').removeClass("is-active");
+		$(".search").removeClass("is-active");
+		$('.navbar').removeClass("nav-is-active");
+		$(".close-button").removeClass("is-active");
+
+	});
+
+	var input = document.getElementById("input-form-search");
+	input.addEventListener("keypress", function (event) {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			document.getElementById("btn-submit-form-search").click();
+		}
+	});
+
+
+	// $(document).on('click', '.menu-item', function () {
+
+	// 	$('.nav-item-icon-search').removeClass("is-active");
+
+	// 	$(".search").removeClass("is-active");
+
+	// 	$('.navbar').removeClass("nav-is-active");
+
+	// 	$(".close-button").removeClass("is-active");
+
+	// });
+	$(document).on('click', '.mega-menu-item', function () {
+		$('.nav-item-icon-search').removeClass("is-active");
+		$(".search").removeClass("is-active");
+		$('.navbar').removeClass("nav-is-active");
+		$(".close-button").removeClass("is-active");
+	});
+	$(".mega-menu-item").hover(function (e) {
+		$(this).addClass('active');
+	}, function () {
+		$(this).removeClass('active');
+	});
+	$(document).on('click', '.burger', function () {
+		$('.burger').addClass("is-active");
+		$('.navbar').addClass("nav-is-active");
+		$(".menu-main-container").addClass("is-active");
+		$('.menu-image').addClass("is-active");
+		$('.main-menu-primary').addClass("is-active");
+		$('.sub-menu').addClass("is-active");
+		$('.nav-item-icon-search').removeClass("is-active");
+		$(".search").removeClass("is-active");
+		$(".close-button").removeClass("is-active");
+		$('.main-menu-primary .main-menu-primary-item').removeClass('active');
+	});
+
+	$(document).on('click', '.burger.is-active', function () {
+		$('.burger').removeClass("is-active");
+		$(".menu-main-container").removeClass("is-active");
+		$('.navbar').removeClass("nav-is-active");
+		$('.menu-image').removeClass("is-active");
+		$('.main-menu-primary').removeClass("is-active");
+		$('.sub-menu').removeClass("is-active");
+		$('.main-menu-primary .main-menu-primary-item').removeClass('active');
+	});
+	$(document).on('click', '.main-menu-primary .menu-item-has-children', function (e) {
+		$('.main-menu-primary .main-menu-primary-item').removeClass('active-default');
+		$('.main-menu-primary .main-menu-primary-item').removeClass('active');
+		$('.main-menu-primary .menu-item-has-children').removeClass('active');
+		$('.main-menu-primary .menu-item-has-children .head_sub_menu .title').text($(this).children('a').text());
+		$(this).addClass('active');
+	});
+	$(document).ready(function () {
+		$('.main-menu-primary .menu-item-has-children>.sub-menu ').prepend('<div class="head_sub_menu"><p class="title">Giới thiệu</p><p class="desc"></p></div>');
+	});
+	$(document).on('click', '.main-menu-primary .menu-item-has-children.active', function (e) {
+		$('.main-menu-primary .main-menu-primary-item').removeClass('active');
+		$(this).addClass('active');
+	});
+	$(document).on('click', '.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children', function (e) {
+		$('.main-menu-primary .main-menu-primary-item').removeClass('active-default');
+		$('.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children').removeClass('is_active');
+		$(this).addClass('is_active');
+	});
+	$(document).on('click', '.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children.is_active', function (e) {
+		$('.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children').removeClass('is_active');
+		$('.main-menu-primary .menu-item-has-children').removeClass('active-default');
+	});
+
+
+	// home slider
+
+	$('.home-slide-carousel').slick({
+
+		nextArrow: '<i class="fas fa-chevron-right slick-next"></i>',
+		prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>',
+		autoplay: false,
+		autoplaySpeed: 2000,
+		dots: true,
+		vertical: true,
+		arrows: false,
+		infinite: false,
+		loop: false,
+		speed: 500,
+		cssEase: 'linear',
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		customPaging: function (slider, i) {
+			var title = $(slider.$slides[i]).data('title');
+			return '<span> ' + title + ' </span>';
+		},
+	});
+
+	// $('.home-slide-carousel').on('wheel', (function (e) {
+
+	// 	e.preventDefault();
+
+	// 	if (e.originalEvent.deltaY > 0) {
+
+	// 		// $(this).slick('slickNext');
+
+	// 	} else {
+
+	// 		$(this).slick('slickPrev');
+
+	// 	}
+
+	// }));
+	$('.slide-img').on('click', function () {
+		$('.slide-img').removeClass('active');
+		$(this).addClass('active');
+	});
+
+	$('.slider-cards').slick({
+		nextArrow: '<span  class="slick-next"><svg width="12" height="26" viewBox="0 0 12 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.999999 1.33398L10.3306 12.2197C10.7158 12.6691 10.7158 13.3322 10.3306 13.7816L1 24.6673" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round"/></svg></span>',
+		prevArrow: '<span  class="slick-prev"><svg width="12" height="26" viewBox="0 0 12 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 1.33398L1.66938 12.2197C1.2842 12.6691 1.2842 13.3322 1.66939 13.7816L11 24.6673" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round"/></svg></span>',
+		autoplaySpeed: 2000,
+		arrows: true,
+		autoplay: true,
+		infinite: true,
+		speed: 500,
+		cssEase: 'linear',
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 2,
+					arrows: false,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					arrows: false,
+				}
+			},
+		]
+	});
+
+	jQuery(".gallery").lightSlider(
+		{
+			gallery: true,
+			item: 1,
+			loop: true,
+			thumbItem: 10,
+			thumbMargin: 12,
+			share: true,
+			download: true,
+			zoom: true,
+			autoplayControls: true,
+			autoplay: true,
+			videojs: true,
+			controls: true,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						thumbItem: 5,
+						thumbMargin: 6,
+					}
+				},
+			]
+		});
+
+	jQuery("#imageGallery").lightSlider(
+		{
+			gallery: true,
+			item: 1,
+			loop: true,
+			thumbItem: 6,
+			slideMargin: 10,
+			enableDrag: true,
+			currentPagerPosition: 'left',
+			videojs: true,
+			pager: true,
+			onSliderLoad: function (el) {
+				el.lightGallery({
+					selector: '#imageGallery .lslide'
+				});
+			}
+		});
+	lightGallery(document.getElementById('video-gallery'));
+});
+

@@ -1,0 +1,695 @@
+.thu-vien-hinh-anh {
+    section.banner {
+        background-image: url('./../../access/images/banner-thu-vien-hinh-anh.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 400px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(0deg, rgba(13, 13, 14, 0.81) 28.83%, rgba(13, 13, 14, 0) 100%);
+        }
+
+        .container {
+            .content {
+                p {
+                    max-width: 536px;
+                }
+            }
+
+            .navigation {
+                left: 98px;
+            }
+        }
+    }
+
+    .images-library {
+        margin-bottom: 60px;
+    }
+
+    .main {
+
+        .row.fillter {
+            margin: 33px 0 40px 0;
+
+            .form-filter {
+                width: 100%;
+
+                .form-filter-search {
+                    width: 77.88%;
+                    position: relative;
+
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 16px;
+                    }
+
+                    input {
+                        padding: 0 0 0 50px;
+                    }
+                }
+
+
+                .button-submit {
+                    width: 10.65%;
+                }
+
+                .button-reset {
+                    width: 9.76%;
+                }
+
+            }
+        }
+
+        .navigation {
+            li {
+                &+li {
+                    margin-left: 40px;
+                }
+
+                &.active::after {
+                    width: 100%;
+                }
+
+                position: relative;
+                display: inline-block;
+                font-family: 'Public Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 140%;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                color: #141518;
+            }
+        }
+
+        .wrap-content {
+            margin-top: 57px;
+            justify-content: space-between;
+            display: flex;
+            column-gap: 80px;
+            .slider {
+
+                .vrmedia-gallery {
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                    }
+
+                    position: relative;
+                    svg {
+                        position: absolute;
+                        top: 6px;
+                        right: 6.83px;
+                    }
+
+                    .lSSlideOuter {
+                        .lSSlideWrapper {
+                            .gallery.lightSlider {
+                                height: 323px !important;
+                            }
+                        }
+                    }
+                }
+
+                .lSAction {
+                    display: none !important;
+                }
+
+                .lSGallery {
+                    display: inline-flex;
+                    position: absolute;
+                    bottom: 27px;
+                    left: 21px;
+
+                    li {
+
+                        max-width: 60px;
+                        max-height: 60px;
+                        opacity: 0.8;
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                        }
+
+                        &.active {
+                            border: 2px solid #DAA622;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+            }
+
+            .content {
+                min-width: 559px;
+                &.content-reverse {
+                    padding-left: 15px;
+                }
+
+                .text-underline {
+                    padding-bottom: 6px;
+                    margin-bottom: 10px;
+                    display: block;
+                    width: fit-content;
+                    font-family: 'Public Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 11px;
+                    line-height: 150%;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                }
+
+                .title {
+                    margin-bottom: 12px;
+                    font-family: 'Manrope';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 130%;
+                    color: #141518;
+                    letter-spacing: 0.01em;
+                }
+
+                .information {
+                    .info-item {
+                        &+.info-item {
+                            margin-top: 8px;
+                        }
+
+                        display: flex;
+                        align-items: center;
+                        column-gap: 7.9px;
+
+                        .text {
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+
+                            span {
+                                margin-left: 6px;
+                            }
+                        }
+                    }
+                }
+
+                .desc {
+                    margin-top: 27px;
+                    font-family: var(--primary-font);
+                    font-weight: 300;
+                    font-size: 16px;
+                    line-height: 160%;
+                    letter-spacing: 0.01em;
+                    color: #434449;
+                }
+            }
+        }
+
+        nav {
+            margin: 0 0 64px 0;
+        }
+    }
+
+    .tab-content {
+
+    }
+}
+
+@media (max-width: 1200px) {
+    .thu-vien-hinh-anh {
+        section.banner {
+            .container {
+                .content {
+                    p {}
+                }
+
+                .navigation {}
+            }
+        }
+
+        .main {
+            .row.fillter {
+                margin: 39px 0 40px 0;
+
+                .form-filter {
+
+                    .form-filter-search {
+                        width: 70.31%;
+
+                        svg {}
+
+                        input {}
+                    }
+
+
+                    .button-submit {
+                        width: 14.15%;
+                    }
+
+                    .button-reset {
+                        width: 12.97%;
+                    }
+
+                }
+            }
+
+            .navigation {
+                li {
+                    &+li {
+                        margin-left: 37px;
+                    }
+                }
+            }
+
+            .row.wrap-content {
+                margin-top: 51px;
+                justify-content: space-between;
+                margin-left: -65px;
+                margin-right: -65px;
+
+                .slider {
+                    .vrmedia-gallery {
+                        
+                        img {}
+
+                        .lSSlideOuter {
+                            .lSSlideWrapper {
+                                .gallery.lightSlider {
+                                    height: 273px !important;
+                                }
+                            }
+                        }
+                    }
+
+                    .lSAction {}
+
+                    .lSGallery {
+                        li {
+                            img {}
+
+                            &.active {}
+                        }
+                    }
+
+                }
+
+                .content {
+                    padding-left: 14px;
+
+                    &.content-reverse {}
+
+                    .text-underline {
+                        padding-bottom: 6px;
+                        margin-bottom: 10px;
+                        letter-spacing: 0em;
+                    }
+
+                    .title {
+                        padding-right: 64px;
+                        margin-bottom: 4px;
+                    }
+
+                    .information {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        max-height: 100px;
+                        column-gap: 8px;
+
+                        .info-item {
+                            max-width: max-content;
+
+                            &+.info-item {
+                                margin-top: 8px;
+                            }
+
+                            &:last-child {
+                                margin-top: 0;
+                            }
+
+                            .text {
+                                span {}
+                            }
+                        }
+                    }
+
+                    .desc {}
+                }
+            }
+
+            nav {}
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .thu-vien-hinh-anh {
+        section.banner {
+            .container {
+                .content {
+                    p {}
+                }
+
+                .navigation {}
+            }
+        }
+
+        .main {
+            padding: 0 48px;
+
+            .row.fillter {
+
+                .form-filter {
+
+                    .form-filter-search {
+
+                        svg {}
+
+                        input {}
+                    }
+
+
+                    .button-submit {}
+
+                    .button-reset {}
+
+                }
+            }
+
+            .navigation {
+                li {
+                    &+li {}
+
+                    &.active::after {}
+
+
+                }
+            }
+
+            .row.wrap-content {
+                margin-top: 32px;
+                margin-left: -15px;
+                margin-right: -15px;
+
+                .slider {
+                    .vrmedia-gallery {
+                        li {
+                            height: 100%;
+
+                            img {
+                                height: 100%;
+                            }
+                        }
+
+
+                        .lSSlideOuter {
+                            .lSSlideWrapper {
+                                .gallery.lightSlider {}
+                            }
+                        }
+                    }
+
+                    .lSAction {}
+
+                    .lSGallery {
+                        li {
+                            img {}
+
+                            &.active {}
+                        }
+                    }
+
+                }
+
+                .content {
+                    padding-left: 14px;
+
+                    &.content-reverse {
+                        padding-left: 15px;
+                    }
+
+                    .text-underline {}
+
+                    .title {
+                        padding-right: 0;
+                        margin-bottom: 4px;
+                    }
+
+                    .information {
+                        display: unset;
+
+                        .info-item {
+                            max-width: max-content;
+
+                            &+.info-item {}
+
+                            &:last-child {
+                                margin-top: 8px;
+                            }
+
+                            .text {
+                                span {}
+                            }
+                        }
+                    }
+
+                    .desc {}
+                }
+            }
+
+            nav {}
+        }
+    }
+}
+
+
+@media (max-width: 767px) {
+    .thu-vien-hinh-anh {
+        section.banner {
+            min-height: 420px;
+
+            .container {
+                .content {
+                    h3 {
+                        font-family: 'Manrope';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 130%;
+                        /* or 31px */
+                    }
+
+                    p {
+                        font-family: 'Public Sans';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 160%;
+                        /* or 21px */
+
+                        text-align: center;
+                        letter-spacing: 0.01em;
+                    }
+                }
+
+                .navigation {
+                    left: 20px;
+
+                    ul {
+                        li+li {
+                            margin-left: 36px;
+                        }
+
+                        li {
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 13px;
+                            line-height: 140%;
+                            /* or 18px */
+
+                            letter-spacing: 0.04em;
+                            text-transform: uppercase;
+
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        .main {
+            padding: 0 20px;
+
+            .row.fillter {
+                margin: 23px 0 45px 0;
+
+                .form-filter {
+                    .justify-content-between {
+                        justify-content: flex-start !important;
+                        row-gap: 8px;
+                    }
+
+                    .form-filter-search {
+                        width: 100%;
+
+                        svg {}
+
+                        input {
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 300;
+                            font-size: 13px;
+                            line-height: 160%;
+                            /* or 21px */
+
+                            letter-spacing: 0.01em;
+
+                            color: #7E8189;
+
+                        }
+                    }
+
+
+                    .button-submit {
+                        width: 34.33%;
+
+                        button {
+                            height: 37px;
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 12px;
+                            line-height: 140%;
+                            /* identical to box height, or 17px */
+
+                            letter-spacing: 0.04em;
+                            text-transform: uppercase;
+                        }
+
+                    }
+
+                    .button-reset {
+                        width: 31.34%;
+
+                        button {
+                            height: 37px;
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 12px;
+                            line-height: 140%;
+                            /* identical to box height, or 17px */
+
+                            letter-spacing: 0.04em;
+                            text-transform: uppercase;
+
+                            /* Neutral/Low Emphasis */
+
+                            color: #7E8189;
+
+                        }
+                    }
+
+                }
+            }
+
+            .navigation {
+                li {
+                    &+li {
+                        margin-left: 32px;
+                    }
+
+                    &.active::after {}
+                    font-family: 'Public Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 140%;
+                    /* identical to box height, or 17px */
+                    
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                }
+            }
+
+            .row.wrap-content {
+                &.mobile-reverse {
+                    flex-direction: column-reverse;
+                }
+
+                .slider {
+                    max-width: 100%;
+                    padding: 0;
+
+                    .vrmedia-gallery {
+                        li {
+                            img {}
+                        }
+
+
+                        .lSSlideOuter {
+                            .lSSlideWrapper {
+                                .gallery.lightSlider {}
+                            }
+                        }
+                    }
+
+                    .lSAction {}
+
+                    .lSGallery {
+                        width: fit-content !important;
+
+                        li {
+                            width: fit-content !important;
+
+                            img {
+                                width: 30px;
+                            }
+
+                            &.active {}
+                        }
+                    }
+
+                }
+
+                .content {
+                    margin-top: 20px;
+
+                    &.content-reverse {}
+
+                    .text-underline {}
+
+                    .title {}
+
+                    .information {
+                        .info-item {
+                            &+.info-item {}
+
+                            &:last-child {}
+
+                            .text {
+                                span {}
+                            }
+                        }
+                    }
+
+                    .desc {}
+                }
+            }
+
+            nav {}
+        }
+    }
+}

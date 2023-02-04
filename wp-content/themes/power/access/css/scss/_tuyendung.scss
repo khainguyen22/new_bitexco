@@ -1,0 +1,1689 @@
+/* Tuyen Dung */
+.tuyen-dung {
+    .your-privilege {
+        padding: 137px 100px 96px 100px;
+        background-color: #fff;
+
+        .container {
+            max-width: 1240px;
+            margin: auto;
+
+            .your-privilege-content {
+                .content {
+                    max-width: 683px;
+                    margin: auto;
+                    text-align: center;
+
+                    .divider {
+                        width: 32px;
+                        margin: auto;
+                        display: block;
+                        border-top: 2px solid #daa622;
+                        margin-bottom: 6px;
+                    }
+
+                    h3 {
+                        margin-bottom: 16px;
+                    }
+
+                    p {}
+                }
+
+                .services {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    column-gap: 20px;
+                    row-gap: 60px;
+                    margin-top: 60px;
+
+                    .service {
+                        width: calc(100%/3 - 16px);
+                        text-align: center;
+
+                        img {
+                            width: 80px;
+                        }
+
+                        h6 {
+                            color: #141518;
+                            margin-bottom: 10px;
+                            margin-top: 32px;
+                        }
+
+                        p {
+                            margin: 0;
+                            padding: 0 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .recruit {
+        &::after {
+            background: rgba(0, 0, 0, 0.4);
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .container {
+            .content {
+                z-index: 2;
+
+                p {
+                    margin-top: 16px;
+                    margin-bottom: 40px;
+                }
+
+                .position {
+                    font-size: 14px;
+                    line-height: 140%;
+                    /* letter-spacing: 0.01em; */
+                    padding: 14px 32px;
+                    text-transform: uppercase;
+                    min-height: 48px;
+                    min-width: 207px;
+                    font-family: 'Public Sans';
+                    letter-spacing: 0.04em;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .power-enviroment {
+        padding: 100px 0 93px 0;
+
+        .values {
+            display: flex;
+            margin-top: 61px;
+
+            .the-values {
+                width: 50%;
+                padding-right: 80px;
+
+                .drop-down.active {
+                    border-bottom: 2px solid #DAA622;
+                    padding-bottom: 8px;
+
+                    h5 {
+                        color: #DAA622;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            width: 10px;
+                            height: 10px;
+                            border-right: 1.5px solid #DAA622;
+                            border-bottom: 1.5px solid #DAA622;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: matrix(-1, 0, 0, 1, 0, 0) rotate(225deg);
+                        }
+                    }
+
+                    p {
+                        display: block;
+                    }
+                }
+
+                .drop-down+.drop-down {
+                    padding-top: 20px;
+                }
+
+                .drop-down {
+                    border-bottom: 1px solid #D1D5DB;
+                    padding-bottom: 20px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    h5 {
+                        font-family: 'Manrope';
+                        font-weight: 600;
+                        font-size: 28px;
+                        line-height: 1.3;
+                        margin-bottom: 0px;
+                    }
+
+                    p {
+                        font-weight: 300;
+                        font-size: 16px;
+                        line-height: 1.6;
+                        letter-spacing: 0.01em;
+                        color: #0d0d0e;
+                        display: none;
+                        margin-top: 8px;
+                    }
+                }
+            }
+
+            .the-values-image {
+                width: 50%;
+
+                img {
+                    // height: 100%;
+                    object-fit: cover;
+                    display: none;
+                }
+
+                img.active {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .building-dream {
+        .building-dream-container {
+            .building-dream-content {
+                svg {
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &.right {
+                        right: 36px;
+                        z-index: 1;
+                    }
+
+                    &.left {
+                        left: 36px;
+                        z-index: 1;
+                    }
+                }
+
+                .content {
+                    display: flex;
+
+                    img {
+                        width: 49%;
+                    }
+
+                    .text {
+                        width: 50%;
+                        padding: 80px;
+
+                        h4 {
+                            font-size: 32px;
+                            font-weight: 600;
+                            line-height: 1.3;
+                            font-family: 'Manrope';
+                            margin-bottom: 16px;
+                        }
+
+                        p {
+                            font-weight: 300;
+                            font-size: 16px;
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+                            color: #434449;
+                        }
+                    }
+                }
+
+                .slick-dots {
+                    display: flex;
+                    justify-content: center;
+                    column-gap: 8px;
+                    position: absolute;
+                    width: 100%;
+                    top: calc(100% + 24px);
+
+                    li {
+                        width: 10px;
+                        height: 10px;
+                        background-color: #D1D5DB;
+                        border-radius: 50%;
+
+                        &.slick-active {
+                            background-color: #DAA622;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        button {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .opportunity {
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 3;
+        min-height: 400px;
+        height: 400px;
+        background-position: center center;
+        margin-bottom: 88px;
+
+        &::before {
+            display: none;
+        }
+
+
+        .container {
+            .content {
+                z-index: 2;
+                top: calc(50% + 54px);
+
+                p {
+                    margin-top: 16px;
+                    margin-bottom: 40px;
+                }
+
+                button.position {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .life-at-bitexco-section {
+        padding: 100px 0 87px 0;
+
+        .life-in-bitexco {
+            .container {
+                max-width: 1240px;
+                margin: auto;
+                padding: 0;
+
+                .your-privilege-content {
+                    .content {
+                        p {}
+                    }
+                }
+
+                .lib-button {
+                    margin-top: 25px;
+                    text-align: center;
+
+                    a {
+                        padding: 14px 32px;
+                        width: fit-content;
+                        font-family: 'Public Sans';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 140%;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .slick-dots {
+                    margin-top: 30px;
+                    display: flex;
+                    padding: 0;
+                    justify-content: center;
+                    column-gap: 8px;
+                    margin-bottom: 0;
+
+                    li {
+                        width: 10px;
+                        height: 10px;
+                        background-color: #D1D5DB;
+                        border-radius: 50%;
+
+                        &.slick-active {
+                            background-color: #DAA622;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        button {
+                            display: none;
+                        }
+                    }
+                }
+
+                svg {
+                    top: 93px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &.right {
+                        right: -49px;
+                        z-index: 1;
+                    }
+
+                    &.left {
+                        left: -49px;
+                        z-index: 1;
+                    }
+                }
+
+                .life-in-bitexco-content {
+                    margin-top: 62px;
+                    margin: 62px -15px 0 -15px;
+
+                    .content-item {
+                        padding-left: 15px;
+                        padding-right: 15px;
+
+                        h6 {
+                            font-weight: 600;
+                            font-size: 22px;
+                            line-height: 1.3;
+                            letter-spacing: 0.01em;
+                            color: #141518;
+                            margin-top: 20px;
+                        }
+
+                        p {
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+                            color: #434449;
+                        }
+
+                        .image {
+                            height: 223px;
+
+                            img {
+                                object-fit: cover;
+                                height: 223px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .slogan {
+        background: #F6F8FC;
+        padding: 100px 0 87px 0;
+
+        .quote {
+            display: flex;
+            margin-top: 62px;
+            min-height: 464.34px;
+
+            .quote-agency {
+                width: 50%;
+
+                .quote-agency-img {
+                    display: none;
+                    object-fit: cover;
+                    width: 605px;
+                    height: 450px;
+                    object-fit: cover;
+                }
+
+                .quote-agency-img.active {
+                    display: block;
+                }
+            }
+
+            .quote-content {
+                padding-left: 65px;
+                width: 50%;
+
+                .quote-navigation {
+                    display: flex;
+                    -moz-column-gap: 20px;
+                    column-gap: 27.5px;
+                    align-items: center;
+                    margin-top: -2px;
+                    min-height: 96px;
+
+                    .quote-nav-img {
+                        height: fit-content;
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            transition: all .3s;
+                        }
+                    }
+
+                    .quote-nav-img {
+                        &:hover {
+                            border: 4px solid #DAA622;
+                            border-radius: 50%;
+                            cursor: pointer;
+
+                            img {
+                                width: 88px;
+                                height: 88px;
+                            }
+                        }
+                    }
+
+                    .quote-nav-img.active {
+                        border: 4px solid #DAA622;
+                        border-radius: 50%;
+
+                        &:hover {
+                            cursor: pointer;
+
+                            img {
+                                width: 88px;
+                                height: 88px;
+                            }
+                        }
+
+                        img {
+                            width: 88px;
+                            height: 88px;
+                        }
+                    }
+                }
+
+                .quote-text {
+                    .quote-text-inner {
+                        display: none;
+
+                        svg {
+                            margin-top: 30px;
+                            margin-bottom: 16px;
+                        }
+
+                        .quote-divider {
+                            border: 1px solid #DAA622;
+                            margin: 16px 0 24px 0;
+                        }
+
+                        h2 {
+                            font-family: 'Manrope';
+                            font-weight: 500;
+                            font-size: 28px;
+                            line-height: 1.3;
+                            color: #141518;
+                        }
+
+                        p.company-role {
+                            font-weight: 300;
+                            font-size: 14px;
+                            line-height: 1.4;
+                            letter-spacing: 0.04em;
+                            color: #434449;
+                            margin-bottom: 4px;
+                            text-transform: uppercase;
+                        }
+
+                        h3.author {
+                            font-weight: 600;
+                            font-size: 18px;
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+                            color: #141518;
+                        }
+                    }
+
+                    .quote-text-inner.active {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .tuyen-dung {
+        .recruit {
+            .container {
+                .content {
+                    top: calc(50% + 43px);
+
+                    p {
+                        margin-top: 16px;
+                        margin-bottom: 40px;
+                    }
+                }
+            }
+        }
+
+        .your-privilege {
+            padding: 128px 100px 98px 100px;
+
+            .container {
+                .your-privilege-content {
+                    .content {
+                        .divider {
+                            margin-bottom: 10px;
+                        }
+
+                        h3 {
+                            margin-bottom: 19px;
+                            font-size: 32px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .power-enviroment {
+            padding: 100px 100px 161px 100px;
+
+            .container {
+                .your-privilege-content {
+                    .content {
+                        .divider {
+                            margin-bottom: 10px;
+                        }
+
+                        h3 {
+                            font-size: 32px;
+                        }
+                    }
+
+                    .values {
+                        display: flex;
+                        margin-top: 68px;
+
+                        .the-values {
+                            width: 50%;
+                            padding-right: 20px;
+
+                            .drop-down.active {
+                                border-bottom: 2px solid #DAA622;
+                                padding-bottom: 8px;
+
+                                h5 {
+                                    color: #DAA622;
+                                    position: relative;
+
+                                    &::after {
+                                        content: "";
+                                        width: 10px;
+                                        height: 10px;
+                                        border-right: 1.5px solid #DAA622;
+                                        border-bottom: 1.5px solid #DAA622;
+                                        position: absolute;
+                                        right: 0;
+                                        top: 50%;
+                                        transform: matrix(-1, 0, 0, 1, 0, 0) rotate(225deg);
+                                    }
+                                }
+
+                                p {
+                                    display: block;
+                                }
+                            }
+
+                            .drop-down+.drop-down {
+                                padding-top: 12px;
+                            }
+
+                            .drop-down {
+                                border-bottom: 1px solid #D1D5DB;
+                                padding-bottom: 11px;
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+
+                                h5 {
+                                    font-family: 'Manrope';
+                                    font-weight: 600;
+                                    font-size: 28px;
+                                    line-height: 1.3;
+                                    margin-bottom: 0px;
+                                }
+
+                                p {
+                                    font-weight: 300;
+                                    font-size: 16px;
+                                    line-height: 1.6;
+                                    letter-spacing: 0.01em;
+                                    color: #0d0d0e;
+                                    display: none;
+                                    margin-top: 8px;
+                                }
+                            }
+                        }
+
+                        .the-values-image {
+                            padding-left: 13px;
+
+                            img {
+                                height: 100%;
+                            }
+
+                            img.active {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .building-dream {
+            .building-dream-container {
+                .building-dream-content {
+                    svg {
+                        top: 46%;
+                    }
+
+                    .content {
+                        img {
+                            width: 49%;
+                        }
+
+                        .text {
+                            padding: 80px 80px 96px 80px;
+                        }
+                    }
+
+                    .slick-dots {
+                        top: calc(100% + 20px);
+
+                    }
+                }
+            }
+        }
+
+        .slogan {
+            padding: 100px 100px 98px 100px;
+
+            .quote {
+                margin-top: 60px;
+                min-height: 524.13px;
+
+                .quote-agency {
+                    width: 50%;
+
+                    .quote-agency-img {
+                        width: 451px;
+                    }
+
+                    .quote-agency-img.active {
+                        display: block;
+                    }
+                }
+
+                .quote-content {
+                    padding-left: 64px;
+                    width: 50%;
+
+                    .quote-navigation {
+                        display: flex;
+                        column-gap: 20px;
+                        align-items: flex-start;
+                        min-height: 68px;
+
+                        .quote-nav-img {
+                            &:hover {
+                                border: 4px solid #DAA622;
+                                border-radius: 50%;
+                                cursor: pointer;
+
+                                img {
+                                    width: 60px;
+                                    height: 60px;
+                                }
+                            }
+
+                            img {
+                                width: 48px;
+                                height: 48px;
+                            }
+                        }
+
+                        .quote-nav-img.active {
+                            border: 4px solid #DAA622;
+                            border-radius: 50%;
+
+                            &:hover {
+                                cursor: pointer;
+
+                                img {
+                                    width: 60px;
+                                    height: 60px;
+                                }
+                            }
+
+                            img {
+                                width: 60px;
+                                height: 60px;
+                            }
+                        }
+
+                        .quote-nav-img[data-number="6"],
+                        .quote-nav-img[data-number="7"],
+                        .quote-nav-img[data-number="8"] {
+                            display: none;
+                        }
+                    }
+
+                    .quote-text {
+                        .quote-text-inner {
+
+                            svg {
+                                margin-top: 34px;
+                                margin-bottom: 21px;
+                            }
+
+                            .quote-divider {
+                                margin: 22px 0 24px;
+                            }
+
+                            h2 {
+                                font-family: 'Manrope';
+                                font-weight: 500;
+                                font-size: 28px;
+                                line-height: 1.3;
+                                color: #141518;
+                            }
+
+                            p.company-role {
+                                font-weight: 300;
+                                font-size: 14px;
+                                line-height: 1.4;
+                                letter-spacing: 0.04em;
+                                color: #434449;
+                                margin-bottom: 4px;
+                                text-transform: uppercase;
+                            }
+
+                            h3.author {
+                                font-weight: 600;
+                                font-size: 18px;
+                                line-height: 1.6;
+                                letter-spacing: 0.01em;
+                                color: #141518;
+                            }
+                        }
+
+                        .quote-text-inner.active {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .life-at-bitexco-section {
+            padding: 100px 100px 94px 100px;
+
+            .life-in-bitexco {
+                .container {
+
+                    .your-privilege-content {
+                        .content {
+                            h3 {
+                                margin-bottom: 25px;
+                            }
+                        }
+                    }
+
+                    .lib-button {
+                        margin-top: 25px;
+                        text-align: center;
+
+                        a {
+                            padding: 14px 32px;
+                            width: fit-content;
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 140%;
+                            letter-spacing: 0.04em;
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    .slick-dots {
+                        margin-top: 10px;
+                        display: flex;
+                        padding: 0;
+                        justify-content: center;
+                        column-gap: 8px;
+                        margin-bottom: 0;
+
+                        li {
+                            width: 10px;
+                            height: 10px;
+                            background-color: #D1D5DB;
+                            border-radius: 50%;
+
+                            &.slick-active {
+                                background-color: #DAA622;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            button {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    svg {
+                        top: 93px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        &.right {
+                            right: -49px;
+                            z-index: 1;
+                        }
+
+                        &.left {
+                            left: -49px;
+                            z-index: 1;
+                        }
+                    }
+
+                    .life-in-bitexco-content {
+                        margin: 50px -15px 0 -15px;
+
+                        .content-item {
+                            padding-left: 15px;
+                            padding-right: 15px;
+
+                            h6 {
+                                font-weight: 600;
+                                font-size: 22px;
+                                line-height: 1.3;
+                                letter-spacing: 0.01em;
+                                color: #141518;
+                                margin-top: 20px;
+                            }
+
+                            p {
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 1.6;
+                                letter-spacing: 0.01em;
+                                color: #434449;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .opportunity {
+            .container {
+                .content {
+                    top: calc(50% - 5px);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .tuyen-dung {
+        .your-privilege {
+            padding: 64px;
+        }
+
+        .building-dream {
+            .building-dream-container {
+                .building-dream-content {
+                    svg {
+                        &.right {
+                            right: 20px;
+                        }
+
+                        &.left {
+                            left: 20px;
+                        }
+                    }
+
+                    .content {
+                        display: flex;
+
+                        img {
+                            width: 50%;
+                        }
+
+                        .text {
+                            padding: 40px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slogan {
+            .quote {
+                display: flex;
+                margin-top: 62px;
+                min-height: 571.52px;
+
+                .quote-agency {
+                    width: 50%;
+
+                    .quote-agency-img {
+                        display: none;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .quote-agency-img.active {
+                        display: block;
+                    }
+                }
+
+                .quote-content {
+                    padding-left: 40px;
+                    width: 50%;
+
+                    .quote-navigation {
+                        display: flex;
+                        column-gap: 20px;
+
+                        .quote-nav-img {
+                            &:hover {
+                                border: 4px solid #DAA622;
+                                border-radius: 50%;
+                                cursor: pointer;
+
+                                img {
+                                    width: 60px;
+                                    height: 60px;
+                                }
+                            }
+                        }
+
+                        .quote-nav-img.active {
+                            border: 4px solid #DAA622;
+                            border-radius: 50%;
+
+                            &:hover {
+                                cursor: pointer;
+
+                                img {
+                                    width: 60px;
+                                    height: 60px;
+                                }
+                            }
+
+                            img {
+                                width: 60px;
+                                height: 60px;
+                            }
+                        }
+
+                        .quote-nav-img[data-number="6"],
+                        .quote-nav-img[data-number="7"],
+                        .quote-nav-img[data-number="8"] {
+                            display: none;
+                        }
+                    }
+
+                    .quote-text {
+                        .quote-text-inner {
+                            display: none;
+
+                            svg {
+                                margin-top: 40px;
+                                margin-bottom: 24px;
+                            }
+
+                            .quote-divider {
+                                border: 1px solid #DAA622;
+                                margin: 24px 0;
+                            }
+
+                            h2 {
+                                font-family: 'Manrope';
+                                font-weight: 500;
+                                font-size: 28px;
+                                line-height: 1.3;
+                                color: #141518;
+                            }
+
+                            p.company-role {
+                                font-weight: 300;
+                                font-size: 14px;
+                                line-height: 1.4;
+                                letter-spacing: 0.04em;
+                                color: #434449;
+                                margin-bottom: 4px;
+                                text-transform: uppercase;
+                            }
+
+                            h3.author {
+                                font-weight: 600;
+                                font-size: 18px;
+                                line-height: 1.6;
+                                letter-spacing: 0.01em;
+                                color: #141518;
+                            }
+                        }
+
+                        .quote-text-inner.active {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+
+        .opportunity {
+            margin-bottom: 0;
+        }
+
+    }
+}
+
+@media (max-width: 880px) {
+    .tuyen-dung {
+        .your-privilege {
+            padding: 48px 48px;
+
+            .container {
+                .your-privilege-content {
+                    .services {
+                        .service {
+                            width: calc(100%/2 - 16px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .power-enviroment {
+            .values {
+                display: flex;
+                flex-direction: column-reverse;
+
+                .the-values {
+                    margin-top: 20px;
+                    width: 100%;
+                    padding-right: 0;
+
+                    .drop-down.active {
+                        border-bottom: 1px solid #DAA622;
+
+                        h5 {
+                            color: #DAA622;
+                            position: relative;
+
+                            &::after {
+                                content: "";
+                                width: 10px;
+                                height: 10px;
+                                border-right: 1.5px solid #DAA622;
+                                border-bottom: 1.5px solid #DAA622;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: matrix(-1, 0, 0, 1, 0, 0) rotate(225deg);
+                            }
+                        }
+
+                        p {
+                            display: block;
+                        }
+                    }
+
+                    .drop-down+.drop-down {
+                        padding-top: 20px;
+                    }
+
+                    .drop-down {
+                        border-bottom: 1px solid #D1D5DB;
+                        padding-bottom: 20px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        h5 {
+                            font-family: 'Manrope';
+                            font-weight: 600;
+                            font-size: 28px;
+                            line-height: 1.3;
+                            margin-bottom: 8px;
+                        }
+
+                        p {
+                            font-weight: 300;
+                            font-size: 16px;
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+                            color: #0d0d0e;
+                            display: none;
+                        }
+                    }
+                }
+
+                .the-values-image {
+                    width: 100%;
+
+                    img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .life-at-bitexco-section {
+            .life-in-bitexco {
+                .container {
+                    svg {
+                        &.right {
+                            right: -36px;
+                        }
+
+                        &.left {
+                            left: -36px;
+                        }
+                    }
+
+
+                }
+            }
+        }
+
+        .slogan {
+            padding: 48px 32px;
+
+            .quote {
+                margin-top: 60px;
+                min-height: 524.13px;
+
+                .quote-agency {
+                    width: 50%;
+
+                    .quote-agency-img {
+                        width: 100%;
+
+                    }
+
+                    .quote-agency-img.active {
+                        display: block;
+                    }
+                }
+
+                .quote-content {
+                    padding-left: 32px;
+
+                    .quote-navigation {
+                        min-height: 68px;
+                        gap: 12px;
+
+                        .quote-nav-img {
+                            &:hover {
+                                border: 4px solid #DAA622;
+                                border-radius: 50%;
+                                cursor: pointer;
+
+                                img {
+                                    width: 48px;
+                                    height: 48px;
+                                }
+                            }
+
+                            img {
+                                width: 36px;
+                                height: 36px;
+                            }
+                        }
+
+                        .quote-nav-img.active {
+                            border: 4px solid #DAA622;
+                            border-radius: 50%;
+
+                            &:hover {
+                                cursor: pointer;
+
+                                img {
+                                    width: 48px;
+                                    height: 48px;
+                                }
+                            }
+
+                            img {
+                                width: 48px;
+                                height: 48px;
+                            }
+                        }
+
+                        .quote-nav-img[data-number="6"],
+                        .quote-nav-img[data-number="7"],
+                        .quote-nav-img[data-number="8"] {
+                            display: none;
+                        }
+                    }
+
+                    .quote-text {
+                        .quote-text-inner {
+
+                            svg {
+                                margin-top: 34px;
+                                margin-bottom: 21px;
+                            }
+
+                            h2 {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .tuyen-dung {
+        .your-privilege {
+            padding: 88px 20px 60px;
+
+            .container {
+                .your-privilege-content {
+                    .content {
+                        h3 {
+                            font-size: 28px;
+                            line-height: 1.3;
+                            margin-bottom: 12px;
+                        }
+
+                        p {
+                            font-size: 16px;
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+                        }
+                    }
+
+                    .services {
+                        margin-top: 32px;
+                        row-gap: 32px;
+
+                        .service {
+                            width: 100%;
+
+                            h6 {
+                                font-weight: 600;
+                                font-size: 22px;
+                                line-height: 1.3;
+                                letter-spacing: 0.01em;
+                                margin-top: 21px;
+                            }
+
+                            p {
+                                font-size: 16px;
+                                line-height: 1.6;
+                                letter-spacing: 0.01em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .recruit {
+            &::after {
+                background: rgba(0, 0, 0, 0.4);
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            .container {
+                .content {
+                    top: calc(50% + 93px);
+
+                    .divider {
+                        margin-bottom: 8px;
+                    }
+
+                    p {
+                        margin-top: 16px;
+                        margin-bottom: 20px;
+                        font-size: 13px;
+                    }
+
+                    h3 {
+                        font-size: 24px;
+                    }
+
+                    .position {
+                        font-size: 12px;
+                        min-width: 187px;
+                    }
+                }
+            }
+        }
+
+
+        .power-enviroment {
+            padding: 31px 20px 35px 20px;
+
+            .container {
+                .your-privilege-content {
+                    .content {
+                        p {
+                            font-size: 13px;
+                        }
+
+                        h3 {
+                            font-size: 24px;
+                            margin-bottom: 12px;
+                        }
+                    }
+
+                    .values {
+                        margin-top: 44px;
+
+                        .the-values {
+                            width: 100%;
+                            padding-left: 0;
+                            padding-right: 0;
+
+                            .drop-down.active {
+                                border-bottom: 2px solid #DAA622;
+                                padding-bottom: 8px;
+
+                                h5 {
+                                    font-size: 24px;
+
+                                    &::after {
+                                        right: 7px;
+                                        top: 46%;
+                                    }
+                                }
+
+                                p {
+                                    display: block;
+                                }
+                            }
+
+                            .drop-down+.drop-down {
+                                padding-top: 20px;
+                            }
+
+                            .drop-down {
+                                padding-bottom: 20px;
+
+                                &:hover {
+                                    cursor: pointer;
+                                }
+
+                                h5 {
+                                    font-size: 22px;
+                                    letter-spacing: 0.01em;
+                                }
+                            }
+                        }
+
+                        .the-values-image {
+                            padding-left: 0;
+
+                            img {
+                                // height: 100%;
+                                object-fit: cover;
+                                display: none;
+                            }
+
+                            img.active {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .building-dream {
+            .building-dream-container {
+                .building-dream-content {
+                    svg {
+                        &.right {
+                            right: 20px;
+                        }
+
+                        &.left {
+                            left: 20px;
+                        }
+                    }
+
+                    .content {
+                        display: flex;
+                        flex-direction: column;
+
+                        img {
+                            width: 100%;
+                        }
+
+                        .text {
+                            width: 100%;
+                            padding: 20px;
+
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    .slick-dots {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+
+        .life-at-bitexco-section {
+            padding: 58px 20px 60px;
+
+            .life-in-bitexco {
+                .container {
+                    max-width: 1240px;
+                    margin: auto;
+                    padding: 0;
+
+                    .life-in-bitexco-content {
+                        margin: 31px 0px 0 0px;
+
+                        .content-item {
+                            h6 {
+                                margin-bottom: 18px;
+                            }
+                        }
+                    }
+
+                    .lib-button {
+                        margin-top: 32px;
+                        text-align: center;
+
+                        button {
+                            text-transform: uppercase;
+                        }
+                    }
+
+                    .slick-dots {
+                        margin-top: 0px;
+                        display: flex;
+                        padding: 0;
+                        justify-content: center;
+                        column-gap: 8px;
+                        margin-bottom: 0;
+
+                        li {
+                            width: 10px;
+                            height: 10px;
+                            background-color: #D1D5DB;
+                            border-radius: 50%;
+
+                            &.slick-active {
+                                background-color: #DAA622;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            button {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    svg {
+                        top: 100px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        &.right {
+                            right: -36px;
+                            z-index: 1;
+                        }
+
+                        &.left {
+                            left: -36px;
+                            z-index: 1;
+                        }
+                    }
+
+                    .life-in-bitexco-content {
+                        margin-top: 31px;
+
+                        img {
+                            height: 190px;
+                        }
+
+                        .content-item {
+                            padding-left: 0;
+                            padding-right: 0;
+
+                            h6 {
+                                font-family: 'Manrope';
+                                font-weight: 600;
+                                font-size: 22px;
+                                line-height: 1.3;
+                                letter-spacing: 0.01em;
+                                color: #141518;
+                                margin-top: 21px;
+                            }
+
+                            p {
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 1.6;
+                                letter-spacing: 0.01em;
+                                color: #434449;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .slogan {
+            padding: 37px 20px 32px;
+
+            .quote {
+                margin-top: 20px;
+                padding-top: 84px;
+                flex-direction: column;
+                row-gap: 24px;
+                position: relative;
+
+                .quote-agency {
+                    width: 100%;
+                }
+
+                .quote-content {
+                    padding-left: 0;
+                    width: 100%;
+
+                    .quote-navigation {
+                        position: absolute;
+                        top: 0;
+                        align-items: center;
+                        gap: 20px;
+
+                        .quote-nav-img {
+                            img {
+                                width: 36px;
+                                height: 36px;
+                            }
+
+                            &:hover {
+                                cursor: pointer;
+
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                }
+                            }
+                        }
+
+                        .quote-nav-img.active {
+                            &:hover {
+                                cursor: unset;
+
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                }
+                            }
+
+                            img {
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+
+                        .quote-nav-img[data-number="6"] {
+                            display: block;
+                        }
+                    }
+
+                    .quote-text {
+                        .quote-text-inner {
+                            .quote-divider {
+                                margin: 23px 0;
+                            }
+
+                            svg {
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* End Tuyen Dung */

@@ -1,0 +1,140 @@
+.bao-cao-tai-chinh {
+    .banner {
+        background-image: url('./../../access/images/banner-tru-so.png');
+        min-height: 400px;
+
+    }
+
+    .main {
+        padding: 60px 0 80px;
+
+        .container {
+            padding: 0 100px;
+
+            @media(max-width:767px) {
+                padding: 0 20px;
+            }
+        }
+
+        .wrap-head {
+            max-width: 666px;
+            margin: 0 auto 20px;
+            text-align: center;
+
+            .title {
+                font-weight: 500;
+                font-size: 40px;
+                line-height: 120%;
+                color: #141518;
+
+                @media(max-width:767px) {
+                    font-weight: 600;
+                    font-size: 32px;
+                    line-height: 130%;
+                }
+            }
+
+            .description {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 160%;
+                letter-spacing: 0.01em;
+                color: #434449;
+            }
+        }
+
+        .content {
+
+            .person {
+                width: 50%;
+
+                .image {
+                    width: 240px;
+                    height: 240px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .info {
+                    margin-left: 20px;
+
+                    .position {
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 140%;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                        color: #434449;
+                        margin-bottom: 12px;
+                    }
+
+                    .name {
+                        font-weight: 600;
+                        font-size: 22px;
+                        line-height: 130%;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+                    }
+                }
+
+                @media(max-width:1366px) {
+                    width: fit-content;
+                }
+
+                @media(max-width:767px) {
+                    flex-direction: column;
+                    margin: 0 auto;
+
+                    .info {
+                        padding-top: 20px;
+                    }
+                }
+            }
+
+            .wraper-member {
+                .title {
+                    font-weight: 600;
+                    font-size: 28px;
+                    line-height: 130%;
+                    color: #141518;
+                    margin-bottom: 20px;
+                }
+
+                .member {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    .person {
+                        padding: 20px 0;
+                    }
+                }
+            }
+
+        }
+
+        .divider-section {
+            max-width: 1240px;
+            height: 1px;
+            background: #D1D5DB;
+            border-radius: 2px;
+            width: 100%;
+            margin: 40px auto;
+            display: block;
+        }
+
+        @media(max-width:767px) {
+            padding: 40px 0;
+        }
+    }
+
+    @media(max-width:767px) {
+        .other-information .other-container .other-content a {
+            min-height: 180px;
+        }
+    }
+}

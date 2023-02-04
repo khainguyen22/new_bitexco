@@ -1,0 +1,5 @@
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before{content:url(../images/logo1x.png)}
+.login h1 a {
+    background: url(../images/logo2x.png);
+    background-repeat: no-repeat;
+    background-position: center;}

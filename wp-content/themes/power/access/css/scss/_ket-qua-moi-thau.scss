@@ -1,0 +1,176 @@
+.ket-qua-san-xuat {
+    .banner {
+        min-height: 400px;
+        background-image: url('./../../access/images/banner-thong-tin-moi-thau.png');
+    }
+
+    .main {
+        background: #fff;
+
+        .san_luong_luy_ke {
+            background-position: right;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            .information {
+                padding: 80px 0 70px;
+                margin-bottom: 56px;
+                background: linear-gradient(284.72deg, rgba(218, 166, 34, 0.22) 17.82%, rgba(218, 166, 34, 0) 88.66%);
+
+                .container {
+                    .headding {
+                        h4 {
+                            font-weight: 600;
+                            font-size: 32px;
+                            line-height: 130%;
+                            color: #141518;
+
+                            @media(max-width:767px) {
+                                font-size: 28px;
+                            }
+                        }
+
+                        margin-bottom: 60px;
+
+                        @media(max-width:767px) {
+                            margin-bottom: 32px;
+                        }
+                    }
+
+                    .list {
+                        .item {
+                            .label {
+                                font-weight: 500;
+                                font-size: 16px;
+                                line-height: 160%;
+                                letter-spacing: 0.01em;
+                                text-transform: uppercase;
+                                color: #141518;
+                                margin-bottom: 8px;
+
+                                @media(max-width:767px) {
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    line-height: 140%;
+                                    letter-spacing: 0.04em;
+                                }
+                            }
+
+                            .info {
+                                font-weight: 600;
+                                font-size: 54px;
+                                line-height: 115%;
+                                color: #DAA622;
+                                margin-bottom: 0px;
+
+                                @media(max-width:767px) {
+                                    font-weight: 500;
+                                    font-size: 48px;
+                                }
+                            }
+
+                            .unit {
+                                font-weight: 300;
+                                font-size: 16px;
+                                line-height: 160%;
+                                letter-spacing: 0.01em;
+                                color: #141518;
+                                margin-bottom: 0px;
+
+                                @media(max-width:767px) {
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media(max-width:767px) {
+                    padding: 40px 0 46px;
+                }
+            }
+        }
+
+        .bieu-do-san-luong,
+        .bieu-do-cong-suat-lap-dat {
+            .head {
+                margin-top: 80px;
+                margin-bottom: 48px;
+
+                .headding {
+                    font-weight: 600;
+                    font-size: 32px;
+                    line-height: 130%;
+                    color: #141518;
+
+                    @media(max-width:767px) {
+                        font-size: 27px;
+                    }
+                }
+
+                .input-date {
+                    max-width: 229px;
+                    background: #FFFFFF;
+                    border: 1px solid #D1D5DB;
+                    border-radius: 2px;
+
+                    @media(max-width:767px) {
+                        display: none;
+                    }
+                }
+
+                @media(max-width:767px) {
+                    margin-top: 34px;
+                    margin-bottom: 32px;
+                }
+            }
+
+            .bar-chart {
+                margin-bottom: 149px;
+
+                @media(max-width:767px) {
+                    margin-bottom: 41px;
+                }
+            }
+        }
+
+        .bieu-do-ti-trong {
+            margin-top: 19px;
+
+            .bieu-do {
+                padding: 66px;
+            }
+        }
+
+        .divider-section {
+            max-width: 1240px;
+            height: 1px;
+            background: #DAA622;
+            border-radius: 2px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .bieu-do-cong-suat-lap-dat .table {
+            border-radius: 5px;
+
+            tr td {
+                border: 1px solid #B9B9B9;
+
+                &:first-child {
+                    background-color: #F6F8FC;
+                }
+            }
+        }
+
+        .container {
+            padding: 0 100px;
+
+            @media(max-width:767px) {
+                padding: 0 20px;
+            }
+        }
+
+    }
+}

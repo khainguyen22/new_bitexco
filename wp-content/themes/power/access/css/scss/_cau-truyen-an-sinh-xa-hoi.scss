@@ -1,0 +1,158 @@
+.bai-viet-an-sinh-xa-hoi {
+    margin-top: 60px;
+
+    .breadcrumbs {
+        .breadcrumbs-content {
+            position: relative;
+            top: 0;
+            left: 0;
+
+            @media(max-width:767px) {
+                padding: 0 20px;
+
+                * {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+
+    &.tin-tuc {
+        .lists-post .row.fillter {
+            .form-filter .form {
+                flex-wrap: nowrap;
+
+                .form-filter-search {
+                    max-width: unset;
+                    width: 100%;
+                }
+
+                .form-filter-date {
+                    max-width: 213px;
+                    width: 100%;
+
+                    @media(max-width:1366px) {
+                        max-width: 144px;
+                    }
+
+                    @media(max-width:767px) {
+                        max-width: unset;
+                    }
+                }
+
+                .button-submit,
+                .button-reset {
+                    margin-top: 0;
+
+                    button {
+                        width: fit-content;
+                        padding: 0 30px;
+                    }
+                }
+
+                @media(max-width:1366px) {
+                    .button-submit button.btn {
+                        padding: 0 32px;
+                    }
+
+                    .button-submit button.btn {
+                        padding: 0 27px;
+                    }
+                }
+
+                @media(max-width:767px) {
+                    flex-wrap: wrap;
+
+
+                }
+            }
+
+            @media(max-width:1366px) {
+                margin-bottom: 32px;
+            }
+        }
+    }
+
+    .content-container {
+        background-color: #fff;
+        padding: 70px 100px 60px;
+
+        .news-post {
+            margin-top: 63px;
+
+            .tin-noi-bat {
+                @media(max-width:767px) {
+                    padding: 0px;
+                }
+            }
+
+            .tin-moi-nhat-wrap {
+                .tin-moi-nhat {
+
+                    &-item {
+
+                        .content {
+                            justify-content: start;
+                        }
+                    }
+
+                }
+
+
+            }
+
+            @media(max-width:1366px) {
+                margin-top: 38px;
+            }
+
+        }
+
+        @media(max-width:1366px) {
+            padding: 70px 100px 47px;
+        }
+
+        @media(max-width:1024px) {
+            padding: 70px 40px 60px;
+        }
+
+        @media(max-width:767px) {
+            padding: 16px 0px 60px;
+        }
+    }
+
+    .lists-post {
+        background-color: #F6F8FC;
+        padding: 33px 100px 80px;
+
+        .custom-post .content {
+            padding: 20px 32px;
+
+        }
+
+        @media(max-width:1366px) {
+            .container {
+                padding: 0;
+            }
+        }
+
+        @media(max-width:1024px) {
+            padding: 41px 40px 80px;
+        }
+
+        @media(max-width:767px) {
+            padding: 41px 20px 80px;
+
+            .custom-post .content {
+                padding: 14px 20px;
+            }
+        }
+    }
+
+    .tag-calender .text.size-text-14 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        letter-spacing: 0.01em;
+        color: #7E8189;
+    }
+}

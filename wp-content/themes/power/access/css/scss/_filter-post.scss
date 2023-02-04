@@ -1,0 +1,625 @@
+.filter-post-section {
+    background-color: #E5E5E5;
+    padding: 40px 20px 65px 20px;
+
+    img {
+        width: auto;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+
+    .filter-post-container {
+        max-width: 1239px;
+        margin: auto;
+
+        .title-column {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            margin-bottom: 40px;
+
+            h3 {
+                font-weight: 500;
+                font-size: 40px;
+                line-height: 1.2;
+                font-family: 'Manrope';
+                color: #141518;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 1.6;
+                letter-spacing: 0.01em;
+                color: #434449;
+            }
+        }
+
+        .form-filter {
+
+            form,
+            .form {
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 16px;
+                justify-content: space-between;
+
+                .form-filter-search {
+                    border: 1px solid #D1D5DB;
+                    background: #fff;
+                    padding: 10.2px 16px 10.2px 14px;
+                    border-radius: 2px;
+                    width: 18.45%;
+                    position: relative;
+                    max-height: 48px;
+
+                    svg {
+                        margin-right: 7px;
+                    }
+
+                    input {
+                        border: none;
+                        outline: none;
+                        font-size: 16px;
+                        letter-spacing: 0.01em;
+                        font-weight: 300;
+                        line-height: 1.6;
+                        color: #7E8189;
+                        width: 80%;
+                    }
+                }
+
+                .form-filter-type {
+                    border: 1px solid #D1D5DB;
+                    background: #fff;
+                    border-radius: 2px;
+                    width: 18.47%;
+                    position: relative;
+                    max-height: 48px;
+
+                    &::after {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-right: 2px solid #434449;
+                        border-bottom: 2px solid #434449;
+                        position: absolute;
+                        right: 20px;
+                        top: 45%;
+                        transform: rotate(45deg) translateY(-50%);
+                    }
+
+                    select {
+                        width: 100%;
+                        padding: 10.2px 16px 10.2px 16px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 1.6;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+
+                    }
+                }
+
+                .form-filter-field {
+                    border: 1px solid #D1D5DB;
+                    background: #fff;
+                    border-radius: 2px;
+                    width: 18.47%;
+                    position: relative;
+
+                    max-height: 48px;
+
+                    &::after {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-right: 2px solid #434449;
+                        border-bottom: 2px solid #434449;
+                        position: absolute;
+                        right: 20px;
+                        top: 45%;
+                        transform: rotate(45deg) translateY(-50%);
+                    }
+
+                    select {
+                        width: 100%;
+                        padding: 10.2px 16px 10.2px 16px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 1.6;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+
+                    }
+                }
+
+                .form-filter-area {
+                    border: 1px solid #D1D5DB;
+                    background: #fff;
+                    border-radius: 2px;
+                    width: 472px;
+                    width: 18.47%;
+                    position: relative;
+                    max-height: 48px;
+
+                    &::after {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-right: 2px solid #434449;
+                        border-bottom: 2px solid #434449;
+                        position: absolute;
+                        right: 20px;
+                        top: 45%;
+                        transform: rotate(45deg) translateY(-50%);
+                    }
+
+                    select {
+                        padding: 10.2px 16px 10.2px 14px;
+                        width: 100%;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 1.6;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+
+                    }
+                }
+
+                .form-filter-company {
+                    border: 1px solid #D1D5DB;
+                    background: #fff;
+                    border-radius: 2px;
+                    width: 18.47%;
+                    position: relative;
+
+                    max-height: 48px;
+
+                    &::after {
+                        content: '';
+                        width: 8px;
+                        height: 8px;
+                        border-right: 2px solid #434449;
+                        border-bottom: 2px solid #434449;
+                        position: absolute;
+                        right: 20px;
+                        top: 45%;
+                        transform: rotate(45deg) translateY(-50%);
+                    }
+
+                    select {
+                        width: 100%;
+                        padding: 10.2px 16px 10.2px 16px;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 1.6;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+                    }
+                }
+
+                .button-submit {
+                    width: 10.65%;
+
+                    .btn-submit {
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 1.4;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                        width: 100%;
+                    }
+                }
+
+                .button-reset {
+                    width: 9.76%;
+
+                    .btn-reset {
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 1.4;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                        background: transparent;
+                        color: #7E8189;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .filter-content {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            row-gap: 30px;
+            gap: 30px;
+
+            .filter-item {
+                width: calc(100%/3 - 20px);
+                background: #fff;
+                border-radius: 2px;
+
+                .item-content {
+                    padding: 26px 24px 11px 21px;
+
+                    .content-title {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        h6 {
+                            font-family: 'Manrope';
+                            font-size: 22px;
+                            line-height: 1.3;
+                            letter-spacing: 0.01em;
+                            color: #141518;
+                            margin-bottom: 18px;
+                        }
+
+                        p {
+                            font-weight: 300;
+                            font-size: 16px;
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+                            color: #141518;
+                        }
+
+                    }
+
+                    .filter-company,
+                    .content-hydro-electric,
+                    .content-time,
+                    .content-location {
+                        display: flex;
+                        column-gap: 8.62px;
+                    }
+                }
+            }
+        }
+
+        .filter-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 35px;
+
+            nav.mobile {
+                display: none;
+            }
+
+            nav {
+                ul.custom-pagination {
+                    li.page-item.pagination-prev {
+                        min-width: 40px;
+                        width: 54px;
+
+                        a.page-link {
+                            padding: 5.2px 0 5.2px 8px;
+                        }
+                    }
+
+                    li.page-item.pagination-next {
+                        min-width: 40px;
+
+                        a.page-link {
+                            padding: 5.2px 0;
+                        }
+                    }
+
+                    li.page-item {
+                        background: unset;
+
+                        a.page-link {
+                            font-weight: 400;
+                            font-size: 16px;
+                            line-height: 1.6;
+                            letter-spacing: 0.01em;
+                            color: #434449;
+                            border-radius: 8px;
+                            padding: 5.2px 16.7px;
+                        }
+                    }
+
+                    li.page-item.active {
+                        background: #FAF6F2;
+                        color: #DAA622;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1366px) {
+    .filter-post-section {
+        padding: 62px 100px 65px 100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .filter-post-section {
+        padding: 62px 80px 65px 80px;
+
+        .filter-post-container {
+            .form-filter {
+                form {
+                    .form-filter-type {
+                        select {
+                            width: 100%;
+                        }
+                    }
+
+                    .form-filter-company {
+                        select {
+                            width: 100%;
+                        }
+                    }
+
+                    .button-submit {
+                        .btn-submit {
+                            padding: 0;
+                        }
+                    }
+
+                    .button-reset {
+                        width: calc(100%/9 + 0px);
+
+                        .btn-reset {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .filter-post-section {
+        padding: 62px 64px 65px 64px;
+
+        .filter-post-container {
+            .form-filter {
+                form {
+                    .form-filter-type {
+                        select {
+                            width: 100%;
+                        }
+                    }
+
+                    .form-filter-company {
+                        select {
+                            width: 100%;
+                        }
+                    }
+
+                    .button-submit {
+                        width: calc(100%/8 + 0px);
+                    }
+                }
+            }
+
+            .filter-content {
+                .filter-item {
+                    width: calc(100%/2 - 16px);
+
+                    .filter-image {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .filter-post-section {
+        padding: 62px 48px 65px 48px;
+
+        .filter-post-container {
+            .form-filter {
+                form {
+                    .form-filter-type {
+                        select {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .filter-post-section {
+        padding: 40px 20px 25px 20px;
+
+        .filter-post-container {
+            .title-column {
+                margin-bottom: 27px;
+
+                h3 {
+                    font-size: 28px;
+                }
+
+                p {
+                    margin: 0 -1px;
+                }
+            }
+
+            .form-filter {
+                form {
+                    column-gap: 0;
+                    row-gap: 8px;
+                    justify-content: left;
+
+                    .form-filter-search {
+                        width: 100%;
+                        margin: 0;
+
+                        &::after {
+                            content: '';
+                        }
+
+                        svg {}
+
+                        input {}
+                    }
+
+                    .form-filter-type {
+                        width: 100%;
+                        margin: 0;
+
+                        &::after {
+                            content: '';
+                        }
+
+                        select {
+                            width: 100%;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+
+                        }
+                    }
+
+                    .form-filter-area {
+                        width: 100%;
+                        margin: 0;
+
+                        &::after {
+                            content: '';
+                        }
+
+                        select {
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+
+                        }
+                    }
+
+                    .form-filter-company {
+                        width: 100%;
+                        margin: 0;
+
+                        &::after {
+                            content: '';
+                        }
+
+                        select {
+                            width: 100%;
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                        }
+                    }
+
+                    .button-submit {
+                        width: 124px;
+
+                        .btn-submit {
+                            height: 40px;
+
+                        }
+                    }
+
+                    .button-reset {
+                        width: 113px;
+
+                        .btn-reset {
+                            height: 40px;
+
+                        }
+                    }
+                }
+            }
+
+            .filter-content {
+                row-gap: 22px;
+                margin-top: 28px;
+
+                .filter-item {
+                    width: 100%;
+
+                    .item-content {
+                        .content-title {
+                            h6 {
+                                font-size: 22px;
+                                line-height: 1.3;
+                                letter-spacing: 0.01em;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .filter-navigation {
+                margin-top: 22px;
+
+                nav {
+                    display: flex;
+                }
+
+                nav.mobile {
+                    display: none;
+                    width: 100%;
+
+                    ul.custom-pagination {
+                        justify-content: space-between !important;
+                        padding: 0 5px 0 15px;
+
+                        li.page-item.pagination-prev {
+                            width: unset;
+
+                            a.page-link {
+                                padding: 5.2px 0;
+                            }
+                        }
+
+                        li.page-item {
+                            margin: 0;
+
+                            a.page-link {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

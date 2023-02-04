@@ -1,0 +1,497 @@
+section.tender-notice-banner {
+    padding: 0 100px;
+
+    .container {
+        .content {
+            h3 {
+                margin-bottom: 8px;
+            }
+        }
+
+        .navigation {
+            margin-bottom: 17px;
+        }
+    }
+}
+
+.filter-form {
+	background: #F6F8FC;
+	padding: 32px 100px 40px 100px;
+	display: none;
+	&.active {
+		display: block;
+	}
+
+    .container {
+        .form-filter {
+            display: flex;
+            justify-content: flex-start;
+            gap: 16px;
+
+
+            .filter-btn {
+                &.button-submit {
+                    width: 10.65%;
+                }
+
+                &.button-reset {
+                    margin-left: -8px;
+                    width: 9.92%;
+                }
+            }
+        }
+    }
+}
+
+.infomation-list {
+    background: #fff;
+    padding: 0 100px 80px;
+    display: none;
+
+    &:has(.item-date) {
+        padding: 24px 100px 79px;
+
+        .container {
+            .list {
+                .item {
+                    padding: 30px 0 26.4px;
+
+                    .content {
+                        .tag {
+                            .winning-bid-price {
+                                .price {
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    line-height: 160%;
+                                }
+                            }
+
+                            &+.tag {
+                                margin-top: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+        display: block;
+    }
+
+    .container {
+        .list {
+            .item {
+                border-bottom: 1px solid #D1D5DB;
+                padding: 30px 0 28.5px;
+                position: relative;
+
+                &:has(.item-date) {
+                    display: flex;
+                    gap: 32px;
+
+                    .item-date {
+                        font-style: normal;
+                        font-weight: 500;
+                        text-align: center;
+                        letter-spacing: 0.01em;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        background: #DAA622;
+                        border-radius: 2px;
+                        padding: 12px;
+                        height: 102px;
+                        gap: 4px;
+
+                        .day {
+                            font-family: 'Manrope';
+                            font-size: 40px;
+                            line-height: 120%;
+                            color: #FFFFFF;
+                        }
+
+                        .month-year {
+                            font-family: 'Public Sans';
+                            color: #FFFFFF;
+                            font-size: 16px;
+                            line-height: 160%;
+                        }
+                    }
+
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 2px;
+                    background-color: #DAA622;
+                    bottom: 0;
+                    transition: width .3s ease-in;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    &::after {
+                        width: 100%;
+                    }
+                }
+
+                .head {
+                    .title {
+                        font-family: var(--secondary-font);
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 22px;
+                        line-height: 130%;
+                        display: flex;
+                        align-items: center;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+                        margin-bottom: 16px;
+                    }
+
+                    @media(max-width:767px) {
+                        flex-direction: column;
+
+                        .status {
+                            width: fit-content;
+                            margin-top: 2px;
+                            margin-bottom: 18px;
+                        }
+                    }
+                }
+
+                .content {
+                    .tag {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        gap: 8px;
+
+                        &+.tag {
+                            margin-top: 11px;
+                        }
+
+                        .item-child {
+                            display: flex;
+                            gap: 8px;
+                        }
+
+                        span {
+                            font-weight: 300;
+                            font-size: 16px;
+                            line-height: 160%;
+                            letter-spacing: 0.01em;
+                            color: #141518;
+                            margin-bottom: 10px;
+
+                            strong {
+                                font-weight: 500;
+                            }
+
+                            &::before {
+                                margin-right: 8px;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            .item:has(.status-expired) {
+                opacity: 0.6;
+            }
+        }
+
+        .pagination {
+            justify-content: center;
+            margin-top: 30px;
+        }
+    }
+
+}
+
+@media (max-width: 1200px) {
+    section.tender-notice-banner {
+        padding: 0 100px;
+
+        .container {
+            .content {
+                top: calc(70% - 34px);
+            }
+
+            .navigation {
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    .filter-form {
+        padding: 32px 100px 31px 100px;
+
+        &.contractor-celection-results-form {
+            padding: 32px 100px 39px 100px;
+        }
+
+        .container {
+            .form-filter {
+                .filter-item {
+                    width: 16.29%;
+
+                    ul {
+                        li {
+                            width: max-content;
+                        }
+                    }
+                }
+
+                .filter-btn {
+                    &.button-submit {
+                        width: 14.15%;
+                    }
+
+                    &.button-reset {
+                        width: 12.97%;
+                    }
+                }
+            }
+        }
+    }
+
+    .infomation-list {
+        padding: 42px 100px 80px;
+
+        &:has(.item-date) {
+            padding: 32px 100px 80px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    section.tender-notice-banner {
+        padding: 0 64px;
+    }
+
+    .filter-form {
+        padding: 32px 64px 32px 64px;
+
+        &.contractor-celection-results-form {
+            padding: 32px 64px 32px 64px;
+        }
+    }
+
+    .infomation-list {
+        padding: 34px 64px;
+
+        &:has(.item-date) {
+            padding: 34px 64px;
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    section.tender-notice-banner {
+        padding: 0 48px;
+    }
+
+    .filter-form {
+        padding: 32px 48px 32px 48px;
+
+        &.contractor-celection-results-form {
+            padding: 32px 48px 32px 48px;
+        }
+    }
+
+    .infomation-list {
+        padding: 18px 48px 48px;
+
+        &:has(.item-date) {
+            padding: 18px 48px 48px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    section.tender-notice-banner {
+        padding: 0 20px;
+
+        .container {
+            .content {
+                top: calc(70% - 15px);
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                p {
+                    font-size: 13px;
+                    padding: 0 22px;
+                }
+            }
+
+            .navigation {
+                margin: 0 0 -6px 0;
+
+                ul {
+                    gap: 20px;
+
+                    li {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .filter-form {
+        padding: 27px 20px 34px 20px;
+
+        &.contractor-celection-results-form {
+            padding: 27px 20px 34px 20px;
+        }
+
+        .container {
+            .form-filter {
+                flex-wrap: wrap;
+                gap: 8px;
+
+                .filter-item {
+                    padding: 11px 16px;
+                    width: 100%;
+
+                    input {
+                        font-size: 12px;
+                    }
+
+                    ul {
+                        &.active {
+                            width: calc(100% + 2px);
+                        }
+
+                        li {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .filter-btn {
+                    &.button-submit {
+                        width: 36.72%;
+
+                    }
+
+                    &.button-reset {
+                        width: 33.73%;
+                    }
+
+                    button {
+                        font-size: 12px;
+                        height: 45px;
+                    }
+                }
+            }
+        }
+    }
+
+    .infomation-list {
+        padding: 28px 20px 51px;
+
+        &:has(.item-date) {
+            padding: 28px 20px 39px;
+
+            .container {
+                .list {
+                    .item {
+                        padding: 24px 0 22.3px;
+
+                        .content {
+                            .tag {
+                                &.winning-bid-price-tag {
+                                    align-items: center;
+                                }
+
+                                span {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .container {
+            .list {
+
+                .item {
+
+                    &:has(.item-date) {
+                        flex-direction: column;
+                        gap: 16px;
+
+                        .item-date {
+                            width: 84px;
+                            height: 92px;
+                            gap: 8px;
+
+                            .day {
+                                font-size: 32px;
+                            }
+
+                            .month-year {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    padding: 24px 0 22px;
+
+                    .content {
+                        .tag {
+                            align-items: flex-start;
+                            justify-content: flex-start;
+
+                            &+.tag {
+                                margin-top: 10px;
+                            }
+
+                            .item-child {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 2px;
+                            }
+
+                            span {
+                                font-size: 13px;
+
+                                strong {
+                                    font-weight: 500;
+                                    font-size: 16px;
+                                    line-height: 160%;
+                                }
+
+                                &::before {
+                                    margin-right: 8px;
+                                }
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

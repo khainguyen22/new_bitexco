@@ -1,0 +1,382 @@
+.contact-content {
+    background-color: #fff;
+    .container {
+        max-width: 100%;
+        .contact-box {
+            display: flex;
+            justify-content: space-between;
+            .contact-form {
+                background-color: #fff;
+                padding: 60px 68px 100px 101px;
+                width: 53.68%;
+
+                .title {
+                    margin-bottom: 30px;
+                }
+
+                .form-group {
+                    .field {
+                        background: #FFFFFF;
+                        border-radius: 2px;
+
+                        &.departmenmt {
+                            p {
+                                position: relative;
+                                .tag-dropdown {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 50%;
+                                    transform: translateY(calc(-50% + 3px));
+                                }
+                            }
+                        }
+
+                        select {
+                            outline: none;
+                            padding: 10px 16px;
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 160%;
+                            letter-spacing: 0.01em;
+                            color: #141518;
+                            border: none;
+                            border: 1px solid #D1D5DB;
+                            width: 100%;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            height: 48px;
+                          
+                        }
+                        input {
+                            outline: none;
+                            padding: 10px 16px;
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 160%;
+                            letter-spacing: 0.01em;
+                            color: #7E8189;
+                            border: none;
+                            border: 1px solid #D1D5DB;
+                            width: 100%;
+                            height: 48px;
+                        }
+                        textarea {
+                            border: 1px solid #D1D5DB;
+                            width: 100%;
+                            height: 110px;
+                        }
+                        .label {
+                            margin: 16px 0 4px 0;
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 160%;
+                            letter-spacing: 0.01em;
+                            color: #434449;
+                            span {
+                                color: #DD2027;
+                                margin-left: 4px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+
+                    .phone-email {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 16px;
+                    }
+
+                    .submit {
+                        margin-top: 30px;
+                        input {
+                            padding: 14px 32px;
+                            background: #DAA622;
+                            border-radius: 2px;
+                            width: 100%;
+                            border: none;
+                            font-family: 'Public Sans';
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 14px;
+                            line-height: 140%;
+                            letter-spacing: 0.04em;
+                            text-transform: uppercase;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
+            .contact-information {
+                padding: 60px 100px 114px 68px;
+                flex: 1;
+                background: linear-gradient(180deg, #F6F8FC 61.26%, rgba(246, 248, 252, 0) 95.98%);
+                .title {
+                    border-bottom: 1px solid #D1D5DB;
+                    padding-bottom: 30px;
+                    margin-bottom: 30px;
+                }
+                .contact-info {
+                    margin-top: 19px;
+                    .d-flex {
+                        gap: 8px;
+                        &.so-may {
+                            margin-top: 8px;
+                            ul {
+                                li {
+                                    letter-spacing: 0.01em;
+                                    &+li {
+                                        margin-top: 5px;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                    .contact-infor-item {
+                        margin-top: 16px;
+                        ul {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .phone {
+                        margin-top: 24px;
+                        .tel {
+                            a:first-child {
+                                padding-left: 6px;
+                            }
+                            .mx-2 {
+                                margin: 0 5px !important;
+                                &:last-child {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .name-company {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .contact-content {
+        .container {
+            .contact-box {
+                .contact-form {
+                    width: 53.68%;
+                    padding: 60px 55px 100px 101px;
+                    .title {
+                        margin-bottom: 25px;
+                    }
+                    .form-group {
+                        .submit {
+                            margin-top: 22px;
+                        }
+                    }
+                }
+                .contact-information {
+                    padding: 60px 100px 114px 55px;
+                    .title {
+                        margin-bottom: 34px;
+                    }
+                    .contact-info {
+                        .d-flex {
+                            &.so-may {
+                                flex-direction: column;
+                                gap: 0;
+                            }
+                        }
+                        .contact-infor-item {
+                            ul {
+                                margin: 5px 0 5px;
+                                li {
+                                    letter-spacing: 0.01em;
+                                }
+                                li + li {
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
+                    }
+                    .name-company {
+                        margin-top: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-content {
+        .container {
+            .contact-box {
+                .contact-form {
+                    width: 50%;
+                    padding: 64px;
+               
+                }
+                .contact-information {
+                    padding: 64px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .contact-content {
+        .container {
+            .contact-box {
+                .contact-form {
+                    padding: 48px;
+               
+                }
+                .contact-information {
+                    padding: 48px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .contact-content {
+    background-color: #fff;
+    .container {
+        max-width: 100%;
+        .contact-box {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            .contact-form {
+                background-color: #fff;
+                padding: 20px 20px 37px 20px;
+                width: 100%;
+                .title {
+                    margin-bottom: 24px;
+                    font-size: 22px;
+                }
+
+                .form-group {
+                    .field {
+                        background: #FFFFFF;
+                        border-radius: 2px;
+
+                        &.departmenmt {
+                            p {
+                                position: relative;
+                                .tag-dropdown {
+                                    position: absolute;
+                                    right: 10px;
+                                    top: 50%;
+                                    transform: translateY(calc(-50% + 3px));
+                                }
+                            }
+                        }
+
+                        select {
+                          
+                        }
+                        input {
+                            
+                        }
+                        textarea {
+                            height: 110px;
+                        }
+                        .label {
+                            span {
+                            }
+                        }
+                    }
+
+                    .phone-email {
+                        flex-direction: column;
+                        gap: 0;
+                    }
+
+                    .submit {
+                        margin-top: 24px;
+                        input {
+                            
+                        }
+                    }
+                }
+            }
+            .contact-information {
+                padding: 28px 20px 68px 20px;
+                .title {
+                    font-size: 22px;
+                    margin-bottom: 25px;
+                    padding-bottom: 24px;
+                }
+              
+                .contact-info {
+                    margin-top: 19px;
+                    .d-flex {
+                        gap: 8px;
+                        &.so-may {
+                            margin-top: 8px;
+                            ul {
+                                li {
+                                    letter-spacing: 0.01em;
+                                    &+li {
+                                        margin-top: 5px;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                    .contact-infor-item {
+                        margin-top: 16px;
+                        ul {
+                            margin-bottom: 0;
+                        }
+                    }
+                    .phone {
+                        margin-top: 20px;
+                        .tel {
+                            a:first-child {
+                                padding-left: 6px;
+                            }
+
+                            a:not(:first-child) {
+                                display: block;
+                            }
+
+                            .mx-2 {
+                                display: none;
+                            }
+
+                            .mx-2 {
+                                margin: 0 5px !important;
+                                &:last-child {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .name-company {
+                    margin-top: 15px;
+                    font-size: 18px;
+                    line-height: 1.6;
+                }
+                .size-text-16 {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+}

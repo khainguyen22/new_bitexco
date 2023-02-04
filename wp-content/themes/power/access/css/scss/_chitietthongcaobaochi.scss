@@ -1,0 +1,120 @@
+.thong-cao-bao-chi-chi-tiet {
+	padding-top: 105px;
+
+	@media (max-width: 1024px) {
+		padding-top: 53px;
+
+	}
+
+	section.article {
+		padding: 0 64px;
+		padding-bottom: 80.5px;
+
+		@media (max-width: 767px) {
+			padding: 0 0 57.5px 0;
+		}
+
+		.article-container {
+
+			article {
+				position: relative;
+
+				.contact-infor {
+					border-left: 2px solid #DAA622;
+					padding-left: 14px;
+					color: #141518;
+					font-weight: 600;
+					font-size: 22px;
+					line-height: 1.3;
+					letter-spacing: 0.01em;
+					margin-bottom: 24px;
+
+					span {
+						display: block;
+						font-size: 16px;
+
+						&:first-child {
+							font-size: 22px;
+							margin-bottom: 16px;
+						}
+
+						&.number-phone,
+						&.email {
+							font-weight: 300;
+						}
+
+						&+span {
+							margin-top: 4px;
+						}
+					}
+				}
+
+				.time-and-source {
+					margin-top: 24px;
+				}
+
+				.attach {
+					margin-top: 24px;
+					margin-bottom: 24px;
+				}
+
+				.social-medias {
+					@media (max-width: 767px) {
+						margin-top: 24px;
+						padding-left: 0;
+					}
+
+					.medias {
+						position: fixed;
+						left: calc((100% - 1236px)/2);
+
+						@media (max-width: 1366px) {
+							left: 0;
+							padding-left: 64px;
+						}
+
+						@media (max-width: 767px) {
+							position: static;
+							padding-left: 0;
+							justify-content: flex-start;
+						}
+					}
+				}
+
+
+			}
+		}
+	}
+}
+
+.hide-on-destop {
+	display: none !important;
+}
+
+@media (max-width: 767px) {
+	.hide-on-mobile {
+		display: none !important;
+	}
+
+	.hide-on-destop {
+		display: block !important;
+	}
+}
+
+section.other-information {
+	.other-container {
+		.other-content {
+			.hydro-electric-news {
+				background-image: url(./../../access/images/kinhdoanhdien.jpg);
+			}
+
+			.production-result {
+				background-image: url(./../../access/images/dichvu.jpg);
+			}
+
+			.bidding-information {
+				background-image: url(./../../access/images/thongtinmoithau.jpg);
+			}
+		}
+	}
+}

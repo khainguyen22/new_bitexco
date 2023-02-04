@@ -1,0 +1,73 @@
+.hover-zoom a {
+
+    overflow: hidden;
+    background-size: 100% 100% !important;
+    background-position: center;
+    transition: background-size 1s ease-in;
+
+    &:hover {
+        display: block;
+        position: relative;
+        background-size: 140% 140% !important;
+        transition: background-size 1s ease-in;
+
+        &::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, rgba(43, 38, 22, 0), rgba(37, 19, 2, 0.582));
+            position: absolute;
+            z-index: 1;
+            transition: background-image 1s ease-in;
+        }
+
+        .text {
+            z-index: 9;
+        }
+    }
+}
+
+.hover-zoom-img {
+
+    overflow: hidden;
+    display: block;
+    transform: scale(1);
+    transition: all 1s ease-in;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right, rgba(43, 38, 22, 0), rgba(37, 19, 2, 0.582));
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: none;
+        transition: all 1s ease-in;
+    }
+
+    img {
+        transform: scale(1);
+        transition: all 1s ease-in;
+        position: relative;
+
+        &:hover {
+            transform: scale(1.5);
+            transition: all 1s ease-in;
+        }
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.5);
+            transition: all 1s ease-in;
+        }
+
+        &::before {
+            display: block;
+            transition: all 1s ease-in;
+        }
+    }
+}

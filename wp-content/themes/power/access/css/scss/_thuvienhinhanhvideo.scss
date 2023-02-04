@@ -1,0 +1,370 @@
+.thu-vien-video {
+	.container.main {
+		nav {
+			margin: 30px 0 88px 0;
+		}
+	}
+}
+
+.video-list {
+	.video-container {
+		.video-content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			row-gap: 30px;
+			margin-top: 54px;
+
+			.video-item-link {
+				width: calc(100%/2 - 15px);
+				.video-item {
+					width: 100%;
+					position: relative;
+					border-radius: 4px;
+					max-height: 340px;
+	
+					&:hover {
+						cursor: pointer;
+						.background-overlay {
+							background-size: 120% 120%;
+							transition: background-size 0.8s ease-in;
+						}
+						.video-button {
+							z-index: 3;
+							svg {
+								path {
+									fill: #DAA622;
+									transition: fill .3s;
+								}
+							}
+						}
+						&::after {
+							width: 100%;
+						}
+					}
+	
+					&::before {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						background: rgba(0, 0, 0, 0.3);
+						width: 100%;
+						height: 100%;
+						z-index: 1;
+						border-radius: 4px;
+					}
+	
+					&::after {
+						content: "";
+						position: absolute;
+						height: 4px;
+						width: 0%;
+						transition: width .3s;
+						background-color: #DAA622;
+						z-index: 3;
+						left: 0;
+						bottom: 0;
+						border-bottom-left-radius: 4px;
+						border-bottom-right-radius: 4px;
+					}
+	
+					.background-overlay {
+						position: absolute;
+						top: 0;
+						width: 100%;
+						height: 100%;
+						background: no-repeat center center;
+						background-size: cover;
+						border-radius: 4px;
+						transition: background-size 0.8s ease-in;
+	
+					}
+	
+					.video-badge {
+						position: absolute;
+						top: 10px;
+						left: 10px;
+						z-index: 2;
+					}
+	
+					.video-button {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, calc(50% - 75px));
+						z-index: 2;
+					}
+	
+					.video-text {
+						padding: 0 20px;
+						position: absolute;
+						bottom: 20px;
+						z-index: 3;
+						h2 {
+							font-family: 'Manrope';
+							font-style: normal;
+							font-weight: 600;
+							font-size: 22px;
+							line-height: 130%;
+							/* identical to box height, or 29px */
+	
+	
+							letter-spacing: 0.01em;
+	
+							/* Neutral / White */
+	
+							color: #FFFFFF;
+						}
+	
+						p.desc {
+	
+							font-family: 'Public Sans';
+							font-style: normal;
+							font-weight: 400;
+							font-size: 13px;
+							line-height: 160%;
+							margin: 12px 0;
+							/* or 21px */
+	
+							letter-spacing: 0.01em;
+	
+							color: #FFFFFF;
+						}
+	
+						.tag {
+							display: flex;
+							align-items: center;
+							column-gap: 8px;
+	
+							p {
+								font-family: 'Public Sans';
+								font-style: normal;
+								font-weight: 400;
+								font-size: 14px;
+								line-height: 160%;
+								/* or 22px */
+	
+								letter-spacing: 0.01em;
+	
+								/* Neutral / White */
+	
+								color: #FFFFFF;
+							}
+						}
+					}
+	
+					iframe {
+						width: 100%;
+						max-height: 340px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.thu-vien-video {
+		section.banner {
+			.content {
+				top: calc(50% + 72px);
+			}
+		}
+		.container.main {
+			.row.fillter {
+				margin: 39px 0 48px 0;
+			}
+		}
+		.video-list {
+			.video-container {
+				.video-content {
+					.video-item-link {
+						.video-item {
+							max-height: 290px;
+							iframe {
+								max-height: 290px;
+							}
+							.video-text {
+								h2 {
+									font-size: 19px;
+								}
+								p.desc {
+									margin: 8px 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.video-list {
+		margin: 0 -20px;
+		.video-container {
+			.video-content {
+				row-gap: 24px;
+				margin-top: 36px;
+	
+				.video-item-link {
+					width: 100%;
+					.video-item {
+						width: 100%;
+						position: relative;
+						border-radius: 4px;
+						max-height: 340px;
+		
+						&:hover {
+							cursor: pointer;
+							.background-overlay {
+								background-size: 120% 120%;
+								transition: background-size 0.8s ease-in;
+							}
+							.video-button {
+								z-index: 3;
+								svg {
+									path {
+										fill: #DAA622;
+										transition: fill .3s;
+									}
+								}
+							}
+							&::after {
+								width: 100%;
+							}
+						}
+		
+						&::before {
+							content: "";
+							position: absolute;
+							top: 0;
+							left: 0;
+							background: rgba(0, 0, 0, 0.3);
+							width: 100%;
+							height: 100%;
+							z-index: 1;
+							border-radius: 4px;
+						}
+		
+						&::after {
+							content: "";
+							position: absolute;
+							height: 4px;
+							width: 0%;
+							transition: width .3s;
+							background-color: #DAA622;
+							z-index: 3;
+							left: 0;
+							bottom: 0;
+							border-bottom-left-radius: 4px;
+							border-bottom-right-radius: 4px;
+						}
+		
+						.background-overlay {
+							position: absolute;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							background: no-repeat center center;
+							background-size: cover;
+							border-radius: 4px;
+							transition: background-size 0.8s ease-in;
+		
+						}
+		
+						.video-badge {
+							position: absolute;
+							top: 10px;
+							left: 10px;
+							z-index: 2;
+						}
+		
+						.video-button {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, calc(50% - 75px));
+							z-index: 2;
+						}
+		
+						.video-text {
+							padding: 0 20px;
+							position: absolute;
+							bottom: 20px;
+							z-index: 3;
+							h2 {
+								font-family: 'Manrope';
+								font-style: normal;
+								font-weight: 600;
+								font-size: 22px;
+								line-height: 130%;
+								/* identical to box height, or 29px */
+		
+		
+								letter-spacing: 0.01em;
+		
+								/* Neutral / White */
+		
+								color: #FFFFFF;
+							}
+		
+							p.desc {
+		
+								font-family: 'Public Sans';
+								font-style: normal;
+								font-weight: 400;
+								font-size: 13px;
+								line-height: 160%;
+								margin: 12px 0;
+								/* or 21px */
+		
+								letter-spacing: 0.01em;
+		
+								color: #FFFFFF;
+							}
+		
+							.tag {
+								display: flex;
+								align-items: center;
+								column-gap: 8px;
+		
+								p {
+									font-family: 'Public Sans';
+									font-style: normal;
+									font-weight: 400;
+									font-size: 14px;
+									line-height: 160%;
+									/* or 22px */
+		
+									letter-spacing: 0.01em;
+		
+									/* Neutral / White */
+		
+									color: #FFFFFF;
+								}
+							}
+						}
+		
+						iframe {
+							width: 100%;
+							max-height: 340px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.thu-vien-video {
+		.container.main {
+			nav {
+				margin: 24px 0 77px 0px;
+			}
+		}
+	}
+}
+
+
+

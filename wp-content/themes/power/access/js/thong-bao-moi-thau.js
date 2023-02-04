@@ -1,0 +1,29 @@
+jQuery(document).ready(function() {
+	$('.filter-item').on('click', function() {
+		$('.filter-item ul.active').removeClass('active')
+		$(this).find('ul').addClass('active')
+	})
+
+	$('body').on('click', function(e) {
+		if(!$(e.target).is('.filter-item ul') 
+		&& !$(e.target).is('.filter-item') 
+		&& !$(e.target).is('.filter-item svg')
+		) {
+			$('.filter-item ul').removeClass('active')
+		}
+	})
+
+	$('.filter-item').on('click', 'ul li', function(e) {
+		$(e.target).closest('ul').find('li.active').removeClass('active')
+		$(e.target).addClass('active')
+	})
+
+	// Navigation on Banner
+	$('.nav').on('click', function () {
+		$('.nav.active').removeClass('active')
+		$(this).addClass('active')
+		$('.tender.active').removeClass('active')
+		$('.tender[data-number=' + $(this).attr('data-number') + ']').addClass('active')
+	})
+
+})
