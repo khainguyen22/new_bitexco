@@ -76,7 +76,7 @@ get_header();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
 
 <script>
- 
+    var data_ty_trong_cong_xuat = <?php echo json_encode($ty_trong_cong_xuat_content_data); ?>;
     window.onload = function() {
         var chart = new CanvasJS.Chart("chartContainer", {
             exportEnabled: true,
