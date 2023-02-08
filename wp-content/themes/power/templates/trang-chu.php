@@ -46,7 +46,8 @@ if ($home_tuyen_dung) {
     $home_tuyen_dung_background = $home_tuyen_dung['background'];
 }
 $home_footer = get_field('home_footer', 'option');
-// print_r($home_san_xuat_kinh_doanh['file']);
+print_r($home_san_xuat_kinh_doanh['file']);
+
 get_header();
 ?>
 

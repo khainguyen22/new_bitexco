@@ -17,6 +17,14 @@ $post_of_outstanding = array(
     'post_type'   => 'events',
     'post_status' => 'publish',
     'posts_per_page' => 3,
+    'meta_query' => array(
+        array(
+            'key' => 'outstanding',
+            'value' => '1',
+            'compare' => 'LIKE'
+        ),
+
+    ),
 );
 $args_filter = array(
     'post_type'   => 'events',
@@ -100,6 +108,7 @@ get_header();
                                                     <span class="text size-text-16"> Từ <?php echo get_field('date'); ?></span>
                                                 </div>
                                             <?php endif; ?>
+
                                             <?php if (get_field('type') == 1) : ?>
                                                 <?php if (get_field('location')) : ?>
                                                     <div class="type d-flex">
@@ -109,7 +118,9 @@ get_header();
                                                                 <circle r="2.65625" transform="matrix(-1 0 0 1 7.90625 7.90625)" stroke="#ffffff" stroke-width="1.5" />
                                                             </svg>
                                                         </div>
-                                                        <span class="text size-text-16"> <?php echo get_field('location'); ?></span>
+                                                        <?php foreach (get_the_terms(get_the_ID(), 'type_events_location') as $key => $value) : ?>
+                                                            <span class="text size-text-16"> <?php echo paint_if_exist($value->name) ?></span>
+                                                        <?php endforeach; ?>
                                                     </div>
                                                 <?php endif; ?>
                                             <?php else : ?>

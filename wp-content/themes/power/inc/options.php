@@ -151,14 +151,8 @@ function my_acf_op_init()
             'menu_title'  => __('Kinh doanh điện'),
             'parent_slug' => $parent['menu_slug'],
         ));
-        // Add sub page.
-        $child = acf_add_options_page(array(
-            'page_title'  => __('Kết quả sản xuất'),
-            'menu_title'  => __('Kết quả sản xuất'),
-            'parent_slug' => $parent['menu_slug'],
-        ));
-          // Add sub page.
-          $child = acf_add_options_page(array(
+           // Add sub page.
+           $child = acf_add_options_page(array(
             'page_title'  => __('Thông tin hữu ích'),
             'menu_title'  => __('Thông tin hữu ích'),
             'parent_slug' => $parent['menu_slug'],

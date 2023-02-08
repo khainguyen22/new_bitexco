@@ -910,6 +910,15 @@ span.tag {
             }
 
         }
+
+        @media(max-width:767px) {
+            max-width: unset;
+            min-width: unset;
+
+            img {
+                width: 100%;
+            }
+        }
     }
 
     .content {
@@ -1248,6 +1257,7 @@ span.tag-name .text {
 .search {
     img {
         height: 100%;
+        width: 100%;
     }
 }
 
@@ -1290,6 +1300,7 @@ span.tag-name .text {
         margin-bottom: 100px;
     }
 }
+
 
 @import './scss/bando';
 @import './scss/chitietbando2';
@@ -1335,4 +1346,4 @@ span.tag-name .text {
 @import './scss/_an-sinh-xa-hoi.scss';
 @import './scss/_su-kien.scss';
 @import './scss/_kinh_doanh_dien.scss';
-@import './scss/_thongtinhuuich.scss';
+@import './scss/_thong-tin-huu-ich.scss';
