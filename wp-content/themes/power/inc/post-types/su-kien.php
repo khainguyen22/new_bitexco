@@ -223,3 +223,43 @@ function register_taxonomy_type_events_formality()
     register_taxonomy('type_events_formality', array(0 => 'events'), $args);
 }
 add_action('init', 'register_taxonomy_type_events_formality', 0);
+
+
+
+// function register_taxonomy_type_events_outstanding()
+// {
+//     $labels = array(
+//         'name'                       => _x('Sự kiện nổi bật', 'Taxonomy General Name', 'shtheme'),
+//         'singular_name'              => _x('Sự kiện nổi bật', 'Taxonomy Singular Name', 'shtheme'),
+//         'menu_name'                  => __('Sự kiện nổi bật', 'shtheme'),
+//         'all_items'                  => __('All Items', 'shtheme'),
+//         'parent_item'                => __('Parent Item', 'shtheme'),
+//         'parent_item_colon'          => __('Parent Item:', 'shtheme'),
+//         'new_item_name'              => __('New Item Name', 'shtheme'),
+//         'add_new_item'               => __('Add New Item', 'shtheme'),
+//         'edit_item'                  => __('Edit Item', 'shtheme'),
+//         'update_item'                => __('Update Item', 'shtheme'),
+//         'view_item'                  => __('View Item', 'shtheme'),
+//         'separate_items_with_commas' => __('Separate items with commas', 'shtheme'),
+//         'add_or_remove_items'        => __('Add or remove items', 'shtheme'),
+//         'choose_from_most_used'      => __('Choose from the most used', 'shtheme'),
+//         'popular_items'              => __('Popular Items', 'shtheme'),
+//         'search_items'               => __('Search Items', 'shtheme'),
+//         'not_found'                  => __('Not Found', 'shtheme'),
+//         'no_terms'                   => __('No items', 'shtheme'),
+//         'items_list'                 => __('Items list', 'shtheme'),
+//         'items_list_navigation'      => __('Items list navigation', 'shtheme'),
+//     );
+//     $args = array(
+//         'hierarchical'              => true,
+//         'label'                     => 'Sự kiện nổi bật',
+//         'show_ui'                   => true,
+//         'query_var'                 => true,
+//         'show_admin_column'         => true,
+//         'rewrite'                   => array(
+//             'slug'  => 'type_events_outstanding',
+//         ),
+//     );
+//     register_taxonomy('type_events_outstanding', array(0 => 'events'), $args);
+// }
+// add_action('init', 'register_taxonomy_type_events_outstanding', 0);

@@ -1,70 +1,5 @@
 
 jQuery(document).ready(function ($) {
-	// $('#upload_file_home_san_xuat_kinh_doanh').on('click', function () {
-	// 	upload()
-	// })
-	// $(document).ready(function () {
-	// 	upload();
-	// });
-	// function upload() {
-	// 	var files = document.querySelector('#upload_file_home_san_xuat_kinh_doanh input').files;
-	// 	// var files = 'https://power.dtts.com.vn/wp-content/uploads/2023/01/file-1.xlsx';
-	// 	if (files.length == 0) {
-	// 		alert("Please choose any file...");
-	// 		return;
-	// 	}
-	// 	var filename = files[0].name;
-	// 	var extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
-	// 	if (extension == '.XLS' || extension == '.XLSX') {
-	// 		//Here calling another method to read excel file into json
-	// 		excelFileToJSON(files[0]);
-	// 	} else {
-	// 		alert("Please select a valid excel file.");
-	// 	}
-	// }
-
-	// //Method to read excel file and convert it into JSON 
-	// function excelFileToJSON(file) {
-	// 	try {
-	// 		var reader = new FileReader();
-	// 		reader.readAsBinaryString(file);
-	// 		reader.onload = function (e) {
-
-	// 			var data = e.target.result;
-	// 			var workbook = XLSX.read(data, {
-	// 				type: 'binary'
-	// 			});
-	// 			var result = {};
-	// 			var firstSheetName = workbook.SheetNames[0];
-	// 			//reading only first sheet data
-	// 			var jsonData = XLSX.utils.sheet_to_json(workbook.Sheets[firstSheetName]);
-	// 			//displaying the json result into HTML table
-	// 			displayJsonToHtmlTable(jsonData);
-	// 		}
-	// 	} catch (e) {
-	// 		console.error(e);
-	// 	}
-	// }
-
-	// //Method to display the data in HTML Table
-	// function displayJsonToHtmlTable(jsonData) {
-	// 	var table = document.getElementById("excel_data");
-	// 	if (jsonData.length > 0) {
-	// 		var htmlData = '<tr><th>Sản lượng ngày</th><th>Sản lượng tháng</th><th>Sản lượng năm</th></tr>';
-	// 		for (var i = 0; i < jsonData.length; i++) {
-	// 			var row = jsonData[i];
-	// 			htmlData += '<tr><td>' + row["Sản lượng ngày"] + '</td><td>' + row["Sản lượng tháng"]
-	// 				+ '</td><td>' + row["Sản lượng năm"] + '</td></tr>';
-	// 		}
-	// 		table.innerHTML = htmlData;
-	// 	} else {
-	// 		table.innerHTML = 'There is no data in Excel';
-	// 	}
-	// }
-
-	// $("#upload_file_home_san_xuat_kinh_doanh").on('click', function (event) {
-
-
 
 	function change_single_select_tax($select) {
 		jQuery('#' + $select + ' input').each(function () {
@@ -174,6 +109,7 @@ jQuery(document).ready(function ($) {
 		$(".search").removeClass("is-active");
 		$(".close-button").removeClass("is-active");
 		$('.main-menu-primary .main-menu-primary-item').removeClass('active');
+		$('.main-menu-primary .main-menu-primary-item').first().addClass('active');
 	});
 
 	$(document).on('click', '.burger.is-active', function () {
@@ -206,7 +142,7 @@ jQuery(document).ready(function ($) {
 	});
 	$(document).on('click', '.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children.is_active', function (e) {
 		$('.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children').removeClass('is_active');
-		$('.main-menu-primary .menu-item-has-children').removeClass('active-default');
+		// $('.main-menu-primary .menu-item-has-children').removeClass('active-default');
 	});
 
 
@@ -282,48 +218,47 @@ jQuery(document).ready(function ($) {
 		]
 	});
 
-	jQuery(".gallery").lightSlider(
-		{
-			gallery: true,
-			item: 1,
-			loop: true,
-			thumbItem: 10,
-			thumbMargin: 12,
-			share: true,
-			download: true,
-			zoom: true,
-			autoplayControls: true,
-			autoplay: true,
-			videojs: true,
-			controls: true,
-			responsive: [
-				{
-					breakpoint: 767,
-					settings: {
-						thumbItem: 5,
-						thumbMargin: 6,
-					}
-				},
-			]
-		});
+	// $(".gallery-project").lightSlider(
+	// 	{
+	// 		gallery: true,
+	// 		item: 1,
+	// 		loop: true,
+	// 		thumbItem: 10,
+	// 		thumbMargin: 12,
+	// 		share: true,
+	// 		download: true,
+	// 		zoom: true,
+	// 		autoplayControls: true,
+	// 		autoplay: true,
+	// 		videojs: true,
+	// 		controls: true,
+	// 		responsive: [
+	// 			{
+	// 				breakpoint: 767,
+	// 				settings: {
+	// 					thumbItem: 5,
+	// 					thumbMargin: 6,
+	// 				}
+	// 			},
+	// 		]
+	// 	});
 
-	jQuery("#imageGallery").lightSlider(
-		{
-			gallery: true,
-			item: 1,
-			loop: true,
-			thumbItem: 6,
-			slideMargin: 10,
-			enableDrag: true,
-			currentPagerPosition: 'left',
-			videojs: true,
-			pager: true,
-			onSliderLoad: function (el) {
-				el.lightGallery({
-					selector: '#imageGallery .lslide'
-				});
-			}
-		});
-	lightGallery(document.getElementById('video-gallery'));
+	// jQuery("#imageGallery").lightSlider(
+	// 	{
+	// 		gallery: true,
+	// 		item: 1,
+	// 		loop: true,
+	// 		thumbItem: 6,
+	// 		slideMargin: 10,
+	// 		enableDrag: true,
+	// 		currentPagerPosition: 'left',
+	// 		videojs: true,
+	// 		pager: true,
+	// 		onSliderLoad: function (el) {
+	// 			el.lightGallery({
+	// 				selector: '#imageGallery .lslide'
+	// 			});
+	// 		}
+	// 	});
+	// lightGallery(document.getElementById('video-gallery'));
 });
-

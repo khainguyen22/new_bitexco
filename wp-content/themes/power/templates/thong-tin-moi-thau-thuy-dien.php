@@ -1,36 +1,39 @@
 <?php
 
 /**
- * Template Name: Thông Báo Mời Thầu
+ * Template Name: Thông tin mời thầu thủy điện
  */
 ?>
 
 <?php get_header() ?>
 <!-- Banner -->
 <?php
-$banner = get_field('tender_notice_banner', 'option');
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+$banner = get_field('project_tender_notice_banner', 'option');
 $navigation = '';
+$main_navigation = '';
 if (isset($banner)) {
 	$navigation = $banner['navigation'];
+	$main_navigation = $banner['main_navigation'];
 }
-
 ?>
-<div class="tender_notice">
+<div class="tender_notice_project">
+
 	<section class="banner tender-notice-banner" style='background-image:url("<?php echo $banner['image']; ?>")'>
 		<div class="container">
 			<div class="content">
 				<h3><?php echo isset($banner['banner_title']) ? $banner['banner_title'] : ""; ?></h3>
 				<p class="size-text-16"><?php echo isset($banner['banner_description']) ? $banner['banner_description'] : ""; ?></p>
 			</div>
-			<div class="navigation">
-				<?php if (isset($navigation)) : ?>
+			<?php if (isset($main_navigation)) : ?>
+				<div class="navigation">
 					<ul>
-						<?php foreach ($navigation as $key => $value) : ?>
-							<li class="nav<?php echo $key == 0 ? ' active' : '' ?>" data-number="<?php echo $key ?>"><?php echo paint_if_exist($value['label']) ?></li>
+						<?php foreach ($main_navigation as $key => $value) : ?>
+							<li class="nav <?php echo  $actual_link == $value['link'] ? 'active' : '' ?>"><a href="<?php echo paint_if_exist($value['link']) ?>"><?php echo paint_if_exist($value['label']) ?></a></li>
 						<?php endforeach; ?>
 					</ul>
-				<?php endif; ?>
-			</div>
+				</div>
+			<?php endif; ?>
 		</div>
 	</section>
 	<!-- End Banner -->
@@ -109,6 +112,21 @@ if (isset($banner)) {
 				</div>
 			</div>
 		</div>
+		<div class="banner">
+			<div class="container">
+				<?php if (isset($navigation)) : ?>
+					<div class="navigation">
+						<ul>
+							<?php foreach ($navigation as $key => $value) : ?>
+								<li class="nav<?php echo $key == 0 ? ' active' : '' ?>" data-number="<?php echo $key ?>">
+									<?php echo paint_if_exist($value['label']) ?>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
 	</section>
 	<!-- End  Filter -->
 
@@ -116,7 +134,7 @@ if (isset($banner)) {
 	<?php
 	$paged = 1;
 	$args = [
-		'post_type' => 'tender_notice',
+		'post_type' => 't_notice_projects',
 		'posts_per_page' => 8,
 		'paged' =>  $paged,
 	];
@@ -300,6 +318,21 @@ if (isset($banner)) {
 				</div>
 			</div>
 		</div>
+		<div class="banner">
+			<div class="container">
+				<?php if (isset($navigation)) : ?>
+					<div class="navigation">
+						<ul>
+							<?php foreach ($navigation as $key => $value) : ?>
+								<li class="nav<?php echo $key == 0 ? ' active' : '' ?>" data-number="<?php echo $key ?>">
+									<?php echo paint_if_exist($value['label']) ?>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div>
 	</section>
 	<!-- End  Filter -->
 
@@ -429,19 +462,21 @@ if (isset($banner)) {
 
 	<!-- Other Section -->
 	<?php
-	$other_info = get_field('tender_notice_other_information', 'option');
+	$other_info = get_field('project_tender_notice_other_information', 'option');
 	?>
-	<section class="other-information">
-		<div class="other-container ">
-			<div class="other-content hover-zoom">
-				<?php if ($other_info) : ?>
+	<?php if ($other_info) : ?>
+		<section class="other-information">
+			<div class="other-container ">
+				<div class="other-content hover-zoom">
+
 					<?php foreach ($other_info as $value) : ?>
 						<a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
 					<?php endforeach; ?>
-				<?php endif; ?>
+
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+	<?php endif; ?>
 	<!-- End Other Section -->
 </div>
 <?php get_footer() ?>

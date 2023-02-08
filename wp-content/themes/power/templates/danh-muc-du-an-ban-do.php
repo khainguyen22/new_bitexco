@@ -54,6 +54,7 @@ get_header();
     </section>
     <section class="map-section">
         <div id="googleMap" style="width:100%; height:708px;"></div>
+        <div class="popup-data"></div>
     </section>
     <?php if ($other_info) : ?>
         <section class="other-information">
@@ -69,22 +70,25 @@ get_header();
     <?php endif; ?>
     <script>
         function myMap() {
+            var styledMapType = new google.maps.StyledMapType([{}]);
 
             var mapProp = {
                 center: new google.maps.LatLng(17.08609183914221, 106.85480302417643),
                 zoom: 6,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
                 mapTypeControl: true,
                 scaleControl: true,
                 streetViewControl: true,
                 rotateControl: true,
-                fullscreenControl: true
+                fullscreenControl: true,
+                label: true,
             };
 
             console.log(google.maps.MapTypeId);
 
             var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-
+            var transitLayer = new google.maps.TransitLayer();
+            transitLayer.setMap(map);
             var LocationsForMap = [
                 ['Hagiang', 22.91014717658154, 105.29492723890908],
                 ['Backan', 22.57618538261618, 105.56143008143711],
@@ -106,7 +110,7 @@ get_header();
                 ['<div class="test">Tayninh</div>', 11.49400726885824, 105.9157459481872],
             ];
 
-            var infowindow = new google.maps.InfoWindow();
+            var infowindow = new google.maps.InfoWindow({});
 
             var marker, i;
 
@@ -116,7 +120,6 @@ get_header();
                     position: new google.maps.LatLng(LocationsForMap[i][1], LocationsForMap[i][2]),
                     map: map,
                     icon: markerImage,
-                    mapTypeId: google.maps.MapTypeId.SATELLITE
                 });
 
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -128,7 +131,8 @@ get_header();
             }
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=myMap">
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1PQnohUd35MSfol6G-6D9m6i6R422_Jg&callback=myMap">
     </script>
 </div>
 <?php

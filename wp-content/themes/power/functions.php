@@ -11,20 +11,23 @@ if (!function_exists('theme_enqueue_styles')) {
     {
         wp_enqueue_style('style-bootstrap', get_stylesheet_directory_uri() . '/access/css/bootstrap.css', array(), false);
         wp_enqueue_style('style-font-awesome', get_stylesheet_directory_uri() . '/access/css/font-awesome.min.css', array(), false);
-        wp_enqueue_style('style-lightgallery', get_stylesheet_directory_uri() . '/access/css/lightgallery.css', array(), false);
+        // wp_enqueue_style('style-lightgallery', get_stylesheet_directory_uri() . '/access/css/lightgallery.css', array(), false);
         wp_enqueue_style('style-lightslider', get_stylesheet_directory_uri() . '/access/css/lightslider.min.css', array(), false);
         wp_enqueue_style('style-slick', get_stylesheet_directory_uri() . '/access/css/slick.min.css', array(), false);
+        // wp_enqueue_style('style-css', get_stylesheet_directory_uri() . '/access/styles/index.css', array(), false);
         wp_enqueue_style('style-scss', get_stylesheet_directory_uri() . '/access/css/index.css', array(), false);
+        // wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/access/styles/custom.css', array(), false);
+
         wp_enqueue_script('script-jquery', get_template_directory_uri() . '/access/js/jquery.min.js', array('jquery'), 1.1, false);
         wp_enqueue_script('script-slick', get_template_directory_uri() . '/access/js/slick.min.js', array('jquery'), 1.1, false);
         wp_enqueue_script('bootstrap-min', get_template_directory_uri() . '/access/js/bootstrap.min.js', array('jquery'), 1.1, false);
         wp_enqueue_script('bootstrap-bundle', get_template_directory_uri() . '/access/js/bootstrap.bundle.min.js', array('jquery'), 1.1, false);
         wp_enqueue_script('carousel-slick', get_template_directory_uri() . '/access/js/carousel-slick.min.js', array('jquery'), 1.1, false);
-        wp_enqueue_script('lightslider', get_template_directory_uri() . '/access/js/lightslider.js', array('jquery'), 1.1, false);
+        // wp_enqueue_script('lightslider', get_template_directory_uri() . '/access/js/lightslider.js', array('jquery'), 1.1, false);
         wp_enqueue_script('fancybox', get_template_directory_uri() . '/access/js/fancybox.umd.js', array('jquery'), 1.1, false);
-        wp_enqueue_script('lightgallery-min', get_template_directory_uri() . '/access/js/lightgallery.min.js', array('jquery'), 1.1, false);
-        wp_enqueue_script('lightgallery', get_template_directory_uri() . '/access/js/lightgallery.js', array('jquery'), 1.1, false);
-        wp_enqueue_script('popper', get_template_directory_uri() . '/access/js/popper.min.js', array('jquery'), 1.1, false);
+        // wp_enqueue_script('lightgallery-min', get_template_directory_uri() . '/access/js/lightgallery.min.js', array('jquery'), 1.1, false);
+        // wp_enqueue_script('lightgallery', get_template_directory_uri() . '/access/js/lightgallery.js', array('jquery'), 1.1, false);
+        // wp_enqueue_script('popper', get_template_directory_uri() . '/access/js/popper.min.js', array('jquery'), 1.1, false);
         wp_enqueue_script('script-function', get_template_directory_uri() . '/access/js/functions.js', array('jquery'), 1.1, false);
         wp_enqueue_script('script-tuyen-dung', get_template_directory_uri() . '/access/js/tuyen-dung.js', array('jquery'), 1.1, false);
         wp_enqueue_script('script-lich-su-phat-trien', get_template_directory_uri() . '/access/js/lich-su-phat-trien.js', array('jquery'), 1.1, false);
@@ -598,6 +601,7 @@ include(get_template_directory() . '/inc/post-types/tai-lieu-co-dong.php');
 include(get_template_directory() . '/inc/post-types/bao-cao-thuong-nien.php');
 include(get_template_directory() . '/inc/post-types/thu-vien.php');
 include(get_template_directory() . '/inc/post-types/thong-bao-moi-thau.php');
+include(get_template_directory() . '/inc/post-types/thong-tin-moi-thau-thuy-dien.php');
 include(get_template_directory() . '/inc/post-types/ket-qua-lua-chon-nha-thau.php');
 include(get_template_directory() . '/inc/post-types/an-sinh-xa-hoi.php');
 include(get_template_directory() . '/inc/post-types/su-kien.php');
