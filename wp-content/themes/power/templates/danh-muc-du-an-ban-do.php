@@ -69,7 +69,6 @@ get_header();
     <?php endif; ?>
     <script>
         function myMap() {
-            var styledMapType = new google.maps.StyledMapType([{}]);
 
             var mapProp = {
                 center: new google.maps.LatLng(17.08609183914221, 106.85480302417643),
@@ -129,8 +128,7 @@ get_header();
             }
         }
     </script>
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1PQnohUd35MSfol6G-6D9m6i6R422_Jg&callback=myMap">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=myMap">
     </script>
 </div>
 <?php

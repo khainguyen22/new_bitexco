@@ -295,19 +295,80 @@ get_header();
                         </section>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="useful-infomation">
-                        <section class="useful-infomation">
-                            <?php foreach ($useful_infomation['item'] as $key => $value) : ?>
-                                <div class="power-production-tab tab">
-                                    <div class="power-production-tab-title tab-title">
-                                        <h2 class="d-flex">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2.5 10.9384C2.5 9.71422 3.06058 8.55744 4.02142 7.79888L9.52142 3.45677C10.9747 2.30948 13.0253 2.30948 14.4786 3.45677L19.9786 7.79888C20.9394 8.55744 21.5 9.71422 21.5 10.9384V17.5C21.5 19.7091 19.7091 21.5 17.5 21.5H16C15.4477 21.5 15 21.0523 15 20.5V17.5C15 16.3954 14.1046 15.5 13 15.5H11C9.89543 15.5 9 16.3954 9 17.5V20.5C9 21.0523 8.55228 21.5 8 21.5H6.5C4.29086 21.5 2.5 19.7091 2.5 17.5L2.5 10.9384Z" stroke="#434449" stroke-width="1.5" />
+                        <section class="infomation-useful">
+                            <div class="container">
+                                <div class="image-version" style="display: block">
+                                    <div class="world-electric-field-magazine-tab tab">
+                                        <div class="power-production-tab-title tab-title d-flex">
+                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" style="visibility: visible">
+                                                <path d="M8.8 13.8L11.3172 11.0891C11.7128 10.6631 12.3872 10.6631 12.7828 11.0891L15.3 13.8M2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5C6.47715 22.5 2 18.0228 2 12.5Z" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round"></path>
                                             </svg>
-                                            <a href="<?php echo paint_if_exist($value['title']) ?>"><?php echo paint_if_exist($value['title']) ?></a>
-                                        </h2>
+                                            <h2><?php _e('Tạp chí ngành điện thế giới')?></h2>
+                                        </div>
+                                        <div class="world-electric-field-magazine item-box d-flex">
+                                            <?php
+                                                $magazines = get_field('world_electric_field_magazine', 'option');
+                                            ?>
+                                            <?php foreach($magazines as $key => $magazine) : ?>
+                                                <div class="item electric" style="background-image: url(<?php echo $magazine['image']?>)">
+                                                    <a href="<?php echo $magazine['url'] ?>"><?php _e($magazine['title'])?></a>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                    <div class="power-production-tab tab">
+                                        <div class="power-production-tab-title tab-title d-flex">
+                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" style="visibility: visible">
+                                                <path d="M8.8 13.8L11.3172 11.0891C11.7128 10.6631 12.3872 10.6631 12.7828 11.0891L15.3 13.8M2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5C6.47715 22.5 2 18.0228 2 12.5Z" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                            <h2><?php _e('Website công ty điện lực thế giới')?></h2>
+                                        </div>
+                                        <div class="world-electric-companies item-box d-flex">
+                                            <?php
+                                                $companies = get_field('world_electric_companies', 'option');
+                                            ?>
+                                            <?php foreach($companies as $key => $company) : ?>
+                                                <div class="item company">
+                                                    <div class="company-item" style="background-image: url(<?php echo $company['logo']?>)"></div>
+                                                    <a href="<?php echo $company['url'] ?>" class="item" style="background-image: url()"><?php  echo $company['title'] ?></a>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
+                                <div class="sitemap-content text-version" style="display: none">
+                                    <div class="power-production-tab tab">
+                                        <div class="power-production-tab-title tab-title d-flex">
+                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" style="visibility: visible">
+                                                <path d="M8.8 13.8L11.3172 11.0891C11.7128 10.6631 12.3872 10.6631 12.7828 11.0891L15.3 13.8M2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5C6.47715 22.5 2 18.0228 2 12.5Z" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                            <h2><?php _e('Tạp chí ngành điện thế giới')?></h2>
+                                        </div>
+                                        <div class="item-box">
+                                            <?php foreach($companies as $key => $company) : ?>
+                                                <div class="text-version-item">
+                                                    <a class="size-text-14" href="<?php echo $company['url'] ?>"><?php _e($company['title'])?></a>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                    <div class="power-production-tab tab">
+                                        <div class="power-production-tab-title tab-title d-flex">
+                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" style="visibility: visible">
+                                                <path d="M8.8 13.8L11.3172 11.0891C11.7128 10.6631 12.3872 10.6631 12.7828 11.0891L15.3 13.8M2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5C22 18.0228 17.5228 22.5 12 22.5C6.47715 22.5 2 18.0228 2 12.5Z" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round"></path>
+                                            </svg>
+                                            <h2><?php _e('Website công ty điện lực thế giới')?></h2>
+                                        </div>
+                                        <div class="item-box">
+                                            <?php foreach($magazines as $key => $magazine) : ?>
+                                                <div class="text-version-item">
+                                                    <a class="size-text-14" href="<?php echo $magazine['url'] ?>"><?php _e($magazine['title'])?></a>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </section>
                     </div>
                 </div>
