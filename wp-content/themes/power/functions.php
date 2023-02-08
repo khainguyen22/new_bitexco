@@ -14,10 +14,7 @@ if (!function_exists('theme_enqueue_styles')) {
         wp_enqueue_style('style-lightgallery', get_stylesheet_directory_uri() . '/access/css/lightgallery.css', array(), false);
         wp_enqueue_style('style-lightslider', get_stylesheet_directory_uri() . '/access/css/lightslider.min.css', array(), false);
         wp_enqueue_style('style-slick', get_stylesheet_directory_uri() . '/access/css/slick.min.css', array(), false);
-        // wp_enqueue_style('style-css', get_stylesheet_directory_uri() . '/access/styles/index.css', array(), false);
         wp_enqueue_style('style-scss', get_stylesheet_directory_uri() . '/access/css/index.css', array(), false);
-        // wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/access/styles/custom.css', array(), false);
-
         wp_enqueue_script('script-jquery', get_template_directory_uri() . '/access/js/jquery.min.js', array('jquery'), 1.1, false);
         wp_enqueue_script('script-slick', get_template_directory_uri() . '/access/js/slick.min.js', array('jquery'), 1.1, false);
         wp_enqueue_script('bootstrap-min', get_template_directory_uri() . '/access/js/bootstrap.min.js', array('jquery'), 1.1, false);
@@ -35,6 +32,7 @@ if (!function_exists('theme_enqueue_styles')) {
         wp_enqueue_script('site-map', get_template_directory_uri() . '/access/js/site-map.js', array('jquery'), 1.1, false);
         wp_enqueue_script('script-thuong-hieu-bitexco', get_template_directory_uri() . '/access/js/thuong-hieu-bitexco.js', array('jquery'), 1.1, false);
         wp_enqueue_script('thong-bao-moi-thau', get_template_directory_uri() . '/access/js/thong-bao-moi-thau.js', array('jquery'), 1.1, false);
+        wp_enqueue_script('thong-tin-huu-ich', get_template_directory_uri() . '/access/js/thong-tin-huu-ich.js', array('jquery'), 1.1, false);
     }
 }
 add_action('init', 'theme_enqueue_styles');
