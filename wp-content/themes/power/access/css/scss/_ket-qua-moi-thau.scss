@@ -2,6 +2,10 @@
     .banner {
         min-height: 400px;
         background-image: url('./../../access/images/banner-thong-tin-moi-thau.png');
+
+        .content p {
+            max-width: 546px;
+        }
     }
 
     .main {
@@ -13,7 +17,7 @@
             background-size: cover;
 
             .information {
-                padding: 80px 0 70px;
+                padding: 80px 100px 70px;
                 margin-bottom: 56px;
                 background: linear-gradient(284.72deg, rgba(218, 166, 34, 0.22) 17.82%, rgba(218, 166, 34, 0) 88.66%);
 
@@ -94,8 +98,10 @@
 
         .bieu-do-san-luong,
         .bieu-do-cong-suat-lap-dat {
+            padding: 0 100px;
+
             .head {
-                margin-top: 80px;
+                margin-top: 25px;
                 margin-bottom: 48px;
 
                 .headding {
@@ -137,9 +143,84 @@
 
         .bieu-do-ti-trong {
             margin-top: 19px;
+            padding: 0 100px;
+            overflow: hidden;
 
             .bieu-do {
-                padding: 66px;
+                padding: 25px 0 38px;
+
+                .wrap_content_bieu-do-ti-trong {
+                    position: relative;
+
+                    .content {
+                        position: absolute;
+                        left: 21%;
+                        top: 23%;
+                        z-index: 2;
+
+                        .label {
+                            font-size: 35px;
+                            line-height: 44px;
+                            margin-bottom: 33px;
+                        }
+
+                        .number {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: end;
+
+                            span {
+                                font-size: 110px;
+                                font-weight: 900;
+                                color: #DAA622;
+                                font-family: "Manrope", sans-serif;
+                            }
+                        }
+
+                        .unit_percent {
+                            font-size: 60px;
+                            line-height: 60px;
+                            font-weight: 900;
+                            color: #DAA622;
+                            margin-right: 20px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: end;
+                        }
+
+                        .unit,
+                        .desc {
+                            font-size: 36px;
+                            line-height: 44px;
+                            text-transform: lowercase;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: end;
+                        }
+
+                        .desc {
+                            margin-top: 20px;
+                        }
+                    }
+                }
+
+                .wrap_bieu-do-ti-trong {
+                    position: relative;
+                    min-height: 800px;
+
+                    #chartContainer {
+                        position: absolute;
+                        height: 800px;
+                        left: -17%;
+                        width: 1000px;
+                        z-index: 1;
+                    }
+
+                    .canvasjs-chart-toolbar,
+                    .canvasjs-chart-credit {
+                        display: none;
+                    }
+                }
             }
         }
 
@@ -165,7 +246,7 @@
         }
 
         .container {
-            padding: 0 100px;
+            padding: 0;
 
             @media(max-width:767px) {
                 padding: 0 20px;

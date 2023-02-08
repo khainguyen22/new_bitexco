@@ -15,12 +15,13 @@ section.tender-notice-banner {
 }
 
 .filter-form {
-	background: #F6F8FC;
-	padding: 32px 100px 40px 100px;
-	display: none;
-	&.active {
-		display: block;
-	}
+    background: #F6F8FC;
+    padding: 32px 100px 40px 100px;
+    display: none;
+
+    &.active {
+        display: block;
+    }
 
     .container {
         .form-filter {
@@ -492,6 +493,27 @@ section.tender-notice-banner {
                     }
                 }
             }
+        }
+    }
+}
+
+.tender_notice_project .filter-form {
+    padding-bottom: 12px;
+
+    .banner {
+        --banner-height: unset;
+        --mobile-banner-height: unset;
+
+        .navigation {
+            margin-top: 58px;
+
+            ul li {
+                color: #000;
+            }
+        }
+
+        &::before {
+            background: unset;
         }
     }
 }

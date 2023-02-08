@@ -234,18 +234,21 @@
 .login {
     #language-switcher {
         display: flex;
-        padding: 4px 8px;
+        padding: 4px 0px;
         width: 148px;
         height: 32px;
         background: #FFFFFF;
         border: 1px solid #D1D5DB;
         border-radius: 2px;
         overflow: hidden;
+        position: relative;
 
         .icon {
             display: flex;
             justify-content: center;
             flex-direction: column;
+            position: absolute;
+            left: 4px;
         }
 
         input {
@@ -255,7 +258,7 @@
         select {
             border: 0px;
             width: 100%;
-            padding: 0 8px;
+            padding: 0 30px;
             min-height: 0;
             font-weight: 500;
             line-height: 160%;
