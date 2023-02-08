@@ -44,7 +44,10 @@ footer {
 
     .copy-right {
         opacity: 0.75;
+        display: flex;
         text-align: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     &.footer-second {
