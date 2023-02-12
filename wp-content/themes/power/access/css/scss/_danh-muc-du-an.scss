@@ -152,3 +152,27 @@
         }
     }
 }
+
+.iw-content-box {
+    padding: 30px;
+    .iw-content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .title {
+        align-items: center;
+        gap: 10px;
+      
+    }
+    .droplets {
+        box-shadow: 0px 5px 20px -10px rgba(43, 24, 8, 0.15);
+    }
+    .location-info-row {
+        align-items: center;
+        gap: 8px;
+    }
+    h6 {
+        margin-bottom: 0;
+    }
+}
