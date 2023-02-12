@@ -281,7 +281,7 @@
         .container {
             .content {
                 z-index: 2;
-                top: calc(50% + 54px);
+                bottom: 40px;
 
                 p {
                     margin-top: 16px;
@@ -400,6 +400,14 @@
 
                         .image {
                             height: 223px;
+                            position: relative;
+
+                            .type {
+                                position: absolute;
+                                bottom: 10px;
+                                right: 10px;
+                                z-index: 1;
+                            }
 
                             img {
                                 object-fit: cover;
@@ -924,14 +932,6 @@
                             }
                         }
                     }
-                }
-            }
-        }
-
-        .opportunity {
-            .container {
-                .content {
-                    top: calc(50% - 5px);
                 }
             }
         }

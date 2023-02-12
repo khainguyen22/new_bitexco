@@ -920,33 +920,35 @@ function render_vacancies($query, $paged = 1)
 						<img src="https://power.dtts.com.vn/wp-content/uploads/2022/12/hot.png" alt="hot">
 					</div>
 				</div>
-				<?php if (get_field("address")) : ?>
-					<div class="info  info-address">
-						<p class="label ">Địa điểm</p>
-						<?php foreach (get_the_terms(get_the_ID(), 'vacancies_location') as $key => $value) : ?>
-							<p class="desc"> <?php echo paint_if_exist($value->name) ?></p>
-						<?php endforeach; ?>
-					</div>
-				<?php endif; ?>
 				<div class="d-flex wrap-info">
-					<div class="info">
-						<p class="label ">Số lượng</p>
-						<p class="desc"><?php echo get_field("amount"); ?></p>
+					<?php if (get_field("address")) : ?>
+						<div class="info  info-address">
+							<p class="label ">Địa điểm</p>
+							<?php foreach (get_the_terms(get_the_ID(), 'vacancies_location') as $key => $value) : ?>
+								<p class="desc"> <?php echo paint_if_exist($value->name) ?></p>
+							<?php endforeach; ?>
+						</div>
+					<?php endif; ?>
+					<div class="d-flex wrap">
+						<div class="info">
+							<p class="label ">Số lượng</p>
+							<p class="desc"><?php echo get_field("amount") ?></p>
+						</div>
+						<?php if (get_field("deadline")) : ?>
+							<div class="info">
+								<p class="label ">Hạn nộp hồ sơ</p>
+								<p class="desc"><?php echo get_field("deadline"); ?></p>
+							</div>
+						<?php endif; ?>
+						<?php if (getPostViews(get_the_ID())) : ?>
+							<div class="info">
+								<p class="label ">Lượt xem</p>
+								<p class="desc"><?php echo getPostViews(get_the_ID()) ?></p>
+							</div>
+						<?php endif; ?>
 					</div>
-					<?php if (get_field("deadline")) : ?>
-						<div class="info">
-							<p class="label ">Hạn nộp hồ sơ</p>
-							<p class="desc"><?php echo get_field("deadline"); ?></p>
-						</div>
-					<?php endif; ?>
-					<?php if (getPostViews(get_the_ID())) : ?>
-						<div class="info">
-							<p class="label ">Lượt xem</p>
-							<p class="desc"><?php echo getPostViews(get_the_ID()) ?></p>
-						</div>
-					<?php endif; ?>
 				</div>
-				<div class="info">
+				<div class="info wrap-btn">
 					<a href="<?php echo the_permalink(); ?>" class="btn btn-detail btn-detail-icon">
 						Xem chi tiết
 						<svg width="16" height="10" viewBox="0 0 16 10" fill="#DAA622" xmlns="http://www.w3.org/2000/svg">

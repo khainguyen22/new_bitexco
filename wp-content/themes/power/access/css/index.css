@@ -824,9 +824,9 @@ span.tag.tag-dropdown::before {
   position: relative;
   min-height: 255px;
   max-width: 400px;
-  max-height: 255px;
   min-width: 400px;
   height: auto;
+  max-height: unset;
 }
 .custom-post .image img {
   transition: all 1s ease-in;
@@ -3132,14 +3132,52 @@ footer.footer-second {
   padding: 0px 100px;
 }
 footer.footer-second .footer-desktop .row-1 {
-  padding: 18px 0 30px;
+  padding: 40px 15px 34px;
+  justify-content: space-between;
 }
-footer.footer-second .footer-desktop .row-1 .title {
-  margin-top: 22px;
-  margin-bottom: 4px;
-}
-footer.footer-second .footer-desktop .row-1 .links .link {
+footer.footer-second .footer-desktop .row-1 .links .item {
   margin-right: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+}
+footer.footer-second .footer-desktop .row-1 .other-links {
+  min-width: 222px;
+  border: 1px solid #D1D5DB;
+  position: relative;
+}
+footer.footer-second .footer-desktop .row-1 .other-links select {
+  border-radius: 2px;
+  padding: 7px 16px;
+  display: block;
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #fff;
+  width: 100%;
+  background-color: #000000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+footer.footer-second .footer-desktop .row-1 .other-links select * {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+footer.footer-second .footer-desktop .row-1 .other-links span {
+  position: absolute;
+  right: 16px;
+  top: 30%;
 }
 footer.footer-second .footer-desktop .row-2 {
   padding: 38px 0 30px;
@@ -3203,12 +3241,22 @@ footer.footer-second .footer-top ul li:last-child {
   margin-bottom: 0;
 }
 footer.footer-second .footer {
-  padding: 44px 0;
+  padding: 25px 0 40px 0;
 }
 
+@media (max-width: 1366px) {
+  footer.footer-second {
+    padding: 0 60px;
+  }
+}
 @media (max-width: 1200px) {
   footer.footer-second .footer-top .box-2 {
     margin-left: 85px;
+  }
+}
+@media (max-width: 1366px) {
+  footer.footer-second {
+    padding: 0 20px;
   }
 }
 @media (max-width: 767px) {
@@ -3397,6 +3445,9 @@ footer.footer-second .footer {
 .header .top-header .nav-langue {
   margin-left: 33.3px;
 }
+.header .top-header .nav-langue .languages #google_language_translator .goog-te-gadget .goog-te-combo {
+  width: fit-content;
+}
 .header .top-header .nav-langue .languages svg {
   max-width: 16px;
   margin-right: -2px;
@@ -3407,6 +3458,9 @@ footer.footer-second .footer {
 .header .top-header .nav-langue .languages select {
   color: #fff;
   padding: 0;
+}
+.header .top-header .nav-langue .languages select option {
+  text-transform: uppercase;
 }
 .header .top-header .nav-item {
   display: flex;
@@ -4087,6 +4141,16 @@ header .search .search-bar:hover::after {
     border-bottom: none;
   }
 }
+@media (max-width: 1366px) {
+  .tin-tuc .banner.list .container .navigation {
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1024px) {
+  .tin-tuc .banner.list .container .navigation {
+    padding: 0 20px;
+  }
+}
 @media (max-width: 767px) {
   .tin-tuc .banner.list {
     min-height: 300px;
@@ -4133,6 +4197,22 @@ header .search .search-bar:hover::after {
   transform: scale(1.3);
   transition: all 1s ease-out;
 }
+@media (max-width: 1300px) {
+  .tin-tuc .content-container .news-post .tin-noi-bat .image {
+    height: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .tin-tuc .content-container .news-post .tin-noi-bat .image {
+    position: relative;
+  }
+}
+@media (max-width: 767px) {
+  .tin-tuc .content-container .news-post .tin-noi-bat .image::before {
+    width: 100%;
+    left: 0px;
+  }
+}
 .tin-tuc .content-container .news-post .tin-noi-bat .img-banner {
   border-radius: 2px;
   height: 100%;
@@ -4154,6 +4234,7 @@ header .search .search-bar:hover::after {
     font-size: 18px;
   }
   .tin-tuc .content-container .news-post .tin-noi-bat .img-banner {
+    border-radius: unset;
     margin-top: 6px;
     min-height: unset;
     height: 520px;
@@ -4221,6 +4302,18 @@ header .search .search-bar:hover::after {
 @media (max-width: 1300px) {
   .tin-tuc .content-container .news-post .tin-moi-nhat-wrap .tin-moi-nhat-item .image {
     height: 189px;
+    min-width: 200px;
+  }
+}
+@media (max-width: 991px) {
+  .tin-tuc .content-container .news-post .tin-moi-nhat-wrap .tin-moi-nhat-item .image {
+    min-width: 292px;
+  }
+}
+@media (max-width: 767px) {
+  .tin-tuc .content-container .news-post .tin-moi-nhat-wrap .tin-moi-nhat-item .image {
+    height: 250px;
+    min-width: unset;
   }
 }
 .tin-tuc .content-container .news-post .tin-moi-nhat-wrap .tin-moi-nhat-item .image:hover img {
@@ -4232,7 +4325,7 @@ header .search .search-bar:hover::after {
   position: absolute;
   z-index: 1;
   height: 160px;
-  width: 292px;
+  width: 100%;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -4252,6 +4345,7 @@ header .search .search-bar:hover::after {
 }
 @media (max-width: 767px) {
   .tin-tuc .content-container .news-post .tin-moi-nhat-wrap .tin-moi-nhat-item .image .img-banner {
+    height: 100%;
     max-width: unset;
   }
 }
@@ -4359,9 +4453,9 @@ header .search .search-bar:hover::after {
     margin-right: 20px;
   }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1366px) {
   .tin-tuc .content-container {
-    padding: 60px 100px 1px;
+    padding: 60px 60px 1px;
   }
   .tin-tuc .content-container .container {
     padding: 0;
@@ -4369,8 +4463,10 @@ header .search .search-bar:hover::after {
 }
 @media (max-width: 1024px) {
   .tin-tuc .content-container {
-    padding: 60px 40px 10px;
+    padding: 60px 20px 10px;
   }
+}
+@media (max-width: 991px) {
   .tin-tuc .content-container .tin-moi-nhat-wrap {
     margin-top: 20px;
   }
@@ -4543,6 +4639,9 @@ header .search .search-bar:hover::after {
     max-width: unset;
     width: 49%;
   }
+  .tin-tuc .lists-post .row.fillter .form-filter .form .form-filter-date input {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   .tin-tuc .lists-post .row.fillter .form-filter .form .form-filter-date {
@@ -4609,30 +4708,58 @@ header .search .search-bar:hover::after {
 }
 .tin-tuc .lists-post .list .custom-post .content h6 {
   margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
-@media (max-width: 1200px) {
-  .tin-tuc .lists-post .list .custom-post img {
-    min-height: 281px;
-    height: auto;
+.tin-tuc .lists-post .list .custom-post .content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@media (max-width: 1360px) {
+  .tin-tuc .lists-post .list .custom-post {
+    height: 300px;
+  }
+  .tin-tuc .lists-post .list .custom-post .image {
+    min-width: 300px;
+    max-height: unset;
+  }
+  .tin-tuc .lists-post .list .custom-post .image img {
+    min-width: 300px;
+    max-height: unset;
+    height: 100%;
   }
 }
 @media (max-width: 767px) {
-  .tin-tuc .lists-post .list .custom-post img {
+  .tin-tuc .lists-post .list .custom-post {
+    height: 100%;
+  }
+  .tin-tuc .lists-post .list .custom-post .image {
+    max-height: 300px;
+    min-width: unset;
+  }
+  .tin-tuc .lists-post .list .custom-post .image img {
+    height: 250px;
     max-width: unset;
     min-width: unset;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1366px) {
   .tin-tuc .lists-post {
-    padding: 28px 100px 52px;
+    padding: 28px 60px 52px;
   }
 }
 @media (max-width: 1024px) {
   .tin-tuc .lists-post {
-    padding: 20px 40px 20px;
+    padding: 20px 20px 20px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .tin-tuc .lists-post {
     padding: 41px 20px 30px;
   }
@@ -7019,19 +7146,9 @@ section.related-news .article-container .related-news-content .related-item .ite
   min-width: 240px;
   justify-content: space-between;
 }
-@media (max-width: 1200px) {
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.info-address {
-    min-width: 115px;
-    margin-left: -32px;
-  }
-}
 @media (max-width: 767px) {
   .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.info-position {
     min-width: unset;
-  }
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.info-address {
-    min-width: unset;
-    margin-left: 0;
   }
 }
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .hot {
@@ -7072,15 +7189,18 @@ section.related-news .article-container .related-news-content .related-item .ite
   line-height: 160%;
   letter-spacing: 0.01em;
 }
-.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .btn-detail-icon {
-  transform: translateY(25%);
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.wrap-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.wrap-btn .btn-detail-icon {
   color: #DAA622;
   max-height: 40px;
-  margin-top: 10px;
   padding: 10px 26px;
   line-height: 1.4;
 }
-.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .btn-detail-icon:hover {
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.wrap-btn .btn-detail-icon:hover {
   color: #FFF;
 }
 @media (max-width: 767px) {
@@ -7091,26 +7211,37 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
 }
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
-  column-gap: 84px;
-  margin-right: -44px;
-  margin-left: 82px;
+  justify-content: space-between;
+  min-width: 52%;
+  padding: 0 10px;
 }
-@media (max-width: 1200px) {
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
-    column-gap: 8px;
-    margin-right: 0;
-    margin-left: 0;
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .info-address {
+  margin-right: 15px;
+}
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .wrap .info {
+  margin-right: 84px;
+}
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .wrap .info:last-child {
+  margin: 0;
+}
+@media (max-width: 1360px) {
+  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .wrap .info {
+    margin-right: 15px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1360px) {
   .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .danh-sach-tuyen-dung .main .content .infomation-list .list .item {
     flex-wrap: wrap;
-    row-gap: 12px;
   }
 }
 @media (max-width: 1024px) {
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item {
-    flex-wrap: wrap;
+  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
+    padding: 0;
   }
 }
 @media (max-width: 767px) {
@@ -7146,6 +7277,7 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
 }
 .danh-sach-tuyen-dung .main .gui-ho-so {
+  margin-bottom: 88px;
   padding-top: 60px;
 }
 .danh-sach-tuyen-dung .main .gui-ho-so .col-left {
@@ -7219,11 +7351,13 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 @media (max-width: 1200px) {
   .danh-sach-tuyen-dung .main .gui-ho-so {
+    margin-bottom: 60px;
     padding-top: 45px;
   }
 }
 @media (max-width: 767px) {
   .danh-sach-tuyen-dung .main .gui-ho-so {
+    margin-bottom: 40px;
     padding-top: 30px;
   }
   .danh-sach-tuyen-dung .main .gui-ho-so .row {
@@ -7690,7 +7824,7 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 .tuyen-dung .opportunity .container .content {
   z-index: 2;
-  top: calc(50% + 54px);
+  bottom: 40px;
 }
 .tuyen-dung .opportunity .container .content p {
   margin-top: 16px;
@@ -7784,6 +7918,13 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .life-in-bitexco-content .content-item .image {
   height: 223px;
+  position: relative;
+}
+.tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .life-in-bitexco-content .content-item .image .type {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1;
 }
 .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .life-in-bitexco-content .content-item .image img {
   object-fit: cover;
@@ -8169,9 +8310,6 @@ section.related-news .article-container .related-news-content .related-item .ite
     line-height: 1.6;
     letter-spacing: 0.01em;
     color: #434449;
-  }
-  .tuyen-dung .opportunity .container .content {
-    top: calc(50% - 5px);
   }
 }
 @media (max-width: 1024px) {
@@ -8868,19 +9006,9 @@ section.related-news .article-container .related-news-content .related-item .ite
   min-width: 240px;
   justify-content: space-between;
 }
-@media (max-width: 1200px) {
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.info-address {
-    min-width: 115px;
-    margin-left: -32px;
-  }
-}
 @media (max-width: 767px) {
   .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.info-position {
     min-width: unset;
-  }
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.info-address {
-    min-width: unset;
-    margin-left: 0;
   }
 }
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .hot {
@@ -8921,15 +9049,18 @@ section.related-news .article-container .related-news-content .related-item .ite
   line-height: 160%;
   letter-spacing: 0.01em;
 }
-.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .btn-detail-icon {
-  transform: translateY(25%);
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.wrap-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.wrap-btn .btn-detail-icon {
   color: #DAA622;
   max-height: 40px;
-  margin-top: 10px;
   padding: 10px 26px;
   line-height: 1.4;
 }
-.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .btn-detail-icon:hover {
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .info.wrap-btn .btn-detail-icon:hover {
   color: #FFF;
 }
 @media (max-width: 767px) {
@@ -8940,26 +9071,37 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
 }
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
-  column-gap: 84px;
-  margin-right: -44px;
-  margin-left: 82px;
+  justify-content: space-between;
+  min-width: 52%;
+  padding: 0 10px;
 }
-@media (max-width: 1200px) {
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
-    column-gap: 8px;
-    margin-right: 0;
-    margin-left: 0;
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .info-address {
+  margin-right: 15px;
+}
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .wrap .info {
+  margin-right: 84px;
+}
+.danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .wrap .info:last-child {
+  margin: 0;
+}
+@media (max-width: 1360px) {
+  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info .wrap .info {
+    margin-right: 15px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1360px) {
   .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1100px) {
+  .danh-sach-tuyen-dung .main .content .infomation-list .list .item {
     flex-wrap: wrap;
-    row-gap: 12px;
   }
 }
 @media (max-width: 1024px) {
-  .danh-sach-tuyen-dung .main .content .infomation-list .list .item {
-    flex-wrap: wrap;
+  .danh-sach-tuyen-dung .main .content .infomation-list .list .item .wrap-info {
+    padding: 0;
   }
 }
 @media (max-width: 767px) {
@@ -8995,6 +9137,7 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
 }
 .danh-sach-tuyen-dung .main .gui-ho-so {
+  margin-bottom: 88px;
   padding-top: 60px;
 }
 .danh-sach-tuyen-dung .main .gui-ho-so .col-left {
@@ -9068,11 +9211,13 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 @media (max-width: 1200px) {
   .danh-sach-tuyen-dung .main .gui-ho-so {
+    margin-bottom: 60px;
     padding-top: 45px;
   }
 }
 @media (max-width: 767px) {
   .danh-sach-tuyen-dung .main .gui-ho-so {
+    margin-bottom: 40px;
     padding-top: 30px;
   }
   .danh-sach-tuyen-dung .main .gui-ho-so .row {
@@ -9977,7 +10122,12 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   bottom: 0;
   background: linear-gradient(0deg, rgba(125, 125, 163, 0.81) 28.83%, rgba(13, 13, 14, 0) 100%);
 }
+.bitxeco-brand-page section.bitexco-brand .container .content {
+  max-width: 631px;
+  width: 100%;
+}
 .bitxeco-brand-page section.bitexco-brand .container .content h3 {
+  padding: 0 130px;
   margin-bottom: 16px;
   color: #fff;
 }
@@ -9995,6 +10145,10 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .bitxeco-brand-page section.power-enviroment.social-responsibility .values .the-values-image {
   width: 49%;
+  height: auto;
+}
+.bitxeco-brand-page section.power-enviroment.social-responsibility .values .the-values-image img {
+  height: 100%;
 }
 .bitxeco-brand-page section.power-enviroment.social-responsibility .values .the-values {
   padding-left: 77px;
@@ -10207,8 +10361,6 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   min-height: 530px;
   height: 530px;
   width: 12.9%;
-  background: rgba(13, 13, 14, 0.4);
-  backdrop-filter: blur(6px);
   background-repeat: no-repeat;
   flex-direction: column;
   justify-content: flex-end;
@@ -10217,15 +10369,19 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   flex: unset;
   padding: 40px 20px 40px 20px;
   transition: width 0.3s;
+  position: relative;
 }
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.active {
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0.5) 45.16%, rgba(0, 0, 0, 0) 100%), url(image.png);
   backdrop-filter: unset;
   padding: 0;
   background-repeat: no-repeat;
   flex: unset;
   width: 49.5%;
   padding: 40px 106px 40px 100px;
+}
+.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.active::before {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 44.84%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(0px);
 }
 @keyframes fade-in {
   0% {
@@ -10253,27 +10409,6 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   transition-delay: 0.3s;
   animation: fade-in 0.4s ease-in;
 }
-.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.resources {
-  background-image: url(../../access/images/people.jpg);
-  background-size: cover;
-  left: 0;
-}
-.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.grow {
-  background-image: url(../../access/images/grow.png);
-  background-size: cover;
-}
-.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.responsibility {
-  background-image: url(../../access/images/people.jpg);
-  background-size: cover;
-}
-.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.enviroment {
-  background-image: url(../../access/images/people.jpg);
-  background-size: cover;
-}
-.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.customers {
-  background-image: url(../../access/images/people.jpg);
-  background-size: cover;
-}
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value h6.numberical-order {
   font-family: "Manrope";
   font-style: normal;
@@ -10282,6 +10417,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   line-height: 130%;
   letter-spacing: 0.01em;
   color: #DAA622;
+  z-index: 2;
 }
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value h6.title {
   font-family: "Manrope";
@@ -10290,6 +10426,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   line-height: 120%;
   color: #FFFFFF;
   margin: 0;
+  z-index: 2;
 }
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value p.desc {
   font-family: "Public Sans";
@@ -10303,6 +10440,24 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   margin: 0;
   visibility: hidden;
   height: 0;
+  z-index: 2;
+}
+.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value:hover::before {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 44.84%, rgba(0, 0, 0, 0) 100%);
+  backdrop-filter: blur(0px);
+}
+.bitxeco-brand-page section.core-value .core-value-container .core-value-content .value::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 13, 14, 0.4);
+  backdrop-filter: blur(6px);
+  z-index: 1;
 }
 .bitxeco-brand-page section.core-value .core-value-container .content {
   max-width: 1240px;
@@ -14306,7 +14461,7 @@ section.tender-notice-banner .container .navigation {
 }
 
 .custom-single-page {
-  margin-top: 70px;
+  margin-top: 106px;
   background: #fff;
 }
 .custom-single-page .breadcrumbs {

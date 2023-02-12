@@ -881,12 +881,11 @@ span.tag {
     .image {
         overflow: hidden;
         position: relative;
-        min-height: 255px;
+        min-height: 255px; 
         max-width: 400px;
-        max-height: 255px;
         min-width: 400px;
         height: auto;
-
+        max-height: unset;
         img {
             transition: all 1s ease-in;
         }
