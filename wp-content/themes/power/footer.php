@@ -6,17 +6,29 @@ $home_footer = get_field('home_footer', 'option');
     <div class="footer-desktop">
         <div class="container">
             <div class="row row-1 d-flex flex-wrap">
-                <div class="d-flex links">
-                    <a href="#" class="item ">Về Bitexco Power</a>
-                    <a href="#" class="item ">Sản xuất điện</a>
-                    <a href="#" class="item ">Sơ đồ website</a>
-                    <a href="#" class="item ">Liên hệ</a>
-                </div>
-                <div class="other-links">
-                    <select name="other-links" id="other-links">
-                        <option value="aa">Link liên kết</option>
-                    </select>
-                </div>
+                <?php if ($home_footer['content']['links']) : ?>
+                    <div class="d-flex links">
+                        <?php foreach ($home_footer['content']['links'] as $value) : ?>
+                            <a class="link item " href="<?php echo  $value['link'] ?>"><?php echo  $value['label'] ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+                <?php if ($home_footer['content']['other_links']) : ?>
+                    <div class="other-links d-flex">
+                        <select name="other_links" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+                            <?php foreach ($home_footer['content']['other_links'] as $value) : ?>
+                                <a class="link item " href="<?php echo  $value['link'] ?>">
+                                    <option name="other_links " value=" <?php echo  $value['link'] ?>"><?php echo  $value['label'] ?></option>
+                                </a>
+                            <?php endforeach; ?>
+                        </select>
+                        <span>
+                            <svg width="16" height="7" viewBox="0 0 16 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1.3125L7.364 5.29C7.75313 5.5332 8.24687 5.5332 8.636 5.29L15 1.3125" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                    </div>
+                <?php endif; ?>
             </div>
             <span class="driver"></span>
             <div class="row  row-2 d-flex flex-wrap">
@@ -71,7 +83,7 @@ $home_footer = get_field('home_footer', 'option');
                     Bitexco Power
                 </div>
                 <?php if ($home_footer['content']['address']) : ?>
-                    <div class="col-12 col-lg-4">
+                    <div class=" ">
                         <div class="address size-text-16">
                             <?php echo _e($home_footer['content']['address']) ?>
                         </div>

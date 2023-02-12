@@ -65,6 +65,10 @@
       margin-left: 33.3px;
 
       .languages {
+        #google_language_translator .goog-te-gadget .goog-te-combo {
+          width: fit-content;
+        }
+
         svg {
           max-width: 16px;
           margin-right: -2px;
@@ -77,6 +81,10 @@
         select {
           color: #fff;
           padding: 0;
+
+          option {
+            text-transform: uppercase;
+          }
         }
       }
     }

@@ -149,11 +149,10 @@ jQuery(document).ready(function ($) {
 	// home slider
 
 	$('.home-slide-carousel').slick({
-
 		nextArrow: '<i class="fas fa-chevron-right slick-next"></i>',
 		prevArrow: '<i class="fas fa-chevron-left slick-prev"></i>',
-		autoplay: false,
-		autoplaySpeed: 2000,
+		autoplay: true,
+		autoplaySpeed: 5000,
 		dots: true,
 		vertical: true,
 		arrows: false,
