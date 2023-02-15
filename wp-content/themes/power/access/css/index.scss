@@ -1301,6 +1301,37 @@ span.tag-name .text {
 }
 
 
+.skiptranslate {
+    display: none;
+}
+
+.skiptranslate.goog-te-gadget {
+    display: block;
+}
+section.banner.not_navigation .content {
+    max-height: 191px;
+    overflow: hidden;
+}
+section.period-grow.period-1.active .grow-content {
+    max-height: 120px;
+}
+.period-line .year .text {
+    max-height: 250px;
+    overflow: hidden;
+}
+span.setting.alt-text.has-description {
+    display: none;
+}
+span.setting[data-setting="description"] {display:none;
+}
+
+
+
+span.setting {}
+
+p#alt-text-description {display:none;}
+
+
 @import './scss/bando';
 @import './scss/chitietbando2';
 @import './scss/_dangki';
