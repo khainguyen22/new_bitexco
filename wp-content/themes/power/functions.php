@@ -36,6 +36,7 @@ if (!function_exists('theme_enqueue_styles')) {
         wp_enqueue_script('script-thuong-hieu-bitexco', get_template_directory_uri() . '/access/js/thuong-hieu-bitexco.js', array('jquery'), 1.1, false);
         wp_enqueue_script('thong-bao-moi-thau', get_template_directory_uri() . '/access/js/thong-bao-moi-thau.js', array('jquery'), 1.1, false);
         wp_enqueue_script('thong-tin-huu-ich', get_template_directory_uri() . '/access/js/thong-tin-huu-ich.js', array('jquery'), 1.1, false);
+        wp_enqueue_script('header', get_template_directory_uri() . '/access/js/header.js', array('jquery'), 1.1, false);
     }
 }
 add_action('init', 'theme_enqueue_styles');
