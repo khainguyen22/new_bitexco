@@ -1203,6 +1203,40 @@ span.tag-name .text {
   margin-bottom: 100px;
 }
 
+.skiptranslate {
+  display: none;
+}
+
+.skiptranslate.goog-te-gadget {
+  display: block;
+}
+
+section.banner.not_navigation .content {
+  max-height: 191px;
+  overflow: hidden;
+}
+
+section.period-grow.period-1.active .grow-content {
+  max-height: 120px;
+}
+
+.period-line .year .text {
+  max-height: 250px;
+  overflow: hidden;
+}
+
+span.setting.alt-text.has-description {
+  display: none;
+}
+
+span.setting[data-setting=description] {
+  display: none;
+}
+
+p#alt-text-description {
+  display: none;
+}
+
 .banner .container {
   max-width: 1240px;
   margin: auto;
