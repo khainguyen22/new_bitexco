@@ -54,7 +54,26 @@ get_header();
     </section>
     <section class="map-section">
         <div id="googleMap" style="width:100%; height:708px;"></div>
-        <div class="popup-data"></div>
+        <div class="popup-data">
+            <div class="map-btn">
+                <svg width="45" height="33" viewBox="0 0 45 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_b_15017_51387)">
+                    <rect width="45" height="33" rx="2" fill="white"/>
+                    <path d="M13 22.5H31" stroke="#007D8F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 16.5H31" stroke="#007D8F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 10.5H31" stroke="#007D8F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_b_15017_51387" x="-20" y="-20" width="85" height="73" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="10"/>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_15017_51387"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_15017_51387" result="shape"/>
+                    </filter>
+                    </defs>
+                </svg>
+            </div>
+        </div>
     </section>
     <?php if ($other_info) : ?>
         <section class="other-information">
@@ -118,26 +137,27 @@ get_header();
 
                 $query = new WP_Query($args);
             ?>
-           
 
-            var locationInfo = '';
-        
-
-            var infowindow = new google.maps.InfoWindow({});
+            var infowindow = new google.maps.InfoWindow({
+            });
           
             var marker, i = 0;
 
             var markerImage = 'https://power.dtts.com.vn/wp-content/uploads/2023/02/Frame-427319445-1.png';
 
+            let locationInfo = '';
+            
+
             <?php if ($query->have_posts(  )) : ?>
                 <?php while($query->have_posts(  )) : $query->the_post(  )?>
+                    locationInfo = '';
                     locationInfo += '<div class="iw-content-box">';
                         locationInfo += '<div class="iw-content">';
                             locationInfo += '<div class="title d-flex">';
                                 locationInfo += '<div class="droplets">'
                                     locationInfo += '<svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#filter0_d_14816_50716)"><rect x="10.3335" y="5.5" width="24" height="24" rx="12" fill="white"/><g clip-path="url(#clip0_14816_50716)"><path d="M22.5168 10.7847C22.4756 10.7258 22.4069 10.6904 22.3334 10.6904C22.2599 10.6904 22.1912 10.7258 22.15 10.7847C21.965 11.0493 17.6191 17.2915 17.6191 19.7363C17.6191 22.2579 19.7339 24.3095 22.3334 24.3095C24.9329 24.3095 27.0477 22.2579 27.0477 19.7363C27.0477 17.2915 22.7019 11.0493 22.5168 10.7847Z" fill="#5B8FF9"/><path d="M23.5305 22.4892C20.931 22.4892 18.8162 20.4377 18.8162 17.9161C18.8162 16.3241 20.6588 13.1222 21.9955 11.0088C21.1889 12.1858 17.6191 17.5209 17.6191 19.7367C17.6191 22.2583 19.7339 24.3098 22.3334 24.3098C24.4014 24.3098 26.1626 23.0114 26.7964 21.2108C25.9485 22.002 24.7971 22.4892 23.5305 22.4892Z" fill="#1F61E8"/><g clip-path="url(#clip1_14816_50716)"><path d="M21.8429 20.4115C21.9076 20.4363 21.9814 20.4122 22.0171 20.354L23.6428 17.6893C23.6691 17.6461 23.6693 17.5926 23.6432 17.5495C23.617 17.5063 23.5687 17.4803 23.5171 17.4817L22.3828 17.5118L22.7588 15.8765C22.774 15.8104 22.7376 15.7436 22.6728 15.7186C22.6085 15.6937 22.5343 15.718 22.4987 15.7761L20.8729 18.4409C20.8466 18.484 20.8465 18.5376 20.8726 18.5806C20.8987 18.6239 20.9471 18.6498 20.9987 18.6485L22.133 18.6184L21.7569 20.2536C21.7418 20.3197 21.7781 20.3865 21.8429 20.4115V20.4115Z" fill="white"/></g></g></g><defs><filter id="filter0_d_14816_50716" x="0.333496" y="0.5" width="44" height="44" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feMorphology radius="10" operator="erode" in="SourceAlpha" result="effect1_dropShadow_14816_50716"/><feOffset dy="5"/><feGaussianBlur stdDeviation="10"/><feColorMatrix type="matrix" values="0 0 0 0 0.166667 0 0 0 0 0.093107 0 0 0 0 0.03125 0 0 0 0.15 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_14816_50716"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_14816_50716" result="shape"/></filter><clipPath id="clip0_14816_50716"><rect width="14.6667" height="14.6667" fill="white" transform="translate(15 10.167)"/></clipPath><clipPath id="clip1_14816_50716"><rect width="4.83613" height="4.69154" fill="white" transform="matrix(0.999648 -0.0265312 0.0281931 0.999602 19.7744 15.7842)"/></clipPath></defs></svg>';
                                 locationInfo += '</div>'
-                                locationInfo += '<h6>Nho Quế 2</h6>'
+                                locationInfo += '<h6><?php echo the_title() ?></h6>'
                             locationInfo += '</div>';
                             locationInfo += '<div class="d-flex location-info-row">';
                                 locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_14816_50731)"><path d="M19.0835 6.87507H17.2085V3.75007C17.2114 3.60386 17.163 3.46124 17.0717 3.34704C16.9803 3.23284 16.8518 3.15429 16.7085 3.12507L4.2085 0.625072C4.11771 0.607182 4.02407 0.609676 3.93436 0.632374C3.84465 0.655072 3.7611 0.697407 3.68975 0.756322C3.6164 0.815806 3.55749 0.891135 3.51744 0.976652C3.47739 1.06217 3.45724 1.15565 3.4585 1.25007V6.87507H1.5835C1.41774 6.87507 1.25876 6.94092 1.14155 7.05813C1.02434 7.17534 0.958496 7.33431 0.958496 7.50007V18.7501C0.958496 18.9158 1.02434 19.0748 1.14155 19.192C1.25876 19.3092 1.41774 19.3751 1.5835 19.3751H19.0835C19.2493 19.3751 19.4082 19.3092 19.5254 19.192C19.6426 19.0748 19.7085 18.9158 19.7085 18.7501V7.50007C19.7085 7.33431 19.6426 7.17534 19.5254 7.05813C19.4082 6.94092 19.2493 6.87507 19.0835 6.87507ZM2.2085 8.12507H3.4585V18.1251H2.2085V8.12507ZM4.7085 7.50007V2.01257L15.9585 4.26257V18.1251H12.8335V14.3751C12.8335 14.2093 12.7676 14.0503 12.6504 13.9331C12.5332 13.8159 12.3743 13.7501 12.2085 13.7501H8.4585C8.29274 13.7501 8.13376 13.8159 8.01655 13.9331C7.89934 14.0503 7.8335 14.2093 7.8335 14.3751V18.1251H4.7085V7.50007ZM9.0835 18.1251V15.0001H11.5835V18.1251H9.0835ZM18.4585 18.1251H17.2085V8.12507H18.4585V18.1251Z" fill="#7E8189"/><path d="M6.896 8.125H9.396C9.56176 8.125 9.72073 8.05915 9.83794 7.94194C9.95515 7.82473 10.021 7.66576 10.021 7.5V5C10.021 4.83424 9.95515 4.67527 9.83794 4.55806C9.72073 4.44085 9.56176 4.375 9.396 4.375H6.896C6.73024 4.375 6.57126 4.44085 6.45405 4.55806C6.33684 4.67527 6.271 4.83424 6.271 5V7.5C6.271 7.66576 6.33684 7.82473 6.45405 7.94194C6.57126 8.05915 6.73024 8.125 6.896 8.125ZM7.521 5.625H8.771V6.875H7.521V5.625Z" fill="#7E8189"/><path d="M9.396 12.5C9.56176 12.5 9.72073 12.4342 9.83794 12.3169C9.95515 12.1997 10.021 12.0408 10.021 11.875V9.375C10.021 9.20924 9.95515 9.05027 9.83794 8.93306C9.72073 8.81585 9.56176 8.75 9.396 8.75H6.896C6.73024 8.75 6.57126 8.81585 6.45405 8.93306C6.33684 9.05027 6.271 9.20924 6.271 9.375V11.875C6.271 12.0408 6.33684 12.1997 6.45405 12.3169C6.57126 12.4342 6.73024 12.5 6.896 12.5H9.396ZM7.521 10H8.771V11.25H7.521V10Z" fill="#7E8189"/><path d="M11.271 8.125H13.771C13.9368 8.125 14.0957 8.05915 14.2129 7.94194C14.3301 7.82473 14.396 7.66576 14.396 7.5V5C14.396 4.83424 14.3301 4.67527 14.2129 4.55806C14.0957 4.44085 13.9368 4.375 13.771 4.375H11.271C11.1052 4.375 10.9463 4.44085 10.8291 4.55806C10.7118 4.67527 10.646 4.83424 10.646 5V7.5C10.646 7.66576 10.7118 7.82473 10.8291 7.94194C10.9463 8.05915 11.1052 8.125 11.271 8.125ZM11.896 5.625H13.146V6.875H11.896V5.625Z" fill="#7E8189"/><path d="M11.271 12.5H13.771C13.9368 12.5 14.0957 12.4342 14.2129 12.3169C14.3301 12.1997 14.396 12.0408 14.396 11.875V9.375C14.396 9.20924 14.3301 9.05027 14.2129 8.93306C14.0957 8.81585 13.9368 8.75 13.771 8.75H11.271C11.1052 8.75 10.9463 8.81585 10.8291 8.93306C10.7118 9.05027 10.646 9.20924 10.646 9.375V11.875C10.646 12.0408 10.7118 12.1997 10.8291 12.3169C10.9463 12.4342 11.1052 12.5 11.271 12.5ZM11.896 10H13.146V11.25H11.896V10Z" fill="#7E8189"/></g><defs><clipPath id="clip0_14816_50731"><rect width="20" height="20" fill="white" transform="translate(0.333496)"/></clipPath></defs></svg>';
@@ -175,18 +195,19 @@ get_header();
                         locationInfo += '</div>';
                     locationInfo += '</div>';
 
+
                     marker = new google.maps.Marker({
                         position: new google.maps.LatLng(<?php echo get_field('coordinates')?>),
                         map: map,
                         icon: markerImage,
                     });
 
-                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    google.maps.event.addListener(marker, 'click', (function(marker, locationInfo) {
                         return function() {
                             infowindow.setContent(locationInfo);
                             infowindow.open(map, marker);
                         }
-                    })(marker, i));
+                    })(marker, locationInfo));
 
                     i++;
                 <?php endwhile;?>
@@ -201,7 +222,7 @@ get_header();
             //         icon: markerImage,
             //     });
 
-            //     google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            //     google.maps.event.addListener(marker, 'click', (function(marker) {
             //         return function() {
             //             infowindow.setContent(locationInfo);
             //             infowindow.open(map, marker);

@@ -176,3 +176,18 @@
         margin-bottom: 0;
     }
 }
+
+.map-section {
+    position: relative;
+    
+}
+
+.map-btn {
+    position: absolute;
+    top: 73px;
+    left: 26px;
+}
+
+.map-btn:hover {
+    cursor: pointer;
+}
