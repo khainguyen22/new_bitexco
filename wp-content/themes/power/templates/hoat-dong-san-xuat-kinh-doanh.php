@@ -96,8 +96,8 @@ get_header();
                 <?php if ($main_navigation) : ?>
                     <div class="navigation">
                         <ul>
-                            <?php foreach ($main_navigation as $key => $value) : ?>
-                                <li class="<?php echo $actual_link == $value['link'] ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo paint_if_exist($value['label']); ?></a></li>
+                            <?php foreach ($main_navigation as $key =>$value) : ?>
+                                <li class="<?php echo $key == 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo paint_if_exist($value['label']); ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>

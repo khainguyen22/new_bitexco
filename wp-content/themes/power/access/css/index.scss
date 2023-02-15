@@ -881,11 +881,12 @@ span.tag {
     .image {
         overflow: hidden;
         position: relative;
-        min-height: 255px; 
+        min-height: 255px;
         max-width: 400px;
         min-width: 400px;
         height: auto;
         max-height: unset;
+
         img {
             transition: all 1s ease-in;
         }
@@ -1261,7 +1262,9 @@ span.tag-name .text {
 }
 
 .search.search-no-results {
-    * {
+
+    .search-form,
+    .entry-content p {
         text-align: center;
         margin: 0 auto;
     }
@@ -1293,10 +1296,15 @@ span.tag-name .text {
         option[value=""] {
             color: #7E8189 !important;
         }
+
     }
 
     .page-wrapper {
         margin-bottom: 100px;
+
+        .list {
+            min-height: 40vh;
+        }
     }
 }
 
@@ -1308,28 +1316,36 @@ span.tag-name .text {
 .skiptranslate.goog-te-gadget {
     display: block;
 }
+
 section.banner.not_navigation .content {
     max-height: 191px;
     overflow: hidden;
 }
+
 section.period-grow.period-1.active .grow-content {
     max-height: 120px;
 }
+
 .period-line .year .text {
     max-height: 250px;
     overflow: hidden;
 }
+
 span.setting.alt-text.has-description {
     display: none;
 }
-span.setting[data-setting="description"] {display:none;
+
+span.setting[data-setting="description"] {
+    display: none;
 }
 
 
 
 span.setting {}
 
-p#alt-text-description {display:none;}
+p#alt-text-description {
+    display: none;
+}
 
 
 @import './scss/bando';

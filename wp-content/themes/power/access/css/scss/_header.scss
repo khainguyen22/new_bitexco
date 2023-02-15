@@ -65,25 +65,74 @@
       margin-left: 33.3px;
 
       .languages {
-        #google_language_translator .goog-te-gadget .goog-te-combo {
-          width: fit-content;
-        }
+        .switcher {
+          width: 133px;
 
-        svg {
-          max-width: 16px;
-          margin-right: -2px;
+          &>.selected {
+            background: unset;
+            position: absolute;
+            border: unset;
+            top: 8px;
+            width: 140px;
 
-          path {
-            stroke: #fff;
+            a {
+              border: unset;
+              font-family: 'Public Sans';
+              font-weight: 400;
+              font-size: 11px;
+              line-height: 150%;
+              letter-spacing: 0.04em;
+              text-transform: uppercase;
+              color: #FFFFFF;
+
+              &::after {
+                top: 0;
+              }
+
+              img {
+                max-width: 20px;
+                margin-right: 8px;
+              }
+
+              &:hover {
+                background: unset;
+              }
+            }
           }
         }
 
-        select {
-          color: #fff;
-          padding: 0;
+        div.option {
+          background: #0D0D0E;
+          position: absolute;
+          top: 30px;
+          border: unset;
+          padding: 6px 0;
+          width: 130px;
 
-          option {
+          a {
+            background: #0D0D0E;
+            padding: 5px;
+            font-family: 'Public Sans';
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 150%;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
+            color: #FFFFFF;
+
+            img {
+              max-width: 20px;
+              margin-right: 8px;
+            }
+
+            &:hover {
+              background: unset;
+            }
+
+            &.selected {
+              background-color: #0D0D0E;
+              color: #fff;
+            }
           }
         }
       }

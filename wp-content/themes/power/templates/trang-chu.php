@@ -46,17 +46,9 @@ if ($home_tuyen_dung) {
     $home_tuyen_dung_background = $home_tuyen_dung['background'];
 }
 $home_footer = get_field('home_footer', 'option');
-print_r($home_san_xuat_kinh_doanh['file']);
-print_r($home_san_xuat_kinh_doanh['home_file']);
-//  Include thư viện PHPExcel_IOFactory vào
 include 'Classes/PHPExcel/IOFactory.php';
 
-$inputFileName = 'C:\xampp\htdocs\freelance-projects\bitexco\wp-content\themes\power\templates\file.xlsx';
-$inputFileName = get_attached_file( get_field('home_file', 'option') );
-
-// $inputFileName = 'https://power.dtts.com.vn/wp-content/uploads/2023/01/file-1.xlsx';
-
-//  Tiến hành đọc file excel
+$inputFileName = __DIR__ . '/file.xlsx';
 try {
     $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
     $objReader = PHPExcel_IOFactory::createReader($inputFileType);
@@ -64,38 +56,12 @@ try {
 } catch (Exception $e) {
     die('Lỗi không thể đọc file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
 }
-
-//  Lấy thông tin cơ bản của file excel
-
-// Lấy sheet hiện tại
 $sheet = $objPHPExcel->getSheet(0);
-
-// Lấy tổng số dòng của file, trong trường hợp này là 6 dòng
 $highestRow = $sheet->getHighestRow();
-
-// Lấy tổng số cột của file, trong trường hợp này là 4 dòng
 $highestColumn = $sheet->getHighestColumn();
-
-// Khai báo mảng $rowData chứa dữ liệu
-
-//  Thực hiện việc lặp qua từng dòng của file, để lấy thông tin
 for ($row = 1; $row <= $highestRow; $row++) {
-    // Lấy dữ liệu từng dòng và đưa vào mảng $rowData
     $rowData[] = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
 }
-
-// //In dữ liệu của mảng
-// echo "<pre>";
-// // print_r($rowData);
-// foreach ($rowData as $key => $value) {
-//     echo "<pre>";
-//     if (($key - 1) % 3 === 0) {
-//         print_r($value[0]);
-//     }
-// }
-// die;
-
-echo "</pre>";
 get_header();
 ?>
 
@@ -106,51 +72,98 @@ get_header();
                 <?php if ($home_san_xuat_kinh_doanh) : ?>
                     <img src="<?php echo $home_san_xuat_kinh_doanh_background; ?>" alt="<?php echo $home_san_xuat_kinh_doanh_content['title']; ?>">
                     <div class="container">
-                        <div class="content">
-                            <?php if ($home_san_xuat_kinh_doanh_content['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh_content['title']; ?></h3> <?php endif; ?>
-                            <div class="d-flex desc-wrap">
-                             
-                                <?php foreach ($rowData as $key => $value) : ?>
-                                    <?php if ($key === count($rowData) - 1) : ?>
+                        <?php if ($home_san_xuat_kinh_doanh_type_import == 0) : ?>
+                            <div class="content">
+                                <?php if ($home_san_xuat_kinh_doanh_import['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh_import['title']; ?></h3> <?php endif; ?>
+                                <?php if ($rowData) : ?>
+                                    <div class="d-flex desc-wrap">
+                                        <?php foreach ($rowData as $key => $value) : ?>
+                                            <?php if ($key === count($rowData) - 1) : ?>
+                                                <div class="desc-left">
+                                                    <h3 class="title"><?php echo $value[0][0]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?> </span></h3>
+                                                    <span class="description uppercase">
+                                                        <?php
+                                                        echo _e('Ngày ');
+                                                        $day = date('d', $timestamp);
+                                                        echo $day;
+                                                        ?>
+                                                    </span>
+                                                </div>
+                                                <div class="desc-left">
+                                                    <h3 class="title"><?php echo $value[0][1]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
+                                                    <span class="description uppercase">
+                                                        <?php
+                                                        echo _e('Tháng ');
+                                                        $day = date('m', $timestamp);
+                                                        echo $day;
+                                                        ?>
+                                                    </span>
+                                                </div>
+                                                <div class="desc-left">
+                                                    <h3 class="title"><?php echo $value[0][2]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
+                                                    <span class="description uppercase">
+                                                        <?php
+                                                        echo _e('Năm ');
+                                                        $day = date('Y', $timestamp);
+                                                        echo $day;
+                                                        ?>
+                                                    </span>
+                                                </div>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ($home_san_xuat_kinh_doanh_import['button']) : ?>
+                                    <a href="<?php echo $home_san_xuat_kinh_doanh_import['link'] ?>" class="btn btn-warning btn-detail uppercase"><?php echo isset($home_san_xuat_kinh_doanh_import['button']) ? $home_san_xuat_kinh_doanh_import['button'] : "Chi tiết"; ?></a>
+                                <?php endif; ?>
+                            </div>
+                        <?php else : ?>
+                            <div class="content">
+                                <?php if ($home_san_xuat_kinh_doanh_content['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh_content['title']; ?></h3> <?php endif; ?>
+                                <div class="d-flex desc-wrap">
+                                    <?php if ($home_san_xuat_kinh_doanh_content['san_luong_ngay']) : ?>
                                         <div class="desc-left">
-                                            <h3 class="title"><?php echo $value[0][0]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?> </span></h3>
+                                            <h3 class="title"><?php echo $home_san_xuat_kinh_doanh_content['san_luong_ngay']; ?><span class="unit"><?php echo _e('Triệu kWh'); ?> </span></h3>
                                             <span class="description uppercase">
                                                 <?php
-                                                echo _e('Ngày');
+                                                echo _e('Ngày ');
                                                 $day = date('d', $timestamp);
                                                 echo $day;
                                                 ?>
                                             </span>
                                         </div>
+                                    <?php endif; ?>
+                                    <?php if ($home_san_xuat_kinh_doanh_content['san_luong_thang']) : ?>
                                         <div class="desc-left">
-                                            <h3 class="title"><?php echo $value[0][1]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
+                                            <h3 class="title"><?php echo $home_san_xuat_kinh_doanh_content['san_luong_thang']; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
                                             <span class="description uppercase">
                                                 <?php
-                                                echo _e('Tháng');
+                                                echo _e('Tháng ');
                                                 $day = date('m', $timestamp);
                                                 echo $day;
                                                 ?>
                                             </span>
                                         </div>
+                                    <?php endif; ?>
+                                    <?php if ($home_san_xuat_kinh_doanh_content['san_luong_nam']) : ?>
                                         <div class="desc-left">
-                                            <h3 class="title"><?php echo $value[0][2]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
+                                            <h3 class="title"><?php echo $home_san_xuat_kinh_doanh_content['san_luong_nam']; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
                                             <span class="description uppercase">
                                                 <?php
-                                                echo _e('Năm');
+                                                echo _e('Năm ');
                                                 $day = date('Y', $timestamp);
                                                 echo $day;
                                                 ?>
                                             </span>
                                         </div>
-                                    <?php endif;?>
-                                <?php endforeach;?>
-                            </div>
+                                </div>
+                            <?php endif; ?>
                             <div id="excel_data"></div>
                             <?php if ($home_san_xuat_kinh_doanh_content['button']) : ?>
                                 <a href="<?php echo $home_san_xuat_kinh_doanh_content['link'] ?>" class="btn btn-warning btn-detail uppercase"><?php echo isset($home_san_xuat_kinh_doanh_content['button']) ? $home_san_xuat_kinh_doanh_content['button'] : "Chi tiết"; ?></a>
                             <?php endif; ?>
-                           
-                        </div>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
             </div>

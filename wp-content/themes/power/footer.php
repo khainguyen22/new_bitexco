@@ -38,7 +38,7 @@ $home_footer = get_field('home_footer', 'option');
                     <?php endif; ?>
                 </div>
                 <?php if ($home_footer['content']['address']) : ?>
-                    <div class="col-12 col-lg-4">
+                    <div class="col-12 col-lg-4 wrap-address">
                         <div class="address size-text-16">
                             <?php echo _e($home_footer['content']['address']) ?>
                         </div>

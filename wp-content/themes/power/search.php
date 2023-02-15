@@ -1,10 +1,13 @@
 <?php
 get_header(); ?>
 
-<section class="search-result" style="margin: 150px 0 50px ;">
+<section class="search-result" style="margin: 130px 0 20px ;">
 	<div class="container">
 		<h4 style="margin: 0 auto;text-align:center;">
-			<?php printf(esc_html__('Search Results for: %s', 'specia'), get_search_query()); ?>
+			<?php
+			$allsearch = new WP_Query("s=$s&showposts=0");
+			$countsearch = $allsearch->found_posts;
+			printf(esc_html__('Tìm thấy %s kết quả với từ khóa: %s', 'specia'), $countsearch, get_search_query()); ?>
 		</h4>
 	</div>
 </section>

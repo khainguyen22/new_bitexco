@@ -16,10 +16,6 @@
     <meta property="fb:app_id" content="<?php echo $c5_options['opt-id-appfb']; ?>" />
     <meta property="fb:admins" content="<?php echo $c5_options['opt-id-adminfb']; ?>" />
     <?php wp_head(); ?>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-    <!-- <script src="https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script> -->
     <script src="https://unpkg.com/read-excel-file@4.x/bundle/read-excel-file.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -55,7 +51,8 @@
                         </li>
                         <li class="nav-langue">
                             <div class="languages d-flex">
-                                <?php echo do_shortcode('[google-translator]'); ?>
+                                <!-- < ?php echo do_shortcode('[google-translator]'); ?> -->
+                                <?php echo do_shortcode('[gtranslate]'); ?>
                             </div>
                         </li>
                     </ul>
@@ -99,7 +96,7 @@
                                     ); ?>
                                 </div>
                                 <!-- <div class="col-12 col-lg-4 menu-image">
-                                    <img src="<?php echo get_stylesheet_directory_uri() ?>/access/images/image73.png" alt="image73.png">
+                                    <img src="< ?php echo get_stylesheet_directory_uri() ?>/access/images/image73.png" alt="image73.png">
                                 </div> -->
                             </div>
                         </div>
