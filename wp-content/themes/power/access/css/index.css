@@ -12216,6 +12216,22 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   color: #DAA622;
 }
 
+.historical-grow-page section.period-grow.period-1 .container .historical-period .navigation .nav.prev span {
+  color: #7E8189;
+}
+
+.historical-grow-page section.period-grow.period-1 .container .historical-period .navigation .nav.prev svg {
+  filter: invert(53%) sepia(9%) saturate(290%) hue-rotate(186deg) brightness(94%) contrast(87%);
+}
+
+.historical-grow-page section.period-grow.period-3 .container .historical-period .navigation .nav.next span {
+  color: #7E8189;
+}
+
+.historical-grow-page section.period-grow.period-3 .container .historical-period .navigation .nav.next svg {
+  filter: invert(53%) sepia(9%) saturate(290%) hue-rotate(186deg) brightness(94%) contrast(87%);
+}
+
 @media (max-width: 1200px) {
   .historical-grow-page section.period-grow {
     background-color: #fff;
