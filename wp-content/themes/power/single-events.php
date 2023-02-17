@@ -39,8 +39,8 @@ get_header(); ?>
                                             <path d="M12.75 13.3411H13.5833" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </div>
-                                    <span class="text size-text-16"> Từ <?php echo get_field('date'); ?></span>
-                                    <span class="text size-text-16"> Đến <?php echo get_field('date_end'); ?></span>
+                                    <span class="text size-text-16 mx-1"> Từ <?php echo get_field('date'); ?></span>
+                                    <span class="text size-text-16 mx-1"> Đến <?php echo get_field('date_end'); ?></span>
                                 </div>
                             <?php endif; ?>
                             <?php if (get_field('type') == 1) : ?>
@@ -52,7 +52,9 @@ get_header(); ?>
                                                 <circle r="2.65625" transform="matrix(-1 0 0 1 7.90625 7.90625)" stroke="#ffffff" stroke-width="1.5" />
                                             </svg>
                                         </div>
-                                        <span class="text size-text-16"> <?php echo get_field('location'); ?></span>
+                                        <?php foreach (get_the_terms(get_the_ID(), 'type_events_location') as $key => $value) : ?>
+                                            <span class="text size-text-16"> <?php echo paint_if_exist($value->name) ?></span>
+                                        <?php endforeach; ?>
                                     </div>
                                 <?php endif; ?>
                             <?php else : ?>

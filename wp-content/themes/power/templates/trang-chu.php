@@ -46,22 +46,56 @@ if ($home_tuyen_dung) {
     $home_tuyen_dung_background = $home_tuyen_dung['background'];
 }
 $home_footer = get_field('home_footer', 'option');
-include 'Classes/PHPExcel/IOFactory.php';
+// include 'Classes/PHPExcel/IOFactory.php';
 
-$inputFileName = __DIR__ . '/file.xlsx';
-try {
-    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-    $objPHPExcel = $objReader->load($inputFileName);
-} catch (Exception $e) {
-    die('Lỗi không thể đọc file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
-}
-$sheet = $objPHPExcel->getSheet(0);
-$highestRow = $sheet->getHighestRow();
-$highestColumn = $sheet->getHighestColumn();
-for ($row = 1; $row <= $highestRow; $row++) {
-    $rowData[] = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
-}
+// $inputFileName = __DIR__ . '/BitexcoPower_Data_2023.xlsx';
+// try {
+//     $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+//     $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+//     $objPHPExcel = $objReader->load($inputFileName);
+// } catch (Exception $e) {
+//     die('Lỗi không thể đọc file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
+// }
+// $sheet = $objPHPExcel->getSheet(0);
+// $highestRow = $sheet->getHighestRow();
+// $highestColumn = $sheet->getHighestColumn();
+// for ($row = 1; $row <= $highestRow; $row++) {
+//     $rowData[] = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
+// }
+
+// include 'Classes/PHPExcel.php';
+// include 'Classes/PHPExcel/IOFactory.php';
+
+// // Create new PHPExcel object
+// $objPHPExcel = new PHPExcel();
+
+// // Create a first sheet, representing sales data
+// $objPHPExcel->setActiveSheetIndex(0);
+// $objPHPExcel->getActiveSheet()->setCellValue('A1', 'Something');
+
+// // Rename sheet
+// $objPHPExcel->getActiveSheet()->setTitle('Name of Sheet 1');
+
+// // Create a new worksheet, after the default sheet
+// $objPHPExcel->createSheet();
+
+// // Add some data to the second sheet, resembling some different data types
+// $objPHPExcel->setActiveSheetIndex(1);
+// $objPHPExcel->getActiveSheet()->setCellValue('A1', 'More data');
+
+// // Rename 2nd sheet
+// $objPHPExcel->getActiveSheet()->setTitle('Second sheet');
+
+// // Redirect output to a client’s web browser (Excel5)
+// header('Content-Type: application/vnd.ms-excel');
+// header('Content-Disposition: attachment;filename="BitexcoPower_Data_2023.xls"');
+// header('Cache-Control: max-age=0');
+// $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'thang1');
+// $objWriter->save('php://output');
+// echo '<pre>';
+// print_r($objWriter);
+// echo '</pre>';
+
 get_header();
 ?>
 
@@ -72,52 +106,7 @@ get_header();
                 <?php if ($home_san_xuat_kinh_doanh) : ?>
                     <img src="<?php echo $home_san_xuat_kinh_doanh_background; ?>" alt="<?php echo $home_san_xuat_kinh_doanh_content['title']; ?>">
                     <div class="container">
-                        <?php if ($home_san_xuat_kinh_doanh_type_import == 0) : ?>
-                            <div class="content">
-                                <?php if ($home_san_xuat_kinh_doanh_import['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh_import['title']; ?></h3> <?php endif; ?>
-                                <?php if ($rowData) : ?>
-                                    <div class="d-flex desc-wrap">
-                                        <?php foreach ($rowData as $key => $value) : ?>
-                                            <?php if ($key === count($rowData) - 1) : ?>
-                                                <div class="desc-left">
-                                                    <h3 class="title"><?php echo $value[0][0]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?> </span></h3>
-                                                    <span class="description uppercase">
-                                                        <?php
-                                                        echo _e('Ngày ');
-                                                        $day = date('d', $timestamp);
-                                                        echo $day;
-                                                        ?>
-                                                    </span>
-                                                </div>
-                                                <div class="desc-left">
-                                                    <h3 class="title"><?php echo $value[0][1]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
-                                                    <span class="description uppercase">
-                                                        <?php
-                                                        echo _e('Tháng ');
-                                                        $day = date('m', $timestamp);
-                                                        echo $day;
-                                                        ?>
-                                                    </span>
-                                                </div>
-                                                <div class="desc-left">
-                                                    <h3 class="title"><?php echo $value[0][2]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
-                                                    <span class="description uppercase">
-                                                        <?php
-                                                        echo _e('Năm ');
-                                                        $day = date('Y', $timestamp);
-                                                        echo $day;
-                                                        ?>
-                                                    </span>
-                                                </div>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php endif; ?>
-                                <?php if ($home_san_xuat_kinh_doanh_import['button']) : ?>
-                                    <a href="<?php echo $home_san_xuat_kinh_doanh_import['link'] ?>" class="btn btn-warning btn-detail uppercase"><?php echo isset($home_san_xuat_kinh_doanh_import['button']) ? $home_san_xuat_kinh_doanh_import['button'] : "Chi tiết"; ?></a>
-                                <?php endif; ?>
-                            </div>
-                        <?php else : ?>
+                        <?php if ($home_san_xuat_kinh_doanh_content) : ?>
                             <div class="content">
                                 <?php if ($home_san_xuat_kinh_doanh_content['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh_content['title']; ?></h3> <?php endif; ?>
                                 <div class="d-flex desc-wrap">
@@ -158,7 +147,6 @@ get_header();
                                         </div>
                                 </div>
                             <?php endif; ?>
-                            <div id="excel_data"></div>
                             <?php if ($home_san_xuat_kinh_doanh_content['button']) : ?>
                                 <a href="<?php echo $home_san_xuat_kinh_doanh_content['link'] ?>" class="btn btn-warning btn-detail uppercase"><?php echo isset($home_san_xuat_kinh_doanh_content['button']) ? $home_san_xuat_kinh_doanh_content['button'] : "Chi tiết"; ?></a>
                             <?php endif; ?>
@@ -266,24 +254,46 @@ get_header();
                                 <circle r="2.66667" transform="matrix(-1 0 0 1 7.99984 4.66667)" stroke="white" />
                                 <path d="M3.33325 11.2898C3.33325 10.7162 3.69382 10.2046 4.23398 10.0117V10.0117C6.66928 9.14192 9.33056 9.14192 11.7659 10.0117V10.0117C12.306 10.2046 12.6666 10.7162 12.6666 11.2898V12.1668C12.6666 12.9584 11.9654 13.5665 11.1818 13.4546L10.9205 13.4172C8.98328 13.1405 7.01656 13.1405 5.07934 13.4172L4.81806 13.4546C4.03439 13.5665 3.33325 12.9584 3.33325 12.1668V11.2898Z" stroke="white" />
                             </svg>
-                            <a class="nav-link " aria-current="page" href="#">
-                                <?php echo _e('đăng nhập'); ?>
-                            </a>
+                            <?php
+                            global $current_user;
+                            wp_get_current_user();
+                            if (is_user_logged_in()) : ?>
+                                <?php echo   $current_user->user_login; ?>
+                                <ul class="is_login">
+                                    <li class="logout">
+                                        <svg fill="#fff" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.971 384.971" xml:space="preserve">
+                                            <g>
+                                                <g id="Sign_Out">
+                                                    <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03
+			C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03
+			C192.485,366.299,187.095,360.91,180.455,360.91z" />
+                                                    <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279
+			c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179
+			c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                        <a href="<?php echo wp_logout_url('$index.php'); ?>"><?php _e('Đăng xuất') ?></a>
+                                    </li>
+                                </ul>
+                            <?php else : ?>
+                                <?php wp_loginout(); ?>
+                            <?php endif; ?>
                         </li>
-                        <span class="navigator" style=" color: #d8d8d88c;">|</span>
-                        <li class="nav-signup">
-                            <a class="nav-link" href="#">
-                                <?php echo _e('đăng ký'); ?>
-                            </a>
-                        </li>
+                        <?php if (is_user_logged_in()) {
+                        } else {
+                            echo '<span class="navigator" style="place-self: center; color: #d8d8d88c;">|</span>';
+                        } ?>
+                        <?php if (is_user_logged_in()) : ?>
+                        <?php else : ?>
+                            <li class="nav-signup">
+                                <a class="nav-link" href="<?php echo site_url('/wp-login.php?action=register'); ?>"><?php _e(' Đăng ký') ?> </a>
+                            </li>
+                        <?php endif; ?>
                     </div>
-                    <li class="nav-langue">
+                    <li class="nav-language">
                         <div class="languages d-flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                <path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="#434449" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M7.00012 11C7.00012 16.5228 8.79098 21 11.0001 21C13.2093 21 15.0001 16.5228 15.0001 11C15.0001 5.47715 13.2093 1 11.0001 1C8.79098 1 7.00012 5.47715 7.00012 11Z" stroke="#434449" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M1 11H21" stroke="#434449" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
+                            <?php echo do_shortcode('[gtranslate]'); ?>
                         </div>
                     </li>
                 </ul>

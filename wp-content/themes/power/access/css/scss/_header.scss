@@ -20,7 +20,7 @@
       }
 
       &:hover .nav-link {
-        color: #d8d8d8;
+        color: #DAA622;
       }
     }
 
@@ -33,6 +33,7 @@
         display: flex;
         align-items: center;
         height: 100%;
+        position: relative;
 
         svg {
           width: 16px;
@@ -44,13 +45,59 @@
           letter-spacing: 0.04em;
 
           &:hover {
-            color: #d8d8d8;
+            color: #DAA622;
           }
+        }
+
+        &:hover {
+          cursor: pointer;
         }
       }
     }
 
-    .nav-login .nav-link,
+    .nav-login,
+    .nav-login a {
+      margin-right: 6px;
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .is_login {
+      position: absolute;
+      top: 25px;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s all;
+      left: 0px;
+      padding: 8px 4px 12px;
+      z-index: 1;
+      transform: translateY(-60%);
+      width: max-content;
+
+      &.active {
+        visibility: visible;
+        opacity: 1;
+        background: #0D0D0E;
+        transform: translateY(0%);
+        transition: 0.5s all;
+      }
+
+      .logout {
+        display: flex;
+
+        svg {
+          width: 13px;
+          height: 13px;
+        }
+
+        a {
+          margin-top: 2px;
+        }
+      }
+    }
+
     .nav-login svg,
     .navigator {
       margin-right: 6px;
@@ -61,7 +108,7 @@
       letter-spacing: 0.04em;
     }
 
-    .nav-langue {
+    .nav-language {
       margin-left: 33.3px;
 
       .languages {
@@ -257,7 +304,7 @@
               }
 
               &:hover {
-                color: #d8d8d8;
+                color: #DAA622;
 
                 &::after {
                   content: '';
@@ -657,6 +704,16 @@ header {
         letter-spacing: 0.01em;
         width: 90%;
         font-family: var(--primary-font);
+      }
+
+      .btn-submit-icon {
+        border: unset;
+        background-color: unset;
+        outline: none;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       &::after {

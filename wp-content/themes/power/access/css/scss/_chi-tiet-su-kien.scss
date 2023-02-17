@@ -1,0 +1,28 @@
+.custom-single-page.details_event {
+    .banner .wrap_banner .container {
+        .content {
+            bottom: 40px;
+
+            h3,
+            .date {
+                margin-bottom: 16px;
+            }
+
+            .icon {
+                margin-right: 10px;
+
+                svg {
+                    margin-top: 2px;
+                }
+            }
+
+            .type {
+                .icon {
+                    margin-right: 16px;
+                    margin-left: 1px;
+                }
+            }
+        }
+    }
+
+}
