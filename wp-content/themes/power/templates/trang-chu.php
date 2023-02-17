@@ -46,56 +46,22 @@ if ($home_tuyen_dung) {
     $home_tuyen_dung_background = $home_tuyen_dung['background'];
 }
 $home_footer = get_field('home_footer', 'option');
-// include 'Classes/PHPExcel/IOFactory.php';
+include 'Classes/PHPExcel/IOFactory.php';
 
-// $inputFileName = __DIR__ . '/BitexcoPower_Data_2023.xlsx';
-// try {
-//     $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-//     $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-//     $objPHPExcel = $objReader->load($inputFileName);
-// } catch (Exception $e) {
-//     die('Lỗi không thể đọc file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
-// }
-// $sheet = $objPHPExcel->getSheet(0);
-// $highestRow = $sheet->getHighestRow();
-// $highestColumn = $sheet->getHighestColumn();
-// for ($row = 1; $row <= $highestRow; $row++) {
-//     $rowData[] = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
-// }
-
-// include 'Classes/PHPExcel.php';
-// include 'Classes/PHPExcel/IOFactory.php';
-
-// // Create new PHPExcel object
-// $objPHPExcel = new PHPExcel();
-
-// // Create a first sheet, representing sales data
-// $objPHPExcel->setActiveSheetIndex(0);
-// $objPHPExcel->getActiveSheet()->setCellValue('A1', 'Something');
-
-// // Rename sheet
-// $objPHPExcel->getActiveSheet()->setTitle('Name of Sheet 1');
-
-// // Create a new worksheet, after the default sheet
-// $objPHPExcel->createSheet();
-
-// // Add some data to the second sheet, resembling some different data types
-// $objPHPExcel->setActiveSheetIndex(1);
-// $objPHPExcel->getActiveSheet()->setCellValue('A1', 'More data');
-
-// // Rename 2nd sheet
-// $objPHPExcel->getActiveSheet()->setTitle('Second sheet');
-
-// // Redirect output to a client’s web browser (Excel5)
-// header('Content-Type: application/vnd.ms-excel');
-// header('Content-Disposition: attachment;filename="BitexcoPower_Data_2023.xls"');
-// header('Cache-Control: max-age=0');
-// $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'thang1');
-// $objWriter->save('php://output');
-// echo '<pre>';
-// print_r($objWriter);
-// echo '</pre>';
-
+$inputFileName = __DIR__ . '/file.xlsx';
+try {
+    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+    $objPHPExcel = $objReader->load($inputFileName);
+} catch (Exception $e) {
+    die('Lỗi không thể đọc file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
+}
+$sheet = $objPHPExcel->getSheet(0);
+$highestRow = $sheet->getHighestRow();
+$highestColumn = $sheet->getHighestColumn();
+for ($row = 1; $row <= $highestRow; $row++) {
+    $rowData[] = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
+}
 get_header();
 ?>
 
@@ -106,7 +72,51 @@ get_header();
                 <?php if ($home_san_xuat_kinh_doanh) : ?>
                     <img src="<?php echo $home_san_xuat_kinh_doanh_background; ?>" alt="<?php echo $home_san_xuat_kinh_doanh_content['title']; ?>">
                     <div class="container">
-                        <?php if ($home_san_xuat_kinh_doanh_content) : ?>
+                        <?php if ($home_san_xuat_kinh_doanh['type_import'] == 0) : ?>
+                            <div class="content">
+                                <?php if ($home_san_xuat_kinh_doanh['content']['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh['content']['title']; ?></h3> <?php endif; ?>
+                                <div class="d-flex desc-wrap">
+                                    <?php foreach ($rowData as $key => $value) : ?>
+                                        <?php if ($key === count($rowData) - 1) : ?>
+                                            <div class="desc-left">
+                                                <h3 class="title"><?php echo $value[0][0]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?> </span></h3>
+                                                <span class="description uppercase">
+                                                    <?php
+                                                    echo _e('Ngày ');
+                                                    $day = date('d', $timestamp);
+                                                    echo $day;
+                                                    ?>
+                                                </span>
+                                            </div>
+                                            <div class="desc-left">
+                                                <h3 class="title"><?php echo $value[0][1]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
+                                                <span class="description uppercase">
+                                                    <?php
+                                                    echo _e('Tháng ');
+                                                    $day = date('m', $timestamp);
+                                                    echo $day;
+                                                    ?>
+                                                </span>
+                                            </div>
+                                            <div class="desc-left">
+                                                <h3 class="title"><?php echo $value[0][2]; ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
+                                                <span class="description uppercase">
+                                                    <?php
+                                                    echo _e('Năm ');
+                                                    $day = date('Y', $timestamp);
+                                                    echo $day;
+                                                    ?>
+                                                </span>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div id="excel_data"></div>
+                                <?php if ($home_san_xuat_kinh_doanh['content']['button']) : ?>
+                                    <a href="<?php echo $home_san_xuat_kinh_doanh['content']['link'] ?>" class="btn btn-warning btn-detail uppercase"><?php echo isset($home_san_xuat_kinh_doanh['content']['button']) ? $home_san_xuat_kinh_doanh['content']['button'] : "Chi tiết"; ?></a>
+                                <?php endif; ?>
+                            </div>
+                        <?php else : ?>
                             <div class="content">
                                 <?php if ($home_san_xuat_kinh_doanh_content['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh_content['title']; ?></h3> <?php endif; ?>
                                 <div class="d-flex desc-wrap">
@@ -147,6 +157,7 @@ get_header();
                                         </div>
                                 </div>
                             <?php endif; ?>
+                            <div id="excel_data"></div>
                             <?php if ($home_san_xuat_kinh_doanh_content['button']) : ?>
                                 <a href="<?php echo $home_san_xuat_kinh_doanh_content['link'] ?>" class="btn btn-warning btn-detail uppercase"><?php echo isset($home_san_xuat_kinh_doanh_content['button']) ? $home_san_xuat_kinh_doanh_content['button'] : "Chi tiết"; ?></a>
                             <?php endif; ?>
@@ -282,7 +293,7 @@ get_header();
                         </li>
                         <?php if (is_user_logged_in()) {
                         } else {
-                            echo '<span class="navigator" style="place-self: center; color: #d8d8d88c;">|</span>';
+                            echo '<span class="navigator" style="margin:0 6px; color: #d8d8d88c;">|</span>';
                         } ?>
                         <?php if (is_user_logged_in()) : ?>
                         <?php else : ?>
