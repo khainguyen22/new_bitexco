@@ -2162,9 +2162,10 @@ p#alt-text-description {
 }
 .login .login-page h1 a {
   margin: 0;
-  background-image: url(../images/logo2x.png);
+  background-image: url(../images/logged-in-logo.jpg);
   width: 49px;
   height: 67px;
+  background-size: contain;
 }
 .login .login-page h1 a .language-switcher #language-switcher {
   display: flex;
@@ -6877,6 +6878,9 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 .tru-so .main .tab-content .item .icon.active {
   display: block;
+}
+.tru-so .main .tab-content .item.show {
+  border-bottom: 1px solid #D1D5DB;
 }
 .tru-so .main .tab-content .item.show .icon-down {
   display: none;

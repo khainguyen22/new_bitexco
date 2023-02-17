@@ -91,7 +91,11 @@
                 <div class="navbar">
                     <div class="container">
                         <div class="logo">
-                            <a href="<?php echo get_home_url(); ?>"> <img class="img-logo" src="<?php echo get_stylesheet_directory_uri() ?>/access/images/logo.png" alt="logo"></a>
+                            <?php if (is_user_logged_in()) :?>
+                                <a href="<?php echo get_home_url(); ?>"> <img class="img-logo" src="<?php echo get_stylesheet_directory_uri() ?>/access/images/logged-in-logo.jpg" alt="logo"></a>
+                            <?php else :?>
+                                <a href="<?php echo get_home_url(); ?>"> <img class="img-logo" src="<?php echo get_stylesheet_directory_uri() ?>/access/images/logo.png" alt="logo"></a>
+                            <?php endif;?>
                         </div>
                         <?php
                         wp_nav_menu(
