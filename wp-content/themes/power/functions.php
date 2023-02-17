@@ -661,17 +661,17 @@ function posts_custom_column_views($column_name, $id)
 add_shortcode('csw_search_form', 'csw_search_form_fc');
 function csw_search_form_fc()
 {
+
 ?>
     <form class="csw-search-form d-flex align-items-center" method="get" action="<?php echo get_home_url() ?>">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-            <circle cx="11" cy="11.5" r="8" stroke="#0D0D0E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M16.5 17.458L21.5 22.458" stroke="#0D0D0E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <input type="search" class="csw-search-field search-input" id='input-form-search' placeholder="Nhập nội dung tìm kiếm" value="" name="s">
+        <button type="submit" class="btn-submit-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                <circle cx="11" cy="11.5" r="8" stroke="#0D0D0E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16.5 17.458L21.5 22.458" stroke="#0D0D0E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg></button>
+        <input type="text" class="csw-search-field search-input" id='input-form-search' placeholder="Nhập nội dung tìm kiếm" required="true" name="s" value="">
         <button type="submit" class="csw-search-submit" id='btn-submit-form-search'></button>
     </form>
 <?php
-
 }
 
 add_filter('wpseo_breadcrumb_links', 'yoast_seo_breadcrumb_append_link');
@@ -719,3 +719,14 @@ function register_my_menu()
     register_nav_menu('other_menu', __('Other Menu'));
 }
 add_action('init', 'register_my_menu');
+
+/* Disable WordPress Admin Bar for all users */
+add_filter('show_admin_bar', '__return_false');
+
+function custom_login_redirect()
+{
+    global $wp;
+    return home_url($wp->request);
+}
+
+add_filter('login_redirect', 'custom_login_redirect');
