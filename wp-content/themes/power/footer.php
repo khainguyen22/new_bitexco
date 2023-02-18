@@ -1,4 +1,4 @@
-</main>
+</body>
 <?php
 $home_footer = get_field('home_footer', 'option');
 ?>

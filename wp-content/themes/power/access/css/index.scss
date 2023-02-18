@@ -1259,6 +1259,22 @@ span.tag-name .text {
         height: 100%;
         width: 100%;
     }
+
+    .navigation {
+        text-align: center;
+        padding: 20px 20px 30px;
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+
+            .nav-previous,
+            .nav-next {
+                margin: 0 10px;
+            }
+
+        }
+    }
 }
 
 .search.search-no-results {
@@ -1350,7 +1366,7 @@ p#alt-text-description {
 
 @import './scss/bando';
 @import './scss/chitietbando2';
-@import './scss/_dangki';
+@import './scss/_dangki.scss';
 @import './scss/_dangnhap';
 @import './scss/_danhsachnhamaythuydien';
 @import './scss/_dieu-khoan';

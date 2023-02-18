@@ -4,11 +4,6 @@ jQuery(document).ready(function ($) {
 	$('.nav-login').on('click', function () {
 		$('.nav-login .is_login').toggleClass('active');
 	})
-	// $(document).ready(function () {
-	// 	$('html').on('change', function () {
-	// 		console.log($('html')[0].lang);
-	// 	})
-	// })
 	$(' form.csw-search-form input[type=text]').on('change invalid', function () {
 		var textfield = $(this).get(0);
 		textfield.setCustomValidity('');
