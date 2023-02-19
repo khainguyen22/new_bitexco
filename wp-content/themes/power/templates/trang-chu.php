@@ -92,7 +92,10 @@ get_header();
 <div class="home">
     <section class="home-slide">
         <div class="home-slide-carousel">
-            <div data-title="Sản xuất kinh doanh" class="item home_san_xuat_kinh_doanh">
+            <?php 
+                $titles = get_field('slider_title', 'option');
+            ?>
+            <div data-title="<?php echo $titles['title_1']?>" class="item home_san_xuat_kinh_doanh">
                 <?php if ($home_san_xuat_kinh_doanh) : ?>
                     <img src="<?php echo $home_san_xuat_kinh_doanh_background; ?>" alt="<?php echo $home_san_xuat_kinh_doanh_content['title']; ?>">
                     <div class="container">
@@ -142,7 +145,7 @@ get_header();
                     </div>
                 <?php endif; ?>
             </div>
-            <div data-title="Dự án của chúng tôi" class="item home_du_an_cua_chung_toi">
+            <div data-title="<?php echo $titles['title_2']?>" class="item home_du_an_cua_chung_toi">
                 <?php if ($home_du_an_cua_chung_toi) : ?>
                     <img src="<?php echo $home_du_an_cua_chung_toi_background  ?>" alt="<?php echo $home_san_xuat_kinh_doanh_content['title']; ?>">
                     <div class="container">
@@ -171,7 +174,7 @@ get_header();
                     </div>
                 <?php endif; ?>
             </div>
-            <div data-title="Lịch sử phát triển" class="item home_lich_su_phat_trien">
+            <div data-title="<?php echo $titles['title_3']?>" class="item home_lich_su_phat_trien">
                 <?php if ($home_lich_su_phat_trien) : ?>
                     <img src="<?php echo $home_lich_su_phat_trien_background  ?>" alt="<?php echo $home_lich_su_phat_trien_content['title']; ?>">
                     <div class="container">
@@ -183,7 +186,7 @@ get_header();
                     </div>
                 <?php endif; ?>
             </div>
-            <div data-title="Tin tức mới" class="item home_tin_tuc_moi">
+            <div data-title="<?php echo $titles['title_4']?>" class="item home_tin_tuc_moi">
                 <?php if ($home_tin_tuc_moi) : ?>
                     <img src="<?php echo $home_tin_tuc_moi_background  ?>" alt="<?php echo $home_tin_tuc_moi_content['title']; ?>">
                     <div class="container">
@@ -195,7 +198,7 @@ get_header();
                     </div>
                 <?php endif; ?>
             </div>
-            <div data-title="Tuyển dụng" class="item home_tuyen_dung">
+            <div data-title="<?php echo $titles['title_5']?>" class="item home_tuyen_dung">
                 <?php if ($home_tuyen_dung) : ?>
                     <img src="<?php echo $home_tuyen_dung_background  ?>" alt="<?php echo $home_tuyen_dung_content['title']; ?>">
                     <div class="container">
