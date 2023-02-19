@@ -158,8 +158,13 @@
                     padding: 20px 0;
 
                     &[aria-expanded="false"] {
-                        border-bottom: 1px solid #D1D5DB;
-
+                        & + .icon-up {
+                            display: none;
+                            & + .icon-down {
+                                display: block;
+                            }
+                        }
+                        
                     }
                 }
 
