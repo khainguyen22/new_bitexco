@@ -47,7 +47,7 @@ get_header();
                                     <div class="col-12 col-lg-12 col-xl-5 col-left">
                                         <div id="accordionExample" class="accordion">
                                             <?php foreach ($content_tru_so_mien_bac as $key => $value) : ?>
-                                                <div class="item <?php echo $key === 0 ? 'show' : ''?>" data-number='<?php echo $key ?>'>
+                                                <div class="item" data-number='<?php echo $key ?>'>
                                                     <div id="heading<?php echo $key ?>mien-bac" data-number='<?php echo $key ?>'>
                                                         <h2 class="mb-0 d-flex">
                                                             <button type="button" data-toggle="collapse" data-target="#collapse<?php echo $key ?>mien-bac" aria-expanded="true" aria-controls="collapse<?php echo $key ?>mien-bac" class="btn btn-link collapsible-link">
