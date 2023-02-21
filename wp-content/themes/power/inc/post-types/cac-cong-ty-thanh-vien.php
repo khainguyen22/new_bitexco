@@ -68,9 +68,9 @@ add_action('init', 'register_post_type_company_member', 0);
 function register_taxonomy_location_company_member()
 {
     $labels = array(
-        'name'                       => _x('Khu vực công ty thành viên', 'Taxonomy General Name', 'shtheme'),
-        'singular_name'              => _x('Khu vực công ty thành viên', 'Taxonomy Singular Name', 'shtheme'),
-        'menu_name'                  => __('Khu vực công ty thành viên', 'shtheme'),
+        'name'                       => _x('Khu vực', 'Taxonomy General Name', 'shtheme'),
+        'singular_name'              => _x('Khu vực', 'Taxonomy Singular Name', 'shtheme'),
+        'menu_name'                  => __('Khu vực', 'shtheme'),
         'all_items'                  => __('All Items', 'shtheme'),
         'parent_item'                => __('Parent Item', 'shtheme'),
         'parent_item_colon'          => __('Parent Item:', 'shtheme'),
@@ -91,7 +91,7 @@ function register_taxonomy_location_company_member()
     );
     $args = array(
         'hierarchical'              => true,
-        'label'                     => 'Khu vực công ty thành viên',
+        'label'                     => 'Khu vực',
         'show_ui'                   => true,
         'query_var'                 => true,
         'show_admin_column'         => true,

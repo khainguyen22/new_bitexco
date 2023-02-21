@@ -67,7 +67,7 @@ get_header();
                         <?php endforeach; ?>
                     <?php endif; ?>
                     <span class="divider-section"></span>
-                    <div class="wraper-member">
+                    <div class="wraper-member" style="display: none">
                         <?php if ($ban_kiem_soat_member['title']) : ?> <h5 class="title"><?php echo $ban_kiem_soat_member['title']; ?></h5><?php endif; ?>
                         <div class="member">
                             <?php if ($ban_kiem_soat_member_person) : ?>

@@ -85,11 +85,12 @@ get_header();
                                         <path d="M16.8125 8.08333C16.8125 12.9398 11.2875 18 9.90625 18C8.525 18 3 12.9398 3 8.08333C3 4.17132 6.09203 1 9.90625 1C13.7205 1 16.8125 4.17132 16.8125 8.08333Z" stroke="#7E8189" stroke-width="1.5" />
                                         <circle r="2.65625" transform="matrix(-1 0 0 1 9.90625 7.90625)" stroke="#7E8189" stroke-width="1.5" />
                                     </svg>
-                                    <?php if (get_the_terms(get_the_ID(), 'location_company_member')) : ?>
-                                        <?php foreach (get_the_terms(get_the_ID(), 'location_company_member') as $key => $value) : ?>
-                                            <p> <?php echo paint_if_exist($value->name) ?> </p>
-                                        <?php endforeach; ?>
-                                    <?php endif; ?>
+                                    <!-- < ?php if (get_the_terms(get_the_ID(), 'location_company_member')) : ?>
+                                        < ?php foreach (get_the_terms(get_the_ID(), 'location_company_member') as $key => $value) : ?>
+                                            <p> < ?php echo paint_if_exist($value->name) ?> </p>
+                                        < ?php endforeach; ?>
+                                    < ?php endif; ?> -->
+                                    <a href="<?php echo get_field('map_link', get_the_ID())?>"><p><?php echo get_field('location', get_the_ID())?></p></a>
                                 </div>
                                 <div class="filter-phone item d-flex">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
