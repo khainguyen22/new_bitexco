@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	$('.filter-item').on('click', function() {
+	$('.filter-item').on('click', function(e) {
 		$('.filter-item ul.active').removeClass('active')
 		$(this).find('ul').addClass('active')
 	})
@@ -8,6 +8,7 @@ jQuery(document).ready(function() {
 		if(!$(e.target).is('.filter-item ul') 
 		&& !$(e.target).is('.filter-item') 
 		&& !$(e.target).is('.filter-item svg')
+		&& !$(e.target).is('.filter-item .item.active')
 		) {
 			$('.filter-item ul').removeClass('active')
 		}

@@ -76,6 +76,8 @@ function render($query, $paged = 1) {
 		', POWER ) ),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
 	) );
 
 	ob_start();
@@ -272,6 +274,8 @@ function annual_report_nav_ajax() {
 		', POWER ) ),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
 	) );
 
 	ob_start();
@@ -378,6 +382,9 @@ function tender_notice_render($query, $paged = 1) {
 		', POWER ) ),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+
+
 	) );
 
 	ob_start();
