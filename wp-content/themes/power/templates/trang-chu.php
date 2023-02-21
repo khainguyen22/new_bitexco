@@ -57,7 +57,7 @@ try {
     die('Lỗi không thể đọc file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
 }
 // get data current date of day
-$sheet = $objPHPExcel->getSheet(idate('m') - 1);
+$sheet = $objPHPExcel->getSheet(idate('m'));
 $highestRow = $sheet->getHighestRow();
 $highestColumn = $sheet->getHighestColumn();
 for ($row = 1; $row <= $highestRow; $row++) {
@@ -84,7 +84,7 @@ for ($row = 1; $row <= $highestRow_month; $row++) {
 // echo '</br>';
 // print_r($rowData_month[13][0][8]);
 // echo '</br>';
-// // print_r($rowData_month);
+// print_r($rowData_month);
 // die;
 get_header();
 ?>

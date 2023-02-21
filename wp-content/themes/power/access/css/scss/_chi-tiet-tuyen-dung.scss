@@ -254,8 +254,11 @@
             }
 
             .wrap_scrollspy {
-                position: fixed;
                 top: 487px;
+                z-index: 3;
+                position: sticky;
+                margin-top: -150px;
+                min-width: 174px;
 
                 .btn {
                     font-family: var(--primary-font);

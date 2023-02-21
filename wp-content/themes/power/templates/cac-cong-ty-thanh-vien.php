@@ -39,7 +39,7 @@ get_header();
                             <circle cx="11" cy="11" r="8" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
                             <path d="M16.5 16.958L21.5 21.958" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
-                        <input type="text" placeholder="Tìm kiếm" class="search">
+                        <input type="text" placeholder="Tìm kiếm" class="search" id="search-form">
                     </div>
                     <div class="form-filter-area filter-item">
                         <?php
@@ -59,7 +59,7 @@ get_header();
                         </ul>
                     </div>
                     <div class="button-submit">
-                        <button type="submit" class="btn btn-search btn-submit">Tìm kiếm</button>
+                        <button type="submit" class="btn btn-search btn-submit" id="submit-form">Tìm kiếm</button>
                     </div>
                     <div class="button-reset">
                         <button class="btn btn-search btn-reset">Đặt lại</button>

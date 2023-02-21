@@ -12,7 +12,15 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	// map luoi dien
+	$(document).ready(function () {
+		$('.goto').click(function () {
+			$(this).toggleClass('deactive');
+			$('.step').eq($(this).index('.goto')).toggleClass('deactive');
+		});
+	});
 
+	// change checkbox to radio button
 	function change_single_select_tax($select) {
 		jQuery('#' + $select + ' input').each(function () {
 			this.type = 'radio';
@@ -88,17 +96,16 @@ jQuery(document).ready(function ($) {
 	});
 
 
-	// $(document).on('click', '.menu-item', function () {
 
-	// 	$('.nav-item-icon-search').removeClass("is-active");
 
-	// 	$(".search").removeClass("is-active");
+	var inputform = document.getElementById("search-form");
+	inputform.addEventListener("keypress", function (event) {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			document.getElementById("submit-form").click();
+		}
+	});
 
-	// 	$('.navbar').removeClass("nav-is-active");
-
-	// 	$(".close-button").removeClass("is-active");
-
-	// });
 	$(document).on('click', '.mega-menu-item', function () {
 		$('.nav-item-icon-search').removeClass("is-active");
 		$(".search").removeClass("is-active");
@@ -199,6 +206,36 @@ jQuery(document).ready(function ($) {
 		$('.slide-img').removeClass('active');
 		$(this).addClass('active');
 	});
+	$('.related_events').slick({
+		autoplay: true,
+		arrows: true,
+		infinite: true,
+		dots: true,
+		autoplaySpeed: 5000,
+		speed: 500,
+		cssEase: 'linear',
+		slidesToShow: 3,
+		loop: true,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 3,
+					arrows: true,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 321,
+				settings: {
+					slidesToShow: 1,
+					arrows: false,
+					slidesToScroll: 1
+				}
+			}
+		]
+	});
 
 	$('.slider-cards').slick({
 		nextArrow: '<span  class="slick-next"><svg width="12" height="26" viewBox="0 0 12 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.999999 1.33398L10.3306 12.2197C10.7158 12.6691 10.7158 13.3322 10.3306 13.7816L1 24.6673" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round"/></svg></span>',
@@ -228,48 +265,4 @@ jQuery(document).ready(function ($) {
 			},
 		]
 	});
-
-	// $(".gallery-project").lightSlider(
-	// 	{
-	// 		gallery: true,
-	// 		item: 1,
-	// 		loop: true,
-	// 		thumbItem: 10,
-	// 		thumbMargin: 12,
-	// 		share: true,
-	// 		download: true,
-	// 		zoom: true,
-	// 		autoplayControls: true,
-	// 		autoplay: true,
-	// 		videojs: true,
-	// 		controls: true,
-	// 		responsive: [
-	// 			{
-	// 				breakpoint: 767,
-	// 				settings: {
-	// 					thumbItem: 5,
-	// 					thumbMargin: 6,
-	// 				}
-	// 			},
-	// 		]
-	// 	});
-
-	// jQuery("#imageGallery").lightSlider(
-	// 	{
-	// 		gallery: true,
-	// 		item: 1,
-	// 		loop: true,
-	// 		thumbItem: 6,
-	// 		slideMargin: 10,
-	// 		enableDrag: true,
-	// 		currentPagerPosition: 'left',
-	// 		videojs: true,
-	// 		pager: true,
-	// 		onSliderLoad: function (el) {
-	// 			el.lightGallery({
-	// 				selector: '#imageGallery .lslide'
-	// 			});
-	// 		}
-	// 	});
-	// lightGallery(document.getElementById('video-gallery'));
 });

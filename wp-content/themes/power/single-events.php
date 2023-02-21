@@ -78,12 +78,102 @@ get_header(); ?>
                     <div class="row">
                         <div class="col-12 col-md-9 ">
                             <div class="wrap_content">
-                                <div class="head">
+                                <?php if (get_field('general_information')) : ?>
+                                    <div class="general_information" id="general_information">
+                                        <?php if (get_field('general_information')['title']) : ?>
+                                            <h5 class="title"><?php _e(get_field('general_information')['title']) ?></h5>
+                                        <?php endif; ?>
+                                        <?php if (get_field('general_information')['description']) : ?>
+                                            <div class="description">
+                                                <?php _e(get_field('general_information')['description']) ?>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="driver"></div>
+                                <?php endif; ?>
+                                <?php if (get_field('content')) : ?>
+                                    <div class="content" id="content">
+                                        <?php if (get_field('content')['title']) : ?>
+                                            <h5 class="title"><?php _e(get_field('content')['title']) ?></h5>
+                                        <?php endif; ?>
+                                        <table class="table">
+                                            <tbody class="table-body">
+                                                <?php if (get_field('content')['info']) :
+                                                    foreach (get_field('content')['info'] as $value) : ?>
+                                                        <tr>
+                                                            <td><?php _e($value['date_start']) ?> - <?php _e($value['date_end']) ?></td>
+                                                            <td><?php _e($value['title']) ?></td>
+                                                        </tr>
+                                                <?php endforeach;
+                                                endif; ?>
+                                        </table>
+                                    </div>
+                                    <div class="driver"></div>
+                                <?php endif; ?>
+                                <?php if (get_field('speakers')) : ?>
+                                    <div class="speakers" id="speakers">
+                                        <?php if (get_field('speakers')['title']) : ?>
+                                            <h5 class="title"><?php _e(get_field('speakers')['title']) ?></h5>
+                                        <?php endif; ?>
+                                        <div class="wrap-person">
+                                            <?php if (get_field('speakers')['person']) :
+                                                foreach (get_field('speakers')['person'] as $value) : ?>
+                                                    <div class="person d-flex">
+                                                        <div class="image">
+                                                            <img src="<?php echo $value['image'] ?>" alt=" <?php _e($value['name']) ?>">
+                                                        </div>
 
-                                </div>
-                                <div class="content">
+                                                        <div class="info">
+                                                            <p class="position"> <?php _e($value['position']) ?></p>
+                                                            <p class="company"> <?php _e($value['company']) ?></p>
+                                                            <p class="name"> <?php _e($value['name']) ?></p>
+                                                        </div>
+                                                    </div>
+                                            <?php endforeach;
+                                            endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="driver"></div>
+                                <?php endif; ?>
+                                <?php if (get_field('document')) : ?>
+                                    <div class="document" id="document">
 
-                                </div>
+                                        <?php if (get_field('document')['item']) :
+                                            foreach (get_field('document')['item'] as $value) : ?>
+                                                <div class="item">
+
+                                                </div>
+                                        <?php endforeach;
+                                        endif; ?>
+
+                                        <div class="attach">
+                                            <?php if (get_field('document')['title']) : ?>
+                                                <h5 class="title"><?php _e(get_field('document')['title']) ?></h5>
+                                            <?php endif; ?>
+                                            <div class="file">
+                                                <?php if (get_field('document')['item']) : foreach (get_field('document')['item'] as $value) :  ?>
+                                                        <a href="<?php echo $value['file']['url'] ?>" download="<?php echo $value['file']['filename'] ?>" class="file-item d-flex justify-content-between">
+                                                            <span class="name d-flex">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                                    <path d="M15.2193 9.91559L9.6214 15.5135C8.15693 16.978 5.78256 16.978 4.3181 15.5135V15.5135C2.85363 14.0491 2.85363 11.6747 4.3181 10.2102L11.0945 3.43378C12.0708 2.45747 13.6538 2.45747 14.6301 3.43378V3.43378C15.6064 4.41009 15.6064 5.99301 14.6301 6.96932L7.76945 13.8299C7.2813 14.3181 6.48984 14.3181 6.00169 13.8299V13.8299C5.51353 13.3418 5.51353 12.5503 6.00169 12.0622L11.6838 6.38006" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" />
+                                                                </svg>
+                                                                <span><?php echo $value['file']['filename'] ?></span>
+                                                            </span>
+                                                            <span class="download d-flex">
+                                                                <span><?php _('Tải xuống'); ?></span>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path d="M16.293 15.707L13.0001 18.9999C12.6095 19.3905 11.9764 19.3905 11.5859 18.9999L8.29297 15.707M12.293 18.707L12.293 4.70703" stroke="#DAA622" stroke-width="2" stroke-linecap="round" />
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                <?php endforeach;
+                                                endif; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="driver"></div>
+                                <?php endif; ?>
+
                                 <div class="history">
                                     <a href="">
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -92,6 +182,7 @@ get_header(); ?>
                                         Quay lại sự kiện
                                     </a>
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-12 col-md-3 ">
@@ -102,17 +193,55 @@ get_header(); ?>
                                     <span class="btn btn_feild ">Đăng ký ngay</span>
                                 <?php endif; ?>
                                 <ul class="scrollspy">
-                                    <?php if (get_field("")) : ?> <li class="active"><a href="#">Thông tin tổng quan</a></li> <?php endif; ?>
-                                    <?php if (get_field("")) : ?> <li><a href="#">Nội dung chương trình</a> </li> <?php endif; ?>
-                                    <?php if (get_field("")) : ?> <li><a href="#">Diễn giả</a></li> <?php endif; ?>
-                                    <?php if (get_field("")) : ?> <li><a href="#">Tài liệu đính kèm (2)</a></li> <?php endif; ?>
+                                    <?php if (get_field("general_information")) : ?> <li class="active"><a href="#general_information">Thông tin tổng quan</a></li> <?php endif; ?>
+                                    <?php if (get_field("content")) : ?> <li><a href="#content">Nội dung chương trình</a> </li> <?php endif; ?>
+                                    <?php if (get_field("speakers")) : ?> <li><a href="#speakers">Diễn giả</a></li> <?php endif; ?>
+                                    <?php if (get_field("document")) : ?> <li><a href="#document">Tài liệu đính kèm (2)</a></li> <?php endif; ?>
 
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <?php if (get_field('contact')) : ?>
+                        <div class="driver"></div>
+                        <div class="contact">
+                            <div>
+                                <?php if (get_field('contact')['title']) : ?>
+                                    <h5 class="title"><?php _e(get_field('contact')['title']) ?></h5>
+                                <?php endif; ?>
+                                <?php if (get_field('contact')['description']) : ?>
+                                    <?php _e(get_field('contact')['description']) ?>
+                                <?php endif; ?>
+                            </div>
+                            <div class="info">
+                                <a href="http://" class="btn btn-contact">Liên hệ</a>
+                            </div>
+                        </div>
+                    <?php endif ?>
                 </div>
-
+                <div class="related_events">
+                    <?php
+                    $post_type = 'events';
+                    $args = array(
+                        'post_type'    => $post_type,
+                    );
+                    $the_query_post = new WP_Query($args);
+                    if ($the_query_post->have_posts()) : ?>
+                        <?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
+                            $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
+                            <div class="content-item">
+                                <div class="image">
+                                    <a href="<?php the_permalink() ?>">
+                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
+                                    </a>
+                                </div>
+                                <div class="content-text">
+                                    <h6><?php echo the_title() ?></h6>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                </div>
             </div>
         <?php endwhile; ?>
     <?php endif; ?>
