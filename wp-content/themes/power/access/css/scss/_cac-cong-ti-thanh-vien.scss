@@ -41,6 +41,19 @@
 
             .small-form-filter form,
             .small-form-filter .form {
+
+                li[data-value="mien-bac"] {
+                    order: 1;
+                }
+
+                li[data-value="mien-trung"] {
+                    order: 1;
+                }
+
+                li[data-value="mien-nam"] {
+                    order: 2;
+                }
+
                 .form-filter-search {
                     width: 100%;
                     max-width: 619px;

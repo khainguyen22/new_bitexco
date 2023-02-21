@@ -189,6 +189,7 @@ get_header();
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     <?php endwhile; ?>

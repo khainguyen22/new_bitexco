@@ -11918,6 +11918,18 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   background-color: #fff;
   padding: 32px 100px 65px 100px;
 }
+.company_member .filter-post-section .filter-post-container .small-form-filter form li[data-value=mien-bac],
+.company_member .filter-post-section .filter-post-container .small-form-filter .form li[data-value=mien-bac] {
+  order: 1;
+}
+.company_member .filter-post-section .filter-post-container .small-form-filter form li[data-value=mien-trung],
+.company_member .filter-post-section .filter-post-container .small-form-filter .form li[data-value=mien-trung] {
+  order: 1;
+}
+.company_member .filter-post-section .filter-post-container .small-form-filter form li[data-value=mien-nam],
+.company_member .filter-post-section .filter-post-container .small-form-filter .form li[data-value=mien-nam] {
+  order: 2;
+}
 .company_member .filter-post-section .filter-post-container .small-form-filter form .form-filter-search,
 .company_member .filter-post-section .filter-post-container .small-form-filter .form .form-filter-search {
   width: 100%;

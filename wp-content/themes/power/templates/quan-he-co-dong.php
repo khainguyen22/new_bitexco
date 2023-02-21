@@ -114,6 +114,8 @@
                 ', POWER)),
             'add_args'     => false,
             'add_fragment' => '',
+            'show_all' => true
+            
         ));
         ?>
 

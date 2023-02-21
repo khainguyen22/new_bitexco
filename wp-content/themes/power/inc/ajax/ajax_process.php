@@ -97,6 +97,8 @@ function render_action_news($query, $paged = 1)
 		', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
 	));
 
 	ob_start();
@@ -209,6 +211,9 @@ function render_library_images($query, $paged = 1)
 		', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
+		
 	));
 
 	ob_start();
@@ -391,6 +396,9 @@ function render_library_video($query, $paged = 1)
 		 ', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
+
 	));
 
 	ob_start();
@@ -509,6 +517,9 @@ function render_company_member($query, $paged = 1)
 		 ', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
+
 	));
 
 	ob_start();
@@ -749,6 +760,9 @@ function render_projects($query, $paged = 1)
 		 ', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
+
 	));
 
 	ob_start();
@@ -905,6 +919,9 @@ function render_vacancies($query, $paged = 1)
 		 ', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
+
 	));
 
 	ob_start();
@@ -1047,6 +1064,9 @@ function render_action_social_security($query, $paged = 1)
 		', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
+
 	));
 	ob_start();
 	if ($query->have_posts()) : ?>
@@ -1137,6 +1157,9 @@ function render_action_events($query, $paged = 1)
 		', POWER)),
 		'add_args'     => false,
 		'add_fragment' => '',
+		'show_all'=>true
+		
+
 	));
 	ob_start();
 	if ($query->have_posts()) : ?>
