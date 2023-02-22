@@ -155,7 +155,7 @@ if (isset($banner)) {
 					<?php while ($query->have_posts()) : $query->the_post(); ?>
 						<div class="item" data-post-ID="<?php echo get_the_ID() ?>">
 							<div class="d-flex justify-content-between head">
-								<h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6>
+								<a href="<?php the_permalink()?>"><h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6></a>
 								<?php foreach (get_the_terms(get_the_ID(), 'status') as $key => $value) : ?>
 									<span class="status status-info status-<?php echo paint_if_exist($value->slug) ?>"><?php echo paint_if_exist($value->name) ?></span>
 								<?php endforeach; ?>
