@@ -4,7 +4,6 @@
  * Template Name: Thông Báo Mời Thầu
  */
 ?>
-
 <?php get_header() ?>
 <!-- Banner -->
 <?php
@@ -13,6 +12,7 @@ $navigation = '';
 if (isset($banner)) {
 	$navigation = $banner['navigation'];
 }
+
 
 ?>
 <div class="tender_notice">
@@ -148,7 +148,7 @@ if (isset($banner)) {
 		'add_fragment' => '',
 	));
 	?>
-	<section class="infomation-list tender active" data-number="0">
+	<section class="infomation-list tender <?php echo $_GET['result'] == 'true' ? '' : 'active'?>" data-number="0" id="infor">
 		<div class="container">
 			<div class="list">
 				<?php if ($query->have_posts()) : ?>
@@ -340,7 +340,7 @@ if (isset($banner)) {
 		'add_fragment' => '',
 	));
 	?>
-	<section class="infomation-list contractor-celection-results-list tender" data-number="1">
+	<section class="infomation-list contractor-celection-results-list tender <?php echo $_GET['result'] == 'true' ? 'active' : '' ?>" data-number="1" id="result">
 		<div class="container">
 			<div class="list">
 				<?php if ($query->have_posts()) : ?>
@@ -358,7 +358,7 @@ if (isset($banner)) {
 							</div>
 							<div class="item-data">
 								<div class="d-flex justify-content-between head">
-									<h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6>
+									<a href="<?php the_permalink()?>"><h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6></a>
 								</div>
 								<div class="content">
 									<span class="tag">
