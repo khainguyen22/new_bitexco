@@ -7,8 +7,8 @@ get_header();
         <section class="breadcrumbs">
             <div class="container">
                 <div class="breadcrumbs-content">
-                    <span><a href="https://power.dtts.com.vn"><?php _e('Home', POWER)?></a></span>
-                    <span><a href="https://power.dtts.com.vn/danh-sach-tuyen-dung/"><?php _e("Thông báo mời thầu", POWER)?></a></span>
+                    <span><a href="<?php echo get_site_url()?>"><?php _e('Home', POWER)?></a></span>
+                    <span><a href="<?php echo get_site_url() .'/thong-bao-moi-thau'?>"><?php _e("Thông báo mời thầu", POWER)?></a></span>
                     <span class="title desktop"><?php echo paint_if_exist(get_the_title(get_the_ID())); ?></span>
                     <span class="title mobile"><?php _e('Chi tiết', POWER)?></span>
                 </div>
