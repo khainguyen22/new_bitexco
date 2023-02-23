@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
 	});
 
 	// Navigation on Banner
-	$('.nav').on('click', function () {
+	$('.banner .nav').on('click', function () {
 		$('.nav.active').removeClass('active')
 		$(this).addClass('active')
 		$('.shareholders-secion.active').removeClass('active')

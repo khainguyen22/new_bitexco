@@ -93,13 +93,13 @@
         // Pagination
         $pagination = paginate_links(array(
             'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-            'total'        => $query->max_num_pages,
+            'total'        => 5,
             'current'      => max($paged, get_query_var('paged')),
             'format'       => '?paged=%#%',
-            'show_all'     => false,
+            'show_all'     => true,
             'type'         => 'plain',
             'end_size'     => 1,
-            'mid_size'     => 0,
+            'mid_size'     => 1,
             'prev_next'    => true,
             'prev_text'    => sprintf('<i></i> %1$s', __('
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +114,7 @@
                 ', POWER)),
             'add_args'     => false,
             'add_fragment' => '',
-            'show_all' => true
+            // 'show_all' => true
             
         ));
         ?>
@@ -223,10 +223,10 @@
     // Pagination
     $pagination = paginate_links(array(
         'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-        'total'        => $query->max_num_pages,
+        'total'        => 5,
         'current'      => max($paged, get_query_var('paged')),
         'format'       => '?paged=%#%',
-        'show_all'     => false,
+        'show_all'     => true,
         'type'         => 'plain',
         'end_size'     => 1,
         'mid_size'     => 0,
@@ -355,7 +355,7 @@
         'total'        => $annual_report_query->max_num_pages,
         'current'      => max(1, get_query_var('paged')),
         'format'       => '?paged=%#%',
-        'show_all'     => false,
+        'show_all'     => true,
         'type'         => 'plain',
         'end_size'     => 1,
         'mid_size'     => 1,
@@ -434,10 +434,10 @@
     // Pagination
     $pagination = paginate_links(array(
         'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-        'total'        => $query->max_num_pages,
+        'total'        => 5,
         'current'      => max($paged, get_query_var('paged')),
         'format'       => '?paged=%#%',
-        'show_all'     => false,
+        'show_all'     => true,
         'type'         => 'plain',
         'end_size'     => 1,
         'mid_size'     => 0,

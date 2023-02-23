@@ -7,8 +7,8 @@ get_header();
         <section class="breadcrumbs">
             <div class="container">
                 <div class="breadcrumbs-content">
-                    <span><a href="https://power.dtts.com.vn"><?php _e('Home', POWER)?></a></span>
-                    <span><a href="https://power.dtts.com.vn/danh-sach-tuyen-dung/"><?php _e("Kết quả lựa chọn nhà thầu", POWER)?></a></span>
+                    <span><a href="<?php echo get_site_url() ?>"><?php _e('Home', POWER)?></a></span>
+                    <span><a href="<?php echo get_site_url() . '/thong-bao-moi-thau/?result=true'?>"><?php _e("Kết quả lựa chọn nhà thầu", POWER)?></a></span>
                     <span class="title desktop"><?php _e('Gói thầu NQ2: Cung cấp, lắp đặt thí nghiệm', POWER)?></span>
                     <span class="title mobile"><?php _e('Chi tiết', POWER)?></span>
                 </div>

@@ -179,7 +179,8 @@ get_header();
                     echo paginate_links(array(
                         'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                         'format' => '?paged=%#%',
-                        'current' => max(1, $paged),
+        'show_all'     => true,
+        'current' => max(1, $paged),
                         'total' => $the_query_post->max_num_pages,
                         'mid_size' => '3',
                         'prev_text'    => __('<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

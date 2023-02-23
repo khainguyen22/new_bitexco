@@ -4,7 +4,6 @@
  * Template Name: Thông Báo Mời Thầu
  */
 ?>
-
 <?php get_header() ?>
 <!-- Banner -->
 <?php
@@ -13,6 +12,7 @@ $navigation = '';
 if (isset($banner)) {
 	$navigation = $banner['navigation'];
 }
+
 
 ?>
 <div class="tender_notice">
@@ -125,10 +125,10 @@ if (isset($banner)) {
 	// Pagination
 	$pagination = paginate_links(array(
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-		'total'        => $query->max_num_pages,
+		'total'        => 5,
 		'current'      => max($paged, get_query_var('paged')),
 		'format'       => '?paged=%#%',
-		'show_all'     => false,
+		'show_all'     => true,
 		'type'         => 'plain',
 		'end_size'     => 1,
 		'mid_size'     => $paged,
@@ -148,14 +148,14 @@ if (isset($banner)) {
 		'add_fragment' => '',
 	));
 	?>
-	<section class="infomation-list tender active" data-number="0">
+	<section class="infomation-list tender <?php echo $_GET['result'] == 'true' ? '' : 'active'?>" data-number="0" id="infor">
 		<div class="container">
 			<div class="list">
 				<?php if ($query->have_posts()) : ?>
 					<?php while ($query->have_posts()) : $query->the_post(); ?>
 						<div class="item" data-post-ID="<?php echo get_the_ID() ?>">
 							<div class="d-flex justify-content-between head">
-								<h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6>
+								<a href="<?php the_permalink()?>"><h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6></a>
 								<?php foreach (get_the_terms(get_the_ID(), 'status') as $key => $value) : ?>
 									<span class="status status-info status-<?php echo paint_if_exist($value->slug) ?>"><?php echo paint_if_exist($value->name) ?></span>
 								<?php endforeach; ?>
@@ -317,10 +317,10 @@ if (isset($banner)) {
 	// Pagination
 	$pagination = paginate_links(array(
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-		'total'        => $query->max_num_pages,
+		'total'        => 5,
 		'current'      => max($paged, get_query_var('paged')),
 		'format'       => '?paged=%#%',
-		'show_all'     => false,
+		'show_all'     => true,
 		'type'         => 'plain',
 		'end_size'     => 1,
 		'mid_size'     => $paged,
@@ -340,7 +340,7 @@ if (isset($banner)) {
 		'add_fragment' => '',
 	));
 	?>
-	<section class="infomation-list contractor-celection-results-list tender" data-number="1">
+	<section class="infomation-list contractor-celection-results-list tender <?php echo $_GET['result'] == 'true' ? 'active' : '' ?>" data-number="1" id="result">
 		<div class="container">
 			<div class="list">
 				<?php if ($query->have_posts()) : ?>
@@ -358,7 +358,7 @@ if (isset($banner)) {
 							</div>
 							<div class="item-data">
 								<div class="d-flex justify-content-between head">
-									<h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6>
+									<a href="<?php the_permalink()?>"><h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6></a>
 								</div>
 								<div class="content">
 									<span class="tag">

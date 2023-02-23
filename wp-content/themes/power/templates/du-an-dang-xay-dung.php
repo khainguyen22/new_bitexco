@@ -228,7 +228,7 @@ get_header();
                     $big = 999999999;
                     $total = isset($main_query->max_num_pages) ? $main_query->max_num_pages : '';
                     if ($total > 1) echo '<ul class="pagination justify-content-center custom-pagination">';
-                    echo paginate_links(array(
+                    echo (array(
                         'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                         'format' => '?paged=%#%',
                         'current' => max(1, $paged),
