@@ -36,6 +36,7 @@ jQuery(document).ready(function($) {
 
 	// Reset Ajax
 	$(".shareholder-content .reset").on("click", (e) => {
+		$('.form-control').val('')
 		const dataObject = {
 			action: 'post_search_ajax',
 			inputValue: ''
