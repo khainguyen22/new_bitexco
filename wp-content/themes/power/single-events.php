@@ -87,9 +87,10 @@ get_header(); ?>
                                             <div class="description">
                                                 <?php _e(get_field('general_information')['description']) ?>
                                             </div>
+                                            <div class="driver"></div>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="driver"></div>
+
                                 <?php endif; ?>
                                 <?php if (get_field('content')) : ?>
                                     <div class="content" id="content">

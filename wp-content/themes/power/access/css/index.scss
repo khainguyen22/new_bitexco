@@ -1371,7 +1371,7 @@ p#alt-text-description {
 // style map luoi dien 
 .map-luoi-dien {
     position: relative;
-    min-height: 1000px;
+    min-height: 1300px;
     padding: 50px 0;
 }
 
@@ -1382,7 +1382,7 @@ p#alt-text-description {
 }
 
 .step-container img {
-    max-height: 900px;
+    max-height: 1200px;
     object-fit: contain;
 }
 
@@ -1485,12 +1485,12 @@ img {
 }
 
 .step-container .step {
-    width: 600px;
+    width: 800px;
     height: auto;
     position: absolute;
     color: #fff;
     display: block;
-    max-height: 900px;
+    max-height: 1200px;
 }
 
 .step-container .step.deactive {
