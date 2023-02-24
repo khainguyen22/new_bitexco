@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 		if(!$(e.target).is('.filter-item ul') 
 		&& !$(e.target).is('.filter-item') 
 		&& !$(e.target).is('.filter-item svg')
-		&& !$(e.target).is('.filter-item .item.active')
+		// && !$(e.target).is('.filter-item .item.active')
 		) {
 			$('.filter-item ul').removeClass('active')
 		}

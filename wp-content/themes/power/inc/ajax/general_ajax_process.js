@@ -34,6 +34,32 @@ jQuery(document).ready(function($) {
 		generalAjax(dataObject, '.shareholder-items', success)
 	})
 
+	// Tender Notification Search
+	$(".tender-notice.tender .btn-search").on('click', function(e) {
+		// const paged = handleNextPrev(e, '.infomation-list')
+		const inputValue = $('.tender-notice.tender input').val();
+		const type = $('.form-filter-type .item.active').attr('data-value');
+		const field = $('.form-filter-field .item.active').attr('data-value');
+		const dataDate = $('.filter-form  .form-filter-date-start input').val();
+		
+
+		function success(data) {
+			var results = data.split('|');
+			$('.infomation-list .list').html(results[0])
+			$('.infomation-list .pagination').html(results[1])
+		}
+		const dataObject = {
+			action: 'tender_notification_search',
+			paged: 1,
+			inputValue: inputValue,
+			type: field == null ? '' : field,
+			dataDate: dataDate,
+			field: type == null ? '' : type,
+		}
+		generalAjax(dataObject, '.infomation-list .list', success)
+	})
+
+
 	// Reset Ajax
 	$(".shareholder-content .reset").on("click", (e) => {
 		$('.form-control').val('')
@@ -209,7 +235,10 @@ jQuery(document).ready(function($) {
 	})
 
 	// Reset Ajax
-	$(".reset").on("click", (e) => {
+	$(".tender-notice .btn-reset").on("click", (e) => {
+		$('.tender-notice.tender input').val('');
+		$('.tender-notice .item.active').removeClass('active');
+		$('.tender-notice .item.first').addClass('active');
 		const dataObject = {
 			action: 'tender_notice_reset_action',
 		}
