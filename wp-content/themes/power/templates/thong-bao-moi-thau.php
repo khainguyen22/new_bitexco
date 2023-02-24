@@ -47,16 +47,16 @@ if (isset($banner)) {
 					<input type="text" placeholder="Tìm kiếm">
 				</div>
 				<?php
-				$tax_name = get_taxonomy('type')->label;
+				$tax_name = get_taxonomy('field')->label;
 				$terms = get_terms(array(
-					'taxonomy' => 'type',
+					'taxonomy' => 'field',
 					'hide_empty' => false,
 				));
 				?>
 				<div class="filter-item form-filter-type">
 					<ul>
 						<?php if (isset($tax_name)) : ?>
-							<li class="item active"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
 						<?php endif ?>
 						<?php foreach ($terms as $key => $value) : ?>
 							<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -67,16 +67,16 @@ if (isset($banner)) {
 					</svg>
 				</div>
 				<?php
-				$tax_name = get_taxonomy('field')->label;
+				$tax_name = get_taxonomy('type')->label;
 				$terms = get_terms(array(
-					'taxonomy' => 'field',
+					'taxonomy' => 'type',
 					'hide_empty' => false,
 				));
 				?>
 				<div class="filter-item form-filter-field">
 					<ul>
 						<?php if (isset($tax_name)) : ?>
-							<li class="item active"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
 						<?php endif ?>
 						<?php foreach ($terms as $key => $value) : ?>
 							<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>

@@ -49,6 +49,59 @@ function post_search_ajax() {
 add_action('wp_ajax_nopriv_post_search_ajax', 'post_search_ajax');
 add_action('wp_ajax_post_search_ajax', 'post_search_ajax');
 
+// Tender Notification Search
+function tender_notification_search() {
+	// $paged = $_POST['paged'];
+	// $date = strtotime('Y-m-d', $_POST['dataDate']);
+	// echo $date . $_POST['dataDate'];
+	// die;
+
+	if (isset($_POST['field']) && $_POST['field'] != '') {
+		$field = [
+			'taxonomy' => 'field',               
+			'field' => 'slug',                   
+			'terms' => array( $_POST['field'] ),    
+		];
+	}
+
+	if (isset($_POST['type']) && $_POST['type'] != '') {
+		$type = [
+			'taxonomy' => 'type',               
+			'field' => 'slug',                   
+			'terms' => array( $_POST['type'] ),    
+		];
+	}
+
+	if ((isset($_POST['type']) && $_POST['type'] != '') || (isset($_POST['field']) && $_POST['field'] != '')) {
+		$tax_query = [
+			'relation' => 'AND', 
+			$field,
+			$type
+		];
+	}
+
+	$args = [
+		'post_type'=> 'tender_notice',
+		'posts_per_page' => 8,
+		'paged' => 1,
+		's' => $_POST['inputValue'],
+		'exact' => false,                       
+    'sentence' => true,
+		'tax_query' => $tax_query
+	];
+
+	$query = new WP_Query($args);
+
+	$max_num_pages = $query->max_num_pages;
+
+	echo tender_notice_render($query);
+
+	die;
+	
+}
+add_action('wp_ajax_nopriv_tender_notification_search', 'tender_notification_search');
+add_action('wp_ajax_tender_notification_search', 'tender_notification_search');
+
 function render($query, $paged = 1) {
 	$pagination = paginate_links( array(
 		'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
@@ -312,6 +365,30 @@ function tender_pag_action() {
 	$date = strtotime('Y-m-d', $_POST['dataDate']);
 	// echo $date . $_POST['dataDate'];
 	// die;
+	if (isset($_POST['field']) && $_POST['field'] != '') {
+		$field = [
+			'taxonomy' => 'type',               
+			'field' => 'slug',                   
+			'terms' => array( $_POST['field'] ),    
+		];
+	}
+
+	if (isset($_POST['type']) && $_POST['type'] != '') {
+		$type = [
+			'taxonomy' => 'field',               
+			'field' => 'slug',                   
+			'terms' => array( $_POST['type'] ),    
+		];
+	}
+
+	if ((isset($_POST['type']) && $_POST['type'] != '') || (isset($_POST['field']) && $_POST['field'] != '')) {
+		$tax_query = [
+			'relation' => 'AND', 
+			$field,
+			$type
+		];
+	}
+
 	$args = [
 		'post_type'=> 'tender_notice',
 		'posts_per_page' => 8,
@@ -319,18 +396,7 @@ function tender_pag_action() {
 		's' => $_POST['inputValue'],
 		'exact' => false,                       
     'sentence' => true,
-		'tax_query' => [
-			[
-				'taxonomy' => 'type',
-				'field'=> 'slug',
-				'terms' => $_POST['type']
-			],
-			[
-				'taxonomy' => 'field',
-				'field'=> 'slug',
-				'terms' => $_POST['field']
-			],
-		],
+		'tax_query' => $tax_query
 		// 'meta_query' => [
 		// 	'relation' => 'AND',
 		// 	[
