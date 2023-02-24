@@ -47,9 +47,9 @@ if (isset($banner)) {
 					<input type="text" placeholder="Tìm kiếm">
 				</div>
 				<?php
-				$tax_name = get_taxonomy('field')->label;
+				$tax_name = get_taxonomy('type')->label;
 				$terms = get_terms(array(
-					'taxonomy' => 'field',
+					'taxonomy' => 'type',
 					'hide_empty' => false,
 				));
 				?>
@@ -67,9 +67,9 @@ if (isset($banner)) {
 					</svg>
 				</div>
 				<?php
-				$tax_name = get_taxonomy('type')->label;
+				$tax_name = get_taxonomy('field')->label;
 				$terms = get_terms(array(
-					'taxonomy' => 'type',
+					'taxonomy' => 'field',
 					'hide_empty' => false,
 				));
 				?>

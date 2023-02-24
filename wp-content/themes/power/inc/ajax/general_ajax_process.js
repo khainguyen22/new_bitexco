@@ -52,9 +52,10 @@ jQuery(document).ready(function($) {
 			action: 'tender_notification_search',
 			paged: 1,
 			inputValue: inputValue,
-			type: field == null ? '' : field,
+			type: type == null ? '' : type,
 			dataDate: dataDate,
-			field: type == null ? '' : type,
+			field: field == null ? '' : field,
+			
 		}
 		generalAjax(dataObject, '.infomation-list .list', success)
 	})
