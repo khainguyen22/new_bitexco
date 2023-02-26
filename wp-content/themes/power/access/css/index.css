@@ -1052,6 +1052,7 @@ label.required::after {
 
 .loader-box {
   margin: 0 auto 50px;
+  padding-top: 50px;
 }
 
 #btn-submit-form-search {
@@ -13718,6 +13719,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
 }
 .no-item-found h3 {
   font-family: "Manrope";

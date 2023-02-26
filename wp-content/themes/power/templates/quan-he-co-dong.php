@@ -93,7 +93,7 @@
         // Pagination
         $pagination = paginate_links(array(
             'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-            'total'        => 5,
+            'total'        => $query->max_num_pages,
             'current'      => max($paged, get_query_var('paged')),
             'format'       => '?paged=%#%',
             'show_all'     => true,
@@ -223,7 +223,7 @@
     // Pagination
     $pagination = paginate_links(array(
         'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-        'total'        => 5,
+        'total'        => $query->max_num_pages,
         'current'      => max($paged, get_query_var('paged')),
         'format'       => '?paged=%#%',
         'show_all'     => true,
@@ -434,7 +434,7 @@
     // Pagination
     $pagination = paginate_links(array(
         'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-        'total'        => 5,
+        'total'        => $query->max_num_pages,
         'current'      => max($paged, get_query_var('paged')),
         'format'       => '?paged=%#%',
         'show_all'     => true,
