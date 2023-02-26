@@ -89,7 +89,7 @@ get_header();
            <div class="container">
                 <div class="filters-type">
                     <div class="navigation">
-                        <ul class="nav nav-tabs" role="tablist">
+                        <ul class="nav" role="tablist">
                             <li role="presentation" class="active"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Hình ảnh</a></li>
                             <li role="presentation" class=""><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Video </a></li>
                             <li role="presentation" class=""><a href="#useful-infomation" aria-controls="useful-infomation" role="tab" data-toggle="tab">Thông tin hữu ích</a></li>

@@ -50,7 +50,7 @@ function my_scripts() {
     wp_enqueue_script('thong-tin-huu-ich', get_template_directory_uri() . '/access/js/thong-tin-huu-ich.js', array('jquery'), 1.1, false);
     wp_enqueue_script('header', get_template_directory_uri() . '/access/js/header.js', array('jquery'), 1.1, false);
     wp_enqueue_script('prevent-script-injection', get_template_directory_uri() . '/access/js/prventScriptInjection.js', array('jquery'), 1.1, false);
-
+    wp_enqueue_script('thu-vien', get_template_directory_uri() . '/access/js/thu-vien.js', array('jquery'), 1.1, false);
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
