@@ -16,6 +16,7 @@ if (isset($banner)) {
 
 ?>
 <div class="tender_notice">
+	<!-- Banner -->
 	<section class="banner tender-notice-banner" style='background-image:url("<?php echo $banner['image']; ?>")'>
 		<div class="container">
 			<div class="content">
@@ -125,7 +126,7 @@ if (isset($banner)) {
 	// Pagination
 	$pagination = paginate_links(array(
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 		'current'      => max($paged, get_query_var('paged')),
 		'format'       => '?paged=%#%',
 		'show_all'     => true,
@@ -148,7 +149,7 @@ if (isset($banner)) {
 		'add_fragment' => '',
 	));
 	?>
-	<section class="infomation-list tender <?php echo $_GET['result'] == 'true' ? '' : 'active'?>" data-number="0" id="infor">
+	<section class="infomation-list tender tender-infor <?php echo $_GET['result'] == 'true' ? '' : 'active'?>" data-number="0" id="infor">
 		<div class="container">
 			<div class="list">
 				<?php if ($query->have_posts()) : ?>
@@ -247,7 +248,7 @@ if (isset($banner)) {
 				<div class="filter-item form-filter-type">
 					<ul>
 						<?php if (isset($tax_name)) : ?>
-							<li class="item active"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
 						<?php endif ?>
 						<?php foreach ($terms as $key => $value) : ?>
 							<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -267,7 +268,7 @@ if (isset($banner)) {
 				<div class="filter-item form-filter-field">
 					<ul>
 						<?php if (isset($tax_name)) : ?>
-							<li class="item active"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
 						<?php endif ?>
 						<?php foreach ($terms as $key => $value) : ?>
 							<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -317,7 +318,7 @@ if (isset($banner)) {
 	// Pagination
 	$pagination = paginate_links(array(
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 		'current'      => max($paged, get_query_var('paged')),
 		'format'       => '?paged=%#%',
 		'show_all'     => true,
@@ -339,6 +340,8 @@ if (isset($banner)) {
 		'add_args'     => false,
 		'add_fragment' => '',
 	));
+
+
 	?>
 	<section class="infomation-list contractor-celection-results-list tender <?php echo $_GET['result'] == 'true' ? 'active' : '' ?>" data-number="1" id="result">
 		<div class="container">

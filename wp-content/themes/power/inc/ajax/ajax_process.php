@@ -13,6 +13,7 @@ function not_result()
 		<h3>Không có thông tin nào được tìm thấy, vui lòng thử lại</h3>
 	</div>';
 }
+
 // Start Filter & Pagination news
 function query_action_news($paged)
 {
@@ -61,6 +62,8 @@ function post_filter_action_news()
 }
 add_action('wp_ajax_nopriv_post_filter_action_news', 'post_filter_action_news');
 add_action('wp_ajax_post_filter_action_news', 'post_filter_action_news');
+
+
 function post_nav_action_news()
 {
 	$paged = $_POST['paged'];
@@ -185,6 +188,7 @@ function post_nav_action_library_images()
 }
 add_action('wp_ajax_nopriv_post_nav_action_library_images', 'post_nav_action_library_images');
 add_action('wp_ajax_post_nav_action_library_images', 'post_nav_action_library_images');
+
 function render_library_images($query, $paged = 1)
 {
 	$pagination = paginate_links(array(
@@ -316,7 +320,6 @@ function render_library_images($query, $paged = 1)
 	ob_end_clean();
 	return $shareholder_info . "|" . $pagination;
 }
-// End Filter & Pagination library image
 
 // Start Filter & Pagination library video
 function post_filter_action_library_video()
@@ -370,6 +373,7 @@ function post_nav_action_library_video()
 }
 add_action('wp_ajax_nopriv_post_nav_action_library_video', 'post_nav_action_library_video');
 add_action('wp_ajax_post_nav_action_library_video', 'post_nav_action_library_video');
+
 function render_library_video($query, $paged = 1)
 {
 	$pagination = paginate_links(array(
@@ -476,6 +480,7 @@ function query_action_company_member($paged)
 	echo render_company_member($query, $paged);
 	die;
 }
+
 function post_filter_action_company_member()
 {
 	$paged = '1';
@@ -491,6 +496,7 @@ function post_nav_action_company_member()
 }
 add_action('wp_ajax_nopriv_post_nav_action_company_member', 'post_nav_action_company_member');
 add_action('wp_ajax_post_nav_action_company_member', 'post_nav_action_company_member');
+
 function render_company_member($query, $paged = 1)
 {
 	$pagination = paginate_links(array(
@@ -650,6 +656,7 @@ function query_action_projects($paged)
 	echo render_projects($query, $paged);
 	die;
 }
+
 function post_filter_action_projects()
 {
 	$paged = '1';
@@ -718,6 +725,7 @@ function query_action_projects_list($paged)
 	echo render_projects($query, $paged);
 	die;
 }
+
 function post_filter_action_projects_list()
 {
 	$paged = '1';
@@ -845,9 +853,6 @@ function render_projects($query, $paged = 1)
 }
 // End Filter & Pagination projects
 
-
-
-
 // Start Filter & Pagination vacancies
 function query_action_vacancies($paged)
 {
@@ -878,6 +883,7 @@ function query_action_vacancies($paged)
 	echo render_vacancies($query, $paged);
 	die;
 }
+
 function post_filter_action_vacancies()
 {
 	$paged = '1';
@@ -893,6 +899,7 @@ function post_nav_action_vacancies()
 }
 add_action('wp_ajax_nopriv_post_nav_action_vacancies', 'post_nav_action_vacancies');
 add_action('wp_ajax_post_nav_action_vacancies', 'post_nav_action_vacancies');
+
 function render_vacancies($query, $paged = 1)
 {
 	$pagination = paginate_links(array(
@@ -985,8 +992,6 @@ function render_vacancies($query, $paged = 1)
 }
 // End Filter & Pagination vacancies
 
-
-
 // Start Filter & Pagination social_security
 function post_filter_action_social_security()
 {
@@ -1015,6 +1020,7 @@ function post_filter_action_social_security()
 }
 add_action('wp_ajax_nopriv_post_filter_action_social_security', 'post_filter_action_social_security');
 add_action('wp_ajax_post_filter_action_social_security', 'post_filter_action_social_security');
+
 function post_nav_action_social_security()
 {
 	$slug = (isset($_POST['data_slug'])) ? $_POST['data_slug'] : '';
@@ -1095,8 +1101,6 @@ function render_action_social_security($query, $paged = 1)
 }
 // End Filter & Pagination social_security
 
-
-
 // Start Filter & Pagination events
 function post_filter_action_events()
 {
@@ -1115,6 +1119,7 @@ function post_filter_action_events()
 }
 add_action('wp_ajax_nopriv_post_filter_action_events', 'post_filter_action_events');
 add_action('wp_ajax_post_filter_action_events', 'post_filter_action_events');
+
 function post_nav_action_events()
 {
 	$paged = $_POST['paged'];

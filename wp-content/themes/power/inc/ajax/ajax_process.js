@@ -46,7 +46,6 @@ jQuery(document).ready(function ($) {
                 )
             },
             success: function (data) {
-                console.log(data);
                 var results = data.split('|');
                 $('.tin-tuc-thuy-dien .lists-post .list').html(results[0])
                 $('.tin-tuc-thuy-dien  .pagination').html(results[1])
