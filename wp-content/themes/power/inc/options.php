@@ -167,7 +167,9 @@ function my_acf_op_init()
         $child = acf_add_options_page(array(
             'page_title'  => __('Sự kiên'),
             'menu_title'  => __('Sự kiên'),
+        ));
          // Add sub page.
+         
          $child = acf_add_options_page(array(
             'page_title'  => __('Thông tin hữu ích'),
             'menu_title'  => __('Thông tin hữu ích'),
