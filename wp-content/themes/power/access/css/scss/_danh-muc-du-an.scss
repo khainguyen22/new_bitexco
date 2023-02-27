@@ -115,11 +115,19 @@
                             display: flex;
                             justify-content: center;
                             flex-direction: column;
+                            margin-top: 2px;
                         }
 
                         .filter-company,
                         .content-time {
                             margin-bottom: 9px;
+
+                        }
+
+                        .filter-company,
+                        .content-time,
+                        .content-location {
+                            align-items: start;
                         }
                     }
                 }

@@ -2,9 +2,8 @@
 get_header(); ?>
 <!-- Blog & Sidebar Section -->
 <section class="list_news_page">
-	<h3><?php single_tag_title() ?></h3>
 	<div class="container">
-		<div class="row">
+		<div class="list">
 			<?php if (have_posts()) : ?>
 
 				<?php while (have_posts()) : the_post(); ?>

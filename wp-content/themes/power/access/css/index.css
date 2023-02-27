@@ -320,6 +320,7 @@ section:focus {
   letter-spacing: 0.01em;
   padding: 14px 32px;
   text-transform: uppercase;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .btn-custom-1.btn-custom-1-m {
@@ -327,6 +328,7 @@ section:focus {
   line-height: 140%;
   letter-spacing: 0.04em;
   padding: 14px 32px;
+  width: -moz-fit-content;
   width: fit-content;
   text-transform: uppercase;
 }
@@ -528,6 +530,7 @@ span.tag {
 span.tag .text {
   position: absolute;
   left: 20px;
+  width: -moz-max-content;
   width: max-content;
 }
 span.tag.tag-calender::before {
@@ -898,6 +901,7 @@ span.tag.tag-dropdown::before {
 .text-underline {
   border-bottom: 2px solid #DAA622;
   display: block;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -950,6 +954,7 @@ label.required::after {
   color: #FFFFFF;
   padding: 2px 8px;
   border-radius: 2px;
+  height: -moz-fit-content;
   height: fit-content;
 }
 .status.status-coming-soon {
@@ -997,6 +1002,7 @@ label.required::after {
 .banner .navigation ul {
   color: #fff;
   text-transform: uppercase;
+  width: -moz-max-content;
   width: max-content;
 }
 .banner .navigation ul li {
@@ -1039,6 +1045,7 @@ label.required::after {
     display: none;
   }
   .banner .navigation ul {
+    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -1066,6 +1073,20 @@ label.required::after {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
+}
+.filter-form .filter-item.form-filter-date-start:has(#date),
+.form .filter-item.form-filter-date-start:has(#date),
+.small-form-filter .filter-item.form-filter-date-start:has(#date) {
+  padding: 0 16px;
+  justify-content: flex-end;
+}
+.filter-form .filter-item.form-filter-date-start:has(#date) input,
+.form .filter-item.form-filter-date-start:has(#date) input,
+.small-form-filter .filter-item.form-filter-date-start:has(#date) input {
+  position: absolute;
+  left: 16px;
+  height: 100%;
+  background: transparent;
 }
 .filter-form .filter-item:hover,
 .form .filter-item:hover,
@@ -1128,6 +1149,7 @@ label.required::after {
   background-color: #fff;
   row-gap: 4px;
   min-width: calc(100% + 2px);
+  width: -moz-max-content;
   width: max-content;
   position: absolute;
   left: -1px;
@@ -1287,7 +1309,8 @@ p#alt-text-description {
 
 .step-container img {
   max-height: 1200px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .goto-container .goto.default {
@@ -1407,9 +1430,11 @@ img {
     right: unset;
     left: 10%;
     top: 0;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .step-container .step {
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -1530,13 +1555,15 @@ img {
   display: flex;
   justify-content: space-between;
   margin-top: 48px;
-  column-gap: 119px;
+  -moz-column-gap: 119px;
+       column-gap: 119px;
 }
 .projects .projects-content .figures .figure-column {
   display: flex;
   width: 33.33%;
   align-items: center;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .projects .projects-content .figures .figure-column h4 {
   font-weight: 600;
@@ -1552,6 +1579,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #434449;
+  width: -moz-max-content;
   width: max-content;
 }
 .projects .projects-content .figures img {
@@ -1663,7 +1691,8 @@ img {
     padding: 60px 20px 80px 20px;
   }
   .projects .projects-content .figures {
-    column-gap: 74px;
+    -moz-column-gap: 74px;
+         column-gap: 74px;
   }
 }
 @media (max-width: 767px) {
@@ -1681,6 +1710,7 @@ img {
     min-width: 335px;
   }
   section.banner .container .navigation {
+    width: -moz-max-content;
     width: max-content;
   }
   section.banner .container .navigation ul {
@@ -1713,7 +1743,8 @@ img {
     font-size: 28px;
   }
   .projects .projects-content .figures {
-    column-gap: 59px;
+    -moz-column-gap: 59px;
+         column-gap: 59px;
     margin-top: 26px;
   }
   .projects .projects-content .figures .figure-column {
@@ -1780,6 +1811,7 @@ img {
   position: relative;
   top: 0;
   left: 0;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media (max-width: 1200px) {
@@ -1890,7 +1922,8 @@ img {
   border-radius: 0px;
 }
 .single-project .single-project-map-content .generality .generality-row .item-image .lSSlideOuter .gallery li img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 510px;
   max-width: unset;
@@ -1901,7 +1934,8 @@ img {
   }
 }
 .single-project .single-project-map-content .generality .generality-row .item-image .lSSlideOuter .vrmedia-gallery img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 510px;
 }
@@ -1998,7 +2032,8 @@ img {
   .single-project .single-project-map-content .introduce .introduce-row.introduce-row-1 .item-image img {
     padding: 0 20px 0 4px;
     height: 340px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 767px) {
@@ -2035,7 +2070,8 @@ img {
     padding-left: 20px;
     padding-right: 3px;
     height: 340px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 @media (max-width: 991px) {
@@ -2235,6 +2271,7 @@ img {
 }
 .register .register-box form .forget-password .forgetmenot input {
   width: 15px !important;
+  width: -moz-fit-content !important;
   width: fit-content !important;
   margin: 5px 6px 0 0;
 }
@@ -2474,6 +2511,9 @@ img {
     color: #fff !important;
     border-color: #fff !important;
   }
+  .register .register-box form input::-moz-placeholder {
+    color: #fff !important;
+  }
   .register .register-box form input::placeholder {
     color: #fff !important;
   }
@@ -2490,7 +2530,8 @@ img {
     max-width: 100%;
   }
   .register .register-box .image img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .forget-password {
@@ -2826,6 +2867,7 @@ h5 {
   }
   .du-an .filter-post-section .filter-post-container .small-form-filter .form .button-submit,
   .du-an .filter-post-section .filter-post-container .small-form-filter .form .button-reset {
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -2857,10 +2899,16 @@ h5 {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 2px;
 }
 .du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .filter-company,
 .du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-time {
   margin-bottom: 9px;
+}
+.du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .filter-company,
+.du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-time,
+.du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-location {
+  align-items: start;
 }
 
 .filter-content .filter-item {
@@ -3197,7 +3245,8 @@ h5 {
 .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-time,
 .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-location {
   display: flex;
-  column-gap: 8.62px;
+  -moz-column-gap: 8.62px;
+       column-gap: 8.62px;
 }
 .filter-post-section .filter-post-container .filter-navigation {
   display: flex;
@@ -3304,7 +3353,8 @@ h5 {
     margin: 0 -1px;
   }
   .filter-post-section .filter-post-container .form-filter form {
-    column-gap: 0;
+    -moz-column-gap: 0;
+         column-gap: 0;
     row-gap: 8px;
     justify-content: left;
   }
@@ -3434,6 +3484,7 @@ footer.home-page .nav-login .is_login.active {
 }
 footer.home-page .nav-login .is_login .logout {
   display: flex;
+  width: -moz-max-content;
   width: max-content;
 }
 footer.home-page .nav-login .is_login .logout svg {
@@ -3744,6 +3795,7 @@ footer.footer-second .footer {
   footer .top-header.footer-mobile.home-header .nav-language .languages select {
     color: #fff;
     padding: 0;
+    height: -moz-fit-content !important;
     height: fit-content !important;
     font-size: 11px;
     margin-top: 4px;
@@ -3863,6 +3915,7 @@ footer.footer-second .footer {
   padding: 8px 4px 12px;
   z-index: 1;
   transform: translateY(-60%);
+  width: -moz-max-content;
   width: max-content;
 }
 .header .top-header .is_login.active {
@@ -3975,7 +4028,8 @@ footer.footer-second .footer {
 }
 .header .bottom-header .navbar {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   height: 64px;
   display: flex;
   justify-content: right;
@@ -4104,7 +4158,9 @@ footer.footer-second .footer {
   position: relative;
   display: block;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   z-index: 12;
   width: 18px;
   height: 1rem;
@@ -4271,7 +4327,8 @@ footer.footer-second .footer {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   max-width: 433px;
   max-height: 540px;
   animation: moveUp 1s;
@@ -4450,10 +4507,12 @@ header .search .search-bar:hover::after {
 }
 .header .bottom-header .navbar .nav-list .nav-item .mega-sub-menu,
 .header .bottom-header .navbar #mega-menu-wrap-primary_menu #mega-menu-primary_menu .mega-menu-item .mega-sub-menu {
+  width: -moz-max-content;
   width: max-content;
   color: #fff;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   top: 54px;
   left: 0;
   padding: 12px 0;
@@ -4465,6 +4524,7 @@ header .search .search-bar:hover::after {
 .header .bottom-header .navbar .nav-list .nav-item .mega-sub-menu .mega-menu-item .nav-item-link,
 .header .bottom-header .navbar #mega-menu-wrap-primary_menu #mega-menu-primary_menu .mega-menu-item .mega-sub-menu .mega-menu-item .nav-item-link {
   display: block;
+  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -4837,7 +4897,8 @@ header .search .search-bar:hover::after {
 }
 .tin-tuc .content-container .news-post .tin-moi-nhat-wrap .tin-moi-nhat-item .image .img-banner {
   border-radius: 2px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 160px;
   min-width: 292px;
   transition: all 1s ease-in;
@@ -5013,7 +5074,8 @@ header .search .search-bar:hover::after {
   width: 100%;
 }
 .tin-tuc .lists-post .row.fillter .form-filter .form {
-  column-gap: 16px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
 }
 .tin-tuc .lists-post .row.fillter .form-filter .form .form-filter-search {
   display: flex;
@@ -5172,6 +5234,7 @@ header .search .search-bar:hover::after {
   .tin-tuc .lists-post .row.fillter .form-filter .form .button-submit,
   .tin-tuc .lists-post .row.fillter .form-filter .form .button-reset {
     padding: 0px;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .tin-tuc .lists-post .row.fillter .form-filter .form .button-submit button,
@@ -5183,6 +5246,7 @@ header .search .search-bar:hover::after {
   .tin-tuc .lists-post .row.fillter .form-filter .form .button-submit,
   .tin-tuc .lists-post .row.fillter .form-filter .form .button-reset {
     margin-top: 8px;
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -5200,7 +5264,8 @@ header .search .search-bar:hover::after {
   .tin-tuc .lists-post .row.fillter .form-filter .form {
     flex-wrap: wrap;
     justify-content: start !important;
-    column-gap: 13px;
+    -moz-column-gap: 13px;
+         column-gap: 13px;
     row-gap: 8px;
   }
 }
@@ -5336,7 +5401,8 @@ header .search .search-bar:hover::after {
 }
 .home-slide .home-slide-carousel .item img {
   height: 100vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 .home-slide .home-slide-carousel .item .container {
@@ -5877,7 +5943,8 @@ header .search .search-bar:hover::after {
 .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-time,
 .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-location {
   display: flex;
-  column-gap: 8.62px;
+  -moz-column-gap: 8.62px;
+       column-gap: 8.62px;
 }
 .filter-post-section .filter-post-container .filter-navigation {
   display: flex;
@@ -5990,7 +6057,8 @@ header .search .search-bar:hover::after {
     margin: 0 -1px;
   }
   .filter-post-section .filter-post-container .form-filter form {
-    column-gap: 0;
+    -moz-column-gap: 0;
+         column-gap: 0;
     row-gap: 8px;
     justify-content: left;
   }
@@ -6161,13 +6229,15 @@ header .search .search-bar:hover::after {
   margin-top: 57px;
   justify-content: space-between;
   display: flex;
-  column-gap: 80px;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
 }
 .thu-vien-hinh-anh .main .wrap-content .slider .vrmedia-gallery {
   position: relative;
 }
 .thu-vien-hinh-anh .main .wrap-content .slider .vrmedia-gallery img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
 }
 .thu-vien-hinh-anh .main .wrap-content .slider .vrmedia-gallery svg {
@@ -6210,6 +6280,7 @@ header .search .search-bar:hover::after {
   padding-bottom: 6px;
   margin-bottom: 10px;
   display: block;
+  width: -moz-fit-content;
   width: fit-content;
   font-family: "Public Sans";
   font-style: normal;
@@ -6232,7 +6303,8 @@ header .search .search-bar:hover::after {
 .thu-vien-hinh-anh .main .wrap-content .content .information .info-item {
   display: flex;
   align-items: center;
-  column-gap: 7.9px;
+  -moz-column-gap: 7.9px;
+       column-gap: 7.9px;
 }
 .thu-vien-hinh-anh .main .wrap-content .content .information .info-item + .info-item {
   margin-top: 8px;
@@ -6302,9 +6374,11 @@ header .search .search-bar:hover::after {
     flex-direction: column;
     flex-wrap: wrap;
     max-height: 100px;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
   }
   .thu-vien-hinh-anh .main .row.wrap-content .content .information .info-item {
+    max-width: -moz-max-content;
     max-width: max-content;
   }
   .thu-vien-hinh-anh .main .row.wrap-content .content .information .info-item + .info-item {
@@ -6343,6 +6417,7 @@ header .search .search-bar:hover::after {
     display: unset;
   }
   .thu-vien-hinh-anh .main .row.wrap-content .content .information .info-item {
+    max-width: -moz-max-content;
     max-width: max-content;
   }
   .thu-vien-hinh-anh .main .row.wrap-content .content .information .info-item:last-child {
@@ -6461,9 +6536,11 @@ header .search .search-bar:hover::after {
     padding: 0;
   }
   .thu-vien-hinh-anh .main .row.wrap-content .slider .lSGallery {
+    width: -moz-fit-content !important;
     width: fit-content !important;
   }
   .thu-vien-hinh-anh .main .row.wrap-content .slider .lSGallery li {
+    width: -moz-fit-content !important;
     width: fit-content !important;
   }
   .thu-vien-hinh-anh .main .row.wrap-content .slider .lSGallery li img {
@@ -6658,7 +6735,8 @@ section.article .article-container article .time {
   align-items: center;
   margin-right: 36px;
   position: relative;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
 section.article .article-container article .attach {
   display: flex;
@@ -6667,7 +6745,8 @@ section.article .article-container article .attach {
 }
 section.article .article-container article .attach .title {
   display: flex;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
   align-items: center;
 }
 section.article .article-container article .attach p {
@@ -7600,7 +7679,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   max-width: unset;
 }
 .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form {
-  column-gap: 16px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   flex-wrap: nowrap;
 }
 .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .form-filter-search {
@@ -7628,6 +7708,7 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 @media (max-width: 1200px) {
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-submit {
+    width: -moz-fit-content;
     width: fit-content;
   }
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-submit button {
@@ -7642,6 +7723,7 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 @media (max-width: 1200px) {
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-reset {
+    width: -moz-fit-content;
     width: fit-content;
   }
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-reset button {
@@ -7717,7 +7799,8 @@ section.related-news .article-container .related-news-content .related-item .ite
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .hot img {
   width: 38px;
   height: 38px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .hot.deactive {
   display: none;
@@ -8193,7 +8276,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   row-gap: 60px;
   margin-top: 60px;
 }
@@ -8315,7 +8399,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   width: 50%;
 }
 .tuyen-dung .power-enviroment .values .the-values-image img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: none;
 }
 .tuyen-dung .power-enviroment .values .the-values-image img.active {
@@ -8359,7 +8444,8 @@ section.related-news .article-container .related-news-content .related-item .ite
 .tuyen-dung .building-dream .building-dream-container .building-dream-content .slick-dots {
   display: flex;
   justify-content: center;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
   position: absolute;
   width: 100%;
   top: calc(100% + 24px);
@@ -8417,6 +8503,7 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .lib-button a {
   padding: 14px 32px;
+  width: -moz-fit-content;
   width: fit-content;
   font-family: "Public Sans";
   font-style: normal;
@@ -8431,7 +8518,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   display: flex;
   padding: 0;
   justify-content: center;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
   margin-bottom: 0;
 }
 .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .slick-dots li {
@@ -8497,7 +8585,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   z-index: 1;
 }
 .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .life-in-bitexco-content .content-item .image img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 223px;
 }
 .tuyen-dung .slogan {
@@ -8514,7 +8603,8 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 .tuyen-dung .slogan .quote .quote-agency .quote-agency-img {
   display: none;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 605px;
   height: 450px;
   object-fit: cover;
@@ -8535,6 +8625,7 @@ section.related-news .article-container .related-news-content .related-item .ite
   min-height: 96px;
 }
 .tuyen-dung .slogan .quote .quote-content .quote-navigation .quote-nav-img {
+  height: -moz-fit-content;
   height: fit-content;
 }
 .tuyen-dung .slogan .quote .quote-content .quote-navigation .quote-nav-img img {
@@ -8731,7 +8822,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
   .tuyen-dung .slogan .quote .quote-content .quote-navigation {
     display: flex;
-    column-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
     align-items: flex-start;
     min-height: 68px;
   }
@@ -8813,6 +8905,7 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
   .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .lib-button a {
     padding: 14px 32px;
+    width: -moz-fit-content;
     width: fit-content;
     font-family: "Public Sans";
     font-style: normal;
@@ -8827,7 +8920,8 @@ section.related-news .article-container .related-news-content .related-item .ite
     display: flex;
     padding: 0;
     justify-content: center;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
     margin-bottom: 0;
   }
   .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .slick-dots li {
@@ -8912,7 +9006,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   .tuyen-dung .slogan .quote .quote-agency .quote-agency-img {
     display: none;
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .tuyen-dung .slogan .quote .quote-agency .quote-agency-img.active {
     display: block;
@@ -8923,7 +9018,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
   .tuyen-dung .slogan .quote .quote-content .quote-navigation {
     display: flex;
-    column-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
   }
   .tuyen-dung .slogan .quote .quote-content .quote-navigation .quote-nav-img:hover {
     border: 4px solid #DAA622;
@@ -9062,7 +9158,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
   .tuyen-dung .power-enviroment .values .the-values-image img {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container svg.right {
     right: -36px;
@@ -9244,7 +9341,8 @@ section.related-news .article-container .related-news-content .related-item .ite
     padding-left: 0;
   }
   .tuyen-dung .power-enviroment .container .your-privilege-content .values .the-values-image img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     display: none;
   }
   .tuyen-dung .power-enviroment .container .your-privilege-content .values .the-values-image img.active {
@@ -9299,7 +9397,8 @@ section.related-news .article-container .related-news-content .related-item .ite
     display: flex;
     padding: 0;
     justify-content: center;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
     margin-bottom: 0;
   }
   .tuyen-dung .life-at-bitexco-section .life-in-bitexco .container .slick-dots li {
@@ -9470,7 +9569,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   max-width: unset;
 }
 .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form {
-  column-gap: 16px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   flex-wrap: nowrap;
 }
 .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .form-filter-search {
@@ -9498,6 +9598,7 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 @media (max-width: 1200px) {
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-submit {
+    width: -moz-fit-content;
     width: fit-content;
   }
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-submit button {
@@ -9512,6 +9613,7 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 @media (max-width: 1200px) {
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-reset {
+    width: -moz-fit-content;
     width: fit-content;
   }
   .danh-sach-tuyen-dung .main .filter-post-section .filter-post-container .form-filter .form .button-reset button {
@@ -9587,7 +9689,8 @@ section.related-news .article-container .related-news-content .related-item .ite
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .hot img {
   width: 38px;
   height: 38px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .danh-sach-tuyen-dung .main .content .infomation-list .list .item .info .hot.deactive {
   display: none;
@@ -9869,7 +9972,8 @@ section.site-map-content-section .site-map-container .tab .tab-title h2 a {
 section.site-map-content-section .site-map-container .tab .flexed-tab {
   margin-top: 20px;
   display: flex;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   row-gap: 32px;
   padding-left: 32px;
   flex-wrap: wrap;
@@ -9892,6 +9996,7 @@ section.site-map-content-section .site-map-container .tab .flexed-tab div h3 a {
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 1px solid #141518;
+  width: -moz-fit-content;
   width: fit-content;
 }
 section.site-map-content-section .site-map-container .tab .flexed-tab div h3 a:hover {
@@ -9917,6 +10022,7 @@ section.site-map-content-section .site-map-container .tab .flexed-tab div ul li 
   text-decoration: underline;
   display: block;
   text-transform: capitalize;
+  width: -moz-fit-content;
   width: fit-content;
 }
 section.site-map-content-section .site-map-container .tab .flexed-tab div ul li a:hover {
@@ -10062,7 +10168,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .dich-vu section.service-packages .container .your-privilege-content .service-packages-content .service-package .service-image img {
   height: 340px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .dich-vu section.service-packages .container .your-privilege-content .service-packages-content .service-package .description {
   padding-left: 18px;
@@ -10157,7 +10264,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .dich-vu section.contact-section .container .contact-section-content .cwt-content .cwt-content-img img {
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .dich-vu section.contact-section .container .contact-section-content .cwt-content .cwu-content-text {
   flex: 1;
@@ -10181,7 +10289,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .dich-vu section.contact-section .container .contact-section-content .cwt-content .cwu-content-text .contact-info {
   display: flex;
   align-items: center;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
 .dich-vu section.contact-section .container .contact-section-content .cwt-content .cwu-content-text .contact-info p {
   margin: 0;
@@ -10243,7 +10352,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .dich-vu section.service-packages img {
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .dich-vu section.service-packages .service-package + .service-package {
     margin-top: 24px;
@@ -10408,7 +10518,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .dich-vu section.service-packages img {
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .dich-vu section.service-packages .button-more-infor {
     margin-top: 40px;
@@ -10473,7 +10584,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .dich-vu section.contact-section .contact-section-content .cwt-content .cwt-content-img img {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .dich-vu section.contact-section .contact-section-content .cwt-content .cwu-content-text {
     margin-top: 24px;
@@ -10497,7 +10609,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   .dich-vu section.contact-section .contact-section-content .cwt-content .cwu-content-text .contact-info {
     display: flex;
     align-items: center;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
   }
   .dich-vu section.contact-section .contact-section-content .cwt-content .cwu-content-text .contact-info p {
     margin: 0;
@@ -10752,7 +10865,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .image img {
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .quote-text {
   width: 51.041%;
@@ -10872,7 +10986,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures {
   margin-top: 60px;
   display: flex;
-  column-gap: 84px;
+  -moz-column-gap: 84px;
+       column-gap: 84px;
   padding: 0 106px;
 }
 .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures img {
@@ -10942,7 +11057,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   position: relative;
 }
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.active {
-  backdrop-filter: unset;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
   padding: 0;
   background-repeat: no-repeat;
   flex: unset;
@@ -10951,7 +11067,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value.active::before {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 44.84%, rgba(0, 0, 0, 0) 100%);
-  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
 }
 @keyframes fade-in {
   0% {
@@ -11020,7 +11137,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value:hover::before {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 44.84%, rgba(0, 0, 0, 0) 100%);
-  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
 }
 .bitxeco-brand-page section.core-value .core-value-container .core-value-content .value::before {
   content: "";
@@ -11032,7 +11150,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   width: 100%;
   height: 100%;
   background: rgba(13, 13, 14, 0.4);
-  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
   z-index: 1;
 }
 .bitxeco-brand-page section.core-value .core-value-container .content {
@@ -11163,7 +11282,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     width: 48.45%;
   }
   .bitxeco-brand-page section.power-enviroment.social-responsibility .container .your-privilege-content .values .image img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     min-height: 450px;
   }
   .bitxeco-brand-page section.power-enviroment.social-responsibility .container .your-privilege-content .values .the-values-image {
@@ -11249,7 +11369,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures {
     margin-top: 60px;
     display: flex;
-    column-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
     padding: 0 100px;
   }
   .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures .figure {
@@ -11330,7 +11451,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .image img {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .quote-text {
     width: 51.041%;
@@ -11418,7 +11540,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures {
     display: flex;
-    column-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
     padding: 0;
     margin: 0 -32px;
     margin-top: 60px;
@@ -11504,7 +11627,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     width: 100%;
   }
   .bitxeco-brand-page section.power-enviroment.social-responsibility .container .your-privilege-content .values .image img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     min-height: unset;
     width: 100%;
   }
@@ -11537,7 +11661,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .image img {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .quote-text {
     width: 100%;
@@ -11603,7 +11728,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     flex-wrap: wrap;
     row-gap: 40px;
     margin-top: 62px;
-    column-gap: 32px;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
   }
   .bitxeco-brand-page section.our-partners .container .your-privilege-content .our-partner-logo .partner {
     width: calc(20% - 32px);
@@ -11627,7 +11753,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures {
     display: flex;
-    column-gap: 0;
+    -moz-column-gap: 0;
+         column-gap: 0;
     padding: 0;
     margin: 0 -32px;
     margin-top: 60px;
@@ -11730,7 +11857,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     width: 100%;
   }
   .bitxeco-brand-page section.power-enviroment.social-responsibility .container .your-privilege-content .values .image img {
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     min-height: unset;
     width: 100%;
   }
@@ -11771,7 +11899,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .image img {
     height: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .quote-text {
     width: 100%;
@@ -11839,7 +11968,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     flex-wrap: wrap;
     row-gap: 20px;
     margin: 32px -20px 0 -20px;
-    column-gap: 32px;
+    -moz-column-gap: 32px;
+         column-gap: 32px;
   }
   .bitxeco-brand-page section.our-partners .container .your-privilege-content .our-partner-logo .partner {
     width: calc(50% - 18px);
@@ -11865,7 +11995,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures {
     display: flex;
-    column-gap: 0;
+    -moz-column-gap: 0;
+         column-gap: 0;
     row-gap: 40px;
     padding: 0;
     margin: 0;
@@ -11926,7 +12057,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     width: 100%;
     justify-content: center;
     padding-left: 0;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
     margin: 0;
   }
   .bitxeco-brand-page section.core-value .core-value-container .core-value-content .slick-dots li {
@@ -12021,6 +12153,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     padding-left: 21px;
   }
   .bitxeco-brand-page section.about-bitexco .container .about-bitexco-content .about-bitexco-column button span {
+    width: -moz-max-content;
     width: max-content;
   }
   .bitxeco-brand-page section.about-bitexco .container .about-bitexco-content .text {
@@ -12037,7 +12170,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 @media (max-width: 375px) {
   .bitxeco-brand-page section.brand-quote .brand-quote-container .brand-quote-content .image img {
     max-height: 263px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .company_member .banner {
@@ -12092,6 +12226,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .company_member .filter-post-section .filter-post-container .small-form-filter form .button-submit,
 .company_member .filter-post-section .filter-post-container .small-form-filter .form .button-submit {
+  width: -moz-fit-content;
   width: fit-content;
 }
 .company_member .filter-post-section .filter-post-container .small-form-filter form .button-submit .btn-submit,
@@ -12109,6 +12244,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .company_member .filter-post-section .filter-post-container .small-form-filter form .button-reset,
 .company_member .filter-post-section .filter-post-container .small-form-filter .form .button-reset {
+  width: -moz-fit-content;
   width: fit-content;
 }
 .company_member .filter-post-section .filter-post-container .small-form-filter form .button-reset .btn-reset,
@@ -12179,7 +12315,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   max-height: 240px;
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .ban-lanh-dao .main {
   padding: 60px 100px 80px;
@@ -12219,7 +12356,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .ban-lanh-dao .main .content .person .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .ban-lanh-dao .main .content .person .info {
   margin-left: 20px;
@@ -12314,7 +12452,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .ban-lanh-dao .main .content .person .image img {
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     max-width: unset;
     max-height: unset;
   }
@@ -12328,7 +12467,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .historical-grow-page section.period-section .container .content {
   display: flex;
-  column-gap: 40px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
   align-items: flex-end;
   justify-content: center;
   border-bottom: 1px solid #D1D5DB;
@@ -12427,7 +12567,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   flex-wrap: wrap;
   row-gap: 60px;
   justify-content: space-between;
-  column-gap: 132px;
+  -moz-column-gap: 132px;
+       column-gap: 132px;
 }
 .historical-grow-page section.period-grow .container .historical-period .period-line::before {
   content: "";
@@ -12561,7 +12702,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .historical-grow-page section.period-grow .container .historical-period .period-line .year.active .content .image img {
   min-height: 350px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .historical-grow-page section.period-grow .container .historical-period .period-line .new-line {
   position: absolute;
@@ -12585,14 +12727,16 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .historical-grow-page section.period-grow .container .historical-period .navigation {
   display: flex;
-  column-gap: 242px;
+  -moz-column-gap: 242px;
+       column-gap: 242px;
   justify-content: center;
   margin-top: 60px;
 }
 .historical-grow-page section.period-grow .container .historical-period .navigation .nav {
   display: flex;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .historical-grow-page section.period-grow .container .historical-period .navigation .nav:hover {
   cursor: pointer;
@@ -12631,7 +12775,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .historical-grow-page section.period-grow .container .historical-period .period-line {
     justify-content: space-between;
-    column-gap: unset;
+    -moz-column-gap: unset;
+         column-gap: unset;
   }
   .historical-grow-page section.period-grow .container .historical-period .period-line .year {
     width: 42.9799%;
@@ -12655,7 +12800,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .historical-grow-page section.period-grow .container .historical-period .period-line {
     justify-content: space-between;
-    column-gap: unset;
+    -moz-column-gap: unset;
+         column-gap: unset;
   }
   .historical-grow-page section.period-grow .container .historical-period .period-line .year {
     width: 42.9799%;
@@ -12679,7 +12825,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .historical-grow-page section.period-grow .container .historical-period .period-line {
     justify-content: space-between;
-    column-gap: unset;
+    -moz-column-gap: unset;
+         column-gap: unset;
   }
   .historical-grow-page section.period-grow .container .historical-period .period-line .year {
     width: 42.9799%;
@@ -12746,7 +12893,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .historical-grow-page section.period-grow .container .historical-period .period-line {
     justify-content: flex-start;
-    column-gap: unset;
+    -moz-column-gap: unset;
+         column-gap: unset;
     padding-left: 49px;
     margin-right: -10px;
     row-gap: 24px;
@@ -12822,7 +12970,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .historical-grow-page section.period-grow .container .historical-period .navigation {
     margin-top: 36px;
-    column-gap: unset;
+    -moz-column-gap: unset;
+         column-gap: unset;
     justify-content: space-between;
   }
   .historical-grow-page section.period-grow .container .historical-period .navigation .nav:hover {
@@ -12932,7 +13081,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .shareholders-relations .main .content .person .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .shareholders-relations .main .content .person .info {
   margin-left: 20px;
@@ -12955,6 +13105,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 @media (max-width: 1366px) {
   .shareholders-relations .main .content .person {
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -12993,7 +13144,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .shareholders-relations .main .calender {
   display: flex;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
   align-items: center;
 }
 .shareholders-relations .main .calender .text a {
@@ -13018,7 +13170,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .shareholders-relations .main .download span {
   font-family: "Public Sans";
@@ -13046,7 +13199,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .shareholders-relations section.notification .container .notification-content {
   display: flex;
   justify-content: space-between;
-  column-gap: 80px;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
   border-bottom: 1px solid #D1D5DB;
   padding-bottom: 60px;
 }
@@ -13068,7 +13222,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .shareholders-relations section.notification .container .notification-content .text-content .tag {
   display: flex;
   align-items: center;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
 .shareholders-relations section.notification .container .notification-content .text-content .tag .text a {
   font-family: "Public Sans";
@@ -13161,7 +13316,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   justify-content: flex-start;
   align-items: center;
   justify-content: space-between;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   border-bottom: 1px solid #D1D5DB;
   padding-bottom: 28px;
   position: relative;
@@ -13223,7 +13379,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 }
 .shareholders-relations section.shareholder-info .container .shareholder-content .pagination {
   justify-content: center;
-  column-gap: 12px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
 }
 .shareholders-relations section.finance-report .container .shareholder-content .title {
   text-align: center;
@@ -13232,7 +13389,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .shareholders-relations section.finance-report .container .shareholder-content .years-filter ul {
   display: flex;
   justify-content: space-between;
-  column-gap: 32px;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
   border-bottom: 1px solid #D1D5DB;
   border-radius: 2px;
   height: 54.19px;
@@ -13416,7 +13574,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   .shareholders-relations section.notification .container .notification-content .image img {
     width: 371px;
     height: 280px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .shareholders-relations section.notification .container .notification-content .text-content h5 {
     letter-spacing: 0;
@@ -13480,13 +13639,15 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     display: none;
   }
   .shareholders-relations section.banner .container .navigation ul {
+    width: -moz-max-content;
     width: max-content;
   }
   .shareholders-relations section.notification {
     padding: 60px 48px 0 48px;
   }
   .shareholders-relations section.notification .container .notification-content {
-    column-gap: 40px;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
   }
   .shareholders-relations section.shareholder-info {
     padding: 48px;
@@ -13575,6 +13736,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     padding: 0 10px;
   }
   .shareholders-relations section.banner .container .navigation ul {
+    width: -moz-max-content;
     width: max-content;
   }
   .shareholders-relations section.banner .container .navigation ul li {
@@ -13591,7 +13753,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     padding: 20px 20px 41px 20px;
   }
   .shareholders-relations section.notification .container .notification-content {
-    column-gap: unset;
+    -moz-column-gap: unset;
+         column-gap: unset;
     row-gap: 20px;
     flex-direction: column;
     padding-bottom: 41px;
@@ -13680,7 +13843,8 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     height: 47.19px;
   }
   .shareholders-relations section.finance-report .container .shareholder-content .years-filter ul {
-    column-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
     padding-bottom: 11px;
     justify-content: space-between;
   }
@@ -13689,6 +13853,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     width: 16.6666666667%;
     padding: 10px 0px 6px 0;
     justify-content: flex-start;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .shareholders-relations section.finance-report .container .shareholder-content .years-filter ul li::after {
@@ -13721,6 +13886,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
     border: 1px solid #CCCCCC;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     border-radius: 16px;
+    height: -moz-fit-content;
     height: fit-content;
   }
   .shareholders-relations section.finance-report .container .shareholder-content .years-filter ul li .additional-years .years-list li {
@@ -13749,9 +13915,11 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .shareholders-relations section.finance-report.shareholder-documentation .container .shareholder-content .years-filter {
     overflow: scroll;
+    height: -moz-fit-content;
     height: fit-content;
   }
   .shareholders-relations section.finance-report.shareholder-documentation .container .shareholder-content .years-filter ul li span {
+    width: -moz-max-content;
     width: max-content;
   }
   .shareholders-relations section.annual-report {
@@ -13855,13 +14023,13 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   border-top: 4px solid #DAA622;
   width: 40px;
   height: 40px;
-  -webkit-animation: spin 2s linear infinite;
   /* Safari */
   animation: spin 2s linear infinite;
 }
 
 section .pagination {
-  column-gap: 12px;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
 }
 
 div.custom-pagination {
@@ -13931,14 +14099,6 @@ section .next.page-numbers {
 }
 
 /* Safari */
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -13997,7 +14157,8 @@ section .next.page-numbers {
 .bao-cao-tai-chinh .main .content .person .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .bao-cao-tai-chinh .main .content .person .info {
   margin-left: 20px;
@@ -14020,6 +14181,7 @@ section .next.page-numbers {
 }
 @media (max-width: 1366px) {
   .bao-cao-tai-chinh .main .content .person {
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -14169,7 +14331,8 @@ section.other-information .other-container .other-content .bidding-information {
 }
 .thong-tin-bao-chi section.notification .container .notification-content .image img {
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .search-bar .box-input {
   width: 25%;
@@ -14246,7 +14409,8 @@ section.other-information .other-container .other-content .bidding-information {
   margin-bottom: 16px;
 }
 .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .shareholder-items .shareholder-item .shareholder-title .tag-and-calendar .tag {
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
   display: flex;
   align-items: center;
 }
@@ -14263,7 +14427,8 @@ section.other-information .other-container .other-content .bidding-information {
   color: #434449;
 }
 .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .shareholder-items .shareholder-item .shareholder-title .download {
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .shareholder-items .shareholder-item .shareholder-title .download span {
   font-family: "Public Sans";
@@ -14284,7 +14449,8 @@ section.other-information .other-container .other-content .bidding-information {
 @media (max-width: 1200px) {
   .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .search-bar {
     justify-content: flex-start;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
     row-gap: 8px;
   }
   .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .search-bar .box-input {
@@ -14311,7 +14477,8 @@ section.other-information .other-container .other-content .bidding-information {
   .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .search-bar {
     flex-wrap: wrap;
     justify-content: flex-start;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
     row-gap: 8px;
   }
   .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .search-bar .box-input {
@@ -14328,7 +14495,8 @@ section.other-information .other-container .other-content .bidding-information {
   .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .search-bar {
     flex-wrap: wrap;
     justify-content: flex-start;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
     row-gap: 8px;
   }
   .thong-tin-bao-chi section.shareholder-info .container .shareholder-content .search-bar .box-input {
@@ -14376,7 +14544,7 @@ section.other-information .other-container .other-content .bidding-information {
   cursor: pointer;
 }
 .video-list .video-container .video-content .video-item-link .video-item:hover .background-overlay {
-  background-size: 120% 120%;
+  background-size: auto 150%;
   transition: background-size 0.8s ease-in;
 }
 .video-list .video-container .video-content .video-item-link .video-item:hover .video-button {
@@ -14419,9 +14587,9 @@ section.other-information .other-container .other-content .bidding-information {
   width: 100%;
   height: 100%;
   background: no-repeat center center;
-  background-size: cover;
+  background-size: auto 133%;
   border-radius: 4px;
-  transition: background-size 0.8s ease-in;
+  transition: background-size 0.3s ease-in;
 }
 .video-list .video-container .video-content .video-item-link .video-item .video-badge {
   position: absolute;
@@ -14467,7 +14635,8 @@ section.other-information .other-container .other-content .bidding-information {
 .video-list .video-container .video-content .video-item-link .video-item .video-text .tag {
   display: flex;
   align-items: center;
-  column-gap: 8px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
 .video-list .video-container .video-content .video-item-link .video-item .video-text .tag p {
   font-family: "Public Sans";
@@ -14526,8 +14695,7 @@ section.other-information .other-container .other-content .bidding-information {
     cursor: pointer;
   }
   .video-list .video-container .video-content .video-item-link .video-item:hover .background-overlay {
-    background-size: 120% 120%;
-    transition: background-size 0.8s ease-in;
+    background-size: auto 150%;
   }
   .video-list .video-container .video-content .video-item-link .video-item:hover .video-button {
     z-index: 3;
@@ -14617,7 +14785,8 @@ section.other-information .other-container .other-content .bidding-information {
   .video-list .video-container .video-content .video-item-link .video-item .video-text .tag {
     display: flex;
     align-items: center;
-    column-gap: 8px;
+    -moz-column-gap: 8px;
+         column-gap: 8px;
   }
   .video-list .video-container .video-content .video-item-link .video-item .video-text .tag p {
     font-family: "Public Sans";
@@ -14820,6 +14989,7 @@ section.tender-notice-banner .container .navigation {
     flex-direction: column;
   }
   .infomation-list .container .list .item .head .status {
+    width: -moz-fit-content;
     width: fit-content;
     margin-top: 2px;
     margin-bottom: 18px;
@@ -14883,6 +15053,7 @@ section.tender-notice-banner .container .navigation {
     width: 16.29%;
   }
   .filter-form .container .form-filter .filter-item ul li {
+    width: -moz-max-content;
     width: max-content;
   }
   .filter-form .container .form-filter .filter-btn.button-submit {
@@ -15527,6 +15698,7 @@ section.tender-notice-banner .container .navigation {
 }
 .bai-viet-an-sinh-xa-hoi.tin-tuc .lists-post .row.fillter .form-filter .form .button-submit button,
 .bai-viet-an-sinh-xa-hoi.tin-tuc .lists-post .row.fillter .form-filter .form .button-reset button {
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0 30px;
 }
@@ -15631,6 +15803,7 @@ section.tender-notice-banner .container .navigation {
 }
 .selection-result-single .content_details .banner-single .container .content {
   bottom: 36px;
+  height: -moz-fit-content;
   height: fit-content;
   left: 0;
   top: unset;
@@ -15886,7 +16059,8 @@ section.tender-notice-banner .container .navigation {
 .an-sinh-xa-hoi .desid_us .image * {
   max-width: 605px;
   max-height: 450px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 1200px) {
   .an-sinh-xa-hoi .desid_us {
@@ -15955,7 +16129,8 @@ section.tender-notice-banner .container .navigation {
   margin-top: 80px;
   margin-right: 41px;
   margin-left: 74px;
-  column-gap: 0%;
+  -moz-column-gap: 0%;
+       column-gap: 0%;
   row-gap: 58px;
   justify-content: space-around;
 }
@@ -16013,7 +16188,8 @@ section.tender-notice-banner .container .navigation {
     margin-top: 60px;
     margin-right: 17px;
     margin-left: 17px;
-    column-gap: 8%;
+    -moz-column-gap: 8%;
+         column-gap: 8%;
     row-gap: 52px;
   }
 }
@@ -16122,6 +16298,7 @@ section.tender-notice-banner .container .navigation {
 }
 .su-kien .filter-post-section .filter-post-container .form .button-submit,
 .su-kien .filter-post-section .filter-post-container .form .button-reset {
+  width: -moz-fit-content;
   width: fit-content;
 }
 .su-kien .filter-post-section .filter-post-container .form .button-submit .btn,
@@ -16188,7 +16365,8 @@ section.tender-notice-banner .container .navigation {
 .su-kien .tin-noi-bat .item:first-child .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   min-height: 596px;
 }
 .su-kien .tin-noi-bat .item .image::before {
@@ -16205,7 +16383,8 @@ section.tender-notice-banner .container .navigation {
 .su-kien .tin-noi-bat .item .image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   min-height: 288px;
 }
 .su-kien .tin-noi-bat .item .content {
@@ -16324,6 +16503,7 @@ section.tender-notice-banner .container .navigation {
 }
 @media (max-width: 880px) {
   .custom-single-page.details_event .attach a span {
+    width: -moz-fit-content;
     width: fit-content;
     word-break: break-all;
   }
@@ -16429,7 +16609,8 @@ section.tender-notice-banner .container .navigation {
 
 section.infomation-useful .world-electric-field-magazine {
   flex-wrap: wrap;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   row-gap: 20px;
   opacity: 1;
   transition: all 1s ease;
@@ -16513,7 +16694,8 @@ section.infomation-useful .item.company a {
 }
 section.infomation-useful .world-electric-companies {
   display: flex;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   row-gap: 20px;
   flex-wrap: wrap;
 }
