@@ -167,14 +167,15 @@
                         text-transform: uppercase;
                     }
 
-                    .number {
+                    .number,
+                    .unit {
                         font-weight: 600;
                         font-size: 54px;
                         line-height: 115%;
                         color: #DAA622;
                     }
 
-                    .unit {
+                    .sub_label {
                         font-weight: 300;
                         font-size: 16px;
                         line-height: 160%;

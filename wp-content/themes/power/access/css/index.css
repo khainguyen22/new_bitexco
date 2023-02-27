@@ -5244,6 +5244,24 @@ header .search .search-bar:hover::after {
   }
 }
 
+.archive.tag {
+  margin: 150px 0 50px;
+}
+.archive.tag .container {
+  padding: 20px;
+}
+.archive.tag .custom-post .image {
+  height: 255px;
+}
+.archive.tag .custom-post .image img {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .archive.tag .custom-post .image {
+    height: 350px;
+  }
+}
+
 .register .register-box .form-box .title .forget-password-title {
   text-transform: none;
   font-family: "Manrope";
@@ -15900,13 +15918,14 @@ section.tender-notice-banner .container .navigation {
   opacity: 0.8;
   text-transform: uppercase;
 }
-.an-sinh-xa-hoi .did_it .content .item .info .number {
+.an-sinh-xa-hoi .did_it .content .item .info .number,
+.an-sinh-xa-hoi .did_it .content .item .info .unit {
   font-weight: 600;
   font-size: 54px;
   line-height: 115%;
   color: #DAA622;
 }
-.an-sinh-xa-hoi .did_it .content .item .info .unit {
+.an-sinh-xa-hoi .did_it .content .item .info .sub_label {
   font-weight: 300;
   font-size: 16px;
   line-height: 160%;

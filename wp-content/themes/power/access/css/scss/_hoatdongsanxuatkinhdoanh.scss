@@ -709,3 +709,23 @@
         }
     }
 }
+
+.archive.tag {
+    margin: 150px 0 50px;
+
+    .container {
+        padding: 20px;
+    }
+
+    .custom-post .image {
+        height: 255px;
+
+        img {
+            width: 100%;
+        }
+
+        @media(max-width:991px) {
+            height: 350px;
+        }
+    }
+}
