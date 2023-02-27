@@ -1045,6 +1045,7 @@ label.required::after {
 
 .loader-box {
   margin: 0 auto 50px;
+  padding-top: 50px;
 }
 
 #btn-submit-form-search {
@@ -6055,8 +6056,12 @@ header .search .search-bar:hover::after {
 .thu-vien-hinh-anh .images-library {
   margin-bottom: 60px;
 }
+.thu-vien-hinh-anh .main {
+  background: #fff;
+  padding: 33px 0 89px;
+}
 .thu-vien-hinh-anh .main .row.fillter {
-  margin: 33px 0 40px 0;
+  margin: 0 0 40px 0;
 }
 .thu-vien-hinh-anh .main .row.fillter .form-filter {
   width: 100%;
@@ -6195,7 +6200,7 @@ header .search .search-bar:hover::after {
   color: #434449;
 }
 .thu-vien-hinh-anh .main nav {
-  margin: 0 0 64px 0;
+  margin: 30px 0 0px 0;
 }
 @media (max-width: 1200px) {
   .thu-vien-hinh-anh .main .row.fillter {
@@ -13759,6 +13764,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 50px;
 }
 .no-item-found h3 {
   font-family: "Manrope";
@@ -16346,4 +16352,133 @@ section.tender-notice-banner .container .navigation {
   background: transparent;
   border: 1px solid #DAA622;
   color: #DAA622;
+}
+
+#useful-infomation {
+  margin-top: 38px;
+}
+
+section.infomation-useful .world-electric-field-magazine {
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 20px;
+  opacity: 1;
+  transition: all 1s ease;
+}
+section.infomation-useful .world-electric-field-magazine.hide {
+  opacity: 0;
+  display: none !important;
+  transition: all 1s ease;
+}
+section.infomation-useful .tab {
+  padding-bottom: 32px;
+  border-bottom: 1px solid #D1D5DB;
+  margin-bottom: 32px;
+}
+section.infomation-useful .tab.hide {
+  padding-bottom: 0;
+}
+section.infomation-useful .item.electric {
+  background-repeat: no-repeat;
+  width: calc(25% - 22.5px);
+  min-height: 370px;
+  position: relative;
+  padding: 24px 20px;
+  background-size: 100%;
+  background-position: center center;
+  transition: all 0.5s ease;
+}
+section.infomation-useful .item.electric a {
+  position: absolute;
+  bottom: 24px;
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  z-index: 2;
+  padding: 0 20px 0 0px;
+}
+section.infomation-useful .item.electric:after {
+  content: "";
+  width: 100%;
+  position: absolute;
+  height: 50%;
+  bottom: 0px;
+  left: 0;
+  background: linear-gradient(0deg, rgba(13, 13, 14, 0.81) 28.83%, rgba(13, 13, 14, 0) 100%);
+  z-index: 1;
+}
+section.infomation-useful .item.electric:hover {
+  background-size: 140%;
+  cursor: pointer;
+}
+section.infomation-useful .item.company {
+  width: calc(33.3333333333% - 20px);
+  background-size: 100%;
+  background-position: center center;
+  text-align: center;
+}
+section.infomation-useful .item.company .company-item {
+  margin-bottom: 12px;
+  min-height: 130px;
+  background-size: 100%;
+  width: 100%;
+  background-position: center center;
+  transition: all 0.5s ease;
+}
+section.infomation-useful .item.company .company-item:hover {
+  background-size: 200%;
+  cursor: pointer;
+}
+section.infomation-useful .item.company a {
+  font-family: "Public Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #141518;
+}
+section.infomation-useful .world-electric-companies {
+  display: flex;
+  column-gap: 30px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+section.infomation-useful .item-box {
+  transition: all 0.5s ease;
+}
+section.infomation-useful .item-box.hide {
+  height: 0;
+  display: none !important;
+}
+section.infomation-useful .tab-title {
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+section.infomation-useful .tab-title:hover {
+  cursor: pointer;
+}
+section.infomation-useful .tab-title h2 {
+  font-family: "Manrope";
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #141518;
+}
+section.infomation-useful .text-version-item + .text-version-item {
+  margin-top: 20px;
+}
+section.infomation-useful .text-version-item {
+  padding-left: 30px;
+}
+section.infomation-useful .text-version-item a {
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #141518;
 }/*# sourceMappingURL=index.css.map */

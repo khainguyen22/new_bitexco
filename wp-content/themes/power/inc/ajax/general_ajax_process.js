@@ -26,6 +26,7 @@ jQuery(document).ready(function($) {
 			var results = data.split('|');
 			$('.s-0 .shareholder-items').html(results[0])
 			$('.s-0 .pagination').html(results[1])
+		
 		}
 		const dataObject = {
 			action: 'post_search_ajax',
@@ -33,6 +34,7 @@ jQuery(document).ready(function($) {
 		}
 		generalAjax(dataObject, '.shareholder-items', success)
 	})
+
 
 	// Reset Ajax
 	$(".shareholder-content .reset").on("click", (e) => {
@@ -61,8 +63,8 @@ jQuery(document).ready(function($) {
 			$('.s-1 .pagination').html(results[1])
 			if (e.target.classList.contains('in-the-dropdown')) {
 				$target_data_value = $(e.target).attr('data-value')
-				$(e.target).attr('data-value', 	$('.y-18').attr('data-value'))
-				$('.y-18').attr('data-value', $target_data_value)
+				$(e.target).attr('data-value', 	$('.s-1 .y-18').attr('data-value'))
+				$('.s-1 .y-18').attr('data-value', $target_data_value)
 			}
 		};
 		generalAjax(dataObject, '.s-1 .shareholder-items', success)
@@ -104,13 +106,12 @@ jQuery(document).ready(function($) {
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
-		const inputValue = $('.shareholder-content input').val();
+		const inputValue = $('.s-0 .shareholder-content input').val();
 		const paged = handleNextPrev(e, '.s-0')
 		const dataObject = {
 			action: "navigation_post_ajax",
 			paged: paged,
 			inputValue: inputValue,
-			year: $('.years.active').text(),
 			dots: e.target.classList.contains('dots') ? true : false,
 		};
 		function success(data) {
@@ -183,41 +184,155 @@ jQuery(document).ready(function($) {
 		generalAjax(dataObject, '.s-3 .shareholder-items', success)
 	});
 
-	// Pagination "Thong tin moi thau"
-	$('body').on('click', '.infomation-list .page-numbers', (e) => {
-		e.preventDefault()
-		const paged = handleNextPrev(e, '.infomation-list')
-		const inputValue = $('.filter-form .form-filter-search input').val();
-		const type = $('.form-filter-type .item.active').attr('data-value');
-		const field = $('.form-filter-field .item.active').attr('data-value');
-		const dataDate = $('.filter-form  .form-filter-date-start input').val();
-		
-		const dataObject = {
-			action: "tender_pag_action",
-			paged: paged,
-			inputValue: inputValue,
-			type: type == null ? '' : type,
-			dataDate: dataDate,
-			field: field == null ? '' : field,
-		};
-		function success(data) {
-			var results = data.split('|');
-			$('.infomation-list .list').html(results[0])
-			$('.infomation-list .pagination').html(results[1])
-		}
-		generalAjax(dataObject, '.infomation-list .list', success)
-	})
+	/** 
+	 * Contractor Selection Results
+	 * 
+	 * Ajax handler Contractor Selection Results page
+	 * 
+	*/
+		// Selection Result Search
+		$(".contractor-celection-results-form .btn-search").on('click', function(e) {
+			const inputValue = $('.contractor-celection-results-form .form-filter-search input').val();
+			const type = $('.contractor-celection-results-form .form-filter-type .item.active').attr('data-value');
+			const field = $('.contractor-celection-results-form .form-filter-field .item.active').attr('data-value');
+			const dataDate = $('.filter-form.contractor-celection-results-form .form-filter-date-start input[type="date"]').val();
 
-	// Reset Ajax
-	$(".reset").on("click", (e) => {
-		const dataObject = {
-			action: 'tender_notice_reset_action',
-		}
-		function success(data) {
-			var results = data.split('|');
-			$('.infomation-list .list').html(results[0])
-			$('.infomation-list .pagination').html(results[1])
-		};
-		generalAjax(dataObject, '.infomation-list .list', success)
-	})
+			function success(data) {
+				var results = data.split('|');
+				$('.infomation-list.contractor-celection-results-list .list').html(results[0])
+				$('.infomation-list.contractor-celection-results-list .pagination').html(results[1])
+			}
+			const dataObject = {
+				action: 'contractor_celection_results_search',
+				paged: 1,
+				inputValue: inputValue,
+				type: type == null ? '' : type,
+				dataDate: dataDate == null ? '' : dataDate,
+				field: field == null ? '' : field,
+				
+			}
+			generalAjax(dataObject, '.infomation-list.contractor-celection-results-list .list', success)
+		})
+
+		// Selection Result Pagination 
+		$('body').on('click', '.contractor-celection-results-list.infomation-list .page-numbers', (e) => {
+			e.preventDefault()
+			const paged = handleNextPrev(e, '.contractor-celection-results-list.infomation-list')
+			const inputValue = $('.contractor-celection-results-form input').val();
+			const type = $('.contractor-celection-results-form .form-filter-type .item.active').attr('data-value');
+			const field = $('.contractor-celection-results-form .form-filter-field .item.active').attr('data-value');
+			const dataDate = $('.filter-form.contractor-celection-results-form .form-filter-date-start input[type="date"]').val();
+
+			const dataObject = {
+				action: "contractor_selection_results_pagination",
+				paged: paged,
+				inputValue: inputValue,
+				type: type == null ? '' : type,
+				dataDate: dataDate == null ? '' : dataDate,
+				field: field == null ? '' : field,
+			};
+			function success(data) {
+				var results = data.split('|');
+				$('.infomation-list.contractor-celection-results-list .list').html(results[0])
+				$('.infomation-list.contractor-celection-results-list .pagination').html(results[1])
+			}
+			generalAjax(dataObject, '.infomation-list.contractor-celection-results-list .list', success)
+		})
+
+		// Selection Result Reset
+		$(".contractor-celection-results-form .btn-reset").on("click", (e) => {
+			$('.contractor-celection-results-form input').val('');
+			$('.contractor-celection-results-form .item.active').removeClass('active');
+			$('.contractor-celection-results-form .item.first').addClass('active');
+			const dataObject = {
+				action: 'contractor_celection_results_reset',
+			}
+			function success(data) {
+				var results = data.split('|');
+				$('.infomation-list.contractor-celection-results-list .list').html(results[0])
+				$('.infomation-list.contractor-celection-results-list .pagination').html(results[1])
+			}
+			generalAjax(dataObject, '.infomation-list.contractor-celection-results-list .list', success)
+		})
+	/** End Contractor Selection Results */
+
+
+
+	/** 
+	 * Tender Notice 
+	 * 
+	 * Ajax handler for Tender Information page
+	 * 
+	*/
+		// Tender Notification Search
+		$(".tender-notice.tender .btn-search").on('click', function(e) {
+			// const paged = handleNextPrev(e, '.infomation-list')
+			const inputValue = $('.tender-notice.tender input').val();
+			const type = $('.form-filter-type .item.active').attr('data-value');
+			const field = $('.form-filter-field .item.active').attr('data-value');
+			const dataDate = $('.filter-form  .form-filter-date-start input[type="date"]').val();
+			
+
+			function success(data) {
+				var results = data.split('|');
+				$('.infomation-list.tender-infor .list').html(results[0])
+				$('.infomation-list.tender-infor .pagination').html(results[1])
+			}
+			const dataObject = {
+				action: 'tender_notification_search',
+				paged: 1,
+				inputValue: inputValue,
+				type: type == null ? '' : type,
+				dataDate: dataDate == null ? '' : dataDate,
+				field: field == null ? '' : field,
+				
+			}
+			generalAjax(dataObject, '.infomation-list.tender-infor .list', success)
+		})
+
+		// Tender Notification Pagination 
+		$('body').on('click', '.infomation-list.tender-infor .page-numbers', (e) => {
+			e.preventDefault()
+			const paged = handleNextPrev(e, '.infomation-list.tender-infor')
+			const inputValue = $('.filter-form.tender-notice .form-filter-search input').val();
+			const type = $('.tender-notice .form-filter-type .item.active').attr('data-value');
+			const field = $('.tender-notice .form-filter-field .item.active').attr('data-value');
+			const dataDate = $('.filter-form.tender-notice .form-filter-date-start input[type="date"]').val();
+
+			
+			const dataObject = {
+				action: "tender_pag_action",
+				paged: paged,
+				inputValue: inputValue,
+				type: type == null ? '' : type,
+				dataDate: dataDate == null ? '' : dataDate,
+				field: field == null ? '' : field,
+			};
+			function success(data) {
+				var results = data.split('|');
+				$('.infomation-list.tender-infor .list').html(results[0])
+				$('.infomation-list.tender-infor .pagination').html(results[1])
+			}
+			generalAjax(dataObject, '.infomation-list.tender-infor .list', success)
+		})
+
+		// Tender Notification Reset
+		$(".tender-notice .btn-reset").on("click", (e) => {
+			$('.tender-notice.tender input').val('');
+			$('.tender-notice .item.active').removeClass('active');
+			$('.tender-notice .item.first').addClass('active');
+			const dataObject = {
+				action: 'tender_notice_reset_action',
+			}
+			function success(data) {
+				var results = data.split('|');
+				$('.infomation-list.tender-infor .list').html(results[0])
+				$('.infomation-list.tender-infor .pagination').html(results[1])
+			};
+			generalAjax(dataObject, '.infomation-list.tender-infor .list', success)
+		})
+	/** End Tender Notice */
+
+
+	
 })

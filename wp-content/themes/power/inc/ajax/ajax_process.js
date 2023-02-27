@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
         $('.search').val('');
         $('.filter-item .item.active').removeClass('active');
         $('.filter-item .item.default').addClass('active');
+        $('.filter-item .item.first').addClass('active');
         Filter_posts_news();
         Filter_posts_library_images();
         Filter_posts_library_video();
@@ -45,7 +46,6 @@ jQuery(document).ready(function ($) {
                 )
             },
             success: function (data) {
-                console.log(data);
                 var results = data.split('|');
                 $('.tin-tuc-thuy-dien .lists-post .list').html(results[0])
                 $('.tin-tuc-thuy-dien  .pagination').html(results[1])
@@ -705,7 +705,6 @@ jQuery(document).ready(function ($) {
         return false;
     }
     $("body").on("click", ".su-kien .page-numbers", (e) => {
-        console.log(e);
         e.preventDefault();
         var paged = '';
         paged = e.target.innerText

@@ -14,6 +14,7 @@ jQuery(document).ready(function ($) {
 	$('.nav-login').on('click', function () {
 		$('.nav-login .is_login').toggleClass('active');
 	})
+
 	$(' form.csw-search-form input[type=text]').on('change invalid', function () {
 		var textfield = $(this).get(0);
 		textfield.setCustomValidity('');
@@ -42,6 +43,7 @@ jQuery(document).ready(function ($) {
 			this.type = 'radio';
 		});
 	}
+	
 	$(document).ready(function () {
 		change_single_select_tax('project_type');
 		change_single_select_tax('project_company');
@@ -171,7 +173,6 @@ jQuery(document).ready(function ($) {
 	});
 	$(document).on('click', '.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children.is_active', function (e) {
 		$('.main-menu-primary .menu-item-has-children .sub-menu .menu-item-has-children').removeClass('is_active');
-		// $('.main-menu-primary .menu-item-has-children').removeClass('active-default');
 	});
 
 
@@ -197,21 +198,6 @@ jQuery(document).ready(function ($) {
 		},
 	});
 
-	// $('.home-slide-carousel').on('wheel', (function (e) {
-
-	// 	e.preventDefault();
-
-	// 	if (e.originalEvent.deltaY > 0) {
-
-	// 		// $(this).slick('slickNext');
-
-	// 	} else {
-
-	// 		$(this).slick('slickPrev');
-
-	// 	}
-
-	// }));
 	$('.slide-img').on('click', function () {
 		$('.slide-img').removeClass('active');
 		$(this).addClass('active');
@@ -275,4 +261,5 @@ jQuery(document).ready(function ($) {
 			},
 		]
 	});
+
 });

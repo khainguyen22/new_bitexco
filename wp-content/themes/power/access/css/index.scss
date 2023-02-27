@@ -1147,6 +1147,7 @@ label.required {
 
 .loader-box {
     margin: 0 auto 50px;
+    padding-top: 50px;
 }
 
 #btn-submit-form-search {
@@ -1556,3 +1557,4 @@ img {
 @import './scss/_su-kien.scss';
 @import './scss/_kinh_doanh_dien.scss';
 @import './scss/_chi-tiet-su-kien.scss';
+@import './scss/_thong-tin-huu-ich.scss';
