@@ -114,9 +114,11 @@ get_header();
                             <?php if ($the_query_post_outstanding->have_posts()) : ?>
                                 <?php while ($the_query_post_outstanding->have_posts()) : $the_query_post_outstanding->the_post();
                                     $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
-                                    <div class="image">
-                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                                    </div>
+                                    <a href="<?php echo get_the_permalink() ?>">
+                                        <div class="image">
+                                            <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                        </div>
+                                    </a>
                                     <div class="content">
                                         <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
                                         <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo the_title() ?></a></h5>
@@ -129,9 +131,11 @@ get_header();
                             <?php else : ?>
                                 <?php while ($the_query_post_outstanding_null->have_posts()) : $the_query_post_outstanding_null->the_post();
                                     $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
-                                    <div class="image">
-                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                                    </div>
+                                    <a href="<?php echo get_the_permalink() ?>">
+                                        <div class="image">
+                                            <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                        </div>
+                                    </a>
                                     <div class="content">
                                         <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
                                         <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo the_title() ?></a></h5>
@@ -150,9 +154,11 @@ get_header();
                                     <?php while ($the_query_post_news->have_posts()) : $the_query_post_news->the_post();
                                         $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
                                         <div class="col-12 d-flex tin-moi-nhat-item ">
-                                            <div class="image">
-                                                <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                                            </div>
+                                            <a href="<?php echo get_the_permalink() ?>">
+                                                <div class="image">
+                                                    <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                                </div>
+                                            </a>
                                             <div class="content">
                                                 <span class="tag tag-calender">
                                                     <span class="text size-text-14"><?php echo get_the_date() ?></span>
@@ -200,6 +206,9 @@ get_header();
                                         'hide_empty' => false,
                                     ));
                                     ?>
+                                    <?php if (isset($tax_post_company_news)) : ?>
+                                        <span class="item-default"><?php echo paint_if_exist($tax_post_company_news) ?></span>
+                                    <?php endif ?>
                                     <ul>
                                         <?php if (isset($tax_post_company_news)) : ?>
                                             <li class="item active default"><?php echo paint_if_exist($tax_post_company_news) ?></li>
@@ -218,6 +227,9 @@ get_header();
                                         'hide_empty' => false,
                                     ));
                                     ?>
+                                    <?php if (isset($tax_post_type_news)) : ?>
+                                        <span class="item-default"><?php echo paint_if_exist($tax_post_type_news) ?></span>
+                                    <?php endif ?>
                                     <ul>
                                         <?php if (isset($tax_post_type_news)) : ?>
                                             <li class="item active default"><?php echo paint_if_exist($tax_post_type_news) ?></li>
@@ -257,9 +269,11 @@ get_header();
                     <?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
                         $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
                         <div class="custom-post d-flex ">
-                            <div class="image">
-                                <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
-                            </div>
+                            <a href="<?php echo get_the_permalink() ?>">
+                                <div class="image">
+                                    <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
+                                </div>
+                            </a>
                             <div class="content ">
                                 <?php if (get_the_tag_list()) : ?><span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span><?php endif; ?>
                                 <h6> <a href="<?php echo get_the_permalink() ?>"><?php echo the_title() ?></a></h6>
@@ -288,7 +302,7 @@ get_header();
                             'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                             'format' => '?paged=%#%',
                             'current' => max(1, $paged),
-						    'show_all'     => true,
+                            'show_all'     => true,
                             'total' => $the_query_post->max_num_pages,
                             'mid_size' => '3',
                             'prev_text'    => __('<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

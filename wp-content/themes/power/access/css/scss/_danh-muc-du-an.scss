@@ -53,9 +53,7 @@
                     .form-filter-type,
                     .form-filter-area,
                     .form-filter-company {
-                        max-width: 228px;
                         max-height: 48px;
-                        width: 100%;
                     }
 
                     @media (max-width:1133px) {
@@ -155,23 +153,28 @@
 
 .iw-content-box {
     padding: 30px;
+
     .iw-content {
         display: flex;
         flex-direction: column;
         gap: 16px;
     }
+
     .title {
         align-items: center;
         gap: 10px;
-      
+
     }
+
     .droplets {
         box-shadow: 0px 5px 20px -10px rgba(43, 24, 8, 0.15);
     }
+
     .location-info-row {
         align-items: center;
         gap: 8px;
     }
+
     h6 {
         margin-bottom: 0;
     }
@@ -179,7 +182,7 @@
 
 .map-section {
     position: relative;
-    
+
 }
 
 .map-btn {

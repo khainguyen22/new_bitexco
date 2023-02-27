@@ -86,11 +86,16 @@ get_header();
 						$terms = get_terms(array(
 							'taxonomy' => 'project_type',
 							'hide_empty' => false,
+							'orderby' => 'date',
+							'order' => 'DESC',
 						));
 						?>
+						<?php if (isset($tax_project_type)) : ?>
+							<span class="item-default"><?php echo paint_if_exist($tax_project_type) ?></span>
+						<?php endif ?>
 						<ul>
 							<?php if (isset($tax_project_type)) : ?>
-								<li class="item active default"><?php echo paint_if_exist($tax_project_type) ?></li>
+								<li class="item active default first"><?php echo paint_if_exist($tax_project_type) ?></li>
 							<?php endif ?>
 							<?php foreach ($terms as $key => $value) : ?>
 								<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -103,11 +108,16 @@ get_header();
 						$terms = get_terms(array(
 							'taxonomy' => 'project_location',
 							'hide_empty' => false,
+							'orderby' => 'date',
+							'order' => 'DESC',
 						));
 						?>
+						<?php if (isset($tax_project_location)) : ?>
+							<span class="item-default"><?php echo paint_if_exist($tax_project_location) ?></span>
+						<?php endif ?>
 						<ul>
 							<?php if (isset($tax_project_location)) : ?>
-								<li class="item active default"><?php echo paint_if_exist($tax_project_location) ?></li>
+								<li class="item active default first"><?php echo paint_if_exist($tax_project_location) ?></li>
 							<?php endif ?>
 							<?php foreach ($terms as $key => $value) : ?>
 								<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -120,11 +130,16 @@ get_header();
 						$terms = get_terms(array(
 							'taxonomy' => 'project_company',
 							'hide_empty' => false,
+							'orderby' => 'date',
+							'order' => 'DESC',
 						));
 						?>
+						<?php if (isset($tax_project_company)) : ?>
+							<span class="item-default"><?php echo paint_if_exist($tax_project_company) ?></span>
+						<?php endif ?>
 						<ul>
 							<?php if (isset($tax_project_company)) : ?>
-								<li class="item active default"><?php echo paint_if_exist($tax_project_company) ?></li>
+								<li class="item active default first"><?php echo paint_if_exist($tax_project_company) ?></li>
 							<?php endif ?>
 							<?php foreach ($terms as $key => $value) : ?>
 								<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -175,6 +190,7 @@ get_header();
 										<div>
 											<?php foreach (get_the_terms(get_the_ID(), 'project_company') as $key => $value) : ?>
 												<p><?php echo paint_if_exist($value->name) ?></p>
+
 											<?php endforeach; ?>
 										</div>
 									</div>
@@ -208,7 +224,9 @@ get_header();
 										</div>
 										<div>
 											<?php foreach (get_the_terms(get_the_ID(), 'project_location') as $key => $value) : ?>
-												<p> <?php echo paint_if_exist($value->name) ?> </p>
+												<a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
+													<p> <?php echo paint_if_exist($value->name) ?> </p>
+												</a>
 											<?php endforeach; ?>
 										</div>
 									</div>

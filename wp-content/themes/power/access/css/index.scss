@@ -1198,8 +1198,21 @@ label.required {
         }
     }
 
+    .item-default {
+        font-size: 16px;
+        line-height: 1.6;
+        white-space: nowrap;
+        display: none;
+    }
+
+    &.active .item-default {
+        display: block;
+    }
+
     ul {
         margin-bottom: 0;
+        margin-right: 20px;
+        overflow: hidden;
 
         &.active {
             padding: 8px;
@@ -1209,15 +1222,20 @@ label.required {
             flex-direction: column;
             background-color: #fff;
             row-gap: 4px;
-            width: 310px;
+            min-width: calc(100% + 2px);
+            width: max-content;
             position: absolute;
             left: -1px;
             z-index: 2;
-            top: -1px;
+            top: 50px;
 
             li {
                 display: block;
                 padding: 7px 16px;
+
+                &.active {
+                    background-color: #ebf6f9;
+                }
 
                 &:first-child {
                     display: none;
@@ -1234,6 +1252,7 @@ label.required {
             display: none;
             font-size: 16px;
             line-height: 1.6;
+            white-space: nowrap;
 
             &.active {
                 display: block;

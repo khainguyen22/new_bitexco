@@ -85,28 +85,39 @@ get_header();
                         $terms = get_terms(array(
                             'taxonomy' => 'project_type',
                             'hide_empty' => false,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
                         ));
                         ?>
+                        <?php if (isset($tax_project_type)) : ?>
+                            <span class="item-default"><?php echo paint_if_exist($tax_project_type) ?></span>
+                        <?php endif ?>
                         <ul>
                             <?php if (isset($tax_project_type)) : ?>
-                                <li class="item active default"><?php echo paint_if_exist($tax_project_type) ?></li>
+                                <li class="item active default first"><?php echo paint_if_exist($tax_project_type) ?></li>
                             <?php endif ?>
                             <?php foreach ($terms as $key => $value) : ?>
                                 <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>
+
                     <div class="form-filter-area filter-item">
                         <?php
                         $tax_project_location = get_taxonomy('project_location')->label;
                         $terms = get_terms(array(
                             'taxonomy' => 'project_location',
                             'hide_empty' => false,
+                            'orderby' => 'ID',
+                            'order' => 'DESC',
                         ));
                         ?>
+                        <?php if (isset($tax_project_location)) : ?>
+                            <span class="item-default"><?php echo paint_if_exist($tax_project_location) ?></span>
+                        <?php endif ?>
                         <ul>
                             <?php if (isset($tax_project_location)) : ?>
-                                <li class="item active default"><?php echo paint_if_exist($tax_project_location) ?></li>
+                                <li class="item active default first"><?php echo paint_if_exist($tax_project_location) ?></li>
                             <?php endif ?>
                             <?php foreach ($terms as $key => $value) : ?>
                                 <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -119,11 +130,16 @@ get_header();
                         $terms = get_terms(array(
                             'taxonomy' => 'project_company',
                             'hide_empty' => false,
+                            'orderby' => 'date',
+                            'order' => 'DESC',
                         ));
                         ?>
+                        <?php if (isset($tax_project_company)) : ?>
+                            <span class="item-default"><?php echo paint_if_exist($tax_project_company) ?></span>
+                        <?php endif ?>
                         <ul>
                             <?php if (isset($tax_project_company)) : ?>
-                                <li class="item active default"><?php echo paint_if_exist($tax_project_company) ?></li>
+                                <li class="item active default first"><?php echo paint_if_exist($tax_project_company) ?></li>
                             <?php endif ?>
                             <?php foreach ($terms as $key => $value) : ?>
                                 <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -207,7 +223,9 @@ get_header();
                                         </div>
                                         <div>
                                             <?php foreach (get_the_terms(get_the_ID(), 'project_location') as $key => $value) : ?>
-                                                <p> <?php echo paint_if_exist($value->name) ?> </p>
+                                                <a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
+                                                    <p> <?php echo paint_if_exist($value->name) ?> </p>
+                                                </a>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
@@ -228,10 +246,12 @@ get_header();
                     $big = 999999999;
                     $total = isset($main_query->max_num_pages) ? $main_query->max_num_pages : '';
                     if ($total > 1) echo '<ul class="pagination justify-content-center custom-pagination">';
-                    echo (array(
+                    echo paginate_links(array(
                         'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                         'format' => '?paged=%#%',
                         'current' => max(1, $paged),
+                        'show_all'     => true,
+
                         'total' => $the_query_post->max_num_pages,
                         'mid_size' => '3',
                         'prev_text'    => __('<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

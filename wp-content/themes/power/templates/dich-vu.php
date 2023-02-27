@@ -98,9 +98,11 @@ get_header();
               <?php endforeach; ?>
             <?php endif; ?>
           </div>
-          <div class="button-more-infor">
-            <a href="<?php echo $cac_goi_dich_vu_banner['link']; ?>" class="btn btn-custom-1 btn-custom-1-l"><?php echo isset($cac_goi_dich_vu_banner['button']) ? $cac_goi_dich_vu_banner['button'] : ""; ?></a>
-          </div>
+          <?php if ($cac_goi_dich_vu_banner['show_button'] == 1) : ?>
+            <div class="button-more-infor">
+              <a href="<?php echo $cac_goi_dich_vu_banner['link']; ?>" class="btn btn-custom-1 btn-custom-1-l"><?php echo isset($cac_goi_dich_vu_banner['button']) ? $cac_goi_dich_vu_banner['button'] : ""; ?></a>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
     </section>
@@ -161,8 +163,8 @@ get_header();
                 <?php if ($lien_he_de_duoc_ho_tro_content['phone']) : ?>
                   <span><?php _e('Tel: ', POWER) ?></span>
                   <?php foreach ($lien_he_de_duoc_ho_tro_content['phone'] as $key => $value) : ?>
-                    <?php echo ($key > 0) ? '<span class="mx-2">|</span>' : '' ?>
-                    <a href="tel:+<?php echo $value['item']; ?>"><?php echo $value['item']; ?></a>
+                    <?php echo ($key > 0) ? '<span class="mx-1">|</span>' : '' ?>
+                    <a href="tel:+<?php echo $value['item']; ?>">+<?php echo $value['item']; ?></a>
                   <?php endforeach; ?>
                 <?php endif; ?>
                 </p>
@@ -192,7 +194,7 @@ get_header();
                     </clipPath>
                   </defs>
                 </svg>
-                <a href="tel:+<?php echo isset($lien_he_de_duoc_ho_tro_content['fax']) ? $lien_he_de_duoc_ho_tro_content['fax'] : ""; ?>">Fax: + <?php echo isset($lien_he_de_duoc_ho_tro_content['fax']) ? $lien_he_de_duoc_ho_tro_content['fax'] : ""; ?> </a>
+                Fax: <a href="tel:+<?php echo isset($lien_he_de_duoc_ho_tro_content['fax']) ? $lien_he_de_duoc_ho_tro_content['fax'] : ""; ?>">+ <?php echo isset($lien_he_de_duoc_ho_tro_content['fax']) ? $lien_he_de_duoc_ho_tro_content['fax'] : ""; ?> </a>
               </div>
               <div class="contact-info email">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

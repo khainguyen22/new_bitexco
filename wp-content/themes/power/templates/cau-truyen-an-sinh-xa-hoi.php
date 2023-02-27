@@ -64,16 +64,18 @@ get_header();
                             <h6>Câu chuyện nổi bật</h6>
                             <?php while ($the_query_post_outstanding->have_posts()) : $the_query_post_outstanding->the_post();
                                 $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
-                                <div class="image">
-                                    <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                                </div>
-                                <div class="content">
-                                    <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo the_title() ?></a></h5>
-                                    <p class="size-text-16"><?php echo get_the_excerpt() ?></p>
-                                    <span class="tag tag-calender">
-                                        <span class="text size-text-14"><?php echo get_the_date() ?></span>
-                                    </span>
-                                </div>
+                                <a href="<?php echo get_the_permalink() ?>"> 
+                                    <div class="image">
+                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                    </div>
+                                    <div class="content">
+                                        <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo the_title() ?></a></h5>
+                                        <p class="size-text-16"><?php echo _e(get_field('excerpt')) ?></p>
+                                        <span class="tag tag-calender">
+                                            <span class="text size-text-14"><?php echo get_the_date() ?></span>
+                                        </span>
+                                    </div>
+                                </a>
                             <?php endwhile; ?>
                     </div>
                 <?php endif; ?>
@@ -83,10 +85,13 @@ get_header();
                         <div class="row tin-moi-nhat">
                             <?php while ($the_query_post_news->have_posts()) : $the_query_post_news->the_post();
                                 $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
+
                                 <div class="col-12 d-flex tin-moi-nhat-item ">
-                                    <div class="image">
-                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                                    </div>
+                                    <a href="<?php echo get_the_permalink() ?>">
+                                        <div class="image">
+                                            <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                        </div>
+                                    </a>
                                     <div class="content">
                                         <span class="tag tag-calender">
                                             <span class="text size-text-14"><?php echo get_the_date() ?></span>
@@ -143,9 +148,11 @@ get_header();
                     <?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
                         $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
                         <div class="custom-post d-flex ">
-                            <div class="image">
-                                <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                            </div>
+                            <a href="<?php echo get_the_permalink() ?>">
+                                <div class="image">
+                                    <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                </div>
+                            </a>
                             <div class="content ">
                                 <h6> <a href="<?php echo get_the_permalink() ?>"><?php echo paint_if_exist(the_title()) ?></a></h6>
                                 <p class="size-text-16"><?php echo paint_if_exist(get_field('excerpt')) ?></p>

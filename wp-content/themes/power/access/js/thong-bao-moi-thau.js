@@ -1,21 +1,23 @@
-jQuery(document).ready(function() {
-	$('.filter-item').on('click', function(e) {
+jQuery(document).ready(function () {
+	$('.filter-item').on('click', function (e) {
 		if ($(e.target).hasClass('first') && $(e.target).closest('ul').hasClass('active')) {
 			$(e.target).closest('ul').removeClass('active')
 			return
 		}
+		$('.filter-item.active').removeClass('active')
 		$('.filter-item ul.active').removeClass('active')
 		$(this).find('ul').addClass('active')
+		$(this).addClass('active')
 		$(e.target).closest('ul').find('li.active').removeClass('active')
 		$(e.target).addClass('active')
 	})
 
-	$('body').on('click', function(e) {
-		if(!$(e.target).is('.filter-item ul') 
-		&& !$(e.target).is('.filter-item') 
-		&& !$(e.target).is('.filter-item svg')
-		&& !$(e.target).is('.filter-item svg path')
-		&& !$(e.target).is('.filter-item .item.first')
+	$('body').on('click', function (e) {
+		if (!$(e.target).is('.filter-item ul')
+			&& !$(e.target).is('.filter-item')
+			&& !$(e.target).is('.filter-item svg')
+			&& !$(e.target).is('.filter-item svg path')
+			&& !$(e.target).is('.filter-item .item.first')
 		) {
 			$('.filter-item ul').removeClass('active')
 			if (($(e.target).hasClass('item'))) {

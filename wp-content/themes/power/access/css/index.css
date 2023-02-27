@@ -1097,10 +1097,25 @@ label.required::after {
   margin-left: -16px;
   padding-left: 16px;
 }
+.filter-form .filter-item .item-default,
+.form .filter-item .item-default,
+.small-form-filter .filter-item .item-default {
+  font-size: 16px;
+  line-height: 1.6;
+  white-space: nowrap;
+  display: none;
+}
+.filter-form .filter-item.active .item-default,
+.form .filter-item.active .item-default,
+.small-form-filter .filter-item.active .item-default {
+  display: block;
+}
 .filter-form .filter-item ul,
 .form .filter-item ul,
 .small-form-filter .filter-item ul {
   margin-bottom: 0;
+  margin-right: 20px;
+  overflow: hidden;
 }
 .filter-form .filter-item ul.active,
 .form .filter-item ul.active,
@@ -1112,17 +1127,23 @@ label.required::after {
   flex-direction: column;
   background-color: #fff;
   row-gap: 4px;
-  width: 310px;
+  min-width: calc(100% + 2px);
+  width: max-content;
   position: absolute;
   left: -1px;
   z-index: 2;
-  top: -1px;
+  top: 50px;
 }
 .filter-form .filter-item ul.active li,
 .form .filter-item ul.active li,
 .small-form-filter .filter-item ul.active li {
   display: block;
   padding: 7px 16px;
+}
+.filter-form .filter-item ul.active li.active,
+.form .filter-item ul.active li.active,
+.small-form-filter .filter-item ul.active li.active {
+  background-color: #ebf6f9;
 }
 .filter-form .filter-item ul.active li:first-child,
 .form .filter-item ul.active li:first-child,
@@ -1141,6 +1162,7 @@ label.required::after {
   display: none;
   font-size: 16px;
   line-height: 1.6;
+  white-space: nowrap;
 }
 .filter-form .filter-item ul li.active,
 .form .filter-item ul li.active,
@@ -2782,9 +2804,7 @@ h5 {
 .du-an .filter-post-section .filter-post-container .small-form-filter .form .form-filter-type,
 .du-an .filter-post-section .filter-post-container .small-form-filter .form .form-filter-area,
 .du-an .filter-post-section .filter-post-container .small-form-filter .form .form-filter-company {
-  max-width: 228px;
   max-height: 48px;
-  width: 100%;
 }
 @media (max-width: 1133px) {
   .du-an .filter-post-section .filter-post-container .small-form-filter .form .form-filter-type,
@@ -3773,6 +3793,14 @@ footer.footer-second .footer {
     display: none;
   }
 }
+.admin-bar .header {
+  top: 32px;
+}
+.admin-bar header .search,
+.admin-bar .menu-main-container.is-active {
+  top: 137px;
+}
+
 .header .container {
   max-width: 1320px;
 }
@@ -4748,6 +4776,11 @@ header .search .search-bar:hover::after {
   font-size: 13px;
   line-height: 160%;
   letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .tin-tuc .content-container .news-post .tin-moi-nhat-wrap .tin-moi-nhat {
   margin-top: 16px;
@@ -5021,6 +5054,17 @@ header .search .search-bar:hover::after {
   .tin-tuc .lists-post .row.fillter .form-filter .form .form-filter-search {
     width: 100%;
   }
+}
+.tin-tuc .lists-post .row.fillter .form-filter .form .filter-item::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #434449;
+  border-bottom: 2px solid #434449;
+  position: absolute;
+  right: 20px;
+  top: 45%;
+  transform: rotate(45deg) translateY(-50%);
 }
 .tin-tuc .lists-post .row.fillter .form-filter .form .form-filter-company {
   width: 181px;
@@ -5314,6 +5358,11 @@ header .search .search-bar:hover::after {
 .home-slide .home-slide-carousel .item .container .content .title {
   font-weight: 500;
   margin-bottom: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .home-slide .home-slide-carousel .item .container .content .desc-wrap {
   margin-bottom: 32px;
@@ -5357,6 +5406,11 @@ header .search .search-bar:hover::after {
 }
 .home-slide .home-slide-carousel .item.home_lich_su_phat_trien .container .content .desc, .home-slide .home-slide-carousel .item.home_tin_tuc_moi .container .content .desc, .home-slide .home-slide-carousel .item.home_tuyen_dung .container .content .desc {
   margin-bottom: 32px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .home-slide .slick-list::before {
   content: "";
@@ -6202,6 +6256,10 @@ header .search .search-bar:hover::after {
 .thu-vien-hinh-anh .main nav {
   margin: 30px 0 0px 0;
 }
+.thu-vien-hinh-anh .form-filter-search:hover {
+  border: unset;
+}
+
 @media (max-width: 1200px) {
   .thu-vien-hinh-anh .main .row.fillter {
     margin: 39px 0 40px 0;
@@ -8202,6 +8260,11 @@ section.related-news .article-container .related-news-content .related-item .ite
 .tuyen-dung .power-enviroment .values .the-values .drop-down.active h5 {
   color: #DAA622;
   position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .tuyen-dung .power-enviroment .values .the-values .drop-down.active h5::after {
   content: "";
@@ -8216,6 +8279,11 @@ section.related-news .article-container .related-news-content .related-item .ite
 }
 .tuyen-dung .power-enviroment .values .the-values .drop-down.active p {
   display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .tuyen-dung .power-enviroment .values .the-values .drop-down + .drop-down {
   padding-top: 20px;
@@ -15887,9 +15955,9 @@ section.tender-notice-banner .container .navigation {
   margin-top: 80px;
   margin-right: 41px;
   margin-left: 74px;
-  column-gap: 12%;
+  column-gap: 0%;
   row-gap: 58px;
-  justify-content: center;
+  justify-content: space-around;
 }
 .an-sinh-xa-hoi .did_it .content .item .icon {
   padding: 28px;
@@ -15917,6 +15985,7 @@ section.tender-notice-banner .container .navigation {
 }
 .an-sinh-xa-hoi .did_it .content .item .info {
   margin-left: 20px;
+  min-width: 245px;
 }
 .an-sinh-xa-hoi .did_it .content .item .info .label {
   font-weight: 300;

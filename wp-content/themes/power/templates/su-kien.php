@@ -169,9 +169,12 @@ get_header();
                                 'hide_empty' => false,
                             ));
                             ?>
+                            <?php if (isset($tax_events_status)) : ?>
+                                <span class="item-default"><?php echo paint_if_exist($tax_events_status) ?></span>
+                            <?php endif ?>
                             <ul>
                                 <?php if (isset($tax_events_status)) : ?>
-                                    <li class="item active"><?php echo paint_if_exist($tax_events_status) ?></li>
+                                    <li class="item active default first"><?php echo paint_if_exist($tax_events_status) ?></li>
                                 <?php endif ?>
                                 <?php foreach ($terms as $key => $value) : ?>
                                     <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -186,9 +189,12 @@ get_header();
                                 'hide_empty' => false,
                             ));
                             ?>
+                            <?php if (isset($tax_events_location)) : ?>
+                                <span class="item-default"><?php echo paint_if_exist($tax_events_location) ?></span>
+                            <?php endif ?>
                             <ul>
                                 <?php if (isset($tax_events_location)) : ?>
-                                    <li class="item active"><?php echo paint_if_exist($tax_events_location) ?></li>
+                                    <li class="item active default first"><?php echo paint_if_exist($tax_events_location) ?></li>
                                 <?php endif ?>
                                 <?php foreach ($terms as $key => $value) : ?>
                                     <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
@@ -203,9 +209,12 @@ get_header();
                                 'hide_empty' => false,
                             ));
                             ?>
+                            <?php if (isset($tax_events_formality)) : ?>
+                                <span class="item-default"><?php echo paint_if_exist($tax_events_formality) ?></span>
+                            <?php endif ?>
                             <ul>
                                 <?php if (isset($tax_events_formality)) : ?>
-                                    <li class="item active"><?php echo paint_if_exist($tax_events_formality) ?></li>
+                                    <li class="item active default first"><?php echo paint_if_exist($tax_events_formality) ?></li>
                                 <?php endif ?>
                                 <?php foreach ($terms as $key => $value) : ?>
                                     <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>

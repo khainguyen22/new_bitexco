@@ -65,18 +65,20 @@ get_header();
                             <h6>Tin nổi bật</h6>
                             <?php while ($the_query_post_outstanding->have_posts()) : $the_query_post_outstanding->the_post();
                                 $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
-                                <div class="image">
-                                    <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                                </div>
-                                <div class="content">
-                                    <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo paint_if_exist(the_title()) ?></a></h5>
-                                    <p class="size-text-16"><?php echo get_the_excerpt() ?></p>
-                                    <?php if (get_the_date()) : ?>
-                                        <span class="tag tag-calender">
-                                            <span class="text size-text-14"><?php echo get_the_date() ?></span>
-                                        </span>
-                                    <?php endif; ?>
-                                </div>
+                                <a href="<?php echo get_the_permalink() ?>">
+                                    <div class="image">
+                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                    </div>
+                                    <div class="content">
+                                        <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo paint_if_exist(the_title()) ?></a></h5>
+                                        <p class="size-text-16"><?php echo _e(get_field('excerpt')) ?></p>
+                                        <?php if (get_the_date()) : ?>
+                                            <span class="tag tag-calender">
+                                                <span class="text size-text-14"><?php echo get_the_date() ?></span>
+                                            </span>
+                                        <?php endif; ?>
+                                    </div>
+                                </a>
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </div>
@@ -87,9 +89,11 @@ get_header();
                                 <?php while ($the_query_post_news->have_posts()) : $the_query_post_news->the_post();
                                     $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
                                     <div class="col-12 d-flex tin-moi-nhat-item ">
-                                        <div class="image">
-                                            <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                                        </div>
+                                        <a href="<?php echo get_the_permalink() ?>">
+                                            <div class="image">
+                                                <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                            </div>
+                                        </a>
                                         <div class="content">
                                             <?php if (get_the_date()) : ?>
                                                 <span class="tag tag-calender">
@@ -148,9 +152,11 @@ get_header();
                     <?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
                         $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
                         <div class="custom-post d-flex ">
-                            <div class="image">
-                                <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
-                            </div>
+                            <a href="<?php echo get_the_permalink() ?>">
+                                <div class="image">
+                                    <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>" class="img-banner">
+                                </div>
+                            </a>
                             <div class="content ">
                                 <h6> <a href="<?php echo get_the_permalink() ?>"><?php echo paint_if_exist(the_title()) ?></a></h6>
                                 <p class="size-text-16"><?php echo paint_if_exist(get_field('excerpt')) ?></p>
@@ -179,8 +185,8 @@ get_header();
                     echo paginate_links(array(
                         'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                         'format' => '?paged=%#%',
-        'show_all'     => true,
-        'current' => max(1, $paged),
+                        'show_all'     => true,
+                        'current' => max(1, $paged),
                         'total' => $the_query_post->max_num_pages,
                         'mid_size' => '3',
                         'prev_text'    => __('<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
