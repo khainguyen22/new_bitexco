@@ -128,7 +128,7 @@ function register_taxonomy_project_type()
     );
     $args = array(
         'hierarchical'              => true,
-        'label'                     => 'Loại hình dự án',
+        'label'                     => 'Loại hình',
         'show_ui'                   => true,
         'query_var'                 => true,
         'show_admin_column'         => true,
@@ -166,7 +166,7 @@ function register_taxonomy_project_location()
     );
     $args = array(
         'hierarchical'              => true,
-        'label'                     => 'Khu vực dự án',
+        'label'                     => 'Khu vực',
         'show_ui'                   => true,
         'query_var'                 => true,
         'show_admin_column'         => true,
@@ -204,7 +204,7 @@ function register_taxonomy_project_company()
     );
     $args = array(
         'hierarchical'              => true,
-        'label'                     => 'Công ty thực hiện dự án',
+        'label'                     => 'Công ty thực hiện',
         'show_ui'                   => true,
         'query_var'                 => true,
         'show_admin_column'         => true,
