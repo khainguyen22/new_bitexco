@@ -62,7 +62,7 @@ $contact_content = get_field('contact_content', 'option');
 							</span>
 							<div>
 								<div class="tel size-text-16">
-									<?php _e('Tel', POWER) ?>
+									<?php _e('Tel: ', POWER) ?>
 									<?php foreach ($contact_content['contact_information']['phone'] as $key => $value) : ?>
 										<a class="size-text-16" href="tel:<?php echo $value['number'] ?>"><?php echo $value['number'] ?> </a>
 										<span class="mx-2">|</span>

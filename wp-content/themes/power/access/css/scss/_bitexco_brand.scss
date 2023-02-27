@@ -70,7 +70,7 @@
             .the-values {
                 padding-left: 77px;
                 padding-right: 0;
-                margin-top: -8px;
+                margin-top: -4px;
 
                 .drop-down {
                     &+.drop-down {
@@ -399,6 +399,12 @@
                             transition: visibility 0.3s;
                             transition-delay: 0.3s;
                             animation: fade-in 0.4s ease-in;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: normal;
+                            -webkit-line-clamp: 5;
                         }
 
 
@@ -440,7 +446,7 @@
                         z-index: 2;
                     }
 
-                    &:hover::before { 
+                    &:hover::before {
                         background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 44.84%, rgba(0, 0, 0, 0) 100%);
                         backdrop-filter: blur(0px);
                     }

@@ -25,4 +25,179 @@
         }
     }
 
+    .attach {
+        margin-top: 44px;
+        display: block;
+
+        .file {
+            margin-top: 24px;
+
+            .file-item {
+                margin-bottom: 12px;
+                margin-left: 0;
+                padding: 20px;
+                border: unset;
+                border-radius: 0;
+                align-items: center;
+                background-color: #F6F8FC;
+
+                .name {
+                    span {
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 160%;
+                        letter-spacing: 0.01em;
+                        color: #434449;
+                        margin-left: 4px;
+
+                        &::first-letter {
+                            text-transform: uppercase;
+                        }
+
+
+                    }
+
+                    svg {
+                        margin-top: 4px;
+                    }
+
+                }
+
+                .download span {
+                    margin-right: 8px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 150%;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    color: #DAA622;
+                    margin-top: 4px;
+                }
+            }
+        }
+
+        @media (max-width: 880px) {
+            a span {
+                width: fit-content;
+                word-break: break-all;
+            }
+        }
+    }
+
+    .driver {
+        width: 100%;
+        height: 1px;
+        background-color: #D1D5DB;
+        margin: 40px 0;
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 130%;
+        color: #141518;
+        margin-bottom: 24px;
+    }
+
+    .general_information {}
+
+    .speakers {
+        .wrap-person {
+
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+
+            .person {
+
+                width: calc(100%/2);
+                padding-right: 24px;
+
+                .image {
+                    width: 145px;
+                    height: 145px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .info {
+                    margin-left: 16px;
+
+                    .position,
+                    .company {
+                        margin-bottom: 12px;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 150%;
+                        letter-spacing: 0.04em;
+                        text-transform: uppercase;
+                        color: #434449;
+
+                    }
+
+                    .name {
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 160%;
+                        letter-spacing: 0.01em;
+                        color: #141518;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+
+    .history {
+        margin: -14px 0 20px;
+    }
+
+    .contact {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+
+        p {
+            a {
+                color: #000;
+                font-weight: 500;
+            }
+
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 160%;
+            letter-spacing: 0.01em;
+            color: #434449;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .btn-contact {
+            padding: 14px 32px;
+            width: 182px;
+            height: 48px;
+            background: #DAA622;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 140%;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+
+            &:hover {
+                background: transparent;
+                border: 1px solid #DAA622;
+                color: #DAA622;
+            }
+        }
+    }
 }

@@ -38,6 +38,11 @@
                     .title {
                         font-weight: 500;
                         margin-bottom: 22px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 2;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
                     }
 
                     .desc-wrap {
@@ -97,6 +102,11 @@
             &.home_tuyen_dung {
                 .container .content .desc {
                     margin-bottom: 32px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    -webkit-line-clamp: 3;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
                 }
             }
         }

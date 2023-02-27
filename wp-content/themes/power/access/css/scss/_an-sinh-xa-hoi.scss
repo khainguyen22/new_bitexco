@@ -126,9 +126,9 @@
             margin-top: 80px;
             margin-right: 41px;
             margin-left: 74px;
-            column-gap: 12%;
+            column-gap: 0%;
             row-gap: 58px;
-            justify-content: center;
+            justify-content: space-around;
 
             .item {
                 .icon {
@@ -159,6 +159,7 @@
 
                 .info {
                     margin-left: 20px;
+                    min-width: 245px;
 
                     .label {
                         font-weight: 300;
@@ -167,14 +168,15 @@
                         text-transform: uppercase;
                     }
 
-                    .number {
+                    .number,
+                    .unit {
                         font-weight: 600;
                         font-size: 54px;
                         line-height: 115%;
                         color: #DAA622;
                     }
 
-                    .unit {
+                    .sub_label {
                         font-weight: 300;
                         font-size: 16px;
                         line-height: 160%;

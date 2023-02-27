@@ -36,6 +36,7 @@
     .main {
         background: #fff;
         padding: 33px 0 89px;
+
         .row.fillter {
             margin: 0 0 40px 0;
 
@@ -98,6 +99,7 @@
             justify-content: space-between;
             display: flex;
             column-gap: 80px;
+
             .slider {
 
                 .vrmedia-gallery {
@@ -107,6 +109,7 @@
                     }
 
                     position: relative;
+
                     svg {
                         position: absolute;
                         top: 6px;
@@ -154,6 +157,7 @@
 
             .content {
                 min-width: 559px;
+
                 &.content-reverse {
                     padding-left: 15px;
                 }
@@ -221,8 +225,10 @@
         }
     }
 
-    .tab-content {
+    .tab-content {}
 
+    .form-filter-search:hover {
+        border: unset;
     }
 }
 
@@ -280,7 +286,7 @@
 
                 .slider {
                     .vrmedia-gallery {
-                        
+
                         img {}
 
                         .lSSlideOuter {
@@ -613,13 +619,14 @@
                     }
 
                     &.active::after {}
+
                     font-family: 'Public Sans';
                     font-style: normal;
                     font-weight: 600;
                     font-size: 12px;
                     line-height: 140%;
                     /* identical to box height, or 17px */
-                    
+
                     letter-spacing: 0.04em;
                     text-transform: uppercase;
                 }

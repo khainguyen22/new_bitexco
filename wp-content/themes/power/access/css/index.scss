@@ -1198,8 +1198,21 @@ label.required {
         }
     }
 
+    .item-default {
+        font-size: 16px;
+        line-height: 1.6;
+        white-space: nowrap;
+        display: none;
+    }
+
+    &.active .item-default {
+        display: block;
+    }
+
     ul {
         margin-bottom: 0;
+        margin-right: 20px;
+        overflow: hidden;
 
         &.active {
             padding: 8px;
@@ -1209,15 +1222,20 @@ label.required {
             flex-direction: column;
             background-color: #fff;
             row-gap: 4px;
-            width: 310px;
+            min-width: calc(100% + 2px);
+            width: max-content;
             position: absolute;
             left: -1px;
             z-index: 2;
-            top: -1px;
+            top: 50px;
 
             li {
                 display: block;
                 padding: 7px 16px;
+
+                &.active {
+                    background-color: #ebf6f9;
+                }
 
                 &:first-child {
                     display: none;
@@ -1234,6 +1252,7 @@ label.required {
             display: none;
             font-size: 16px;
             line-height: 1.6;
+            white-space: nowrap;
 
             &.active {
                 display: block;
@@ -1259,6 +1278,22 @@ span.tag-name .text {
     img {
         height: 100%;
         width: 100%;
+    }
+
+    .navigation {
+        text-align: center;
+        padding: 20px 20px 30px;
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+
+            .nav-previous,
+            .nav-next {
+                margin: 0 10px;
+            }
+
+        }
     }
 }
 
@@ -1347,10 +1382,158 @@ p#alt-text-description {
     display: none;
 }
 
+// style admin 
+.wp-admin img {
+    width: unset;
+    height: unset;
+}
+
+// style map luoi dien 
+.map-luoi-dien {
+    position: relative;
+    min-height: 1300px;
+    padding: 50px 0;
+}
+
+.goto-container {
+    position: absolute;
+    right: 15%;
+    top: 5%;
+}
+
+.step-container img {
+    max-height: 1200px;
+    object-fit: contain;
+}
+
+.goto-container .goto.default {
+    display: none;
+}
+
+.goto-container .goto {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.goto-container .goto.deactive {
+    color: #DAA622;
+}
+
+.goto-container .goto:hover {
+    cursor: pointer;
+    color: #DAA622;
+}
+
+.goto-container span.icon {
+    width: 56px;
+    margin-right: 21px;
+    display: flex;
+    justify-content: center;
+}
+
+.goto-container .wrap-line .goto {
+    margin-bottom: 7px;
+}
+
+.goto-container .wrap-box {
+    margin-top: 30px;
+    position: relative;
+    padding: 20px 0 10px;
+}
+
+.goto-container .wrap-box .goto {
+    margin-bottom: 10px;
+}
+
+.goto-container .wrap-box::after {
+    content: '';
+    width: 56px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border: 1px dashed #9747FF;
+    border-radius: 5px;
+    display: block;
+    z-index: -1;
+}
+
+.goto-container span.line {
+    width: 56px;
+    height: 2px;
+    display: block;
+}
+
+.goto-container span.box {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+.goto-container span.line.line-500,
+.goto-container span.box-500 {
+    background-color: #53B535;
+}
+
+.goto-container span.line.line-220,
+.goto-container span.box-220 {
+    background-color: #EA3323;
+}
+
+.goto-container span.line.line-110,
+.goto-container span.box-110 {
+    background-color: #265BB2;
+}
+
+.step-container {
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: -webkit-fill-available;
+}
+
+.step-container .step {
+    width: 800px;
+    height: auto;
+    position: absolute;
+    color: #fff;
+    display: block;
+    max-height: 1200px;
+}
+
+.step-container .step.deactive {
+    display: none;
+}
+
+@media(max-width:767px) {
+    .goto-container {
+        position: relative;
+        right: unset;
+        left: 10%;
+        top: 0;
+        width: fit-content;
+    }
+
+    .step-container .step {
+        width: fit-content;
+    }
+}
 
 @import './scss/bando';
 @import './scss/chitietbando2';
-@import './scss/_dangki';
+@import './scss/_dangki.scss';
 @import './scss/_dangnhap';
 @import './scss/_danhsachnhamaythuydien';
 @import './scss/_dieu-khoan';

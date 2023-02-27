@@ -67,24 +67,28 @@ get_header();
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                    <span class="divider-section"></span>
-                    <div class="wraper-member">
-                        <?php if ($hoi_dong_quan_tri_member['title']) : ?> <h5 class="title"><?php echo paint_if_exist($hoi_dong_quan_tri_member['title']); ?></h5> <?php endif; ?>
+                    <?php if (!$hoi_dong_quan_tri_member['hidden'] == 1) : ?>
                         <?php if ($hoi_dong_quan_tri_member_person) : ?>
-                            <div class="member">
-                                <?php foreach ($hoi_dong_quan_tri_member_person as $key => $value) : ?>
-                                    <div class="person d-flex">
-                                        <div class="image">
-                                            <img src="<?php echo $value['image']; ?>" alt="person">
-                                        </div>
-                                        <div class="info">
-                                            <?php if ($value['name']) : ?><h6 class="name"><?php echo $value['name']; ?></h6> <?php endif; ?>
-                                        </div>
+                            <span class="divider-section"></span>
+                            <div class="wraper-member">
+                                <?php if ($hoi_dong_quan_tri_member['title']) : ?> <h5 class="title"><?php echo paint_if_exist($hoi_dong_quan_tri_member['title']); ?></h5> <?php endif; ?>
+                                <?php if ($hoi_dong_quan_tri_member_person) : ?>
+                                    <div class="member">
+                                        <?php foreach ($hoi_dong_quan_tri_member_person as $key => $value) : ?>
+                                            <div class="person d-flex">
+                                                <div class="image">
+                                                    <?php if ($value['image']) : ?><img src="<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>"> <?php endif; ?>
+                                                </div>
+                                                <div class="info">
+                                                    <?php if ($value['name']) : ?><h6 class="name"><?php echo $value['name']; ?></h6> <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
                                     </div>
-                                <?php endforeach; ?>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
-                    </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

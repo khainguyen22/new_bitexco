@@ -1,6 +1,16 @@
 
 jQuery(document).ready(function ($) {
-
+    $('.count .number').each(function() {
+        $(this).prop('Counter', 0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 4000,
+            easing: 'swing',
+            step: function(now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    }); 
 	$('.nav-login').on('click', function () {
 		$('.nav-login .is_login').toggleClass('active');
 	})
@@ -13,7 +23,15 @@ jQuery(document).ready(function ($) {
 		}
 	});
 
+	// map luoi dien
+	$(document).ready(function () {
+		$('.goto').click(function () {
+			$(this).toggleClass('deactive');
+			$('.step').eq($(this).index('.goto')).toggleClass('deactive');
+		});
+	});
 
+	// change checkbox to radio button
 	function change_single_select_tax($select) {
 		jQuery('#' + $select + ' input').each(function () {
 			this.type = 'radio';
@@ -86,6 +104,17 @@ jQuery(document).ready(function ($) {
 		if (event.key === "Enter") {
 			event.preventDefault();
 			document.getElementById("btn-submit-form-search").click();
+		}
+	});
+
+
+
+
+	var inputform = document.getElementById("search-form");
+	inputform.addEventListener("keypress", function (event) {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			document.getElementById("submit-form").click();
 		}
 	});
 
@@ -172,6 +201,36 @@ jQuery(document).ready(function ($) {
 	$('.slide-img').on('click', function () {
 		$('.slide-img').removeClass('active');
 		$(this).addClass('active');
+	});
+	$('.related_events').slick({
+		autoplay: true,
+		arrows: true,
+		infinite: true,
+		dots: true,
+		autoplaySpeed: 5000,
+		speed: 500,
+		cssEase: 'linear',
+		slidesToShow: 3,
+		loop: true,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					slidesToShow: 3,
+					arrows: true,
+					slidesToScroll: 1
+				}
+			},
+			{
+				breakpoint: 321,
+				settings: {
+					slidesToShow: 1,
+					arrows: false,
+					slidesToScroll: 1
+				}
+			}
+		]
 	});
 
 	$('.slider-cards').slick({

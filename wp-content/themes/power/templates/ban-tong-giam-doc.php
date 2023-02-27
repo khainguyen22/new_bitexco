@@ -66,24 +66,28 @@ get_header();
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
-                    <span class="divider-section"></span>
-                    <div class="wraper-member">
-                        <?php if ($ban_tong_giam_doc_member['title']) : ?> <h5 class="title"><?php echo $ban_tong_giam_doc_member['title']; ?></h5> <?php endif; ?>
-                        <div class="member">
-                            <?php if ($ban_tong_giam_doc_member_person) : ?>
-                                <?php foreach ($ban_tong_giam_doc_member_person as $key => $value) : ?>
-                                    <div class="person d-flex">
-                                        <div class="image">
-                                            <img src="<?php echo $value['image']; ?>" alt="person">
-                                        </div>
-                                        <div class="info">
-                                            <?php if ($value['name']) : ?> <h6 class="name"><?php echo $value['name']; ?></h6> <?php endif; ?>
-                                        </div>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-                        </div>
-                    </div>
+                    <?php if (!$ban_tong_giam_doc_member['hidden'] == 1) : ?>
+                        <?php if ($ban_tong_giam_doc_member_person) : ?>
+                            <span class="divider-section"></span>
+                            <div class="wraper-member">
+                                <?php if ($ban_tong_giam_doc_member['title']) : ?> <h5 class="title"><?php echo $ban_tong_giam_doc_member['title']; ?></h5> <?php endif; ?>
+                                <div class="member">
+                                    <?php if ($ban_tong_giam_doc_member_person) : ?>
+                                        <?php foreach ($ban_tong_giam_doc_member_person as $key => $value) : ?>
+                                            <div class="person d-flex">
+                                                <div class="image">
+                                                    <?php if ($value['image']) : ?><img src="<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>"> <?php endif; ?>
+                                                </div>
+                                                <div class="info">
+                                                    <?php if ($value['name']) : ?> <h6 class="name"><?php echo $value['name']; ?></h6> <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

@@ -163,10 +163,23 @@ function my_acf_op_init()
             'menu_title'  => __('Thông tin mới thầu thủy điện'),
             'parent_slug' => $parent['menu_slug'],
         ));
-         // Add sub page.
-         $child = acf_add_options_page(array(
+        // Add sub page.
+        $child = acf_add_options_page(array(
+            'page_title'  => __('Sự kiên'),
+            'menu_title'  => __('Sự kiên'),
+        ));
+        // Add sub page.
+
+        $child = acf_add_options_page(array(
             'page_title'  => __('Thông tin hữu ích'),
             'menu_title'  => __('Thông tin hữu ích'),
+            'parent_slug' => $parent['menu_slug'],
+        ));
+        // Add sub page.
+
+        $child = acf_add_options_page(array(
+            'page_title'  => __('Chính sách bảo mật'),
+            'menu_title'  => __('Chính sách bảo mật'),
             'parent_slug' => $parent['menu_slug'],
         ));
     }

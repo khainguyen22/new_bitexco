@@ -52,7 +52,15 @@ get_header();
                     <?php endif; ?>
                 </div>
                 <div class="about-bitexco-column map">
-                    <img src="<?php echo $ve_bitexco_power['image']; ?>" alt="<?php echo $ve_bitexco_power['title']; ?>">
+                    <?php
+                    if ($ve_bitexco_power['file']['type'] == 'image') : ?>
+                        <img src="<?php echo $ve_bitexco_power['file']['url']; ?>" alt="<?php echo $ve_bitexco_power['title']; ?>">
+                    <?php else : ?>
+                        <video autoplay muted loop>
+                            <source src="<?php echo $ve_bitexco_power['file']['url']; ?>" type="video/mp4">
+                            <source src="<?php echo $ve_bitexco_power['file']['url']; ?>" type="video/ogg">
+                        </video>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

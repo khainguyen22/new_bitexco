@@ -116,6 +116,11 @@
                     h5 {
                         color: #DAA622;
                         position: relative;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 1;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
 
                         &::after {
                             content: "";
@@ -132,6 +137,11 @@
 
                     p {
                         display: block;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 5;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
                     }
                 }
 

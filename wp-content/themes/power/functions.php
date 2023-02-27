@@ -752,7 +752,7 @@ function register_my_menu()
 add_action('init', 'register_my_menu');
 
 /* Disable WordPress Admin Bar for all users */
-add_filter('show_admin_bar', '__return_false');
+// add_filter('show_admin_bar', '__return_false');
 
 function custom_login_redirect()
 {

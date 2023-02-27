@@ -162,6 +162,11 @@
                         font-size: 13px;
                         line-height: 160%;
                         letter-spacing: 0.01em;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 3;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
                     }
 
                 }
@@ -473,6 +478,18 @@
                         }
                     }
 
+                    .filter-item::after {
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        border-right: 2px solid #434449;
+                        border-bottom: 2px solid #434449;
+                        position: absolute;
+                        right: 20px;
+                        top: 45%;
+                        transform: rotate(45deg) translateY(-50%);
+                    }
+
                     .form-filter-company {
                         width: 181px;
 
@@ -706,6 +723,26 @@
             padding: 0;
             margin-right: 0px;
             margin-left: 0px;
+        }
+    }
+}
+
+.archive.tag {
+    margin: 150px 0 50px;
+
+    .container {
+        padding: 20px;
+    }
+
+    .custom-post .image {
+        height: 255px;
+
+        img {
+            width: 100%;
+        }
+
+        @media(max-width:991px) {
+            height: 350px;
         }
     }
 }

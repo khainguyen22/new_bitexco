@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Template Name: Điều Khoản Sử Dụng
+ * Template Name: Chính sách bảo mật
  */
 ?>
 <?php get_header() ?>
 
 <!--  Banner -->
 <?php
-$banner = get_field('terms_of_use_banner', 'option');
+$banner = get_field('privacy_policy_banner', 'option');
 ?>
 <section class="banner terms not_navigation" style='background-image:url("<?php echo $banner['image']; ?>")'>
 	<div class="container">
@@ -22,20 +22,20 @@ $banner = get_field('terms_of_use_banner', 'option');
 
 <!-- Privacy Policy -->
 <?php
-$terms_of_use = get_field('terms_of_use', 'option');
+$privacy_policy = get_field('privacy_policy', 'option');
 ?>
 <section class="term-content-box">
 	<div class="container">
-		<?php if ($terms_of_use['title']) : ?>
+		<?php if ($privacy_policy['title']) : ?>
 			<h5>
-				<?php echo paint_if_exist($terms_of_use['title']) ?>
+				<?php echo paint_if_exist($privacy_policy['title']) ?>
 			</h5>
 		<?php endif; ?>
 		<span class="divider"></span>
-		<?php if ($terms_of_use['text']) : ?>
+		<?php if ($privacy_policy['text']) : ?>
 			<div class="terms-content">
 				<div>
-					<?php echo paint_if_exist($terms_of_use['text']) ?>
+					<?php echo paint_if_exist($privacy_policy['text']) ?>
 				</div>
 			</div>
 		<?php endif; ?>
@@ -46,7 +46,7 @@ $terms_of_use = get_field('terms_of_use', 'option');
 
 <!-- Other Information -->
 <?php
-$other_info = get_field('terms_of_use_other_information', 'option');
+$other_info = get_field('privacy_policy_other_information', 'option');
 ?>
 <?php if ($other_info) : ?>
 	<section class="other-information">

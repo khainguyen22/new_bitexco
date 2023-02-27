@@ -104,8 +104,13 @@ get_header();
                             </div>
                             <div class="info">
                                 <?php if ($value['label']) : ?> <span class="label size-text-14"><?php echo _e($value['label']); ?></span><?php endif; ?>
-                                <?php if ($value['number']) : ?> <h1 class="number"><?php echo _e($value['number']); ?></h1><?php endif; ?>
-                                <?php if ($value['unit']) : ?> <span class="unit"><?php echo _e($value['unit']); ?></span><?php endif; ?>
+                                <div class="count d-flex">
+                                    <?php if ($value['number']) : ?>
+                                        <h1 class="number"><?php echo _e($value['number']); ?></h1>
+                                    <?php endif; ?>
+                                    <?php if ($value['unit']) : ?> <span class="unit"><?php echo _e($value['unit']); ?></span><?php endif; ?>
+                                </div>
+                                <?php if ($value['sub_label']) : ?> <span class="sub_label"><?php echo _e($value['sub_label']); ?></span><?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -138,16 +143,18 @@ get_header();
                                 <?php if ($the_query_post_outstanding->have_posts()) : ?>
                                     <?php while ($the_query_post_outstanding->have_posts()) : $the_query_post_outstanding->the_post();
                                         $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
-                                        <div class="image">
-                                            <img src="<?php echo $featured_img_url ?>" alt="<?php echo _e(the_title()) ?>" class="img-banner">
-                                        </div>
-                                        <div class="content">
-                                            <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo _e(the_title()) ?></a></h5>
-                                            <p class="size-text-16"><?php echo _e(get_the_excerpt()) ?></p>
-                                            <span class="tag tag-calender">
-                                                <span class="text size-text-14"><?php echo get_the_date() ?></span>
-                                            </span>
-                                        </div>
+                                        <a href="<?php echo get_the_permalink() ?>">
+                                            <div class="image">
+                                                <img src="<?php echo $featured_img_url ?>" alt="<?php echo _e(the_title()) ?>" class="img-banner">
+                                            </div>
+                                            <div class="content">
+                                                <h5> <a href="<?php echo get_the_permalink() ?>"><?php echo _e(the_title()) ?></a></h5>
+                                                <p class="size-text-16"><?php echo _e(get_field('excerpt')) ?></p>
+                                                <span class="tag tag-calender">
+                                                    <span class="text size-text-14"><?php echo get_the_date() ?></span>
+                                                </span>
+                                            </div>
+                                        </a>
                                     <?php endwhile; ?>
                                 <?php endif; ?>
                             </div>
@@ -157,9 +164,11 @@ get_header();
                                         <?php while ($the_query_post_news->have_posts()) : $the_query_post_news->the_post();
                                             $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
                                             <div class="col-12 d-flex tin-moi-nhat-item ">
-                                                <div class="image">
-                                                    <img src="<?php echo $featured_img_url ?>" alt="<?php echo _e(the_title()) ?>" class="img-banner">
-                                                </div>
+                                                <a href="<?php echo get_the_permalink() ?>">
+                                                    <div class="image">
+                                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo _e(the_title()) ?>" class="img-banner">
+                                                    </div>
+                                                </a>
                                                 <div class="content">
                                                     <span class="tag tag-calender">
                                                         <span class="text size-text-14"><?php echo get_the_date() ?></span>
@@ -211,7 +220,7 @@ get_header();
                                             </svg>
                                             <?php echo _e('Tel:'); ?>
                                             <?php foreach ($mailbox_content_info['phone'] as $key => $value) : ?>
-                                                <?php echo ($key > 0) ? '<span class="mx-2">|</span>' : '' ?>
+                                                <?php echo ($key > 0) ? '<span class="">|</span>' : '' ?>
                                                 <a class="size-text-16" href="tel:+<?php echo $value['item']; ?>">+<?php echo $value['item']; ?></a>
                                             <?php endforeach; ?>
                                             </p>
@@ -273,6 +282,7 @@ get_header();
         </section>
     <?php endif; ?>
 </div>
+
 <?php
 get_footer();
 ?>
