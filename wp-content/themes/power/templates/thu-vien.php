@@ -315,9 +315,9 @@ get_header();
                                                 $magazines = get_field('world_electric_field_magazine', 'option');
                                             ?>
                                             <?php foreach($magazines as $key => $magazine) : ?>
-                                                <div class="item electric" style="background-image: url(<?php echo $magazine['image']?>)">
-                                                    <a href="<?php echo $magazine['url'] ?>"><?php _e($magazine['title'])?></a>
-                                                </div>
+                                                <a href="<?php echo $magazine['url'] ?>" class="item electric" style="background-image: url(<?php echo $magazine['image']?>)">
+                                                    <span class="world-electric-title"><?php _e($magazine['title'])?></span>
+                                                </a>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
@@ -334,9 +334,9 @@ get_header();
                                             ?>
                                             <?php foreach($companies as $key => $company) : ?>
                                                 <div class="item company">
-                                                    <div class="company-item" style="background-image: url(<?php echo $company['logo']?>)"></div>
-                                                    <a href="<?php echo $company['url'] ?>" class="item" style="background-image: url()"><?php  echo $company['title'] ?></a>
-                                                </div>
+                                                    <a href="<?php echo $company['url'] ?>" class="company-item" style="background-image: url(<?php echo $company['logo']?>)"></a>
+                                                    <a href="<?php echo $company['url'] ?>" class="item company-item-title" style="background-image: url()"><?php  echo $company['title'] ?></a>
+                                            </div>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
