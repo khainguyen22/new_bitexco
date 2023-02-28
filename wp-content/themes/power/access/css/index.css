@@ -16629,6 +16629,7 @@ section.infomation-useful .tab.hide {
   padding-bottom: 0;
 }
 section.infomation-useful .item.electric {
+  display: block;
   background-repeat: no-repeat;
   width: calc(25% - 22.5px);
   min-height: 370px;
@@ -16638,7 +16639,7 @@ section.infomation-useful .item.electric {
   background-position: center center;
   transition: all 0.5s ease;
 }
-section.infomation-useful .item.electric a {
+section.infomation-useful .item.electric .world-electric-title {
   position: absolute;
   bottom: 24px;
   font-family: "Public Sans";
@@ -16672,6 +16673,7 @@ section.infomation-useful .item.company {
   text-align: center;
 }
 section.infomation-useful .item.company .company-item {
+  display: block;
   margin-bottom: 12px;
   min-height: 130px;
   background-size: 100%;
@@ -16683,7 +16685,7 @@ section.infomation-useful .item.company .company-item:hover {
   background-size: 200%;
   cursor: pointer;
 }
-section.infomation-useful .item.company a {
+section.infomation-useful .item.company .company-item-title {
   font-family: "Public Sans";
   font-style: normal;
   font-weight: 600;
