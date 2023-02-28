@@ -72,10 +72,6 @@ jQuery(document).ready(function ($) {
 			$('.img-' + img_active).addClass('active');
 			return
 		}
-		if ($(this).hasClass('active')) {
-			$(this).removeClass('active')
-			return
-		}
 	})
 
 	$('body').on('click', function (e) {

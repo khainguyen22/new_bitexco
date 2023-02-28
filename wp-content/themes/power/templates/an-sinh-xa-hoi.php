@@ -108,7 +108,7 @@ get_header();
                                     <?php if ($value['number']) : ?>
                                         <h1 class="number"><?php echo _e($value['number']); ?></h1>
                                     <?php endif; ?>
-                                    <?php if ($value['unit']) : ?> <span class="unit"><?php echo _e($value['unit']); ?></span><?php endif; ?>
+                                    <?php if ($value['unit']) : ?> <span class="unit"><?php echo _e(' ' . $value['unit']); ?></span><?php endif; ?>
                                 </div>
                                 <?php if ($value['sub_label']) : ?> <span class="sub_label"><?php echo _e($value['sub_label']); ?></span><?php endif; ?>
                             </div>
