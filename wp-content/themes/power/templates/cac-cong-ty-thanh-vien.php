@@ -193,7 +193,7 @@ get_header();
 
                                     </svg>
 
-                                    <?php if (get_field("phone")) : ?><p><a href="tel:+<?php echo get_field("phone"); ?>"><?php echo get_field("phone"); ?></a></p><?php endif; ?>
+                                    <?php if (get_field("phone")) : ?><p><a href="tel:+<?php echo get_field("phone"); ?>"><?php echo formatPhoneNumber(get_field("phone")); ?></a></p><?php endif; ?>
 
                                 </div>
 
