@@ -87,6 +87,11 @@
                     p {
                         margin: 0;
                         margin-top: 8px;
+                        text-align: justify;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 5;
+                        -webkit-box-orient: vertical;
                     }
                 }
             }

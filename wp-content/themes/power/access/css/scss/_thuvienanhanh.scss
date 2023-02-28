@@ -230,6 +230,32 @@
     .form-filter-search:hover {
         border: unset;
     }
+
+    // slide image 
+    .ug-gallery-wrapper .ug-theme-panel {
+        background: linear-gradient(1deg, black, transparent);
+    }
+
+    .ug-slider-wrapper .ug-zoompanel {
+        left: 50px !important;
+        display: flex;
+        bottom: 10px;
+        top: unset;
+
+        div {
+            margin: 0 5px;
+        }
+
+    }
+
+    .ug-strip-panel .ug-strip-arrow-left.ug-skin-default,
+    .ug-strip-panel .ug-strip-arrow-right.ug-skin-default {
+        display: none;
+    }
+
+    .ug-theme-default .ug-default-button-play-single.ug-stop-mode {
+        background-position: 0px -150px;
+    }
 }
 
 @media (max-width: 1200px) {

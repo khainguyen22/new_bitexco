@@ -118,7 +118,7 @@ if (isset($banner)) {
 
 						<?php if (isset($tax_name)) : ?>
 
-							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
 
 						<?php endif ?>
 
@@ -160,7 +160,7 @@ if (isset($banner)) {
 
 						<?php if (isset($tax_name)) : ?>
 
-							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
 
 						<?php endif ?>
 
@@ -507,7 +507,7 @@ if (isset($banner)) {
 
 						<?php if (isset($tax_name)) : ?>
 
-							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
 
 						<?php endif ?>
 
@@ -550,7 +550,7 @@ if (isset($banner)) {
 
 						<?php if (isset($tax_name)) : ?>
 
-							<li class="item active first"><?php echo paint_if_exist($tax_name) ?></li>
+							<li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
 
 						<?php endif ?>
 

@@ -120,7 +120,9 @@ get_header();
                 <?php foreach ($gia_trị_dem_lại_cho_khach_hang_tab_content['item'] as $key => $value) : ?>
                   <div class="drop-down always-grow <?php echo $key == 0 ? 'active' : '' ?>" data-number="<?php echo $key ?>">
                     <h5> <?php echo isset($value['title']) ? $value['title'] : ""; ?></h5>
-                    <p> <?php echo isset($value['description']) ? $value['description'] : ""; ?></p>
+                    <div class="description">
+                      <p> <?php echo isset($value['description']) ? $value['description'] : ""; ?></p>
+                    </div>
                   </div>
                 <?php endforeach; ?>
               <?php endif; ?>
