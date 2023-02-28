@@ -64,7 +64,7 @@ $contact_content = get_field('contact_content', 'option');
 								<div class="tel size-text-16">
 									<?php _e('Tel: ', POWER) ?>
 									<?php foreach ($contact_content['contact_information']['phone'] as $key => $value) : ?>
-										<a class="size-text-16" href="tel:<?php echo $value['number'] ?>"><?php echo $value['number'] ?> </a>
+										<a class="size-text-16" href="tel:<?php echo $value['number'] ?>"><?php echo formatPhoneNumber($value['number']) ?> </a>
 										<span class="mx-2">|</span>
 									<?php endforeach; ?>
 								</div>
@@ -105,7 +105,7 @@ $contact_content = get_field('contact_content', 'option');
 									</defs>
 								</svg>
 							</span>
-							<span class="size-text-16"><?php _e('Fax: ', POWER) ?><a href="tel:<?php echo paint_if_exist($contact_content['contact_information']['fax']) ?>"><?php echo paint_if_exist($contact_content['contact_information']['fax']) ?></a></span>
+							<span class="size-text-16"><?php _e('Fax: ', POWER) ?><a href="tel:<?php echo paint_if_exist($contact_content['contact_information']['fax']) ?>"><?php echo paint_if_exist(formatPhoneNumber($contact_content['contact_information']['fax'])) ?></a></span>
 						</span>
 						<span class="d-flex contact-infor-item email">
 							<span class="tag">

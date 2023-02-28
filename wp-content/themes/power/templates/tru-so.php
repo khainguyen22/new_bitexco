@@ -79,14 +79,14 @@ get_header();
                                                                     <span class="tag tag-phone"></span>
                                                                     <?php foreach ($value['item']['phone'] as $key => $phone) : ?>
                                                                         <?php echo ($key > 0) ? '<span class="mx-2">|</span>' : '' ?>
-                                                                        <div><a href="tel:+<?php echo $phone['item'] ?>">+<?php echo $phone['item'] ?></a></div>
+                                                                        <div><a href="tel:+<?php echo $phone['item'] ?>"><?php echo formatPhoneNumber ($phone['item']) ?></a></div>
                                                                     <?php endforeach; ?>
                                                                 </span>
                                                             <?php endif; ?>
                                                             <?php if ($value['item']['fax']) : ?>
                                                                 <span class="d-flex fax">
                                                                     <span class="tag tag-building"></span>
-                                                                    <span>Fax: <a href="tel:+<?php echo $value['item']['fax'] ?>">+<?php echo $value['item']['fax'] ?></a></span>
+                                                                    <span>Fax: <a href="tel:+<?php echo $value['item']['fax'] ?>">+<?php echo formatPhoneNumber ($value['item']['fax']) ?></a></span>
                                                                 </span>
                                                             <?php endif; ?>
                                                             <?php if ($value['item']['email']) : ?>
@@ -153,14 +153,14 @@ get_header();
                                                                     <span class="tag tag-phone"></span>
                                                                     <?php foreach ($value['item']['phone'] as $key => $phone) : ?>
                                                                         <?php echo ($key > 0) ? '<span class="mx-2">|</span>' : '' ?>
-                                                                        <div><a href="tel:+<?php echo $phone['item'] ?>">+<?php echo $phone['item'] ?></a></div>
+                                                                        <div><a href="tel:+<?php echo $phone['item'] ?>">+<?php echo formatPhoneNumber($phone['item']) ?></a></div>
                                                                     <?php endforeach; ?>
                                                                 </span>
                                                             <?php endif; ?>
                                                             <?php if ($value['item']['fax']) : ?>
                                                                 <span class="d-flex fax">
                                                                     <span class="tag tag-building"></span>
-                                                                    <span>Fax: <a href="tel:+<?php echo $value['item']['fax'] ?>">+<?php echo $value['item']['fax'] ?></a></span>
+                                                                    <span>Fax: <a href="tel:+<?php echo $value['item']['fax'] ?>"><?php echo formatPhoneNumber($value['item']['fax']) ?></a></span>
                                                                 </span>
                                                             <?php endif; ?>
                                                             <?php if ($value['item']['email']) : ?>
@@ -227,14 +227,14 @@ get_header();
                                                                     <span class="tag tag-phone"></span>
                                                                     <?php foreach ($value['item']['phone'] as $key => $phone) : ?>
                                                                         <?php echo ($key > 0) ? '<span class="mx-2">|</span>' : '' ?>
-                                                                        <div><a href="tel:+<?php echo $phone['item'] ?>">+<?php echo $phone['item'] ?></a></div>
+                                                                        <div><a href="tel:+<?php echo $phone['item'] ?>">+<?php echo formatPhoneNumber($phone['item']) ?></a></div>
                                                                     <?php endforeach; ?>
                                                                 </span>
                                                             <?php endif; ?>
                                                             <?php if ($value['item']['fax']) : ?>
                                                                 <span class="d-flex fax">
                                                                     <span class="tag tag-building"></span>
-                                                                    <span>Fax: <a href="tel:+<?php echo $value['item']['fax'] ?>">+<?php echo $value['item']['fax'] ?></a></span>
+                                                                    <span>Fax: <a href="tel:+<?php echo $value['item']['fax'] ?>">+<?php echo formatPhoneNumber($value['item']['fax']) ?></a></span>
                                                                 </span>
                                                             <?php endif; ?>
                                                             <?php if ($value['item']['email']) : ?>
