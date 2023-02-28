@@ -1157,6 +1157,18 @@ label.required {
 .filter-form .filter-item,
 .form .filter-item,
 .small-form-filter .filter-item {
+
+    &.form-filter-date-start:has(#date) {
+        padding: 0 16px;
+        justify-content: flex-end;
+        input {
+            position: absolute;
+            left: 16px;
+            height: 100%;
+            background: transparent;
+        }
+    }
+
     border: 1px solid #D1D5DB;
     background: #fff;
     position: relative;
