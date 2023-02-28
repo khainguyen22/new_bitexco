@@ -80,6 +80,7 @@
         background-color: #fff;
         display: none;
         padding: 0 100px;
+
         &.active {
             display: block;
             animation: buble 0.3s ease-in;
@@ -154,7 +155,7 @@
                     .year {
                         width: calc(100%/2 - 66px);
 
-                      
+
 
                         &:nth-child(2) {
                             margin-top: 150px;
@@ -171,6 +172,7 @@
                         &.last-item {
                             .box-content {
                                 position: relative;
+
                                 &::after {
                                     position: absolute;
                                     content: "";
@@ -181,6 +183,7 @@
                                     z-index: 1;
                                 }
                             }
+
                             &:nth-child(2n + 1) {
                                 .box-content {
                                     &::after {
@@ -209,6 +212,7 @@
                                 padding: 20px;
                                 border-radius: 2px 2px 0px 0px;
                                 max-height: unset;
+
                                 h5 {
                                     font-family: 'Manrope';
                                     font-style: normal;
@@ -217,6 +221,12 @@
                                     line-height: 130%;
                                     color: #141518;
                                     margin-bottom: 9px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    -webkit-line-clamp: 2;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+
                                 }
 
                                 p {
@@ -228,6 +238,12 @@
                                     line-height: 160%;
                                     letter-spacing: 0.01em;
                                     color: #434449;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    -webkit-line-clamp: 5;
+                                    display: -webkit-box;
+                                    -webkit-box-orient: vertical;
+                                    text-align: justify;
                                 }
                             }
                         }
@@ -390,13 +406,16 @@
 .historical-grow-page section.period-grow.period-1 .container .historical-period .navigation .nav.prev span {
     color: #7E8189;
 }
+
 .historical-grow-page section.period-grow.period-1 .container .historical-period .navigation .nav.prev svg {
     filter: invert(53%) sepia(9%) saturate(290%) hue-rotate(186deg) brightness(94%) contrast(87%);
 
 }
+
 .historical-grow-page section.period-grow.period-3 .container .historical-period .navigation .nav.next span {
     color: #7E8189;
 }
+
 .historical-grow-page section.period-grow.period-3 .container .historical-period .navigation .nav.next svg {
     filter: invert(53%) sepia(9%) saturate(290%) hue-rotate(186deg) brightness(94%) contrast(87%);
 }
@@ -496,272 +515,286 @@
 }
 
 @media (max-width: 1024px) {
-	.historical-grow-page {
-		section.period-grow {
-			padding: 0 64px;
-			.container {
-				.grow-content {
-					h6 {
-					}
-					p {
-					}
-				}
-	
-				.historical-period {
-					.period-line {
-						justify-content: space-between;
-						column-gap: unset;
-						&::before {
-						}
-						.year {
-							width: 42.9799%;
-							.content {
-								.text {
-									h5 {
-									}
-									p {
-									}
-								}
-							}
-							.number {
-								span {
-								}
-							}
-							&:nth-child(2n+1) {
-								.number {
-									&::before {
-									}
-								}
-								.content {
-									transform: translateX(-30px);
-								}
-							}
-							&:nth-child(2n) {
-								.number {
-									&::after {
-									}
-								}
-								.content {
-									transform: translateX(30px);
-								}
-							}
-							&:nth-child(2) {
-							}
-							&:nth-child(3),
-							&:nth-child(5) {
-							}
-							&.active {
-								.number {
-									span {
-									}
-								}
-								.content {
-									transform: translateX(0);
-								}
-							}
-						}
-						.new-line {
-						}
-					}
-					.yellow-line {
-						&::after {
-						}
-					}
-					.navigation {
-						.nav {
-							&:hover {
-								cursor: pointer;
-							}
-							span {
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+    .historical-grow-page {
+        section.period-grow {
+            padding: 0 64px;
+
+            .container {
+                .grow-content {
+                    h6 {}
+
+                    p {}
+                }
+
+                .historical-period {
+                    .period-line {
+                        justify-content: space-between;
+                        column-gap: unset;
+
+                        &::before {}
+
+                        .year {
+                            width: 42.9799%;
+
+                            .content {
+                                .text {
+                                    h5 {}
+
+                                    p {}
+                                }
+                            }
+
+                            .number {
+                                span {}
+                            }
+
+                            &:nth-child(2n+1) {
+                                .number {
+                                    &::before {}
+                                }
+
+                                .content {
+                                    transform: translateX(-30px);
+                                }
+                            }
+
+                            &:nth-child(2n) {
+                                .number {
+                                    &::after {}
+                                }
+
+                                .content {
+                                    transform: translateX(30px);
+                                }
+                            }
+
+                            &:nth-child(2) {}
+
+                            &:nth-child(3),
+                            &:nth-child(5) {}
+
+                            &.active {
+                                .number {
+                                    span {}
+                                }
+
+                                .content {
+                                    transform: translateX(0);
+                                }
+                            }
+                        }
+
+                        .new-line {}
+                    }
+
+                    .yellow-line {
+                        &::after {}
+                    }
+
+                    .navigation {
+                        .nav {
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            span {}
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 880px) {
-	.historical-grow-page {
-		section.period-grow {
-			padding: 0 48px;
+    .historical-grow-page {
+        section.period-grow {
+            padding: 0 48px;
 
-			.container {
-				.grow-content {
-					h6 {
-					}
-					p {
-					}
-				}
-	
-				.historical-period {
-					.period-line {
-						justify-content: space-between;
-						column-gap: unset;
-						&::before {
-						}
-						.year {
-							width: 42.9799%;
-							.content {
-								.text {
-									h5 {
-									}
-									p {
-									}
-								}
-							}
-							.number {
-								span {
-								}
-							}
-							&:nth-child(2n+1) {
-								.number {
-									&::before {
-									}
-								}
-								.content {
-								}
-							}
-							&:nth-child(2n) {
-								.number {
-									&::after {
-									}
-								}
-								.content {
-								}
-							}
-							&:nth-child(2) {
-							}
-							&:nth-child(3),
-							&:nth-child(5) {
-							}
-							&.active {
-								.number {
-									span {
-									}
-								}
-								.content {
-								}
-							}
-						}
-						.new-line {
-						}
-					}
-					.yellow-line {
-						&::after {
-						}
-					}
-					.navigation {
-						.nav {
-							&:hover {
-								cursor: pointer;
-							}
-							span {
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+            .container {
+                .grow-content {
+                    h6 {}
+
+                    p {}
+                }
+
+                .historical-period {
+                    .period-line {
+                        justify-content: space-between;
+                        column-gap: unset;
+
+                        &::before {}
+
+                        .year {
+                            width: 42.9799%;
+
+                            .content {
+                                .text {
+                                    h5 {}
+
+                                    p {}
+                                }
+                            }
+
+                            .number {
+                                span {}
+                            }
+
+                            &:nth-child(2n+1) {
+                                .number {
+                                    &::before {}
+                                }
+
+                                .content {}
+                            }
+
+                            &:nth-child(2n) {
+                                .number {
+                                    &::after {}
+                                }
+
+                                .content {}
+                            }
+
+                            &:nth-child(2) {}
+
+                            &:nth-child(3),
+                            &:nth-child(5) {}
+
+                            &.active {
+                                .number {
+                                    span {}
+                                }
+
+                                .content {}
+                            }
+                        }
+
+                        .new-line {}
+                    }
+
+                    .yellow-line {
+                        &::after {}
+                    }
+
+                    .navigation {
+                        .nav {
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            span {}
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 767px) {
-	.historical-grow-page {
-		section.banner {
-			min-height: 419px;
-			.container {
-				.content {
-					top: calc(50% - 20px);
-					left: 50%;
-					transform: translateX(-50%);
-					h3 {
-						font-size: 24px;
-					}
-					p {
-						font-size: 13px;
-						max-width: 345px;
-					}
-				}
-			}
-		}
-		section.period-section {
-			padding: 27px 0 31px 0;
-			.container {
-				.content {
-					border-bottom: 1px solid #D1D5DB;
-					.period {
-						h5 {
-							font-weight: 600;
-							font-size: 12px;
-							margin-bottom: 1px;
-						}
-	
-						&.active {
-							h5 {
-								font-family: 'Manrope';
-								font-style: normal;
-								font-weight: 600;
-								font-size: 14px;
-								line-height: 130%;
-								color: #141518;
-								margin-bottom: 3px;
-							}
-	
-							&::after {
-								width: 100%;
-							}
-						}
-	
-						&:hover {
-							cursor: pointer;
-	
-							&::after {
-								width: 100%;
-							}
-						}
-	
-						&::after {
-						
-						}
-					}
-				}
-			}
-		}
-		section.period-grow {
-			padding: 0 20px;
-			.container {
-				.grow-content {
-					h6 {
-						
-					}
-					p {
-						font-size: 13px;
-						font-weight: 300;
-					}
-				}
-	
-				.historical-period {
-					margin-top: 88px;
-					padding-bottom: 39px;
-					.period-line {
-						justify-content: flex-start;
-						column-gap: unset;
-						padding-left: 49px;
-						margin-right: -10px;
-						row-gap: 24px;
-						&::before {
-							left: 14px;
-							transform: translateX(0);
-						}
-						&::after {
-							content: '';
-							height: 15%;
-							background-color: #fff;
-							left: 14px;
-							transform: translateX(0);
-						}
+    .historical-grow-page {
+        section.banner {
+            min-height: 419px;
+
+            .container {
+                .content {
+                    top: calc(50% - 20px);
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    h3 {
+                        font-size: 24px;
+                    }
+
+                    p {
+                        font-size: 13px;
+                        max-width: 345px;
+                    }
+                }
+            }
+        }
+
+        section.period-section {
+            padding: 27px 0 31px 0;
+
+            .container {
+                .content {
+                    border-bottom: 1px solid #D1D5DB;
+
+                    .period {
+                        h5 {
+                            font-weight: 600;
+                            font-size: 12px;
+                            margin-bottom: 1px;
+                        }
+
+                        &.active {
+                            h5 {
+                                font-family: 'Manrope';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 14px;
+                                line-height: 130%;
+                                color: #141518;
+                                margin-bottom: 3px;
+                            }
+
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        &::after {}
+                    }
+                }
+            }
+        }
+
+        section.period-grow {
+            padding: 0 20px;
+
+            .container {
+                .grow-content {
+                    h6 {}
+
+                    p {
+                        font-size: 13px;
+                        font-weight: 300;
+                    }
+                }
+
+                .historical-period {
+                    margin-top: 88px;
+                    padding-bottom: 39px;
+
+                    .period-line {
+                        justify-content: flex-start;
+                        column-gap: unset;
+                        padding-left: 49px;
+                        margin-right: -10px;
+                        row-gap: 24px;
+
+                        &::before {
+                            left: 14px;
+                            transform: translateX(0);
+                        }
+
+                        &::after {
+                            content: '';
+                            height: 15%;
+                            background-color: #fff;
+                            left: 14px;
+                            transform: translateX(0);
+                        }
 
                         .year.active {
                             .content {
@@ -773,9 +806,10 @@
                                 }
                             }
                         }
-						.year {
-							width: 100%;
-							min-height: unset;
+
+                        .year {
+                            width: 100%;
+                            min-height: unset;
 
                             .content {
                                 .image {
@@ -785,101 +819,114 @@
                                     }
                                 }
                             }
-                            
-							&.last-item {
-								.box-content {
-									&::after {
-										left: unset !important;
-										right: 100%;
-									}
-								}
-							}
 
-							.content {
-								.text {
-									h5 {
-										font-size: 22px;
-									}
-									p {
-										font-size: 13px;
-									}
-								}
-							}
-							.number {
-								width: 48px;
-								height: 48px;
-								left: 14px;
-								span {
-									font-size: 14px;
-								}
-							}
-							&:nth-child(2n+1) {
-								.number {
-									&::before {
-										width: 10px;
-										right: -10px;
-										left: unset;
-									}
-								}
-								.content {
-									transform: translateX(10px);
-								}
-							}
-							&:nth-child(2n) {
-								.number {
-									&::after {
-										width: 10px;
-										right: -10px;
-									}
-								}
-								.content {
-									transform: translateX(10px);
+                            &.last-item {
+                                .box-content {
+                                    &::after {
+                                        left: unset !important;
+                                        right: 100%;
+                                    }
+                                }
+                            }
 
-								}
-							}
-							&:nth-child(2) {
-								margin: 0;
-							}
-							&:nth-child(2n + 1 ) {
-								margin-top: 0;
-							}
-							
-							&.active {
-								.number {
-									span {
-									}
-								}
-								.content {
-									transform: translateX(0);
-								}
-							}
-						}
-						.new-line {
-							left: 14px;
-							transform: translateX(0);
-						}
-					}
-					.yellow-line {
-						&::after {
-						}
-					}
-					.navigation {
-						margin-top: 36px;
-						column-gap: unset;
-						justify-content: space-between;
-						.nav {
-							&:hover {
-								cursor: pointer;
-							}
-							span {
-								font-size: 12px;
-								line-height: 1.5;
-								letter-spacing: 0.04em;
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+                            .content {
+                                .text {
+                                    h5 {
+                                        font-size: 22px;
+                                    }
+
+                                    p {
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+
+                            .number {
+                                width: 48px;
+                                height: 48px;
+                                left: 14px;
+
+                                span {
+                                    font-size: 14px;
+                                }
+                            }
+
+                            &:nth-child(2n+1) {
+                                .number {
+                                    &::before {
+                                        width: 10px;
+                                        right: -10px;
+                                        left: unset;
+                                    }
+                                }
+
+                                .content {
+                                    transform: translateX(10px);
+                                }
+                            }
+
+                            &:nth-child(2n) {
+                                .number {
+                                    &::after {
+                                        width: 10px;
+                                        right: -10px;
+                                    }
+                                }
+
+                                .content {
+                                    transform: translateX(10px);
+
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                margin: 0;
+                            }
+
+                            &:nth-child(2n + 1) {
+                                margin-top: 0;
+                            }
+
+                            &.active {
+                                .number {
+                                    span {}
+                                }
+
+                                .content {
+                                    transform: translateX(0);
+                                }
+                            }
+                        }
+
+                        .new-line {
+                            left: 14px;
+                            transform: translateX(0);
+                        }
+                    }
+
+                    .yellow-line {
+                        &::after {}
+                    }
+
+                    .navigation {
+                        margin-top: 36px;
+                        column-gap: unset;
+                        justify-content: space-between;
+
+                        .nav {
+                            &:hover {
+                                cursor: pointer;
+                            }
+
+                            span {
+                                font-size: 12px;
+                                line-height: 1.5;
+                                letter-spacing: 0.04em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

@@ -102,7 +102,9 @@ get_header();
                             <?php foreach ($tab_content as $key => $value) : ?>
                                 <div class="drop-down grow-with-challenge <?php echo $key == 0 ? 'active' : '' ?>" data-number="<?php echo $key ?>">
                                     <h5><?php echo $value['title_tab']; ?></h5>
-                                    <p class="size-text-16"><?php echo $value['description_tab']; ?></p>
+                                    <div class="description">
+                                        <p class="size-text-16"><?php echo $value['description_tab']; ?></p>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>

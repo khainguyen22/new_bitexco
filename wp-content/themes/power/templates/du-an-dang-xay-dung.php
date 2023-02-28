@@ -213,7 +213,7 @@ get_header();
                                         <p><?php echo get_field("date"); ?></p>
                                     </div>
                                 <?php endif; ?>
-                                <?php if (get_field("location")) : ?>
+                                <?php if (get_field('address', get_the_ID())) : ?>
                                     <div class="content-location">
                                         <div class="icon_svg">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
@@ -222,11 +222,9 @@ get_header();
                                             </svg>
                                         </div>
                                         <div>
-                                            <?php foreach (get_the_terms(get_the_ID(), 'project_location') as $key => $value) : ?>
-                                                <a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
-                                                    <p> <?php echo paint_if_exist($value->name) ?> </p>
-                                                </a>
-                                            <?php endforeach; ?>
+                                            <a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
+                                                <p><?php echo get_field('address', get_the_ID()) ?></p>
+                                            </a>
                                         </div>
                                     </div>
                                 <?php endif; ?>
