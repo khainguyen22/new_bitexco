@@ -4222,6 +4222,7 @@ footer.footer-second .footer {
 .menu-main-container .menu {
   padding: 0 60px;
   height: 90vh;
+  overflow: scroll;
 }
 .menu-main-container .menu::after {
   content: "";
@@ -12088,6 +12089,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
   .bitxeco-brand-page section.about-bitexco .container .about-bitexco-content .about-bitexco-column p {
     letter-spacing: 0.01em;
+    text-align: justify;
   }
   .bitxeco-brand-page section.about-bitexco .container .about-bitexco-content .about-bitexco-column p + p {
     margin-top: 12px;

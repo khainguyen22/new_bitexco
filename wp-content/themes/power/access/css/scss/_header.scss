@@ -440,7 +440,7 @@
   .menu {
     padding: 0 60px;
     height: 90vh;
-
+    overflow: scroll;
     &::after {
       content: '';
       width: 1px;

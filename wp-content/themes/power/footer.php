@@ -16,7 +16,7 @@ $home_footer = get_field('home_footer', 'option');
                 <?php if ($home_footer['content']['other_links']) : ?>
                     <div class="other-links d-flex">
                         <select name="other_links" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-                         	<option name="other_links " value=""><?php _e('Liên kết nhanh') ?></option>
+                            <option name="other_links " value=""><?php _e('Liên kết nhanh') ?></option>
                             <?php foreach ($home_footer['content']['other_links'] as $value) : ?>
                                 <a class="link item " href="<?php echo  $value['link'] ?>">
                                     <option name="other_links " value=" <?php echo  $value['link'] ?>"><?php echo  $value['label'] ?></option>
@@ -49,19 +49,19 @@ $home_footer = get_field('home_footer', 'option');
                 <div class="col-12 col-lg-4">
                     <div class="info size-text-16">
                         <?php if ($home_footer['content']['phone']) : ?>
-                        	<?php echo _e('Tel: ') ?>
+                            <?php echo _e('Tel: ') ?>
                             <?php foreach ($home_footer['content']['phone'] as $key => $phone) : ?>
                                 <?php echo ($key > 0) ? '<span class="mx-2">|</span>' : '' ?>
-                                <a href="tel:+<?php echo $phone['item'] ?>"><?php echo formatPhoneNumber($phone['item']) ?></a>
+                                <a href="tel:<?php echo  formatPhoneNumber($phone['item']); ?>"><?php echo  formatPhoneNumber($phone['item']); ?></a>
                             <?php endforeach; ?>
                         <?php endif; ?>
                         <?php if ($home_footer['content']['fax']) : ?>
                             <br />
-                            <?php echo _e('Fax: ') ?> <a href="tel:+ <?php echo $home_footer['content']['fax'] ?>"><?php echo formatPhoneNumber($home_footer['content']['fax']) ?> </a>
+                            <?php echo _e('Fax: ') ?> <a href="tel:<?php echo formatPhoneNumber($home_footer['content']['fax']) ?>"><?php echo formatPhoneNumber($home_footer['content']['fax']) ?> </a>
                         <?php endif; ?>
                         <?php if ($home_footer['content']['email']) : ?>
                             <br />
-                           <?php echo _e('Email: ') ?> <a href="mailto:<?php echo $home_footer['content']['email'] ?>"><?php echo $home_footer['content']['email'] ?> </a>
+                            <?php echo _e('Email: ') ?> <a href="mailto:<?php echo $home_footer['content']['email'] ?>"><?php echo $home_footer['content']['email'] ?> </a>
                         <?php endif; ?>
 
                     </div>
@@ -94,7 +94,7 @@ $home_footer = get_field('home_footer', 'option');
                 <div class="info size-text-14">
                     <?php if ($home_footer['content']['fax']) : ?>
                         <br />
-                        <?php echo _e('Fax: ') ?> <a href="tel:+ <?php echo $home_footer['content']['fax'] ?>">+<?php echo $home_footer['content']['fax'] ?> </a>
+                        <?php echo _e('Fax: ') ?> <a href="tel:<?php echo  formatPhoneNumber($home_footer['content']['fax']); ?>"><?php echo  formatPhoneNumber($home_footer['content']['fax']); ?> </a>
                     <?php endif; ?>
                     <?php if ($home_footer['content']['email']) : ?>
                         <br />

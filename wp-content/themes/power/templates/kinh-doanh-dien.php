@@ -114,7 +114,7 @@ get_header();
               <?php endwhile; ?>
             <?php endif; ?>
           </div>
-          <?php if ($cuoc_song_tai_bitexco_power['show_button'] == 1) : ?>
+          <?php if (!$cuoc_song_tai_bitexco_power['hidden'] == 1) : ?>
             <div class="lib-button">
               <a href="<?php echo $cuoc_song_tai_bitexco_power['link']; ?>" class="btn btn-custom-1 btn-custom-1-m position"><?php echo isset($cuoc_song_tai_bitexco_power['button']) ? $cuoc_song_tai_bitexco_power['button'] : ""; ?></a>
             </div>
@@ -185,7 +185,7 @@ get_header();
                     <?php if ($key > 0) : ?>
                       <span class="mx-1">|</span>
                     <?php endif; ?>
-                    <a href="tel:+<?php echo $value['item']; ?>"> +<?php echo $value['item']; ?></a> </span>
+                    <a href="tel:<?php echo formatPhoneNumber($value['item']); ?>"> <?php echo formatPhoneNumber($value['item']); ?></a> </span>
                   <?php endforeach; ?>
                 <?php endif; ?>
                 </p>
@@ -217,7 +217,7 @@ get_header();
                     </defs>
                   </svg>
                   Fax:
-                  <a href="tel:+<?php echo  $lien_he_de_duoc_ho_tro_content['fax'] ?>">+<?php echo  $lien_he_de_duoc_ho_tro_content['fax']  ?> </a>
+                  <a href="tel:<?php echo  formatPhoneNumber($lien_he_de_duoc_ho_tro_content['fax']); ?>"> <?php echo  formatPhoneNumber($lien_he_de_duoc_ho_tro_content['fax']);  ?> </a>
                 </div>
               <?php endif; ?>
               <?php if ($lien_he_de_duoc_ho_tro_content['email']) : ?>
