@@ -49,8 +49,8 @@ $the_query_post = new WP_Query($args);
             <div class="your-privilege-content">
                 <div class="content">
                     <span class="divider"></span>
-                    <h3><?php echo  isset($moi_truong_tai_bitexco_power['title']) ? $moi_truong_tai_bitexco_power['title'] : ""; ?></h3>
-                    <p><?php echo isset($moi_truong_tai_bitexco_power['description']) ? $moi_truong_tai_bitexco_power['description'] : ""; ?></p>
+                    <hdrop-down always-grow3><?php echo  isset($moi_truong_tai_bitexco_power['title']) ? $moi_truong_tai_bitexco_power['title'] : ""; ?></h3>
+                        <p><?php echo isset($moi_truong_tai_bitexco_power['description']) ? $moi_truong_tai_bitexco_power['description'] : ""; ?></p>
                 </div>
                 <div class="values">
                     <?php if ($tab_content) : ?>
@@ -58,7 +58,9 @@ $the_query_post = new WP_Query($args);
                             <?php foreach ($tab_content as $key => $value) : ?>
                                 <div class="drop-down always-grow <?php echo $key == 0 ? 'active' : '' ?>" data-number="<?php echo $key ?>">
                                     <h5><?php echo $value['title_tab']; ?></h5>
-                                    <p><?php echo $value['description_tab']; ?></p>
+                                    <div class="description">
+                                        <p><?php echo $value['description_tab']; ?></p>
+                                    </div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
