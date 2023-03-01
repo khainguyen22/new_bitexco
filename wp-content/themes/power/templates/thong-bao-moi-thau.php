@@ -264,13 +264,13 @@ if (isset($banner)) {
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 2,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -465,107 +465,59 @@ if (isset($banner)) {
 	<!-- Filter Contractor Celection Result -->
 
 	<section class="filter-form contractor-celection-results-form tender" data-number="1">
-
 		<div class="container">
-
 			<div class="form-filter">
-
 				<div class="filter-item form-filter-search d-flex">
-
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-
 						<circle cx="11" cy="11" r="8" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
-
 						<path d="M16.5 16.958L21.5 21.958" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-
 					</svg>
-
 					<input type="text" placeholder="Tìm kiếm">
-
 				</div>
-
 				<?php
-
 				$tax_name = get_taxonomy('type')->label;
-
 				$terms = get_terms(array(
-
 					'taxonomy' => 'type',
-
 					'hide_empty' => false,
-
 				));
-
 				?>
-
 				<div class="filter-item form-filter-type">
-
 					<?php if (isset($tax_name)) : ?>
 						<span class="item-default"><?php echo paint_if_exist($tax_name) ?></span>
 					<?php endif ?>
 					<ul>
-
 						<?php if (isset($tax_name)) : ?>
-
 							<li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
-
 						<?php endif ?>
-
 						<?php foreach ($terms as $key => $value) : ?>
-
 							<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
-
 						<?php endforeach; ?>
-
 					</ul>
-
 					<svg class="dropdown-icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-
 						<path d="M5.75 9L11.9691 14.3306C12.4184 14.7158 13.0816 14.7158 13.5309 14.3306L19.75 9" stroke="#434449" stroke-width="1.5" stroke-linecap="round" />
-
 					</svg>
-
 				</div>
-
 				<?php
-
 				$tax_name = get_taxonomy('field')->label;
-
 				$terms = get_terms(array(
-
 					'taxonomy' => 'field',
-
 					'hide_empty' => false,
-
 				));
-
 				?>
-
 				<div class="filter-item form-filter-field">
-
 					<?php if (isset($tax_name)) : ?>
 						<span class="item-default"><?php echo paint_if_exist($tax_name) ?></span>
 					<?php endif ?>
 					<ul>
-
 						<?php if (isset($tax_name)) : ?>
-
 							<li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
-
 						<?php endif ?>
-
 						<?php foreach ($terms as $key => $value) : ?>
-
 							<li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
-
 						<?php endforeach; ?>
-
 					</ul>
-
 					<svg class="dropdown-icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-
 						<path d="M5.75 9L11.9691 14.3306C12.4184 14.7158 13.0816 14.7158 13.5309 14.3306L19.75 9" stroke="#434449" stroke-width="1.5" stroke-linecap="round" />
-
 					</svg>
 
 				</div>
@@ -656,7 +608,7 @@ if (isset($banner)) {
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 

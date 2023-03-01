@@ -166,12 +166,16 @@ footer {
                 padding: 40px 15px 34px;
                 justify-content: space-between;
 
-                .links .item {
-                    margin-right: 24px;
-                    font-weight: 600;
-                    font-size: 18px;
-                    line-height: 160%;
-                    letter-spacing: 0.01em;
+                .links {
+                    align-items: center;
+
+                    .item {
+                        margin-right: 24px;
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 160%;
+                        letter-spacing: 0.01em;
+                    }
                 }
 
                 .other-links {

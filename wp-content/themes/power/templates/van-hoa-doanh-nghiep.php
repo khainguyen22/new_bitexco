@@ -298,7 +298,7 @@ get_header();
                         if ($total > 1) echo '<ul class="pagination">';
                         echo paginate_links(array(
                             'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                            'show_all'     => true,
+                            'show_all'     => false,
                             'format' => '?paged=%#%',
                             'current' => max(1, $paged),
                             'total' => $the_query_post->max_num_pages,

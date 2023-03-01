@@ -398,7 +398,7 @@ get_header();
 
                         'format' => '?paged=%#%',
 
-                        'show_all'     => true,
+                        'show_all'     => false,
 
                         'current' => max(1, $paged),
 
