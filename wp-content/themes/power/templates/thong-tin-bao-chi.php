@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="content represent-post-content">
-                            <p><?php echo get_post($representing_post->ID)->post_content?></p>
+                            <p><?php echo get_the_excerpt($representing_post->ID)?></p>
                         </div>
                         <div class="download">
                             <a href="<?php _e(get_field('press_information_file', $representing_post->ID), POWER) ?>" download><span><?php _e('Tải xuống', POWER) ?></span></a>
