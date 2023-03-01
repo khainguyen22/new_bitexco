@@ -185,7 +185,7 @@ get_header();
                     echo paginate_links(array(
                         'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
                         'format' => '?paged=%#%',
-                        'show_all'     => true,
+                        'show_all'     => false,
                         'current' => max(1, $paged),
                         'total' => $the_query_post->max_num_pages,
                         'mid_size' => '3',

@@ -152,13 +152,13 @@ function render_action_news($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -383,13 +383,13 @@ function render_library_images($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -750,13 +750,13 @@ function render_library_video($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -991,13 +991,13 @@ function render_company_member($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -1464,13 +1464,13 @@ function render_projects($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -1766,13 +1766,13 @@ function render_vacancies($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -2049,13 +2049,13 @@ function render_action_social_security($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 
@@ -2230,13 +2230,13 @@ function render_action_events($query, $paged = 1)
 
 		'format'       => '?paged=%#%',
 
-		'show_all'     => true,
+		'show_all'     => false,
 
 		'type'         => 'plain',
 
 		'end_size'     => 1,
 
-		'mid_size'     => 1,
+		'mid_size'     => 3,
 
 		'prev_next'    => true,
 

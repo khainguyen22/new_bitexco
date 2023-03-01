@@ -1220,6 +1220,8 @@ include(get_template_directory() . '/inc/post-types/su-kien.php');
 
 include(get_template_directory() . '/inc/post-types/kinh-doanh-dien.php');
 
+include(get_template_directory() . '/inc/post-types/thong-tin-bao-chi.php');
+
 
 
 

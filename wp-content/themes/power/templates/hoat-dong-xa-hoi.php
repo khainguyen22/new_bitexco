@@ -582,7 +582,7 @@ get_header();
 
                             'current' => max(1, $paged),
 
-                            'show_all'     => true,
+                            'show_all'     => false,
 
 
 

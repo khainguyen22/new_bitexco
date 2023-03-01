@@ -347,5 +347,11 @@ function my_acf_op_init()
             'menu_title'  => __('Chính sách bảo mật'),
             'parent_slug' => $parent['menu_slug'],
         ));
+
+        $child = acf_add_options_page(array(
+            'page_title'  => __('Thông tin báo chí'),
+            'menu_title'  => __('Thông tin báo chí'),
+            'parent_slug' => $parent['menu_slug'],
+        ));
     }
 }

@@ -84,6 +84,7 @@
         $paged = 2;
         $args = [
             'post_type' => 'shareholders',
+            'post_status' => 'any',
             'posts_per_page' => 8,
             'paged' =>  $paged
         ];
@@ -96,10 +97,10 @@
             'total'        => $query->max_num_pages,
             'current'      => max($paged, get_query_var('paged')),
             'format'       => '?paged=%#%',
-            'show_all'     => true,
+            'show_all'     => false,
             'type'         => 'plain',
             'end_size'     => 1,
-            'mid_size'     => 1,
+            'mid_size'     => 3,
             'prev_next'    => true,
             'prev_text'    => sprintf('<i></i> %1$s', __('
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -226,9 +227,9 @@
         'total'        => $query->max_num_pages,
         'current'      => max($paged, get_query_var('paged')),
         'format'       => '?paged=%#%',
-        'show_all'     => true,
+        'show_all'     => false,
         'type'         => 'plain',
-        'end_size'     => 1,
+        'end_size'     => 2,
         'mid_size'     => 0,
         'prev_next'    => true,
         'prev_text'    => sprintf('<i></i> %1$s', __('
@@ -355,10 +356,10 @@
         'total'        => $annual_report_query->max_num_pages,
         'current'      => max(1, get_query_var('paged')),
         'format'       => '?paged=%#%',
-        'show_all'     => true,
+        'show_all'     => false,
         'type'         => 'plain',
         'end_size'     => 1,
-        'mid_size'     => 1,
+        'mid_size'     => 3,
         'prev_next'    => true,
         'prev_text'    => sprintf('<i></i> %1$s', __('
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -437,7 +438,7 @@
         'total'        => $query->max_num_pages,
         'current'      => max($paged, get_query_var('paged')),
         'format'       => '?paged=%#%',
-        'show_all'     => true,
+        'show_all'     => false,
         'type'         => 'plain',
         'end_size'     => 1,
         'mid_size'     => 0,

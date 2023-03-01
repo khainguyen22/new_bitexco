@@ -289,7 +289,7 @@ get_header();
 
                         'current' => max(1, $paged),
 
-                        'show_all'     => true,
+                        'show_all'     => false,
 
                         'total' => $the_query_post->max_num_pages,
 

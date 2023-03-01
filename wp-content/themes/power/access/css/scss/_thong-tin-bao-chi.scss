@@ -1,0 +1,18 @@
+.terms-and-time {
+	display: flex;
+	justify-content: space-between;
+	span {
+		font-family: 'Public Sans';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		line-height: 150%;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: #7E8189 !important;
+	}
+}
+
+.represent-post-content {
+	margin-bottom: 18px;
+}

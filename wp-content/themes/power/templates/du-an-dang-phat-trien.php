@@ -255,7 +255,7 @@ get_header();
 						'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
 						'format' => '?paged=%#%',
 						'current' => max(1, $paged),
-						'show_all'     => true,
+						'show_all'     => false,
 
 						'total' => $the_query_post->max_num_pages,
 						'mid_size' => '3',
