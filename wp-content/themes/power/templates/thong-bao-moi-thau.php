@@ -268,9 +268,9 @@ if (isset($banner)) {
 
 		'type'         => 'plain',
 
-		'end_size'     => 1,
+		'end_size'     => 2,
 
-		'mid_size'     => $paged,
+		'mid_size'     => 1,
 
 		'prev_next'    => true,
 
@@ -309,7 +309,7 @@ if (isset($banner)) {
 		<div class="container">
 
 			<div class="list">
-
+	
 				<?php if ($query->have_posts()) : ?>
 
 					<?php while ($query->have_posts()) : $query->the_post(); ?>

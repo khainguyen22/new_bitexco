@@ -1473,3 +1473,16 @@ function formatPhoneNumber($phone)
     }
     return $phoneNumber;
 }
+
+function formatedPhoneNumber($phone) {
+
+    $formatted_phone = sprintf("%s %s %s %s",
+      substr($phone, 0, 1), // first 3 digits
+      substr($phone, 1, 3), // next 3 digits
+      substr($phone, 4, 3),  // last 4 digits
+      substr($phone, 7, 3)
+  );
+  $formatted_phone = "+84" . substr_replace($formatted_phone, "", 0, 1); // replace the first character with ""
+      return $formatted_phone;
+  
+  }
