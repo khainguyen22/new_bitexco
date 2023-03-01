@@ -1282,11 +1282,6 @@ p#alt-text-description {
   display: none;
 }
 
-.wp-admin img {
-  width: unset;
-  height: unset;
-}
-
 .map-luoi-dien {
   position: relative;
   min-height: 1300px;

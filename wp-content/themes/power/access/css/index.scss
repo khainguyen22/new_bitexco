@@ -1161,6 +1161,7 @@ label.required {
     &.form-filter-date-start:has(#date) {
         padding: 0 16px;
         justify-content: flex-end;
+
         input {
             position: absolute;
             left: 16px;
@@ -1396,8 +1397,8 @@ p#alt-text-description {
 
 // style admin 
 .wp-admin img {
-    width: unset;
-    height: unset;
+    // width: unset;
+    // height: unset;
 }
 
 // style map luoi dien 
