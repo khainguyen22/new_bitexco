@@ -1449,12 +1449,10 @@ function custom_login_redirect()
 
 
 add_filter('login_redirect', 'custom_login_redirect');
-
-
 // format phone number 
 function formatPhoneNumber($phone)
 {
-    $phone_check  = preg_replace('/[^+0-9]/', '', $phone);
+    $phone_check  = preg_replace('/[^0-9]/', '', $phone);
     $country_code = '+84';
     $phoneNumber = $country_code . substr($phone_check, 1);
     if (strlen($phoneNumber) > 10) {
