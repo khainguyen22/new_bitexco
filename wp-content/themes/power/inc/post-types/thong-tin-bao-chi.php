@@ -58,7 +58,7 @@ function register_post_type_press_information()
         'map_meta_cap'          => true,
         'rewrite'               => $rewrite,
         'query_var'             => true,
-        'supports'              => array('title', 'editor', 'thumbnail'),
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt'),
         'menu_icon'             => 'dashicons-paperclip',
     );
     register_post_type('press_information', $args);
