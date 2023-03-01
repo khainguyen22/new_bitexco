@@ -67,16 +67,15 @@ jQuery(document).ready(function ($) {
 			$('.drop-down.active').removeClass('active')
 			$(this).toggleClass('active')
 			const img_active = $(this).attr('data-number');
-			console.log($('img-' + img_active));
 			$('.highlight-img.active').removeClass('active');
 			$('.img-' + img_active).addClass('active');
 			return
 		}
 	})
 
-	$('body').on('click', function (e) {
-		if (!$(e.target).is('.the-values .drop-down h5')) {
-			$('.drop-down.active').removeClass('active')
-		}
-	})
+	// $('body').on('click', function (e) {
+	// 	if (!$(e.target).is('.the-values .drop-down h5')) {
+	// 		$('.drop-down.active').removeClass('active')
+	// 	}
+	// })
 });

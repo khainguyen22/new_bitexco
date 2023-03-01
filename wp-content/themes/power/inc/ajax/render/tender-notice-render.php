@@ -6,10 +6,10 @@ function tender_notice_render($query, $paged = 1) {
 		'total'        => $query->max_num_pages,
 		'current'      => max($paged, get_query_var( 'paged' ) ),
 		'format'       => '?paged=%#%',
-		'show_all'     => true,
+		'show_all'     => false,
 		'type'         => 'plain',
 		'end_size'     => 1,
-		'mid_size'     => 1, 
+		'mid_size'     => 3, 
 		'prev_next'    => true,
 		'prev_text'    => sprintf( '<i></i> %1$s', __( '
 						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
