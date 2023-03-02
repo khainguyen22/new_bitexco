@@ -103,6 +103,7 @@ jQuery(document).ready(function($) {
 	// Pagination
 	$("body").on("click", ".s-0 .page-numbers", (e) => {
 		e.preventDefault();
+		$('html').scrollTop(640)
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
@@ -125,6 +126,7 @@ jQuery(document).ready(function($) {
 	// Pagination
 	$("body").on("click", ".s-1 .page-numbers", (e) => {
 		e.preventDefault();
+		$('html').scrollTop(400);
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
@@ -147,6 +149,7 @@ jQuery(document).ready(function($) {
 	// Pagination
 	$("body").on("click", ".s-2 .page-numbers", (e) => {
 		e.preventDefault();
+		$('html').scrollTop(200);
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
@@ -167,6 +170,8 @@ jQuery(document).ready(function($) {
 	// Pagination "Tai Lieu Co Dong"
 	$("body").on("click", ".s-3 .page-numbers", (e) => {
 		e.preventDefault();
+		$('html').scrollTop(200);
+
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
@@ -217,6 +222,8 @@ jQuery(document).ready(function($) {
 		// Selection Result Pagination 
 		$('body').on('click', '.contractor-celection-results-list.infomation-list .page-numbers', (e) => {
 			e.preventDefault()
+			$('html').scrollTop(200);
+
 			const paged = handleNextPrev(e, '.contractor-celection-results-list.infomation-list')
 			const inputValue = $('.contractor-celection-results-form input').val();
 			const type = $('.contractor-celection-results-form .form-filter-type .item.active').attr('data-value');
@@ -292,6 +299,7 @@ jQuery(document).ready(function($) {
 
 		// Tender Notification Pagination 
 		$('body').on('click', '.infomation-list.tender-infor .page-numbers', (e) => {
+			$('html').scrollTop(200);
 			e.preventDefault()
 			const paged = handleNextPrev(e, '.infomation-list.tender-infor')
 			const inputValue = $('.filter-form.tender-notice .form-filter-search input').val();

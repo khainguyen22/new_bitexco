@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
 
         Filter_posts_news();
 
-        Filter_posts_library_images();
+        // Filter_posts_library_images();
 
         Filter_posts_library_video();
 
@@ -119,6 +119,8 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".tin-tuc-thuy-dien .lists-post .page-numbers", (e) => {
 
         e.preventDefault();
+        
+		$('html').scrollTop(200);
 
         var paged = '';
 
@@ -212,7 +214,7 @@ jQuery(document).ready(function ($) {
 
     $('.thu-vien-hinh-anh .btn-submit').on('click', function () {
 
-        Filter_posts_library_images();
+        // Filter_posts_library_images();
 
     });
 
@@ -276,10 +278,10 @@ jQuery(document).ready(function ($) {
 
     }
 
-    $("body").on("click", "#images .page-numbers", (e) => {
+    $("body").on("click", "#images .page-number", (e) => {
 
         e.preventDefault();
-
+        $('html').scrollTop(200)
         var paged = '';
 
         paged = e.target.innerText
@@ -294,7 +296,7 @@ jQuery(document).ready(function ($) {
 
         }
 
-        $name = $('.form-control.search').val();
+        var name = $('.form-control.search').val();
 
         $.ajax({
 
@@ -308,7 +310,7 @@ jQuery(document).ready(function ($) {
 
                 paged: paged,
 
-                data_name: $name,
+                data_name: name,
 
             },
 
@@ -333,6 +335,7 @@ jQuery(document).ready(function ($) {
                 $('#images .images-library').html(results[0])
 
                 $('#images .pagination').html(results[1])
+                
 
             },
 
@@ -419,6 +422,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", "#video .page-numbers", (e) => {
 
         e.preventDefault();
+        $('html').scrollTop(200)
 
         var paged = '';
 
@@ -564,6 +568,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".company_member .page-numbers", (e) => {
 
         e.preventDefault();
+        $('html').scrollTop(200)
 
         var paged = '';
 
@@ -742,6 +747,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".du-an .page-numbers", (e) => {
 
         e.preventDefault();
+        $('html').scrollTop(200)
 
         var paged = '';
 
@@ -918,6 +924,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".cac-nha-may-thuy-dien .page-numbers", (e) => {
 
         e.preventDefault();
+        $('html').scrollTop(200)
 
         var paged = '';
 
@@ -1084,6 +1091,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".danh-sach-tuyen-dung .page-numbers", (e) => {
 
         e.preventDefault();
+        $('html').scrollTop(200)
 
         var paged = '';
 
@@ -1242,6 +1250,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".bai-viet-an-sinh-xa-hoi .lists-post .page-numbers", (e) => {
 
         e.preventDefault();
+        $('html').scrollTop(200)
 
         var paged = '';
 
@@ -1410,6 +1419,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".su-kien .page-numbers", (e) => {
 
         e.preventDefault();
+        $('html').scrollTop(200)
 
         var paged = '';
 

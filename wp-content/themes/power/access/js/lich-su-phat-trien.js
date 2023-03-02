@@ -13,10 +13,14 @@ jQuery(document).ready(function ($) {
 
     // Prev Section
     $(".nav.prev").on("click", function () {
+     
       const section_active = current_section.attr("data-number");
       if (section_active == 1) {
         return;
       }
+      $('html').animate({
+        scrollTop: $("html").offset().top
+      }, 1000);
       $(".period.active").removeClass("active");
       $(".period-grow.active").removeClass("active");
       $(".period-" + (section_active - 1)).addClass("active");
@@ -31,6 +35,9 @@ jQuery(document).ready(function ($) {
       if (section_active == 3) {
         return;
       }
+      $('html').animate({
+        scrollTop: $("html").offset().top
+      }, 1000);
       $(".period.active").removeClass("active");
       $(".period-grow.active").removeClass("active");
       $(".period-" + (parseInt(section_active) + 1)).addClass("active");
