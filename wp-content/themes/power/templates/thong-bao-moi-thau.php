@@ -75,7 +75,7 @@ if (isset($banner)) {
 
 	<!-- Filter -->
 
-	<section class="filter-form tender-notice tender active" data-number="0">
+	<section class="filter-form tender-notice tender active" data-number="0" id="tender-notice">
 
 		<div class="container">
 

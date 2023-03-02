@@ -126,7 +126,7 @@
                     <div class="title">
                         <h3><?php _e('Thông tin cổ đông', POWER) ?></h3>
                     </div>
-                    <div class="search-bar">
+                    <div class="search-bar" id="scroll-target">
                         <input class="form-control my-3" type="text" placeholder="Tìm kiếm">
                         <button type="submit" class="btn btn-search"><?php _e('Tìm kiếm', POWER) ?></button>
                         <button type="text" class="btn btn-custom-1 btn-custom-1-l reset"><?php _e("Đặt lại", POWER) ?></button>
