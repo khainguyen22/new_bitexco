@@ -16,3 +16,54 @@
 .represent-post-content {
 	margin-bottom: 18px;
 }
+
+.comment-form {
+	position: relative;
+}
+
+.comment-form-comment {
+	margin: 0;
+	textarea#comment {
+		width: 100%;
+		padding: 11px 16px;
+		min-height: 92px;
+	}
+	
+}
+
+#commentform {
+	.form-submit {
+		margin-top: 0;
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 100%;
+		.submit {
+			padding: 14px 32px;
+			width: 92px;
+			height: 48px;
+			background: #DAA622;
+			border-radius: 2px;
+			font-family: 'Public Sans';
+			font-style: normal;
+			font-weight: 600;
+			font-size: 14px;
+			line-height: 140%;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			color: #FFFFFF;
+			outline: none;
+			border: navajowhite;
+		}
+	}
+}
+
+.current-user {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}

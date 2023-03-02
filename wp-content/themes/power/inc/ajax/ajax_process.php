@@ -146,7 +146,7 @@ function render_action_news($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
@@ -377,7 +377,7 @@ function render_library_images($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
@@ -744,7 +744,7 @@ function render_library_video($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
@@ -985,7 +985,7 @@ function render_company_member($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
@@ -1458,7 +1458,7 @@ function render_projects($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
@@ -1760,7 +1760,7 @@ function render_vacancies($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
@@ -2043,7 +2043,7 @@ function render_action_social_security($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
@@ -2224,7 +2224,7 @@ function render_action_events($query, $paged = 1)
 
 		'base'         => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))),
 
-		'total'        => 5,
+		'total'        => $query->max_num_pages,
 
 		'current'      => max($paged, get_query_var('paged')),
 
