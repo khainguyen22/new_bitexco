@@ -174,7 +174,8 @@ h6 a,
 
 }
 
-img {
+.single img,
+.page-template img {
     width: 100%;
     height: auto;
 }
@@ -1395,10 +1396,10 @@ p#alt-text-description {
 }
 
 // style admin 
-.wp-admin img {
-    width: unset;
-    height: unset;
-}
+// .wp-admin img {
+//     width: unset;
+//     height: unset;
+// }
 
 // style map luoi dien 
 .map-luoi-dien {
@@ -1511,7 +1512,8 @@ p#alt-text-description {
     position: relative;
 }
 
-img {
+.single img,
+.page-template img {
     width: 100%;
     height: -webkit-fill-available;
 }
