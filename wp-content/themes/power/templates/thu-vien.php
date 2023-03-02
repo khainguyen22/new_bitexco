@@ -23,6 +23,10 @@ $the_slug_image = 'images';
 
 $the_slug_video = 'video';
 
+if (isset($_GET['image'])) {
+    $s = $_GET['image'];
+}
+
 $args_image = array(
 
     'post_type' => 'library',
@@ -46,6 +50,8 @@ $args_image = array(
     'post_status' => 'any',
 
     'posts_per_page' => 3,
+
+    's' => $s,
 
 );
 
@@ -74,6 +80,8 @@ $args_video = array(
     'post_status' => 'publish',
 
     'posts_per_page' => 6,
+
+    
 
 );
 
@@ -141,7 +149,7 @@ get_header();
 
                 <div class="form-filter ">
 
-                    <form action="<?php echo get_site_url(  ).'/thu-vien.php'?>" class="d-flex justify-content-between flex-wrap">
+                    <form action="<?php echo get_site_url(  ).'/thu-vien/?'?>" class="d-flex justify-content-between flex-wrap">
 
                         <div class="form-filter-search">
 
