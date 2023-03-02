@@ -186,7 +186,7 @@
                 width: 50%;
 
                 img {
-                    // height: 100%;
+                    height: 100%;
                     object-fit: cover;
                     display: none;
                 }
@@ -637,8 +637,8 @@
 
                                     &::after {
                                         content: "";
-                                        width: 10px;
-                                        height: 10px;
+                                        width: 8px;
+                                        height: 12px;
                                         border-right: 1.5px solid #DAA622;
                                         border-bottom: 1.5px solid #DAA622;
                                         position: absolute;
