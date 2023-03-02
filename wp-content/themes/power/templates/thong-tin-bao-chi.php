@@ -9,20 +9,46 @@
     <!-- Banner -->
 
     <?php
-    $banner = get_field('shareholder_relations_banner', 'option');
+    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+    $banner = get_field('banner_library', 'option');
     $navigation = '';
     if ($banner) {
-        $navigation = $banner['navigation'];
+        $navigation = $banner['main_navigation'];
     }
     ?>
 
     <section class="banner" style='background-image:url("<?php echo $banner['background']; ?>")'>
+
         <div class="container">
+
             <div class="content">
-                <h3><?php _e(isset($banner['title']) ? $banner['title'] : "", POWER); ?></h3>
-                <p><?php _e(isset($banner['description']) ? $banner['description'] : "", POWER); ?></p>
+
+                <h3><?php echo paint_if_exist($banner['title']) ?></h3>
+
+                <p><?php echo paint_if_exist($banner['description']) ?></p>
+
             </div>
+
+            <div class="navigation">
+
+                <ul>
+
+                    <?php if ($navigation) : ?>
+
+                        <?php foreach ($navigation as $key => $value) : ?>
+
+                            <li class="<?php echo $actual_link == $value['link'] ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo $value['label']; ?></a></li>
+
+                        <?php endforeach; ?>
+
+                    <?php endif; ?>
+
+                </ul>
+
+            </div>
+
         </div>
+
     </section>
 
     <!-- End Banner -->
@@ -31,10 +57,10 @@
 
     <section class="shareholder-information shareholders-secion active s-0">
         <?php
-            $representing_post = get_field('representing_post', 'option');
-            // echo "<pre>";
-            // print_r($representing_post);
-            // die;
+        $representing_post = get_field('representing_post', 'option');
+        // echo "<pre>";
+        // print_r($representing_post);
+        // die;
         ?>
         <!-- Notification -->
         <section class="notification">
@@ -43,18 +69,18 @@
                     <div class="image">
                         <img src="<?php echo paint_if_exist(get_the_post_thumbnail_url($representing_post->ID)); ?>" alt="" width="499" height="280">
                     </div>
-                    <div class="text-content" data-post-id="<?php echo $representing_post->ID;?>">
+                    <div class="text-content" data-post-id="<?php echo $representing_post->ID; ?>">
                         <h5><?php _e(paint_if_exist($representing_post->post_title), POWER) ?></h5>
                         <div class="terms-and-time">
                             <div class="download">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.66797 2.4974C1.66797 2.03716 2.04106 1.66406 2.5013 1.66406H9.16797C9.38898 1.66406 9.60094 1.75186 9.75722 1.90814L18.0906 10.2415C18.416 10.5669 18.416 11.0945 18.0906 11.42L11.4239 18.0867C11.0985 18.4121 10.5708 18.4121 10.2454 18.0867L1.91205 9.75332C1.75577 9.59704 1.66797 9.38508 1.66797 9.16406V2.4974ZM3.33464 3.33073V8.81888L10.8346 16.3189L16.3228 10.8307L8.82279 3.33073H3.33464Z" fill="#7E8189"/>
-                                    <path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189"/>
+                                    <path d="M1.66797 2.4974C1.66797 2.03716 2.04106 1.66406 2.5013 1.66406H9.16797C9.38898 1.66406 9.60094 1.75186 9.75722 1.90814L18.0906 10.2415C18.416 10.5669 18.416 11.0945 18.0906 11.42L11.4239 18.0867C11.0985 18.4121 10.5708 18.4121 10.2454 18.0867L1.91205 9.75332C1.75577 9.59704 1.66797 9.38508 1.66797 9.16406V2.4974ZM3.33464 3.33073V8.81888L10.8346 16.3189L16.3228 10.8307L8.82279 3.33073H3.33464Z" fill="#7E8189" />
+                                    <path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189" />
                                 </svg>
-                                <?php 
-                                    foreach (get_the_terms($representing_post->ID, 'type') as $key => $value) { ?>
-                                        <span><?php _e($value->name)?></span>
-                                    <?php }
+                                <?php
+                                foreach (get_the_terms($representing_post->ID, 'type') as $key => $value) { ?>
+                                    <span><?php _e($value->name) ?></span>
+                                <?php }
                                 ?>
                             </div>
                             <div class="calender">
@@ -74,7 +100,7 @@
                             </div>
                         </div>
                         <div class="content represent-post-content">
-                            <p><?php echo get_the_excerpt($representing_post->ID)?></p>
+                            <p><?php echo get_the_excerpt($representing_post->ID) ?></p>
                         </div>
                         <div class="download">
                             <a href="<?php _e(get_field('press_information_file', $representing_post->ID), POWER) ?>" download><span><?php _e('Tải xuống', POWER) ?></span></a>
@@ -95,6 +121,7 @@
         $args = [
             'post_type' => 'press_information',
             'posts_per_page' => 8,
+            'post_status' => 'any',
             'paged' =>  $paged
         ];
 
@@ -125,7 +152,7 @@
             'add_args'     => false,
             'add_fragment' => '',
             // 'show_all' => true
-            
+
         ));
         ?>
 
@@ -147,19 +174,19 @@
                                     <div class="shareholder-title">
                                         <div class="name-and-time">
                                             <h6><?php _e(get_the_title(get_the_ID()), POWER) ?></h6>
-                                            
+
                                         </div>
-                                       <div class="name-and-time">
-                                           
+                                        <div class="name-and-time">
+
                                             <div class="download">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1.66797 2.4974C1.66797 2.03716 2.04106 1.66406 2.5013 1.66406H9.16797C9.38898 1.66406 9.60094 1.75186 9.75722 1.90814L18.0906 10.2415C18.416 10.5669 18.416 11.0945 18.0906 11.42L11.4239 18.0867C11.0985 18.4121 10.5708 18.4121 10.2454 18.0867L1.91205 9.75332C1.75577 9.59704 1.66797 9.38508 1.66797 9.16406V2.4974ZM3.33464 3.33073V8.81888L10.8346 16.3189L16.3228 10.8307L8.82279 3.33073H3.33464Z" fill="#7E8189"/>
-                                                    <path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189"/>
+                                                    <path d="M1.66797 2.4974C1.66797 2.03716 2.04106 1.66406 2.5013 1.66406H9.16797C9.38898 1.66406 9.60094 1.75186 9.75722 1.90814L18.0906 10.2415C18.416 10.5669 18.416 11.0945 18.0906 11.42L11.4239 18.0867C11.0985 18.4121 10.5708 18.4121 10.2454 18.0867L1.91205 9.75332C1.75577 9.59704 1.66797 9.38508 1.66797 9.16406V2.4974ZM3.33464 3.33073V8.81888L10.8346 16.3189L16.3228 10.8307L8.82279 3.33073H3.33464Z" fill="#7E8189" />
+                                                    <path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189" />
                                                 </svg>
-                                                <?php 
-                                                    foreach (get_the_terms(get_the_ID( ), 'type') as $key => $value) { ?>
-                                                        <span><?php _e($value->name)?></span>
-                                                    <?php }
+                                                <?php
+                                                foreach (get_the_terms(get_the_ID(), 'type') as $key => $value) { ?>
+                                                    <span><?php _e($value->name) ?></span>
+                                                <?php }
                                                 ?>
                                             </div>
                                             <div class="calender">
@@ -176,10 +203,10 @@
                                                     <path d="M13.75 13.3411H14.5833" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                                 </svg>
                                                 <span class="text"><a href="#"><?php _e(paint_if_exist(date("d/m/Y", strtotime(get_field('release_time', get_the_ID())))), POWER) ?></a></span>
-                                                </div>
-                                       </div>
-                                               
-                                            
+                                            </div>
+                                        </div>
+
+
                                         <div class="download">
                                             <a href="<?php echo paint_if_exist(get_field('press_information_file', get_the_ID())) ?>" download> <span><?php _e('Tải xuống', POWER) ?></span></a>
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -205,22 +232,22 @@
     </section>
 
     <!-- Shareholders Information -->
- 
+
     <!-- Other Information -->
     <?php
-    $other_info = get_field('shareholders_other_info', 'option');
+    $other_info = get_field('other_library', 'option');
     ?>
-    <section class="other-information">
-        <div class="other-container ">
-            <div class="other-content hover-zoom">
-                <?php if ($other_info) : ?>
+    <?php if ($other_info) : ?>
+        <section class="other-information">
+            <div class="other-container ">
+                <div class="other-content hover-zoom">
                     <?php foreach ($other_info as $value) : ?>
                         <a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
                     <?php endforeach; ?>
-                <?php endif; ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
     <!-- End other information -->
 </div>
 

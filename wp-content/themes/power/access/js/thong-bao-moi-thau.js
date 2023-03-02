@@ -51,12 +51,6 @@ jQuery(document).ready(function () {
 	})
 
 
-	$('.form-filter-date-start svg').on('click', function(e) {
-		console.log(e.target);
-		console.log($(this).closest('.form-filter-date-start').find('input'));
-		$(this).closest('.form-filter-date-start').find('input').click()
-	})
-
 
 	// Navigation on Banner
 

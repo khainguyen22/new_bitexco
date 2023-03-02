@@ -827,7 +827,10 @@ span.tag.tag-dropdown::before {
   max-width: 400px;
   min-width: 400px;
   height: auto;
-  max-height: unset;
+  max-height: 255px;
+  background-repeat: no-repeat;
+  background-image: url(../images/placeholder.jpg);
+  background-size: cover;
 }
 .custom-post .image img {
   transition: all 1s ease-in;
@@ -1124,8 +1127,6 @@ label.required::after {
 .form .filter-item.active .item-default,
 .small-form-filter .filter-item.active .item-default {
   display: block;
-  width: 100%;
-  z-index: 99;
 }
 .filter-form .filter-item ul,
 .form .filter-item ul,
@@ -1133,7 +1134,6 @@ label.required::after {
   margin-bottom: 0;
   margin-right: 20px;
   overflow: hidden;
-  width: 100%;
 }
 .filter-form .filter-item ul.active,
 .form .filter-item ul.active,
@@ -1415,6 +1415,18 @@ p#alt-text-description {
   display: none;
 }
 
+li[data-value=mien-bac] {
+  order: 1;
+}
+
+li[data-value=mien-trung] {
+  order: 2;
+}
+
+li[data-value=mien-nam] {
+  order: 3;
+}
+
 @media (max-width: 767px) {
   .goto-container {
     position: relative;
@@ -1456,11 +1468,6 @@ p#alt-text-description {
   font-size: 40px;
   line-height: 1.2;
   margin-bottom: 12px;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .banner .container .content p {
   max-width: 499px;
@@ -3557,9 +3564,6 @@ footer.footer-second .footer-desktop .row-1 {
   padding: 40px 15px 34px;
   justify-content: space-between;
 }
-footer.footer-second .footer-desktop .row-1 .links {
-  align-items: center;
-}
 footer.footer-second .footer-desktop .row-1 .links .item {
   margin-right: 24px;
   font-weight: 600;
@@ -3827,7 +3831,6 @@ footer.footer-second .footer {
 .admin-bar header .search,
 .admin-bar .menu-main-container.is-active {
   top: 137px;
-  height: calc(100vh - 137px);
 }
 
 .header .container {
@@ -4223,18 +4226,15 @@ footer.footer-second .footer {
   z-index: 10;
   width: 100%;
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
   color: #000;
   background-color: #fff;
   box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.1294117647) inset;
 }
-.menu-main-container::-webkit-scrollbar {
-  width: 0px;
-  background-color: #F5F5F5;
-}
 .menu-main-container .menu {
   padding: 0 60px;
   height: 90vh;
+  overflow: scroll;
 }
 .menu-main-container .menu::after {
   content: "";
@@ -4276,7 +4276,6 @@ footer.footer-second .footer {
 }
 .menu-main-container .menu .main-menu-primary {
   margin-top: 17px;
-  height: inherit;
 }
 .menu-main-container .menu .main-menu-primary .main-menu-primary-lists {
   padding: 0;
@@ -4443,19 +4442,6 @@ header .search .search-bar {
   max-width: 1110px;
   margin: auto;
   margin-top: 155px;
-}
-header .search .search-bar .csw-search-form {
-  position: relative;
-}
-header .search .search-bar .csw-search-form .emailHelp {
-  color: red;
-  position: absolute;
-  top: -15px;
-  left: 55px;
-  display: none;
-}
-header .search .search-bar .csw-search-form .emailHelp.active {
-  display: block;
 }
 header .search .search-bar .search-input {
   border: none;
@@ -5448,12 +5434,6 @@ header .search .search-bar:hover::after {
   color: #DAA622;
   border: 1px solid #DAA622;
   background: transparent;
-}
-.home-slide .home-slide-carousel .item.home_du_an_cua_chung_toi .container .content {
-  max-width: unset;
-}
-.home-slide .home-slide-carousel .item.home_du_an_cua_chung_toi .container .content .title {
-  max-width: 520px;
 }
 .home-slide .home-slide-carousel .item.home_san_xuat_kinh_doanh .container .content {
   max-width: unset;
@@ -6569,7 +6549,7 @@ header .search .search-bar:hover::after {
 }
 
 .details_news_page {
-  margin-top: 106px;
+  margin-top: 70px;
 }
 .details_news_page section.article .article-container article .title h3 {
   margin-top: 85px;
@@ -8402,7 +8382,6 @@ section.related-news .article-container .related-news-content .related-item .ite
   width: 50%;
 }
 .tuyen-dung .power-enviroment .values .the-values-image img {
-  height: 100%;
   object-fit: cover;
   display: none;
 }
@@ -8741,8 +8720,8 @@ section.related-news .article-container .related-news-content .related-item .ite
   }
   .tuyen-dung .power-enviroment .container .your-privilege-content .values .the-values .drop-down.active h5::after {
     content: "";
-    width: 8px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-right: 1.5px solid #DAA622;
     border-bottom: 1.5px solid #DAA622;
     position: absolute;

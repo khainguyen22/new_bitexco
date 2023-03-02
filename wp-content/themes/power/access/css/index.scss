@@ -886,7 +886,10 @@ span.tag {
         max-width: 400px;
         min-width: 400px;
         height: auto;
-        max-height: unset;
+        max-height: 255px;
+        background-repeat: no-repeat;
+        background-image: url(../images/placeholder.jpg);
+        background-size: cover;
 
         img {
             transition: all 1s ease-in;
@@ -1221,15 +1224,12 @@ label.required {
 
     &.active .item-default {
         display: block;
-        width: 100%;
-        z-index: 99;
     }
 
     ul {
         margin-bottom: 0;
         margin-right: 20px;
         overflow: hidden;
-        width: 100%;
 
         &.active {
             padding: 8px;
@@ -1533,6 +1533,18 @@ p#alt-text-description {
 
 .step-container .step.deactive {
     display: none;
+}
+
+li[data-value="mien-bac"] {
+    order: 1;
+}
+
+li[data-value="mien-trung"] {
+    order: 2;
+}
+
+li[data-value="mien-nam"] {
+    order: 3;
 }
 
 @media(max-width:767px) {

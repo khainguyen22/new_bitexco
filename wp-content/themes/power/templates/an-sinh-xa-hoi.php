@@ -4,7 +4,8 @@
 *Template Name: An sinh xã hội
 **/
 
-$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+$request_uri = "$_SERVER[REDIRECT_URL]";
 $an_sinh_xa_hoi = get_field('an_sinh_xa_hoi', 'option');
 $banner = $an_sinh_xa_hoi['banner'];
 $navigation = $banner['navigation'];
@@ -46,6 +47,7 @@ $post_of_news = array(
 $the_query_post_outstanding = new WP_Query($post_of_outstanding);
 $the_query_post_news = new WP_Query($post_of_news);
 $query = new WP_Query($args);
+
 get_header();
 ?>
 <div class="an-sinh-xa-hoi">
@@ -59,7 +61,7 @@ get_header();
                 <div class="navigation">
                     <ul>
                         <?php foreach ($navigation as $key => $value) : ?>
-                            <li class="<?php echo $actual_link == $value['link'] ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
+                            <li class="<?php echo strlen(strstr($value['link'], $request_uri)) > 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -106,9 +108,9 @@ get_header();
                                 <?php if ($value['label']) : ?> <span class="label size-text-14"><?php echo _e($value['label']); ?></span><?php endif; ?>
                                 <div class="count d-flex">
                                     <?php if ($value['number']) : ?>
-                                        <h1 class="number"><?php echo _e($value['number']); ?></h1>
+                                        <h1 class="number counter" data-number='<?php echo  $value['number']; ?>'>0</h1>
                                     <?php endif; ?>
-                                    <?php if ($value['unit']) : ?> <span class="unit"><?php echo _e(' ' . $value['unit']); ?></span><?php endif; ?>
+                                    <?php if ($value['unit']) : ?><span class="unit mx-2"> <?php echo _e($value['unit']); ?></span><?php endif; ?>
                                 </div>
                                 <?php if ($value['sub_label']) : ?> <span class="sub_label"><?php echo _e($value['sub_label']); ?></span><?php endif; ?>
                             </div>
@@ -221,7 +223,7 @@ get_header();
                                             <?php echo _e('Tel:'); ?>
                                             <?php foreach ($mailbox_content_info['phone'] as $key => $value) : ?>
                                                 <?php echo ($key > 0) ? '<span class="">|</span>' : '' ?>
-                                                <a class="size-text-16" href="tel:+<?php echo $value['item']; ?>">+<?php echo $value['item']; ?></a>
+                                                <a class="size-text-16" href="tel:<?php echo formatPhoneNumber($value['item']); ?>"><?php echo formatPhoneNumber($value['item']); ?></a>
                                             <?php endforeach; ?>
                                             </p>
                                         </div>
@@ -252,7 +254,7 @@ get_header();
                                                     </clipPath>
                                                 </defs>
                                             </svg>
-                                            Fax: <a class="size-text-16" href="tel:+<?php echo $mailbox_content_info['fax']; ?>">+<?php echo $mailbox_content_info['fax']; ?> </a>
+                                            Fax: <a class="size-text-16" href="tel:<?php echo formatPhoneNumber($mailbox_content_info['fax']); ?>"><?php echo formatPhoneNumber($mailbox_content_info['fax']); ?> </a>
                                         </div>
                                     <?php endif; ?>
                                     <?php if ($mailbox_content_info['email']) : ?> <div class="contact-info d-flex email">

@@ -49,8 +49,8 @@ $the_query_post = new WP_Query($args);
             <div class="your-privilege-content">
                 <div class="content">
                     <span class="divider"></span>
-                    <hdrop-down always-grow3><?php echo  isset($moi_truong_tai_bitexco_power['title']) ? $moi_truong_tai_bitexco_power['title'] : ""; ?></h3>
-                        <p><?php echo isset($moi_truong_tai_bitexco_power['description']) ? $moi_truong_tai_bitexco_power['description'] : ""; ?></p>
+                    <h3><?php echo  isset($moi_truong_tai_bitexco_power['title']) ? $moi_truong_tai_bitexco_power['title'] : ""; ?></h3>
+                    <p><?php echo isset($moi_truong_tai_bitexco_power['description']) ? $moi_truong_tai_bitexco_power['description'] : ""; ?></p>
                 </div>
                 <div class="values">
                     <?php if ($tab_content) : ?>
