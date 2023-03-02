@@ -1421,6 +1421,18 @@ p#alt-text-description {
   display: none;
 }
 
+li[data-value=mien-bac] {
+  order: 1;
+}
+
+li[data-value=mien-trung] {
+  order: 2;
+}
+
+li[data-value=mien-nam] {
+  order: 3;
+}
+
 @media (max-width: 767px) {
   .goto-container {
     position: relative;
