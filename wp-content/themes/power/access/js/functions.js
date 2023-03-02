@@ -1,6 +1,8 @@
 
-
 jQuery(document).ready(function ($) {
+	$(document).ready(function () {
+		$('.page-numbers').addClass('notranslate');
+	});
 	$('.life-in-bitexco-content').slick({
 		prevArrow: '<svg class="left" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 8.33594L15.6694 19.2217C15.2842 19.671 15.2842 20.3342 15.6694 20.7836L25 31.6693" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round"/></svg>',
 		nextArrow: '<svg class="right" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 8.33594L24.3306 19.2217C24.7158 19.671 24.7158 20.3342 24.3306 20.7836L15 31.6693" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round"/></svg>',
@@ -37,17 +39,6 @@ jQuery(document).ready(function ($) {
 
 
 
-	$('.count .number').each(function () {
-		$(this).prop('Counter', 0).animate({
-			Counter: $(this).text()
-		}, {
-			duration: 4000,
-			easing: 'swing',
-			step: function (now) {
-				$(this).text(Math.ceil(now));
-			}
-		});
-	});
 	$('.nav-login').on('click', function () {
 		$('.nav-login .is_login').toggleClass('active');
 	})
@@ -60,21 +51,34 @@ jQuery(document).ready(function ($) {
 		});
 	});
 
-	$(' form.csw-search-form input[type=text]').on('change invalid', function () {
+	// $(' form.csw-search-form input[type=text]').on('change invalid', function () {
 
-		var textfield = $(this).get(0);
+	// 	var textfield = $(this).get(0);
 
-		textfield.setCustomValidity('');
+	// 	textfield.setCustomValidity('Vui lòng nhập thông tin tìm kiếm');
 
-		if (!textfield.validity.valid) {
+	// 	if (!textfield.validity.valid) {
 
-			textfield.setCustomValidity(' ');
+	// 		textfield.setCustomValidity('Vui lòng nhập thông tin tìm kiếm');
 
-		}
+	// 	}
 
-	});
+	// });
 
-
+	// document.addEventListener("form.csw-search-form", function () {
+	// 	var elements = document.getElementsByTagName("INPUT");
+	// 	for (var i = 0; i < elements.length; i++) {
+	// 		elements[i].oninvalid = function (e) {
+	// 			e.target.setCustomValidity("");
+	// 			if (!e.target.validity.valid) {
+	// 				e.target.setCustomValidity("Vui lòng nhập thông tin tìm kiếm");
+	// 			}
+	// 		};
+	// 		elements[i].oninput = function (e) {
+	// 			e.target.setCustomValidity("");
+	// 		};
+	// 	}
+	// })
 
 
 
@@ -226,6 +230,10 @@ jQuery(document).ready(function ($) {
 
 	});
 
+
+	// $('#btn-submit-icon').on('click', function () {
+	// 	document.getElementById("btn-submit-form-search").click();
+	// })
 
 
 	$(document).on('click', '.mega-menu-item', function () {
@@ -455,6 +463,76 @@ jQuery(document).ready(function ($) {
 	});
 
 
+	// $(window).scroll(startCounter);
+
+	// function startCounter() {
+	// 	let scrollY = (window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight;
+	// 	let divPos = document.querySelector('#counter-container').offsetTop;
+
+	// 	if (scrollY > divPos) {
+	// 		$(window).off("scroll", startCounter);
+
+	// 		$('.count').each(function () {
+	// 			var $this = $(this);
+	// 			jQuery({
+	// 				Counter: 0
+	// 			}).animate({
+	// 				Counter: $this.text().replace(/,/g, '')
+	// 			}, {
+	// 				duration: 1000,
+	// 				easing: 'swing',
+	// 				step: function () {
+	// 					$this.text(commaSeparateNumber(Math.floor(this.Counter)));
+	// 				},
+	// 				complete: function () {
+	// 					$this.text(commaSeparateNumber(this.Counter));
+	// 					//alert('finished');
+	// 				}
+	// 			});
+	// 		});
+
+	// 		function commaSeparateNumber(num) {
+	// 			return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	// 		}
+	// 	}
+	// }
+	var a = 0;
+	$(window).scroll(function () {
+		var oTop = $(".count").offset().top - window.innerHeight;
+		if (a == 0 && $(window).scrollTop() > oTop) {
+			$(".counter").each(function () {
+				var $this = $(this),
+					countTo = $this.attr("data-number");
+				$({
+					countNum: $this.text()
+				}).animate(
+					{
+						countNum: countTo
+					},
+
+					{
+						duration: 1500,
+						easing: "swing",
+						step: function () {
+							//$this.text(Math.ceil(this.countNum));
+							$this.text(
+								Math.ceil(this.countNum).toLocaleString("en")
+							);
+						},
+						complete: function () {
+							$this.text(
+								Math.ceil(this.countNum).toLocaleString("en")
+							);
+							//alert('finished');
+						}
+					}
+				);
+			});
+			a = 1;
+		}
+
+	});
 
 });
+
 

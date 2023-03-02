@@ -1123,6 +1123,8 @@ label.required::after {
 .form .filter-item.active .item-default,
 .small-form-filter .filter-item.active .item-default {
   display: block;
+  width: 100%;
+  z-index: 99;
 }
 .filter-form .filter-item ul,
 .form .filter-item ul,
@@ -1130,6 +1132,7 @@ label.required::after {
   margin-bottom: 0;
   margin-right: 20px;
   overflow: hidden;
+  width: 100%;
 }
 .filter-form .filter-item ul.active,
 .form .filter-item ul.active,
@@ -1569,8 +1572,8 @@ img {
   width: max-content;
 }
 .projects .projects-content .figures img {
-  width: 36px;
-  height: 36px;
+  width: 74px;
+  height: 74px;
 }
 .projects .projects-content .figures .number-title {
   text-align: left;
@@ -3822,6 +3825,7 @@ footer.footer-second .footer {
 .admin-bar header .search,
 .admin-bar .menu-main-container.is-active {
   top: 137px;
+  height: calc(100vh - 137px);
 }
 
 .header .container {
@@ -4217,15 +4221,18 @@ footer.footer-second .footer {
   z-index: 10;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   color: #000;
   background-color: #fff;
   box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.1294117647) inset;
 }
+.menu-main-container::-webkit-scrollbar {
+  width: 0px;
+  background-color: #F5F5F5;
+}
 .menu-main-container .menu {
   padding: 0 60px;
   height: 90vh;
-  overflow: scroll;
 }
 .menu-main-container .menu::after {
   content: "";
@@ -4267,6 +4274,7 @@ footer.footer-second .footer {
 }
 .menu-main-container .menu .main-menu-primary {
   margin-top: 17px;
+  height: inherit;
 }
 .menu-main-container .menu .main-menu-primary .main-menu-primary-lists {
   padding: 0;
@@ -4433,6 +4441,19 @@ header .search .search-bar {
   max-width: 1110px;
   margin: auto;
   margin-top: 155px;
+}
+header .search .search-bar .csw-search-form {
+  position: relative;
+}
+header .search .search-bar .csw-search-form .emailHelp {
+  color: red;
+  position: absolute;
+  top: -15px;
+  left: 55px;
+  display: none;
+}
+header .search .search-bar .csw-search-form .emailHelp.active {
+  display: block;
 }
 header .search .search-bar .search-input {
   border: none;
@@ -5425,6 +5446,12 @@ header .search .search-bar:hover::after {
   color: #DAA622;
   border: 1px solid #DAA622;
   background: transparent;
+}
+.home-slide .home-slide-carousel .item.home_du_an_cua_chung_toi .container .content {
+  max-width: unset;
+}
+.home-slide .home-slide-carousel .item.home_du_an_cua_chung_toi .container .content .title {
+  max-width: 520px;
 }
 .home-slide .home-slide-carousel .item.home_san_xuat_kinh_doanh .container .content {
   max-width: unset;
@@ -6540,7 +6567,7 @@ header .search .search-bar:hover::after {
 }
 
 .details_news_page {
-  margin-top: 70px;
+  margin-top: 106px;
 }
 .details_news_page section.article .article-container article .title h3 {
   margin-top: 85px;

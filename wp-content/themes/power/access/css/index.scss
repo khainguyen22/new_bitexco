@@ -1220,12 +1220,15 @@ label.required {
 
     &.active .item-default {
         display: block;
+        width: 100%;
+        z-index: 99;
     }
 
     ul {
         margin-bottom: 0;
         margin-right: 20px;
         overflow: hidden;
+        width: 100%;
 
         &.active {
             padding: 8px;
