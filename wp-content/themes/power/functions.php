@@ -24,7 +24,7 @@ if (!function_exists('theme_enqueue_styles')) {
 
         wp_enqueue_style('style-font-awesome', get_stylesheet_directory_uri() . '/access/css/font-awesome.min.css', array(), false);
 
-        // wp_enqueue_style('style-lightgallery', get_stylesheet_directory_uri() . '/access/css/lightgallery.css', array(), false);
+        wp_enqueue_style('style-lightgallery', get_stylesheet_directory_uri() . '/access/css/lightgallery.css', array(), false);
 
         wp_enqueue_style('style-lightslider', get_stylesheet_directory_uri() . '/access/css/lightslider.min.css', array(), false);
 
@@ -38,16 +38,42 @@ if (!function_exists('theme_enqueue_styles')) {
 
 
 
-        // wp_enqueue_script('script-jquery', get_template_directory_uri() . '/access/js/jquery.min.js', array('jquery'), 1.1, false);
+        wp_enqueue_script('script-jquery', get_template_directory_uri() . '/access/js/jquery.min.js', array('jquery'), 1.1, false);
 
-        // wp_enqueue_script('lightslider', get_template_directory_uri() . '/access/js/lightslider.js', array('jquery'), 1.1, false);
+        wp_enqueue_script('lightslider', get_template_directory_uri() . '/access/js/lightslider.js', array('jquery'), 1.1, false);
 
         // wp_enqueue_script('lightgallery-min', get_template_directory_uri() . '/access/js/lightgallery.min.js', array('jquery'), 1.1, false);
 
         // wp_enqueue_script('lightgallery', get_template_directory_uri() . '/access/js/lightgallery.js', array('jquery'), 1.1, false);
 
-        // wp_enqueue_script('popper', get_template_directory_uri() . '/access/js/popper.min.js', array('jquery'), 1.1, false);
+        wp_enqueue_script('popper', get_template_directory_uri() . '/access/js/popper.min.js', array('jquery'), 1.1, false);
+        wp_enqueue_script('script-slick', get_template_directory_uri() . '/access/js/slick.min.js', array('jquery'), 1.1, false);
 
+        wp_enqueue_script('bootstrap-min', get_template_directory_uri() . '/access/js/bootstrap.min.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('bootstrap-bundle', get_template_directory_uri() . '/access/js/bootstrap.bundle.min.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('carousel-slick', get_template_directory_uri() . '/access/js/carousel-slick.min.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('fancybox', get_template_directory_uri() . '/access/js/fancybox.umd.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('script-function', get_template_directory_uri() . '/access/js/functions.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('script-quan-he-co-dong', get_template_directory_uri() . '/access/js/quan-he-co-dong.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('site-map', get_template_directory_uri() . '/access/js/site-map.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('script-thuong-hieu-bitexco', get_template_directory_uri() . '/access/js/thuong-hieu-bitexco.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('thong-bao-moi-thau', get_template_directory_uri() . '/access/js/thong-bao-moi-thau.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('thong-tin-huu-ich', get_template_directory_uri() . '/access/js/thong-tin-huu-ich.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('header', get_template_directory_uri() . '/access/js/header.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('prevent-script-injection', get_template_directory_uri() . '/access/js/prventScriptInjection.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('thu-vien', get_template_directory_uri() . '/access/js/thu-vien.js', array('jquery'), 1.1, false);
     }
 }
 
@@ -60,6 +86,7 @@ add_action('init', 'theme_enqueue_styles');
 function my_scripts()
 {
 
+    // wp_enqueue_script('lightgallery', get_template_directory_uri() . '/access/js/lightgallery.js', array('jquery'), 1.1, false);
     // if (is_page(array('tuyen-dung'))) {
     wp_enqueue_script('script-tuyen-dung', get_template_directory_uri() . '/access/js/tuyen-dung.js', array('jquery'), 1.1, false);
     // }
@@ -68,35 +95,9 @@ function my_scripts()
         wp_enqueue_script('script-lich-su-phat-trien', get_template_directory_uri() . '/access/js/lich-su-phat-trien.js', array('jquery'), 1.1, false);
     }
 
-    wp_enqueue_script('script-slick', get_template_directory_uri() . '/access/js/slick.min.js', array('jquery'), 1.1, false);
 
-    wp_enqueue_script('bootstrap-min', get_template_directory_uri() . '/access/js/bootstrap.min.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('bootstrap-bundle', get_template_directory_uri() . '/access/js/bootstrap.bundle.min.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('carousel-slick', get_template_directory_uri() . '/access/js/carousel-slick.min.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('fancybox', get_template_directory_uri() . '/access/js/fancybox.umd.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('script-function', get_template_directory_uri() . '/access/js/functions.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('script-quan-he-co-dong', get_template_directory_uri() . '/access/js/quan-he-co-dong.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('site-map', get_template_directory_uri() . '/access/js/site-map.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('script-thuong-hieu-bitexco', get_template_directory_uri() . '/access/js/thuong-hieu-bitexco.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('thong-bao-moi-thau', get_template_directory_uri() . '/access/js/thong-bao-moi-thau.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('thong-tin-huu-ich', get_template_directory_uri() . '/access/js/thong-tin-huu-ich.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('header', get_template_directory_uri() . '/access/js/header.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('prevent-script-injection', get_template_directory_uri() . '/access/js/prventScriptInjection.js', array('jquery'), 1.1, false);
-
-    wp_enqueue_script('thu-vien', get_template_directory_uri() . '/access/js/thu-vien.js', array('jquery'), 1.1, false);
-    wp_enqueue_script('waypoints', get_template_directory_uri() . '/access/js/waypoints.js', array('jquery'), 1.1, false);
-    wp_enqueue_script('countup', get_template_directory_uri() . '/access/js/jquery.countup.js', array('jquery'), 1.1, false);
+    // wp_enqueue_script('waypoints', get_template_directory_uri() . '/access/js/waypoints.js', array('jquery'), 1.1, false);
+    // wp_enqueue_script('countup', get_template_directory_uri() . '/access/js/jquery.countup.js', array('jquery'), 1.1, false);
 }
 
 add_action('wp_enqueue_scripts', 'my_scripts');

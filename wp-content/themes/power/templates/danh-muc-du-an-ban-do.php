@@ -313,24 +313,20 @@ get_header();
             $('.map-btn').on('click', function() {
                 $(this).closest('.popup-data').addClass('active');
                 $(this).closest('.popup-data').find('.popup-modal').addClass('active');
-            })
-
+            });
             $('.icon-close').on('click', function() {
                 $('.popup-data').removeClass('active');
                 $('.popup-data .popup-modal').removeClass('active');
-            })
+            });
             $('.item .headding').on('click', function() {
                 $('.item ').removeClass('active');
                 $('.info').removeClass('other_info');
                 $(this).closest('.item').toggleClass('active');
-            })
-
+            });
             $('.other_project').on('click', function(e) {
                 $('.info').removeClass('other_info');
                 $(this).closest('.info').addClass('other_info');
             });
-
-
         });
 
         function myMap() {
@@ -617,16 +613,7 @@ get_header();
         //     $('.gm-ui-hover-effect').click();
         // })
     </script>
-
-<<<<<<< HEAD
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ 9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBfymDYGubxIE4s-6sz3wYWxzsRcndH3Y&callback=myMap">
-=======
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBfymDYGubxIE4s-6sz3wYWxzsRcndH3Y&callback=myMap">
-
->>>>>>> 799ca7c (thong tin bao chi chi tiet)
     </script>
     <style>
         /* map luoi dien  */
@@ -667,22 +654,21 @@ get_header();
             right: 0 !important;
         }
 
-
-
-
-
         /* popup map */
+        .popup-data.active .map-btn {
+            display: none;
+        }
+
         .popup-modal {
             display: none;
             position: absolute;
             z-index: 9;
-            top: 70px;
+            top: 100px;
             height: calc(100% - 130px);
             left: 25px;
             background: #fff;
             padding: 20px 30px;
             min-width: 386px;
-            display: block;
             overflow-y: scroll;
         }
 
@@ -785,6 +771,10 @@ get_header();
 
         .popup-modal .content .item .info.other_info .other_project {
             display: none;
+        }
+
+        .popup-modal .content .item .info.other_info .other_project:hover {
+            cursor: pointer;
         }
 
         .popup-modal .content .item .info li {
