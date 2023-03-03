@@ -8686,6 +8686,10 @@ section.related-news .article-container .related-news-content .related-item .ite
   align-items: center;
   margin-top: -2px;
   min-height: 96px;
+  overflow-x: scroll;
+}
+.tuyen-dung .slogan .quote .quote-content .quote-navigation::-webkit-scrollbar {
+  width: 0px;
 }
 .tuyen-dung .slogan .quote .quote-content .quote-navigation .quote-nav-img {
   height: fit-content;
