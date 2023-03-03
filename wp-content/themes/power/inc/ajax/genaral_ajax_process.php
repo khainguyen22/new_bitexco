@@ -49,6 +49,10 @@ require get_stylesheet_directory(  ) . '/inc/ajax/actions/contractor-celection-r
 require get_stylesheet_directory(  ) . '/inc/ajax/actions/contractor-celection-results/reset.php';
 require get_stylesheet_directory(  ) . '/inc/ajax/actions/contractor-celection-results/pagination.php';
 
+// Single Page Comment Actions
+
+
+
 
 
 
