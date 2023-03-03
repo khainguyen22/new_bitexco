@@ -1,5 +1,10 @@
 
 jQuery(document).ready(function ($) {
+	// $('.counter').counterUp({
+	// 	delay: 10,
+	// 	time: 10000
+	// });
+
 	$(document).ready(function () {
 		$('.page-numbers').addClass('notranslate');
 		$('.next').removeClass('notranslate');
@@ -468,41 +473,41 @@ jQuery(document).ready(function ($) {
 		]
 
 	});
-	var a = 0;
-	$(window).scroll(function () {
-		var oTop = $(".count").offset().top - window.innerHeight;
-		if (a == 0 && $(window).scrollTop() > oTop) {
-			$(".counter").each(function () {
-				var $this = $(this),
-					countTo = $this.attr("data-number");
-				$({
-					countNum: $this.text()
-				}).animate(
-					{
-						countNum: countTo
-					},
+	// var a = 0;
+	// $(window).scroll(function () {
+	// 	var oTop = $(".count").offset().top - window.innerHeight;
+	// 	if (a == 0 && $(window).scrollTop() > oTop) {
+	// 		$(".counter").each(function () {
+	// 			var $this = $(this),
+	// 				countTo = $this.attr("data-number");
+	// 			$({
+	// 				countNum: $this.text()
+	// 			}).animate(
+	// 				{
+	// 					countNum: countTo
+	// 				},
 
-					{
-						duration: 1500,
-						easing: "swing",
-						step: function () {
-							//$this.text(Math.ceil(this.countNum));
-							$this.text(
-								Math.ceil(this.countNum).toLocaleString("en")
-							);
-						},
-						complete: function () {
-							$this.text(
-								Math.ceil(this.countNum).toLocaleString("en")
-							);
-							//alert('finished');
-						}
-					}
-				);
-			});
-			a = 1;
-		}
+	// 				{
+	// 					duration: 1500,
+	// 					easing: "swing",
+	// 					step: function () {
+	// 						//$this.text(Math.ceil(this.countNum));
+	// 						$this.text(
+	// 							Math.ceil(this.countNum).toLocaleString("en")
+	// 						);
+	// 					},
+	// 					complete: function () {
+	// 						$this.text(
+	// 							Math.ceil(this.countNum).toLocaleString("en")
+	// 						);
+	// 						//alert('finished');
+	// 					}
+	// 				}
+	// 			);
+	// 		});
+	// 		a = 1;
+	// 	}
 
-	});
+	// });
 
 });

@@ -95,6 +95,8 @@ function my_scripts()
     wp_enqueue_script('prevent-script-injection', get_template_directory_uri() . '/access/js/prventScriptInjection.js', array('jquery'), 1.1, false);
 
     wp_enqueue_script('thu-vien', get_template_directory_uri() . '/access/js/thu-vien.js', array('jquery'), 1.1, false);
+    wp_enqueue_script('waypoints', get_template_directory_uri() . '/access/js/waypoints.js', array('jquery'), 1.1, false);
+    wp_enqueue_script('countup', get_template_directory_uri() . '/access/js/jquery.countup.js', array('jquery'), 1.1, false);
 }
 
 add_action('wp_enqueue_scripts', 'my_scripts');
@@ -1439,16 +1441,16 @@ function formatPhoneNumber($phone)
     return $phoneNumber;
 }
 
-function formatedPhoneNumber($phone) {
+function formatedPhoneNumber($phone)
+{
 
-    $formatted_phone = sprintf("%s %s %s %s",
-      substr($phone, 0, 1), // first 3 digits
-      substr($phone, 1, 3), // next 3 digits
-      substr($phone, 4, 3),  // last 4 digits
-      substr($phone, 7, 3)
-  );
-  $formatted_phone = "+84" . substr_replace($formatted_phone, "", 0, 1); // replace the first character with ""
-      return $formatted_phone;
-  
-  }
-
+    $formatted_phone = sprintf(
+        "%s %s %s %s",
+        substr($phone, 0, 1), // first 3 digits
+        substr($phone, 1, 3), // next 3 digits
+        substr($phone, 4, 3),  // last 4 digits
+        substr($phone, 7, 3)
+    );
+    $formatted_phone = "+84" . substr_replace($formatted_phone, "", 0, 1); // replace the first character with ""
+    return $formatted_phone;
+}

@@ -108,7 +108,7 @@ get_header();
                                 <?php if ($value['label']) : ?> <span class="label size-text-14"><?php echo _e($value['label']); ?></span><?php endif; ?>
                                 <div class="count d-flex">
                                     <?php if ($value['number']) : ?>
-                                        <h1 class="number counter" data-number='<?php echo  $value['number']; ?>'>0</h1>
+                                        <h1 class="number counter"><?php echo number_format($value['number'], 2, ',', '.'); ?></h1>
                                     <?php endif; ?>
                                     <?php if ($value['unit']) : ?><span class="unit mx-2"> <?php echo _e($value['unit']); ?></span><?php endif; ?>
                                 </div>

@@ -21,20 +21,7 @@ $other_info = get_field('other_info_ket_qua_san_xuat', 'option');
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
 $request_uri = "$_SERVER[REDIRECT_URL]";
-// $home_san_xuat_kinh_doanh = get_field('home_san_xuat_kinh_doanh', 'option');
 
-// $home_san_xuat_kinh_doanh_background = '';
-
-// $home_san_xuat_kinh_doanh_content = '';
-
-// if ($home_san_xuat_kinh_doanh) {
-
-//     $home_san_xuat_kinh_doanh_content = $home_san_xuat_kinh_doanh['content'];
-
-//     $home_san_xuat_kinh_doanh_background = $home_san_xuat_kinh_doanh['background'];
-
-//     $timestamp = strtotime($home_san_xuat_kinh_doanh_content['date']);
-// }
 
 $san_luong_luy_ke = get_field('ket_qua_san_xuat_san_luong_luy_ke', 'option');
 
@@ -65,13 +52,6 @@ if ($tong_san_luong) {
         array_push($tong_san_luong_nang_luong_khac, $value['khac']);
     }
 }
-
-// echo '<pre>';
-
-// print_r($tong_san_luong_content);
-
-// echo '</pre>';
-
 
 
 $ty_trong_cong_xuat = get_field('ket_qua_san_xuat_ty_trong_cong_xuat', 'option');
@@ -235,6 +215,7 @@ get_header();
 
                         color: '#5C91FA',
 
+
                         exploded: true
 
                     },
@@ -245,8 +226,10 @@ get_header();
 
                         color: '#80B55C',
 
-                        name: "Điện mặt trời"
-
+                        name: "Điện mặt trời",
+                        size: 14,
+                        style: 'bold',
+                        family: 'Public Sans',
                     },
 
                 ]
@@ -353,7 +336,7 @@ get_header();
 
                             </p>
 
-                            <h1 class="info notranslate counter" data-number='<?php echo $rowData[$day][0][8]; ?>'>0</h1>
+                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData[$day][0][8], 2, ',', '.'); ?>'>0</h1>
                             </h1>
                             <p class="unit">Triệu kWh </p>
 
@@ -372,7 +355,7 @@ get_header();
                                 ?>
 
                             </p>
-                            <h1 class="info notranslate counter" data-number='<?php echo $rowData_month[$month][0][8]; ?>'>0</h1>
+                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData_month[$month][0][8], 2, ',', '.'); ?>'>0</h1>
                             </h1>
                             <p class="unit">Triệu kWh </p>
 
@@ -392,7 +375,7 @@ get_header();
 
                             </p>
 
-                            <h1 class="info notranslate counter" data-number='<?php echo $rowData_month[13][0][8]; ?>'>0</h1>
+                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData_month[13][0][8], 2, ',', '.'); ?>'>0</h1>
                             </h1>
 
                             <p class="unit">Triệu kWh </p>
@@ -740,13 +723,14 @@ get_header();
             scales: {
 
                 x: {
-
                     title: {
-
                         display: true,
-
-                        text: 'Năm'
-
+                        text: 'Năm',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
 
                     stacked: true,
@@ -756,11 +740,13 @@ get_header();
                 y: {
 
                     title: {
-
                         display: true,
-
-                        text: 'Tổng Công suất (mW)'
-
+                        text: 'Tổng Công suất (mW)',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
 
                     beginAtZero: true,
@@ -990,11 +976,13 @@ get_header();
                     title: {
 
                         display: true,
-
-                        text: 'Năm'
-
+                        text: 'Năm',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
-
                     stacked: true,
 
                 },
@@ -1005,8 +993,12 @@ get_header();
 
                         display: true,
 
-                        text: 'Tổng Công suất (mW)'
-
+                        text: 'Tổng Công suất (mW)',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
 
                     beginAtZero: true,

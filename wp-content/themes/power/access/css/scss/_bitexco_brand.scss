@@ -140,6 +140,11 @@
                         /* Neutral/High Emphasis */
                         color: #141518;
                         letter-spacing: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 10;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
                     }
 
                     p.company-role {
@@ -539,6 +544,11 @@
 
                     p {
                         text-align: justify;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 15;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
                     }
 
                     p+p {

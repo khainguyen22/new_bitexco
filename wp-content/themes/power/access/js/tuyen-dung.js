@@ -52,7 +52,7 @@ jQuery(document).ready(function ($) {
 			$('.quote-text-inner.active').removeClass('active')
 			$('.quote-text-' + $next_elemenet.toString()).addClass('active');
 		}
-	}, 3000);
+	}, 3000000);
 
 	$('.quote-nav-img').on('mouseover', function () {
 		$pause = false;

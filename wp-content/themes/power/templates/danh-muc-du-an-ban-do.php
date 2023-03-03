@@ -85,9 +85,9 @@ get_header();
 
                             <?php if ($value['icon']) : ?> <img src="<?php echo $value['icon'] ?>" alt="<?php echo _e($value['label']) ?>"><?php endif; ?>
 
-                            <div class="number-title">
+                            <div class="number-title count">
 
-                                <?php if ($value['number']) : ?> <h4><?php echo _e($value['number']) ?></h4><?php endif; ?>
+                                <?php if ($value['number']) : ?> <h4 class="counter" data-number='<?php echo _e($value['number']) ?>'>0</h4><?php endif; ?>
 
                                 <?php if ($value['label']) : ?> <p><?php echo _e($value['label']) ?></p><?php endif; ?>
 
