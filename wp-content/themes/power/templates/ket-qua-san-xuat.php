@@ -20,21 +20,8 @@ if ($banner) {
 $other_info = get_field('other_info_ket_qua_san_xuat', 'option');
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+$request_uri = "$_SERVER[REDIRECT_URL]";
 
-$home_san_xuat_kinh_doanh = get_field('home_san_xuat_kinh_doanh', 'option');
-
-$home_san_xuat_kinh_doanh_background = '';
-
-$home_san_xuat_kinh_doanh_content = '';
-
-if ($home_san_xuat_kinh_doanh) {
-
-    $home_san_xuat_kinh_doanh_content = $home_san_xuat_kinh_doanh['content'];
-
-    $home_san_xuat_kinh_doanh_background = $home_san_xuat_kinh_doanh['background'];
-
-    $timestamp = strtotime($home_san_xuat_kinh_doanh_content['date']);
-}
 
 $san_luong_luy_ke = get_field('ket_qua_san_xuat_san_luong_luy_ke', 'option');
 
@@ -65,13 +52,6 @@ if ($tong_san_luong) {
         array_push($tong_san_luong_nang_luong_khac, $value['khac']);
     }
 }
-
-// echo '<pre>';
-
-// print_r($tong_san_luong_content);
-
-// echo '</pre>';
-
 
 
 $ty_trong_cong_xuat = get_field('ket_qua_san_xuat_ty_trong_cong_xuat', 'option');
@@ -109,6 +89,61 @@ if ($cong_xuat_lap_dat) {
     }
 }
 
+include 'Classes/PHPExcel/IOFactory.php';
+
+$inputFileName = __DIR__ . '/Bitexco.xlsx';
+
+try {
+
+    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+
+    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+
+    $objPHPExcel = $objReader->load($inputFileName);
+} catch (Exception $e) {
+
+    die('Lỗi không thể đọc file "' . pathinfo($inputFileName, PATHINFO_BASENAME) . '": ' . $e->getMessage());
+}
+
+// get data current date of day
+
+$sheet = $objPHPExcel->getSheet(idate('m'));
+
+$highestRow = $sheet->getHighestRow();
+
+$highestColumn = $sheet->getHighestColumn();
+
+for ($row = 1; $row <= $highestRow; $row++) {
+
+    $rowData[] = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row, NULL, TRUE, FALSE);
+}
+
+// get data current date of month and total of year
+
+$sheet_month = $objPHPExcel->getSheet(0);
+
+$highestRow_month  = $sheet_month->getHighestRow();
+
+$highestColumn_month = $sheet_month->getHighestColumn();
+
+for ($row = 1; $row <= $highestRow_month; $row++) {
+
+    $rowData_month[] = $sheet_month->rangeToArray('A' . $row . ':' . $highestColumn_month . $row, NULL, TRUE, FALSE);
+}
+// check the previous day
+$date = date("Y-m-d");
+$yesterday = $date;
+$current_date = date('m-d');
+$fake_date = '01-01';
+
+if ($current_date === $fake_date) {
+    $yesterday = date_create($date)->format('Y-m-d');
+} else {
+    $yesterday = date_create($date)->modify('-1 day')->format('Y-m-d');
+}
+
+$day = number_format(date('d', strtotime($yesterday)));
+$month = number_format(date('m', strtotime($yesterday)));
 get_header();
 
 ?>
@@ -121,11 +156,13 @@ get_header();
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels@0.1.4/dist/chartjs-plugin-piechart-outlabels.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-piechart-outlabels@0.1.4/dist/chartjs-plugin-piechart-outlabels.min.js">
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-doughnutlabel/2.0.3/chartjs-plugin-doughnutlabel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-doughnutlabel/2.0.3/chartjs-plugin-doughnutlabel.js">
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA==" crossorigin="anonymous"></script>
 
@@ -178,6 +215,7 @@ get_header();
 
                         color: '#5C91FA',
 
+
                         exploded: true
 
                     },
@@ -188,8 +226,10 @@ get_header();
 
                         color: '#80B55C',
 
-                        name: "Điện mặt trời"
-
+                        name: "Điện mặt trời",
+                        size: 14,
+                        style: 'bold',
+                        family: 'Public Sans',
                     },
 
                 ]
@@ -206,7 +246,8 @@ get_header();
 
     function explodePie(e) {
 
-        if (typeof(e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+        if (typeof(e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e
+                .dataPointIndex].exploded) {
 
             e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
 
@@ -247,7 +288,7 @@ get_header();
 
                             <?php foreach ($navigation as $key => $value) : ?>
 
-                                <li class="<?php echo $actual_link == $value['link'] ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo $value['label']; ?></a></li>
+                                <li class="<?php echo strlen(strstr($value['link'], $request_uri)) > 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
 
                             <?php endforeach; ?>
 
@@ -273,71 +314,69 @@ get_header();
 
                     <div class="headding">
 
-                        <?php if ($san_luong_luy_ke) : ?><h4><?php echo $san_luong_luy_ke['title']; ?></h4> <?php endif; ?>
+                        <?php if ($san_luong_luy_ke) : ?><h4><?php echo $san_luong_luy_ke['title']; ?></h4>
+                        <?php endif; ?>
 
                     </div>
 
                     <div class="row list">
 
-                        <?php if ($home_san_xuat_kinh_doanh_content['san_luong_ngay']) : ?>
-
-                            <div class="col-12 col-md-4 item">
-
-                                <p class="label">Sản lượng ngày
-
-                                    <?php
-
-                                    $day = date('d', $timestamp);
-
-                                    echo $day;
-
-                                    ?>
-
-                                </p>
-
-                                <h1 class="info" lang="vi"><?php echo $home_san_xuat_kinh_doanh_content['san_luong_ngay']; ?></h1>
-
-                                <p class="unit">Triệu kWh </p>
-
-                            </div>
-
-                        <?php endif; ?>
 
                         <div class="col-12 col-md-4 item">
 
-                            <p class="label" lang="fr">Sản lượng tháng
+                            <p class="label">Sản lượng ngày
 
                                 <?php
 
-                                $month = date('m', $timestamp);
+                                $d = date('d');
 
-                                echo $month;
+                                echo $d;
 
                                 ?>
 
                             </p>
 
-                            <h1 class="info" lang="vi"><?php echo $home_san_xuat_kinh_doanh_content['san_luong_thang']; ?></h1>
-
+                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData[$day][0][8], 2, ',', '.'); ?>'>0</h1>
+                            </h1>
                             <p class="unit">Triệu kWh </p>
 
                         </div>
 
                         <div class="col-12 col-md-4 item">
 
+                            <p class="label">Sản lượng tháng
+
+                                <?php
+
+                                $m = date('m');
+
+                                echo $m;
+
+                                ?>
+
+                            </p>
+                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData_month[$month][0][8], 2, ',', '.'); ?>'>0</h1>
+                            </h1>
+                            <p class="unit">Triệu kWh </p>
+
+                        </div>
+
+                        <div class="col-12 col-md-4 item count">
+
                             <p class="label">Sản lượng lũy kế năm
 
                                 <?php
 
-                                $year = date('Y', $timestamp);
+                                $y = date('Y');
 
-                                echo $year;
+                                echo $y;
 
                                 ?>
 
                             </p>
 
-                            <h1 class="info" lang="vi"><?php echo $home_san_xuat_kinh_doanh_content['san_luong_nam']; ?></h1>
+                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData_month[13][0][8], 2, ',', '.'); ?>'>0</h1>
+                            </h1>
 
                             <p class="unit">Triệu kWh </p>
 
@@ -361,7 +400,8 @@ get_header();
 
                     <div class="d-flex head flex-wrap justify-content-between">
 
-                        <?php if ($tong_san_luong) : ?><h4 class="headding"><?php echo $tong_san_luong['title']; ?></h4> <?php endif; ?>
+                        <?php if ($tong_san_luong) : ?><h4 class="headding"><?php echo $tong_san_luong['title']; ?></h4>
+                        <?php endif; ?>
 
                         <input type="date" name="date" class="input-date form-control">
 
@@ -383,7 +423,8 @@ get_header();
 
                 <div class="container">
 
-                    <?php if ($ty_trong_cong_xuat) : ?><h4 class="title"><?php echo $ty_trong_cong_xuat['title']; ?></h4> <?php endif; ?>
+                    <?php if ($ty_trong_cong_xuat) : ?><h4 class="title"><?php echo $ty_trong_cong_xuat['title']; ?></h4>
+                    <?php endif; ?>
 
                     <div class="row bieu-do">
 
@@ -431,7 +472,8 @@ get_header();
 
                     <div class="d-flex head flex-wrap justify-content-between">
 
-                        <?php if ($cong_xuat_lap_dat) : ?><h4 class="title"><?php echo $cong_xuat_lap_dat['title']; ?></h4> <?php endif; ?>
+                        <?php if ($cong_xuat_lap_dat) : ?><h4 class="title"><?php echo $cong_xuat_lap_dat['title']; ?></h4>
+                        <?php endif; ?>
 
                         <input type="date" name="date" class="input-date form-control">
 
@@ -538,7 +580,8 @@ get_header();
 
         for (let index_1 = 0; index_1 < arr_cong_xuat_lap_dat_cong_ty_con.length; index_1++) {
 
-            data_cong_xuat_lap_dat.push(arr_cong_xuat_lap_dat_cong_ty_con[index_1] + arr_cong_xuat_lap_dat_cong_ty_lien_ket[index_1])
+            data_cong_xuat_lap_dat.push(arr_cong_xuat_lap_dat_cong_ty_con[index_1] + arr_cong_xuat_lap_dat_cong_ty_lien_ket[
+                index_1])
 
         }
 
@@ -663,7 +706,10 @@ get_header();
                     enabled: true,
 
                 },
-
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                },
                 datalabels: {
 
                     align: 'top',
@@ -677,13 +723,14 @@ get_header();
             scales: {
 
                 x: {
-
                     title: {
-
                         display: true,
-
-                        text: 'Năm'
-
+                        text: 'Năm',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
 
                     stacked: true,
@@ -693,11 +740,13 @@ get_header();
                 y: {
 
                     title: {
-
                         display: true,
-
-                        text: 'Tổng Công suất (mW)'
-
+                        text: 'Tổng Công suất (mW)',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
 
                     beginAtZero: true,
@@ -768,7 +817,8 @@ get_header();
 
         for (let index_2 = 0; index_2 < arr_data_tong_san_luong_thuy_dien.length; index_2++) {
 
-            data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[index_2] + arr_data_tong_san_luong_dien_mat_troi[index_2] + arr_data_tong_san_luong_nang_luong_khac[index_2])
+            data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[index_2] + arr_data_tong_san_luong_dien_mat_troi[
+                index_2] + arr_data_tong_san_luong_nang_luong_khac[index_2])
 
         }
 
@@ -905,7 +955,10 @@ get_header();
                     enabled: true,
 
                 },
-
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                },
                 datalabels: {
 
                     align: 'top',
@@ -923,11 +976,13 @@ get_header();
                     title: {
 
                         display: true,
-
-                        text: 'Năm'
-
+                        text: 'Năm',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
-
                     stacked: true,
 
                 },
@@ -938,8 +993,12 @@ get_header();
 
                         display: true,
 
-                        text: 'Tổng Công suất (mW)'
-
+                        text: 'Tổng Công suất (mW)',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
                     },
 
                     beginAtZero: true,

@@ -86,6 +86,14 @@ h1 a,
     &::first-letter {
         text-transform: uppercase;
     }
+
+    @media(min-width:1024px) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
 }
 
 h2,
@@ -99,6 +107,14 @@ h2 a,
 
     &::first-letter {
         text-transform: uppercase;
+    }
+
+    @media(min-width:1024px) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
     }
 }
 
@@ -116,11 +132,20 @@ h3 a,
         text-transform: uppercase;
     }
 
+    @media(min-width:1024px) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
     @media(max-width:767px) {
         font-size: 24px;
         line-height: 130%;
         font-weight: 600;
     }
+
 }
 
 h4,
@@ -131,7 +156,15 @@ h4 a,
     font-size: 32px;
     line-height: 130%;
     color: #141518;
+
     // text-transform: lowercase;
+    @media(min-width:1024px) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
 
     &::first-letter {
         text-transform: uppercase;
@@ -146,7 +179,15 @@ h5 a,
     font-size: 28px;
     line-height: 130%;
     color: #141518;
+
     // text-transform: lowercase;
+    @media(min-width:1024px) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
 
     &::first-letter {
         text-transform: uppercase;
@@ -166,7 +207,15 @@ h6 a,
     line-height: 130%;
     letter-spacing: 0.01em;
     color: #141518;
+
     // text-transform: lowercase;
+    @media(min-width:1024px) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
 
     &::first-letter {
         text-transform: uppercase;
@@ -1162,6 +1211,7 @@ label.required {
     &.form-filter-date-start:has(#date) {
         padding: 0 16px;
         justify-content: flex-end;
+
         input {
             position: absolute;
             left: 16px;
@@ -1216,6 +1266,8 @@ label.required {
         line-height: 1.6;
         white-space: nowrap;
         display: none;
+        width: 100%;
+        z-index: 9;
     }
 
     &.active .item-default {
@@ -1226,6 +1278,7 @@ label.required {
         margin-bottom: 0;
         margin-right: 20px;
         overflow: hidden;
+        width: 100%;
 
         &.active {
             padding: 8px;
@@ -1534,9 +1587,11 @@ p#alt-text-description {
 li[data-value="mien-bac"] {
     order: 1;
 }
+
 li[data-value="mien-trung"] {
     order: 2;
 }
+
 li[data-value="mien-nam"] {
     order: 3;
 }

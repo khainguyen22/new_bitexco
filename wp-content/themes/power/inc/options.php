@@ -353,5 +353,16 @@ function my_acf_op_init()
             'menu_title'  => __('Thông tin báo chí'),
             'parent_slug' => $parent['menu_slug'],
         ));
+        // Add sub page.
+
+        $child = acf_add_options_page(array(
+
+            'page_title'  => __('Các nhà máy thủy điện'),
+
+            'menu_title'  => __('Các nhà máy thủy điện'),
+
+            'parent_slug' => $parent['menu_slug'],
+
+        ));
     }
 }

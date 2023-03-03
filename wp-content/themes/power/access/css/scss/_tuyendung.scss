@@ -119,8 +119,8 @@
 
                         &::after {
                             content: "";
-                            width: 10px;
-                            height: 10px;
+                            width: 9px;
+                            height: 12px;
                             border-right: 1.5px solid #DAA622;
                             border-bottom: 1.5px solid #DAA622;
                             position: absolute;
@@ -186,7 +186,7 @@
                 width: 50%;
 
                 img {
-                    // height: 100%;
+                    height: 100%;
                     object-fit: cover;
                     display: none;
                 }
@@ -465,6 +465,7 @@
             .quote-content {
                 padding-left: 65px;
                 width: 50%;
+                position: relative;
 
                 .quote-navigation {
                     display: flex;
@@ -473,6 +474,11 @@
                     align-items: center;
                     margin-top: -2px;
                     min-height: 96px;
+                    overflow-x: scroll;
+
+                    &::-webkit-scrollbar {
+                        width: 0px;
+                    }
 
                     .quote-nav-img {
                         height: fit-content;
@@ -538,6 +544,18 @@
                             font-size: 28px;
                             line-height: 1.3;
                             color: #141518;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-line-clamp: 5;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            text-align: left;
+                        }
+
+                        .info {
+                            position: absolute;
+                            width: 100%;
+                            bottom: 0;
                         }
 
                         p.company-role {
@@ -549,6 +567,11 @@
                             margin-bottom: 4px;
                             text-transform: uppercase;
                             text-align: justify;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-line-clamp: 1;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
                         }
 
                         h3.author {
@@ -557,6 +580,11 @@
                             line-height: 1.6;
                             letter-spacing: 0.01em;
                             color: #141518;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-line-clamp: 1;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
                         }
                     }
 
@@ -637,8 +665,8 @@
 
                                     &::after {
                                         content: "";
-                                        width: 10px;
-                                        height: 10px;
+                                        width: 9px;
+                                        height: 12px;
                                         border-right: 1.5px solid #DAA622;
                                         border-bottom: 1.5px solid #DAA622;
                                         position: absolute;
@@ -939,6 +967,11 @@
                                 letter-spacing: 0.01em;
                                 color: #141518;
                                 margin-top: 20px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                -webkit-line-clamp: 2;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
                             }
 
                             p {
@@ -948,6 +981,12 @@
                                 letter-spacing: 0.01em;
                                 color: #434449;
                                 text-align: justify;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                -webkit-line-clamp: 4;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+
                             }
                         }
                     }
@@ -1149,8 +1188,8 @@
 
                             &::after {
                                 content: "";
-                                width: 10px;
-                                height: 10px;
+                                width: 9px;
+                                height: 12px;
                                 border-right: 1.5px solid #DAA622;
                                 border-bottom: 1.5px solid #DAA622;
                                 position: absolute;

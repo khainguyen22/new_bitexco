@@ -49,8 +49,8 @@ $the_query_post = new WP_Query($args);
             <div class="your-privilege-content">
                 <div class="content">
                     <span class="divider"></span>
-                    <hdrop-down always-grow3><?php echo  isset($moi_truong_tai_bitexco_power['title']) ? $moi_truong_tai_bitexco_power['title'] : ""; ?></h3>
-                        <p><?php echo isset($moi_truong_tai_bitexco_power['description']) ? $moi_truong_tai_bitexco_power['description'] : ""; ?></p>
+                    <h3><?php echo  isset($moi_truong_tai_bitexco_power['title']) ? $moi_truong_tai_bitexco_power['title'] : ""; ?></h3>
+                    <p><?php echo isset($moi_truong_tai_bitexco_power['description']) ? $moi_truong_tai_bitexco_power['description'] : ""; ?></p>
                 </div>
                 <div class="values">
                     <?php if ($tab_content) : ?>
@@ -148,10 +148,14 @@ $the_query_post = new WP_Query($args);
                                         <svg width="48" height="38" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11.6156 38C9.44359 38 7.64931 37.5632 6.23277 36.6896C4.81623 35.8161 3.63578 34.6513 2.69142 33.1954C1.74706 31.6424 1.03879 29.8953 0.566613 27.954C0.188869 26.0128 -2.09098e-06 24.2656 -1.95716e-06 22.7126C-1.54733e-06 17.9566 1.18045 13.5888 3.54135 9.60919C5.99668 5.62963 9.7269 2.42656 14.732 1.30663e-06L16.0069 2.62069C13.1738 3.8825 10.7185 5.82376 8.64089 8.44445C6.5633 11.0651 5.43007 13.7343 5.24119 16.4521C5.05232 17.908 5.14676 19.2669 5.5245 20.5287C7.22435 18.8787 9.30194 18.0536 11.7573 18.0536C14.4959 18.0536 16.8096 18.9757 18.6983 20.8199C20.587 22.567 21.5314 24.9936 21.5314 28.0996C21.5314 31.0115 20.5398 33.3895 18.5567 35.2337C16.6679 37.0779 14.3543 38 11.6156 38ZM37.3966 38C35.2246 38 33.4303 37.5632 32.0138 36.6897C30.5973 35.8161 29.4168 34.6513 28.4724 33.1954C27.5281 31.6424 26.8198 29.8953 26.3476 27.954C25.9699 26.0128 25.781 24.2656 25.781 22.7126C25.781 17.9566 26.9615 13.5888 29.3224 9.60919C31.7777 5.62963 35.5079 2.42656 40.513 3.59323e-06L41.7879 2.62069C38.9548 3.8825 36.4995 5.82376 34.4219 8.44445C32.3443 11.0651 31.2111 13.7344 31.0222 16.4521C30.8333 17.908 30.9278 19.2669 31.3055 20.5287C33.0054 18.8787 35.083 18.0536 37.5383 18.0536C40.2769 18.0536 42.5906 18.9757 44.4793 20.8199C46.3681 22.567 47.3124 24.9936 47.3124 28.0996C47.3124 31.0115 46.3208 33.3895 44.3377 35.2337C42.449 37.0779 40.1353 38 37.3966 38Z" fill="#DAA622" />
                                         </svg>
-                                        <h2><?php echo $value['quote'] ?></h2>
-                                        <div class="quote-divider"></div>
-                                        <p class="company-role"><?php echo $value['role'] ?></p>
-                                        <h3 class="author"><?php echo $value['name'] ?></h3>
+                                        <div class="content">
+                                            <h2><?php echo $value['quote'] ?></h2>
+                                        </div>
+                                        <div class="info">
+                                            <div class="quote-divider"></div>
+                                            <p class="company-role"><?php echo $value['role'] ?></p>
+                                            <h3 class="author"><?php echo $value['name'] ?></h3>
+                                        </div>
                                     </div>
                                 <?php endforeach; ?>
                             <?php endif; ?>

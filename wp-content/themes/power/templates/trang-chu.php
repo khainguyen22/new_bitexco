@@ -119,9 +119,7 @@ if ($current_date === $fake_date) {
 $day = number_format(date('d', strtotime($yesterday)));
 $month = number_format(date('m', strtotime($yesterday)));
 
-
 get_header();
-
 ?>
 
 
@@ -148,7 +146,8 @@ get_header();
 
                         <div class="content">
 
-                            <?php if ($home_san_xuat_kinh_doanh['content']['title']) : ?><h3 class="title"><?php echo $home_san_xuat_kinh_doanh['content']['title']; ?></h3> <?php endif; ?>
+                            <?php if ($home_san_xuat_kinh_doanh['content']['title']) : ?><h3 class="title">
+                                    <?php echo $home_san_xuat_kinh_doanh['content']['title']; ?></h3> <?php endif; ?>
 
                             <div class="d-flex desc-wrap">
 
@@ -166,9 +165,9 @@ get_header();
 
                                                 echo _e('Ngày ');
 
-                                                $day = date('d');
+                                                $d = date('d');
 
-                                                echo $day - 1;
+                                                echo $d - 1;
 
                                                 ?>
 
@@ -186,9 +185,9 @@ get_header();
 
                                                 echo _e('Tháng ');
 
-                                                $day = date('m');
+                                                $m = date('m');
 
-                                                echo $day;
+                                                echo $m;
 
                                                 ?>
 
@@ -206,9 +205,9 @@ get_header();
 
                                                 echo _e('Năm ');
 
-                                                $day = date('Y');
+                                                $year = date('Y');
 
-                                                echo $day;
+                                                echo $year;
 
                                                 ?>
 
@@ -287,9 +286,11 @@ get_header();
 
                         <div class="content">
 
-                            <?php if ($home_lich_su_phat_trien_content['title']) : ?> <h3 class="title"><?php echo  $home_lich_su_phat_trien_content['title'] ?></h3> <?php endif; ?>
+                            <?php if ($home_lich_su_phat_trien_content['title']) : ?> <h3 class="title">
+                                    <?php echo  $home_lich_su_phat_trien_content['title'] ?></h3> <?php endif; ?>
 
-                            <?php if ($home_lich_su_phat_trien_content['description']) : ?><p class="desc size-text-16"><?php echo $home_lich_su_phat_trien_content['description']; ?></p> <?php endif; ?>
+                            <?php if ($home_lich_su_phat_trien_content['description']) : ?><p class="desc size-text-16">
+                                    <?php echo $home_lich_su_phat_trien_content['description']; ?></p> <?php endif; ?>
 
                             <a href="<?php echo $home_lich_su_phat_trien_content['link'] ?>" class="btn btn-warning btn-detail uppercase"><?php echo isset($home_lich_su_phat_trien_content['button']) ? $home_lich_su_phat_trien_content['button'] : "Chi tiết"; ?></a>
 
@@ -306,8 +307,10 @@ get_header();
                     <img src="<?php echo $home_tin_tuc_moi_background  ?>" alt="<?php echo $home_tin_tuc_moi_content['title']; ?>">
                     <div class="container">
                         <div class="content">
-                            <?php if ($home_tin_tuc_moi_post) : ?> <h3 class="title"><?php echo  get_the_title($home_tin_tuc_moi_post)   ?></h3> <?php endif; ?>
-                            <?php if ($home_tin_tuc_moi_post) : ?> <p class="desc size-text-16"><?php echo  get_the_excerpt($home_tin_tuc_moi_post)   ?></p> <?php endif; ?>
+                            <?php if ($home_tin_tuc_moi_post) : ?> <h3 class="title">
+                                    <?php echo  get_the_title($home_tin_tuc_moi_post)   ?></h3> <?php endif; ?>
+                            <?php if ($home_tin_tuc_moi_post) : ?> <p class="desc size-text-16">
+                                    <?php echo  get_the_excerpt($home_tin_tuc_moi_post)   ?></p> <?php endif; ?>
                             <?php if ($home_tin_tuc_moi_post) : ?><a href="<?php echo get_the_permalink($home_tin_tuc_moi_post) ?>" class="btn btn-warning btn-detail uppercase"><?php echo ($home_tin_tuc_moi_button) ? $home_tin_tuc_moi_button : "Chi tiết"; ?></a><?php endif; ?>
                         </div>
                     </div>
@@ -318,8 +321,10 @@ get_header();
                     <img src="<?php echo $home_tuyen_dung_background  ?>" alt="<?php echo $home_tuyen_dung_content['title']; ?>">
                     <div class="container">
                         <div class="content">
-                            <?php if ($home_tuyen_dung_title_content) : ?> <h3 class="title"><?php echo  _e($home_tuyen_dung_title_content)   ?></h3> <?php endif; ?>
-                            <?php if ($home_tuyen_dung_desc_content) : ?> <p class="desc size-text-16"><?php echo _e($home_tuyen_dung_desc_content)   ?></p> <?php endif; ?>
+                            <?php if ($home_tuyen_dung_title_content) : ?> <h3 class="title">
+                                    <?php echo  _e($home_tuyen_dung_title_content)   ?></h3> <?php endif; ?>
+                            <?php if ($home_tuyen_dung_desc_content) : ?> <p class="desc size-text-16">
+                                    <?php echo _e($home_tuyen_dung_desc_content)   ?></p> <?php endif; ?>
                             <?php if ($home_tuyen_dung_button) : ?> <a href="<?php echo get_the_permalink($home_tuyen_dung_post) ?>" class="btn btn-warning btn-detail uppercase"><?php echo ($home_tuyen_dung_button) ? $home_tuyen_dung_button : "Chi tiết"; ?></a><?php endif; ?>
                         </div>
                     </div>
@@ -392,7 +397,8 @@ get_header();
                         <?php if (is_user_logged_in()) : ?>
                         <?php else : ?>
                             <li class="nav-signup">
-                                <a class="nav-link" href="<?php echo site_url('/wp-login.php?action=register'); ?>"><?php _e(' Đăng ký') ?> </a>
+                                <a class="nav-link" href="<?php echo site_url('/wp-login.php?action=register'); ?>"><?php _e(' Đăng ký') ?>
+                                </a>
                             </li>
                         <?php endif; ?>
                     </div>

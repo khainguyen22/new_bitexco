@@ -96,6 +96,10 @@
             }
         }
 
+        .bieu-do-san-luong {
+            margin-bottom: 140px;
+        }
+
         .bieu-do-san-luong,
         .bieu-do-cong-suat-lap-dat {
             padding: 0 100px;
@@ -147,7 +151,7 @@
             overflow: hidden;
 
             .bieu-do {
-                padding: 25px 0 38px;
+                padding: 25px 0 104px;
 
                 .wrap_content_bieu-do-ti-trong {
                     position: relative;
@@ -161,7 +165,7 @@
                         .label {
                             font-size: 35px;
                             line-height: 44px;
-                            margin-bottom: 33px;
+                            margin-bottom: 0px;
                         }
 
                         .number {
@@ -171,6 +175,7 @@
 
                             span {
                                 font-size: 110px;
+                                line-height: 110px;
                                 font-weight: 900;
                                 color: #DAA622;
                                 font-family: "Manrope", sans-serif;
@@ -179,7 +184,7 @@
 
                         .unit_percent {
                             font-size: 60px;
-                            line-height: 60px;
+                            line-height: 80px;
                             font-weight: 900;
                             color: #DAA622;
                             margin-right: 20px;
@@ -188,10 +193,14 @@
                             justify-content: end;
                         }
 
+                        .unit {
+                            line-height: 73px;
+                        }
+
                         .unit,
                         .desc {
                             font-size: 36px;
-                            line-height: 44px;
+
                             text-transform: lowercase;
                             display: flex;
                             flex-direction: column;
@@ -199,20 +208,21 @@
                         }
 
                         .desc {
-                            margin-top: 20px;
+                            line-height: 42px;
+                            margin-top: -12px;
                         }
                     }
                 }
 
                 .wrap_bieu-do-ti-trong {
                     position: relative;
-                    min-height: 800px;
+                    min-height: 400px;
 
                     #chartContainer {
                         position: absolute;
-                        height: 800px;
-                        left: -17%;
-                        width: 1000px;
+                        height: 400px;
+                        right: 0;
+                        width: 600px;
                         z-index: 1;
                     }
 
@@ -230,7 +240,7 @@
             background: #DAA622;
             border-radius: 2px;
             width: 100%;
-            margin: 0 auto;
+            margin: 56px auto 0;
         }
 
         .bieu-do-cong-suat-lap-dat .table {
