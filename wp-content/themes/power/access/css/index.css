@@ -1520,6 +1520,7 @@ li[data-value=mien-nam] {
   text-align: center;
   color: #fff;
   z-index: 2;
+  width: 100%;
 }
 .banner .container .content span.divider {
   width: 32px;
@@ -1534,6 +1535,11 @@ li[data-value=mien-nam] {
   font-size: 40px;
   line-height: 1.2;
   margin-bottom: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 .banner .container .content p {
   max-width: 499px;
@@ -10900,7 +10906,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   width: 100%;
 }
 .bitxeco-brand-page section.bitexco-brand .container .content h3 {
-  padding: 0 130px;
+  padding: 0 20px;
   margin-bottom: 16px;
   color: #fff;
 }
@@ -11334,18 +11340,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   width: 400.31px;
 }
 
-@media (max-width: 1366px) {
-  .bitxeco-brand-page section.bitexco-brand .container .content h3 {
-    padding: 0 120px;
-  }
-  .bitxeco-brand-page section.bitexco-brand .container .content p {
-    max-width: 392px;
-  }
-}
 @media (max-width: 1200px) {
-  .bitxeco-brand-page section.bitexco-brand .container .content {
-    top: calc(50% + 100px);
-  }
   .bitxeco-brand-page section.bitexco-brand .container .content h3 {
     margin-bottom: 16px;
   }
@@ -11534,9 +11529,6 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
 }
 @media (max-width: 1024px) {
-  .bitxeco-brand-page section.bitexco-brand .container .content h3 {
-    padding: 0 70px;
-  }
   .bitxeco-brand-page section.brand-quote {
     background: linear-gradient(280.66deg, rgba(218, 166, 34, 0.22) 17.33%, rgba(218, 166, 34, 0) 75.14%);
   }
@@ -11703,9 +11695,6 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
 }
 @media (max-width: 880px) {
-  .bitxeco-brand-page section.bitexco-brand .container .content h3 {
-    padding: 0 50px;
-  }
   .bitxeco-brand-page section.power-enviroment.social-responsibility {
     padding: 48px;
   }
@@ -11912,9 +11901,6 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   }
 }
 @media (max-width: 767px) {
-  .bitxeco-brand-page section.bitexco-brand .container .content {
-    top: calc(50% + 81px);
-  }
   .bitxeco-brand-page section.bitexco-brand .container .content h3 {
     padding: 0 0;
     font-size: 24px;

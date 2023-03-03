@@ -85,9 +85,9 @@ get_header();
 
                             <?php if ($value['icon']) : ?> <img src="<?php echo $value['icon'] ?>" alt="<?php echo _e($value['label']) ?>"><?php endif; ?>
 
-                            <div class="number-title count">
+                            <div class="number-title">
 
-                                <?php if ($value['number']) : ?> <h4 class="counter" data-number='<?php echo _e($value['number']) ?>'>0</h4><?php endif; ?>
+                                <?php if ($value['number']) : ?> <h4><?php echo _e($value['number']) ?></h4><?php endif; ?>
 
                                 <?php if ($value['label']) : ?> <p><?php echo _e($value['label']) ?></p><?php endif; ?>
 
@@ -106,6 +106,7 @@ get_header();
     </section>
 
     <section class="map-section">
+
 
         <div id="googleMap" style="width:100%; height:708px;"></div>
 
@@ -146,7 +147,7 @@ get_header();
             </div>
             <div class="popup-modal">
                 <div class="head d-flex">
-                    <h6>Danh sách dự án năng lượng</h6>
+                    <h6><?php _e('Danh sách dự án năng lượng') ?></h6>
                     <div class="icon-close">
                         <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.33354 10.166L10.6665 0.833008" stroke="#007D8F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -156,9 +157,75 @@ get_header();
                     </div>
                 </div>
                 <div class="content">
-                    <div class="item">
-                        <div class="headding d-flex">
-                            <span class="icon">
+                    <?php $danh_muc_du_an_ban_do_energy_project_list = $danh_muc_du_an_ban_do['energy_project_list'];
+                    foreach ($danh_muc_du_an_ban_do_energy_project_list as $key => $value) :
+                    ?>
+                        <div class="item">
+                            <div class="headding d-flex">
+                                <span class="icon">
+                                    <img src="<?php _e($value['icon']) ?>" alt="<?php _e($value['title']) ?>">
+                                </span>
+                                <?php if ($value['title']) : ?> <p class="title"><?php _e($value['title']) ?></p><?php endif; ?>
+                                <span class="dropdown-icon">
+                                    <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 7L8.78095 1.66938C8.33156 1.2842 7.66844 1.2842 7.21905 1.66938L1 7" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" />
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="info">
+                                <ul>
+                                    <?php foreach ($value['project'] as $key_project => $value_project) : ?>
+                                        <?php if ($value_project['name']) : ?> <li><a href="<?php _e($value_project['link']) ?>"><?php _e($value_project['name']) ?></a></li><?php endif; ?>
+                                    <?php endforeach; ?>
+                                </ul>
+                                <?php foreach ($value['project'] as $key_project => $value_project) : ?>
+                                    <?php if ($key_project = 3) : ?>
+                                        <div class="other_project">
+                                            <span class="icon">
+                                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M5.86671 7.63399L7.54485 9.44122C7.8086 9.72526 8.25815 9.72526 8.5219 9.44122L10.2 7.63399M1.33337 8.50065C1.33337 12.1825 4.31814 15.1673 8.00004 15.1673C11.6819 15.1673 14.6667 12.1825 14.6667 8.50065C14.6667 4.81875 11.6819 1.83398 8.00004 1.83398C4.31814 1.83398 1.33337 4.81875 1.33337 8.50065Z" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
+                                                </svg>
+                                            </span>
+                                            <span class="title">
+                                                <?php _e('Xem thêm dự án') ?>
+                                            </span>
+                                        </div>
+                                    <?php
+                                        break;
+                                    endif; ?>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wrap_map-luoi-dien">
+        <div class="container">
+            <div class="title">
+                <h3><?php _e('Bản đồ lưới điện') ?></h3>
+            </div>
+            <div class="map-luoi-dien">
+                <div class="goto-container">
+                    <div class="goto default"><span class="icon"><span class=""></span></span><span> Bản đồ</span></div>
+                    <div class="wrap-line">
+                        <div class="goto"><span class="icon"><span class=" line line-500"></span></span> <span> Đường dây 500kV
+                            </span></div>
+                        <div class="goto"><span class="icon"><span class=" line line-220"></span></span> <span> Đường dây 220kV
+                            </span></div>
+                        <div class="goto"><span class="icon"><span class=" line line-110"></span></span> <span> Đường dây 110kV
+                            </span></div>
+                        </span>
+                    </div>
+                    <div class="wrap-box">
+                        <div class="goto"><span class="icon"><span class=" box box-500"></span></span> <span> Trạm biến áp 500kV
+                            </span></div>
+                        <div class="goto"><span class="icon"><span class=" box box-220"></span></span> <span> Trạm biến áp 220kV
+                            </span></div>
+                        <div class="goto"><span class="icon"><span class=" box box-110"></span></span> <span> Trạm biến áp 110kV
+                            </span></div>
+                        <div class="goto"><span class="icon">
                                 <svg width="22" height="30" viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.4002 0.348559C11.3102 0.219894 11.1603 0.142822 11 0.142822C10.8397 0.142822 10.6897 0.219894 10.5998 0.348559C10.1961 0.925782 0.714294 14.5451 0.714294 19.8794C0.714294 25.381 5.3284 29.8571 11 29.8571C16.6716 29.8571 21.2857 25.381 21.2857 19.8794C21.2857 14.5452 11.8039 0.925782 11.4002 0.348559Z" fill="#5B8FF9" />
                                     <path d="M13.6118 25.8848C7.94015 25.8848 3.32605 21.4088 3.32605 15.9071C3.32605 12.4337 7.34625 5.44766 10.2626 0.83667C8.50289 3.40475 0.714294 15.0449 0.714294 19.8794C0.714294 25.3811 5.3284 29.8571 11 29.8571C15.512 29.8571 19.3546 27.0241 20.7373 23.0956C18.8874 24.8218 16.3752 25.8848 13.6118 25.8848Z" fill="#1F61E8" />
@@ -171,31 +238,11 @@ get_header();
                                         </clipPath>
                                     </defs>
                                 </svg>
+
                             </span>
-                            <p class="title">Thủy điện</p>
-                            <span class="dropdown-icon">
-                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 7L8.78095 1.66938C8.33156 1.2842 7.66844 1.2842 7.21905 1.66938L1 7" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" />
-                                </svg>
-                            </span>
+                            <span> Nhà máy thuỷ điện</span>
                         </div>
-                        <div class="info">
-                            <ul>
-                                <li>
-                                    Nho Quế 1
-                                </li>
-                                <li>
-                                    Nho Quế 2
-                                </li>
-                                <li>
-                                    Nho Quế 3
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="headding d-flex">
-                            <span class="icon"> <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="goto"><span class="icon"> <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.5002 19.0002H14.5002V23.5003H17.5002V19.0002Z" fill="#039855" />
                                     <path d="M17.5002 23.5H15.5002V21.5C15.5002 20.9477 15.9479 20.5 16.5002 20.5H17.5002V23.5Z" fill="#12B76A" />
                                     <path d="M20.0002 25.5002H12.0001C11.724 25.5002 11.5001 25.2764 11.5001 25.0002V24.0002C11.5001 23.7241 11.724 23.5002 12.0001 23.5002H20.0002C20.2763 23.5002 20.5002 23.7241 20.5002 24.0002V25.0002C20.5002 25.2764 20.2764 25.5002 20.0002 25.5002Z" fill="#12B76A" />
@@ -219,106 +266,21 @@ get_header();
                                     <path d="M14.0001 25.0002V24.0002C14.0001 23.7241 14.224 23.5002 14.5001 23.5002H12.0001C11.724 23.5002 11.5001 23.7241 11.5001 24.0002V25.0002C11.5001 25.2764 11.724 25.5002 12.0001 25.5002H14.5001C14.224 25.5002 14.0001 25.2764 14.0001 25.0002Z" fill="#039855" />
                                 </svg>
                             </span>
-                            <p class="title">Nhà máy điện mặt trời</p>
-                            <span class="dropdown-icon">
-                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 7L8.78095 1.66938C8.33156 1.2842 7.66844 1.2842 7.21905 1.66938L1 7" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" />
-                                </svg>
-                            </span>
-                        </div>
-                        <div class="info">
-                            <ul>
-                                <li>
-                                    Điện mặt trời 1
-                                </li>
-                                <li>
-                                    Điện mặt trời 2
-                                </li>
-                                <li>
-                                    Điện mặt trời 3
-                                </li>
-                            </ul>
+                            <span>Nhà máy điện mặt trời</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="map-luoi-dien">
-        <div class="container">
-            <div class="goto-container">
-                <div class="goto default"><span class="icon"><span class=""></span></span><span> Bản đồ</span></div>
-                <div class="wrap-line">
-                    <div class="goto"><span class="icon"><span class=" line line-500"></span></span> <span> Đường dây 500kV
-                        </span></div>
-                    <div class="goto"><span class="icon"><span class=" line line-220"></span></span> <span> Đường dây 220kV
-                        </span></div>
-                    <div class="goto"><span class="icon"><span class=" line line-110"></span></span> <span> Đường dây 110kV
-                        </span></div>
-                    </span>
+                <div class="step-container">
+                    <div class="step default "><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/ban-do.png" alt="ban-do"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-500.png" alt="duong-day-500"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-220.png" alt="duong-day-220"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-110.png" alt="duong-day-110"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-500.png" alt="TBA-500"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-220.png" alt="TBA220"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-110.png" alt="tba-110"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/nha-may-thuy-dien.png" alt="nha-may-dien"></div>
+                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/nha-may-dien-mat-troi.png" alt="nha-may-dien"></div>
                 </div>
-                <div class="wrap-box">
-                    <div class="goto"><span class="icon"><span class=" box box-500"></span></span> <span> Trạm biến áp 500kV
-                        </span></div>
-                    <div class="goto"><span class="icon"><span class=" box box-220"></span></span> <span> Trạm biến áp 220kV
-                        </span></div>
-                    <div class="goto"><span class="icon"><span class=" box box-110"></span></span> <span> Trạm biến áp 110kV
-                        </span></div>
-                    <div class="goto"><span class="icon">
-                            <svg width="22" height="30" viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.4002 0.348559C11.3102 0.219894 11.1603 0.142822 11 0.142822C10.8397 0.142822 10.6897 0.219894 10.5998 0.348559C10.1961 0.925782 0.714294 14.5451 0.714294 19.8794C0.714294 25.381 5.3284 29.8571 11 29.8571C16.6716 29.8571 21.2857 25.381 21.2857 19.8794C21.2857 14.5452 11.8039 0.925782 11.4002 0.348559Z" fill="#5B8FF9" />
-                                <path d="M13.6118 25.8848C7.94015 25.8848 3.32605 21.4088 3.32605 15.9071C3.32605 12.4337 7.34625 5.44766 10.2626 0.83667C8.50289 3.40475 0.714294 15.0449 0.714294 19.8794C0.714294 25.3811 5.3284 29.8571 11 29.8571C15.512 29.8571 19.3546 27.0241 20.7373 23.0956C18.8874 24.8218 16.3752 25.8848 13.6118 25.8848Z" fill="#1F61E8" />
-                                <g clip-path="url(#clip0_14918_72)">
-                                    <path d="M9.92907 21.3516C10.0702 21.4057 10.2311 21.3531 10.3091 21.2261L13.8561 15.4121C13.9135 15.318 13.9139 15.2011 13.8569 15.1071C13.7998 15.0128 13.6944 14.9561 13.5818 14.9591L11.1069 15.0248L11.9274 11.457C11.9605 11.3128 11.8812 11.167 11.7398 11.1124C11.5994 11.0582 11.4375 11.1111 11.3598 11.2379L7.81276 17.0519C7.75532 17.146 7.75499 17.2629 7.812 17.3569C7.86903 17.4512 7.97452 17.5079 8.08708 17.5049L10.562 17.4392L9.74147 21.007C9.70838 21.1512 9.78768 21.297 9.92907 21.3516Z" fill="white" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_14918_72">
-                                        <rect width="10.5516" height="10.2361" fill="white" transform="matrix(0.999648 -0.0265312 0.0281931 0.999602 5.41632 11.2559)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-                        </span>
-                        <span> Nhà máy thuỷ điện</span>
-                    </div>
-                    <div class="goto"><span class="icon"> <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.5002 19.0002H14.5002V23.5003H17.5002V19.0002Z" fill="#039855" />
-                                <path d="M17.5002 23.5H15.5002V21.5C15.5002 20.9477 15.9479 20.5 16.5002 20.5H17.5002V23.5Z" fill="#12B76A" />
-                                <path d="M20.0002 25.5002H12.0001C11.724 25.5002 11.5001 25.2764 11.5001 25.0002V24.0002C11.5001 23.7241 11.724 23.5002 12.0001 23.5002H20.0002C20.2763 23.5002 20.5002 23.7241 20.5002 24.0002V25.0002C20.5002 25.2764 20.2764 25.5002 20.0002 25.5002Z" fill="#12B76A" />
-                                <path d="M31.9724 17.1715L29.4724 2.17137C29.3118 1.20312 28.4822 0.5 27.4998 0.5H4.50005C3.51862 0.5 2.68899 1.20262 2.52737 2.17137L0.0273718 17.1715C-0.0693155 17.7525 0.0933092 18.3433 0.474121 18.793C0.854995 19.2423 1.41112 19.5001 1.99999 19.5001H29.9997C30.5891 19.5001 31.1457 19.2423 31.5261 18.7926C31.907 18.3429 32.0696 17.7521 31.9724 17.1715Z" fill="#D1FADF" />
-                                <path d="M2.57654 10.5H7.67316C7.96591 10.5 8.19604 10.7504 8.17141 11.0421L7.96004 13.5421C7.93816 13.801 7.7216 14 7.46179 14H2.15985C1.85085 14 1.61585 13.7226 1.66666 13.4178L2.08335 10.9178C2.12354 10.6768 2.33216 10.5 2.57654 10.5Z" fill="#80B55C" />
-                                <path d="M3.32654 6H8.05366C8.34641 6 8.57654 6.25038 8.55191 6.54213L8.34054 9.04213C8.31866 9.301 8.1021 9.5 7.84229 9.5H2.90985C2.60085 9.5 2.36585 9.22256 2.41666 8.91781L2.83335 6.41781C2.87354 6.17675 3.08216 6 3.32654 6Z" fill="#80B55C" />
-                                <path d="M29.09 9.5H24.1579C23.898 9.5 23.6815 9.301 23.6596 9.04213L23.4483 6.54213C23.4236 6.25044 23.6537 6 23.9465 6H28.6733C28.9178 6 29.1264 6.17669 29.1665 6.41781L29.5832 8.91781C29.634 9.22256 29.399 9.5 29.09 9.5Z" fill="#80B55C" />
-                                <path d="M22.1511 9.5H17.0001C16.724 9.5 16.5001 9.27612 16.5001 9V6.5C16.5001 6.22387 16.724 6 17.0001 6H21.9397C22.1996 6 22.4161 6.199 22.438 6.45788L22.6493 8.95788C22.674 9.24962 22.4438 9.5 22.1511 9.5Z" fill="#80B55C" />
-                                <path d="M16.5002 4.5V2C16.5002 1.72388 16.7241 1.5 17.0002 1.5H21.5594C21.8192 1.5 22.0357 1.699 22.0577 1.95787L22.269 4.45788C22.2937 4.74956 22.0636 5 21.7707 5H17.0002C16.7241 5 16.5002 4.77619 16.5002 4.5Z" fill="#80B55C" />
-                                <path d="M15.0001 5H10.2295C9.93674 5 9.70661 4.74963 9.73124 4.45788L9.94261 1.95787C9.96449 1.699 10.1811 1.5 10.4409 1.5H15.0001C15.2762 1.5 15.5001 1.72388 15.5001 2V4.5C15.5001 4.77619 15.2763 5 15.0001 5Z" fill="#80B55C" />
-                                <path d="M15.5001 6.5V9C15.5001 9.27612 15.2762 9.5 15.0001 9.5H9.849C9.55625 9.5 9.32612 9.24956 9.35075 8.95788L9.56212 6.45788C9.584 6.199 9.80056 6 10.0604 6H15.0001C15.2763 6 15.5001 6.22387 15.5001 6.5Z" fill="#80B55C" />
-                                <path d="M9.67988 10.5H15.0001C15.2763 10.5 15.5001 10.7239 15.5001 11V13.5C15.5001 13.7761 15.2763 14 15.0001 14H9.4685C9.17575 14 8.94563 13.7496 8.97025 13.4579L9.18163 10.9579C9.20357 10.699 9.42007 10.5 9.67988 10.5Z" fill="#80B55C" />
-                                <path d="M15.5001 15.5V18C15.5001 18.2761 15.2763 18.5 15.0001 18.5H9.08801C8.79526 18.5 8.56513 18.2496 8.58976 17.9579L8.80113 15.4579C8.82301 15.199 9.03957 15 9.29938 15H15.0001C15.2763 15 15.5001 15.2239 15.5001 15.5Z" fill="#80B55C" />
-                                <path d="M17.0002 15H22.7006C22.9604 15 23.1769 15.199 23.1988 15.4579L23.4101 17.9579C23.4348 18.2496 23.2047 18.5 22.9119 18.5H17.0002C16.7241 18.5 16.5002 18.2761 16.5002 18V15.5C16.5002 15.2239 16.7241 15 17.0002 15Z" fill="#80B55C" />
-                                <path d="M16.5002 13.5V11C16.5002 10.7239 16.7241 10.5 17.0002 10.5H22.3202C22.58 10.5 22.7965 10.699 22.8184 10.9579L23.0297 13.4579C23.0544 13.7496 22.8243 14 22.5315 14H17.0002C16.7241 14 16.5002 13.7762 16.5002 13.5Z" fill="#80B55C" />
-                                <path d="M24.3269 10.5H29.4233C29.6677 10.5 29.8763 10.6767 29.9165 10.9178L30.3331 13.4178C30.3839 13.7226 30.1488 14 29.8399 14H24.5381C24.2783 14 24.0618 13.801 24.0399 13.5421L23.8286 11.0421C23.804 10.7504 24.0341 10.5 24.3269 10.5Z" fill="#80B55C" />
-                                <path d="M28.4165 1.91781L28.8332 4.41781C28.884 4.72256 28.6489 5 28.34 5H23.7775C23.5177 5 23.3012 4.801 23.2792 4.54212L23.0679 2.04212C23.0432 1.75044 23.2734 1.5 23.5662 1.5H27.9234C28.1677 1.5 28.3763 1.67675 28.4165 1.91781Z" fill="#80B55C" />
-                                <path d="M3.58341 1.91781C3.6236 1.67669 3.83216 1.5 4.0766 1.5H8.43422C8.72697 1.5 8.9571 1.75037 8.93247 2.04212L8.7211 4.54212C8.69922 4.801 8.48266 5 8.22285 5H3.65991C3.35091 5 3.11591 4.72256 3.16672 4.41781L3.58341 1.91781Z" fill="#80B55C" />
-                                <path d="M1.23733 18.1467C1.04689 17.9216 0.965332 17.6262 1.01371 17.3357L1.33333 15.4181C1.37352 15.1769 1.58208 15.0002 1.82652 15.0002H7.29264C7.58539 15.0002 7.81552 15.2507 7.79089 15.5424L7.57952 18.0424C7.55765 18.3012 7.34108 18.5002 7.08127 18.5002H2.00002C1.70564 18.5002 1.42777 18.3714 1.23733 18.1467Z" fill="#80B55C" />
-                                <path d="M30.763 18.1462C30.5726 18.3714 30.2948 18.5002 29.9998 18.5002H24.9186C24.6588 18.5002 24.4423 18.3012 24.4203 18.0424L24.209 15.5424C24.1843 15.2507 24.4145 15.0002 24.7073 15.0002H30.1733C30.4177 15.0002 30.6263 15.1769 30.6665 15.4181L30.9862 17.3362C31.0345 17.6262 30.9534 17.9217 30.763 18.1462Z" fill="#80B55C" />
-                                <path d="M14.0001 25.0002V24.0002C14.0001 23.7241 14.224 23.5002 14.5001 23.5002H12.0001C11.724 23.5002 11.5001 23.7241 11.5001 24.0002V25.0002C11.5001 25.2764 11.724 25.5002 12.0001 25.5002H14.5001C14.224 25.5002 14.0001 25.2764 14.0001 25.0002Z" fill="#039855" />
-                            </svg>
-                        </span>
-                        <span>Nhà máy điện mặt trời</span>
-                    </div>
-                </div>
-            </div>
-            <div class="step-container">
-                <div class="step default "><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/ban-do.png" alt="ban-do"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-500.png" alt="duong-day-500"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-220.png" alt="duong-day-220"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-110.png" alt="duong-day-110"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-500.png" alt="TBA-500"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-220.png" alt="TBA220"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-110.png" alt="tba-110"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/nha-may-thuy-dien.png" alt="nha-may-dien"></div>
-                <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/nha-may-dien-mat-troi.png" alt="nha-may-dien"></div>
             </div>
         </div>
     </section>
@@ -359,9 +321,17 @@ get_header();
             })
             $('.item .headding').on('click', function() {
                 $('.item ').removeClass('active');
+                $('.info').removeClass('other_info');
                 $(this).closest('.item').toggleClass('active');
             })
-        })
+
+            $('.other_project').on('click', function(e) {
+                $('.info').removeClass('other_info');
+                $(this).closest('.info').addClass('other_info');
+            });
+
+
+        });
 
         function myMap() {
 
@@ -646,18 +616,25 @@ get_header();
             // }
 
         }
-        $('#btn-close').on('click', function() {
-            console.log('red');
-            $('.gm-ui-hover-effect').click();
-        })
+        // $('#btn-close').on('click', function() {
+        //     console.log('red');
+        //     $('.gm-ui-hover-effect').click();
+        // })
     </script>
 
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1PQnohUd35MSfol6G-6D9m6i6R422_Jg&callback=myMap">
-
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ 9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBfymDYGubxIE4s-6sz3wYWxzsRcndH3Y&callback=myMap">
     </script>
     <style>
+        /* map luoi dien  */
+        .wrap_map-luoi-dien .title {
+            width: 100%;
+            text-align: center;
+            margin-top: 77px;
+            margin-bottom: 35px;
+        }
+
+
         .location-info-row p {
             margin-bottom: 0;
         }
@@ -687,6 +664,11 @@ get_header();
             right: 0 !important;
         }
 
+
+
+
+
+        /* popup map */
         .popup-modal {
             display: none;
             position: absolute;
@@ -697,6 +679,12 @@ get_header();
             background: #fff;
             padding: 20px 30px;
             min-width: 386px;
+            display: block;
+            overflow-y: scroll;
+        }
+
+        .popup-modal::-webkit-scrollbar {
+            width: 1px;
         }
 
         .popup-modal.active {
@@ -736,6 +724,7 @@ get_header();
             border-radius: 100px;
             display: flex;
             justify-content: center;
+            padding: 3px;
         }
 
         .popup-modal .content .item .headding .icon svg {
@@ -764,14 +753,35 @@ get_header();
             transform: rotate(0deg);
         }
 
-        .popup-modal .content .item .info ul {
+        .popup-modal .content .item .info {
             list-style-type: disc;
-            padding-left: 25px;
             display: none;
         }
 
-        .popup-modal .content .item.active .info ul {
+        .popup-modal .content .item.active .info {
             display: block;
+        }
+
+
+        .popup-modal .content .item .info ul {
+            max-height: 130px;
+            overflow: hidden;
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+
+        .popup-modal .content .item.active .info.other_info ul {
+            max-height: unset;
+            overflow-y: scroll;
+            padding-left: 25px;
+        }
+
+        .popup-modal .content .item .info.other_info ul::-webkit-scrollbar {
+            width: 1px;
+        }
+
+        .popup-modal .content .item .info.other_info .other_project {
+            display: none;
         }
 
         .popup-modal .content .item .info li {
@@ -781,7 +791,18 @@ get_header();
             font-size: 16px;
             line-height: 160%;
             letter-spacing: 0.01em;
+            list-style-type: disc;
             color: #141518;
+        }
+
+        .popup-modal .content .item .info .other_project {
+            margin-top: 10px;
+            display: flex;
+            column-gap: 4px;
+        }
+
+        .popup-modal .content .item .info .other_project .title {
+            color: #DAA622;
         }
     </style>
 </div>
