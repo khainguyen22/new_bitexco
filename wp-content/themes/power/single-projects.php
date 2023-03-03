@@ -162,7 +162,7 @@ $other_info = get_field('other_info_post_project');
                                 <div class="vrmedia-gallery">
                                     <ul class="gallery-project">
                                         <?php if (get_field("gallery")) : foreach (get_field("gallery") as $key => $value) : ?>
-                                                <li data-fancybox="gallery" data-src="<?php echo $value ?>" data-thumb="<?php echo $value ?>" data-src="<?php echo $value ?>">
+                                                <li data-thumb="<?php echo $value ?>">
                                                     <img src="<?php echo $value ?>">
                                                 </li>
                                         <?php endforeach;
@@ -301,35 +301,4 @@ $other_info = get_field('other_info_post_project');
         <?php endwhile; ?>
     <?php endif; ?>
 </section>
-
-<input type="file" id="file-input" accept=".xlsx">
-<table class="table table-striped" id="excel-table">
-    <!-- table rows and columns will be added here dynamically -->
-</table>
-<script>
-
-    document.ready(function($) {
-        $(".gallery-project").lightSlider({
-            gallery: true,
-            item: 1,
-            loop: true,
-            thumbItem: 10,
-            thumbMargin: 12,
-            share: true,
-            download: true,
-            zoom: true,
-            autoplayControls: true,
-            autoplay: true,
-            videojs: true,
-            controls: true,
-            responsive: [{
-                breakpoint: 767,
-                settings: {
-                    thumbItem: 5,
-                    thumbMargin: 6,
-                }
-            }, ]
-        });
-    })
-</script>
 <?php get_footer(); ?>

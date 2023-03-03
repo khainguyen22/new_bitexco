@@ -473,6 +473,39 @@ jQuery(document).ready(function ($) {
 		]
 
 	});
+
+	// $('.gallery-project').lightSlider({
+	// 	gallery: true,
+	// 	item: 1,
+	// 	loop: true,
+	// 	slideMargin: 0,
+	// 	thumbItem: 9
+	// });
+	$(".gallery-project").lightSlider(
+		{
+			gallery: true,
+			item: 1,
+			loop: true,
+			thumbItem: 10,
+			thumbMargin: 12,
+			share: true,
+			download: true,
+			zoom: true,
+			autoplayControls: true,
+			autoplay: true,
+			videojs: true,
+			controls: true,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						thumbItem: 5,
+						thumbMargin: 6,
+					}
+				},
+			]
+		});
+	// scroll animation counter up
 	var a = 0;
 	$(window).scroll(function () {
 		var oTop = $(".count").offset().top - window.innerHeight;
