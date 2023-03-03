@@ -1521,6 +1521,8 @@ li[data-value=mien-nam] {
   color: #fff;
   z-index: 2;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .banner .container .content span.divider {
   width: 32px;
@@ -10902,7 +10904,6 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   background: linear-gradient(0deg, rgba(125, 125, 163, 0.81) 28.83%, rgba(13, 13, 14, 0) 100%);
 }
 .bitxeco-brand-page section.bitexco-brand .container .content {
-  max-width: 631px;
   width: 100%;
 }
 .bitxeco-brand-page section.bitexco-brand .container .content h3 {
