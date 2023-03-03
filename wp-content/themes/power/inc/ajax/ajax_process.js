@@ -119,8 +119,8 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".tin-tuc-thuy-dien .lists-post .page-numbers", (e) => {
 
         e.preventDefault();
-        
-		$('html').scrollTop(200);
+
+		$('html').scrollTop(800);
 
         var paged = '';
 
@@ -747,7 +747,7 @@ jQuery(document).ready(function ($) {
     $("body").on("click", ".du-an .page-numbers", (e) => {
 
         e.preventDefault();
-        $('html').scrollTop(200)
+        $('html').scrollTop(640)
 
         var paged = '';
 

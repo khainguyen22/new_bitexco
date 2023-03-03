@@ -449,10 +449,6 @@ get_header();
 
             let locationInfo = '';
 
-
-
-
-
             <?php if ($query->have_posts()) : ?>
 
                 <?php while ($query->have_posts()) : $query->the_post() ?>
@@ -622,8 +618,15 @@ get_header();
         // })
     </script>
 
+<<<<<<< HEAD
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ 9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBfymDYGubxIE4s-6sz3wYWxzsRcndH3Y&callback=myMap">
+=======
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM&callback=initMap"> -->
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBfymDYGubxIE4s-6sz3wYWxzsRcndH3Y&callback=myMap">
+
+>>>>>>> 799ca7c (thong tin bao chi chi tiet)
     </script>
     <style>
         /* map luoi dien  */
