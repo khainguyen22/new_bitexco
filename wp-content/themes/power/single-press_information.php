@@ -95,41 +95,8 @@ get_header();
                             </div>
                         </div>
                         <div class="divider-bottom"></div>
-                        <?php
-                        // $comments = get_comments(array('post_id' => get_the_ID()));
-                        // // print_r($comments);
-                        // $comment_ids = array();
-                        // foreach ($comments as $comment) :
-                        //     $comment_ids[] = $comment->comment_ID;
-                        // endforeach;
-                        // print_r($comment_ids);
-                        
-                        // echo $comments;
-
-                        // echo "<pre>";
-                        // print_r(wp_get_current_user()->data);
-                        // echo get_site_url() . '/wp-content/uploads/2023/03/Frame-427320429.png';
-                        // die;
-                        ?>
                         <?php comments_template(); ?>
-                        <?php
-                            $args = array(
-                                'prev_text'    => sprintf('<i></i> %1$s', __('
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 5L9.66939 11.2191C9.2842 11.6684 9.2842 12.3316 9.66939 12.7809L15 19" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round"></path>
-                                </svg>
-                                <span data-paged=' . $paged . '>Trước</span>
-                        ', POWER)),
-                    'next_text'    => sprintf('%1$s <i></i>', __('<span data-paged=' . $paged . '>Sau</span>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 19L14.3306 12.7809C14.7158 12.3316 14.7158 11.6684 14.3306 11.2191L9 5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round"></path>
-                            </svg>
-                        ', POWER)),
-                                );
-                        ?>
-                        <div class="pagination">
-                            <?php paginate_comments_links($args); ?>
-                        </div>
+                        
                         <a class="back" href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                                 <path d="M7.33336 7.33203L4.31487 10.3505C3.95689 10.7085 3.95689 11.2889 4.31487 11.6469L7.33336 14.6654M4.58336 10.9987L17.4167 10.9987" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />

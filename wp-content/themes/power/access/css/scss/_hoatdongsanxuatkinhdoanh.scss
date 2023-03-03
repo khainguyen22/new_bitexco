@@ -254,7 +254,8 @@
                             display: flex;
                             justify-content: space-between;
 
-                            h6 {
+                            h6,
+                            h6 a {
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                                 display: -webkit-box;
@@ -557,12 +558,15 @@
                             font-weight: 300;
                             line-height: 1.6;
                             color: #7E8189;
-                            width: 86%;
+                            width: 100%;
+                            z-index: 1;
                         }
 
                         svg {
                             width: 19px;
                             height: 22px;
+                            position: absolute;
+                            right: 10px;
                         }
 
                         @media(max-width:1200px) {

@@ -45,7 +45,7 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Công ty: </strong>
+                                            <strong><?php _e('Công ty: ') ?></strong>
                                             <?php if (get_the_terms(get_the_ID(), 'project_company')) : ?>
                                                 <?php foreach (get_the_terms(get_the_ID(), 'project_company') as $key => $value) : ?>
                                                     <span> <?php echo paint_if_exist($value->name) ?> </span>
@@ -61,7 +61,7 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Loại hình: </strong>
+                                            <strong> <?php _e('Loại hình: ') ?></strong>
                                             <?php if (get_the_terms(get_the_ID(), 'project_type')) : ?>
                                                 <?php foreach (get_the_terms(get_the_ID(), 'project_type') as $key => $value) : ?>
 
@@ -85,7 +85,7 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Thời điểm COD: </strong>
+                                            <strong> <?php _e('Thời điểm COD:  ') ?></strong>
                                             <span> <?php echo paint_if_exist(get_field("date")); ?></span>
                                         </div>
                                     </li>
@@ -99,7 +99,7 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Tình trạng:</strong>
+                                            <strong> <?php _e('Tình trạng: ') ?></strong>
                                             <?php if (get_the_terms(get_the_ID(), 'type_projects')) : ?>
                                                 <?php foreach (get_the_terms(get_the_ID(), 'type_projects') as $key => $value) : ?>
                                                     <span> <?php echo ($key >= 1) ? ", " : "" ?> </span>
@@ -116,7 +116,7 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Công suất lắp máy: </strong>
+                                            <strong> <?php _e('Công suất lắp máy: ') ?></strong>
                                             <span> <?php echo paint_if_exist(get_field("wattage")); ?></span>
                                         </div>
                                     </li>
@@ -130,7 +130,7 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Sản lượng thiết kế: </strong>
+                                            <strong> <?php _e('Sản lượng thiết kế: ') ?></strong>
                                             <span><?php echo paint_if_exist(get_field("quanlity")); ?></span>
                                         </div>
                                     </li>
@@ -141,7 +141,7 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Địa chỉ: </strong>
+                                            <strong> <?php _e('Địa chỉ: ') ?></strong>
                                             <span> <?php echo paint_if_exist(get_field("location")); ?> </span>
                                         </div>
                                     </li>
@@ -152,8 +152,8 @@ $other_info = get_field('other_info_post_project');
                                             </svg>
                                         </span>
                                         <div>
-                                            <strong>Liên hệ: </strong>
-                                            <span> <a href="tel:+<?php echo paint_if_exist(get_field("phone")); ?>"><?php echo paint_if_exist(get_field("phone")); ?></a></span>
+                                            <strong> <?php _e('Liên hệ: ') ?></strong>
+                                            <span> <a href="tel:<?php echo formatPhoneNumber(get_field("phone")); ?>"><?php echo formatPhoneNumber(get_field("phone")); ?></a></span>
                                         </div>
                                     </li>
                                 </ul>
@@ -178,7 +178,7 @@ $other_info = get_field('other_info_post_project');
                             <div class="container">
                                 <div class="text-center">
                                     <span class="line-headding"></span>
-                                    <h3>Giới thiệu</h3>
+                                    <h3> <?php _e('Giới thiệu ') ?></h3>
                                 </div>
                                 <?php
                                 foreach (get_field('introduce') as $key => $value) : ?>
@@ -195,7 +195,7 @@ $other_info = get_field('other_info_post_project');
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M4.33336 1.33398L1.31487 4.35247C0.956891 4.71045 0.956892 5.29085 1.31487 5.64883L4.33336 8.66732M1.58336 5.00066L14.4167 5.00066" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
                                         </svg>
-                                        <span>Quay lại</span>
+                                        <span><?php _e('Quay lại') ?></span>
                                     </a>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@ $other_info = get_field('other_info_post_project');
                     <?php endif; ?>
                     <section class="slider-card-wrapper">
                         <div class="container">
-                            <h4>Dự án khác</h4>
+                            <h4><?php _e('Dự án khác') ?></h4>
                             <div class="slider-cards">
                                 <?php
                                 $args = array(
@@ -263,19 +263,25 @@ $other_info = get_field('other_info_post_project');
                                                             <path d="M8.58301 13.3324H9.41634" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                             <path d="M12.75 13.3324H13.5833" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
-                                                        <span><?php echo paint_if_exist(get_field('date')) ?></span>
+                                                        <span>
+                                                            <?php echo paint_if_exist(get_field('date')) ?>
+                                                        </span>
                                                     </li>
-                                                    <li class="size-text-16 content d-flex ">
-                                                        <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M14.3125 8.08333C14.3125 10.3393 13.0177 12.7061 11.4926 14.5435C10.7367 15.4542 9.94269 16.2122 9.26237 16.7378C8.92169 17.001 8.61777 17.1996 8.36822 17.3298C8.10213 17.4687 7.95379 17.5 7.90625 17.5V18.5C8.20403 18.5 8.53048 18.3732 8.83093 18.2163C9.1479 18.0509 9.50224 17.8162 9.87377 17.5291C10.6179 16.9542 11.464 16.1436 12.2621 15.1822C13.8448 13.2754 15.3125 10.6839 15.3125 8.08333H14.3125ZM7.90625 17.5C7.85872 17.5 7.71037 17.4687 7.44428 17.3298C7.19473 17.1996 6.89081 17.001 6.55013 16.7378C5.86981 16.2122 5.07577 15.4542 4.31989 14.5435C2.7948 12.7061 1.5 10.3393 1.5 8.08333H0.5C0.5 10.6839 1.9677 13.2754 3.55042 15.1822C4.34845 16.1436 5.19464 16.9542 5.93873 17.5291C6.31026 17.8162 6.6646 18.0509 6.98157 18.2163C7.28202 18.3732 7.60847 18.5 7.90625 18.5V17.5ZM1.5 8.08333C1.5 4.43545 4.38003 1.5 7.90625 1.5V0.5C3.80403 0.5 0.5 3.90718 0.5 8.08333H1.5ZM7.90625 1.5C11.4325 1.5 14.3125 4.43545 14.3125 8.08333H15.3125C15.3125 3.90718 12.0085 0.5 7.90625 0.5V1.5Z" fill="#7E8189" />
-                                                            <circle r="2.65625" transform="matrix(-1 0 0 1 7.90625 7.90625)" stroke="#7E8189" />
-                                                        </svg>
-                                                        <?php if (get_the_terms(get_the_ID(), 'project_location')) : ?>
-                                                            <?php foreach (get_the_terms(get_the_ID(), 'project_location') as $key => $value) : ?>
-                                                                <span> <?php echo paint_if_exist($value->name) ?> </span>
-                                                            <?php endforeach; ?>
-                                                        <?php endif; ?>
-                                                    </li>
+                                                    <?php if (get_field('address', get_the_ID())) : ?>
+                                                        <div class="size-text-16 content d-flex">
+                                                            <div class="icon_svg">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+                                                                    <path d="M16.8125 8.08333C16.8125 10.3393 15.5177 12.7061 13.9926 14.5435C13.2367 15.4542 12.4427 16.2122 11.7624 16.7378C11.4217 17.001 11.1178 17.1996 10.8682 17.3298C10.6021 17.4687 10.4538 17.5 10.4062 17.5V18.5C10.704 18.5 11.0305 18.3732 11.3309 18.2163C11.6479 18.0509 12.0022 17.8162 12.3738 17.5291C13.1179 16.9542 13.964 16.1436 14.7621 15.1822C16.3448 13.2754 17.8125 10.6839 17.8125 8.08333H16.8125ZM10.4062 17.5C10.3587 17.5 10.2104 17.4687 9.94428 17.3298C9.69473 17.1996 9.39081 17.001 9.05013 16.7378C8.36981 16.2122 7.57577 15.4542 6.81989 14.5435C5.2948 12.7061 4 10.3393 4 8.08333H3C3 10.6839 4.4677 13.2754 6.05042 15.1822C6.84845 16.1436 7.69464 16.9542 8.43873 17.5291C8.81026 17.8162 9.1646 18.0509 9.48157 18.2163C9.78202 18.3732 10.1085 18.5 10.4062 18.5V17.5ZM4 8.08333C4 4.43545 6.88003 1.5 10.4062 1.5V0.5C6.30403 0.5 3 3.90718 3 8.08333H4ZM10.4062 1.5C13.9325 1.5 16.8125 4.43545 16.8125 8.08333H17.8125C17.8125 3.90718 14.5085 0.5 10.4062 0.5V1.5Z" fill="#7E8189"></path>
+                                                                    <circle r="2.65625" transform="matrix(-1 0 0 1 10.4062 7.90625)" stroke="#7E8189"></circle>
+                                                                </svg>
+                                                            </div>
+                                                            <div>
+                                                                <a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
+                                                                    <p><?php echo get_field('address', get_the_ID()) ?></p>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    <?php endif; ?>
                                                 </ul>
                                             </div>
                                         </div>
@@ -284,18 +290,18 @@ $other_info = get_field('other_info_post_project');
                             </div>
                         </div>
                     </section>
-                    <section class="other-information">
-                        <div class="other-container">
-                            <div class="other-content hover-zoom">
-                                <?php
-                                if ($other_info) : ?>
+                    <?php
+                    if ($other_info) : ?>
+                        <section class="other-information">
+                            <div class="other-container">
+                                <div class="other-content hover-zoom">
                                     <?php foreach ($other_info as $value) : ?>
                                         <a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
                                     <?php endforeach; ?>
-                                <?php endif; ?>
+                                </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
+                    <?php endif; ?>
                 </div>
             </div>
         <?php endwhile; ?>

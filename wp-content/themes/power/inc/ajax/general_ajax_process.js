@@ -340,7 +340,5 @@ jQuery(document).ready(function($) {
 			generalAjax(dataObject, '.infomation-list.tender-infor .list', success)
 		})
 	/** End Tender Notice */
-
-
 	
 })
