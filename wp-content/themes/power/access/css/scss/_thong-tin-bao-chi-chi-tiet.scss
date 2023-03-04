@@ -144,3 +144,24 @@ section.article .article-container .comment-text p {
 .details_news_page #comments {
 	margin-top: 40px;
 }
+
+.open-no-comment {
+	display: block;
+	margin-bottom: 100px;
+}
+
+.comment-list + .back {
+
+}
+
+.single-press_information {
+	.details_news_page {
+		#breadcrumbs-content {
+			top: 58px;
+		}
+	}
+}
+
+.single-press_information .details_news_page section.article .article-container article .title h3 {
+	margin-top: 78px;
+}
