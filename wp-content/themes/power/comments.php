@@ -186,6 +186,7 @@ if ( post_password_required() ) { ?>
 <?php else : // This is displayed if there are no comments so far. ?>
 	<?php if ( comments_open() ) : ?>
 		<!-- If comments are open, but there are no comments. -->
+		<span class="open-no-comment"></span>
 	<?php else : // Comments are closed. ?>
 		<!-- If comments are closed. -->
 		<p class="nocomments"><?php _e( 'Comments are closed.' ); ?></p>
