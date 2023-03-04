@@ -60,13 +60,15 @@ section.article .article-container .comment-text p {
 .comment-status {
 	gap: 40px;
 	h5 {
-		font-family: 'Public Sans';
-		font-style: normal;
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 160%;
-		letter-spacing: 0.01em;
-		color: #141518;
+		a {
+			font-family: 'Public Sans';
+			font-style: normal;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 160%;
+			letter-spacing: 0.01em;
+			color: #141518;
+		}
 	}
 	div {
 		position: relative;
@@ -95,4 +97,50 @@ section.article .article-container .comment-text p {
 				transition: all 1s;
 		}
 	}
+}
+
+.article-container figure {
+	width: 100% !important;
+	margin-top: 40px;
+	figcaption {
+		margin-top: 10px;
+		font-family: 'Public Sans';
+		font-style: italic;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 160%;
+		letter-spacing: 0.01em;
+		color: #141518;
+		text-align: center;
+	}
+}
+
+.bitexco-info {
+	margin-top: 44px;
+}
+
+.details_news_page .article-container .bitexco-info-contact {
+	margin-top: 40px;	
+	position: relative;
+	padding-left: 17px;
+	&::before {
+		content: "";
+    width: 2px;
+    background-color: #DAA622;
+    display: block;
+    height: -webkit-fill-available;
+    position: absolute;
+    left: 0;
+	}
+	p {
+		margin-top: 4px;
+		margin-bottom: 0;
+	}
+	h6 {
+		margin-top: 16px;
+	}
+}
+
+.details_news_page #comments {
+	margin-top: 40px;
 }

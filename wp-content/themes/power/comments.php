@@ -86,14 +86,16 @@ if ( post_password_required() ) { ?>
 			//Cancel Reply Text
 			'cancel_reply_link' => __( $comment_cancel ),
 			// Redefine your own textarea (the comment body).
-			'comment_field' => '<p class="comment-form-comment"><br /><textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_body .'"></textarea></p><div class="current-user"><svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+			'comment_field' => '<p class="comment-form-comment"><textarea id="comment" name="comment" aria-required="true" placeholder="' . $comment_body .'"></textarea></p><div class="current-user"><svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<rect width="48" height="48" rx="24" transform="matrix(-1 0 0 1 48.5 0)" fill="#F6F8FC"/>
 				<circle cx="24.5" cy="19" r="4" stroke="#2B3F6C" stroke-width="1.5"/>
 				<path d="M31.5 28.9347C31.5 28.0743 30.9591 27.3068 30.1489 27.0175V27.0175C26.496 25.7128 22.504 25.7128 18.8511 27.0175V27.0175C18.0409 27.3068 17.5 28.0743 17.5 28.9347V30.2502C17.5 31.4376 18.5517 32.3498 19.7272 32.1818L20.6816 32.0455C23.2144 31.6837 25.7856 31.6837 28.3184 32.0455L29.2728 32.1818C30.4483 32.3498 31.5 31.4376 31.5 30.2502V28.9347Z" stroke="#2B3F6C" stroke-width="1.5"/>
 				</svg>
-				<div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lfqq80kAAAAAABWxTKrLkiQrzk_Ud4_k9IO_XmP"></div>
 				<span class="author">'. $current_user .' <span style="font-weight: 300;">(Bạn)</span></span>
-				</div>',
+				
+				</div>
+				<div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lfqq80kAAAAAABWxTKrLkiQrzk_Ud4_k9IO_XmP"></div>
+				',
 			//Message Before Comment
 			'comment_notes_before' => __( $comment_before),
 			// Remove "Text or HTML to be displayed after the set of comment fields".

@@ -353,6 +353,12 @@ function my_acf_op_init()
             'menu_title'  => __('Thông tin báo chí'),
             'parent_slug' => $parent['menu_slug'],
         ));
+
+        $child = acf_add_options_page(array(
+            'page_title'  => __('Thông tin báo chí chi tiết'),
+            'menu_title'  => __('Thông tin báo chí chi tiết'),
+            'parent_slug' => $parent['menu_slug'],
+        ));
         // Add sub page.
 
         $child = acf_add_options_page(array(
