@@ -94,7 +94,7 @@ if ( post_password_required() ) { ?>
 				<span class="author">'. $current_user .' <span style="font-weight: 300;">(Bạn)</span></span>
 				
 				</div>
-				<div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lfqq80kAAAAAABWxTKrLkiQrzk_Ud4_k9IO_XmP"></div>
+				<div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lf7JNAkAAAAABXY_GMLlc1_N9HMH6fYJVcxLyf1"></div>
 				',
 			//Message Before Comment
 			'comment_notes_before' => __( $comment_before),
