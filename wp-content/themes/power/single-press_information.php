@@ -9,12 +9,11 @@ get_header();
     <div class="social-medias">
         <div class="news-detail-container">
             <div class="medias">
-
-                <div class="share">
+                    <div class="share">
                     <span>Chia sẻ</span>
                 </div>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <?php if (get_field('social-medias')) : foreach (get_field('social-medias') as $value) : ?>
+                        <?php if (get_field('social-medias', 'option')) : foreach (get_field('social-medias', 'option') as $value) : ?>
                                 <div class="item my-3">
                                     <a href="<?php echo $value['link'] ?>"><img src="<?php echo $value['item'] ?>" alt="icon"></a>
                                 </div>
@@ -60,16 +59,22 @@ get_header();
                         <div class="divider"></div>
                         <div class="excerpt"><?php the_excerpt(); ?></div>
                         <div><?php the_content(); ?></div>
-                        <div class="source">
-                            <span>Nguồn: Bitexco Power</span>
-                        </div>
-                        <div class="tag">
+                        
+                        <div class="tag bitexco-info">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                 <path d="M1.66797 2.49935C1.66797 2.03911 2.04106 1.66602 2.5013 1.66602H9.16797C9.38898 1.66602 9.60094 1.75381 9.75722 1.91009L18.0906 10.2434C18.416 10.5689 18.416 11.0965 18.0906 11.4219L11.4239 18.0886C11.0985 18.414 10.5708 18.414 10.2454 18.0886L1.91205 9.75527C1.75577 9.59899 1.66797 9.38703 1.66797 9.16602V2.49935ZM3.33464 3.33268V8.82084L10.8346 16.3208L16.3228 10.8327L8.82279 3.33268H3.33464Z" fill="#7E8189" />
                                 <path d="M7.5013 6.24935C7.5013 6.9397 6.94166 7.49935 6.2513 7.49935C5.56095 7.49935 5.0013 6.9397 5.0013 6.24935C5.0013 5.55899 5.56095 4.99935 6.2513 4.99935C6.94166 4.99935 7.5013 5.55899 7.5013 6.24935Z" fill="#7E8189" />
                             </svg>
                             <?php echo get_the_tag_list('', ' , ') ?>
                         </div>
+                        <div class="bitexco-info-contact">
+                            <?php $contact_information = get_field('contact_information', 'option')?>
+                            <h5><?php _e('Thông tin liên hệ')?></h5>
+                            <h6><?php _e('Ban truyền thông Bitexco Power')?></h6>
+                            <p><?php _e('Điện thoại: ' . $contact_information['phone_number'])?></p>
+                            <p><?php _e('Email: ' . $contact_information['email'])?></p>
+                        </div>
+
                         <div class="attach">
                             <div class="title">
                                 <h5><?php _e('Tài liệu đính kèm');?></h5>
@@ -125,6 +130,7 @@ get_header();
 
                             $post_related = new WP_Query($post_related);
                             ?>
+                            
                             <?php if ($post_related->have_posts()) : ?>
                                 <?php while ($post_related->have_posts()) : $post_related->the_post();
                                     $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>

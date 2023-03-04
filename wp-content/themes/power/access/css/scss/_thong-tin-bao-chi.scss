@@ -21,8 +21,9 @@
 	position: relative;
 }
 
-.comment-form-comment {
-	margin: 0;
+section.article .article-container article .comment-form-comment {
+	margin: 0 ;
+	margin-top: 20px;
 	textarea#comment {
 		width: 100%;
 		padding: 11px 16px;
@@ -38,7 +39,7 @@
     display: inline-block;
     position: absolute;
     right: 0;
-    top: 100%;
+    top: calc(100% + 12px);
 		.submit {
 			padding: 14px 32px;
 			width: 92px;
@@ -62,8 +63,13 @@
 .current-user {
 	position: absolute;
 	left: 0;
-	top: 100%;
+	top: calc(100% + 12px);
 	display: flex;
 	align-items: center;
 	gap: 12px;
+}
+
+.g-recaptcha.brochure__form__captcha {
+	position: absolute;
+	right: 110px;
 }
