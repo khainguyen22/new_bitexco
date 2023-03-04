@@ -316,24 +316,34 @@ get_header();
             });
             $('.icon-close').on('click', function() {
                 $('.popup-data').removeClass('active');
+                $('.item ').removeClass('active');
                 $('.popup-data .popup-modal').removeClass('active');
             });
+
             $('.item .headding').on('click', function() {
-                $('.item ').removeClass('active');
-                $('.info').removeClass('other_info');
-                $(this).closest('.item').toggleClass('active');
+                $('.item, .info').removeClass('active other_info');
+                $(this).closest('.item').addClass('active');
+            }).filter('.acitve').on('click', function() {
+                $(this).closest('.item').removeClass('active');
             });
             $('.other_project').on('click', function(e) {
                 $('.info').removeClass('other_info');
                 $(this).closest('.info').addClass('other_info');
+            });
+
+            // closed popup when you click outside 
+            const $myElement = $('.popup-data');
+            $(document).on('click', (event) => {
+                if (!$myElement.is(event.target) && !$myElement.has(event.target).length) {
+                    $('.popup-data').removeClass('active');
+                    $myElement.find('.active').removeClass('active');
+                }
             });
         });
 
         function myMap() {
 
             var styledMapType = new google.maps.StyledMapType([{}]);
-
-
 
             var mapProp = {
 
@@ -773,9 +783,7 @@ get_header();
             display: none;
         }
 
-        .popup-modal .content .item .info.other_info .other_project:hover {
-            cursor: pointer;
-        }
+
 
         .popup-modal .content .item .info li {
             margin-top: 16px;
@@ -796,6 +804,10 @@ get_header();
 
         .popup-modal .content .item .info .other_project .title {
             color: #DAA622;
+        }
+
+        .popup-modal .content .item .info .other_project:hover {
+            cursor: pointer;
         }
     </style>
 </div>

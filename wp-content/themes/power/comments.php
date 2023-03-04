@@ -94,7 +94,7 @@ if ( post_password_required() ) { ?>
 				<span class="author">'. $current_user .' <span style="font-weight: 300;">(Bạn)</span></span>
 				
 				</div>
-				<div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lfqq80kAAAAAABWxTKrLkiQrzk_Ud4_k9IO_XmP"></div>
+				<div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lf7JNAkAAAAABXY_GMLlc1_N9HMH6fYJVcxLyf1"></div>
 				',
 			//Message Before Comment
 			'comment_notes_before' => __( $comment_before),
@@ -186,6 +186,7 @@ if ( post_password_required() ) { ?>
 <?php else : // This is displayed if there are no comments so far. ?>
 	<?php if ( comments_open() ) : ?>
 		<!-- If comments are open, but there are no comments. -->
+		<span class="open-no-comment"></span>
 	<?php else : // Comments are closed. ?>
 		<!-- If comments are closed. -->
 		<p class="nocomments"><?php _e( 'Comments are closed.' ); ?></p>

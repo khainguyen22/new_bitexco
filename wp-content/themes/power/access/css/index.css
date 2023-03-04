@@ -889,11 +889,13 @@ span.tag.tag-dropdown::before {
 .custom-post .image {
   overflow: hidden;
   position: relative;
-  min-height: 255px;
   max-width: 400px;
   min-width: 400px;
-  height: auto;
+  height: 255px;
   max-height: unset;
+  background-image: url(../images/placeholder.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .custom-post .image img {
   transition: all 1s ease-in;
@@ -2911,7 +2913,6 @@ h5 {
 .du-an .filter-post-section .filter-post-container .small-form-filter .form .form-filter-area,
 .du-an .filter-post-section .filter-post-container .small-form-filter .form .form-filter-company {
   max-height: 48px;
-  width: calc(20% - 21.8px);
 }
 @media (max-width: 1133px) {
   .du-an .filter-post-section .filter-post-container .small-form-filter .form .form-filter-type,
@@ -2974,6 +2975,12 @@ h5 {
 .du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-time,
 .du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-location {
   align-items: start;
+}
+.du-an:not(.cac-nha-may-thuy-dien) .form-filter-search,
+.du-an:not(.cac-nha-may-thuy-dien) .form-filter-type,
+.du-an:not(.cac-nha-may-thuy-dien) .form-filter-area,
+.du-an:not(.cac-nha-may-thuy-dien) .form-filter-company {
+  width: calc(20% - 21.8px);
 }
 
 .filter-content .filter-item {
@@ -4545,7 +4552,7 @@ header .search .search-bar .search-input {
   padding: 15px 0;
   padding-left: 44px;
   letter-spacing: 0.01em;
-  width: 90%;
+  width: 100%;
   font-family: var(--primary-font);
 }
 header .search .search-bar .btn-submit-icon {
@@ -5363,11 +5370,9 @@ header .search .search-bar:hover::after {
   }
 }
 .tin-tuc .lists-post .list .custom-post img {
-  min-height: 255px;
   max-width: 400px;
-  max-height: 255px;
+  height: 297px;
   min-width: 400px;
-  height: auto;
 }
 .tin-tuc .lists-post .list .custom-post .content h6 {
   margin-top: 10px;
@@ -14078,27 +14083,21 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 150px 0 48px;
 }
 
 .no-item-found {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  padding: 150px 0 70px;
 }
-.no-item-found h3 {
-  font-family: "Manrope";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 120%;
+.no-item-found p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
   color: #141518;
-  text-align: center;
-}
-@media (max-width: 767px) {
-  .no-item-found h3 {
-    font-size: 24px;
-  }
 }
 
 .loader {
@@ -17018,4 +17017,17 @@ section.article .article-container .comment-text p {
 
 .details_news_page #comments {
   margin-top: 40px;
+}
+
+.open-no-comment {
+  display: block;
+  margin-bottom: 100px;
+}
+
+.single-press_information .details_news_page #breadcrumbs-content {
+  top: 58px;
+}
+
+.single-press_information .details_news_page section.article .article-container article .title h3 {
+  margin-top: 78px;
 }/*# sourceMappingURL=index.css.map */
