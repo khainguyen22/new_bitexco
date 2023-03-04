@@ -141,14 +141,14 @@ get_header();
                     <h3><?php echo isset($thanh_tuu_dat_duoc['title']) ? $thanh_tuu_dat_duoc['title'] : ""; ?></h3>
                     <p class="size-text-16"><?php echo isset($thanh_tuu_dat_duoc['description']) ? $thanh_tuu_dat_duoc['description'] : ""; ?></p>
                 </div>
-                <div class="achievement-figures">
+                <div class="achievement-figures" id="wrap_counter">
                     <?php if ($list_thanh_tuu_dat_duoc) : ?>
                         <?php foreach ($list_thanh_tuu_dat_duoc as $key => $value) : ?>
                             <div class="culmulative-output figure">
                                 <img src="<?php echo $value['icon'] ?>" width="80" height="80" alt="<?php echo $value['title'] ?>">
                                 <div class="figure-text count">
                                     <p class="name size-text-16"><?php echo $value['title'] ?></p>
-                                    <h2 class="number counter" data-number="<?php echo $value['info'] ?>">0</h2>
+                                    <h2 class="number counter notranslate" data-number="<?php echo $value['info'] ?>">0</h2>
                                     <p class="unit size-text-16"><?php echo $value['unit'] ?></p>
                                 </div>
                             </div>

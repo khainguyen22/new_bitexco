@@ -98,7 +98,7 @@ get_header();
                     <?php if ($did_it['title']) : ?> <h3><?php echo _e($did_it['title']); ?></h3> <?php endif; ?>
                     <?php if ($did_it['description']) : ?> <p><?php echo _e($did_it['description']); ?></p> <?php endif; ?>
                 </div>
-                <div class="content d-flex flex-wrap row">
+                <div class="content d-flex flex-wrap row" id="wrap_counter">
                     <?php foreach ($did_it['content']['item'] as $key => $value) : ?>
                         <div class="item d-flex">
                             <div class="icon">
@@ -108,7 +108,7 @@ get_header();
                                 <?php if ($value['label']) : ?> <span class="label size-text-14"><?php echo _e($value['label']); ?></span><?php endif; ?>
                                 <div class="count d-flex">
                                     <?php if ($value['number']) : ?>
-                                        <h1 class="number counter"><?php echo number_format($value['number'], 2, ',', '.'); ?></h1>
+                                        <h1 class="number counter notranslate" data-number=" <?php echo $value['number'] ?>">0</h1>
                                     <?php endif; ?>
                                     <?php if ($value['unit']) : ?><span class="unit mx-2"> <?php echo _e($value['unit']); ?></span><?php endif; ?>
                                 </div>

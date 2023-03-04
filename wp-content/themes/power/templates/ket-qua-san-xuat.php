@@ -148,7 +148,6 @@ get_header();
 
 ?>
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
 
 <script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
 
@@ -319,7 +318,7 @@ get_header();
 
                     </div>
 
-                    <div class="row list">
+                    <div class="row list" id="wrap_counter">
 
 
                         <div class="col-12 col-md-4 item">
@@ -336,7 +335,7 @@ get_header();
 
                             </p>
 
-                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData[$day][0][8], 2, ',', '.'); ?>'>0</h1>
+                            <h1 class="info notranslate counter" data-number='<?php echo $rowData[$day][0][8]; ?>'>0</h1>
                             </h1>
                             <p class="unit">Triệu kWh </p>
 
@@ -355,7 +354,7 @@ get_header();
                                 ?>
 
                             </p>
-                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData_month[$month][0][8], 2, ',', '.'); ?>'>0</h1>
+                            <h1 class="info notranslate counter" data-number='<?php echo $rowData_month[$month][0][8]; ?>'>0</h1>
                             </h1>
                             <p class="unit">Triệu kWh </p>
 
@@ -375,7 +374,7 @@ get_header();
 
                             </p>
 
-                            <h1 class="info notranslate counter" data-number='<?php echo number_format($rowData_month[13][0][8], 2, ',', '.'); ?>'>0</h1>
+                            <h1 class="info notranslate counter" data-number='<?php echo $rowData_month[13][0][8]; ?>'>0</h1>
                             </h1>
 
                             <p class="unit">Triệu kWh </p>
@@ -934,9 +933,9 @@ get_header();
 
                     order: 1,
 
-                    pointStyle: 'line',
+                    // pointStyle: 'line',
 
-                    stepped: 'middle',
+                    // stepped: 'middle',
 
                 },
 

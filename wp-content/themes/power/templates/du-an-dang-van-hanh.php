@@ -19,7 +19,6 @@ $navigation = '';
 if ($banner) {
 
 	$navigation = $banner['navigation'];
-
 }
 
 $du_an_dang_van_hanh = get_field('du_an_dang_van_hanh', 'option');
@@ -81,7 +80,6 @@ $filter = new WP_Query($filter);
 $the_query_post = new WP_Query($args);
 
 
-
 get_header();
 
 ?>
@@ -97,7 +95,6 @@ get_header();
 			<div class="content">
 
 				<?php if ($banner['title']) : ?><h3><?php echo  $banner['title']; ?></h3><?php endif; ?>
-
 				<?php if ($banner['description']) : ?><p><?php echo  $banner['description']; ?></p><?php endif; ?>
 
 			</div>
@@ -142,11 +139,11 @@ get_header();
 
 	<section class="filter-post-section">
 
-		<div data-include="small-filter-post" class="filter-post-container">
+		<div   class="filter-post-container">
 
 			<div class="small-form-filter">
 
-				<div class="form">
+				<div class="form form-filter">
 
 					<div class="form-filter-search d-flex">
 
@@ -320,15 +317,15 @@ get_header();
 
 						<div class="filter-item">
 
-							<div class="filter-image hover-zoom-img">
+							<a href="<?php the_permalink() ?>">
+								<div class="filter-image hover-zoom-img">
 
-								<a href="<?php the_permalink() ?>">
 
 									<img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
 
-								</a>
+								</div>
 
-							</div>
+							</a>
 
 							<div class="item-content">
 
@@ -430,35 +427,35 @@ get_header();
 
 								<?php endif; ?>
 
-                                <?php if (get_field('address', get_the_ID())) : ?>
+								<?php if (get_field('address', get_the_ID())) : ?>
 
-                                    <div class="content-location">
+									<div class="content-location">
 
-                                        <div class="icon_svg">
+										<div class="icon_svg">
 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+											<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
 
-                                                <path d="M16.8125 8.08333C16.8125 10.3393 15.5177 12.7061 13.9926 14.5435C13.2367 15.4542 12.4427 16.2122 11.7624 16.7378C11.4217 17.001 11.1178 17.1996 10.8682 17.3298C10.6021 17.4687 10.4538 17.5 10.4062 17.5V18.5C10.704 18.5 11.0305 18.3732 11.3309 18.2163C11.6479 18.0509 12.0022 17.8162 12.3738 17.5291C13.1179 16.9542 13.964 16.1436 14.7621 15.1822C16.3448 13.2754 17.8125 10.6839 17.8125 8.08333H16.8125ZM10.4062 17.5C10.3587 17.5 10.2104 17.4687 9.94428 17.3298C9.69473 17.1996 9.39081 17.001 9.05013 16.7378C8.36981 16.2122 7.57577 15.4542 6.81989 14.5435C5.2948 12.7061 4 10.3393 4 8.08333H3C3 10.6839 4.4677 13.2754 6.05042 15.1822C6.84845 16.1436 7.69464 16.9542 8.43873 17.5291C8.81026 17.8162 9.1646 18.0509 9.48157 18.2163C9.78202 18.3732 10.1085 18.5 10.4062 18.5V17.5ZM4 8.08333C4 4.43545 6.88003 1.5 10.4062 1.5V0.5C6.30403 0.5 3 3.90718 3 8.08333H4ZM10.4062 1.5C13.9325 1.5 16.8125 4.43545 16.8125 8.08333H17.8125C17.8125 3.90718 14.5085 0.5 10.4062 0.5V1.5Z" fill="#7E8189"></path>
+												<path d="M16.8125 8.08333C16.8125 10.3393 15.5177 12.7061 13.9926 14.5435C13.2367 15.4542 12.4427 16.2122 11.7624 16.7378C11.4217 17.001 11.1178 17.1996 10.8682 17.3298C10.6021 17.4687 10.4538 17.5 10.4062 17.5V18.5C10.704 18.5 11.0305 18.3732 11.3309 18.2163C11.6479 18.0509 12.0022 17.8162 12.3738 17.5291C13.1179 16.9542 13.964 16.1436 14.7621 15.1822C16.3448 13.2754 17.8125 10.6839 17.8125 8.08333H16.8125ZM10.4062 17.5C10.3587 17.5 10.2104 17.4687 9.94428 17.3298C9.69473 17.1996 9.39081 17.001 9.05013 16.7378C8.36981 16.2122 7.57577 15.4542 6.81989 14.5435C5.2948 12.7061 4 10.3393 4 8.08333H3C3 10.6839 4.4677 13.2754 6.05042 15.1822C6.84845 16.1436 7.69464 16.9542 8.43873 17.5291C8.81026 17.8162 9.1646 18.0509 9.48157 18.2163C9.78202 18.3732 10.1085 18.5 10.4062 18.5V17.5ZM4 8.08333C4 4.43545 6.88003 1.5 10.4062 1.5V0.5C6.30403 0.5 3 3.90718 3 8.08333H4ZM10.4062 1.5C13.9325 1.5 16.8125 4.43545 16.8125 8.08333H17.8125C17.8125 3.90718 14.5085 0.5 10.4062 0.5V1.5Z" fill="#7E8189"></path>
 
-                                                <circle r="2.65625" transform="matrix(-1 0 0 1 10.4062 7.90625)" stroke="#7E8189"></circle>
+												<circle r="2.65625" transform="matrix(-1 0 0 1 10.4062 7.90625)" stroke="#7E8189"></circle>
 
-                                            </svg>
+											</svg>
 
-                                        </div>
+										</div>
 
-                                        <div>
+										<div>
 
-                                            <a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
+											<a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
 
-                                                <p><?php echo get_field('address', get_the_ID()) ?></p>
+												<p><?php echo get_field('address', get_the_ID()) ?></p>
 
-                                            </a>
+											</a>
 
-                                        </div>
+										</div>
 
-                                    </div>
+									</div>
 
-                                <?php endif; ?>
+								<?php endif; ?>
 
 							</div>
 
@@ -472,7 +469,7 @@ get_header();
 
 			<div class="filter-navigation">
 
-				<nav aria-label="Page navigation example m-auto" class="pagination justify-content-center custom-pagination">
+				<div class="pagination justify-content-center custom-pagination">
 
 					<?php
 
@@ -528,7 +525,7 @@ get_header();
 
 					?>
 
-				</nav>
+				</div>
 
 			</div>
 

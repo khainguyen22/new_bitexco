@@ -714,6 +714,10 @@ header {
       margin: auto;
       margin-top: 155px;
 
+      form {
+        position: relative;
+      }
+
       .search-input {
         border: none;
         outline: none;
@@ -721,7 +725,7 @@ header {
         font-weight: 300;
         line-height: 1.6;
         padding: 15px 0;
-        padding-left: 29px;
+        padding-left: 44px;
         letter-spacing: 0.01em;
         width: 90%;
         font-family: var(--primary-font);
@@ -731,10 +735,29 @@ header {
         border: unset;
         background-color: unset;
         outline: none;
+        position: absolute;
+        width: 100%;
+        max-width: 44px;
+        text-align: left;
+        height: 100%;
 
         &:hover {
           cursor: pointer;
         }
+      }
+
+      .error-message.d-none {
+        opacity: 0;
+        transition: all 1s;
+      }
+
+      .error-message {
+        position: absolute;
+        top: -15px;
+        left: 45px;
+        color: red;
+        opacity: 1;
+        transition: all 1s;
       }
 
       &::after {

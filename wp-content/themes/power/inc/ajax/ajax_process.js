@@ -97,7 +97,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.tin-tuc-thuy-dien .lists-post .list').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.tin-tuc-thuy-dien  .pagination').html(results[1])
 
             },
@@ -120,7 +120,7 @@ jQuery(document).ready(function ($) {
 
         e.preventDefault();
 
-		$('html').scrollTop(800);
+        $('html').scrollTop(800);
 
         var paged = '';
 
@@ -191,7 +191,7 @@ jQuery(document).ready(function ($) {
                 console.log(data);
 
                 $('.tin-tuc-thuy-dien .lists-post .list').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.tin-tuc-thuy-dien .lists-post .pagination').html(results[1])
 
             },
@@ -259,7 +259,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('#images .images-library').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('#images .pagination').html(results[1])
 
             },
@@ -333,9 +333,9 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('#images .images-library').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('#images .pagination').html(results[1])
-                
+
 
             },
 
@@ -400,7 +400,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('#video .video-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('#video .pagination').html(results[1])
 
             },
@@ -475,7 +475,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('#video .video-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('#video .pagination').html(results[1])
 
             },
@@ -546,7 +546,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.company_member .filter-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.company_member .pagination').html(results[1])
 
             },
@@ -625,7 +625,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.company_member .filter-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.company_member .pagination').html(results[1])
 
             },
@@ -724,9 +724,9 @@ jQuery(document).ready(function ($) {
 
                 var results = data.split('|');
 
-                $('.du-an .filter-content').html(results[0])
-
-                $('.du-an .pagination').html(results[1])
+                $('.du-an .filter-content').html(results[0]);
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+                $('.du-an .pagination').html(results[1]);
 
             },
 
@@ -812,13 +812,10 @@ jQuery(document).ready(function ($) {
             },
 
             success(data) {
-
                 var results = data.split('|');
-
-                $('.du-an .filter-content').html(results[0])
-
-                $('.du-an .pagination').html(results[1])
-
+                $('.du-an .filter-content').html(results[0]);
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+                $('.du-an .pagination').html(results[1]);
             },
 
             error(errorThrown) {
@@ -902,7 +899,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.cac-nha-may-thuy-dien .filter-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.cac-nha-may-thuy-dien .pagination').html(results[1])
 
             },
@@ -991,7 +988,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.cac-nha-may-thuy-dien .filter-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.cac-nha-may-thuy-dien .pagination').html(results[1])
 
             },
@@ -1069,7 +1066,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.danh-sach-tuyen-dung .infomation-list .list').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.danh-sach-tuyen-dung .pagination').html(results[1])
 
             },
@@ -1148,7 +1145,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.danh-sach-tuyen-dung .infomation-list .list').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.danh-sach-tuyen-dung .pagination').html(results[1])
 
             },
@@ -1228,7 +1225,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.bai-viet-an-sinh-xa-hoi .lists-post .list').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.bai-viet-an-sinh-xa-hoi  .pagination').html(results[1])
 
             },
@@ -1313,7 +1310,7 @@ jQuery(document).ready(function ($) {
                 console.log(data);
 
                 $('.bai-viet-an-sinh-xa-hoi .lists-post .list').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.bai-viet-an-sinh-xa-hoi .lists-post .pagination').html(results[1])
 
             },
@@ -1397,7 +1394,7 @@ jQuery(document).ready(function ($) {
                 var results = data.split('|');
 
                 $('.su-kien .filter-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.su-kien  .pagination').html(results[1])
 
             },
@@ -1486,7 +1483,7 @@ jQuery(document).ready(function ($) {
                 console.log(data);
 
                 $('.su-kien .filter-content').html(results[0])
-
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
                 $('.su-kien .pagination').html(results[1])
 
             },

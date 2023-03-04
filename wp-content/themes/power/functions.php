@@ -1291,8 +1291,8 @@ function csw_search_form_fc()
 
 ?>
 
-    <form class="csw-search-form d-flex align-items-center" method="get" action="<?php echo get_home_url() ?>">
-
+    <form id="searchForm" class="csw-search-form d-flex align-items-center" method="get" action="<?php echo get_home_url() ?>">
+        <span class="error-message d-none">Vui lòng nhập thông tin tìm kiếm.</span>
         <button type="submit" class="btn-submit-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
 
                 <circle cx="11" cy="11.5" r="8" stroke="#0D0D0E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -1301,7 +1301,7 @@ function csw_search_form_fc()
 
             </svg></button>
 
-        <input type="text" class="csw-search-field search-input" id='input-form-search' placeholder="Nhập nội dung tìm kiếm" required="true" name="s" value="">
+        <input type="text" class="csw-search-field search-input" id='input-form-search' placeholder="Nhập nội dung tìm kiếm" name="s" value="">
 
         <button type="submit" class="csw-search-submit" id='btn-submit-form-search'></button>
 
@@ -1455,19 +1455,20 @@ function formatedPhoneNumber($phone)
     $formatted_phone = "+84" . substr_replace($formatted_phone, "", 0, 1); // replace the first character with ""
     return $formatted_phone;
 }
-  $recaptcha = $_POST['g-recaptcha-response'];
+$recaptcha = $_POST['g-recaptcha-response'];
 $res = reCaptcha($recaptcha);
-if($res['success']){
-  // Send email
-}else{
-  // Error
+if ($res['success']) {
+    // Send email
+} else {
+    // Error
 }
 
-  function reCaptcha($recaptcha){
+function reCaptcha($recaptcha)
+{
     $secret = "YOUR SECRET KEY";
     $ip = $_SERVER['REMOTE_ADDR'];
-  
-    $postvars = array("secret"=>$secret, "response"=>$recaptcha, "remoteip"=>$ip);
+
+    $postvars = array("secret" => $secret, "response" => $recaptcha, "remoteip" => $ip);
     $url = "https://www.google.com/recaptcha/api/siteverify";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -1476,6 +1477,6 @@ if($res['success']){
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
     $data = curl_exec($ch);
     curl_close($ch);
-  
+
     return json_decode($data, true);
-  }
+}

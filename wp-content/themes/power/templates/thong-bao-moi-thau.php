@@ -79,7 +79,7 @@ if (isset($banner)) {
 
 		<div class="container">
 
-			<div class="form-filter">
+			<div class="form-filter" >
 
 				<div class="filter-item form-filter-search d-flex">
 

@@ -150,9 +150,9 @@ get_header();
 
             <div data-include="small-filter-post" class="filter-post-container">
                 <div class="head">
-                    <h5>Tất cả sự kiện</h5>
+                    <h5><?php _e('Tất cả sự kiện')?></h5>
                 </div>
-                <div class="small-form-filter">
+                <div class="small-form-filter form-filter">
                     <div class="form">
                         <div class="form-filter-search d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

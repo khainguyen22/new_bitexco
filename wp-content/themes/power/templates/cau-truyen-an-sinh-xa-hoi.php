@@ -110,7 +110,7 @@ get_header();
     <section class="lists-post">
         <div class="container">
             <div class="row fillter">
-                <div class="form-filter ">
+                <div class="form-filter">
                     <div class="form d-flex justify-content-between">
                         <div class="form-filter-search d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

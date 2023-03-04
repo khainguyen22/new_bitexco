@@ -54,6 +54,7 @@
                     .form-filter-area,
                     .form-filter-company {
                         max-height: 48px;
+                        width: calc(20% - 21.8px);
                     }
 
                     @media (max-width:1133px) {

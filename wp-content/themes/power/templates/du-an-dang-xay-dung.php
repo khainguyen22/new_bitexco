@@ -19,7 +19,6 @@ $navigation = '';
 if ($banner) {
 
     $navigation = $banner['navigation'];
-
 }
 
 $du_an_dang_xay_dung = get_field('du_an_dang_xay_dung', 'option');
@@ -140,11 +139,11 @@ get_header();
 
     <section class="filter-post-section">
 
-        <div data-include="small-filter-post" class="filter-post-container">
+        <div class="filter-post-container">
 
             <div class="small-form-filter">
 
-                <div class="form">
+                <div class="form form-filter" >
 
                     <div class="form-filter-search d-flex">
 
@@ -320,16 +319,16 @@ get_header();
 
                         <div class="filter-item">
 
-                            <div class="filter-image hover-zoom-img">
+                            <a href="<?php the_permalink() ?>">
+                                <div class="filter-image hover-zoom-img">
 
-                                <a href="<?php the_permalink() ?>">
 
                                     <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
 
-                                </a>
 
-                            </div>
+                                </div>
 
+                            </a>
                             <div class="item-content">
 
                                 <div class="content-title">
