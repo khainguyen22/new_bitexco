@@ -1458,13 +1458,13 @@ function formatedPhoneNumber($phone)
   $recaptcha = $_POST['g-recaptcha-response'];
 $res = reCaptcha($recaptcha);
 if($res['success']){
-  // Send email
+// Send email
 }else{
-  // Error
+// Error
 }
 
   function reCaptcha($recaptcha){
-    $secret = "YOUR SECRET KEY";
+    $secret = "6Lf7JNAkAAAAAFTE8Q1F6vCFP_5yPiviROYqniON";
     $ip = $_SERVER['REMOTE_ADDR'];
   
     $postvars = array("secret"=>$secret, "response"=>$recaptcha, "remoteip"=>$ip);
