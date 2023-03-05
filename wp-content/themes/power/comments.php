@@ -137,23 +137,34 @@ if ( post_password_required() ) { ?>
 			<?php } 
 		?>
 		<div class="comment-status d-flex">
-			<div class="newest active">
-				<h5><a href="<?php echo $_SERVER['HTTPS'].'?newest=true'?>"><?php _e('Mới nhất')?></a></h5>
+			<?php 
+				if (isset($_GET['newest']) && $_GET['newest'] !== '') {
+					$reverse_top_level = true;
+				} else if (isset($_GET['oldest']) && $_GET['oldest'] !== ''){
+					$reverse_top_level = false;
+				} else {
+					$reverse_top_level = true;
+					$no_param = true;
+				}
+			?>
+			<div class="newest <?php echo $no_param == true || $reverse_top_level == true ? 'active' : '' ?>">
+				<?php
+				// Get current URL
+					$current_url = 'http';
+					if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
+							$current_url .= 's';
+					}
+					$current_url .= '://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+					$current_url = strtok($current_url, '?');
+					
+				?>
+				<h5><a href="<?php echo $current_url .'?newest=true'?>"><?php _e('Mới nhất')?></a></h5>
 			</div>
-			<div class="oldest">
-				<h5><a href="<?php echo $_SERVER['HTTPS'].'?oldest=true'?>"><?php _e('Cũ nhất')?></a></h5>
+			<div class="oldest <?php echo $reverse_top_level == false ? 'active' : ''?>">
+				<h5><a href="<?php echo $current_url .'?oldest=true'?>"><?php _e('Cũ nhất')?></a></h5>
 			</div>
 		</div>
-		<?php 
-			if (isset($_GET['newest']) && $_GET['newest'] !== '') {
-				$reverse_top_level = true;
-			} else if (isset($_GET['oldest']) && $_GET['oldest'] !== ''){
-				$reverse_top_level = false;
-			} else {
-				$reverse_top_level = true;
-			}
-		?>
-		<?php wp_list_comments(['callback' => 'rjs_comments_walker', 'reverse_top_level' => $reverse_top_level]);?>
+		<?php wp_list_comments(['callback' => 'rjs_comments_walker', 'reverse_top_level' => $reverse_top_level, 'type' => 'comment', 'offset']);?>
 	</ol>
 	<div class="pagination comment-pagination">
 			<?php 
