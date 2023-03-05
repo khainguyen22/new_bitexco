@@ -11,7 +11,7 @@ get_header();
             <div class="medias">
 
                 <div class="share">
-                    <span>Chia sẻ</span>
+                    <span><?php _e('Chia sẻ'); ?></span>
                 </div>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <?php if (get_field('social-medias')) : foreach (get_field('social-medias') as $value) : ?>
@@ -61,7 +61,7 @@ get_header();
                         <div class="excerpt"><?php the_excerpt(); ?></div>
                         <div><?php the_content(); ?></div>
                         <div class="source">
-                            <span>Nguồn: Bitexco Power</span>
+                            <span><?php _e('Nguồn: Bitexco Power'); ?></span>
                         </div>
                         <div class="tag">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -72,11 +72,13 @@ get_header();
                         </div>
                         <div class="attach">
                             <div class="title">
-                                <h5>Tài liệu đính kèm</h5>
+                                <h5><?php _e('Tài liệu đính kèm'); ?>
+
+                                </h5>
                             </div>
                             <div class="file">
                                 <?php if (get_field('file')) : foreach (get_field('file') as $value) : ?>
-                                        <a href="<?php echo $value['item'] ?>" download class="file-item d-flex justify-content-between">
+                                        <a href="<?php echo $value['item']['url'] ?>" download="<?php echo $value['item']['filename'] ?>" class="file-item d-flex justify-content-between">
                                             <span class="name d-flex">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                                                     <path d="M15.2193 9.91559L9.6214 15.5135C8.15693 16.978 5.78256 16.978 4.3181 15.5135V15.5135C2.85363 14.0491 2.85363 11.6747 4.3181 10.2102L11.0945 3.43378C12.0708 2.45747 13.6538 2.45747 14.6301 3.43378V3.43378C15.6064 4.41009 15.6064 5.99301 14.6301 6.96932L7.76945 13.8299C7.2813 14.3181 6.48984 14.3181 6.00169 13.8299V13.8299C5.51353 13.3418 5.51353 12.5503 6.00169 12.0622L11.6838 6.38006" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" />
@@ -84,7 +86,7 @@ get_header();
                                                 <span><?php echo $value['item']['filename'] ?></span>
                                             </span>
                                             <span class="download d-flex">
-                                                <span>Tải xuống</span>
+                                                <span><?php _e('Tải xuống'); ?></span>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                                     <path d="M16.293 15.707L13.0001 18.9999C12.6095 19.3905 11.9764 19.3905 11.5859 18.9999L8.29297 15.707M12.293 18.707L12.293 4.70703" stroke="#DAA622" stroke-width="2" stroke-linecap="round" />
                                                 </svg>
@@ -108,14 +110,14 @@ get_header();
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                                 <path d="M7.33336 7.33203L4.31487 10.3505C3.95689 10.7085 3.95689 11.2889 4.31487 11.6469L7.33336 14.6654M4.58336 10.9987L17.4167 10.9987" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
                             </svg>
-                            <span onclick="window.history.go(-1); return false;">Quay lại tin tức</span>
+                            <span onclick="window.history.go(-1); return false;"><?php _e('Quay lại tin tức'); ?></span>
                         </a>
                     </article>
                 </div>
             </section>
             <section class="related-news">
                 <div class="article-container">
-                    <h4 class="related-news-title">Tin tức liên quan</h4>
+                    <h4 class="related-news-title"><?php _e('Tin tức liên quan'); ?></h4>
                     <div class="related-news-content">
                         <div class="image-related-item">
                             <?php
@@ -127,7 +129,6 @@ get_header();
                                 'post_type'    => 'post',
                                 'post_status' => 'publish',
                                 'posts_per_page' => 2,
-                                'category_name' =>  $arr[0]['slug']
                             );
 
                             $post_related = new WP_Query($post_related);
@@ -180,7 +181,6 @@ get_header();
                                 'post_type'    => 'post',
                                 'post_status' => 'publish',
                                 'posts_per_page' => 3,
-                                'category_name' =>  $arr[0]['slug']
                             );
 
                             $post_related_no_image = new WP_Query($post_related_no_image);

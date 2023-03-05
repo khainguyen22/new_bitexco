@@ -58,7 +58,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Địa điểm: </strong><?php echo  get_field("address") ?>
+                                                <strong><?php _e('Địa điểm:'); ?> </strong><?php echo  get_field("address") ?>
                                             </span>
                                         </p>
                                     <?php endif; ?>
@@ -71,7 +71,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Số lượng: </strong><?php echo  get_field("amount") ?>
+                                                <strong><?php _e('Số lượng:'); ?></strong><?php echo  get_field("amount") ?>
                                             </span>
                                         </p>
                                     <?php else : ?>
@@ -83,7 +83,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Số lượng: </strong>0
+                                                <strong><?php _e('Số lượng:'); ?></strong>0
                                             </span>
                                         </p>
                                     <?php endif; ?>
@@ -98,7 +98,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Cấp bậc: </strong><?php echo  get_field("position") ?>
+                                                <strong> <?php _e('Cấp bậc: '); ?></strong><?php echo  get_field("position") ?>
                                             </span>
                                         </p>
                                     <?php endif; ?>
@@ -119,7 +119,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Hạn nộp hồ sơ: </strong> <?php echo  get_field("deadline") ?>
+                                                <strong><?php _e('Hạn nộp hồ sơ: '); ?> </strong> <?php echo  get_field("deadline") ?>
                                             </span>
                                         </p>
                                     <?php endif; ?>
@@ -134,7 +134,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Công việc: </strong><?php echo  get_field("work") ?>
+                                                <strong><?php _e('Công việc: '); ?> </strong><?php echo  get_field("work") ?>
                                             </span>
                                         </p>
                                     <?php endif; ?>
@@ -149,7 +149,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Kỹ năng: </strong><?php echo  get_field("skill") ?>
+                                                <strong><?php _e('Kỹ năng: '); ?> </strong><?php echo  get_field("skill") ?>
                                             </span>
                                         </p>
                                     <?php endif; ?>
@@ -162,7 +162,7 @@ get_header(); ?>
                                                 </svg>
                                             </span>
                                             <span class="info">
-                                                <strong>Yêu cầu khác: </strong><?php echo  get_field("other_requirements") ?>
+                                                <strong><?php _e('Yêu cầu khác: '); ?> </strong><?php echo  get_field("other_requirements") ?>
                                             </span>
                                         </p>
                                     <?php endif; ?>
@@ -170,7 +170,7 @@ get_header(); ?>
                                 <div class="content">
                                     <?php if (get_field("job_description")) : ?>
                                         <div class="job_description" id="job_description">
-                                            <h5>Mô tả công việc</h5>
+                                            <h5><?php _e('Mô tả công việc '); ?> </h5>
                                             <div class="info">
                                                 <?php echo  get_field("job_description") ?>
                                             </div>
@@ -178,7 +178,7 @@ get_header(); ?>
                                     <?php endif; ?>
                                     <?php if (get_field("job_requirements")) : ?>
                                         <div class="job_requirements" id="job_requirements">
-                                            <h5>Yêu cầu công việc</h5>
+                                            <h5><?php _e('Yêu cầu công việc '); ?></h5>
                                             <div class="info">
                                                 <?php echo  get_field("job_requirements") ?>
                                             </div>
@@ -186,7 +186,7 @@ get_header(); ?>
                                     <?php endif; ?>
                                     <?php if (get_field("welfare")) : ?>
                                         <div class="welfare" id="welfare">
-                                            <h5>Các phúc lợi dành cho bạn</h5>
+                                            <h5><?php _e('Các phúc lợi dành cho bạn'); ?></h5>
                                             <div class="info">
                                                 <?php echo  get_field("welfare") ?>
                                             </div>
@@ -198,7 +198,7 @@ get_header(); ?>
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M4.33336 1.33594L1.31487 4.35442C0.956891 4.7124 0.956892 5.2928 1.31487 5.65079L4.33336 8.66927M1.58336 5.00261L14.4167 5.00261" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
                                         </svg>
-                                        Quay lại tuyển dụng
+                                        <?php _e('Quay lại tuyển dụng'); ?>
                                     </a>
                                 </div>
                             </div>
@@ -206,14 +206,14 @@ get_header(); ?>
                         <div class="col-12 col-md-3 ">
                             <div class="wrap_scrollspy">
                                 <?php if (get_field('amount') > 0 || get_field('date')) : ?>
-                                    <a href="" class="btn btn_success">Ứng tuyển</a>
+                                    <a href="" class="btn btn_success"> <?php _e('Ứng tuyển'); ?></a>
                                 <?php else : ?>
-                                    <span class="btn btn_feild ">Hết hạn</span>
+                                    <span class="btn btn_feild "> <?php _e('Hết hạn'); ?></span>
                                 <?php endif; ?>
                                 <ul class="scrollspy">
-                                    <?php if (get_field("job_description")) : ?> <li class="active"><a href="#job_description"> Mô tả công việc</a></li> <?php endif; ?>
-                                    <?php if (get_field("job_requirements")) : ?> <li><a href="#job_requirements">Yêu cầu công việc</a> </li> <?php endif; ?>
-                                    <?php if (get_field("welfare")) : ?> <li><a href="#welfare">Phúc lợi</a></li> <?php endif; ?>
+                                    <?php if (get_field("job_description")) : ?> <li class="active"><a href="#job_description"><?php _e('Mô tả công việc'); ?> </a></li> <?php endif; ?>
+                                    <?php if (get_field("job_requirements")) : ?> <li><a href="#job_requirements"><?php _e('Yêu cầu công việc'); ?></a> </li> <?php endif; ?>
+                                    <?php if (get_field("welfare")) : ?> <li><a href="#welfare"><?php _e('Phúc lợi'); ?></a></li> <?php endif; ?>
                                 </ul>
                             </div>
                         </div>

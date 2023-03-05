@@ -38,7 +38,7 @@ get_header();
         <section class="filter-post-section">
             <div class="filter-post-container ">
                 <div class="form-filter container">
-                    <div class="form  d-flex">
+                    <div class="form  d-flex form-filter">
                         <div class="form-filter-search d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <circle cx="11" cy="11" r="8" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -54,6 +54,9 @@ get_header();
                                     'hide_empty' => false,
                                 ));
                                 ?>
+                                <?php if (isset($tax_vacancies_location)) : ?>
+                                    <span class="item-default"><?php echo paint_if_exist($tax_vacancies_location) ?></span>
+                                <?php endif ?>
                                 <ul>
                                     <?php if (isset($tax_vacancies_location)) : ?>
                                         <li class="item active default"><?php echo paint_if_exist($tax_vacancies_location) ?></li>

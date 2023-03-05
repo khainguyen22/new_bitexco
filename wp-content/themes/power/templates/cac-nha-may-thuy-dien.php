@@ -245,7 +245,7 @@ get_header();
 
 
 
-        <div data-include="small-filter-post" class="filter-post-container">
+        <div   class="filter-post-container">
 
 
 
@@ -253,7 +253,7 @@ get_header();
 
 
 
-                <div class="form">
+                <div class="form form-filter">
 
 
 
@@ -474,12 +474,12 @@ get_header();
                         <div class="filter-item">
 
 
-
-                            <div class="filter-image hover-zoom-img">
-
+                            <a href="<?php the_permalink() ?>">
 
 
-                                <a href="<?php the_permalink() ?>">
+                                <div class="filter-image hover-zoom-img">
+
+
 
 
 
@@ -487,12 +487,12 @@ get_header();
 
 
 
-                                </a>
 
 
+                                </div>
 
-                            </div>
 
+                            </a>
 
 
                             <div class="item-content">

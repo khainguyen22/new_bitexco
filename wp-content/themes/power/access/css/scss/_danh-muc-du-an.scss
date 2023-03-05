@@ -134,6 +134,16 @@
             }
         }
     }
+
+    &:not(.cac-nha-may-thuy-dien) {
+
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-search,
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-type,
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-area,
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-company {
+            width: calc(20% - 21.8px);
+        }
+    }
 }
 
 .filter-content {

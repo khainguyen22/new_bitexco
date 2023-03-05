@@ -20,7 +20,7 @@ get_header();
             <div class="medias">
 
                 <div class="share">
-                    <span>Chia sẻ</span>
+                    <span><?php _e('Chia sẻ'); ?></span>
                 </div>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                         <?php if (get_field('social-medias')) : foreach (get_field('social-medias') as $value) : ?>
@@ -70,7 +70,7 @@ get_header();
                                 <span class="date"><?php the_time('d/m/Y') ?></span>
                             </div>
                             <div class="source">
-                                <span>Nguồn: Bitexco Power</span>
+                                <span><?php _e('Nguồn: Bitexco Power'); ?></span>
                             </div>
                         </div>
                         <div class="attach">
@@ -98,14 +98,14 @@ get_header();
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                                 <path d="M7.33336 7.33203L4.31487 10.3505C3.95689 10.7085 3.95689 11.2889 4.31487 11.6469L7.33336 14.6654M4.58336 10.9987L17.4167 10.9987" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
                             </svg>
-                            <span onclick="window.history.go(-1); return false;">Quay lại tin tức</span>
+                            <span onclick="window.history.go(-1); return false;"><?php _e('Quay lại tin tức'); ?></span>
                         </a>
                     </article>
                 </div>
             </section>
             <section class="related-news">
                 <div class="article-container">
-                    <h4 class="related-news-title">Tin tức liên quan</h4>
+                    <h4 class="related-news-title"><?php _e('Tin tức liên quan'); ?></h4>
                     <div class="related-news-content">
                         <div class="image-related-item">
                             <?php

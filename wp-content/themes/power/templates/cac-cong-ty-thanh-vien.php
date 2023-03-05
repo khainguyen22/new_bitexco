@@ -130,7 +130,7 @@ get_header();
 
 
 
-        <div data-include="small-filter-post" class="filter-post-container">
+        <div  class="filter-post-container">
 
 
 
@@ -138,7 +138,7 @@ get_header();
 
 
 
-                <div class="form">
+                <div class="form form-filter">
 
 
 

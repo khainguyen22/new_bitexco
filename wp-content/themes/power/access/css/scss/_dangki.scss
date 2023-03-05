@@ -171,14 +171,14 @@
                 .forgetmenot {
                     display: flex;
 
-                    input {
-                        width: 15px !important;
-                        width: fit-content !important;
+                    input[type=checkbox] {
+                        width: 1.2rem !important;
+                        height: 1.2rem;
                         margin: 5px 6px 0 0;
                     }
 
                     input[type=checkbox]:checked::before {
-                        margin: -0.35rem 0px 0 -0.2rem;
+                        margin: -0.3rem 0px 0 -0.15rem;
                         height: 1.2rem;
                         width: 1.2rem;
                     }
@@ -289,7 +289,7 @@
 
 .login {
     .register .register-box .form-box .title h2 {
-        text-transform: lowercase;
+        text-transform: capitalize;
     }
 
     #language-switcher {
@@ -335,7 +335,57 @@
         }
     }
 
-    #loginform {
+    form {
+        .submit button {
+            border: 1px solid #DAA622;
+            color: #fff;
+            align-items: center;
+            height: 48px;
+            background-color: #DAA622;
+            border-radius: 2px;
+            width: 100% !important;
+            outline: none;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+
+            &:hover {
+                cursor: pointer;
+                border: 1px solid #DAA622;
+                background-color: transparent;
+                color: #DAA622;
+            }
+        }
+
+        &#loginform,
+        &#registerform,
+        &#lostpasswordform {
+            &.has-value .submit button {
+                border: 1px solid #DAA622;
+                background-color: #DAA622;
+                color: #FFFFFF;
+
+                &:hover {
+                    cursor: pointer;
+                    border: 1px solid #DAA622;
+                    background-color: transparent;
+                    color: #DAA622;
+                }
+            }
+
+            .submit button {
+                color: #DAA622;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: #DAA622;
+                    color: #fff;
+                }
+            }
+        }
+
         .wp-hide-pw {
             width: 3.5rem;
             height: 3.5rem;
@@ -347,18 +397,6 @@
             &:focus {
                 border: none;
                 box-shadow: none;
-            }
-        }
-
-        .submit button {
-            border-color: #DAA622;
-            border: 1px solid #DAA622;
-
-            &:hover {
-                cursor: pointer;
-                border-color: #DAA622;
-                border: 1px solid #DAA622;
-                color: #DAA622;
             }
         }
     }
@@ -383,6 +421,15 @@
     }
 }
 
+.admin-bar #wp-auth-check-wrap .wp-auth-check .register {
+    .register-box .image img {
+        min-height: 800px;
+    }
+
+    &::after {
+        min-height: 800px;
+    }
+}
 
 @media (max-width: 1440px) {
     .register {

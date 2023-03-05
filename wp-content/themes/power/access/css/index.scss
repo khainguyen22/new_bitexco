@@ -931,11 +931,13 @@ span.tag {
     .image {
         overflow: hidden;
         position: relative;
-        min-height: 255px;
         max-width: 400px;
         min-width: 400px;
-        height: auto;
+        height: 255px;
         max-height: unset;
+        background-image: url(../images/placeholder.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
 
         img {
             transition: all 1s ease-in;
@@ -981,6 +983,23 @@ span.tag {
 
         .desc {
             margin-bottom: 15px;
+        }
+
+        h6 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            text-align: justify;
         }
 
         &::after {

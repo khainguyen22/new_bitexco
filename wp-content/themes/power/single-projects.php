@@ -30,7 +30,7 @@ $other_info = get_field('other_info_post_project');
                     <section class="generality">
                         <div class="text-center content">
                             <span class="line-headding"></span>
-                            <h3>Tổng quan</h3>
+                            <h3><?php _e('Tổng quan'); ?></h3>
                         </div>
                         <div class="row generality-row">
                             <div class="col-12 col-lg-6 item item-content">

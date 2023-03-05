@@ -77,8 +77,8 @@ get_header();
 		</div>
 	</section>
 	<section class="filter-post-section">
-		<div data-include="small-filter-post" class="filter-post-container">
-			<div class="small-form-filter">
+		<div class="filter-post-container form-filter">
+			<div class="small-form-filter" >
 				<div class="form">
 					<div class="form-filter-search d-flex">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -167,11 +167,11 @@ get_header();
 					<?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
 						$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
 						<div class="filter-item">
-							<div class="filter-image hover-zoom-img">
-								<a href="<?php the_permalink() ?>">
+							<a href="<?php the_permalink() ?>">
+								<div class="filter-image hover-zoom-img">
 									<img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
-								</a>
-							</div>
+								</div>
+							</a>
 							<div class="item-content">
 								<div class="content-title">
 									<h6> <a href="<?php the_permalink() ?>"><?php echo the_title() ?></a></h6>
