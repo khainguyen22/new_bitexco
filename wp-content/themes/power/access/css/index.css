@@ -934,6 +934,21 @@ span.tag.tag-dropdown::before {
 .custom-post .content .desc {
   margin-bottom: 15px;
 }
+.custom-post .content h6 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.custom-post .content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-align: justify;
+}
 .custom-post .content::after {
   content: "";
   width: 0;
@@ -2341,13 +2356,13 @@ li[data-value=mien-nam] {
 .register .register-box form .forget-password .forgetmenot {
   display: flex;
 }
-.register .register-box form .forget-password .forgetmenot input {
-  width: 15px !important;
-  width: fit-content !important;
+.register .register-box form .forget-password .forgetmenot input[type=checkbox] {
+  width: 1.2rem !important;
+  height: 1.2rem;
   margin: 5px 6px 0 0;
 }
 .register .register-box form .forget-password .forgetmenot input[type=checkbox]:checked::before {
-  margin: -0.35rem 0px 0 -0.2rem;
+  margin: -0.3rem 0px 0 -0.15rem;
   height: 1.2rem;
   width: 1.2rem;
 }
@@ -2434,7 +2449,7 @@ li[data-value=mien-nam] {
 }
 
 .login .register .register-box .form-box .title h2 {
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 .login #language-switcher {
   display: flex;
@@ -2473,26 +2488,56 @@ li[data-value=mien-nam] {
 .login #language-switcher .btn-change-language {
   display: none;
 }
-.login #loginform .wp-hide-pw {
+.login form .submit button {
+  border: 1px solid #DAA622;
+  color: #fff;
+  align-items: center;
+  height: 48px;
+  background-color: #DAA622;
+  border-radius: 2px;
+  width: 100% !important;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.login form .submit button:hover {
+  cursor: pointer;
+  border: 1px solid #DAA622;
+  background-color: transparent;
+  color: #DAA622;
+}
+.login form#loginform.has-value .submit button, .login form#registerform.has-value .submit button, .login form#lostpasswordform.has-value .submit button {
+  border: 1px solid #DAA622;
+  background-color: #DAA622;
+  color: #FFFFFF;
+}
+.login form#loginform.has-value .submit button:hover, .login form#registerform.has-value .submit button:hover, .login form#lostpasswordform.has-value .submit button:hover {
+  cursor: pointer;
+  border: 1px solid #DAA622;
+  background-color: transparent;
+  color: #DAA622;
+}
+.login form#loginform .submit button, .login form#registerform .submit button, .login form#lostpasswordform .submit button {
+  color: #DAA622;
+  background-color: transparent;
+}
+.login form#loginform .submit button:hover, .login form#registerform .submit button:hover, .login form#lostpasswordform .submit button:hover {
+  background-color: #DAA622;
+  color: #fff;
+}
+.login form .wp-hide-pw {
   width: 3.5rem;
   height: 3.5rem;
 }
-.login #loginform .wp-hide-pw > .dashicons {
+.login form .wp-hide-pw > .dashicons {
   font-size: 25px;
 }
-.login #loginform .wp-hide-pw:focus {
+.login form .wp-hide-pw:focus {
   border: none;
   box-shadow: none;
-}
-.login #loginform .submit button {
-  border-color: #DAA622;
-  border: 1px solid #DAA622;
-}
-.login #loginform .submit button:hover {
-  cursor: pointer;
-  border-color: #DAA622;
-  border: 1px solid #DAA622;
-  color: #DAA622;
 }
 .login .login-page form {
   margin-top: 28px;
@@ -5371,24 +5416,11 @@ header .search .search-bar:hover::after {
 }
 .tin-tuc .lists-post .list .custom-post img {
   max-width: 400px;
-  height: 297px;
+  height: 255px;
   min-width: 400px;
 }
 .tin-tuc .lists-post .list .custom-post .content h6 {
   margin-top: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-}
-.tin-tuc .lists-post .list .custom-post .content p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  text-align: justify;
 }
 @media (max-width: 1360px) {
   .tin-tuc .lists-post .list .custom-post {
@@ -5404,7 +5436,7 @@ header .search .search-bar:hover::after {
     height: 100%;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1360px) and (max-width: 767px) {
   .tin-tuc .lists-post .list .custom-post {
     height: 100%;
   }
@@ -5419,44 +5451,43 @@ header .search .search-bar:hover::after {
   }
 }
 @media (max-width: 1366px) {
-  .tin-tuc .lists-post {
+  .tin-tuc .lists-post .list {
     padding: 28px 60px 52px;
   }
 }
 @media (max-width: 1024px) {
-  .tin-tuc .lists-post {
+  .tin-tuc .lists-post .list {
     padding: 20px 20px 20px;
   }
 }
 @media (max-width: 991px) {
-  .tin-tuc .lists-post {
+  .tin-tuc .lists-post .list {
     padding: 41px 20px 30px;
   }
 }
 @media (max-width: 767px) {
-  .tin-tuc .row,
-  .tin-tuc .col-lg-6,
-  .tin-tuc .col-12 {
+  .tin-tuc .lists-post .row,
+  .tin-tuc .lists-post .col-lg-6,
+  .tin-tuc .lists-post .col-12 {
     padding: 0;
     margin-right: 0px;
     margin-left: 0px;
   }
 }
-
-.archive.tag {
+.tin-tuc .archive.tag {
   margin: 150px 0 50px;
 }
-.archive.tag .container {
+.tin-tuc .archive.tag .container {
   padding: 20px;
 }
-.archive.tag .custom-post .image {
+.tin-tuc .archive.tag .custom-post .image {
   height: 255px;
 }
-.archive.tag .custom-post .image img {
+.tin-tuc .archive.tag .custom-post .image img {
   width: 100%;
 }
 @media (max-width: 991px) {
-  .archive.tag .custom-post .image {
+  .tin-tuc .archive.tag .custom-post .image {
     height: 350px;
   }
 }

@@ -1,5 +1,16 @@
 
 jQuery(document).ready(function ($) {
+	$('#loginform').on('input change', function () {
+		if ($(this).val()) {
+			$(this).addClass('has-value');
+			$(this).closest('#loginform').find('.submit .register-btn').addClass('active')
+		} else {
+			$(this).removeClass('has-value');
+		}
+	});
+
+
+
 	// no translate phan trang
 	$(document).ready(function () {
 		$('.page-numbers').addClass('notranslate');
@@ -438,37 +449,44 @@ jQuery(document).ready(function ($) {
 	}
 	var a = 0;
 	$(window).scroll(function () {
-		var oTop = $("#wrap_counter").offset().top - window.innerHeight;
-		if (a == 0 && $(window).scrollTop() > oTop) {
-			$(".counter").each(function () {
-				var $this = $(this),
-					countTo = $this.attr("data-number");
-				$this.text(" ");
-				$({
-					countNum: $this.text()
-				}).animate(
-					{
-						countNum: countTo
-					},
-
-					{
-						duration: 5500,
-						easing: "swing",
-						step: function () {
-							$this.text(
-								checkNumber(this.countNum)
-							);
+		const element = document.querySelector('#wrap_counter');
+		if (element != null) {
+			// do something if the element has a class starting with 'js'
+			var oTop = $("#wrap_counter").offset().top - window.innerHeight;
+			if (a == 0 && $(window).scrollTop() > oTop) {
+				$(".counter").each(function () {
+					var $this = $(this),
+						countTo = $this.attr("data-number");
+					$this.text(" ");
+					$({
+						countNum: $this.text()
+					}).animate(
+						{
+							countNum: countTo
 						},
-						complete: function () {
-							$this.text(
-								checkNumber(this.countNum)
-							);
-						}
-					}
-				);
-			});
 
-			a = 1;
+						{
+							duration: 5500,
+							easing: "swing",
+							step: function () {
+								$this.text(
+									checkNumber(this.countNum)
+								);
+							},
+							complete: function () {
+								$this.text(
+									checkNumber(this.countNum)
+								);
+							}
+						}
+					);
+				});
+
+				a = 1;
+			}
+		} else {
+			// do something if the element doesn't have a class starting with 'js'
 		}
+
 	});
 });

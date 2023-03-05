@@ -1480,3 +1480,11 @@ function reCaptcha($recaptcha)
 
     return json_decode($data, true);
 }
+
+function custom_login_error_message()
+{
+    // Change the error message to a custom message and translate it
+    $message = __('Xin lỗi, thông tin của bạn không chính xác. Vui lòng thử lại.', POWER);
+    return $message;
+}
+add_filter('login_errors', 'custom_login_error_message');
