@@ -2553,6 +2553,13 @@ li[data-value=mien-nam] {
   display: flex;
 }
 
+.admin-bar #wp-auth-check-wrap .wp-auth-check .register .register-box .image img {
+  min-height: 800px;
+}
+.admin-bar #wp-auth-check-wrap .wp-auth-check .register::after {
+  min-height: 800px;
+}
+
 @media (max-width: 1440px) {
   .register .register-box {
     justify-content: space-between;
@@ -3021,10 +3028,10 @@ h5 {
 .du-an .filter-post-section .filter-post-container .filter-content .filter-item .item-content .content-location {
   align-items: start;
 }
-.du-an:not(.cac-nha-may-thuy-dien) .form-filter-search,
-.du-an:not(.cac-nha-may-thuy-dien) .form-filter-type,
-.du-an:not(.cac-nha-may-thuy-dien) .form-filter-area,
-.du-an:not(.cac-nha-may-thuy-dien) .form-filter-company {
+.du-an:not(.cac-nha-may-thuy-dien) .filter-post-section .filter-post-container .small-form-filter .form .form-filter-search,
+.du-an:not(.cac-nha-may-thuy-dien) .filter-post-section .filter-post-container .small-form-filter .form .form-filter-type,
+.du-an:not(.cac-nha-may-thuy-dien) .filter-post-section .filter-post-container .small-form-filter .form .form-filter-area,
+.du-an:not(.cac-nha-may-thuy-dien) .filter-post-section .filter-post-container .small-form-filter .form .form-filter-company {
   width: calc(20% - 21.8px);
 }
 
@@ -6700,7 +6707,7 @@ header .search .search-bar:hover::after {
 }
 
 .details_news_page {
-  margin-top: 70px;
+  margin-top: 100px;
 }
 .details_news_page section.article .article-container article .title h3 {
   margin-top: 85px;
@@ -15431,6 +15438,7 @@ section.tender-notice-banner .container .navigation {
   color: #FFFFFF;
   text-align: left;
   max-width: 75%;
+  margin-bottom: 40px;
 }
 @media (max-width: 1024px) {
   .custom-single-page .banner .wrap_banner .container .content {
@@ -15594,8 +15602,9 @@ section.tender-notice-banner .container .navigation {
   top: 487px;
   z-index: 3;
   position: sticky;
-  margin-top: -150px;
+  margin-top: -125px;
   min-width: 174px;
+  margin-bottom: 160px;
 }
 .custom-single-page .main .row .wrap_scrollspy .btn {
   font-family: var(--primary-font);
@@ -16401,7 +16410,7 @@ section.tender-notice-banner .container .navigation {
 .su-kien .filter-post-section .filter-post-container .form .form-filter-status,
 .su-kien .filter-post-section .filter-post-container .form .form-filter-location,
 .su-kien .filter-post-section .filter-post-container .form .form-filter-formality {
-  max-width: 25%;
+  max-width: 18%;
   width: 100%;
 }
 .su-kien .filter-post-section .filter-post-container .form .button-submit,
@@ -16530,6 +16539,11 @@ section.tender-notice-banner .container .navigation {
   flex-direction: column;
 }
 
+.archive .custom-post .image img {
+  width: 100%;
+  height: 100%;
+}
+
 .kinh-doanh-dien section.electricity-business {
   padding: 0 100px;
 }
@@ -16550,7 +16564,7 @@ section.tender-notice-banner .container .navigation {
   }
 }
 .custom-single-page.details_event .banner .wrap_banner .container .content {
-  bottom: 40px;
+  bottom: 24px;
 }
 .custom-single-page.details_event .banner .wrap_banner .container .content h3,
 .custom-single-page.details_event .banner .wrap_banner .container .content .date {
@@ -16705,6 +16719,36 @@ section.tender-notice-banner .container .navigation {
   background: transparent;
   border: 1px solid #DAA622;
   color: #DAA622;
+}
+
+.custom-single-page.details_event .slider-card-wrapper {
+  background-color: unset;
+}
+.custom-single-page.details_event .category-tag {
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.custom-single-page.details_event .category-tag .text {
+  padding: 2px 8px;
+  height: 21px;
+  background: #DAA622;
+  border-radius: 2px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+.custom-single-page.details_event .item-content .date {
+  margin-bottom: 10px;
+}
+.custom-single-page.details_event .icon {
+  width: 30px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #useful-infomation {

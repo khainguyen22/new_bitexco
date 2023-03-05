@@ -18,11 +18,11 @@ $hide_show_blog_meta = get_theme_mod('hide_show_blog_meta', 'on');
 
 ?>
 <div class="custom-post d-flex ">
-    <div class="image">
-        <a href="<?php the_permalink(); ?>">
+    <a href="<?php the_permalink(); ?>">
+        <div class="image">
             <?php the_post_thumbnail("full", array("title" => get_the_title(), "alt" => get_the_title())); ?>
-        </a>
-    </div>
+        </div>     
+    </a>
     <div class="content ">
         <?php if (get_the_tag_list()) : ?><span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span><?php endif; ?>
         <h6> <a href="<?php echo get_the_permalink() ?>"><?php echo the_title() ?></a></h6>

@@ -1,13 +1,13 @@
 
 jQuery(document).ready(function ($) {
-	$('#loginform').on('input change', function () {
-		if ($(this).val()) {
-			$(this).addClass('has-value');
-			$(this).closest('#loginform').find('.submit .register-btn').addClass('active')
-		} else {
-			$(this).removeClass('has-value');
-		}
-	});
+	// $('#loginform').on('input change', function () {
+	// 	if ($(this).val()) {
+	// 		$(this).addClass('has-value');
+	// 		$(this).closest('#loginform').find('.submit .register-btn').addClass('active')
+	// 	} else {
+	// 		$(this).removeClass('has-value');
+	// 	}
+	// });
 
 
 
@@ -425,6 +425,14 @@ jQuery(document).ready(function ($) {
 		});
 
 	// scroll animation counter up
+	function formatNumberShow(countNum) {
+		var formattedNumber = parseFloat(countNum).toLocaleString('de-DE', {
+			minimumFractionDigits: 2,
+			maximumFractionDigits: 2,
+			useGrouping: true
+		});
+		return formattedNumber;
+	}
 	function formatNumber(countNum) {
 		var formattedNumber = parseFloat(countNum).toLocaleString('de-DE', {
 			minimumFractionDigits: 2,
@@ -475,7 +483,7 @@ jQuery(document).ready(function ($) {
 							},
 							complete: function () {
 								$this.text(
-									checkNumber(this.countNum)
+									formatNumberShow(this.countNum)
 								);
 							}
 						}

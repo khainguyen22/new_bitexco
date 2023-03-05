@@ -137,10 +137,10 @@
 
     &:not(.cac-nha-may-thuy-dien) {
 
-        .form-filter-search,
-        .form-filter-type,
-        .form-filter-area,
-        .form-filter-company {
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-search,
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-type,
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-area,
+        .filter-post-section .filter-post-container .small-form-filter .form .form-filter-company {
             width: calc(20% - 21.8px);
         }
     }

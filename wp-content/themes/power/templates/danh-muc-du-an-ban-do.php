@@ -146,7 +146,7 @@ get_header();
                 </svg>
             </div>
             <div class="popup-modal">
-                <div class="head d-flex">
+                <div class="head d-flex justify-content-between">
                     <h6><?php _e('Danh sách dự án năng lượng') ?></h6>
                     <div class="icon-close">
                         <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">

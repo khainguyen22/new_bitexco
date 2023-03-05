@@ -4,14 +4,14 @@ get_header(); ?>
 <!-- Blog & Sidebar Section -->
 
 <div class="custom-single-page  details_event">
-    <?php if (have_posts()) : ?>
+    <?php if (!empty(have_posts())) : ?>
 
         <?php while (have_posts()) : the_post();
             $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>
             <div class="breadcrumbs">
                 <div class="container">
                     <?php
-                    if (function_exists('yoast_breadcrumb')) {
+                    if (!empty(function_exists('yoast_breadcrumb'))) {
                         yoast_breadcrumb('<div id="breadcrumbs-content" class="breadcrumbs-content">', '</div>');
                     }
                     ?>
@@ -23,7 +23,7 @@ get_header(); ?>
                     <div class="container">
                         <div class="content">
                             <h3><?php the_title(); ?></h3>
-                            <?php if (get_field('date')) : ?>
+                            <?php if (!empty(get_field('date'))) : ?>
                                 <div class="date d-flex">
                                     <div class="icon">
                                         <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,8 +43,8 @@ get_header(); ?>
                                     <span class="text size-text-16 mx-1"> Đến <?php echo get_field('date_end'); ?></span>
                                 </div>
                             <?php endif; ?>
-                            <?php if (get_field('type') == 1) : ?>
-                                <?php if (get_field('location')) : ?>
+                            <?php if (!empty(get_field('type') == 1)) : ?>
+                                <?php if (!empty(get_field('location'))) : ?>
                                     <div class="type d-flex">
                                         <div class="icon">
                                             <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +58,7 @@ get_header(); ?>
                                     </div>
                                 <?php endif; ?>
                             <?php else : ?>
-                                <?php if (get_field('online')) : ?>
+                                <?php if (!empty(get_field('online'))) : ?>
                                     <div class="type d-flex">
                                         <div class="icon">
                                             <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,27 +78,27 @@ get_header(); ?>
                     <div class="row">
                         <div class="col-12 col-md-9 ">
                             <div class="wrap_content">
-                                <?php if (get_field('general_information')) : ?>
+                                <?php if (!empty(get_field('general_information'))) : ?>
                                     <div class="general_information" id="general_information">
-                                        <?php if (get_field('general_information')['title']) : ?>
+                                        <?php if (!empty(get_field('general_information')['title'])) : ?>
                                             <h5 class="title"><?php _e(get_field('general_information')['title']) ?></h5>
                                         <?php endif; ?>
-                                        <?php if (get_field('general_information')['description']) : ?>
+                                        <?php if (!empty(get_field('general_information')['description'])) : ?>
                                             <div class="description">
                                                 <?php _e(get_field('general_information')['description']) ?>
                                             </div>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="driver"></div>
                                 <?php endif; ?>
-                                <?php if (get_field('content')) : ?>
+                                <?php if (!empty(get_field('content'))) : ?>
+                                    <div class="driver"></div>
                                     <div class="content" id="content">
-                                        <?php if (get_field('content')['title']) : ?>
+                                        <?php if (!empty(get_field('content')['title'])) : ?>
                                             <h5 class="title"><?php _e(get_field('content')['title']) ?></h5>
                                         <?php endif; ?>
                                         <table class="table">
                                             <tbody class="table-body">
-                                                <?php if (get_field('content')['info']) :
+                                                <?php if (!empty(get_field('content')['info'])) :
                                                     foreach (get_field('content')['info'] as $value) : ?>
                                                         <tr>
                                                             <td><?php _e($value['date_start']) ?> - <?php _e($value['date_end']) ?></td>
@@ -108,15 +108,15 @@ get_header(); ?>
                                                 endif; ?>
                                         </table>
                                     </div>
-                                    <div class="driver"></div>
                                 <?php endif; ?>
-                                <?php if (get_field('speakers')) : ?>
+                                <?php if (!empty(get_field('speakers'))) : ?>
+                                    <div class="driver"></div>
                                     <div class="speakers" id="speakers">
-                                        <?php if (get_field('speakers')['title']) : ?>
+                                        <?php if (!empty(get_field('speakers')['title'])) : ?>
                                             <h5 class="title"><?php _e(get_field('speakers')['title']) ?></h5>
                                         <?php endif; ?>
                                         <div class="wrap-person">
-                                            <?php if (get_field('speakers')['person']) :
+                                            <?php if (!empty(get_field('speakers')['person'])) :
                                                 foreach (get_field('speakers')['person'] as $value) : ?>
                                                     <div class="person d-flex">
                                                         <div class="image">
@@ -133,12 +133,11 @@ get_header(); ?>
                                             endif; ?>
                                         </div>
                                     </div>
-                                    <div class="driver"></div>
                                 <?php endif; ?>
-                                <?php if (get_field('document')) : ?>
+                                <?php if (!empty(get_field('document'))) : ?>
+                                    <div class="driver"></div>
                                     <div class="document" id="document">
-
-                                        <?php if (get_field('document')['item']) :
+                                        <?php if (!empty(get_field('document')['item'])) :
                                             foreach (get_field('document')['item'] as $value) : ?>
                                                 <div class="item">
 
@@ -147,11 +146,11 @@ get_header(); ?>
                                         endif; ?>
 
                                         <div class="attach">
-                                            <?php if (get_field('document')['title']) : ?>
+                                            <?php if (!empty(get_field('document')['title'])) : ?>
                                                 <h5 class="title"><?php _e(get_field('document')['title']) ?></h5>
                                             <?php endif; ?>
                                             <div class="file">
-                                                <?php if (get_field('document')['item']) : foreach (get_field('document')['item'] as $value) :  ?>
+                                                <?php if (!empty(get_field('document')['item'])) : foreach (get_field('document')['item'] as $value) :  ?>
                                                         <a href="<?php echo $value['file']['url'] ?>" download="<?php echo $value['file']['filename'] ?>" class="file-item d-flex justify-content-between">
                                                             <span class="name d-flex">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -179,7 +178,7 @@ get_header(); ?>
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M4.33336 1.33594L1.31487 4.35442C0.956891 4.7124 0.956892 5.2928 1.31487 5.65079L4.33336 8.66927M1.58336 5.00261L14.4167 5.00261" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
                                         </svg>
-                                        Quay lại sự kiện
+                                        <?php _e('  Quay lại sự kiện') ?>
                                     </a>
                                 </div>
 
@@ -187,29 +186,45 @@ get_header(); ?>
                         </div>
                         <div class="col-12 col-md-3 ">
                             <div class="wrap_scrollspy">
-                                <?php if (get_field('amount') > 0 || get_field('date')) : ?>
-                                    <a href="" class="btn btn_success">Đăng ký ngay</a>
+                                <?php if (!empty(get_field('amount') > 0 || get_field('date'))) : ?>
+                                    <a href="" class="btn btn_success"><?php _e('Đăng ký ngay'); ?></a>
                                 <?php else : ?>
-                                    <span class="btn btn_feild ">Đăng ký ngay</span>
+                                    <span class="btn btn_feild "><?php _e('Đăng ký ngay'); ?></span>
                                 <?php endif; ?>
                                 <ul class="scrollspy">
-                                    <?php if (get_field("general_information")) : ?> <li class="active"><a href="#general_information">Thông tin tổng quan</a></li> <?php endif; ?>
-                                    <?php if (get_field("content")) : ?> <li><a href="#content">Nội dung chương trình</a> </li> <?php endif; ?>
-                                    <?php if (get_field("speakers")) : ?> <li><a href="#speakers">Diễn giả</a></li> <?php endif; ?>
-                                    <?php if (get_field("document")) : ?> <li><a href="#document">Tài liệu đính kèm (2)</a></li> <?php endif; ?>
+                                    <?php if (!empty(get_field("general_information"))) : ?> <li class="active"><a href="#general_information"><?php _e('Thông tin tổng quan') ?></a></li> <?php endif; ?>
+                                    <?php if (!empty(get_field("content"))) : ?> <li><a href="#content"><?php _e('Nội dung chương trình') ?></a> </li> <?php endif; ?>
+                                    <?php if (!empty(get_field("speakers"))) : ?> <li><a href="#speakers"><?php _e('Diễn giả') ?></a></li> <?php endif; ?>
+                                    <?php if (!empty(get_field("document"))) : ?> <li><a href="#document"><?php _e('Tài liệu đính kèm ') ?>
+                                                <span class="notranslate">(
+                                                    <?php if (!empty(get_field('document')['item'])) :
+                                                        $types = array('string', 'integer');
+                                                        $my_array = get_field('document');
+                                                        $count_array = array_filter($my_array, function ($value) use ($types) {
+                                                            return in_array(gettype($value), $types);
+                                                        });
 
+                                                        $count = count($count_array);
+
+                                                        echo $count + 1;
+                                                    ?>
+                                                        <?php endif; ?>)
+                                                </span>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <?php if (get_field('contact')) : ?>
+                    <?php if (!empty(get_field('contact'))) : ?>
                         <div class="driver"></div>
                         <div class="contact">
                             <div>
-                                <?php if (get_field('contact')['title']) : ?>
+                                <?php if (!empty(get_field('contact')['title'])) : ?>
                                     <h5 class="title"><?php _e(get_field('contact')['title']) ?></h5>
                                 <?php endif; ?>
-                                <?php if (get_field('contact')['description']) : ?>
+                                <?php if (!empty(get_field('contact')['description'])) : ?>
                                     <?php _e(get_field('contact')['description']) ?>
                                 <?php endif; ?>
                             </div>
@@ -219,28 +234,90 @@ get_header(); ?>
                         </div>
                     <?php endif ?>
                 </div>
-                <div class="related_events">
-                    <?php
-                    $post_type = 'events';
-                    $args = array(
-                        'post_type'    => $post_type,
-                    );
-                    $the_query_post = new WP_Query($args);
-                    if ($the_query_post->have_posts()) : ?>
-                        <?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
-                            $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
-                            <div class="content-item">
-                                <div class="image">
-                                    <a href="<?php the_permalink() ?>">
-                                        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
-                                    </a>
+
+            </div>
+            <div class="related_events slider-card-wrapper">
+                <div class="container">
+                    <div class="slider-cards">
+                        <?php
+                        $post_type = 'events';
+                        $args = array(
+                            'post_type'    => $post_type,
+                        );
+                        $the_query_post = new WP_Query($args);
+                        ?>
+                        <?php if (!empty($the_query_post->have_posts())) : ?>
+                            <?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
+                                $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
+                                <div class="card card-custom">
+                                    <a href="<?php echo get_the_permalink() ?>"><img src="<?php echo  $featured_img_url ?>" class="card-img-top" alt="<?php echo paint_if_exist(the_title()) ?>"></a>
+                                    <div class="card-body">
+                                        <div class="item-content">
+                                            <?php if (!empty($category)) : ?>
+                                                <div class="d-flex category-tag">
+                                                    <?php foreach ($category as $cat) : ?>
+                                                        <span class="text"><?php echo $cat->name; ?></span>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                            <?php else : ?>
+                                                <div class="d-flex category-tag">
+                                                    <span class="text"><?php _e('Sự kiện') ?></span>
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="content-title">
+                                                <h6> <a href="<?php the_permalink() ?>"><?php echo the_title() ?></a></h6>
+                                            </div>
+                                            <?php if (!empty(get_field('date'))) : ?>
+                                                <div class="date d-flex">
+                                                    <div class="icon">
+                                                        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M1.5 5C1.5 3.61929 2.61929 2.5 4 2.5H14C15.3807 2.5 16.5 3.61929 16.5 5V15C16.5 16.3807 15.3807 17.5 14 17.5H4C2.61929 17.5 1.5 16.3807 1.5 15V5Z" stroke="#7E8189" stroke-width="1.5" />
+                                                            <path d="M1.5 6.66667H16.5" stroke="#7E8189" stroke-width="1.5" stroke-linejoin="round" />
+                                                            <path d="M12.7502 1.25L12.7502 3.75" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M5.25016 1.25L5.25016 3.75" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M4.4165 9.9974H5.24984" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.58301 9.9974H9.41634" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M12.75 9.9974H13.5833" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M4.4165 13.3294H5.24984" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M8.58301 13.3294H9.41634" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M12.75 13.3294H13.5833" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </div>
+                                                    <span class="text size-text-16"> <?php echo get_field('date'); ?></span>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if (!empty(get_field('type') == 1)) : ?>
+                                                <?php if (!empty(get_field('location'))) : ?>
+                                                    <div class="type d-flex">
+                                                        <div class="icon">
+                                                            <svg width="16" height="19" viewBox="0 0 16 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M14.8125 8.08333C14.8125 12.9398 9.2875 18 7.90625 18C6.525 18 1 12.9398 1 8.08333C1 4.17132 4.09203 1 7.90625 1C11.7205 1 14.8125 4.17132 14.8125 8.08333Z" stroke="#7E8189" stroke-width="1.5" />
+                                                                <circle r="2.65625" transform="matrix(-1 0 0 1 7.90625 7.90625)" stroke="#7E8189" stroke-width="1.5" />
+                                                            </svg>
+                                                        </div>
+                                                        <?php foreach (get_the_terms(get_the_ID(), 'type_events_location') as $key => $value) : ?>
+                                                            <span class="text size-text-16"> <?php echo paint_if_exist($value->name) ?></span>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                            <?php else : ?>
+                                                <?php if (!empty(get_field('online'))) : ?>
+                                                    <div class="type d-flex">
+                                                        <div class="icon">
+                                                            <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M1 13.6H19M2.8 2.8C2.8 2.32261 2.98964 1.86477 3.32721 1.52721C3.66477 1.18964 4.12261 1 4.6 1H15.4C15.8774 1 16.3352 1.18964 16.6728 1.52721C17.0104 1.86477 17.2 2.32261 17.2 2.8V10.9H2.8V2.8Z" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                            </svg>
+                                                        </div>
+                                                        <a class="text size-text-16" href="<?php echo get_field('online'); ?>" target="_blank">Online</a>
+                                                    </div>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="content-text">
-                                    <h6><?php echo the_title() ?></h6>
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         <?php endwhile; ?>

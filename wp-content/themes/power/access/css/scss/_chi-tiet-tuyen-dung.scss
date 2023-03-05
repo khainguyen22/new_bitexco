@@ -98,6 +98,7 @@
                         color: #FFFFFF;
                         text-align: left;
                         max-width: 75%;
+                        margin-bottom: 40px;
                     }
                 }
             }
@@ -257,8 +258,9 @@
                 top: 487px;
                 z-index: 3;
                 position: sticky;
-                margin-top: -150px;
+                margin-top: -125px;
                 min-width: 174px;
+                margin-bottom: 160px;
 
                 .btn {
                     font-family: var(--primary-font);

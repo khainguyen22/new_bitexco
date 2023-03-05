@@ -421,6 +421,15 @@
     }
 }
 
+.admin-bar #wp-auth-check-wrap .wp-auth-check .register {
+    .register-box .image img {
+        min-height: 800px;
+    }
+
+    &::after {
+        min-height: 800px;
+    }
+}
 
 @media (max-width: 1440px) {
     .register {

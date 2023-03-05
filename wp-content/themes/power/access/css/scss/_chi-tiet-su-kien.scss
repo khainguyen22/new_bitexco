@@ -1,7 +1,7 @@
 .custom-single-page.details_event {
     .banner .wrap_banner .container {
         .content {
-            bottom: 40px;
+            bottom: 24px;
 
             h3,
             .date {
@@ -199,5 +199,42 @@
                 color: #DAA622;
             }
         }
+    }
+}
+
+.custom-single-page.details_event {
+    .slider-card-wrapper {
+        background-color: unset;
+    }
+
+    .category-tag {
+        gap: 10px;
+        margin-bottom: 16px;
+
+        .text {
+            // font-family: 'Public Sans';
+            padding: 2px 8px;
+            height: 21px;
+            background: #DAA622;
+            border-radius: 2px;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 150%;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+    }
+
+    .item-content .date {
+        margin-bottom: 10px;
+    }
+
+    .icon {
+        width: 30px;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 }

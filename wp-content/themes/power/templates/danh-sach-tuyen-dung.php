@@ -54,6 +54,9 @@ get_header();
                                     'hide_empty' => false,
                                 ));
                                 ?>
+                                <?php if (isset($tax_vacancies_location)) : ?>
+                                    <span class="item-default"><?php echo paint_if_exist($tax_vacancies_location) ?></span>
+                                <?php endif ?>
                                 <ul>
                                     <?php if (isset($tax_vacancies_location)) : ?>
                                         <li class="item active default"><?php echo paint_if_exist($tax_vacancies_location) ?></li>

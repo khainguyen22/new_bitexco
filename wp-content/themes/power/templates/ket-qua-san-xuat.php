@@ -323,61 +323,61 @@ get_header();
 
                         <div class="col-12 col-md-4 item">
 
-                            <p class="label">Sản lượng ngày
+                            <p class="label">
+                                <?php if ($san_luong_luy_ke) : ?><?php echo $san_luong_luy_ke['san_luong_ngay']; ?> <?php endif; ?>
+                            <?php
 
-                                <?php
+                            $d = date('d');
 
-                                $d = date('d');
+                            echo $d;
 
-                                echo $d;
-
-                                ?>
+                            ?>
 
                             </p>
 
                             <h1 class="info notranslate counter" data-number='<?php echo $rowData[$day][0][8]; ?>'>0</h1>
                             </h1>
-                            <p class="unit">Triệu kWh </p>
+                            <?php if ($san_luong_luy_ke) : ?> <p class="unit"><?php echo $san_luong_luy_ke['don_vi_san_luong_ngay']; ?></p> <?php endif; ?>
 
                         </div>
 
                         <div class="col-12 col-md-4 item">
 
-                            <p class="label">Sản lượng tháng
+                            <p class="label">
+                                <?php if ($san_luong_luy_ke) : ?><?php echo $san_luong_luy_ke['san_luong_thang']; ?> <?php endif; ?>
+                            <?php
 
-                                <?php
+                            $m = date('m');
 
-                                $m = date('m');
+                            echo $m;
 
-                                echo $m;
-
-                                ?>
+                            ?>
 
                             </p>
                             <h1 class="info notranslate counter" data-number='<?php echo $rowData_month[$month][0][8]; ?>'>0</h1>
                             </h1>
-                            <p class="unit">Triệu kWh </p>
+                            <?php if ($san_luong_luy_ke) : ?> <p class="unit"><?php echo $san_luong_luy_ke['don_vi_san_luong_thang']; ?></p> <?php endif; ?>
 
                         </div>
 
                         <div class="col-12 col-md-4 item count">
 
-                            <p class="label">Sản lượng lũy kế năm
+                            <p class="label">
+                                <?php if ($san_luong_luy_ke) : ?><?php echo $san_luong_luy_ke['san_luong_nam']; ?> <?php endif; ?>
+                            <?php
 
-                                <?php
+                            $y = date('Y');
 
-                                $y = date('Y');
+                            echo $y;
 
-                                echo $y;
-
-                                ?>
+                            ?>
 
                             </p>
 
                             <h1 class="info notranslate counter" data-number='<?php echo $rowData_month[13][0][8]; ?>'>0</h1>
                             </h1>
 
-                            <p class="unit">Triệu kWh </p>
+                            <?php if ($san_luong_luy_ke) : ?> <p class="unit"><?php echo $san_luong_luy_ke['don_vi_san_luong_nam']; ?></p> <?php endif; ?>
 
                         </div>
 
@@ -402,7 +402,7 @@ get_header();
                         <?php if ($tong_san_luong) : ?><h4 class="headding"><?php echo $tong_san_luong['title']; ?></h4>
                         <?php endif; ?>
 
-                        <input type="date" name="date" class="input-date form-control">
+                        <input type="date" name="date" class="input-date form-control d-none">
 
                     </div>
 
@@ -474,7 +474,7 @@ get_header();
                         <?php if ($cong_xuat_lap_dat) : ?><h4 class="title"><?php echo $cong_xuat_lap_dat['title']; ?></h4>
                         <?php endif; ?>
 
-                        <input type="date" name="date" class="input-date form-control">
+                        <input type="date" name="date" class="input-date form-control  d-none">
 
                     </div>
 

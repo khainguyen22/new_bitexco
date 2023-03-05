@@ -14,9 +14,11 @@ $hide_show_blog_meta = get_theme_mod('hide_show_blog_meta', 'on');
 ?>
 <?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
 <div class="custom-post d-flex ">
-    <div class="image">
-        <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
-    </div>
+    <a href="<?php echo get_the_permalink() ?>">
+        <div class="image">
+            <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
+        </div>
+    </a>
     <div class="content ">
         <?php if (get_the_tag_list()) : ?><span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span><?php endif; ?>
         <h6> <a href="<?php echo get_the_permalink() ?>"><?php echo the_title() ?></a></h6>
