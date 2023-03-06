@@ -17122,6 +17122,23 @@ section.article .article-container article .comment-form-comment textarea#commen
   right: 110px;
 }
 
+.shareholders-relations section.shareholder-info.press-infor-section .container {
+  width: 100%;
+}
+
+.press-infor-section .filter-form {
+  background-color: #fff;
+  padding: 0;
+}
+
+.press-infor-section .filter-form .filter-item {
+  width: 25%;
+}
+
+#date_range:hover {
+  cursor: pointer;
+}
+
 .comment-item {
   gap: 12px;
 }

@@ -20,8 +20,8 @@ jQuery(document).ready(function($) {
 	}
 
 	// Search Bar Ajax Test
-	$(".shareholder-content .btn-search").on("click", (e) => {
-		const inputValue = $('.shareholder-content input').val();
+	$("#shareholder-content .btn-search").on("click", (e) => {
+		const inputValue = $('#shareholder-content input').val();
 		function success(data) {
 			var results = data.split('|');
 			$('.s-0 .shareholder-items').html(results[0])
@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 
 
 	// Reset Ajax
-	$(".shareholder-content .reset").on("click", (e) => {
+	$("#shareholder-content .reset").on("click", (e) => {
 		$('.form-control').val('')
 		const dataObject = {
 			action: 'post_search_ajax',
@@ -107,7 +107,7 @@ jQuery(document).ready(function($) {
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
-		const inputValue = $('.s-0 .shareholder-content input').val();
+		const inputValue = $('.s-0 #shareholder-content input').val();
 		const paged = handleNextPrev(e, '.s-0')
 		const dataObject = {
 			action: "navigation_post_ajax",
@@ -130,7 +130,7 @@ jQuery(document).ready(function($) {
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
-		const inputValue = $('.shareholder-content input').val();
+		const inputValue = $('#shareholder-content input').val();
 		const paged = handleNextPrev(e, '.s-1');
 		const dataObject = {
 			action: "navigation_post_report_ajax",
@@ -153,7 +153,7 @@ jQuery(document).ready(function($) {
 		if ($(e.target).hasClass('dots')) {
 			return
 		}
-		const inputValue = $('.shareholder-content input').val();
+		const inputValue = $('#shareholder-content input').val();
 		const paged = handleNextPrev(e, '.s-2')
 		const dataObject = {
 			action: "annual_report_nav_ajax",
@@ -272,9 +272,9 @@ jQuery(document).ready(function($) {
 	 * 
 	*/
 		// Tender Notification Search
-		$(".tender-notice.tender .btn-search").on('click', function(e) {
+		$("#tender-notice .btn-search").on('click', function(e) {
 			// const paged = handleNextPrev(e, '.infomation-list')
-			const inputValue = $('.tender-notice.tender input').val();
+			const inputValue = $('#tender-notice input').val();
 			const type = $('.form-filter-type .item.active').attr('data-value');
 			const field = $('.form-filter-field .item.active').attr('data-value');
 			const dataDate = $('.filter-form  .form-filter-date-start input[type="date"]').val();
@@ -302,10 +302,10 @@ jQuery(document).ready(function($) {
 			$('html').scrollTop(200);
 			e.preventDefault()
 			const paged = handleNextPrev(e, '.infomation-list.tender-infor')
-			const inputValue = $('.filter-form.tender-notice .form-filter-search input').val();
-			const type = $('.tender-notice .form-filter-type .item.active').attr('data-value');
-			const field = $('.tender-notice .form-filter-field .item.active').attr('data-value');
-			const dataDate = $('.filter-form.tender-notice .form-filter-date-start input[type="date"]').val();
+			const inputValue = $('.filter-form#tender-notice .form-filter-search input').val();
+			const type = $('#tender-notice .form-filter-type .item.active').attr('data-value');
+			const field = $('#tender-notice .form-filter-field .item.active').attr('data-value');
+			const dataDate = $('.filter-form#tender-notice .form-filter-date-start input[type="date"]').val();
 
 			
 			const dataObject = {
@@ -325,10 +325,10 @@ jQuery(document).ready(function($) {
 		})
 
 		// Tender Notification Reset
-		$(".tender-notice .btn-reset").on("click", (e) => {
-			$('.tender-notice.tender input').val('');
-			$('.tender-notice .item.active').removeClass('active');
-			$('.tender-notice .item.first').addClass('active');
+		$("#tender-notice .btn-reset").on("click", (e) => {
+			$('#tender-notice input').val('');
+			$('#tender-notice .item.active').removeClass('active');
+			$('#tender-notice .item.first').addClass('active');
 			const dataObject = {
 				action: 'tender_notice_reset_action',
 			}

@@ -939,9 +939,6 @@ get_header();
 
 
                             <div class="form-filter-date d-flex">
-
-
-
                                 <input placeholder="Thời gian" name="date_range" class="textbox-n" type="text" id="date_range">
                                 <script>
                                 $(document).ready(function() {

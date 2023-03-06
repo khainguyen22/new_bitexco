@@ -122,7 +122,7 @@
 
         <section class="shareholder-info">
             <div class="container">
-                <div class="shareholder-content">
+                <div class="shareholder-content" id="shareholder-content">
                     <div class="title">
                         <h3><?php _e('Thông tin cổ đông', POWER) ?></h3>
                     </div>
