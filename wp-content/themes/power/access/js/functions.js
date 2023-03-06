@@ -8,7 +8,44 @@ jQuery(document).ready(function ($) {
 	// 		$(this).removeClass('has-value');
 	// 	}
 	// });
-	$('body').on('change','#popup_ung_tuyen input[name="image"]',function (params) {
+
+
+
+
+
+
+
+
+
+	$('body').on('click', '#shareOnFacebook', function () {
+		var url = encodeURIComponent(window.location.href);
+		var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+		window.open(shareUrl, '_blank');
+	})
+	$('body').on('click', '#shareOnZalo', function () {
+		var url = encodeURIComponent(window.location.href);
+		var shareUrl = 'https://zalo.me/share?url=' + url;
+		window.open(shareUrl, '_blank');
+	})
+	$('body').on('click', '#shareViaEmail', function () {
+		var subject = "Check out this webpage";
+		var body = "Hi,%0D%0A%0D%0ACheck out this cool webpage: " + encodeURIComponent(window.location.href) + "%0D%0A%0D%0ARegards,%0D%0AJohn Doe";
+		var mailtoLink = "mailto:?subject=" + encodeURIComponent(subject) + "&body=" + body;
+		window.open(mailtoLink, '_blank');
+	})
+	$('body').on('click', '#copyUrl', function () {
+		var url = window.location.href;
+		var tempInput = document.createElement("input");
+		tempInput.value = url;
+		document.body.appendChild(tempInput);
+		tempInput.select();
+		document.execCommand("copy");
+		document.body.removeChild(tempInput);
+	})
+	$('body').on('click', '#printPage', function () {
+		window.print();
+	})
+	$('body').on('change', '#popup_ung_tuyen input[name="image"]', function (params) {
 		console.log('asghdvg');
 	});
 
@@ -442,18 +479,28 @@ jQuery(document).ready(function ($) {
 	// scroll animation counter up
 	function formatNumberShow(countNum) {
 		var formattedNumber = parseFloat(countNum).toLocaleString('de-DE', {
-			minimumFractionDigits: 2,
-			maximumFractionDigits: 2,
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0,
 			useGrouping: true
 		});
 		return formattedNumber;
 	}
+
+
 	function formatNumber(countNum) {
-		var formattedNumber = parseFloat(countNum).toLocaleString('de-DE', {
-			minimumFractionDigits: 2,
-			maximumFractionDigits: 2,
-			useGrouping: true
-		});
+		if (countNum % 1 == 0) {
+			var formattedNumber = parseFloat(countNum).toLocaleString('de-DE', {
+				minimumFractionDigits: 0,
+				maximumFractionDigits: 0,
+				useGrouping: true
+			});
+		} else {
+			var formattedNumber = parseFloat(countNum).toLocaleString('de-DE', {
+				minimumFractionDigits: 2,
+				maximumFractionDigits: 2,
+				useGrouping: true
+			});
+		}
 		return formattedNumber;
 	}
 	function checkNumber(countNum) {
@@ -487,7 +534,6 @@ jQuery(document).ready(function ($) {
 						{
 							countNum: countTo
 						},
-
 						{
 							duration: 5500,
 							easing: "swing",
@@ -498,7 +544,7 @@ jQuery(document).ready(function ($) {
 							},
 							complete: function () {
 								$this.text(
-									formatNumberShow(this.countNum)
+									checkNumber(this.countNum)
 								);
 							}
 						}

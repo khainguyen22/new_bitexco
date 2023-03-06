@@ -157,7 +157,7 @@ get_header();
 
                                         <div class="desc-left">
 
-                                            <h3 class="title notranslate"><?php echo number_format($rowData[$day][0][8], 2, ',', '.'); ?><span class="unit"><?php echo _e('Triệu kWh'); ?> </span></h3>
+                                            <h3 class="title notranslate"><?php echo number_format($rowData[$day][0][8], 0, ',', '.'); ?><span class="unit"><?php echo _e('Triệu kWh'); ?> </span></h3>
 
                                             <span class="description uppercase">
 
@@ -177,7 +177,7 @@ get_header();
 
                                         <div class="desc-left">
 
-                                            <h3 class="title notranslate"><?php echo number_format($rowData_month[$month][0][8], 2, ',', '.'); ?><span class="unit"><?php echo _e('Triệu kWh');  ?></span></h3>
+                                            <h3 class="title notranslate"><?php echo number_format($rowData_month[$month][0][8], 0, ',', '.'); ?><span class="unit"><?php echo _e('Triệu kWh');  ?></span></h3>
 
                                             <span class="description uppercase">
 
@@ -197,7 +197,7 @@ get_header();
 
                                         <div class="desc-left">
 
-                                            <h3 class="title notranslate"><?php echo number_format($rowData_month[13][0][8], 2, ',', '.'); ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
+                                            <h3 class="title notranslate"><?php echo number_format($rowData_month[13][0][8], 0, ',', '.'); ?><span class="unit"><?php echo _e('Triệu kWh'); ?></span></h3>
 
                                             <span class="description uppercase">
 
