@@ -10,6 +10,7 @@
 
     <?php
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+    $request_uri = "$_SERVER[REDIRECT_URL]";
     $banner = get_field('banner_library', 'option');
     $navigation = '';
     if ($banner) {
@@ -37,7 +38,7 @@
 
                         <?php foreach ($navigation as $key => $value) : ?>
 
-                            <li class="<?php echo $actual_link == $value['link'] ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo $value['label']; ?></a></li>
+                            <li class="<?php echo strlen(strstr($value['link'], $request_uri)) > 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
 
                         <?php endforeach; ?>
 
