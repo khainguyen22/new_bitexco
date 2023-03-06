@@ -11,7 +11,9 @@ function query_action_news($paged = '1')
 
 	$type = $_POST['data_type'];
 
-	$date = $_POST['data_date'];
+	$date_range = $_POST['data_date'];
+
+	list($start_date, $end_date) = explode(' - ', $date_range);
 
 	header("Content-Type: text/html");
 
@@ -59,12 +61,18 @@ function query_action_news($paged = '1')
 	if (isset($_POST['data_date']) && $_POST['data_date'] != '') {
 		$date_query_by_meta = [
 				array(
-					'year' => date("Y", strtotime($_POST['data_date'])),
-					'monthnum' => date("m", strtotime($_POST['data_date'])),
-					'day' => date("d", strtotime($_POST['data_date'])),        
+					'before'    => array (
+						'year'  => date("Y", strtotime($end_date)),                  
+						'month' => date("m", strtotime($end_date)),                     
+						'day'   => date("d", strtotime($end_date)),                    
+					),
+					'after'    => array (
+						'year'  => date("Y", strtotime($start_date)),                  
+						'month' => date("m", strtotime($start_date)),                     
+						'day'   => date("d", strtotime($start_date)),                    
+					), 
+					'inclusive' => true,
 				),
-				'compare' => '=',
-				'column' => 'post_date',
 			];
 	}
 

@@ -5387,6 +5387,9 @@ header .search .search-bar:hover::after {
   z-index: 1;
   background: transparent;
 }
+.tin-tuc .lists-post .row.fillter .form-filter .form .form-filter-date #date_range {
+  padding: 4px 16px 4px 4px;
+}
 .tin-tuc .lists-post .row.fillter .form-filter .form .form-filter-date svg {
   width: 19px;
   height: 22px;

@@ -942,8 +942,25 @@ get_header();
 
 
 
-                                <input placeholder="Thời gian" name="date" class="textbox-n" type="text" onclick="(this.type='date')" id="date">
+                                <input placeholder="Thời gian" name="date_range" class="textbox-n" type="text" id="date_range">
+                                <script>
+                                $(document).ready(function() {
+                                $('#date_range').daterangepicker({
+                                    autoUpdateInput: false,
+                                    locale: {
+                                    cancelLabel: 'Clear'
+                                    }
+                                });
 
+                                $('#date_range').on('apply.daterangepicker', function(ev, picker) {
+                                    $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+                                });
+
+                                $('#date_range').on('cancel.daterangepicker', function(ev, picker) {
+                                    $(this).val('');
+                                });
+                                });
+                                </script>
 
 
                                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
