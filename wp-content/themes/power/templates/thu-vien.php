@@ -147,7 +147,7 @@ get_header();
 
             <div class="container">
 
-                <div class="form-filter ">
+                 <div class="form-filter image">
 
                     <form action="<?php echo get_site_url(  ).'/thu-vien/?'?>" class="d-flex justify-content-between flex-wrap">
 
@@ -167,7 +167,8 @@ get_header();
 
                         <div class="button-submit">
 
-                            <button class="btn btn-search btn-submit">Tìm kiếm</button>
+                            <button class="btn btn-search btn-submit image active">Tìm kiếm</button>
+                            <button class="btn btn-search btn-submit video">Tìm kiếm</button>
 
                         </div>
 

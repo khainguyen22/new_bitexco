@@ -8,6 +8,8 @@ jQuery(document).ready(function ($) {
 
         $('.filter-item .item.default').addClass('active');
 
+        $('input[type="date"]').val('')
+
         // $('.filter-item .item.first').addClass('active');
 
         Filter_posts_news();
@@ -27,7 +29,6 @@ jQuery(document).ready(function ($) {
         Post_filter_action_social_security();
 
     });
-
 
 
     // Start Filter & Pagination news
@@ -214,7 +215,7 @@ jQuery(document).ready(function ($) {
 
     $('.thu-vien-hinh-anh .btn-submit').on('click', function () {
 
-        // Filter_posts_library_images();
+        Filter_posts_library_images();
 
     });
 
