@@ -10,6 +10,8 @@ jQuery(document).ready(function ($) {
 
         $('input[type="date"]').val('')
 
+        $('#date_range').val('')
+
         // $('.filter-item .item.first').addClass('active');
 
         Filter_posts_news();
