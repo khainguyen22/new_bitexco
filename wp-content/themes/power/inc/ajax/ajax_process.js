@@ -51,7 +51,7 @@ jQuery(document).ready(function ($) {
 
         $type = $('.form-filter-type .item.active').attr('data-value');
 
-        $date = $('.form-filter-date input[name="date"]').val();
+        $date = $('.form-filter-date input[name="date_range"]').val();
 
         $.ajax({
 
