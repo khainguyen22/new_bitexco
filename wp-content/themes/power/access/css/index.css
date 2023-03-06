@@ -11479,8 +11479,7 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
 .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures {
   margin-top: 60px;
   display: flex;
-  column-gap: 84px;
-  padding: 0 106px;
+  justify-content: space-between;
 }
 .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures img {
   width: 104px;
@@ -11490,6 +11489,9 @@ section.site-map-content-section .site-map-container .service-tab .tab-title svg
   width: 33.3333333333%;
   display: flex;
   gap: 20px;
+}
+.bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures .figure .figure-text {
+  min-width: 300px;
 }
 .bitxeco-brand-page section.achievement .container .your-privilege-content .achievement-figures .figure svg {
   margin-right: 20px;
