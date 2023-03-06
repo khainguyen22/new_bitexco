@@ -74,6 +74,8 @@ if (!function_exists('theme_enqueue_styles')) {
         wp_enqueue_script('prevent-script-injection', get_template_directory_uri() . '/access/js/prventScriptInjection.js', array('jquery'), 1.1, false);
 
         wp_enqueue_script('thu-vien', get_template_directory_uri() . '/access/js/thu-vien.js', array('jquery'), 1.1, false);
+
+        wp_enqueue_script('date-range', get_template_directory_uri() . '/access/js/date-range.js', array('jquery'), 1.1, false);
     }
 }
 

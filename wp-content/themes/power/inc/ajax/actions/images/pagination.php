@@ -27,7 +27,7 @@ function post_nav_action_library_images()
 
 		'paged' => $paged,
 
-		'post_status' => 'any',
+		'post_status' => 'publish',
 
 		'posts_per_page' => 3,
 

@@ -25,6 +25,7 @@ require get_stylesheet_directory(  ) . '/inc/ajax/render/project-render.php';
 require get_stylesheet_directory(  ) . '/inc/ajax/render/vacancies-render.php';
 require get_stylesheet_directory(  ) . '/inc/ajax/render/social-security-render.php';
 require get_stylesheet_directory(  ) . '/inc/ajax/render/event-render.php';
+require get_stylesheet_directory(  ) . '/inc/ajax/render/press-information-render.php';
 
 // News actions
 require get_stylesheet_directory(  ) . '/inc/ajax/actions/news/query.php';
@@ -69,3 +70,8 @@ require get_stylesheet_directory(  ) . '/inc/ajax/actions/events/pagination.php'
 require get_stylesheet_directory(  ) . '/inc/ajax/actions/projects-list/query.php';
 require get_stylesheet_directory(  ) . '/inc/ajax/actions/projects-list/filter.php';
 require get_stylesheet_directory(  ) . '/inc/ajax/actions/projects-list/pagination.php';
+
+// Press information actions
+require get_stylesheet_directory(  ) . '/inc/ajax/actions/press-information/query.php';
+require get_stylesheet_directory(  ) . '/inc/ajax/actions/press-information/filter.php';
+require get_stylesheet_directory(  ) . '/inc/ajax/actions/press-information/pagination.php';

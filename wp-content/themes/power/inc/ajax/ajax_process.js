@@ -14,9 +14,11 @@ jQuery(document).ready(function ($) {
 
         // $('.filter-item .item.first').addClass('active');
 
+        pressInfomationFilter();
+
         Filter_posts_news();
 
-        // Filter_posts_library_images();
+        // Filter_posts_library_press-infor-section();
 
         Filter_posts_library_video();
 
@@ -353,6 +355,163 @@ jQuery(document).ready(function ($) {
     });
 
     // End Filter & Pagination library image
+
+    // Start Filter and Pagination Press Information
+
+    $('#press-infor-content .btn-submit').on('click', function () {
+
+        pressInfomationFilter();
+
+    });
+
+
+    function pressInfomationFilter() {
+
+        var name = $('.form-filter-search input[name="search"]').val();
+
+        var type = $('.form-filter-type.filter-item  .item.active').attr('data-value');
+
+        var date = $('.form-filter-date input[name="date_range"]').val();
+
+        $.ajax({
+
+            type: "POST",
+
+            dataType: "html",
+
+            url: ajaxObject1.ajaxurl,
+
+            data: {
+
+                action: 'press_information_filter',
+
+                data_page: '1',
+
+                data_name: name,
+                data_type: type,
+                data_date: date,
+
+            },
+
+            beforeSend: function (data) {
+
+                $('#press-infor-section .shareholder-items').html(
+
+                    '<div class="loader-box">' +
+
+                    '<div class="loader"></div>'
+
+                    + '</div>'
+
+                )
+
+            },
+
+            success: function (data) {
+
+                var results = data.split('|');
+
+                $('#press-infor-section .shareholder-items').html(results[0])
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+                $('#press-infor-section .pagination').html(results[1])
+
+            },
+
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+
+            }
+
+
+
+        });
+
+        return false;
+
+    }
+
+    $("body").on("click", "#press-infor-section #press-infor-content .page-numbers", (e) => {
+
+        e.preventDefault();
+        $('html').scrollTop(200)
+        var paged = '';
+
+        paged = e.target.innerText
+
+        if (e.target.closest('#press-infor-section .page-numbers').classList.contains('prev')) {
+
+            paged = parseInt($('#press-infor-section .page-numbers.current').text()) - 1;
+
+        } else if (e.target.closest('.page-numbers').classList.contains('next')) {
+
+            paged = parseInt($('#press-infor-section .page-numbers.current').text()) + 1;
+
+        }
+
+        var name = $('.form-filter-search .search').val();
+
+        var type = $('.form-filter-type.filter-item  .item.active').attr('data-value');
+
+        var date = $('.form-filter-date input[name="date_range"]').val();
+
+        $.ajax({
+
+            url: ajaxObject1.ajaxurl,
+
+            type: "POST",
+
+            data: {
+
+                action: "press_information_filter",
+
+                paged: paged,
+
+                data_name: name,
+
+                data_date: date,
+
+                data_type: type,
+
+            },
+
+            beforeSend(data) {
+
+                $('#press-infor-section .shareholder-items').html(
+
+                    '<div class="loader-box">' +
+
+                    '<div class="loader"></div>'
+
+                    + '</div>'
+
+                )
+
+            },
+
+            success(data) {
+
+                var results = data.split('|');
+
+                $('#press-infor-section .shareholder-items').html(results[0])
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+                $('#press-infor-section .pagination').html(results[1])
+
+
+            },
+
+            error(errorThrown) {
+
+                console.log(errorThrown);
+
+            },
+
+        });
+
+    });
+
+    // End Filter & Pagination library image
+
 
     // Start Filter & Pagination library video
 
