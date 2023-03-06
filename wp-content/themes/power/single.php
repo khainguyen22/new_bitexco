@@ -97,15 +97,8 @@ get_header();
                             </div>
                         </div>
                         <div class="divider-bottom"></div>
-                        <?php
-                        $comments = get_comments(array('post_id' => get_the_ID()));
-                        // print_r($comments);
-                        $comment_ids = array();
-                        foreach ($comments as $comment) :
-                            $comment_ids[] = $comment->comment_ID;
-                        endforeach;
-                        // print_r($comment_ids);
-                        ?>
+                                               <?php comments_template(); ?>
+
                         <a class="back" href="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                                 <path d="M7.33336 7.33203L4.31487 10.3505C3.95689 10.7085 3.95689 11.2889 4.31487 11.6469L7.33336 14.6654M4.58336 10.9987L17.4167 10.9987" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
