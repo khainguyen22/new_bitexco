@@ -52,11 +52,16 @@ if ( post_password_required() ) { ?>
 	$comment_cookies_1 = ' By commenting you accept the';
 	$comment_cookies_2 = ' Privacy Policy';
 
-	$comment_before = 'Registration isn\'t required.';
 
 	$comment_cancel = 'Cancel Reply';
 	$logged_in_as = '';
 	$current_user = wp_get_current_user()->data->user_nicename;
+
+	if ( ! is_user_logged_in()) {
+		$submit_button = '<a name="%1$s" href="'.wp_login_url().'" type="submit" id="%2$s" class="%3$s" value="%4$s">%4$s</a>';
+	} else {
+		$submit_button = '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />';
+	}
 
 	//Array
 	$comments_args = array(
@@ -74,7 +79,7 @@ if ( post_password_required() ) { ?>
 			// Change the text before the comment form
 			'logged_in_as' => __( $logged_in_as ),
 			// Change button format
-			'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
+			'submit_button'        => __($submit_button),
 			// Add logged in user name
 			'submit_field ' => '<p class="form-submit"><span>abc</span> %1$s %2$s</p>',
 			// Change the title of send button
@@ -97,7 +102,7 @@ if ( post_password_required() ) { ?>
 				<div class="g-recaptcha brochure__form__captcha" data-sitekey="6Lf7JNAkAAAAABXY_GMLlc1_N9HMH6fYJVcxLyf1"></div>
 				',
 			//Message Before Comment
-			'comment_notes_before' => __( $comment_before),
+			'comment_notes_before' => '',
 			// Remove "Text or HTML to be displayed after the set of comment fields".
 			'comment_notes_after' => '',
 			//Submit Button ID
