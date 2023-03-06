@@ -1488,3 +1488,36 @@ function custom_login_error_message()
     return $message;
 }
 add_filter('login_errors', 'custom_login_error_message');
+
+/**
+ * Prevent non-logged-in users to leave a comment but 
+ * let them see the comments list
+ * 
+ * @return
+ * @param
+ */
+function my_comment_form_defaults( $defaults ) {
+    if ( ! is_user_logged_in() ) {
+        $defaults['comment_notes_before'] = '<p class="comment-notes">Please <a href="' . wp_login_url() . '">log in</a> to leave a comment.</p>';
+    }
+    return $defaults;
+}
+add_filter( 'comment_form_defaults', 'my_comment_form_defaults' );
+
+/**
+ * 
+ * Click comment form button ridirect to login page
+ * 
+ * @return
+ * @param
+ *
+ */
+function my_comment_redirect() {
+    if ( ! is_user_logged_in() && empty( $_POST['comment'] ) ) {
+        wp_redirect( wp_login_url() );
+    } elseif ( ! is_user_logged_in() ) {
+        wp_redirect( wp_login_url() );
+        exit;
+    }
+}
+add_action( 'comment_post', 'my_comment_redirect' );
