@@ -8,7 +8,22 @@ jQuery(document).ready(function ($) {
 	// 		$(this).removeClass('has-value');
 	// 	}
 	// });
+	$('body').on('change','#popup_ung_tuyen input[name="image"]',function (params) {
+		console.log('asghdvg');
+	});
 
+	// popup ứng tuyển vị trí tuyển dụng 
+	jQuery('input[name=image]').on('change', function () {
+		if (this.files && this.files[0]) {
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				jQuery('.file-image img').attr('src', e.target.result);
+			}
+			console.log(this.files[0]);
+			reader.readAsDataURL(this.files[0]);
+		}
+	});
 
 
 	// no translate phan trang

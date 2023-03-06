@@ -341,7 +341,7 @@ if (isset($banner)) {
 	<?php
 	$paged = 1;
 	$args = [
-		'post_type' => 'selection_results',
+		'post_type' => 't_selection_results',
 		'posts_per_page' => 8,
 		'paged' =>  $paged,
 	];

@@ -41,7 +41,7 @@ function register_post_type_tender_notice_projects()
         'label'                 => __('Thông tin mời thầu thủy điện', POWER),
         'description'           => __('Post Type Description', POWER),
         'labels'                => $labels,
-        'taxonomies'            => array('type', 'status', 'field'),
+        'taxonomies'            => array('status', 'field'),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,

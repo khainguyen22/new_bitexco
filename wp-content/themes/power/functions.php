@@ -1176,9 +1176,11 @@ include(get_template_directory() . '/inc/post-types/thu-vien.php');
 
 include(get_template_directory() . '/inc/post-types/thong-bao-moi-thau.php');
 
+include(get_template_directory() . '/inc/post-types/ket-qua-lua-chon-nha-thau.php');
+
 include(get_template_directory() . '/inc/post-types/thong-tin-moi-thau-thuy-dien.php');
 
-include(get_template_directory() . '/inc/post-types/ket-qua-lua-chon-nha-thau.php');
+include(get_template_directory() . '/inc/post-types/ket-qua-lua-chon-nha-thau-thuy-dien.php');
 
 include(get_template_directory() . '/inc/post-types/an-sinh-xa-hoi.php');
 
@@ -1455,6 +1457,7 @@ function formatedPhoneNumber($phone)
     $formatted_phone = "+84" . substr_replace($formatted_phone, "", 0, 1); // replace the first character with ""
     return $formatted_phone;
 }
+
 $recaptcha = $_POST['g-recaptcha-response'];
 $res = reCaptcha($recaptcha);
 if ($res['success']) {
@@ -1488,3 +1491,20 @@ function custom_login_error_message()
     return $message;
 }
 add_filter('login_errors', 'custom_login_error_message');
+add_action('wp_footer', 'harry_wp_footer');
+
+function harry_wp_footer()
+{
+?>
+    <script type="text/javascript">
+        document.addEventListener('wpcf7mailsent', function(event) {
+            if ('3058' == event.detail.contactFormId) {
+                var close = document.getElementsByClassName('close')
+                close[0].click();
+                var myModalsuccessfully = new bootstrap.Modal(document.getElementById('popup_ung_tuyen_successfully'));
+                myModalsuccessfully.show();
+            }
+        }, false);
+    </script>
+<?php
+}
