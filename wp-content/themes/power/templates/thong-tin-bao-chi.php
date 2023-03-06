@@ -70,7 +70,7 @@
                         <img src="<?php echo paint_if_exist(get_the_post_thumbnail_url($representing_post->ID)); ?>" alt="" width="499" height="280">
                     </div>
                     <div class="text-content" data-post-id="<?php echo $representing_post->ID; ?>">
-                        <h5><?php _e(paint_if_exist($representing_post->post_title), POWER) ?></h5>
+                        <h5><a href="<?php the_permalink($representing_post->ID) ?>"><?php _e(paint_if_exist($representing_post->post_title), POWER) ?></a></h5>
                         <div class="terms-and-time">
                             <div class="download">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,7 +173,7 @@
                                 <div class="shareholder-item" data-postID="<?php echo get_the_ID() ?>">
                                     <div class="shareholder-title">
                                         <div class="name-and-time">
-                                            <h6><?php _e(get_the_title(get_the_ID()), POWER) ?></h6>
+                                            <h6><a href="<?php the_permalink()?>"><?php _e(get_the_title(get_the_ID()), POWER) ?></a></h6>
 
                                         </div>
                                         <div class="name-and-time">

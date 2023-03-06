@@ -17015,6 +17015,7 @@ section.infomation-useful .world-electric-companies {
 }
 section.infomation-useful .item-box {
   transition: all 0.5s ease;
+  justify-content: space-evenly;
 }
 section.infomation-useful .item-box.hide {
   height: 0;
