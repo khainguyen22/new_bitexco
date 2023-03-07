@@ -47,7 +47,7 @@ $args_image = array(
 
     'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
 
-    'post_status' => 'any',
+    'post_status' => 'publish',
 
     'posts_per_page' => 3,
 
@@ -168,7 +168,6 @@ get_header();
                         <div class="button-submit">
 
                             <button class="btn btn-search btn-submit image active">Tìm kiếm</button>
-                            <button class="btn btn-search btn-submit video">Tìm kiếm</button>
 
                         </div>
 
@@ -196,11 +195,12 @@ get_header();
 
                         <ul class="nav" role="tablist">
 
-                            <li role="presentation" class="active"><a href="#images" aria-controls="images" role="tab" data-toggle="tab">Hình ảnh</a></li>
+                        <li role="presentation" class="active"><a href="<?php get_site_url() . '/thu-vien/hinh-anh/'?>">Hình ảnh</a></li>
 
-                            <li role="presentation" class=""><a href="#video" aria-controls="video" role="tab" data-toggle="tab">Video </a></li>
+                        <li role="presentation" class=""><a href="<?php get_site_url() . '/thu-vien/video/'?>">Video </a></li>
 
-                            <li role="presentation" class=""><a href="#useful-infomation" aria-controls="useful-infomation" role="tab" data-toggle="tab">Thông tin hữu ích</a></li>
+                        <li role="presentation" class=""><a href="<?php get_site_url() . '/thu-vien/thong-tin-huu-ich/'?>">Thông tin hữu ích</a></li>
+
 
                         </ul>
 

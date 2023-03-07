@@ -1,6 +1,12 @@
 jQuery(document).ready(function ($) {
 
-    $('.button-reset .btn-reset').on('click', function () {
+    $('#thu-vien-video .btn-reset').on('click', function (e) {
+        e.preventDefault()
+        Filter_posts_library_video('');
+    })
+
+
+    $('.button-reset .btn-reset').on('click', function (e) {
 
         $('.search').val('');
 
@@ -18,10 +24,6 @@ jQuery(document).ready(function ($) {
 
         Filter_posts_news();
 
-        // Filter_posts_library_press-infor-section();
-
-        Filter_posts_library_video();
-
         Filter_posts_company_member();
 
         Filter_posts_projects();
@@ -33,6 +35,7 @@ jQuery(document).ready(function ($) {
         Post_filter_action_social_security();
 
     });
+
 
 
     // Start Filter & Pagination news
@@ -689,13 +692,14 @@ jQuery(document).ready(function ($) {
 
     // Start Filter & Pagination library video
 
-    $('.thu-vien-video .btn-submit').on('click', function () {
-
-        Filter_posts_library_video();
+    $('.thu-vien-video .btn-submit').on('click', function (e) {
+        e.preventDefault()
+        const name = $('.thu-vien-video .form-filter-search input').val()
+        Filter_posts_library_video(name);
 
     });
 
-    function Filter_posts_library_video($name) {
+    function Filter_posts_library_video(name) {
 
         $.ajax({
 
@@ -711,7 +715,7 @@ jQuery(document).ready(function ($) {
 
                 data_page: '1',
 
-                data_name: $name,
+                data_name: name,
 
             },
 
@@ -1055,8 +1059,6 @@ jQuery(document).ready(function ($) {
             },
 
             success: function (data) {
-
-                console.log(data);
 
                 var results = data.split('|');
 

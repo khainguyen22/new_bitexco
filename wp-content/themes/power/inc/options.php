@@ -5,9 +5,6 @@ add_action('acf/init', 'my_acf_op_init');
 function my_acf_op_init()
 
 {
-
-
-
     // Check function exists.
 
     if (function_exists('acf_add_options_page')) {
@@ -176,7 +173,6 @@ function my_acf_op_init()
         ));
 
         // Add sub page.
-
         $child = acf_add_options_page(array(
 
             'page_title'  => __('Thư viện'),
@@ -187,6 +183,38 @@ function my_acf_op_init()
 
         ));
 
+        // Add sub page.
+        $child = acf_add_options_page(array(
+
+            'page_title'  => __('Thư viện hình ảnh'),
+
+            'menu_title'  => __('Thư viện hình ảnh'),
+
+            'parent_slug' => $parent['menu_slug'],
+
+        ));
+
+         // Add sub page.
+         $child = acf_add_options_page(array(
+
+            'page_title'  => __('Thư viện video'),
+
+            'menu_title'  => __('Thư viện video'),
+
+            'parent_slug' => $parent['menu_slug'],
+
+        ));
+
+         // Add sub page.
+         $child = acf_add_options_page(array(
+
+            'page_title'  => __('Thông tin hữu ích'),
+
+            'menu_title'  => __('Thông tin hữu ích'),
+
+            'parent_slug' => $parent['menu_slug'],
+
+        ));
 
 
         // Add sub page.
@@ -334,18 +362,6 @@ function my_acf_op_init()
             'page_title'  => __('Thông tin mới thầu thủy điện'),
 
             'menu_title'  => __('Thông tin mới thầu thủy điện'),
-
-            'parent_slug' => $parent['menu_slug'],
-
-        ));
-
-        // Add sub page.
-
-        $child = acf_add_options_page(array(
-
-            'page_title'  => __('Thông tin hữu ích'),
-
-            'menu_title'  => __('Thông tin hữu ích'),
 
             'parent_slug' => $parent['menu_slug'],
 
