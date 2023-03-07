@@ -6721,7 +6721,7 @@ header .search .search-bar:hover::after {
 .medias .share {
   display: none;
 }
-.medias .item img:hover {
+.medias .item svg:hover {
   cursor: pointer;
 }
 
