@@ -285,8 +285,7 @@
                 .achievement-figures {
                     margin-top: 60px;
                     display: flex;
-                    column-gap: 84px;
-                    padding: 0 106px;
+                    justify-content: space-between;
 
                     img {
                         width: 104px;
@@ -297,6 +296,10 @@
                         width: calc(100%/3);
                         display: flex;
                         gap: 20px;
+
+                        .figure-text {
+                            min-width: 300px;
+                        }
 
                         svg {
                             margin-right: 20px;

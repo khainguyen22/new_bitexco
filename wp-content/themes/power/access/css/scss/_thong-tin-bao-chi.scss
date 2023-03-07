@@ -1,92 +1,95 @@
 .terms-and-time {
-	display: flex;
-	justify-content: space-between;
-	span {
-		font-family: 'Public Sans';
-		font-style: normal;
-		font-weight: 500;
-		font-size: 11px;
-		line-height: 150%;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-		color: #7E8189 !important;
-	}
+    display: flex;
+    justify-content: space-between;
+
+    span {
+        font-family: 'Public Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 11px;
+        line-height: 150%;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #7E8189 !important;
+    }
 }
 
 .represent-post-content {
-	margin-bottom: 18px;
+    margin-bottom: 18px;
 }
 
 .comment-form {
-	position: relative;
+    position: relative;
 }
 
 section.article .article-container article .comment-form-comment {
-	margin: 0 ;
-	margin-top: 20px;
-	textarea#comment {
-		width: 100%;
-		padding: 11px 16px;
-		min-height: 92px;
-	}
-	
+    margin: 0;
+    margin-top: 20px;
+
+    textarea#comment {
+        width: 100%;
+        padding: 11px 16px;
+        min-height: 92px;
+    }
+
 }
 
 #commentform {
-	.form-submit {
-		margin-top: 0;
-    text-align: right;
-    display: inline-block;
-    position: absolute;
-    right: 0;
-    top: calc(100% + 12px);
-		.submit {
-			padding: 14px 32px;
-			width: 92px;
-			height: 48px;
-			background: #DAA622;
-			border-radius: 2px;
-			font-family: 'Public Sans';
-			font-style: normal;
-			font-weight: 600;
-			font-size: 14px;
-			line-height: 140%;
-			letter-spacing: 0.04em;
-			text-transform: uppercase;
-			color: #FFFFFF;
-			outline: none;
-			border: navajowhite;
-		}
-	}
+    .form-submit {
+        margin-top: 0;
+        text-align: right;
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: calc(100% + 12px);
+
+        .submit {
+            padding: 14px 32px;
+            width: 92px;
+            height: 48px;
+            background: #DAA622;
+            border-radius: 2px;
+            font-family: 'Public Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 140%;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            outline: none;
+            border: navajowhite;
+        }
+    }
 }
 
 .current-user {
-	position: absolute;
-	left: 0;
-	top: calc(100% + 12px);
-	display: flex;
-	align-items: center;
-	gap: 12px;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 12px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .g-recaptcha.brochure__form__captcha {
-	position: absolute;
-	right: 110px;
+    position: absolute;
+    right: 110px;
 }
 
 .shareholders-relations section.shareholder-info.press-infor-section .container {
-	width: 100%;
+    width: 100%;
 }
 
 .press-infor-section .filter-form {
-	background-color: #fff;
-	padding: 0;
+    background-color: #fff;
+    padding: 0;
 }
 
 .press-infor-section .filter-form .filter-item {
-	width: 25%;
+    width: 25%;
 }
 
 #date_range:hover {
-	cursor: pointer;
+    cursor: pointer;
 }

@@ -79,7 +79,7 @@ if (isset($banner)) {
 
 		<div class="container">
 
-			<div class="form-filter" >
+			<div class="form-filter">
 
 				<div class="filter-item form-filter-search d-flex">
 
@@ -245,10 +245,9 @@ if (isset($banner)) {
 		'posts_per_page' => 8,
 
 		'paged' =>  $paged,
-
 	];
 
-
+	// get_the_terms(get_the_ID(), 'status')
 
 	$query = new WP_Query($args);
 
@@ -309,7 +308,7 @@ if (isset($banner)) {
 		<div class="container">
 
 			<div class="list">
-	
+
 				<?php if ($query->have_posts()) : ?>
 
 					<?php while ($query->have_posts()) : $query->the_post(); ?>

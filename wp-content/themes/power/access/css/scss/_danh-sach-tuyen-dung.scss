@@ -452,3 +452,199 @@
     }
 
 }
+
+// popup ung tuyen 
+#popup_ung_tuyen {
+    .modal-body {
+        padding: 20px 60px 30px;
+    }
+
+    .modal-header {
+        padding: 30px 60px 0;
+        border: unset;
+
+        .close {
+            margin: -1em -3.3rem 0 0;
+        }
+    }
+
+    .form {
+        .file-image {
+            display: flex;
+
+            .image {
+                width: 75px;
+                height: 75px;
+                margin-right: 23px;
+                border-radius: 50%;
+                background: #7e818962;
+
+                img {
+                    width: 75px;
+                    height: 75px;
+                    object-fit: scale-down;
+                    border-radius: 50%;
+                }
+            }
+
+            .upload_file_image {
+                p {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 160%;
+                    letter-spacing: 0.01em;
+                    color: #434449;
+                    margin-bottom: 4px;
+                }
+
+                input {
+                    height: 32px;
+                    background: #FFFFFF;
+                    border-radius: 2px;
+                }
+            }
+        }
+
+        .required {
+            color: red;
+            margin-left: 4px;
+        }
+
+        .main_info {
+            margin-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 20px;
+            row-gap: 15px;
+
+            .item {
+                max-width: 48%;
+                width: 100%;
+
+                input {
+                    height: 48px;
+                    padding: 10px 16px;
+                    background: #FFFFFF;
+                    border: 1px solid #D1D5DB;
+                    border-radius: 2px;
+                }
+
+                * {
+                    width: -webkit-fill-available;
+                }
+            }
+
+
+
+            textarea {
+                width: 100%;
+                height: 94px;
+                background: #FFFFFF;
+                border: 1px solid #D1D5DB;
+                border-radius: 2px;
+            }
+        }
+
+        .file_cv {
+            display: flex;
+
+            .title {
+                margin-right: 12px;
+
+                p {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .sub_label_file p {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 24px;
+
+            span {
+                margin-right: 40px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 160%;
+                letter-spacing: 0.01em;
+                color: #434449;
+            }
+        }
+
+        .footer-form {
+            display: flex;
+            justify-content: space-between;
+
+            .wrap_submit {
+                display: flex;
+            }
+
+            .submit {
+                position: relative;
+
+                input {
+                    width: 111px;
+                    height: 48px;
+                    background: #DAA622;
+                    border-radius: 2px;
+                    border: 1px solid #DAA622;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 140%;
+                    letter-spacing: 0.04em;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                }
+
+                .wpcf7-spinner {
+
+                    position: absolute;
+                    right: 88px;
+                    top: 12px;
+
+                }
+            }
+
+            .close button {
+                height: 48px;
+                line-height: 0;
+                border: unset;
+                background: unset;
+                padding: 0 32px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 140%;
+                letter-spacing: 0.04em;
+                text-transform: uppercase;
+                color: #DAA622;
+
+                &:focus {
+                    outline: unset;
+                    box-shadow: unset;
+                }
+            }
+        }
+    }
+}
+
+// popup_ung_tuyen_successfully
+#popup_ung_tuyen_successfully .modal-content {
+    padding: 60px;
+    position: relative;
+
+    .modal-body {
+        padding: 0;
+
+        .icon {
+            margin-bottom: 24px;
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+}

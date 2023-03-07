@@ -1,4 +1,6 @@
 <?php
+$events = get_field('events', 'option');
+$banner = $events['banner'];
 get_header(); ?>
 
 <!-- Blog & Sidebar Section -->
@@ -18,7 +20,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="banner" style='background-image:url("<?php echo $featured_img_url; ?>")'>
+            <div class="banner" style='background-image:url("<?php echo isset($featured_img_url) ? $featured_img_url : $banner['background'] ?>")'>
                 <div class="wrap_banner">
                     <div class="container">
                         <div class="content">

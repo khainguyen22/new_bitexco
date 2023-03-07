@@ -474,7 +474,7 @@ get_header();
                         <?php if ($cong_xuat_lap_dat) : ?><h4 class="title"><?php echo $cong_xuat_lap_dat['title']; ?></h4>
                         <?php endif; ?>
 
-                        <input type="date" name="date" class="input-date form-control  d-none">
+                        <input type="date" name="date" class="input-date form-control d-none">
 
                     </div>
 
@@ -933,9 +933,9 @@ get_header();
 
                     order: 1,
 
-                    // pointStyle: 'line',
+                    pointStyle: 'line',
 
-                    // stepped: 'middle',
+                    stepped: 'middle',
 
                 },
 

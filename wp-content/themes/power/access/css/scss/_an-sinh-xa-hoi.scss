@@ -128,9 +128,6 @@
 
         .content {
             margin-top: 80px;
-            margin-right: 41px;
-            margin-left: 74px;
-            column-gap: 0%;
             row-gap: 58px;
             justify-content: space-around;
 
@@ -163,13 +160,22 @@
 
                 .info {
                     margin-left: 20px;
-                    min-width: 245px;
+                    min-width: 290px;
 
                     .label {
                         font-weight: 300;
                         color: #141518;
                         opacity: 0.8;
                         text-transform: uppercase;
+                    }
+
+                    .count {
+                        min-width: 290px;
+
+                        .counter {
+                            max-width: 290px;
+                            overflow: hidden;
+                        }
                     }
 
                     .number,

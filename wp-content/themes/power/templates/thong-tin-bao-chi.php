@@ -10,6 +10,7 @@
 
     <?php
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+    $request_uri = "$_SERVER[REDIRECT_URL]";
     $banner = get_field('banner_library', 'option');
     $navigation = '';
     if ($banner) {
@@ -37,7 +38,7 @@
 
                         <?php foreach ($navigation as $key => $value) : ?>
 
-                            <li class="<?php echo $actual_link == $value['link'] ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo $value['label']; ?></a></li>
+                            <li class="<?php echo strlen(strstr($value['link'], $request_uri)) > 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
 
                         <?php endforeach; ?>
 
@@ -78,9 +79,11 @@
                                     <path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189" />
                                 </svg>
                                 <?php
-                                foreach (get_the_terms($representing_post->ID, 'type') as $key => $value) { ?>
-                                    <span><?php _e($value->name) ?></span>
-                                <?php }
+                                if (get_the_terms($representing_post->ID, 'type')) :
+                                    foreach (get_the_terms($representing_post->ID, 'type') as $key => $value) : ?>
+                                        <span><?php _e($value->name) ?></span>
+                                <?php endforeach;
+                                endif;
                                 ?>
                             </div>
                             <div class="calender">
@@ -315,18 +318,21 @@
 
                                         </div>
                                         <div class="name-and-time">
+                                            <?php
+                                            if (get_the_terms($representing_post->ID, 'type')) : ?>
+                                                <div class="download">
+                                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M1.66797 2.4974C1.66797 2.03716 2.04106 1.66406 2.5013 1.66406H9.16797C9.38898 1.66406 9.60094 1.75186 9.75722 1.90814L18.0906 10.2415C18.416 10.5669 18.416 11.0945 18.0906 11.42L11.4239 18.0867C11.0985 18.4121 10.5708 18.4121 10.2454 18.0867L1.91205 9.75332C1.75577 9.59704 1.66797 9.38508 1.66797 9.16406V2.4974ZM3.33464 3.33073V8.81888L10.8346 16.3189L16.3228 10.8307L8.82279 3.33073H3.33464Z" fill="#7E8189" />
+                                                        <path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189" />
+                                                    </svg>
+                                                    <?php
+                                                    foreach (get_the_terms($representing_post->ID, 'type') as $key => $value) : ?>
+                                                        <span><?php _e($value->name) ?></span>
+                                                    <?php endforeach;
+                                                    ?>
+                                                </div>
 
-                                            <div class="download">
-                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1.66797 2.4974C1.66797 2.03716 2.04106 1.66406 2.5013 1.66406H9.16797C9.38898 1.66406 9.60094 1.75186 9.75722 1.90814L18.0906 10.2415C18.416 10.5669 18.416 11.0945 18.0906 11.42L11.4239 18.0867C11.0985 18.4121 10.5708 18.4121 10.2454 18.0867L1.91205 9.75332C1.75577 9.59704 1.66797 9.38508 1.66797 9.16406V2.4974ZM3.33464 3.33073V8.81888L10.8346 16.3189L16.3228 10.8307L8.82279 3.33073H3.33464Z" fill="#7E8189" />
-                                                    <path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189" />
-                                                </svg>
-                                                <?php
-                                                foreach (get_the_terms(get_the_ID(), 'type') as $key => $value) { ?>
-                                                    <span><?php _e($value->name) ?></span>
-                                                <?php }
-                                                ?>
-                                            </div>
+                                            <?php endif; ?>
                                             <div class="calender">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M2.5 5C2.5 3.61929 3.61929 2.5 5 2.5H15C16.3807 2.5 17.5 3.61929 17.5 5V15C17.5 16.3807 16.3807 17.5 15 17.5H5C3.61929 17.5 2.5 16.3807 2.5 15V5Z" stroke="#7E8189" stroke-width="1.5"></path>

@@ -74,7 +74,7 @@ function render_company_member($query, $paged = 1)
 
 				<div class="filter-image  hover-zoom hover-zoom-img">
 
-					<a href="<?php the_permalink() ?>">
+					<a href="<?php echo  get_field('website')  ?>">
 
 						<img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
 
@@ -86,7 +86,7 @@ function render_company_member($query, $paged = 1)
 
 					<div class="content-title">
 
-						<h6> <a href="<?php the_permalink() ?>"><?php echo the_title() ?></a></h6>
+						<h6> <a href="<?php echo  get_field('website')  ?>"><?php echo the_title() ?></a></h6>
 
 					</div>
 
@@ -178,7 +178,7 @@ function render_company_member($query, $paged = 1)
 
 		<?php endwhile; ?>
 
-	<?php else :
+<?php else :
 
 		not_result();
 
