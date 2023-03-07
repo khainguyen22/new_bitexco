@@ -45,11 +45,11 @@ jQuery(document).ready(function ($) {
 	$('body').on('click', '#printPage', function () {
 		window.print();
 	})
+	// popup ứng tuyển vị trí tuyển dụng 
 	$('body').on('change', '#popup_ung_tuyen input[name="image"]', function (params) {
 		console.log('asghdvg');
 	});
 
-	// popup ứng tuyển vị trí tuyển dụng 
 	jQuery('input[name=image]').on('change', function () {
 		if (this.files && this.files[0]) {
 			var reader = new FileReader();
