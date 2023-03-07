@@ -56,7 +56,7 @@
 
     <!-- Shareholders Information -->
 
-    <section class="shareholder-information shareholders-secion active s-0">
+    <section class="shareholder-information shareholders-secion active">
         <?php
         $representing_post = get_field('representing_post', 'option');
         // echo "<pre>";
@@ -71,7 +71,7 @@
                         <img src="<?php echo paint_if_exist(get_the_post_thumbnail_url($representing_post->ID)); ?>" alt="" width="499" height="280">
                     </div>
                     <div class="text-content" data-post-id="<?php echo $representing_post->ID; ?>">
-                        <h5><?php _e(paint_if_exist($representing_post->post_title), POWER) ?></h5>
+                        <h5><a href="<?php the_permalink($representing_post->ID) ?>"><?php _e(paint_if_exist($representing_post->post_title), POWER) ?></a></h5>
                         <div class="terms-and-time">
                             <div class="download">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -159,58 +159,154 @@
         ));
         ?>
 
-        <section class="shareholder-info">
+        <section class="shareholder-info press-infor-section" id="press-infor-section">
             <div class="container">
-                <div class="shareholder-content">
+                <div class="shareholder-content" id="press-infor-content">
                     <div class="title">
                         <h3><?php _e('Thông tin báo chí', POWER) ?></h3>
                     </div>
-                    <div class="search-bar form-filter form">
-                        <div class="item-filter">
-                            <input class="form-control my-3" type="text" placeholder="Tìm kiếm">
+                    <div class="filter-form tender-notice tender active" data-number="0">
+
+                        <div class="container">
+
+                            <div class="form-filter" >
+
+                                <div class="filter-item form-filter-search d-flex">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+
+                                        <circle cx="11" cy="11" r="8" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>
+
+                                        <path d="M16.5 16.958L21.5 21.958" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+
+                                    </svg>
+
+                                    <input type="text" name="search" placeholder="Tìm kiếm">
+
+                                </div>
+
+                                <?php
+
+                                $tax_name = get_taxonomy('type')->label;
+
+                                $terms = get_terms(array(
+
+                                    'taxonomy' => 'type',
+
+                                    'hide_empty' => false,
+
+                                ));
+
+                                ?>
+
+                                <div class="filter-item form-filter-type">
+
+                                    <?php if (isset($tax_name)) : ?>
+                                        <span class="item-default"><?php echo paint_if_exist($tax_name) ?></span>
+                                    <?php endif ?>
+                                    <ul>
+
+                                        <?php if (isset($tax_name)) : ?>
+
+                                            <li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
+
+                                        <?php endif ?>
+
+                                        <?php foreach ($terms as $key => $value) : ?>
+
+                                            <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
+
+                                        <?php endforeach; ?>
+
+                                    </ul>
+
+                                    <svg class="dropdown-icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                                        <path d="M5.75 9L11.9691 14.3306C12.4184 14.7158 13.0816 14.7158 13.5309 14.3306L19.75 9" stroke="#434449" stroke-width="1.5" stroke-linecap="round" />
+
+                                    </svg>
+
+                                </div>
+
+                                <?php
+
+                                $tax_name = get_taxonomy('field')->label;
+
+                                $terms = get_terms(array(
+
+                                    'taxonomy' => 'field',
+
+                                    'hide_empty' => false,
+
+                                ));
+
+                                ?>
+
+                                <div class="filter-item form-filter-date">
+
+                                    <input placeholder="Thời gian" name="date_range" class="textbox-n" type="text" id="date_range" name="date_range">
+
+                                    <script>
+                                        $(document).ready(function() {
+                                        $('#date_range').daterangepicker({
+                                            autoUpdateInput: false,
+                                            locale: {
+                                            cancelLabel: 'Clear'
+                                            }
+                                        });
+
+                                        $('#date_range').on('apply.daterangepicker', function(ev, picker) {
+                                            $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+                                        });
+
+                                        $('#date_range').on('cancel.daterangepicker', function(ev, picker) {
+                                            $(this).val('');
+                                        });
+                                        });
+                                    </script>
+
+                                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                                        <path d="M21.25 6C21.25 4.34315 19.9069 3 18.25 3L6.25 3C4.59315 3 3.25 4.34314 3.25 6L3.25 18C3.25 19.6569 4.59314 21 6.25 21L18.25 21C19.9069 21 21.25 19.6569 21.25 18L21.25 6Z" stroke="#2B3F6C" stroke-width="1.5" />
+
+                                        <path d="M21.25 8L3.25 8" stroke="#2B3F6C" stroke-width="1.5" stroke-linejoin="round" />
+
+                                        <path d="M7.75 1.5L7.75 4.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M16.75 1.5L16.75 4.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M17.75 12L16.75 12" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M12.75 12L11.75 12" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M7.75 12L6.75 12" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M17.75 16L16.75 16" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M12.75 16L11.75 16" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                        <path d="M7.75 16L6.75 16" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+
+                                    </svg>
+
+                                </div>
+
+                                <div class="filter-btn button-submit">
+
+                                    <button class="btn btn-search btn-submit"><?php _e("Tìm Kiếm", POWER) ?></button>
+
+                                </div>
+
+                                <div class="filter-btn button-reset">
+
+                                    <button class="btn btn-reset"><?php _e("Đặt lại", POWER) ?></button>
+
+                                </div>
+
+                            </div>
+
                         </div>
-                        <?php
-                        $tax_name = get_taxonomy('type')->label;
-                        $terms = get_terms(array(
-                            'taxonomy' => 'type',
-                            'hide_empty' => false,
-                        ));
-                        ?>
-                        <div class="filter-item form-filter-type ">
-                            <?php if (isset($tax_name)) : ?>
-                                <span class="item-default"><?php echo paint_if_exist($tax_name) ?></span>
-                            <?php endif ?>
-                            <ul>
-                                <?php if (isset($tax_name)) : ?>
-                                    <li class="item active default first"><?php echo paint_if_exist($tax_name) ?></li>
-                                <?php endif ?>
-                                <?php foreach ($terms as $key => $value) : ?>
-                                    <li class="item" data-value="<?php echo $value->slug ?>"><?php echo paint_if_exist($value->name) ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            <svg class="dropdown-icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.75 9L11.9691 14.3306C12.4184 14.7158 13.0816 14.7158 13.5309 14.3306L19.75 9" stroke="#434449" stroke-width="1.5" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <div class="form-filter-date d-flex filter-item ">
-                            <input placeholder="Thời gian" name="date" class="textbox-n" type="text" onclick="(this.type='date')" id="date">
-                            <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 6C1 4.34315 2.34315 3 4 3H16C17.6569 3 19 4.34315 19 6V18C19 19.6569 17.6569 21 16 21H4C2.34315 21 1 19.6569 1 18V6Z" stroke="#2B3F6C" stroke-width="1.5" />
-                                <path d="M1 8H19" stroke="#2B3F6C" stroke-width="1.5" stroke-linejoin="round" />
-                                <path d="M14.5 1.5L14.5 4.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M5.5 1.5L5.5 4.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M4.5 12H5.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M9.5 12H10.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M14.5 12H15.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M4.5 16H5.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M9.5 16H10.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M14.5 16H15.5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                        <div class="item-filter wrap_btn">
-                            <button type="submit" class="btn btn-search"><?php _e('Tìm kiếm', POWER) ?></button>
-                            <button type="text" class="btn btn-custom-1 btn-custom-1-l reset"><?php _e("Đặt lại", POWER) ?></button>
-                        </div>
+
                     </div>
                     <div class="shareholder-items">
                         <?php if ($query->have_posts()) : ?>
@@ -218,7 +314,7 @@
                                 <div class="shareholder-item" data-postID="<?php echo get_the_ID() ?>">
                                     <div class="shareholder-title">
                                         <div class="name-and-time">
-                                            <h6><?php _e(get_the_title(get_the_ID()), POWER) ?></h6>
+                                            <h6><a href="<?php the_permalink()?>"><?php _e(get_the_title(get_the_ID()), POWER) ?></a></h6>
 
                                         </div>
                                         <div class="name-and-time">
@@ -250,7 +346,7 @@
                                                     <path d="M9.58337 13.3411H10.4167" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                                     <path d="M13.75 13.3411H14.5833" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
                                                 </svg>
-                                                <span class="text"><a href="#"><?php _e(paint_if_exist(date("d/m/Y", strtotime(get_field('release_time', get_the_ID())))), POWER) ?></a></span>
+                                                <span class="text"><a href="#"><?php _e(paint_if_exist(date("d/m/Y", strtotime(get_the_date()))), POWER) ?></a></span>
                                             </div>
                                         </div>
 

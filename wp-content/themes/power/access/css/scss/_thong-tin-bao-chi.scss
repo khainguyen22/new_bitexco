@@ -77,66 +77,19 @@ section.article .article-container article .comment-form-comment {
     right: 110px;
 }
 
+.shareholders-relations section.shareholder-info.press-infor-section .container {
+    width: 100%;
+}
 
-// filter 
-.shareholders-relations section.shareholder-info .container .shareholder-content .search-bar.form-filter {
-    gap: 16px;
+.press-infor-section .filter-form {
+    background-color: #fff;
+    padding: 0;
+}
 
-    .item-filter,
-    .item.form-filter-date,
-    .filter-item {
-        max-width: 25% !important;
-        width: 100%;
-    }
+.press-infor-section .filter-form .filter-item {
+    width: 25%;
+}
 
-    .wrap_btn {
-        display: flex;
-
-        .btn {
-            width: 50%;
-        }
-    }
-
-    .form-control {
-        width: 100%;
-    }
-
-    .form-filter-type {
-        height: 48px;
-    }
-
-    .form-filter-date {
-        max-width: 172px;
-        display: flex;
-        border: 1px solid #D1D5DB;
-        background: #fff;
-        padding: 10.2px 16px 10.2px 14px;
-        border-radius: 2px;
-        position: relative;
-        height: 48px;
-        width: 100%;
-        position: relative;
-
-        input {
-            border: 0;
-            padding: 4px;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            letter-spacing: 0.01em;
-            font-weight: 300;
-            line-height: 1.6;
-            color: #7E8189;
-            width: 100%;
-            z-index: 1;
-            background: transparent;
-        }
-
-        svg {
-            position: absolute;
-            right: 25px;
-            z-index: 0;
-        }
-    }
-
+#date_range:hover {
+    cursor: pointer;
 }
