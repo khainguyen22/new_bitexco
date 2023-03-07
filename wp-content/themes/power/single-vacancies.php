@@ -204,9 +204,8 @@ get_header(); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-3 ">
+                        <div class="col-12 col-md-3">
                             <div class="wrap_scrollspy">
-
                                 <?php if (get_field('amount') > 0 || get_field('date')) : ?>
                                     <button type="button" data-toggle="modal" data-target="#popup_ung_tuyen" class="btn btn_success"> <?php _e('Ứng tuyển'); ?></button>
                                 <?php else : ?>
