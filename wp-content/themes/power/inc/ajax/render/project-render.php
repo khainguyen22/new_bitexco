@@ -71,16 +71,16 @@ function render_projects($query, $paged = 1)
 
 			<div class="filter-item">
 
-				<div class="filter-image hover-zoom-img">
+				<a href="<?php the_permalink() ?>">
+					<div class="filter-image hover-zoom-img">
 
-					<a href="<?php the_permalink() ?>">
 
 						<img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
 
-					</a>
 
-				</div>
+					</div>
 
+				</a>
 				<div class="item-content">
 
 					<div class="content-title">
@@ -192,7 +192,7 @@ function render_projects($query, $paged = 1)
 
 		<?php endwhile; ?>
 
-	<?php else :
+<?php else :
 
 		not_result();
 

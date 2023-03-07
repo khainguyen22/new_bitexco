@@ -60,7 +60,7 @@ function render_action_events($query, $paged = 1)
 
 
 
-		));
+	));
 
 	ob_start();
 
@@ -73,16 +73,14 @@ function render_action_events($query, $paged = 1)
 			$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
 
 			<div class="filter-item">
+				<a href="<?php the_permalink() ?>">
 
-				<div class="filter-image hover-zoom-img">
-
-					<a href="<?php the_permalink() ?>">
+					<div class="filter-image hover-zoom-img">
 
 						<img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
 
-					</a>
-
-				</div>
+					</div>
+				</a>
 
 				<div class="item-content">
 
