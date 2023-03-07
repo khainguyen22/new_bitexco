@@ -229,7 +229,7 @@ get_header(); ?>
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle modal-title"><?php the_title(); ?></h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle "><?php the_title(); ?></h5>
                     <input type="hidden" id="popup_ung_tuyen_title" value="<?php the_title(); ?>">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
