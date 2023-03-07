@@ -4,7 +4,7 @@
 
 /**
 
-Template Name: Tin tức thủy điện - Văn hóa doanh nghiệp
+Template Name: Tin tức - Văn hóa doanh nghiệp
 
  **/
 

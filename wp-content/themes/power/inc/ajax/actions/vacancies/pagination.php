@@ -4,7 +4,7 @@ function post_nav_action_vacancies()
 
 {
 
-	$paged = $_POST['data_paged'];
+	$paged = isset($_POST['data_paged'])?$_POST['data_paged']:'';
 
 	query_action_vacancies($paged);
 }

@@ -1,22 +1,23 @@
 <?php
 
 // Navigation Action on Finace Report Page
-function navigation_post_report_ajax() {
-	$paged = $_POST['paged'];
-	$year = $_POST['year'];
+function navigation_post_report_ajax()
+{
+	$paged = isset($_POST['paged']) ? $_POST['paged'] : '';
+	$year = isset($_POST['year']) ? $_POST['year'] : '';
 
 	$args = [
-		'post_type'=> 'finance_report',
+		'post_type' => 'finance_report',
 		'posts_per_page' => 8,
 		'paged' => $paged,
 		's' => $_POST['inputValue'],
-		'exact' => false,                       
-    'sentence' => true,
+		'exact' => false,
+		'sentence' => true,
 		'tax_query' => [
 			[
-					'taxonomy' => 'years',
-					'field'=> 'slug',
-					'terms' => $year
+				'taxonomy' => 'years',
+				'field' => 'slug',
+				'terms' => $year
 			]
 		]
 	];

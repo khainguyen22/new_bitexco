@@ -6,7 +6,7 @@ function post_filter_action_library_images()
 
 {
 
-	$name = $_POST['data_name'];
+	$name = isset($_POST['data_name']) ? $_POST['data_name'] : '';
 
 	$paged = '1';
 

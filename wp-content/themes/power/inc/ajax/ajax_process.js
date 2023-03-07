@@ -37,15 +37,190 @@ jQuery(document).ready(function ($) {
 
     // Start Filter & Pagination news
 
-    $('.tin-tuc-thuy-dien .btn-submit').on('click', function () {
+    $('.tin-tuc .btn-submit').on('click', function () {
 
         Filter_posts_news();
 
     });
 
-
-
     function Filter_posts_news() {
+
+        $the_slug = $('.the_slug').val();
+
+        $name = $('.form-filter-search .search').val();
+
+        $company = $('.form-filter-company .item.active').attr('data-value');
+
+        $type = $('.form-filter-type .item.active').attr('data-value');
+
+        $date = $('.form-filter-date input[name="date_range"]').val();
+
+        $.ajax({
+
+            type: "POST",
+
+            dataType: "html",
+
+            url: ajaxObject1.ajaxurl,
+
+            data: {
+
+                action: 'post_filter_action_news',
+
+                data_page: '1',
+
+                data_slug: $the_slug,
+
+                data_name: $name,
+
+                data_company: $company,
+
+                data_date: $date,
+
+                data_type: $type,
+
+            },
+
+            beforeSend: function (data) {
+
+                $('.tin-tuc .lists-post .list').html(
+
+                    '<div class="loader-box">' +
+
+                    '<div class="loader"></div>'
+
+                    + '</div>'
+
+                )
+
+            },
+
+            success: function (data) {
+
+                var results = data.split('|');
+
+                $('.tin-tuc .lists-post .list').html(results[0])
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+                $('.tin-tuc  .pagination').html(results[1])
+
+            },
+
+            error: function (jqXHR, textStatus, errorThrown) {
+
+                $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+
+            }
+
+
+
+        });
+
+        return false;
+
+    }
+
+    $("body").on("click", ".tin-tuc .lists-post .page-numbers", (e) => {
+
+        e.preventDefault();
+
+        $('html').scrollTop(800);
+
+        var paged = '';
+
+        paged = e.target.innerText
+
+        if (e.target.closest('.lists-post .page-numbers').classList.contains('prev')) {
+
+            paged = parseInt($('.lists-post .page-numbers.current').text()) - 1;
+
+        } else if (e.target.closest('.page-numbers').classList.contains('next')) {
+
+            paged = parseInt($('.lists-post .page-numbers.current').text()) + 1;
+
+        }
+
+        $the_slug = $('.the_slug').val();
+
+        $name = $('.form-filter-search .search').val();
+
+        $company = $('.form-filter-company.filter-item  .item.active').attr('data-value');
+
+        $type = $('.form-filter-type.filter-item  .item.active').attr('data-value');
+
+        $date = $('.form-filter-date input[name="date"]').val();
+
+        $.ajax({
+
+            url: ajaxObject1.ajaxurl,
+
+            type: "POST",
+
+            data: {
+
+                action: "post_nav_action_news",
+
+                paged: paged,
+
+                data_slug: $the_slug,
+
+                data_name: $name,
+
+                data_company: $company,
+
+                data_date: $date,
+
+                data_type: $type,
+
+            },
+
+            beforeSend(data) {
+
+                $('.tin-tuc .lists-post .list').html(
+
+                    '<div class="loader-box">' +
+
+                    '<div class="loader"></div>'
+
+                    + '</div>'
+
+                )
+
+            },
+
+            success(data) {
+
+                var results = data.split('|');
+
+                console.log(data);
+
+                $('.tin-tuc .lists-post .list').html(results[0])
+                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+                $('.tin-tuc .lists-post .pagination').html(results[1])
+
+            },
+
+            error(errorThrown) {
+
+                console.log(errorThrown);
+
+            },
+
+        });
+
+    });
+
+    // End Filter & Pagination news
+
+
+    // Start Filter & Pagination hydroelectric news
+
+    $('.tin-tuc-thuy-dien .btn-submit').on('click', function () {
+
+        Filter_posts_hydroelectric_news();
+
+    });
+
+    function Filter_posts_hydroelectric_news() {
 
         $the_slug = $('.the_slug').val();
 
@@ -212,7 +387,6 @@ jQuery(document).ready(function ($) {
     });
 
     // End Filter & Pagination news
-
 
 
     // Start Filter & Pagination library image

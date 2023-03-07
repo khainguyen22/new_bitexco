@@ -4,13 +4,14 @@ function query_action_projects_list($paged)
 {
 	$the_slug = 'thuy-dien';
 
-	$name = $_POST['data_name'];
+	$name = isset($_POST['data_name']) ? $_POST['data_name'] : '';
 
-	$location = $_POST['data_location'];
+	$location = isset($_POST['data_location']) ? $_POST['data_location'] : '';
 
-	$type = $_POST['data_type'];
+	$type = isset($_POST['data_type']) ? $_POST['data_type'] : '';
 
-	$company = $_POST['data_company'];
+	$company = isset($_POST['data_company']) ? $_POST['data_company'] : '';
+
 
 	$tax_query = array(
 

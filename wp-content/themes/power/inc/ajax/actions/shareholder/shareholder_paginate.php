@@ -1,16 +1,17 @@
 <?php
 
 // Navigation Action
-function navigation_post_ajax() {
-	$paged = $_POST['paged'];
+function navigation_post_ajax()
+{
+	$paged = isset($_POST['paged']) ? $_POST['paged'] : '';
 
 	$args = [
-		'post_type'=> 'shareholders',
+		'post_type' => 'shareholders',
 		'posts_per_page' => 8,
 		'paged' => $paged,
 		's' => $_POST['inputValue'],
-		'exact' => false,                       
-    'sentence' => true,
+		'exact' => false,
+		'sentence' => true,
 	];
 	$query = new WP_Query($args);
 
