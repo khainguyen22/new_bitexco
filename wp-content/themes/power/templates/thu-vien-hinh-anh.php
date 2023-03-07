@@ -7,10 +7,6 @@
  
  $home = home_url( add_query_arg( $_GET, '' ) );
 
-//  echo $actual_link . "<br>";
-//  echo $home . '/thu-vien/video/';
-//  die;
-
  $banner = get_field('banner_library', 'option');
  
  $navigation = '';
@@ -22,12 +18,11 @@
  
  $the_slug_image = 'images';
  
- $the_slug_video = 'video';
- 
  if (isset($_GET['image'])) {
 		 $s = $_GET['image'];
+		 
  }
- 
+
  $args_image = array(
  
 		 'post_type' => 'library',
@@ -48,7 +43,7 @@
  
 		 'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
  
-		 'post_status' => 'any',
+		 'post_status' => 'publish',
  
 		 'posts_per_page' => 3,
  
@@ -56,49 +51,8 @@
  
  );
  
- $args_video = array(
- 
-		 'post_type' => 'library',
- 
- 
- 
-		 'tax_query' => array(
- 
-				 array(
- 
-						 'taxonomy' =>  'type_library',
- 
-						 'field'    => 'slug',
- 
-						 'terms'    => $the_slug_video,
- 
-				 ),
- 
-		 ),
- 
-		 'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
- 
-		 'post_status' => 'publish',
- 
-		 'posts_per_page' => 6,
- 
-		 
- 
- );
- 
- 
- if (isset($_GET['param']) && $_GET['param'] != '') {
-		 echo $_GET['param'];
-		 die;
- }
- 
  $the_query_post_image = new WP_Query($args_image);
  
- $the_query_post_video = new WP_Query($args_video);
- 
- $useful_infomation = get_field('infomation_library', 'option');
- 
- $other_info = get_field('other_library', 'option');
  
  get_header();
  
@@ -116,7 +70,7 @@
  
 									<div class="form-filter image">
  
-										 <form action="<?php echo get_site_url(  ).'/thu-vien/?'?>" class="d-flex justify-content-between flex-wrap">
+										 <form action="<?php echo get_site_url(  ).'/thu-vien/hinh-anh/?'?>" class="d-flex justify-content-between flex-wrap">
  
 												 <div class="form-filter-search">
  
@@ -328,7 +282,7 @@
  
 																						 <div class="desc">
  
-																								 <p><?php echo  paint_if_exist(get_the_content(get_the_ID())) ?></p>
+																								 <p><?php echo paint_if_exist(get_the_content(get_the_ID())) ?></p>
  
 																						 </div>
  
@@ -352,9 +306,32 @@
  
 		 </div>
  
-		 <?php if ($other_info) : ?>
+		 <?php 
+
+			$other_info = get_field('images_other_section', 'option');
+		 	if ($other_info) : 
+		 
+		 ?>
 				<!-- Other information -->
-				<?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-other-section.php');?>
+				<div role="tabpanel" class="tab-pane active" id="images">
+						<section class="other-information">
+
+								<div class="other-container ">
+
+										<div class="other-content hover-zoom">
+
+												<?php foreach ($other_info as $value) : ?>
+
+														<a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
+
+												<?php endforeach; ?>
+
+										</div>
+
+								</div>
+
+						</section>
+				</div>
 		 <?php endif; ?>
  
  </div>

@@ -65,10 +65,6 @@ $the_query_post_video = new WP_Query($args_video);
 
 $useful_infomation = get_field('infomation_library', 'option');
 
-$other_info = get_field('other_library', 'option');
-
-
-
 get_header();
 
 ?>
@@ -294,10 +290,33 @@ get_header();
 
     </div>
 
-    <?php if ($other_info) : ?>
-				<!-- Other information -->
-				<?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-other-section.php');?>
-    <?php endif; ?>
+    <?php 
+
+$other_info = get_field('video_other_section', 'option');
+if ($other_info) : 
+?>
+<!-- Other information -->
+<div role="tabpanel" class="tab-pane active" id="images">
+    <section class="other-information">
+
+            <div class="other-container ">
+
+                    <div class="other-content hover-zoom">
+
+                            <?php foreach ($other_info as $value) : ?>
+
+                                    <a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
+
+                            <?php endforeach; ?>
+
+                    </div>
+
+            </div>
+
+    </section>
+</div>
+<?php endif; ?>
+
 
 </div>
 
