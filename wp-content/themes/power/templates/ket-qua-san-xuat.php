@@ -509,8 +509,11 @@ get_header();
                         <tr>
 
                             <td>Tổng công suất</td>
+                            <?php foreach ($cong_xuat_lap_dat_cong_ty_lien_ket as $value) : ?>
 
+                                <td><?php echo $value; ?></td>
 
+                            <?php endforeach; ?>
 
                         </tr>
 
