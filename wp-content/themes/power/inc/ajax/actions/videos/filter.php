@@ -13,7 +13,7 @@ function post_filter_action_library_video()
 
 		'suppress_filters' => true,
 
-		'posts_per_page' => 2,
+		'posts_per_page' => 6,
 
 		'paged' => '1',
 
@@ -37,11 +37,7 @@ function post_filter_action_library_video()
 
 	);
 
-
-
 	$query = new WP_Query($args);
-
-
 
 	echo render_library_video($query, $paged);
 

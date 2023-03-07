@@ -1,6 +1,12 @@
 jQuery(document).ready(function ($) {
 
-    $('.button-reset .btn-reset').on('click', function () {
+    $('#thu-vien-video .btn-reset').on('click', function (e) {
+        e.preventDefault()
+        Filter_posts_library_video('');
+    })
+
+
+    $('.button-reset .btn-reset').on('click', function (e) {
 
         $('.search').val('');
 
@@ -18,10 +24,6 @@ jQuery(document).ready(function ($) {
 
         Filter_posts_news();
 
-        // Filter_posts_library_press-infor-section();
-
-        Filter_posts_library_video();
-
         Filter_posts_company_member();
 
         Filter_posts_projects();
@@ -33,6 +35,7 @@ jQuery(document).ready(function ($) {
         Post_filter_action_social_security();
 
     });
+
 
 
     // Start Filter & Pagination news
@@ -213,85 +216,6 @@ jQuery(document).ready(function ($) {
 
     // End Filter & Pagination news
 
-
-
-    // Start Filter & Pagination library image
-
-    $("body").on("click", "#images .page-number", (e) => {
-
-        e.preventDefault();
-        $('html').scrollTop(200)
-        var paged = '';
-
-        paged = e.target.innerText
-
-        if (e.target.closest('#images .page-numbers').classList.contains('prev')) {
-
-            paged = parseInt($('#images .page-numbers.current').text()) - 1;
-
-        } else if (e.target.closest('.page-numbers').classList.contains('next')) {
-
-            paged = parseInt($('#images .page-numbers.current').text()) + 1;
-
-        }
-
-        var name = $('.form-control.search').val();
-
-        $.ajax({
-
-            url: ajaxObject1.ajaxurl,
-
-            type: "POST",
-
-            data: {
-
-                action: "post_nav_action_library_images",
-
-                paged: paged,
-
-                data_name: name,
-
-            },
-
-            beforeSend(data) {
-
-                $('#images .images-library').html(
-
-                    '<div class="loader-box">' +
-
-                    '<div class="loader"></div>'
-
-                    + '</div>'
-
-                )
-
-            },
-
-            success(data) {
-
-                var results = data.split('|');
-
-                $('#images .images-library').html(results[0])
-                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
-                $('#images .pagination').html(results[1])
-
-
-            },
-
-            error(errorThrown) {
-
-                console.log(errorThrown);
-
-            },
-
-        });
-
-    });
-
-    // End Filter & Pagination library image
-
-    // Start Filter and Pagination Press Information
-
     $('#press-infor-content .btn-submit').on('click', function () {
 
         pressInfomationFilter();
@@ -449,13 +373,14 @@ jQuery(document).ready(function ($) {
 
     // Start Filter & Pagination library video
 
-    $('.thu-vien-video .btn-submit').on('click', function () {
-
-        Filter_posts_library_video();
+    $('.thu-vien-video .btn-submit').on('click', function (e) {
+        e.preventDefault()
+        const name = $('.thu-vien-video .form-filter-search input').val()
+        Filter_posts_library_video(name);
 
     });
 
-    function Filter_posts_library_video($name) {
+    function Filter_posts_library_video(name) {
 
         $.ajax({
 
@@ -471,7 +396,7 @@ jQuery(document).ready(function ($) {
 
                 data_page: '1',
 
-                data_name: $name,
+                data_name: name,
 
             },
 
@@ -815,8 +740,6 @@ jQuery(document).ready(function ($) {
             },
 
             success: function (data) {
-
-                console.log(data);
 
                 var results = data.split('|');
 
