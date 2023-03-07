@@ -509,7 +509,15 @@ get_header();
                         <tr>
 
                             <td>Tổng công suất</td>
-                            <?php foreach ($cong_xuat_lap_dat_cong_ty_lien_ket as $value) : ?>
+
+                            <?php $array1 = array(1, 2, 3);
+                            $array2 = array(4, 5, 6);
+                            $result = array();
+
+                            for ($i = 0; $i < count($cong_xuat_lap_dat_cong_ty_con); $i++) {
+                                $result[$i] = $cong_xuat_lap_dat_cong_ty_con[$i] + $cong_xuat_lap_dat_cong_ty_lien_ket[$i];
+                            } ?>
+                            <?php foreach ($result as $value) : ?>
 
                                 <td><?php echo $value; ?></td>
 
