@@ -6,6 +6,13 @@
        $parent_id = end( $ancestors );
        $parent_slug = get_post_field( 'post_name', $parent_id );
    }
+    $banner = get_field('banner_library', 'option');
+    $navigation = '';
+
+    if ($banner) {
+    
+        $navigation = $banner['main_navigation'];
+    }
 ?>
 <section class="banner" style='background-image:url("<?php echo $banner['background']; ?>")'>
 

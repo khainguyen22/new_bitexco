@@ -10,15 +10,6 @@
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
 
-$banner = get_field('banner_library', 'option');
-
-$navigation = '';
-
-if ($banner) {
-
-    $navigation = $banner['main_navigation'];
-}
-
 $the_slug_image = 'images';
 
 $the_slug_video = 'video';
@@ -47,7 +38,7 @@ $args_image = array(
 
     'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
 
-    'post_status' => 'any',
+    'post_status' => 'publish',
 
     'posts_per_page' => 3,
 
@@ -97,18 +88,14 @@ $the_query_post_video = new WP_Query($args_video);
 
 $useful_infomation = get_field('infomation_library', 'option');
 
-$other_info = get_field('other_library', 'option');
-
-
-
 get_header();
 
 ?>
 
 <div class="thu-vien-hinh-anh thu-vien-video">
 	
-		<!-- Banner Section -->
-		<?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-banner-section.php'); ?>
+    <!-- Banner Section -->
+    <?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-banner-section.php'); ?>
 
     <div class="main">
 
@@ -158,8 +145,8 @@ get_header();
 
             <div class="container">
 
- 								<!-- Navigation -->
-								 <?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-dieu-huong.php')?>
+                <!-- Navigation -->
+                <?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-dieu-huong.php')?>
 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="useful-infomation">
@@ -324,10 +311,32 @@ get_header();
 
     </div>
 
-    <?php if ($other_info) : ?>
-				<!-- Other information -->
-				<?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-other-section.php');?>
-    <?php endif; ?>
+    <?php 
+
+        $other_info = get_field('useful_infor_other_section', 'option');
+        if ($other_info) : 
+    ?>
+    <!-- Other information -->
+    <div role="tabpanel" class="tab-pane active" id="images">
+            <section class="other-information">
+
+                    <div class="other-container ">
+
+                            <div class="other-content hover-zoom">
+
+                                    <?php foreach ($other_info as $value) : ?>
+
+                                            <a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
+
+                                    <?php endforeach; ?>
+
+                            </div>
+
+                    </div>
+
+            </section>
+    </div>
+<?php endif; ?>
 
 </div>
 

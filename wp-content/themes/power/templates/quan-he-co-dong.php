@@ -84,7 +84,7 @@
         $paged = 2;
         $args = [
             'post_type' => 'shareholders',
-            'post_status' => 'any',
+            'post_status' => 'publish',
             'posts_per_page' => 8,
             'paged' =>  $paged
         ];

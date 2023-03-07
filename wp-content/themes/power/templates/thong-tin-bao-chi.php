@@ -124,7 +124,7 @@
         $args = [
             'post_type' => 'press_information',
             'posts_per_page' => 8,
-            'post_status' => 'any',
+            'post_status' => 'publish',
             'paged' =>  $paged
         ];
 

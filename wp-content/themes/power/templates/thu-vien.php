@@ -47,7 +47,7 @@ $args_image = array(
 
     'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
 
-    'post_status' => 'any',
+    'post_status' => 'publish',
 
     'posts_per_page' => 3,
 
