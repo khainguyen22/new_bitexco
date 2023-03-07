@@ -46,8 +46,11 @@ jQuery(document).ready(function ($) {
 		window.print();
 	})
 	// popup ứng tuyển vị trí tuyển dụng 
-	$('body').on('change', '#popup_ung_tuyen input[name="image"]', function (params) {
-		console.log('asghdvg');
+	$('body').on('change', '#popup_ung_tuyen input', function (params) {
+		var inputValue = $("#popup_ung_tuyen_title").val();
+		console.log(inputValue);
+		$("input[name=vacancies]").val(inputValue);
+		console.log($('input[name=vacancies]'));
 	});
 
 	jQuery('input[name=image]').on('change', function () {
@@ -57,7 +60,6 @@ jQuery(document).ready(function ($) {
 			reader.onload = function (e) {
 				jQuery('.file-image img').attr('src', e.target.result);
 			}
-			console.log(this.files[0]);
 			reader.readAsDataURL(this.files[0]);
 		}
 	});
