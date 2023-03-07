@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function($) {
 	// $('.nav[role="tablist"] li').on('click', function() {
 	// 	$(this).closest('ul').find('li.active').removeClass('active')
 	// 	$(this).addClass('active')
@@ -9,4 +9,7 @@ jQuery(document).ready(function() {
 	// 		$('button.image').addClass('active')
 	// 	}
 	// })
+	$('.video-item-link').magnificPopup({
+		type: 'iframe'
+	});
 })

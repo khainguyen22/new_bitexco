@@ -69,7 +69,7 @@ get_header();
 
 ?>
 
-<div class="thu-vien-hinh-anh thu-vien-video">
+<div class="thu-vien-hinh-anh thu-vien-video" id="thu-vien-video">
 		<!-- Banner Section -->
 		<?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-banner-section.php'); ?>
 
@@ -80,9 +80,9 @@ get_header();
 
             <div class="container">
 
-                 <div class="form-filter image">
+                 <div class="form-filter video-form">
 
-                    <form action="<?php echo get_site_url(  ).'/thu-vien/?'?>" class="d-flex justify-content-between flex-wrap">
+                    <form action="" class="d-flex justify-content-between flex-wrap">
 
                         <div class="form-filter-search">
 
@@ -94,13 +94,13 @@ get_header();
 
                             </svg>
 
-                            <input type="text" name="image" class="form-control search" placeholder="Tìm kiếm">
+                            <input type="text" name="video" class="form-control search" placeholder="Tìm kiếm">
 
                         </div>
 
                         <div class="button-submit">
 
-                            <button class="btn btn-search btn-submit image active">Tìm kiếm</button>
+                            <button class="btn btn-search btn-submit video active">Tìm kiếm</button>
 
                         </div>
 
