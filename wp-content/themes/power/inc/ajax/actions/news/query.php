@@ -3,15 +3,15 @@
 function query_action_news($paged = '1')
 {
 
-	$slug = $_POST['data_slug'];
+	$slug = isset($_POST['data_slug'])?$_POST['data_slug'] : '';
 
-	$name = $_POST['data_name'];
+	$name = isset($_POST['data_name'])?$_POST['data_name']:'';
 
-	$company = $_POST['data_company'];
+	$company = isset($_POST['data_company'])?$_POST['data_company']:'';
 
-	$type = $_POST['data_type'];
+	$type = isset( $_POST['data_type'])? $_POST['data_type']:'';
 
-	$date_range = $_POST['data_date'];
+	$date_range = isset( $_POST['data_date'])? $_POST['data_date']:'';
 
 	list($start_date, $end_date) = explode(' - ', $date_range);
 

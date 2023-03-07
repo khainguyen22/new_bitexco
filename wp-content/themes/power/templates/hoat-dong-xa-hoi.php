@@ -6,7 +6,7 @@
 
 
 
- * Template Name: Tin tức thủy điện - Hoạt động xã hội
+ * Template Name: Tin tức - Hoạt động xã hội
 
 
 

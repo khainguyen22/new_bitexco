@@ -1,9 +1,9 @@
 <?php
 
 function query_action_company_member($paged = '1') {
-	$name = $_POST['data_name'];
+	$name =isset( $_POST['data_name'])? $_POST['data_name']:'';
 
-	$location = $_POST['data_location'];
+	$location = isset($_POST['data_location'])?$_POST['data_location']:'';
 
 	$tax_query = array(
 

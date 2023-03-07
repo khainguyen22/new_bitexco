@@ -10,7 +10,7 @@
 
 
 
-Template Name: Tin tức - Hoạt động sản xuất kinh doanh
+Template Name: Tin tức thủy điện - Hoạt động sản xuất kinh doanh
 
 
 
@@ -22,11 +22,11 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 $request_uri = "$_SERVER[REDIRECT_URL]";
 
 
-$banner = get_field('banner_news', 'option');
+$banner = get_field('banner_hydroelectric_news', 'option');
 
 
 
-$other_info = get_field('other_info_news', 'option');
+$other_info = get_field('other_info_hydroelectric_news', 'option');
 
 
 
@@ -57,7 +57,6 @@ $args = array(
     'tax_query' => [
 
 
-
         [
 
 
@@ -71,6 +70,24 @@ $args = array(
 
 
             'terms' => $the_slug
+
+
+
+        ],
+
+        [
+
+
+
+            'taxonomy' => 'post_type_news',
+
+
+
+            'field' => 'slug',
+
+
+
+            'terms' => 'thuy-dien'
 
 
 
@@ -100,8 +117,6 @@ $post_of_outstanding = array(
 
     'tax_query' => [
 
-
-
         [
 
 
@@ -115,6 +130,24 @@ $post_of_outstanding = array(
 
 
             'terms' => $the_slug
+
+
+
+        ],
+
+        [
+
+
+
+            'taxonomy' => 'post_type_news',
+
+
+
+            'field' => 'slug',
+
+
+
+            'terms' => 'thuy-dien'
 
 
 
@@ -194,6 +227,24 @@ $post_of_outstanding_null = array(
 
 
 
+        ],
+
+        [
+
+
+
+            'taxonomy' => 'post_type_news',
+
+
+
+            'field' => 'slug',
+
+
+
+            'terms' => 'thuy-dien'
+
+
+
         ]
 
 
@@ -250,6 +301,24 @@ $post_of_news = array(
 
 
 
+        ],
+
+        [
+
+
+
+            'taxonomy' => 'post_type_news',
+
+
+
+            'field' => 'slug',
+
+
+
+            'terms' => 'thuy-dien'
+
+
+
         ]
 
 
@@ -295,6 +364,24 @@ $filter = array(
 
 
             'terms' => $the_slug
+
+
+
+        ],
+
+        [
+
+
+
+            'taxonomy' => 'post_type_news',
+
+
+
+            'field' => 'slug',
+
+
+
+            'terms' => 'thuy-dien'
 
 
 
@@ -941,22 +1028,22 @@ get_header();
                             <div class="form-filter-date d-flex">
                                 <input placeholder="Thời gian" name="date_range" class="textbox-n" type="text" id="date_range">
                                 <script>
-                                $(document).ready(function() {
-                                $('#date_range').daterangepicker({
-                                    autoUpdateInput: false,
-                                    locale: {
-                                    cancelLabel: 'Clear'
-                                    }
-                                });
+                                    $(document).ready(function() {
+                                        $('#date_range').daterangepicker({
+                                            autoUpdateInput: false,
+                                            locale: {
+                                                cancelLabel: 'Clear'
+                                            }
+                                        });
 
-                                $('#date_range').on('apply.daterangepicker', function(ev, picker) {
-                                    $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
-                                });
+                                        $('#date_range').on('apply.daterangepicker', function(ev, picker) {
+                                            $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+                                        });
 
-                                $('#date_range').on('cancel.daterangepicker', function(ev, picker) {
-                                    $(this).val('');
-                                });
-                                });
+                                        $('#date_range').on('cancel.daterangepicker', function(ev, picker) {
+                                            $(this).val('');
+                                        });
+                                    });
                                 </script>
 
 

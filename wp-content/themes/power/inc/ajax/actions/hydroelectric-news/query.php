@@ -1,10 +1,13 @@
 <?php
 
-function query_action_press_information($paged = '1')
+function query_action_hydroelectric_news($paged = '1')
 {
+
 	$slug = isset($_POST['data_slug']) ? $_POST['data_slug'] : '';
 
 	$name = isset($_POST['data_name']) ? $_POST['data_name'] : '';
+
+	$company = isset($_POST['data_company']) ? $_POST['data_company'] : '';
 
 	$type = isset($_POST['data_type']) ? $_POST['data_type'] : '';
 
@@ -24,11 +27,28 @@ function query_action_press_information($paged = '1')
 
 		$tax_query[] = array(
 
-			'taxonomy' => 'type',
+			'taxonomy' => 'post_type_news',
 
 			'field' => 'slug',
 
 			'terms' => $type,
+
+			'compare' => 'LIKE',
+
+			'operator' => 'IN'
+
+		);
+	}
+
+	if (isset($company) && $company != "") {
+
+		$tax_query[] = array(
+
+			'taxonomy' => 'post_company_news',
+
+			'field' => 'slug',
+
+			'terms' => $company,
 
 			'compare' => 'LIKE',
 
@@ -60,27 +80,21 @@ function query_action_press_information($paged = '1')
 
 		'paged' => $paged,
 
-		'posts_per_page' => 8,
+		'post_type' => 'post',
 
-		'post_type' => 'press_information',
+		'category_name' => '' . $slug . ', thuy-dien',
 
 		"s" =>   $name,
 
 		'tax_query' => $tax_query,
 
-		'date_query' => $date_query_by_meta,
-
-		'exact' => false,
-
-		'sentence' => true,
+		'date_query' => $date_query_by_meta
 
 	];
 
 	$query = new WP_Query($args);
 
-	echo press_information_render($query, $paged);
-
-	// print_r ($args);
+	echo render_action_news($query, $paged);
 
 	die;
 }

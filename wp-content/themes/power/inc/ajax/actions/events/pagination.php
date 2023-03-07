@@ -4,7 +4,7 @@ function post_nav_action_events()
 
 {
 
-	$paged = $_POST['paged'];
+	$paged = (isset($_POST['paged']) ? $_POST['paged'] : '');
 
 	$name = (isset($_POST['data_name'])) ? $_POST['data_name'] : '';
 

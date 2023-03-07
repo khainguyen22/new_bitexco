@@ -6,7 +6,7 @@ function post_nav_action_social_security()
 
 	$slug = (isset($_POST['data_slug'])) ? $_POST['data_slug'] : '';
 
-	$paged = $_POST['paged'];
+	$paged = isset($_POST['paged']) ? $_POST['paged'] : '';
 
 	$name = (isset($_POST['data_name'])) ? $_POST['data_name'] : '';
 

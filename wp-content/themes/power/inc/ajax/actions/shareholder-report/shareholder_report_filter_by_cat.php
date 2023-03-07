@@ -1,17 +1,18 @@
 <?php
 // Type Filter Action
-function shareholder_report_ajax() {
-	$type = $_POST['type'];
+function shareholder_report_ajax()
+{
+	$type = isset($_POST['type']) ? $_POST['type'] : '';
 
 	$args = [
-		'post_type'=> 'shareholder_report',
+		'post_type' => 'shareholder_report',
 		'posts_per_page' => 8,
 		'paged' => 1,
 		'tax_query' => [
 			[
-					'taxonomy' => 'shareholder_doc_cat',
-					'field'=> 'slug',
-					'terms' => $type
+				'taxonomy' => 'shareholder_doc_cat',
+				'field' => 'slug',
+				'terms' => $type
 			]
 		]
 	];

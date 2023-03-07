@@ -3,9 +3,9 @@ function post_nav_action_library_video()
 
 {
 
-	$paged = $_POST['paged'];
+	$paged = isset($_POST['paged']) ? $_POST['paged'] : '';
 
-	$name = $_POST['data_name'];
+	$name = isset($_POST['data_name']) ? $_POST['data_name'] : '';
 
 	$args = [
 

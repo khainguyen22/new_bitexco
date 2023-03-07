@@ -3,9 +3,9 @@ function query_action_vacancies($paged)
 
 {
 
-	$name = $_POST['data_name'];
+	$name = isset($_POST['data_name']) ? $_POST['data_name'] : '';
 
-	$location = $_POST['data_location'];
+	$location = isset($_POST['data_location']) ? $_POST['data_location'] : '';
 
 	header("Content-Type: text/html");
 

@@ -153,6 +153,17 @@ function my_acf_op_init()
 
         $child = acf_add_options_page(array(
 
+            'page_title'  => __('Tin tức thủy điện'),
+
+            'menu_title'  => __('Tin tức thủy điện'),
+
+            'parent_slug' => $parent['menu_slug'],
+
+        ));
+        // Add sub page.
+
+        $child = acf_add_options_page(array(
+
             'page_title'  => __('Dịch vụ'),
 
             'menu_title'  => __('Dịch vụ'),

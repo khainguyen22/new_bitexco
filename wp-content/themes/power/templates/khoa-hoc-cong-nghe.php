@@ -4,7 +4,7 @@
 
 /**
 
-Template Name: Tin tức thủy điện - Khoa học công nghệ
+Template Name: Tin tức - Khoa học công nghệ
 
  **/
 

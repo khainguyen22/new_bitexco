@@ -2,7 +2,7 @@
 
 // Navigation Action on Finace Report Page
 function annual_report_nav_ajax() {
-	$paged = $_POST['paged'];
+	$paged =isset( $_POST['paged'])? $_POST['paged']:'1';
 
 	$args = [
 		'post_type'=> 'annual_report',

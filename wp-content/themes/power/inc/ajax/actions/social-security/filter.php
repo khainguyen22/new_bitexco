@@ -4,7 +4,7 @@ function post_filter_action_social_security()
 
 {
 
-	$paged = $_POST['paged'];
+	$paged = isset($_POST['paged']) ? $_POST['paged'] : '';
 
 	$slug = (isset($_POST['data_slug'])) ? $_POST['data_slug'] : '';
 
