@@ -394,142 +394,142 @@ jQuery(document).ready(function ($) {
 
     // Start Filter & Pagination library image
 
-    $('.thu-vien-hinh-anh .btn-submit').on('click', function () {
+    // $('.thu-vien-hinh-anh .btn-submit').on('click', function () {
 
-        Filter_posts_library_images();
+    //     Filter_posts_library_images();
 
-    });
+    // });
 
-    function Filter_posts_library_images($name) {
+    // function Filter_posts_library_images($name) {
 
-        $.ajax({
+    //     $.ajax({
 
-            type: "POST",
+    //         type: "POST",
 
-            dataType: "html",
+    //         dataType: "html",
 
-            url: ajaxObject1.ajaxurl,
+    //         url: ajaxObject1.ajaxurl,
 
-            data: {
+    //         data: {
 
-                action: 'post_filter_action_library_images',
+    //             action: 'post_filter_action_library_images',
 
-                data_page: '1',
+    //             data_page: '1',
 
-                data_name: $name,
+    //             data_name: $name,
 
-            },
+    //         },
 
-            beforeSend: function (data) {
+    //         beforeSend: function (data) {
 
-                // $(".lists-post .list").html('<div class="loadding"><img src="https://power.dtts.com.vn/wp-content/uploads/2022/12/loading.gif" /></div>');
+    //             // $(".lists-post .list").html('<div class="loadding"><img src="https://power.dtts.com.vn/wp-content/uploads/2022/12/loading.gif" /></div>');
 
-                $('#images .images-library').html(
+    //             $('#images .images-library').html(
 
-                    '<div class="loader-box">' +
+    //                 '<div class="loader-box">' +
 
-                    '<div class="loader"></div>'
+    //                 '<div class="loader"></div>'
 
-                    + '</div>'
+    //                 + '</div>'
 
-                )
+    //             )
 
-            },
+    //         },
 
-            success: function (data) {
+    //         success: function (data) {
 
-                var results = data.split('|');
+    //             var results = data.split('|');
 
-                $('#images .images-library').html(results[0])
-                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
-                $('#images .pagination').html(results[1])
+    //             $('#images .images-library').html(results[0])
+    //             results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+    //             $('#images .pagination').html(results[1])
 
-            },
+    //         },
 
-            error: function (jqXHR, textStatus, errorThrown) {
+    //         error: function (jqXHR, textStatus, errorThrown) {
 
-                $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
+    //             $loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
 
-            }
+    //         }
 
 
 
-        });
+    //     });
 
-        return false;
+    //     return false;
 
-    }
+    // }
 
-    $("body").on("click", "#images .page-number", (e) => {
+    // $("body").on("click", "#images .page-number", (e) => {
 
-        e.preventDefault();
-        $('html').scrollTop(200)
-        var paged = '';
+    //     e.preventDefault();
+    //     $('html').scrollTop(200)
+    //     var paged = '';
 
-        paged = e.target.innerText
+    //     paged = e.target.innerText
 
-        if (e.target.closest('#images .page-numbers').classList.contains('prev')) {
+    //     if (e.target.closest('#images .page-numbers').classList.contains('prev')) {
 
-            paged = parseInt($('#images .page-numbers.current').text()) - 1;
+    //         paged = parseInt($('#images .page-numbers.current').text()) - 1;
 
-        } else if (e.target.closest('.page-numbers').classList.contains('next')) {
+    //     } else if (e.target.closest('.page-numbers').classList.contains('next')) {
 
-            paged = parseInt($('#images .page-numbers.current').text()) + 1;
+    //         paged = parseInt($('#images .page-numbers.current').text()) + 1;
 
-        }
+    //     }
 
-        var name = $('.form-control.search').val();
+    //     var name = $('.form-control.search').val();
 
-        $.ajax({
+    //     $.ajax({
 
-            url: ajaxObject1.ajaxurl,
+    //         url: ajaxObject1.ajaxurl,
 
-            type: "POST",
+    //         type: "POST",
 
-            data: {
+    //         data: {
 
-                action: "post_nav_action_library_images",
+    //             action: "post_nav_action_library_images",
 
-                paged: paged,
+    //             paged: paged,
 
-                data_name: name,
+    //             data_name: name,
 
-            },
+    //         },
 
-            beforeSend(data) {
+    //         beforeSend(data) {
 
-                $('#images .images-library').html(
+    //             $('#images .images-library').html(
 
-                    '<div class="loader-box">' +
+    //                 '<div class="loader-box">' +
 
-                    '<div class="loader"></div>'
+    //                 '<div class="loader"></div>'
 
-                    + '</div>'
+    //                 + '</div>'
 
-                )
+    //             )
 
-            },
+    //         },
 
-            success(data) {
+    //         success(data) {
 
-                var results = data.split('|');
+    //             var results = data.split('|');
 
-                $('#images .images-library').html(results[0])
-                results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
-                $('#images .pagination').html(results[1])
+    //             $('#images .images-library').html(results[0])
+    //             results[1] = results[1].replaceAll('class="page-numbers', 'class="page-numbers notranslate');
+    //             $('#images .pagination').html(results[1])
 
 
-            },
+    //         },
 
-            error(errorThrown) {
+    //         error(errorThrown) {
 
-                console.log(errorThrown);
+    //             console.log(errorThrown);
 
-            },
+    //         },
 
-        });
+    //     });
 
-    });
+    // });
 
     // End Filter & Pagination library image
 
