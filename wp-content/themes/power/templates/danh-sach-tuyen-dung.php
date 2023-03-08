@@ -175,11 +175,7 @@ get_header();
                     <div class="content">
                         <?php if ($send_profile['title']) : ?> <h4><?php echo $send_profile['title'];  ?></h4> <?php endif; ?>
                         <?php if ($send_profile['description']) : ?> <p><?php echo $send_profile['description']; ?></p> <?php endif; ?>
-                        <?php if ($send_profile['link'] || $send_profile['buton']) : ?>
-                            <a href="<?php echo $send_profile['link']; ?>" class="btn btn-search text-uppercase">
-                                <?php echo $send_profile['button']; ?>
-                            </a>
-                        <?php endif; ?>
+                        <button type="button" data-toggle="modal" data-target="#popup_ung_tuyen" class="btn btn_success btn btn-search text-uppercase"> <?php _e('Gửi hồ sơ'); ?></button>
                     </div>
                 </div>
                 <div class="col-12 col-md-6  col-right">
@@ -198,6 +194,51 @@ get_header();
                 </div>
             </section>
         <?php endif; ?>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="popup_ung_tuyen" tabindex="-1" role="dialog" aria-labelledby="popup_ung_tuyen_title" aria-hidden="true" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle "><?php _e('Đơn tự ứng tuyển') ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.00056 14.9994L15 1" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1.00055 1.00056L15 15" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php echo do_shortcode('[contact-form-7 id="3281" title="Popup hồ sơ ứng tuyển"]'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal  successfully -->
+    <div class="modal fade" id="popup_ung_tuyen_successfully" tabindex="-1" role="dialog" aria-labelledby="popup_ung_tuyen_successfully_title" aria-hidden="true" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.00056 14.9994L15 1" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M1.00055 1.00056L15 15" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="icon">
+                        <svg width="71" height="70" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" width="70" height="70" rx="35" fill="#DAA622" />
+                            <path d="M37.549 46.1597H25.2115C21.854 46.1597 19.1253 43.4284 19.1253 40.0722V28.6097C19.1253 25.2534 21.8553 22.5222 25.2115 22.5222H44.4615C47.8253 22.5222 50.5615 25.2534 50.5615 28.6097V33.1472C50.5615 33.7684 51.0653 34.2722 51.6865 34.2722C52.3078 34.2722 52.8115 33.7684 52.8115 33.1472V28.6097C52.8115 24.0122 49.0653 20.2734 44.4603 20.2734H25.2115C20.614 20.2734 16.874 24.0134 16.874 28.6097V40.0722C16.874 44.6697 20.614 48.4097 25.2115 48.4097H37.549C38.1703 48.4097 38.674 47.9059 38.674 47.2847C38.674 46.6634 38.1703 46.1597 37.549 46.1597Z" fill="white" />
+                            <path d="M45.8449 27.9041L35.5311 32.0229C35.0874 32.2016 34.5936 32.2016 34.1499 32.0229L23.8374 27.9041C23.2624 27.6754 22.6061 27.9541 22.3749 28.5316C22.1436 29.1091 22.4249 29.7629 23.0024 29.9941L33.3149 34.1129C33.8074 34.3091 34.3249 34.4079 34.8411 34.4079C35.3574 34.4079 35.8749 34.3091 36.3674 34.1129L46.6811 29.9941C47.2574 29.7629 47.5399 29.1091 47.3086 28.5316C47.0774 27.9541 46.4199 27.6766 45.8449 27.9041Z" fill="white" />
+                            <path d="M46.8719 35.2188C42.8732 35.2188 39.6182 38.4725 39.6182 42.4713C39.6182 46.47 42.8732 49.7238 46.8719 49.7238C50.8707 49.7238 54.1257 46.47 54.1257 42.4713C54.1257 38.4725 50.8707 35.2188 46.8719 35.2188ZM46.8719 47.4738C44.1132 47.4738 41.8694 45.23 41.8694 42.4713C41.8694 39.7125 44.1132 37.4687 46.8719 37.4687C49.6307 37.4687 51.8744 39.7125 51.8744 42.4713C51.8744 45.23 49.6307 47.4738 46.8719 47.4738Z" fill="white" />
+                            <path d="M48.2489 40.5536L46.1439 42.2486L45.6714 41.6473C45.2877 41.1573 44.5814 41.0723 44.0914 41.4561C43.6027 41.8398 43.5177 42.5461 43.9014 43.0348L45.0764 44.5336C45.2614 44.7698 45.5339 44.9236 45.8327 44.9573C45.8752 44.9623 45.9177 44.9648 45.9614 44.9648C46.2164 44.9648 46.4652 44.8786 46.6664 44.7161L49.6589 42.3061C50.1427 41.9161 50.2189 41.2086 49.8302 40.7236C49.4427 40.2423 48.7339 40.1623 48.2489 40.5536Z" fill="white" />
+                        </svg>
+                    </div>
+                    <h6><?php _e('Hồ sơ của bạn đã được gửi đi thành công!') ?></h6>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <?php
