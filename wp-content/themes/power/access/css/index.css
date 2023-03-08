@@ -891,7 +891,7 @@ span.tag.tag-dropdown::before {
   position: relative;
   max-width: 400px;
   min-width: 400px;
-  height: 255px;
+  height: 270px;
   max-height: unset;
   background-image: url(../images/placeholder.jpg);
   background-size: cover;
@@ -3088,6 +3088,190 @@ h5 {
 }
 
 .map-btn:hover {
+  cursor: pointer;
+}
+
+/* map luoi dien  */
+.wrap_map-luoi-dien .map-luoi-dien {
+  padding-bottom: 0px;
+}
+
+.wrap_map-luoi-dien .title {
+  width: 100%;
+  text-align: center;
+  margin-top: 77px;
+  margin-bottom: 35px;
+}
+
+.location-info-row p {
+  margin-bottom: 0;
+}
+
+.iw-content .title h6 {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 130%;
+  letter-spacing: 0.01em;
+  color: #141518;
+}
+
+.iw-content .title .droplets {
+  border-radius: 50%;
+  padding-top: 4px;
+  width: 45px;
+  box-shadow: 0px 0px 5px 0px rgba(51, 51, 51, 0.2);
+  height: 45px;
+}
+
+.btn.btn-detail {
+  padding-top: 14px;
+}
+
+.gm-ui-hover-effect {
+  top: 0 !important;
+  right: 0 !important;
+}
+
+/* popup map */
+.popup-data.active .map-btn {
+  display: none;
+}
+
+.popup-modal {
+  display: none;
+  position: absolute;
+  z-index: 9;
+  top: 100px;
+  height: calc(100% - 130px);
+  left: 25px;
+  background: #fff;
+  padding: 20px 30px;
+  min-width: 386px;
+  overflow-y: scroll;
+}
+
+.popup-modal::-webkit-scrollbar {
+  width: 1px;
+}
+
+.popup-modal.active {
+  display: block;
+}
+
+.popup-modal .head .icon-close {
+  display: flex;
+  align-items: center;
+  margin-left: 13px;
+}
+
+.popup-modal .head .icon-close:hover {
+  cursor: pointer;
+}
+
+.popup-modal .content .item {
+  margin-top: 20px;
+}
+
+.popup-modal .content .item .headding {
+  padding-bottom: 8px;
+  border-bottom: 2px solid #DAA622;
+  align-items: center;
+  position: relative;
+}
+
+.popup-modal .content .item .headding:hover {
+  cursor: pointer;
+}
+
+.popup-modal .content .item .headding .icon {
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  border: 1px solid #D1D5DB;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+}
+
+.popup-modal .content .item .headding .icon svg {
+  max-width: 14px;
+  max-height: 14px;
+}
+
+.popup-modal .content .item .headding .title {
+  font-family: "Public Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  color: #141518;
+  margin-bottom: 0;
+  margin-left: 8px;
+}
+
+.popup-modal .content .item .headding .dropdown-icon {
+  position: absolute;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.popup-modal .content .item.active .headding .dropdown-icon {
+  transform: rotate(0deg);
+}
+
+.popup-modal .content .item .info {
+  list-style-type: disc;
+  display: none;
+}
+
+.popup-modal .content .item.active .info {
+  display: block;
+}
+
+.popup-modal .content .item .info ul {
+  max-height: 130px;
+  overflow: hidden;
+  list-style-type: disc;
+  padding-left: 25px;
+}
+
+.popup-modal .content .item.active .info.other_info ul {
+  max-height: unset;
+  overflow-y: scroll;
+  padding-left: 25px;
+}
+
+.popup-modal .content .item .info.other_info ul::-webkit-scrollbar {
+  width: 1px;
+}
+
+.popup-modal .content .item .info.other_info .other_project {
+  display: none;
+}
+
+.popup-modal .content .item .info li {
+  margin-top: 16px;
+  font-family: "Public Sans";
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.01em;
+  list-style-type: disc;
+  color: #141518;
+}
+
+.popup-modal .content .item .info .other_project {
+  margin-top: 10px;
+  display: flex;
+  column-gap: 4px;
+}
+
+.popup-modal .content .item .info .other_project .title {
+  color: #DAA622;
+}
+
+.popup-modal .content .item .info .other_project:hover {
   cursor: pointer;
 }
 
@@ -5426,7 +5610,7 @@ header .search .search-bar:hover::after {
 }
 .tin-tuc .lists-post .list .custom-post img {
   max-width: 400px;
-  height: 255px;
+  height: 270px;
   min-width: 400px;
 }
 .tin-tuc .lists-post .list .custom-post .content h6 {
@@ -8549,6 +8733,9 @@ section.related-news .article-container .related-news-content .related-item .ite
   border-radius: 2px;
   width: 100%;
   margin: 56px auto 0;
+}
+.ket-qua-san-xuat .main .bieu-do-cong-suat-lap-dat {
+  padding-bottom: 120px;
 }
 .ket-qua-san-xuat .main .bieu-do-cong-suat-lap-dat .table {
   border-radius: 5px;

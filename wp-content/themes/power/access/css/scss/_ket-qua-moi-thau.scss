@@ -243,14 +243,18 @@
             margin: 56px auto 0;
         }
 
-        .bieu-do-cong-suat-lap-dat .table {
-            border-radius: 5px;
+        .bieu-do-cong-suat-lap-dat {
+            padding-bottom: 120px;
 
-            tr td {
-                border: 1px solid #B9B9B9;
+            .table {
+                border-radius: 5px;
 
-                &:first-child {
-                    background-color: #F6F8FC;
+                tr td {
+                    border: 1px solid #B9B9B9;
+
+                    &:first-child {
+                        background-color: #F6F8FC;
+                    }
                 }
             }
         }

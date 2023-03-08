@@ -229,23 +229,23 @@ get_header();
             </div>
             <div class="map-luoi-dien">
                 <div class="goto-container">
-                    <div class="goto default"><span class="icon"><span class=""></span></span><span> Bản đồ</span></div>
-                    <div class="goto default"><span class="icon"><span class=""></span></span><span> Bản đồ</span></div>
+                    <div class="goto default"><span class="icon"><span class=""></span></span><span> <?php _e('Bản đồ'); ?></span></div>
+                    <div class="goto default"><span class="icon"><span class=""></span></span><span><?php _e('Biển đảo'); ?></span></div>
                     <div class="wrap-line">
-                        <div class="goto"><span class="icon"><span class=" line line-500"></span></span> <span> Đường dây 500kV
+                        <div class="goto"><span class="icon"><span class=" line line-500"></span></span> <span><?php _e(' Đường dây 500kV'); ?>
                             </span></div>
-                        <div class="goto"><span class="icon"><span class=" line line-220"></span></span> <span> Đường dây 220kV
+                        <div class="goto"><span class="icon"><span class=" line line-220"></span></span> <span><?php _e(' Đường dây 220kV'); ?>
                             </span></div>
-                        <div class="goto"><span class="icon"><span class=" line line-110"></span></span> <span> Đường dây 110kV
+                        <div class="goto"><span class="icon"><span class=" line line-110"></span></span> <span><?php _e(' Đường dây 110kV'); ?>
                             </span></div>
                         </span>
                     </div>
                     <div class="wrap-box">
-                        <div class="goto"><span class="icon"><span class=" box box-500"></span></span> <span> Trạm biến áp 500kV
+                        <div class="goto"><span class="icon"><span class=" box box-500"></span></span> <span> <?php _e('Trạm biến áp 500kV'); ?>
                             </span></div>
-                        <div class="goto"><span class="icon"><span class=" box box-220"></span></span> <span> Trạm biến áp 220kV
+                        <div class="goto"><span class="icon"><span class=" box box-220"></span></span> <span> <?php _e('Trạm biến áp 220kV'); ?>
                             </span></div>
-                        <div class="goto"><span class="icon"><span class=" box box-110"></span></span> <span> Trạm biến áp 110kV
+                        <div class="goto"><span class="icon"><span class=" box box-110"></span></span> <span> <?php _e('Trạm biến áp 110kV'); ?>
                             </span></div>
                         <div class="goto"><span class="icon">
                                 <svg width="22" height="30" viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -262,7 +262,7 @@ get_header();
                                 </svg>
 
                             </span>
-                            <span> Nhà máy thuỷ điện</span>
+                            <span> <?php _e('Nhà máy thuỷ điện'); ?></span>
                         </div>
                         <div class="goto"><span class="icon"> <svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.5002 19.0002H14.5002V23.5003H17.5002V19.0002Z" fill="#039855" />
@@ -288,7 +288,7 @@ get_header();
                                     <path d="M14.0001 25.0002V24.0002C14.0001 23.7241 14.224 23.5002 14.5001 23.5002H12.0001C11.724 23.5002 11.5001 23.7241 11.5001 24.0002V25.0002C11.5001 25.2764 11.724 25.5002 12.0001 25.5002H14.5001C14.224 25.5002 14.0001 25.2764 14.0001 25.0002Z" fill="#039855" />
                                 </svg>
                             </span>
-                            <span>Nhà máy điện mặt trời</span>
+                            <span><?php _e('Nhà máy điện mặt trời'); ?></span>
                         </div>
                     </div>
                 </div>
@@ -501,191 +501,6 @@ get_header();
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB23VHQSUiL0PfJVXmZJg1Z5NLqTEqeQCs&callback=myMap">
     </script>
-    <style>
-        /* map luoi dien  */
-        .wrap_map-luoi-dien .title {
-            width: 100%;
-            text-align: center;
-            margin-top: 77px;
-            margin-bottom: 35px;
-        }
-
-
-        .location-info-row p {
-            margin-bottom: 0;
-        }
-
-        .iw-content .title h6 {
-            font-weight: 600;
-            font-size: 22px;
-            line-height: 130%;
-            letter-spacing: 0.01em;
-            color: #141518;
-        }
-
-        .iw-content .title .droplets {
-            border-radius: 50%;
-            padding-top: 4px;
-            width: 45px;
-            box-shadow: 0px 0px 5px 0px #3333;
-            height: 45px;
-        }
-
-        .btn.btn-detail {
-            padding-top: 14px;
-        }
-
-        .gm-ui-hover-effect {
-            top: 0 !important;
-            right: 0 !important;
-        }
-
-        /* popup map */
-        .popup-data.active .map-btn {
-            display: none;
-        }
-
-        .popup-modal {
-            display: none;
-            position: absolute;
-            z-index: 9;
-            top: 100px;
-            height: calc(100% - 130px);
-            left: 25px;
-            background: #fff;
-            padding: 20px 30px;
-            min-width: 386px;
-            overflow-y: scroll;
-        }
-
-        .popup-modal::-webkit-scrollbar {
-            width: 1px;
-        }
-
-        .popup-modal.active {
-            display: block;
-        }
-
-        .popup-modal .head .icon-close {
-            display: flex;
-            align-items: center;
-            margin-left: 13px;
-        }
-
-        .popup-modal .head .icon-close:hover {
-            cursor: pointer;
-        }
-
-        .popup-modal .content .item {
-            margin-top: 20px;
-        }
-
-        .popup-modal .content .item .headding {
-            padding-bottom: 8px;
-            border-bottom: 2px solid #DAA622;
-            align-items: center;
-            position: relative;
-        }
-
-        .popup-modal .content .item .headding:hover {
-            cursor: pointer;
-        }
-
-        .popup-modal .content .item .headding .icon {
-            width: 24px;
-            height: 24px;
-            align-items: center;
-            border: 1px solid #D1D5DB;
-            border-radius: 100px;
-            display: flex;
-            justify-content: center;
-            padding: 3px;
-        }
-
-        .popup-modal .content .item .headding .icon svg {
-            max-width: 14px;
-            max-height: 14px;
-        }
-
-        .popup-modal .content .item .headding .title {
-            font-family: 'Public Sans';
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 160%;
-            letter-spacing: 0.01em;
-            color: #141518;
-            margin-bottom: 0;
-            margin-left: 8px;
-        }
-
-        .popup-modal .content .item .headding .dropdown-icon {
-            position: absolute;
-            right: 0;
-            transform: rotate(180deg);
-        }
-
-        .popup-modal .content .item.active .headding .dropdown-icon {
-            transform: rotate(0deg);
-        }
-
-        .popup-modal .content .item .info {
-            list-style-type: disc;
-            display: none;
-        }
-
-        .popup-modal .content .item.active .info {
-            display: block;
-        }
-
-
-        .popup-modal .content .item .info ul {
-            max-height: 130px;
-            overflow: hidden;
-            list-style-type: disc;
-            padding-left: 25px;
-        }
-
-        .popup-modal .content .item.active .info.other_info ul {
-            max-height: unset;
-            overflow-y: scroll;
-            padding-left: 25px;
-        }
-
-        .popup-modal .content .item .info.other_info ul::-webkit-scrollbar {
-            width: 1px;
-        }
-
-        .popup-modal .content .item .info.other_info .other_project {
-            display: none;
-        }
-
-
-
-        .popup-modal .content .item .info li {
-            margin-top: 16px;
-            font-family: 'Public Sans';
-            font-weight: 300;
-            font-size: 16px;
-            line-height: 160%;
-            letter-spacing: 0.01em;
-            list-style-type: disc;
-            color: #141518;
-        }
-
-        .popup-modal .content .item .info .other_project {
-            margin-top: 10px;
-            display: flex;
-            column-gap: 4px;
-        }
-
-        .popup-modal .content .item .info .other_project .title {
-            color: #DAA622;
-        }
-
-        .popup-modal .content .item .info .other_project:hover {
-            cursor: pointer;
-        }
-    </style>
 </div>
 
 <?php

@@ -241,8 +241,6 @@ get_header();
 
     }
 
-
-
     function explodePie(e) {
 
         if (typeof(e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e
