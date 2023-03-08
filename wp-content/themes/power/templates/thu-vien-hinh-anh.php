@@ -58,7 +58,7 @@
  
  ?>
  
- <div class="thu-vien-hinh-anh thu-vien-hinh-anh">
+ <div class="thu-vien-hinh-anh thu-vien-hin">
 			<!-- Banner Section -->
 			<?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-banner-section.php'); ?>
 
@@ -293,7 +293,8 @@
 																		 <?php $count++; ?>
  
 																 <?php endwhile; ?>
- 
+															<?php else:?>
+																<?php not_result()?>
 														 <?php endif; ?>
  
 												 </section>
