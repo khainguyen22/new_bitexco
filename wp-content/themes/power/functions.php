@@ -78,7 +78,6 @@ if (!function_exists('theme_enqueue_styles')) {
 
 
         wp_enqueue_script('date-range', get_template_directory_uri() . '/access/js/date-range.js', array('jquery'), 1.1, false);
-
     }
 }
 
@@ -1507,7 +1506,7 @@ function harry_wp_footer()
 ?>
     <script type="text/javascript">
         document.addEventListener('wpcf7mailsent', function(event) {
-            if ('3058' == event.detail.contactFormId) {
+            if ('3071' == event.detail.contactFormId) {
                 var close = document.getElementsByClassName('close')
                 close[0].click();
                 var myModalsuccessfully = new bootstrap.Modal(document.getElementById('popup_ung_tuyen_successfully'));
@@ -1525,13 +1524,14 @@ function harry_wp_footer()
  * @return
  * @param
  */
-function my_comment_form_defaults( $defaults ) {
-    if ( ! is_user_logged_in() ) {
+function my_comment_form_defaults($defaults)
+{
+    if (!is_user_logged_in()) {
         $defaults['comment_notes_before'] = '<p class="comment-notes">Please <a href="' . wp_login_url() . '">log in</a> to leave a comment.</p>';
     }
     return $defaults;
 }
-add_filter( 'comment_form_defaults', 'my_comment_form_defaults' );
+add_filter('comment_form_defaults', 'my_comment_form_defaults');
 
 /**
  * 
@@ -1541,12 +1541,13 @@ add_filter( 'comment_form_defaults', 'my_comment_form_defaults' );
  * @param
  *
  */
-function my_comment_redirect() {
-    if ( ! is_user_logged_in() && empty( $_POST['comment'] ) ) {
-        wp_redirect( wp_login_url() );
-    } elseif ( ! is_user_logged_in() ) {
-        wp_redirect( wp_login_url() );
+function my_comment_redirect()
+{
+    if (!is_user_logged_in() && empty($_POST['comment'])) {
+        wp_redirect(wp_login_url());
+    } elseif (!is_user_logged_in()) {
+        wp_redirect(wp_login_url());
         exit;
     }
 }
-add_action( 'comment_post', 'my_comment_redirect' );
+add_action('comment_post', 'my_comment_redirect');

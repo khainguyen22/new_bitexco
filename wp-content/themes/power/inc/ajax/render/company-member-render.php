@@ -71,7 +71,8 @@ function render_company_member($query, $paged = 1)
 			$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>
 
 			<div class="filter-item">
-				<a href="<?php echo  get_field('website')  ?>">
+				<a href="<?php $field_value = get_field('website');
+							echo (isset($field_value) ? $field_value : the_permalink()); ?>">
 					<div class="filter-image  hover-zoom hover-zoom-img">
 
 						<img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
@@ -82,7 +83,8 @@ function render_company_member($query, $paged = 1)
 
 					<div class="content-title">
 
-						<h6> <a href="<?php echo  get_field('website')  ?>"><?php echo the_title() ?></a></h6>
+						<h6> <a href="<?php $field_value = get_field('website');
+										echo (isset($field_value) ? $field_value : the_permalink()); ?>"><?php echo the_title() ?></a></h6>
 
 					</div>
 
