@@ -297,7 +297,8 @@ get_header();
 
 
                         <div class="filter-item">
-                            <a href="<?php echo  get_field('website')  ?>">
+                            <a href="<?php $field_value = get_field('website');
+                                        echo (isset($field_value) ? $field_value : the_permalink()); ?>">
                                 <div class="filter-image  hover-zoom hover-zoom-img">
 
                                     <img src="<?php echo $featured_img_url ?>" alt="<?php echo the_title() ?>">
@@ -308,7 +309,8 @@ get_header();
 
                                 <div class="content-title">
 
-                                    <h6> <a href="<?php echo  get_field('website')  ?>"><?php echo the_title() ?></a></h6>
+                                    <h6> <a href="<?php $field_value = get_field('website');
+                                                    echo (isset($field_value) ? $field_value : the_permalink()); ?>"><?php echo the_title() ?></a></h6>
 
                                 </div>
 
