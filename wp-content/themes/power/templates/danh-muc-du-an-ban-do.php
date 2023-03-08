@@ -230,6 +230,7 @@ get_header();
             <div class="map-luoi-dien">
                 <div class="goto-container">
                     <div class="goto default"><span class="icon"><span class=""></span></span><span> Bản đồ</span></div>
+                    <div class="goto default"><span class="icon"><span class=""></span></span><span> Bản đồ</span></div>
                     <div class="wrap-line">
                         <div class="goto"><span class="icon"><span class=" line line-500"></span></span> <span> Đường dây 500kV
                             </span></div>
