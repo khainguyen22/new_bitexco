@@ -292,15 +292,16 @@ get_header();
                     </div>
                 </div>
                 <div class="step-container">
-                    <div class="step default "><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/ban-do.png" alt="ban-do"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-500.png" alt="duong-day-500"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-220.png" alt="duong-day-220"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/duong-day-110.png" alt="duong-day-110"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-500.png" alt="TBA-500"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-220.png" alt="TBA220"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/tba-110.png" alt="tba-110"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/nha-may-thuy-dien.png" alt="nha-may-dien"></div>
-                    <div class="step"><img src="https://power.dtts.com.vn/wp-content/uploads/2023/02/nha-may-dien-mat-troi.png" alt="nha-may-dien"></div>
+                    <div class="step default "><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/ban-do.png" alt="ban-do"></div>
+                    <div class="step default "><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/dao.png" alt="dao"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-500.png" alt="duong-day-500"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-220.png" alt="duong-day-220"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-110.png" alt="duong-day-110"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-500.png" alt="TBA-500"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-220.png" alt="TBA220"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-110.png" alt="tba-110"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/nha-may-thuy-dien.png" alt="nha-may-dien"></div>
+                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/nha-may-dien-mat-troi.png" alt="nha-may-dien"></div>
                 </div>
             </div>
         </div>
@@ -318,7 +319,6 @@ get_header();
                         <a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
 
                     <?php endforeach; ?>
-
 
 
                 </div>
@@ -395,12 +395,12 @@ get_header();
             transitLayer.setMap(map);
 
             <?php
-                $args = [
-                    'post_type' => 'projects',
-                    'posts_per_page' => -1,
-                ];
+            $args = [
+                'post_type' => 'projects',
+                'posts_per_page' => -1,
+            ];
 
-                $query = new WP_Query($args);
+            $query = new WP_Query($args);
             ?>
 
             var infowindow = new google.maps.InfoWindow();
@@ -424,7 +424,7 @@ get_header();
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_14816_50731)"><path d="M19.0835 6.87507H17.2085V3.75007C17.2114 3.60386 17.163 3.46124 17.0717 3.34704C16.9803 3.23284 16.8518 3.15429 16.7085 3.12507L4.2085 0.625072C4.11771 0.607182 4.02407 0.609676 3.93436 0.632374C3.84465 0.655072 3.7611 0.697407 3.68975 0.756322C3.6164 0.815806 3.55749 0.891135 3.51744 0.976652C3.47739 1.06217 3.45724 1.15565 3.4585 1.25007V6.87507H1.5835C1.41774 6.87507 1.25876 6.94092 1.14155 7.05813C1.02434 7.17534 0.958496 7.33431 0.958496 7.50007V18.7501C0.958496 18.9158 1.02434 19.0748 1.14155 19.192C1.25876 19.3092 1.41774 19.3751 1.5835 19.3751H19.0835C19.2493 19.3751 19.4082 19.3092 19.5254 19.192C19.6426 19.0748 19.7085 18.9158 19.7085 18.7501V7.50007C19.7085 7.33431 19.6426 7.17534 19.5254 7.05813C19.4082 6.94092 19.2493 6.87507 19.0835 6.87507ZM2.2085 8.12507H3.4585V18.1251H2.2085V8.12507ZM4.7085 7.50007V2.01257L15.9585 4.26257V18.1251H12.8335V14.3751C12.8335 14.2093 12.7676 14.0503 12.6504 13.9331C12.5332 13.8159 12.3743 13.7501 12.2085 13.7501H8.4585C8.29274 13.7501 8.13376 13.8159 8.01655 13.9331C7.89934 14.0503 7.8335 14.2093 7.8335 14.3751V18.1251H4.7085V7.50007ZM9.0835 18.1251V15.0001H11.5835V18.1251H9.0835ZM18.4585 18.1251H17.2085V8.12507H18.4585V18.1251Z" fill="#7E8189"/><path d="M6.896 8.125H9.396C9.56176 8.125 9.72073 8.05915 9.83794 7.94194C9.95515 7.82473 10.021 7.66576 10.021 7.5V5C10.021 4.83424 9.95515 4.67527 9.83794 4.55806C9.72073 4.44085 9.56176 4.375 9.396 4.375H6.896C6.73024 4.375 6.57126 4.44085 6.45405 4.55806C6.33684 4.67527 6.271 4.83424 6.271 5V7.5C6.271 7.66576 6.33684 7.82473 6.45405 7.94194C6.57126 8.05915 6.73024 8.125 6.896 8.125ZM7.521 5.625H8.771V6.875H7.521V5.625Z" fill="#7E8189"/><path d="M9.396 12.5C9.56176 12.5 9.72073 12.4342 9.83794 12.3169C9.95515 12.1997 10.021 12.0408 10.021 11.875V9.375C10.021 9.20924 9.95515 9.05027 9.83794 8.93306C9.72073 8.81585 9.56176 8.75 9.396 8.75H6.896C6.73024 8.75 6.57126 8.81585 6.45405 8.93306C6.33684 9.05027 6.271 9.20924 6.271 9.375V11.875C6.271 12.0408 6.33684 12.1997 6.45405 12.3169C6.57126 12.4342 6.73024 12.5 6.896 12.5H9.396ZM7.521 10H8.771V11.25H7.521V10Z" fill="#7E8189"/><path d="M11.271 8.125H13.771C13.9368 8.125 14.0957 8.05915 14.2129 7.94194C14.3301 7.82473 14.396 7.66576 14.396 7.5V5C14.396 4.83424 14.3301 4.67527 14.2129 4.55806C14.0957 4.44085 13.9368 4.375 13.771 4.375H11.271C11.1052 4.375 10.9463 4.44085 10.8291 4.55806C10.7118 4.67527 10.646 4.83424 10.646 5V7.5C10.646 7.66576 10.7118 7.82473 10.8291 7.94194C10.9463 8.05915 11.1052 8.125 11.271 8.125ZM11.896 5.625H13.146V6.875H11.896V5.625Z" fill="#7E8189"/><path d="M11.271 12.5H13.771C13.9368 12.5 14.0957 12.4342 14.2129 12.3169C14.3301 12.1997 14.396 12.0408 14.396 11.875V9.375C14.396 9.20924 14.3301 9.05027 14.2129 8.93306C14.0957 8.81585 13.9368 8.75 13.771 8.75H11.271C11.1052 8.75 10.9463 8.81585 10.8291 8.93306C10.7118 9.05027 10.646 9.20924 10.646 9.375V11.875C10.646 12.0408 10.7118 12.1997 10.8291 12.3169C10.9463 12.4342 11.1052 12.5 11.271 12.5ZM11.896 10H13.146V11.25H11.896V10Z" fill="#7E8189"/></g><defs><clipPath id="clip0_14816_50731"><rect width="20" height="20" fill="white" transform="translate(0.333496)"/></clipPath></defs></svg>';
-                    locationInfo += '<p><strong>Công ty: </strong><?php echo get_term_by('id', get_field('company', get_the_ID()), 'project_company')->name?></p>';
+                    locationInfo += '<p><strong>Công ty: </strong><?php echo get_term_by('id', get_field('company', get_the_ID()), 'project_company')->name ?></p>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_14816_50741)"><path d="M10.7016 4.00326L6.1119 10.1036C5.45796 10.9728 6.07905 12.217 7.16686 12.217H9.10382L8.30675 15.1529C8.02222 16.2009 9.39472 16.8742 10.05 16.0096L14.5515 10.0688C15.2103 9.20017 14.59 7.95142 13.4996 7.95142H11.5993L12.4871 4.89689C12.8013 3.81638 11.3792 3.10275 10.7016 4.00326ZM13.4996 9.12334C13.6231 9.12334 13.6923 9.26248 13.6178 9.36056C13.6178 9.36064 13.6177 9.36076 13.6176 9.36084L9.68421 14.5519L10.4355 11.7846C10.5366 11.4122 10.2557 11.0452 9.87003 11.0452H7.16686C7.04393 11.0452 6.97436 10.9065 7.04831 10.8082L11.1227 5.39275L10.2562 8.37384C10.2047 8.55084 10.2396 8.74173 10.3502 8.88916C10.4609 9.03654 10.6345 9.1233 10.8188 9.1233H13.4996V9.12334Z" fill="#7E8189"/><path d="M3.33016 15.9581C4.72723 17.5988 6.66016 18.7013 8.77281 19.0625C9.09129 19.117 9.39453 18.9032 9.44914 18.5838C9.50367 18.2648 9.28934 17.962 8.97039 17.9075C5.11141 17.2475 2.31055 13.922 2.31055 10C2.31055 6.5275 4.50645 3.52293 7.6882 2.42172L7.47836 2.79418C7.31953 3.07614 7.4193 3.43344 7.70125 3.59227C7.98328 3.75117 8.34055 3.65125 8.49938 3.36942L9.38211 1.80258C9.53813 1.52559 9.44332 1.17563 9.1743 1.01324L7.63438 0.0842997C7.35723 -0.0828096 6.99715 0.00621382 6.83 0.283362C6.66285 0.560433 6.75195 0.92055 7.02902 1.08774L7.37141 1.2943C5.81352 1.82524 4.41133 2.77227 3.33016 4.04188C1.91695 5.70141 1.13867 7.81735 1.13867 10C1.13867 12.1827 1.91695 14.2986 3.33016 15.9581Z" fill="#7E8189"/><path d="M11.8937 0.937186C11.5749 0.882654 11.272 1.09699 11.2175 1.41597C11.1629 1.73492 11.3773 2.03773 11.6962 2.09226C15.5552 2.75222 18.3561 6.07777 18.3561 9.99973C18.3561 13.4722 16.1602 16.4768 12.9784 17.578L13.1882 17.2055C13.3471 16.9236 13.2473 16.5662 12.9654 16.4074C12.6834 16.2486 12.3261 16.3483 12.1673 16.6303L11.2845 18.1971C11.1289 18.4732 11.222 18.8232 11.4923 18.9864L13.0322 19.9154C13.3095 20.0827 13.6695 19.9933 13.8366 19.7164C14.0037 19.4393 13.9146 19.0792 13.6375 18.912L13.2951 18.7054C14.853 18.1745 16.2552 17.2275 17.3364 15.9578C18.7496 14.2983 19.5279 12.1823 19.5279 9.99969C19.5279 7.81707 18.7496 5.70109 17.3364 4.04156C15.9394 2.40097 14.0064 1.29847 11.8937 0.937186Z" fill="#7E8189"/></g><defs><clipPath id="clip0_14816_50741"><rect width="20" height="20" fill="white" transform="translate(0.333496)"/></clipPath></defs></svg>';
