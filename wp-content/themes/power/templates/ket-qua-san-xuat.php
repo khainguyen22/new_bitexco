@@ -488,7 +488,7 @@ get_header();
 
                             <?php foreach ($cong_xuat_lap_dat_cong_ty_con as $value) : ?>
 
-                                <td><?php echo $value; ?></td>
+                                <td><?php echo number_format($value, 0, ',', '.'); ?></td>
 
                             <?php endforeach; ?>
 
@@ -500,7 +500,7 @@ get_header();
 
                             <?php foreach ($cong_xuat_lap_dat_cong_ty_lien_ket as $value) : ?>
 
-                                <td><?php echo $value; ?></td>
+                                <td><?php echo number_format($value, 0, ',', '.'); ?></td>
 
                             <?php endforeach; ?>
 
@@ -510,8 +510,7 @@ get_header();
 
                             <td>Tổng công suất</td>
 
-                            <?php $array1 = array(1, 2, 3);
-                            $array2 = array(4, 5, 6);
+                            <?php
                             $result = array();
 
                             for ($i = 0; $i < count($cong_xuat_lap_dat_cong_ty_con); $i++) {
@@ -519,7 +518,7 @@ get_header();
                             } ?>
                             <?php foreach ($result as $value) : ?>
 
-                                <td><?php echo $value; ?></td>
+                                <td><?php echo number_format($value, 0, ',', '.'); ?></td>
 
                             <?php endforeach; ?>
 

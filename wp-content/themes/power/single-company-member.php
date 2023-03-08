@@ -96,7 +96,7 @@ get_header();
 
     <div class="main-content">
 
-        <section class="your-privilege overrall">
+        <section class="your-privilege overrall d-none">
 
             <div class="container">
 
@@ -210,7 +210,7 @@ get_header();
 
         </section>
 
-        <section class="your-privilege power-enviroment value-for-customers">
+        <section class="your-privilege power-enviroment value-for-customers d-none">
 
             <div class="container">
 
