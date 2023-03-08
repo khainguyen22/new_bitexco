@@ -58,7 +58,7 @@
  
  ?>
  
- <div class="thu-vien-hinh-anh thu-vien-video">
+ <div class="thu-vien-hinh-anh thu-vien-hinh-anh">
 			<!-- Banner Section -->
 			<?php include(get_stylesheet_directory(  ) . '/templates/thu-vien-banner-section.php'); ?>
 
