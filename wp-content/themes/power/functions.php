@@ -30,7 +30,7 @@ if (!function_exists('theme_enqueue_styles')) {
 
         wp_enqueue_style('style-slick', get_stylesheet_directory_uri() . '/access/css/slick.min.css', array(), false);
 
-        // wp_enqueue_style('style-css', get_stylesheet_directory_uri() . '/access/styles/index.css', array(), false);
+        wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css', array(), false);
 
         wp_enqueue_style('style-scss', get_stylesheet_directory_uri() . '/access/css/index.css', array(), false);
 
