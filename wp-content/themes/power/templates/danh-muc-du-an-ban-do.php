@@ -518,7 +518,7 @@ get_header();
 
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBfymDYGubxIE4s-6sz3wYWxzsRcndH3Y&callback=myMap">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1PQnohUd35MSfol6G-6D9m6i6R422_Jg&callback=myMap">
     </script>
     <style>
         /* map luoi dien  */
