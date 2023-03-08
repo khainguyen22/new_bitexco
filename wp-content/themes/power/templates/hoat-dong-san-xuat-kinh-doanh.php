@@ -19,6 +19,9 @@ Template Name: Tin tức - Hoạt động sản xuất kinh doanh
 
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
+echo '<pre>';
+print_r($_SERVER);
+die;
 $request_uri = "$_SERVER[REDIRECT_URL]";
 
 
@@ -394,7 +397,7 @@ get_header();
 
 
 
-                                <li class="<?php echo $key == 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo paint_if_exist($value['label']); ?></a></li>
+                                <li class="<?php echo strlen(strstr($value['link'], $request_uri)) > 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
 
 
 
@@ -941,22 +944,22 @@ get_header();
                             <div class="form-filter-date d-flex">
                                 <input placeholder="Thời gian" name="date_range" class="textbox-n" type="text" id="date_range">
                                 <script>
-                                $(document).ready(function() {
-                                $('#date_range').daterangepicker({
-                                    autoUpdateInput: false,
-                                    locale: {
-                                    cancelLabel: 'Clear'
-                                    }
-                                });
+                                    $(document).ready(function() {
+                                        $('#date_range').daterangepicker({
+                                            autoUpdateInput: false,
+                                            locale: {
+                                                cancelLabel: 'Clear'
+                                            }
+                                        });
 
-                                $('#date_range').on('apply.daterangepicker', function(ev, picker) {
-                                    $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
-                                });
+                                        $('#date_range').on('apply.daterangepicker', function(ev, picker) {
+                                            $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+                                        });
 
-                                $('#date_range').on('cancel.daterangepicker', function(ev, picker) {
-                                    $(this).val('');
-                                });
-                                });
+                                        $('#date_range').on('cancel.daterangepicker', function(ev, picker) {
+                                            $(this).val('');
+                                        });
+                                    });
                                 </script>
 
 

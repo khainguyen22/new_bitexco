@@ -480,9 +480,7 @@ get_header();
                             <?php foreach ($main_navigation as $key => $value) : ?>
 
 
-
-                                <li class="<?php echo $key == 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo paint_if_exist($value['label']); ?></a></li>
-
+                                <li class="<?php echo strlen(strstr($value['link'], $request_uri)) > 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
 
 
                             <?php endforeach; ?>

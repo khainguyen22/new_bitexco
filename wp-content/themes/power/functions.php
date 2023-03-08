@@ -1512,6 +1512,10 @@ function harry_wp_footer()
                 var myModalsuccessfully = new bootstrap.Modal(document.getElementById('popup_ung_tuyen_successfully'));
                 myModalsuccessfully.show();
             }
+            if ('6' == event.detail.contactFormId) {
+                var myModalsuccessfully = new bootstrap.Modal(document.getElementById('popup_ung_tuyen_successfully'));
+                myModalsuccessfully.show();
+            }
         }, false);
     </script>
 <?php

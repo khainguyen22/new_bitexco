@@ -48,9 +48,7 @@ jQuery(document).ready(function ($) {
 	// popup ứng tuyển vị trí tuyển dụng 
 	$('body').on('change', '#popup_ung_tuyen input', function (params) {
 		var inputValue = $("#popup_ung_tuyen_title").val();
-		console.log(inputValue);
 		$("input[name=vacancies]").val(inputValue);
-		console.log($('input[name=vacancies]'));
 	});
 
 	jQuery('input[name=image]').on('change', function () {
@@ -537,7 +535,7 @@ jQuery(document).ready(function ($) {
 							countNum: countTo
 						},
 						{
-							duration: 5500,
+							duration: 3000,
 							easing: "swing",
 							step: function () {
 								$this.text(
