@@ -15,7 +15,9 @@ jQuery(document).ready(function ($) {
 
 
 
-
+	$('body').on('click', '.wrap_scrollspy .scrollspy li', function (e) {
+		$(this).toggleClass('active');
+	})
 
 	$('body').on('click', '#shareOnFacebook', function () {
 		var url = encodeURIComponent(window.location.href);

@@ -19,9 +19,9 @@ Template Name: Tin tức - Hoạt động sản xuất kinh doanh
 
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
-echo '<pre>';
-print_r($_SERVER);
-die;
+// echo '<pre>';
+// print_r($_SERVER);
+// die;
 $request_uri = "$_SERVER[REDIRECT_URL]";
 
 
