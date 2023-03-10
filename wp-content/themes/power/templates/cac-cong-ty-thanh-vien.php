@@ -310,7 +310,7 @@ get_header();
                                 <div class="content-title">
 
                                     <h6> <a href="<?php $field_value = get_field('website');
-                                                    echo (isset($field_value) ? $field_value : the_permalink()); ?>"><?php echo the_title() ?></a></h6>
+                                                    echo (isset($field_value) && $field_value != '' ? $field_value : the_permalink()); ?>"><?php echo the_title() ?></a></h6>
 
                                 </div>
 
