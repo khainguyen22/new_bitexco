@@ -1,7 +1,7 @@
 <?php
 get_header();
 setPostViews(get_the_ID());
-$other_info = get_field('other_info_post_project');
+$other_info = get_field('other_info_danh_muc_du_an', 'option');
 ?>
 
 <!-- Blog & Sidebar Section -->

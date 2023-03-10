@@ -292,17 +292,28 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <div class="step-container">
-                    <div class="step default "><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/ban-do.png" alt="ban-do"></div>
-                    <div class="step default "><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/dao.png" alt="dao"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-500.png" alt="duong-day-500"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-220.png" alt="duong-day-220"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-110.png" alt="duong-day-110"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-500.png" alt="TBA-500"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-220.png" alt="TBA220"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-110.png" alt="tba-110"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/nha-may-thuy-dien.png" alt="nha-may-dien"></div>
-                    <div class="step"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/nha-may-dien-mat-troi.png" alt="nha-may-dien"></div>
+                <div class="wrap_step">
+                    <div class="panzoom-controls">
+                        <div class="panzoom-control">
+                            <button id="bt-zoom-in" class="rounded-top" title="Zoom in">+</button>
+                            <button id="bt-reset" class="rounded-0" title="Clear">x</button>
+                            <button id="bt-zoom-out" class="rounded-bottom" title="Zoom out">-</button>
+                        </div>
+                    </div>
+                    <div class="panzoom" panzoom-scale="1">
+                        <div class="step-container">
+                            <div class="step default " style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/ban-do.png" alt="ban-do"></div>
+                            <div class="step default " style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/dao.png" alt="dao"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-500.png" alt="duong-day-500"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-220.png" alt="duong-day-220"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/duong-day-110.png" alt="duong-day-110"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-500.png" alt="TBA-500"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-220.png" alt="TBA220"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/tba-110.png" alt="tba-110"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/nha-may-thuy-dien.png" alt="nha-may-dien"></div>
+                            <div class="step" style="transform: none;"><img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/nha-may-dien-mat-troi.png" alt="nha-may-dien"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -329,7 +340,7 @@ get_header();
         </section>
 
     <?php endif; ?>
-
+    <script type="text/javascript" src="https://cdn.rawgit.com/YuriGor/jquery.panzoom/ignoreChildrensEvents/dist/jquery.panzoom.min.js"></script>
     <script>
         jQuery(document).ready(function($) {
             $('.map-btn').on('click', function() {
@@ -432,27 +443,27 @@ get_header();
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8335 5C2.8335 3.61929 3.95278 2.5 5.3335 2.5H15.3335C16.7142 2.5 17.8335 3.61929 17.8335 5V15C17.8335 16.3807 16.7142 17.5 15.3335 17.5H5.3335C3.95278 17.5 2.8335 16.3807 2.8335 15V5Z" stroke="#7E8189" stroke-width="1.5"/><path d="M2.8335 6.66667H17.8335" stroke="#7E8189" stroke-width="1.5" stroke-linejoin="round"/><path d="M14.0837 1.25L14.0837 3.75" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.58366 1.25L6.58366 3.75" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.75 9.99935H6.58333" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.9165 9.99935H10.7498" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.0835 9.99935H14.9168" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.75 13.3324H6.58333" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.9165 13.3324H10.7498" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.0835 13.3324H14.9168" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-                    locationInfo += '<p><strong>Thời điểm COD: </strong><?php echo get_field('date', get_the_ID())?></p>';
+                    locationInfo += '<p><strong>Thời điểm COD: </strong><?php echo get_field('date', get_the_ID()) ?></p>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16667 17.9587H6.83333C2.30833 17.9587 0.375 16.0253 0.375 11.5003V6.50033C0.375 1.97533 2.30833 0.0419922 6.83333 0.0419922H11.8333C16.3583 0.0419922 18.2917 1.97533 18.2917 6.50033V8.83366C18.2917 9.17532 18.0083 9.45866 17.6667 9.45866C17.325 9.45866 17.0417 9.17532 17.0417 8.83366V6.50033C17.0417 2.65866 15.675 1.29199 11.8333 1.29199H6.83333C2.99167 1.29199 1.625 2.65866 1.625 6.50033V11.5003C1.625 15.342 2.99167 16.7087 6.83333 16.7087H9.16667C9.50833 16.7087 9.79167 16.992 9.79167 17.3337C9.79167 17.6753 9.50833 17.9587 9.16667 17.9587Z" fill="#7E8189"/><path d="M5.1665 11.2424C4.82484 11.2424 4.5415 10.959 4.5415 10.6174V7.94238C4.5415 7.60072 4.82484 7.31738 5.1665 7.31738C5.50817 7.31738 5.7915 7.60072 5.7915 7.94238V10.6174C5.7915 10.9674 5.50817 11.2424 5.1665 11.2424V11.2424Z" fill="#7E8189"/><path d="M13.5 11.2424C13.1583 11.2424 12.875 10.959 12.875 10.6174V7.94238C12.875 7.60072 13.1583 7.31738 13.5 7.31738C13.8417 7.31738 14.125 7.60072 14.125 7.94238V10.6174C14.125 10.9674 13.8417 11.2424 13.5 11.2424V11.2424Z" fill="#7E8189"/><path d="M14.2762 17.586C14.1096 17.586 13.9512 17.5193 13.8346 17.4026L11.5179 15.0943C11.2762 14.8526 11.2679 14.4526 11.5179 14.211C11.7596 13.9693 12.1596 13.961 12.4012 14.211L14.2429 16.0443L17.6596 12.2193C17.8846 11.9526 18.2762 11.9276 18.5429 12.1526C18.8012 12.3776 18.8346 12.7693 18.6096 13.036L14.7596 17.3693C14.6429 17.5026 14.4846 17.5776 14.3096 17.586C14.2929 17.586 14.2846 17.586 14.2762 17.586Z" fill="#7E8189"/><path d="M9.3335 10.875C8.99183 10.875 8.7085 10.5917 8.7085 10.25V7.75C8.7085 7.40833 8.99183 7.125 9.3335 7.125C9.67516 7.125 9.9585 7.40833 9.9585 7.75V10.25C9.9585 10.5917 9.67516 10.875 9.3335 10.875Z" fill="#7E8189"/></svg>';
-                    locationInfo += '<p><strong>Tình trạng: </strong><?php echo get_term(get_field('status', get_the_ID()))->name?></p>';
+                    locationInfo += '<p><strong>Tình trạng: </strong><?php echo get_term(get_field('status', get_the_ID()))->name ?></p>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.3335 12.125C7.6085 12.125 6.2085 10.725 6.2085 9C6.2085 7.275 7.6085 5.875 9.3335 5.875C11.0585 5.875 12.4585 7.275 12.4585 9C12.4585 10.725 11.0585 12.125 9.3335 12.125ZM9.3335 7.125C8.30016 7.125 7.4585 7.96667 7.4585 9C7.4585 10.0333 8.30016 10.875 9.3335 10.875C10.3668 10.875 11.2085 10.0333 11.2085 9C11.2085 7.96667 10.3668 7.125 9.3335 7.125Z" fill="#7E8189"/><path d="M12.0083 17.4913C11.8333 17.4913 11.6583 17.4663 11.4833 17.4246C10.9667 17.2829 10.5333 16.9579 10.2583 16.4996L10.1583 16.3329C9.66667 15.4829 8.99167 15.4829 8.5 16.3329L8.40833 16.4913C8.13333 16.9579 7.7 17.2913 7.18333 17.4246C6.65833 17.5663 6.11667 17.4913 5.65833 17.2163L4.225 16.3913C3.71667 16.0996 3.35 15.6246 3.19167 15.0496C3.04167 14.4746 3.11667 13.8829 3.40833 13.3746C3.65 12.9496 3.71667 12.5663 3.575 12.3246C3.43333 12.0829 3.075 11.9413 2.58333 11.9413C1.36667 11.9413 0.375 10.9496 0.375 9.73292V8.26625C0.375 7.04959 1.36667 6.05792 2.58333 6.05792C3.075 6.05792 3.43333 5.91625 3.575 5.67459C3.71667 5.43292 3.65833 5.04959 3.40833 4.62459C3.11667 4.11625 3.04167 3.51625 3.19167 2.94959C3.34167 2.37459 3.70833 1.89959 4.225 1.60792L5.66667 0.782921C6.60833 0.224588 7.85 0.549588 8.41667 1.50792L8.51667 1.67459C9.00833 2.52459 9.68333 2.52459 10.175 1.67459L10.2667 1.51625C10.8333 0.549588 12.075 0.224588 13.025 0.791254L14.4583 1.61625C14.9667 1.90792 15.3333 2.38292 15.4917 2.95792C15.6417 3.53292 15.5667 4.12459 15.275 4.63292C15.0333 5.05792 14.9667 5.44125 15.1083 5.68292C15.25 5.92459 15.6083 6.06625 16.1 6.06625C17.3167 6.06625 18.3083 7.05792 18.3083 8.27459V9.74125C18.3083 10.9579 17.3167 11.9496 16.1 11.9496C15.6083 11.9496 15.25 12.0913 15.1083 12.3329C14.9667 12.5746 15.025 12.9579 15.275 13.3829C15.5667 13.8913 15.65 14.4913 15.4917 15.0579C15.3417 15.6329 14.975 16.1079 14.4583 16.3996L13.0167 17.2246C12.7 17.3996 12.3583 17.4913 12.0083 17.4913ZM9.33333 14.4079C10.075 14.4079 10.7667 14.8746 11.2417 15.6996L11.3333 15.8579C11.4333 16.0329 11.6 16.1579 11.8 16.2079C12 16.2579 12.2 16.2329 12.3667 16.1329L13.8083 15.2996C14.025 15.1746 14.1917 14.9663 14.2583 14.7163C14.325 14.4663 14.2917 14.2079 14.1667 13.9913C13.6917 13.1746 13.6333 12.3329 14 11.6913C14.3667 11.0496 15.125 10.6829 16.075 10.6829C16.6083 10.6829 17.0333 10.2579 17.0333 9.72459V8.25792C17.0333 7.73292 16.6083 7.29959 16.075 7.29959C15.125 7.29959 14.3667 6.93292 14 6.29125C13.6333 5.64959 13.6917 4.80792 14.1667 3.99125C14.2917 3.77459 14.325 3.51625 14.2583 3.26625C14.1917 3.01625 14.0333 2.81625 13.8167 2.68292L12.375 1.85792C12.0167 1.64125 11.5417 1.76625 11.325 2.13292L11.2333 2.29125C10.7583 3.11625 10.0667 3.58292 9.325 3.58292C8.58333 3.58292 7.89167 3.11625 7.41667 2.29125L7.325 2.12459C7.11667 1.77459 6.65 1.64959 6.29167 1.85792L4.85 2.69125C4.63333 2.81625 4.46667 3.02459 4.4 3.27459C4.33333 3.52459 4.36667 3.78292 4.49167 3.99959C4.96667 4.81625 5.025 5.65792 4.65833 6.29959C4.29167 6.94125 3.53333 7.30792 2.58333 7.30792C2.05 7.30792 1.625 7.73292 1.625 8.26625V9.73292C1.625 10.2579 2.05 10.6913 2.58333 10.6913C3.53333 10.6913 4.29167 11.0579 4.65833 11.6996C5.025 12.3413 4.96667 13.1829 4.49167 13.9996C4.36667 14.2163 4.33333 14.4746 4.4 14.7246C4.46667 14.9746 4.625 15.1746 4.84167 15.3079L6.28333 16.1329C6.45833 16.2413 6.66667 16.2663 6.85833 16.2163C7.05833 16.1663 7.225 16.0329 7.33333 15.8579L7.425 15.6996C7.9 14.8829 8.59167 14.4079 9.33333 14.4079Z" fill="#7E8189"/></svg>';
-                    locationInfo += '<p><strong>Công suất lắp máy: </strong><?php echo get_field('wattage', get_the_ID())?></p>';
+                    locationInfo += '<p><strong>Công suất lắp máy: </strong><?php echo get_field('wattage', get_the_ID()) ?></p>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.6667 17.959H1C0.658333 17.959 0.375 17.6757 0.375 17.334C0.375 16.9923 0.658333 16.709 1 16.709H17.6667C18.0083 16.709 18.2917 16.9923 18.2917 17.334C18.2917 17.6757 18.0083 17.959 17.6667 17.959Z" fill="#7E8189"/><path d="M11.2085 17.9587H7.4585C7.11683 17.9587 6.8335 17.6753 6.8335 17.3337V2.33366C6.8335 0.900325 7.62516 0.0419922 8.9585 0.0419922H9.7085C11.0418 0.0419922 11.8335 0.900325 11.8335 2.33366V17.3337C11.8335 17.6753 11.5502 17.9587 11.2085 17.9587ZM8.0835 16.7087H10.5835V2.33366C10.5835 1.37533 10.1335 1.29199 9.7085 1.29199H8.9585C8.5335 1.29199 8.0835 1.37533 8.0835 2.33366V16.7087Z" fill="#7E8189"/><path d="M5.16683 17.9587H1.8335C1.49183 17.9587 1.2085 17.6753 1.2085 17.3337V7.33366C1.2085 5.90033 1.94183 5.04199 3.16683 5.04199H3.8335C5.0585 5.04199 5.79183 5.90033 5.79183 7.33366V17.3337C5.79183 17.6753 5.5085 17.9587 5.16683 17.9587ZM2.4585 16.7087H4.54183V7.33366C4.54183 6.29199 4.0835 6.29199 3.8335 6.29199H3.16683C2.91683 6.29199 2.4585 6.29199 2.4585 7.33366V16.7087Z" fill="#7E8189"/><path d="M16.8333 17.959H13.5C13.1583 17.959 12.875 17.6757 12.875 17.334V11.5007C12.875 10.0673 13.6083 9.20898 14.8333 9.20898H15.5C16.725 9.20898 17.4583 10.0673 17.4583 11.5007V17.334C17.4583 17.6757 17.175 17.959 16.8333 17.959ZM14.125 16.709H16.2083V11.5007C16.2083 10.459 15.75 10.459 15.5 10.459H14.8333C14.5833 10.459 14.125 10.459 14.125 11.5007V16.709Z" fill="#7E8189"/></svg>';
-                    locationInfo += '<p><strong>Sản lượng thiết kế: </strong><?php echo get_field('quantity', get_the_ID())?></p>';
+                    locationInfo += '<p><strong>Sản lượng thiết kế: </strong><?php echo get_field('quantity', get_the_ID()) ?></p>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.146 8.08333C17.146 12.9398 11.621 18 10.2397 18C8.8585 18 3.3335 12.9398 3.3335 8.08333C3.3335 4.17132 6.42553 1 10.2397 1C14.054 1 17.146 4.17132 17.146 8.08333Z" stroke="#7E8189" stroke-width="1.5"/><circle cx="2.65625" cy="2.65625" r="2.65625" transform="matrix(-1 0 0 1 12.896 5.25)" stroke="#7E8189" stroke-width="1.5"/></svg>';
-                    locationInfo += '<p><strong>Địa chỉ: </strong><?php echo get_field('address', get_the_ID())?></p>';
+                    locationInfo += '<p><strong>Địa chỉ: </strong><?php echo get_field('address', get_the_ID()) ?></p>';
                     locationInfo += '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.0835 14.25L10.9141 9.78095C11.2993 9.33156 11.2993 8.66844 10.9141 8.21905L7.0835 3.75" stroke="#D1D5DB" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/></svg>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
-                    locationInfo += '<a href="<?php the_permalink( )?>" class="btn  btn-detail">Xem chi tiết</a>';
+                    locationInfo += '<a href="<?php the_permalink() ?>" class="btn  btn-detail">Xem chi tiết</a>';
                     locationInfo += '<a href="#" class="btn btn-close" id="btn-close" onclick="event.preventDefault()">Đóng</a>';
                     locationInfo += '</div>';
                     locationInfo += '</div>';
@@ -473,19 +484,19 @@ get_header();
                             infowindow.open(map, marker);
                         }
 
-             
+
 
                     })(marker, locationInfo));
 
 
                     google.maps.event.addListener(infowindow, 'domready', function() {
 
-                    var closeBtn = $('#btn-close').get();
+                        var closeBtn = $('#btn-close').get();
 
-                    google.maps.event.addDomListener(closeBtn[0], 'click', function() {
+                        google.maps.event.addDomListener(closeBtn[0], 'click', function() {
 
-                        infowindow.close();
-                    });
+                            infowindow.close();
+                        });
                     })
 
                     i++;
@@ -494,10 +505,66 @@ get_header();
 
             <?php endif; ?>
 
-           
-      
+
+
 
         }
+
+
+        // onmouse image luoi dien 
+        var viewport = $('.wrap_step');
+        var $pz = $('.panzoom');
+        $pz.panzoom({
+            minScale: .8,
+            maxScale: 3,
+            onPan: function() {
+                //	console.log('pan');
+            },
+            onStart: function(event) {
+                //	console.log('start', event);
+                return true;
+            },
+        });
+
+        viewport.on('wheel', function(event) {
+            event.preventDefault();
+            var delta = event.delta || event.originalEvent.wheelDelta;
+            var zoomOut = delta ? delta < 0 : event.originalEvent.deltaY > 0;
+            $pz.panzoom('zoom', zoomOut, {
+                minScale: .8,
+                maxScale: 3,
+                focal: event.originalEvent,
+            });
+        });
+
+        $pz.on('panzoomchange', function(event, panzoom, transform) {
+
+            event.stopImmediatePropagation();
+            $pz.attr('panzoom-scale', transform[0]);
+            // $pz.find('.item-map')
+            // 	.css('transform','scale(' + 1/transform[0] + ') translate3d( 0, 0, 0)');
+        });
+
+
+
+        $('#bt-zoom-in').on('click', function() {
+            $pz.panzoom('zoom', false);
+        });
+
+        $('#bt-zoom-out').on('click', function() {
+            $pz.panzoom('zoom', true);
+        });
+
+        $('#bt-reset').on('click', function() {
+            $pz.panzoom('reset');
+            //$pz.panzoom("setMatrix", [1,0,0,1,0,0]);
+        });
+        $(document).mouseup(function(e) {
+            var wrap_step = $(".wrap_step");
+            if (!wrap_step.is(e.target) && wrap_step.has(e.target).length === 0) {
+                $pz.panzoom('reset');
+            }
+        });
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB23VHQSUiL0PfJVXmZJg1Z5NLqTEqeQCs&callback=myMap">
     </script>

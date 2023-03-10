@@ -47,7 +47,7 @@ if ($tong_san_luong) {
 
         array_push($tong_san_luong_thuy_dien, $value['thuy_dien']);
 
-        array_push($tong_san_luong_dien_mat_troi, $value['dien_mat_troi']);
+        array_push($tong_san_luong_dien_mat_troi,  $value['dien_mat_troi']);
 
         array_push($tong_san_luong_nang_luong_khac, $value['khac']);
     }
@@ -81,9 +81,9 @@ if ($cong_xuat_lap_dat) {
 
     foreach ($cong_xuat_lap_dat_content['item'] as $value) {
 
-        array_push($cong_xuat_lap_dat_nam, $value['nam']);
+        array_push($cong_xuat_lap_dat_nam,  $value['nam']);
 
-        array_push($cong_xuat_lap_dat_cong_ty_con, $value['cong_ty_con']);
+        array_push($cong_xuat_lap_dat_cong_ty_con,  $value['cong_ty_con']);
 
         array_push($cong_xuat_lap_dat_cong_ty_lien_ket, $value['cong_ty_lien_ket']);
     }
@@ -563,228 +563,228 @@ get_header();
 <script>
     // cong_suat_lap_dat
 
-    var data_cong_xuat_lap_dat_nam = <?php echo json_encode($cong_xuat_lap_dat_nam); ?>;
+    // var data_cong_xuat_lap_dat_nam = < ?php echo json_encode($cong_xuat_lap_dat_nam); ?>;
 
-    var cong_xuat_lap_dat_cong_ty_con = <?php echo json_encode($cong_xuat_lap_dat_cong_ty_con); ?>;
+    // var cong_xuat_lap_dat_cong_ty_con = < ?php echo json_encode($cong_xuat_lap_dat_cong_ty_con); ?>;
 
-    var cong_xuat_lap_dat_cong_ty_lien_ket = <?php echo json_encode($cong_xuat_lap_dat_cong_ty_lien_ket); ?>;
+    // var cong_xuat_lap_dat_cong_ty_lien_ket = < ?php echo json_encode($cong_xuat_lap_dat_cong_ty_lien_ket); ?>;
 
-    const arr_cong_xuat_lap_dat_cong_ty_con = cong_xuat_lap_dat_cong_ty_con.map(str => {
+    // const arr_cong_xuat_lap_dat_cong_ty_con = cong_xuat_lap_dat_cong_ty_con.map(str => {
 
-        return parseInt(str, 10);
+    //     return parseInt(str, 10);
 
-    });
+    // });
 
-    const arr_cong_xuat_lap_dat_cong_ty_lien_ket = cong_xuat_lap_dat_cong_ty_lien_ket.map(str => {
+    // const arr_cong_xuat_lap_dat_cong_ty_lien_ket = cong_xuat_lap_dat_cong_ty_lien_ket.map(str => {
 
-        return parseInt(str, 10);
+    //     return parseInt(str, 10);
 
-    });
+    // });
 
-    var data_cong_xuat_lap_dat = [];
+    // var data_cong_xuat_lap_dat = [];
 
-    if (arr_cong_xuat_lap_dat_cong_ty_con.length === arr_cong_xuat_lap_dat_cong_ty_lien_ket.length) {
+    // if (arr_cong_xuat_lap_dat_cong_ty_con.length === arr_cong_xuat_lap_dat_cong_ty_lien_ket.length) {
 
-        for (let index_1 = 0; index_1 < arr_cong_xuat_lap_dat_cong_ty_con.length; index_1++) {
+    //     for (let index_1 = 0; index_1 < arr_cong_xuat_lap_dat_cong_ty_con.length; index_1++) {
 
-            data_cong_xuat_lap_dat.push(arr_cong_xuat_lap_dat_cong_ty_con[index_1] + arr_cong_xuat_lap_dat_cong_ty_lien_ket[
-                index_1])
+    //         data_cong_xuat_lap_dat.push(arr_cong_xuat_lap_dat_cong_ty_con[index_1] + arr_cong_xuat_lap_dat_cong_ty_lien_ket[
+    //             index_1])
 
-        }
+    //     }
 
-    } else {}
+    // } else {}
 
-    const config_cong_suat_lap_dat = {
+    // const config_cong_suat_lap_dat = {
 
-        type: 'bar',
+    //     type: 'bar',
 
-        data: {
+    //     data: {
 
-            labels: data_cong_xuat_lap_dat_nam,
+    //         labels: data_cong_xuat_lap_dat_nam,
 
-            datasets: [{
+    //         datasets: [{
 
-                    label: 'Công ty liên kết',
+    //                 label: 'Công ty liên kết',
 
-                    data: cong_xuat_lap_dat_cong_ty_lien_ket,
+    //                 data: cong_xuat_lap_dat_cong_ty_lien_ket,
 
-                    backgroundColor: [
+    //                 backgroundColor: [
 
-                        '#2A0E3D'
+    //                     '#2A0E3D'
 
-                    ],
+    //                 ],
 
-                    borderColor: [
+    //                 borderColor: [
 
-                        '#2A0E3D'
+    //                     '#2A0E3D'
 
-                    ],
+    //                 ],
 
-                    borderWidth: 1,
+    //                 borderWidth: 1,
 
-                    order: 2,
+    //                 order: 2,
 
-                    datalabels: {
+    //                 datalabels: {
 
-                        color: 'rgba(0, 0, 0, 0)',
+    //                     color: 'rgba(0, 0, 0, 0)',
 
-                    },
+    //                 },
 
-                },
+    //             },
 
-                {
+    //             {
 
-                    label: 'Công ty con',
+    //                 label: 'Công ty con',
 
-                    data: cong_xuat_lap_dat_cong_ty_con,
+    //                 data: cong_xuat_lap_dat_cong_ty_con,
 
-                    backgroundColor: [
+    //                 backgroundColor: [
 
-                        '#F2DD39'
+    //                     '#F2DD39'
 
-                    ],
+    //                 ],
 
-                    borderColor: [
+    //                 borderColor: [
 
-                        '#F2DD39'
+    //                     '#F2DD39'
 
-                    ],
+    //                 ],
 
-                    borderWidth: 1,
+    //                 borderWidth: 1,
 
-                    order: 2,
+    //                 order: 2,
 
-                    datalabels: {
+    //                 datalabels: {
 
-                        color: 'rgba(0, 0, 0, 0)',
+    //                     color: 'rgba(0, 0, 0, 0)',
 
-                    }
+    //                 }
 
-                },
+    //             },
 
-                {
+    //             {
 
-                    label: 'Tổng công suất',
+    //                 label: 'Tổng công suất',
 
-                    data: data_cong_xuat_lap_dat,
+    //                 data: data_cong_xuat_lap_dat,
 
-                    backgroundColor: [
+    //                 backgroundColor: [
 
-                        '#DAA622',
+    //                     '#DAA622',
 
-                    ],
+    //                 ],
 
-                    borderColor: [
+    //                 borderColor: [
 
-                        '#DAA622',
+    //                     '#DAA622',
 
-                    ],
+    //                 ],
 
-                    borderWidth: 1,
+    //                 borderWidth: 1,
 
-                    tension: 0.4,
+    //                 tension: 0.4,
 
-                    type: 'line',
+    //                 type: 'line',
 
-                    pointRadius: 0,
+    //                 pointRadius: 0,
 
-                    pointHoverRadius: 0,
+    //                 pointHoverRadius: 0,
 
-                    order: 1,
+    //                 order: 1,
 
-                    pointStyle: 'line',
+    //                 pointStyle: 'line',
 
-                    stepped: 'middle',
+    //                 stepped: 'middle',
 
-                },
+    //             },
 
-            ]
+    //         ]
 
-        },
+    //     },
 
-        options: {
+    //     options: {
 
-            responsive: true,
+    //         responsive: true,
 
-            plugins: {
+    //         plugins: {
 
-                tooltip: {
+    //             tooltip: {
 
-                    enabled: true,
+    //                 enabled: true,
 
-                },
-                legend: {
-                    position: 'right',
-                    align: 'start',
-                },
-                datalabels: {
+    //             },
+    //             legend: {
+    //                 position: 'right',
+    //                 align: 'start',
+    //             },
+    //             datalabels: {
 
-                    align: 'top',
+    //                 align: 'top',
 
-                    display: true
+    //                 display: true
 
-                },
+    //             },
 
-            },
+    //         },
 
-            scales: {
+    //         scales: {
 
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Năm',
-                        font: {
-                            size: 14,
-                            style: 'bold',
-                            family: 'Public Sans',
-                        }
-                    },
+    //             x: {
+    //                 title: {
+    //                     display: true,
+    //                     text: 'Năm',
+    //                     font: {
+    //                         size: 14,
+    //                         style: 'bold',
+    //                         family: 'Public Sans',
+    //                     }
+    //                 },
 
-                    stacked: true,
+    //                 stacked: true,
 
-                },
+    //             },
 
-                y: {
+    //             y: {
 
-                    title: {
-                        display: true,
-                        text: 'Tổng Công suất (mW)',
-                        font: {
-                            size: 14,
-                            style: 'bold',
-                            family: 'Public Sans',
-                        }
-                    },
+    //                 title: {
+    //                     display: true,
+    //                     text: 'Tổng Công suất (mW)',
+    //                     font: {
+    //                         size: 14,
+    //                         style: 'bold',
+    //                         family: 'Public Sans',
+    //                     }
+    //                 },
 
-                    beginAtZero: true,
+    //                 beginAtZero: true,
 
-                    stacked: true,
+    //                 stacked: true,
 
-                }
+    //             }
 
-            },
+    //         },
 
-        },
+    //     },
 
-        plugins: [ChartDataLabels],
+    //     plugins: [ChartDataLabels],
 
-    };
+    // };
 
-    var numberWithCommas = function(x) {
+    // var numberWithCommas = function(x) {
 
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    //     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-    };
+    // };
 
-    // render init block
+    // // render init block
 
-    const chart_cong_suat_lap_dat = new Chart(
+    // const chart_cong_suat_lap_dat = new Chart(
 
-        document.getElementById('cong-suat-lap-dat'),
+    //     document.getElementById('cong-suat-lap-dat'),
 
-        config_cong_suat_lap_dat
+    //     config_cong_suat_lap_dat
 
-    );
+    // );
 
 
 
@@ -793,7 +793,6 @@ get_header();
     // tong_san_luong
 
     var data_tong_san_luong_nam = <?php echo json_encode($tong_san_luong_nam); ?>;
-
     var data_tong_san_luong_thuy_dien = <?php echo json_encode($tong_san_luong_thuy_dien); ?>;
 
     var data_tong_san_luong_dien_mat_troi = <?php echo json_encode($tong_san_luong_dien_mat_troi); ?>;
@@ -802,34 +801,104 @@ get_header();
 
     var data_tong_san_luong = [];
 
-    const arr_data_tong_san_luong_thuy_dien = data_tong_san_luong_thuy_dien.map(str => {
+    var arr_data_tong_san_luong_thuy_dien = [];
+    var arr_data_tong_san_luong_dien_mat_troi = [];
+    var arr_data_tong_san_luong_nang_luong_khac = [];
+    for (let item of data_tong_san_luong_thuy_dien) {
+        if (!isNaN(item)) {
+            arr_data_tong_san_luong_thuy_dien.push(parseFloat(item));
+        } else {
+            arr_data_tong_san_luong_thuy_dien.push(item);
+        }
+    }
+    for (let item of data_tong_san_luong_dien_mat_troi) {
+        if (!isNaN(item)) {
+            arr_data_tong_san_luong_dien_mat_troi.push(parseFloat(item));
+        } else {
+            arr_data_tong_san_luong_dien_mat_troi.push(item);
+        }
+    }
 
-        return parseInt(str, 10);
+    for (let item of data_tong_san_luong_nang_luong_khac) {
+        if (!isNaN(item)) {
+            arr_data_tong_san_luong_nang_luong_khac.push(parseFloat(item));
+        } else {
+            arr_data_tong_san_luong_nang_luong_khac.push(item);
+        }
+    }
 
-    });
 
-    const arr_data_tong_san_luong_dien_mat_troi = data_tong_san_luong_dien_mat_troi.map(str => {
 
-        return parseInt(str, 10);
 
-    });
 
-    const arr_data_tong_san_luong_nang_luong_khac = data_tong_san_luong_nang_luong_khac.map(str => {
 
-        return parseInt(str, 10);
 
-    });
+
+
+
 
     if (arr_data_tong_san_luong_thuy_dien.length === arr_data_tong_san_luong_dien_mat_troi.length) {
 
-        for (let index_2 = 0; index_2 < arr_data_tong_san_luong_thuy_dien.length; index_2++) {
+        for (let i = 0; i < arr_data_tong_san_luong_thuy_dien.length; i++) {
 
-            data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[index_2] + arr_data_tong_san_luong_dien_mat_troi[
-                index_2] + arr_data_tong_san_luong_nang_luong_khac[index_2])
+            data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[i] + arr_data_tong_san_luong_dien_mat_troi[
+                i] + arr_data_tong_san_luong_nang_luong_khac[i])
 
         }
 
     } else {}
+
+    const data_tong_san_luong_format = data_tong_san_luong.map(number => number.toLocaleString('en-GB', {
+        minimumFractionDigits: getDecimalPlaces(number),
+        maximumFractionDigits: getDecimalPlaces(number),
+        useGrouping: true
+    }));
+
+    function getDecimalPlaces(num) {
+        const match = num.toString().match(/\.(\d+)/);
+        if (match) {
+            return match[1].length;
+        } else {
+            return 0;
+        }
+    }
+
+
+    console.log('data_tong_san_luong_thuy_dien', data_tong_san_luong_thuy_dien);
+    console.log('data_tong_san_luong_dien_mat_troi', data_tong_san_luong_dien_mat_troi);
+    console.log('data_tong_san_luong_nang_luong_khac', data_tong_san_luong_nang_luong_khac);
+
+
+
+    console.log("arr_data_tong_san_luong_thuy_dien", arr_data_tong_san_luong_thuy_dien);
+    console.log("arr_data_tong_san_luong_dien_mat_troi", arr_data_tong_san_luong_dien_mat_troi);
+    console.log("arr_tong_san_luong_nang_luong_khac", arr_data_tong_san_luong_nang_luong_khac);
+    console.log("data_tong_san_luong", data_tong_san_luong);
+    console.log("data_tong_san_luong_format", data_tong_san_luong_format);
+
+
+    // const arr_data_tong_san_luong_dien_mat_troi = data_tong_san_luong_dien_mat_troi.map(str => {
+
+    //     return parseInt(str, 10);
+
+    // });
+
+    // const arr_data_tong_san_luong_nang_luong_khac = data_tong_san_luong_nang_luong_khac.map(str => {
+
+    //     return parseInt(str, 10);
+
+    // });
+
+    // if (arr_data_tong_san_luong_thuy_dien.length === arr_data_tong_san_luong_dien_mat_troi.length) {
+
+    //     for (let index_2 = 0; index_2 < arr_data_tong_san_luong_thuy_dien.length; index_2++) {
+
+    //         data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[index_2] + arr_data_tong_san_luong_dien_mat_troi[
+    //             index_2] + arr_data_tong_san_luong_nang_luong_khac[index_2])
+
+    //     }
+
+    // } else {}
 
     const config_tong_san_luong = {
 
@@ -967,7 +1036,12 @@ get_header();
                     align: 'start',
                 },
                 datalabels: {
-
+                    formatter: function(value, context) {
+                        return value.toLocaleString('en-GB', {
+                            minimumFractionDigits: 1,
+                            maximumFractionDigits: 1
+                        });
+                    },
                     align: 'top',
 
                     display: true

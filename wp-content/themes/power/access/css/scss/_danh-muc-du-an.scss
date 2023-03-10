@@ -215,8 +215,10 @@
 
 /* map luoi dien  */
 .wrap_map-luoi-dien .map-luoi-dien {
-    padding-bottom:0px;
+    padding-bottom: 0px;
+    position: relative;
 }
+
 .wrap_map-luoi-dien .title {
     width: 100%;
     text-align: center;
@@ -224,7 +226,185 @@
     margin-bottom: 35px;
 }
 
+.wrap_step {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: fit-content;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px #00000012;
+    position: relative;
+}
 
+.panzoom-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+
+.panzoom-control {
+    padding: 4px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+.panzoom-controls:hover {
+    cursor: pointer;
+}
+
+.panzoom-control button {
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
+    height: 40px;
+    width: 40px;
+    font-size: 15px;
+}
+
+.goto-container {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+}
+
+.goto-container .goto.default {
+    display: none;
+}
+
+.goto-container .goto {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    font-family: 'Public Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.goto-container .goto.deactive {
+    color: #DAA622;
+}
+
+.goto-container .goto:hover {
+    cursor: pointer;
+    color: #DAA622;
+}
+
+.goto-container span.icon {
+    width: 56px;
+    margin-right: 21px;
+    display: flex;
+    justify-content: center;
+}
+
+.goto-container .wrap-line .goto {
+    margin-bottom: 7px;
+}
+
+.goto-container .wrap-box {
+    margin-top: 30px;
+    position: relative;
+    padding: 20px 0 10px;
+}
+
+.goto-container .wrap-box .goto {
+    margin-bottom: 10px;
+}
+
+.goto-container .wrap-box::after {
+    content: '';
+    width: 56px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border: 1px dashed #9747FF;
+    border-radius: 5px;
+    display: block;
+    z-index: -1;
+}
+
+.goto-container span.line {
+    width: 56px;
+    height: 2px;
+    display: block;
+}
+
+.goto-container span.box {
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+.goto-container span.line.line-500,
+.goto-container span.box-500 {
+    background-color: #53B535;
+}
+
+.goto-container span.line.line-220,
+.goto-container span.box-220 {
+    background-color: #EA3323;
+}
+
+.goto-container span.line.line-110,
+.goto-container span.box-110 {
+    background-color: #265BB2;
+}
+
+.step-container {
+    position: relative;
+    height: 100vh;
+    width: 800px;
+    height: 1000px;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    height: -webkit-fill-available;
+}
+
+.step-container .step {
+    height: auto;
+    position: absolute;
+    color: #fff;
+    display: block;
+}
+
+.step-container .step.deactive {
+    display: none;
+}
+
+@media(max-width:991px) {
+    .wrap_step {
+        margin: 0 auto;
+    }
+
+    .goto-container {
+        position: relative;
+        right: unset;
+        left: 10%;
+        top: 0;
+        width: fit-content;
+    }
+
+    .step-container .step {
+        width: fit-content;
+    }
+}
+
+
+
+
+// end map luoi dien 
 .location-info-row p {
     margin-bottom: 0;
 }
