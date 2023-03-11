@@ -141,7 +141,7 @@ get_header();
                     <h3><?php echo isset($thanh_tuu_dat_duoc['title']) ? $thanh_tuu_dat_duoc['title'] : ""; ?></h3>
                     <p class="size-text-16"><?php echo isset($thanh_tuu_dat_duoc['description']) ? $thanh_tuu_dat_duoc['description'] : ""; ?></p>
                 </div>
-                <div class="achievement-figures" id="wrap_counter">
+                <div class="achievement-figures  wrap_counter">
                     <?php if ($list_thanh_tuu_dat_duoc) : ?>
                         <?php foreach ($list_thanh_tuu_dat_duoc as $key => $value) : ?>
                             <div class="culmulative-output figure">

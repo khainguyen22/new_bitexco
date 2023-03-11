@@ -521,10 +521,10 @@ jQuery(document).ready(function ($) {
 	}
 	var a = 0;
 	$(window).scroll(function () {
-		const element = document.querySelector('#wrap_counter');
+		const element = document.querySelector('.wrap_counter');
 		if (element != null) {
 			// do something if the element has a class starting with 'js'
-			var oTop = $("#wrap_counter").offset().top - window.innerHeight;
+			var oTop = $(".wrap_counter").offset().top - window.innerHeight;
 			if (a == 0 && $(window).scrollTop() > oTop) {
 				$(".counter").each(function () {
 					var $this = $(this),

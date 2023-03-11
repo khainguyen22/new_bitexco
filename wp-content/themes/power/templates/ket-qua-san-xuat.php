@@ -316,7 +316,7 @@ get_header();
 
                     </div>
 
-                    <div class="row list" id="wrap_counter">
+                    <div class="row list  wrap_counter">
 
 
                         <div class="col-12 col-md-4 item">
@@ -431,9 +431,10 @@ get_header();
 
                                 <p class="label">Tổng công suất của <strong>Bitexco Power</strong> đạt</p>
 
-                                <div class="d-flex">
+                                <div class="d-flex wrap_counter">
 
-                                    <h2 class="number"><span>3</span></h2>
+                                    <h2 class="number counter notranslate" data-number="3">0
+                                    </h2>
 
                                     <span class="unit_percent"><span>%</span></span>
 
@@ -482,7 +483,7 @@ get_header();
 
                         <tr>
 
-                            <td>Công ty con</td>
+                            <td><?php _e('Công ty con') ?></td>
 
                             <?php foreach ($cong_xuat_lap_dat_cong_ty_con as $value) : ?>
 
@@ -494,7 +495,7 @@ get_header();
 
                         <tr>
 
-                            <td>Công ty liên kết</td>
+                            <td><?php _e('Công ty liên kết') ?></td>
 
                             <?php foreach ($cong_xuat_lap_dat_cong_ty_lien_ket as $value) : ?>
 
@@ -506,7 +507,7 @@ get_header();
 
                         <tr>
 
-                            <td>Tổng công suất</td>
+                            <td><?php _e('Tổng công suất') ?></td>
 
                             <?php
                             $result = array();
@@ -561,230 +562,230 @@ get_header();
 
 
 <script>
-    // cong_suat_lap_dat
+    cong_suat_lap_dat
 
-    // var data_cong_xuat_lap_dat_nam = < ?php echo json_encode($cong_xuat_lap_dat_nam); ?>;
+    var data_cong_xuat_lap_dat_nam = <?php echo json_encode($cong_xuat_lap_dat_nam); ?>;
 
-    // var cong_xuat_lap_dat_cong_ty_con = < ?php echo json_encode($cong_xuat_lap_dat_cong_ty_con); ?>;
+    var cong_xuat_lap_dat_cong_ty_con = <?php echo json_encode($cong_xuat_lap_dat_cong_ty_con); ?>;
 
-    // var cong_xuat_lap_dat_cong_ty_lien_ket = < ?php echo json_encode($cong_xuat_lap_dat_cong_ty_lien_ket); ?>;
+    var cong_xuat_lap_dat_cong_ty_lien_ket = <?php echo json_encode($cong_xuat_lap_dat_cong_ty_lien_ket); ?>;
 
-    // const arr_cong_xuat_lap_dat_cong_ty_con = cong_xuat_lap_dat_cong_ty_con.map(str => {
+    const arr_cong_xuat_lap_dat_cong_ty_con = cong_xuat_lap_dat_cong_ty_con.map(str => {
 
-    //     return parseInt(str, 10);
+        return parseInt(str, 10);
 
-    // });
+    });
 
-    // const arr_cong_xuat_lap_dat_cong_ty_lien_ket = cong_xuat_lap_dat_cong_ty_lien_ket.map(str => {
+    const arr_cong_xuat_lap_dat_cong_ty_lien_ket = cong_xuat_lap_dat_cong_ty_lien_ket.map(str => {
 
-    //     return parseInt(str, 10);
+        return parseInt(str, 10);
 
-    // });
+    });
 
-    // var data_cong_xuat_lap_dat = [];
+    var data_cong_xuat_lap_dat = [];
 
-    // if (arr_cong_xuat_lap_dat_cong_ty_con.length === arr_cong_xuat_lap_dat_cong_ty_lien_ket.length) {
+    if (arr_cong_xuat_lap_dat_cong_ty_con.length === arr_cong_xuat_lap_dat_cong_ty_lien_ket.length) {
 
-    //     for (let index_1 = 0; index_1 < arr_cong_xuat_lap_dat_cong_ty_con.length; index_1++) {
+        for (let index_1 = 0; index_1 < arr_cong_xuat_lap_dat_cong_ty_con.length; index_1++) {
 
-    //         data_cong_xuat_lap_dat.push(arr_cong_xuat_lap_dat_cong_ty_con[index_1] + arr_cong_xuat_lap_dat_cong_ty_lien_ket[
-    //             index_1])
+            data_cong_xuat_lap_dat.push(arr_cong_xuat_lap_dat_cong_ty_con[index_1] + arr_cong_xuat_lap_dat_cong_ty_lien_ket[
+                index_1])
 
-    //     }
+        }
 
-    // } else {}
+    } else {}
 
-    // const config_cong_suat_lap_dat = {
+    const config_cong_suat_lap_dat = {
 
-    //     type: 'bar',
+        type: 'bar',
 
-    //     data: {
+        data: {
 
-    //         labels: data_cong_xuat_lap_dat_nam,
+            labels: data_cong_xuat_lap_dat_nam,
 
-    //         datasets: [{
+            datasets: [{
 
-    //                 label: 'Công ty liên kết',
+                    label: 'Công ty liên kết',
 
-    //                 data: cong_xuat_lap_dat_cong_ty_lien_ket,
+                    data: cong_xuat_lap_dat_cong_ty_lien_ket,
 
-    //                 backgroundColor: [
+                    backgroundColor: [
 
-    //                     '#2A0E3D'
+                        '#2A0E3D'
 
-    //                 ],
+                    ],
 
-    //                 borderColor: [
+                    borderColor: [
 
-    //                     '#2A0E3D'
+                        '#2A0E3D'
 
-    //                 ],
+                    ],
 
-    //                 borderWidth: 1,
+                    borderWidth: 1,
 
-    //                 order: 2,
+                    order: 2,
 
-    //                 datalabels: {
+                    datalabels: {
 
-    //                     color: 'rgba(0, 0, 0, 0)',
+                        color: 'rgba(0, 0, 0, 0)',
 
-    //                 },
+                    },
 
-    //             },
+                },
 
-    //             {
+                {
 
-    //                 label: 'Công ty con',
+                    label: 'Công ty con',
 
-    //                 data: cong_xuat_lap_dat_cong_ty_con,
+                    data: cong_xuat_lap_dat_cong_ty_con,
 
-    //                 backgroundColor: [
+                    backgroundColor: [
 
-    //                     '#F2DD39'
+                        '#F2DD39'
 
-    //                 ],
+                    ],
 
-    //                 borderColor: [
+                    borderColor: [
 
-    //                     '#F2DD39'
+                        '#F2DD39'
 
-    //                 ],
+                    ],
 
-    //                 borderWidth: 1,
+                    borderWidth: 1,
 
-    //                 order: 2,
+                    order: 2,
 
-    //                 datalabels: {
+                    datalabels: {
 
-    //                     color: 'rgba(0, 0, 0, 0)',
+                        color: 'rgba(0, 0, 0, 0)',
 
-    //                 }
+                    }
 
-    //             },
+                },
 
-    //             {
+                {
 
-    //                 label: 'Tổng công suất',
+                    label: 'Tổng công suất',
 
-    //                 data: data_cong_xuat_lap_dat,
+                    data: data_cong_xuat_lap_dat,
 
-    //                 backgroundColor: [
+                    backgroundColor: [
 
-    //                     '#DAA622',
+                        '#DAA622',
 
-    //                 ],
+                    ],
 
-    //                 borderColor: [
+                    borderColor: [
 
-    //                     '#DAA622',
+                        '#DAA622',
 
-    //                 ],
+                    ],
 
-    //                 borderWidth: 1,
+                    borderWidth: 1,
 
-    //                 tension: 0.4,
+                    tension: 0.4,
 
-    //                 type: 'line',
+                    type: 'line',
 
-    //                 pointRadius: 0,
+                    pointRadius: 0,
 
-    //                 pointHoverRadius: 0,
+                    pointHoverRadius: 0,
 
-    //                 order: 1,
+                    order: 1,
 
-    //                 pointStyle: 'line',
+                    pointStyle: 'line',
 
-    //                 stepped: 'middle',
+                    stepped: 'middle',
 
-    //             },
+                },
 
-    //         ]
+            ]
 
-    //     },
+        },
 
-    //     options: {
+        options: {
 
-    //         responsive: true,
+            responsive: true,
 
-    //         plugins: {
+            plugins: {
 
-    //             tooltip: {
+                tooltip: {
 
-    //                 enabled: true,
+                    enabled: true,
 
-    //             },
-    //             legend: {
-    //                 position: 'right',
-    //                 align: 'start',
-    //             },
-    //             datalabels: {
+                },
+                legend: {
+                    position: 'right',
+                    align: 'start',
+                },
+                datalabels: {
 
-    //                 align: 'top',
+                    align: 'top',
 
-    //                 display: true
+                    display: true
 
-    //             },
+                },
 
-    //         },
+            },
 
-    //         scales: {
+            scales: {
 
-    //             x: {
-    //                 title: {
-    //                     display: true,
-    //                     text: 'Năm',
-    //                     font: {
-    //                         size: 14,
-    //                         style: 'bold',
-    //                         family: 'Public Sans',
-    //                     }
-    //                 },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Năm',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
+                    },
 
-    //                 stacked: true,
+                    stacked: true,
 
-    //             },
+                },
 
-    //             y: {
+                y: {
 
-    //                 title: {
-    //                     display: true,
-    //                     text: 'Tổng Công suất (mW)',
-    //                     font: {
-    //                         size: 14,
-    //                         style: 'bold',
-    //                         family: 'Public Sans',
-    //                     }
-    //                 },
+                    title: {
+                        display: true,
+                        text: 'Tổng Công suất (mW)',
+                        font: {
+                            size: 14,
+                            style: 'bold',
+                            family: 'Public Sans',
+                        }
+                    },
 
-    //                 beginAtZero: true,
+                    beginAtZero: true,
 
-    //                 stacked: true,
+                    stacked: true,
 
-    //             }
+                }
 
-    //         },
+            },
 
-    //     },
+        },
 
-    //     plugins: [ChartDataLabels],
+        plugins: [ChartDataLabels],
 
-    // };
+    };
 
-    // var numberWithCommas = function(x) {
+    var numberWithCommas = function(x) {
 
-    //     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-    // };
+    };
 
-    // // render init block
+    // render init block
 
-    // const chart_cong_suat_lap_dat = new Chart(
+    const chart_cong_suat_lap_dat = new Chart(
 
-    //     document.getElementById('cong-suat-lap-dat'),
+        document.getElementById('cong-suat-lap-dat'),
 
-    //     config_cong_suat_lap_dat
+        config_cong_suat_lap_dat
 
-    // );
+    );
 
 
 

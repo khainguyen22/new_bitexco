@@ -98,7 +98,7 @@ get_header();
                     <?php if ($did_it['title']) : ?> <h3><?php echo _e($did_it['title']); ?></h3> <?php endif; ?>
                     <?php if ($did_it['description']) : ?> <p><?php echo _e($did_it['description']); ?></p> <?php endif; ?>
                 </div>
-                <div class="content d-flex flex-wrap row" id="wrap_counter">
+                <div class="content d-flex flex-wrap row wrap_counter">
                     <?php foreach ($did_it['content']['item'] as $key => $value) : ?>
                         <div class="item d-flex">
                             <div class="icon">

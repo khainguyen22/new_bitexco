@@ -295,9 +295,46 @@ get_header();
                 <div class="wrap_step">
                     <div class="panzoom-controls">
                         <div class="panzoom-control">
-                            <button id="bt-zoom-in" class="rounded-top" title="Zoom in">+</button>
-                            <button id="bt-reset" class="rounded-0" title="Clear">x</button>
-                            <button id="bt-zoom-out" class="rounded-bottom" title="Zoom out">-</button>
+                            <button id="bt-zoom-in" class="rounded-top" title="Zoom in">
+
+                                <svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg1468" sodipodi:docname="mag3.svg" viewBox="0 0 187.5 187.5" sodipodi:version="0.32" version="1.0" y="0" x="0" inkscape:version="0.42" sodipodi:docbase="C:\Documents and Settings\Jarno\Omat tiedostot\vanhasta\opencliparts\omat\symbols">
+                                    <g id="layer1">
+                                        <g id="g2530" transform="translate(-278.89 -680.61)">
+                                            <rect id="rect2488" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:3.3857;fill:#ffffff" rx="3.7611" ry="3.7611" transform="rotate(24.33)" width="15.044" y="555.72" x="642.53" height="58.673" />
+                                            <path id="path2490" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:4.501;fill:#ffffff" transform="matrix(.75221 0 0 .75221 30.84 292.89)" d="m502 603.36a41 41 0 1 1 -82 0 41 41 0 1 1 82 0z" />
+                                            <path id="path2492" style="fill-rule:evenodd;fill:#000000" d="m355.31 739.82s2-11.03 12.53-15.54 22.72 0.83 22.72 0.83-12.69 1.5-20.22 4.51c-7.52 3.01-15.03 8.7-15.03 10.2z" />
+                                            <path id="path2474" style="fill:#000000" d="m375.06 758.83v-9.42h-9.35v-3.94h9.35v-9.35h3.98v9.35h9.36v3.94h-9.36v9.42h-3.98" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
+                            <button id="bt-reset" class="rounded-0" title="Clear">
+                                <svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg1468" sodipodi:docname="mag4.svg" viewBox="0 0 187.5 187.5" sodipodi:version="0.32" version="1.0" y="0" x="0" inkscape:version="0.42" sodipodi:docbase="C:\Documents and Settings\Jarno\Omat tiedostot\vanhasta\opencliparts\omat\symbols">
+                                    <g id="layer1">
+                                        <g id="g2536" transform="translate(-418.89 -680.06)">
+                                            <rect id="rect2496" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:3.3857;fill:#ffffff" rx="3.7611" ry="3.7611" transform="rotate(24.33)" width="15.044" y="498.04" x="770.09" height="58.673" />
+                                            <path id="path2498" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:4.501;fill:#ffffff" transform="matrix(.75221 0 0 .75221 170.84 292.89)" d="m502 603.36a41 41 0 1 1 -82 0 41 41 0 1 1 82 0z" />
+                                            <path id="path2500" style="fill-rule:evenodd;fill:#000000" d="m495.31 739.82s2-11.03 12.53-15.54 22.72 0.83 22.72 0.83-12.69 1.5-20.22 4.51c-7.52 3.01-15.03 8.7-15.03 10.2z" />
+                                            <path id="text2502" style="fill:#000000" d="m509.56 757.66h-2.46v-15.69c-0.6 0.57-1.38 1.13-2.34 1.7-0.96 0.56-1.82 0.99-2.59 1.27v-2.38c1.38-0.65 2.58-1.43 3.61-2.35s1.76-1.81 2.19-2.68h1.59v20.13" />
+                                            <path id="path2511" style="fill:#000000" d="m515.24 743.94v-2.8h2.8v2.8h-2.8" />
+                                            <path id="path2509" style="fill:#000000" d="m515.24 755.66v-2.81h2.8v2.81h-2.8" />
+                                            <path id="path2507" style="fill:#000000" d="m528.91 757.66h-2.46v-15.69c-0.59 0.57-1.37 1.13-2.34 1.7-0.96 0.56-1.82 0.99-2.58 1.27v-2.38c1.37-0.65 2.58-1.43 3.61-2.35s1.75-1.81 2.18-2.68h1.59v20.13" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
+                            <button id="bt-zoom-out" class="rounded-bottom" title="Zoom out">
+                                <svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sodipodi="http://inkscape.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:ns1="http://sozi.baierouge.fr" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg1468" sodipodi:docname="mag2.svg" viewBox="0 0 187.5 187.5" sodipodi:version="0.32" version="1.0" y="0" x="0" inkscape:version="0.42" sodipodi:docbase="C:\Documents and Settings\Jarno\Omat tiedostot\vanhasta\opencliparts\omat\symbols">
+                                    <g id="layer1">
+                                        <g id="g2549" transform="translate(-138.89 -679.52)">
+                                            <rect id="rect2480" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:3.3857;fill:#ffffff" rx="3.7611" ry="3.7611" transform="rotate(24.33)" width="15.044" y="613.4" x="514.96" height="58.673" />
+                                            <path id="path2482" style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:4.501;fill:#ffffff" transform="matrix(.75221 0 0 .75221 -109.16 292.89)" d="m502 603.36a41 41 0 1 1 -82 0 41 41 0 1 1 82 0z" />
+                                            <path id="path2484" style="fill-rule:evenodd;fill:#000000" d="m215.31 739.82s2-11.03 12.53-15.54 22.72 0.83 22.72 0.83-12.69 1.5-20.22 4.51c-7.52 3.01-15.03 8.7-15.03 10.2z" />
+                                            <path id="text2467" style="fill:#000000" d="m227.77 751.58v-4.24h18.97v4.24h-18.97" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <div class="panzoom" panzoom-scale="1">
