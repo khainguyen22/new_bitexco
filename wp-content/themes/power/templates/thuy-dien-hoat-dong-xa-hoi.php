@@ -476,9 +476,7 @@ get_header();
                             <?php foreach ($main_navigation as $key => $value) : ?>
 
 
-
-                                <li class="<?php echo ($key == 0) ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo paint_if_exist($value['label']); ?></a></li>
-
+                                <li class="<?php echo strlen(strstr($value['link'], $request_uri)) > 0 ? 'active' : '' ?>"> <a href="<?php echo $value['link']; ?>"><?php echo _e($value['label']); ?></a></li>
 
 
                             <?php endforeach; ?>
@@ -533,7 +531,7 @@ get_header();
 
 
 
-                            <h6>Tin nổi bật</h6>
+                            <h6><?php _e('Tin nổi bật') ?></h6>
 
 
 
@@ -565,7 +563,9 @@ get_header();
 
 
 
-                                        <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php if (get_the_tag_list()) : ?>
+                                            <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php endif; ?>
 
 
 
@@ -625,7 +625,10 @@ get_header();
 
 
 
-                                        <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php if (get_the_tag_list()) : ?>
+                                            <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php endif; ?>
+
 
 
 
@@ -669,7 +672,7 @@ get_header();
 
 
 
-                            <h6 class="title">Tin mới nhất</h6>
+                            <h6 class="title"><?php _e('Tin mới nhất')?></h6>
 
 
 
@@ -725,7 +728,10 @@ get_header();
 
 
 
-                                                <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span>
+                                                <?php if (get_the_tag_list()) : ?>
+                                                    <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                                <?php endif; ?>
+
 
 
 
@@ -825,7 +831,7 @@ get_header();
 
 
 
-                    <div class="form-filter " >
+                    <div class="form-filter ">
 
 
 
@@ -1022,11 +1028,25 @@ get_header();
 
 
                             <div class="form-filter-date d-flex">
+                                <input placeholder="Thời gian" name="date_range" class="textbox-n" type="text" id="date_range">
+                                <script>
+                                    $(document).ready(function() {
+                                        $('#date_range').daterangepicker({
+                                            autoUpdateInput: false,
+                                            locale: {
+                                                cancelLabel: 'Clear'
+                                            }
+                                        });
 
+                                        $('#date_range').on('apply.daterangepicker', function(ev, picker) {
+                                            $(this).val(picker.startDate.format('YYYY-MM-DD') + ' - ' + picker.endDate.format('YYYY-MM-DD'));
+                                        });
 
-
-                                <input placeholder="Thời gian" name="date" class="textbox-n" type="text" onclick="(this.type='date')" id="date">
-
+                                        $('#date_range').on('cancel.daterangepicker', function(ev, picker) {
+                                            $(this).val('');
+                                        });
+                                    });
+                                </script>
 
 
                                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1118,6 +1138,10 @@ get_header();
 
 
                 <div class="list">
+
+
+
+
 
 
 
@@ -1237,7 +1261,7 @@ get_header();
 
 
 
-                        if ($total > 1) echo '<ul class="pagination">';
+                        if ($total > 1) echo '<ul class="pagination notranslate">';
 
 
 
@@ -1258,10 +1282,6 @@ get_header();
 
 
                             'show_all'     => false,
-
-
-
-
 
 
 
@@ -1366,12 +1386,6 @@ get_header();
 
 
                     <?php endforeach; ?>
-
-
-
-
-
-
 
                 </div>
 

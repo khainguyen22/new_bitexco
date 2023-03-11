@@ -1382,6 +1382,32 @@ span.tag-name .text {
     }
 }
 
+.search-result {
+    margin: 130px 0 20px;
+
+    .title,
+    .search_by_gg {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .search_by_gg button,
+    .search_by_gg button:focus,
+    .search_by_gg button:focus-visible,
+    .search_by_gg button:hover {
+        border: unset;
+        font-size: 16px;
+        margin: 10px;
+        background: unset;
+        outline: unset;
+        cursor: pointer;
+    }
+}
+
+.search-page {
+    padding: 20px;
+}
+
 .search.search-no-results {
 
     .search-form,

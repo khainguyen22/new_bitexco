@@ -535,7 +535,7 @@ get_header();
 
 
 
-                            <h6>Tin nổi bật</h6>
+                            <h6><?php _e('Tin nổi bật') ?></h6>
 
 
 
@@ -567,7 +567,9 @@ get_header();
 
 
 
-                                        <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php if (get_the_tag_list()) : ?>
+                                            <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php endif; ?>
 
 
 
@@ -627,7 +629,10 @@ get_header();
 
 
 
-                                        <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php if (get_the_tag_list()) : ?>
+                                            <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                        <?php endif; ?>
+
 
 
 
@@ -671,7 +676,7 @@ get_header();
 
 
 
-                            <h6 class="title">Tin mới nhất</h6>
+                            <h6 class="title"><?php _e('Tin mới nhất')?></h6>
 
 
 
@@ -727,7 +732,10 @@ get_header();
 
 
 
-                                                <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span>
+                                                <?php if (get_the_tag_list()) : ?>
+                                                    <span class="tag tag-name"><span class="text"><?php echo get_the_tag_list('', ', ') ?></span> </span>
+                                                <?php endif; ?>
+
 
 
 
