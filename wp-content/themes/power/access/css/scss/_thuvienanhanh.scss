@@ -748,6 +748,7 @@
         &:hover {
             display: flex;
             justify-content: right;
+            cursor: zoom-in;
             filter: blur(0) !important;
             z-index: 1;
             img {
