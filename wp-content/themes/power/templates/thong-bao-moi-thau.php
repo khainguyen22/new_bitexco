@@ -230,28 +230,37 @@ if (isset($banner)) {
 
 	<!-- End  Filter -->
 
-
-
 	<!-- List -->
-
 	<?php
-
-	$paged = 1;
-
-	$args = [
-
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args = array(
 		'post_type' => 'tender_notice',
-
-		'posts_per_page' => 8,
-
-		'paged' =>  $paged,
-	];
-
-	// get_the_terms(get_the_ID(), 'status')
+		'posts_per_page' => -1,
+		'paged' => $paged,
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'status',
+				'field' => 'slug',
+				'terms' => array(
+					'in-releasing',
+					'coming-soon',
+					'expired'
+				),
+			)
+		),
+		'meta_key' => 'status', // Custom field to sort by
+		'orderby' => array(
+			'meta_value' => 'ASC', // Sort by ascending order of meta_value
+			'taxonomy' => 'ASC' // Then sort by ascending order of taxonomy terms
+		),
+		// 'orderby' => 'meta_value',
+		'order' => 'DESC' // Sort in ascending order
+	);
 
 	$query = new WP_Query($args);
 
-	// Pagination
+
+
 
 	$pagination = paginate_links(array(
 
@@ -267,9 +276,9 @@ if (isset($banner)) {
 
 		'type'         => 'plain',
 
-		'end_size'     => 2,
+		'end_size'     => 1,
 
-		'mid_size'     => 3,
+		'mid_size'     => $paged,
 
 		'prev_next'    => true,
 
@@ -300,18 +309,17 @@ if (isset($banner)) {
 		'add_fragment' => '',
 
 	));
-
 	?>
-
 	<section class="infomation-list tender tender-infor <?php echo $_GET['result'] == 'true' ? '' : 'active' ?>" data-number="0" id="infor">
 
 		<div class="container">
 
 			<div class="list">
+				<?php
 
-				<?php if ($query->have_posts()) : ?>
 
-					<?php while ($query->have_posts()) : $query->the_post(); ?>
+				if ($query->have_posts()) {
+					while ($query->have_posts()) : $query->the_post(); ?>
 
 						<div class="item" data-post-ID="<?php echo get_the_ID() ?>">
 
@@ -320,13 +328,10 @@ if (isset($banner)) {
 								<a href="<?php the_permalink() ?>">
 									<h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6>
 								</a>
-
-								<?php foreach (get_the_terms(get_the_ID(), 'status') as $key => $value) : ?>
-
-									<span class="status status-info status-<?php echo paint_if_exist($value->slug) ?>"><?php echo paint_if_exist($value->name) ?></span>
-
-								<?php endforeach; ?>
-
+								<?php
+								$taxonomy_slug = get_field('status');
+								$term = get_term_by('slug', $taxonomy_slug, 'status'); ?>
+								<a href="<?php echo '' . get_site_url() . '/' . $term->taxonomy . '/' .  $term->slug . ''; ?>"><span class="status status-info status-<?php echo  $term->slug ?>"><?php echo $term->name; ?></span></a>
 							</div>
 
 							<div class="content">
@@ -439,11 +444,11 @@ if (isset($banner)) {
 
 						</div>
 
-					<?php endwhile; ?>
+				<?php endwhile;
+				}
+				wp_reset_postdata();
+				?>
 
-				<?php endif;
-
-				wp_reset_postdata(); ?>
 
 			</div>
 
@@ -452,11 +457,9 @@ if (isset($banner)) {
 				<?php echo $pagination; ?>
 
 			</div>
-
 		</div>
 
 	</section>
-
 	<!-- End List -->
 
 

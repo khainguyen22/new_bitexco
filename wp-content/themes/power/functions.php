@@ -1435,8 +1435,6 @@ function formatPhoneNumber($phone)
 {
     $phone_check  = preg_replace('/[^0-9]/', '', $phone);
     $country_code = '+84';
-    echo  $phone_check;
-    die;
     $phoneNumber = $country_code . substr($phone_check, 1);
     if (strlen($phone_check) > 10) {
         $countryCode = substr($phoneNumber, 0, strlen($phoneNumber) - 10);
@@ -1568,3 +1566,21 @@ function my_comment_redirect()
     }
 }
 add_action('comment_post', 'my_comment_redirect');
+
+function update_status_info_field($post_id)
+{
+    if (get_post_type($post_id) === 'tender_notice') { // Change 'tender_notice' to your custom post type slug
+        $taxonomy_terms = wp_get_post_terms($post_id, 'status'); // Change 'status' to your custom taxonomy slug
+
+        $status_info_value = ''; // Variable to store the field value
+
+        foreach ($taxonomy_terms as $term) {
+            $status_info_value .= $term->slug . ', '; // Concatenate the term slug to the field value
+        }
+
+        $status_info_value = rtrim($status_info_value, ', '); // Remove the trailing comma and space
+
+        update_field('status', $status_info_value, $post_id); // Change 'status_info' to your text field name
+    }
+}
+add_action('acf/save_post', 'update_status_info_field', 20); // Hook the function to the 'acf/save_post' action
