@@ -72,7 +72,12 @@ jQuery(document).ready(function ($) {
 		$('.prev').removeClass('notranslate');
 
 	});
+	$('body').on('click', '.page-numbers', function () {
+		$('.page-numbers').addClass('notranslate');
+		$('.next').removeClass('notranslate');
+		$('.prev').removeClass('notranslate');
 
+	});
 
 
 	$('.life-in-bitexco-content').slick({
