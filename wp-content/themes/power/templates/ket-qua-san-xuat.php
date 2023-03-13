@@ -437,7 +437,7 @@ get_header();
 
                                 <div class="d-flex wrap_counter">
 
-                                    <h2 class="number  notranslate" data-number="3">3
+                                    <h2 class="number counter notranslate" data-number="3">0
                                     </h2>
 
                                     <span class="unit_percent"><span>%</span></span>

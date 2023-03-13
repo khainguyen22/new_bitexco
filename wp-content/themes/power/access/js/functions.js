@@ -176,6 +176,9 @@ jQuery(document).ready(function ($) {
 
 		change_single_select_tax('type_projects');
 
+		change_single_select_tax('status');
+
+		change_single_select_tax('type');
 
 
 	});
@@ -500,7 +503,20 @@ jQuery(document).ready(function ($) {
 		});
 		return formattedNumber;
 	}
-
+	function checkNumberNotUnit(countNum) {
+		let result = Math.ceil(countNum);
+		let countNumber = parseFloat(countNum);
+		if (result > countNum) {
+			result = countNumber
+		}
+		else {
+			result = result
+		}
+		var numberToString = result.toString();
+		var numberCell = numberToString.toLocaleString("en");
+		var data = formatNumberShow(numberCell)
+		return data;
+	}
 
 	function formatNumber(countNum) {
 		if (countNum % 1 == 0) {
@@ -554,7 +570,7 @@ jQuery(document).ready(function ($) {
 							easing: "swing",
 							step: function () {
 								$this.text(
-									checkNumber(this.countNum)
+									checkNumberNotUnit(this.countNum)
 								);
 							},
 							complete: function () {

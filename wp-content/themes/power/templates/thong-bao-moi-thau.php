@@ -249,11 +249,11 @@ if (isset($banner)) {
 			)
 		),
 		'meta_key' => 'status', // Custom field to sort by
-		'orderby' => array(
-			'meta_value' => 'ASC', // Sort by ascending order of meta_value
-			'taxonomy' => 'ASC' // Then sort by ascending order of taxonomy terms
-		),
-		// 'orderby' => 'meta_value',
+		// 'orderby' => array(
+		// 	'meta_value' => 'ASC', // Sort by ascending order of meta_value
+		// 	'taxonomy' => 'ASC' // Then sort by ascending order of taxonomy terms
+		// ),
+		'orderby' => 'meta_value',
 		'order' => 'DESC' // Sort in ascending order
 	);
 
