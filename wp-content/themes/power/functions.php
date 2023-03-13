@@ -35,6 +35,8 @@ if (!function_exists('theme_enqueue_styles')) {
         wp_enqueue_style('style-scss', get_stylesheet_directory_uri() . '/access/css/index.css', array(), false);
 
         wp_enqueue_style('unite-gallery-min', get_stylesheet_directory_uri() . '/access/css/unite-gallery.min.css', array(), null, false);
+        
+        wp_enqueue_style('unite-ug-default-theme-min', get_stylesheet_directory_uri() . '/access/css/ug-theme-default-unite-gallery.css', array(), null, false);
 
         wp_enqueue_style('magnific-popup-scss', get_stylesheet_directory_uri() . '/access/css/magnific-popup.min.css', array(), false);
 
@@ -1328,8 +1330,6 @@ function csw_search_form_fc()
 
 add_filter('wpseo_breadcrumb_links', 'yoast_seo_breadcrumb_append_link');
 
-
-
 function yoast_seo_breadcrumb_append_link($links)
 
 {
@@ -1345,6 +1345,22 @@ function yoast_seo_breadcrumb_append_link($links)
             'url' => site_url('/danh-sach-tuyen-dung/'),
 
             'text' => ' Danh sách tuyển dụng',
+
+        );
+
+
+
+        array_splice($links, 1, -2, $breadcrumb);
+    }
+
+
+    if (is_singular('library')) {
+
+        $breadcrumb[] = array(
+
+            'url' => site_url('/thu-vien/hinh-anh'),
+
+            'text' => ' Hình ảnh',
 
         );
 

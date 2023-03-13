@@ -176,37 +176,42 @@
 																									
 
 																									jQuery("#hydroelectric-plant-<?php echo $count?>").unitegallery({
-  full_width: "true",
+  full_width: true,
   gallery_width: "900",
   gallery_height: "323",
   gallery_theme_info: "Default Theme",
-  enable_category_tabs: "false",
+  enable_category_tabs: false,
   gallery_min_width: "600",
-  gallery_min_height: "100",
-  theme_enable_fullscreen_button: "true",
-  theme_enable_play_button: "true",
-  theme_enable_hidepanel_button: "true",
-  theme_enable_text_panel: "false",
-  theme_hide_panel_under_width: "480",
+  gallery_min_height: "323",
   gallery_skin: "default",
   gallery_images_preload_type: "minimal",
-  gallery_autoplay: "true",
-  gallery_play_interval: "3000",
-  gallery_pause_on_mouseover: "true",
+  gallery_autoplay: true,
+  gallery_play_interval: "5000",
+  gallery_pause_on_mouseover: true,
   gallery_mousewheel_role: "none",
-  gallery_control_keyboard: "true",
-  gallery_carousel: "true",
-  gallery_preserve_ratio: "true",
-  gallery_shuffle: "false",
-	// Strip panel
+  gallery_control_keyboard: true,
+  gallery_carousel: true,
+  gallery_preserve_ratio: true,
+  gallery_shuffle: false,
 
 	// Thumb
   thumb_width: "60",
   thumb_height: "35",
 
 	// Slider
-  slider_controls_always_on: "true",
-																									});
+  slider_controls_always_on: true,
+	theme_enable_fullscreen_button: true,	//show, hide the theme fullscreen button. The position in the theme is constant
+	theme_enable_play_button: true,			//show, hide the theme play button. The position in the theme is constant
+	theme_enable_hidepanel_button: true,	//show, hide the hidepanel button
+	theme_enable_text_panel: false,			//enable the panel text panel. 
+	
+	theme_text_padding_left: 20,			//left padding of the text in the textpanel
+	theme_text_padding_right: 5,			//right paddin of the text in the textpanel
+	theme_text_align: "left",				//left, center, right -   the align of the text in the textpanel
+	theme_text_type: "title",				//title, description - text that will be shown on the text panel, title or description
+	
+	theme_hide_panel_under_width: 480		//hide panel under certain browser width, if null, don't hide		
+});
 
 																								 </script>
  

@@ -39,9 +39,6 @@ $navigation = '';
 
 
 if ($banner) {
-
-
-
     $navigation = $banner['navigation'];
 }
 
