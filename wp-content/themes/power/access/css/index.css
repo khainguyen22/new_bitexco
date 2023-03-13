@@ -3011,6 +3011,7 @@ h5 {
 .wrap_step {
   margin-top: 20px;
   margin-bottom: 50px;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 20px;
   overflow: hidden;
@@ -3181,9 +3182,11 @@ img {
     right: unset;
     left: 0%;
     top: 0;
+    width: -moz-fit-content;
     width: fit-content;
   }
   .step-container .step {
+    width: -moz-fit-content;
     width: fit-content;
   }
 }
@@ -7016,6 +7019,9 @@ header .search .search-bar:hover::after {
   width: calc(33.3333333333% - 6px);
 }
 #hydroelectric-plant .gallery-item:hover {
+  display: flex;
+  justify-content: right;
+  cursor: zoom-in;
   filter: blur(0) !important;
   z-index: 1;
 }
@@ -7023,29 +7029,31 @@ header .search .search-bar:hover::after {
   width: 150%;
   height: auto;
   z-index: 1;
-  float: right;
+  position: absolute;
 }
 #hydroelectric-plant .gallery-item img {
   box-shadow: 1px 1px 6px 1px;
   transition: all 1s ease;
   height: auto;
 }
+#hydroelectric-plant .gallery-item:nth-child(3n+1):hover {
+  justify-content: left;
+}
 #hydroelectric-plant .gallery-item:nth-child(3n+1):hover img {
   width: 150%;
   height: auto;
   z-index: 1;
-  float: left;
+  position: absolute;
 }
 #hydroelectric-plant .gallery-item:nth-child(3n+2):hover {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 #hydroelectric-plant .gallery-item:nth-child(3n+2):hover img {
   width: 150%;
   height: auto;
   z-index: 1;
-  float: left;
+  position: absolute;
 }
 #hydroelectric-plant:hover .gallery-item {
   filter: blur(4px);

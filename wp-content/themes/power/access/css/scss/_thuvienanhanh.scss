@@ -746,13 +746,16 @@
         width: calc(100%/3 - 6px);
        
         &:hover {
+            display: flex;
+            justify-content: right;
+            cursor: zoom-in;
             filter: blur(0) !important;
             z-index: 1;
             img {
                 width: 150%;
                 height: auto;
                 z-index: 1;
-                float: right;
+                position: absolute;
             }
             
         }
@@ -764,11 +767,12 @@
 
         &:nth-child(3n+1) {
             &:hover {
+                justify-content: left;
                 img {
                     width: 150%;
                     height: auto;
                     z-index: 1;
-                    float: left;
+                    position: absolute;
                    }
             }
          }
@@ -777,13 +781,11 @@
             &:hover {
                 display: flex;
                 justify-content: center;
-                align-items: center;
                 img {
                     width: 150%;
                     height: auto;
                     z-index: 1;
-                    float: left;
-                    
+                    position: absolute;
                 }
             }
          }
