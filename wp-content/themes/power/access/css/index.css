@@ -7021,6 +7021,7 @@ header .search .search-bar:hover::after {
 #hydroelectric-plant .gallery-item:hover {
   display: flex;
   justify-content: right;
+  cursor: zoom-in;
   filter: blur(0) !important;
   z-index: 1;
 }

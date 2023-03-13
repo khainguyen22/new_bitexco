@@ -55,9 +55,7 @@ get_header();
                                 
                                 <div id="hydroelectric-plant">
                                         <?php foreach ($images['gallery'] as $key => $value) : ?>
-                                            <div class="gallery-item">
-                                                <img src="<?php echo $value; ?>" alt="<?php echo "Image ". $key?>" data-image="<?php echo $value;?>">
-                                            </div>
+                                               <a class="gallery-item" href="<?php echo $value?>"> <img src="<?php echo $value; ?>" alt="<?php echo "Image ". $key?>" data-image="<?php echo $value;?>"></a>
                                         <?php endforeach;?>
                                 </div>
                             </div>
