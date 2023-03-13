@@ -140,6 +140,11 @@ jQuery(document).ready(function ($) {
 			this.type = 'radio';
 
 		});
+		jQuery('input[value=0]').each(function () {
+
+			this.type = 'hidden';
+
+		});
 
 	}
 
@@ -162,6 +167,14 @@ jQuery(document).ready(function ($) {
 		change_single_select_tax('type_events_formality');
 
 		change_single_select_tax('vacancies_location');
+
+		change_single_select_tax('taxonomy-status');
+
+		change_single_select_tax('taxonomy-type');
+
+		change_single_select_tax('field-all');
+
+		change_single_select_tax('type_projects-all');
 
 
 
@@ -537,7 +550,7 @@ jQuery(document).ready(function ($) {
 							countNum: countTo
 						},
 						{
-							duration: 3000,
+							duration: 2000,
 							easing: "swing",
 							step: function () {
 								$this.text(

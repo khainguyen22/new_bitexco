@@ -1435,19 +1435,20 @@ function formatPhoneNumber($phone)
 {
     $phone_check  = preg_replace('/[^0-9]/', '', $phone);
     $country_code = '+84';
+    
     $phoneNumber = $country_code . substr($phone_check, 1);
-    if (strlen($phoneNumber) > 10) {
+    if (strlen($phone_check) > 10) {
         $countryCode = substr($phoneNumber, 0, strlen($phoneNumber) - 10);
         $areaCode = substr($phoneNumber, -10, 3);
         $nextThree = substr($phoneNumber, -7, 3);
         $lastFour = substr($phoneNumber, -4, 4);
         $phoneNumber = $countryCode . ' ' . $areaCode . ' ' . $nextThree . ' ' . $lastFour;
-    } else if (strlen($phoneNumber) == 10) {
+    } else if (strlen($phone_check) == 10) {
         $areaCode = substr($phoneNumber, 0, 3);
         $nextThree = substr($phoneNumber, 3, 3);
         $lastFour = substr($phoneNumber, 6, 4);
-        $phoneNumber = '(' . $areaCode . ') ' . $nextThree . ' ' . $lastFour;
-    } else if (strlen($phoneNumber) == 7) {
+        $phoneNumber =  $areaCode . ' ' . $nextThree . ' ' . $lastFour;
+    } else if (strlen($phone_check) == 7) {
         $nextThree = substr($phoneNumber, 0, 3);
         $lastFour = substr($phoneNumber, 3, 4);
         $phoneNumber = $nextThree . ' ' . $lastFour;
@@ -1564,3 +1565,18 @@ function my_comment_redirect()
     }
 }
 add_action('comment_post', 'my_comment_redirect');
+
+add_filter('acf/update_value/name=<status>', 'update_field_slug_taxonomy', 10, 3);
+
+function update_field_slug_taxonomy($value, $post_id, $field)
+{
+    // Get the current taxonomy term for the post
+    $terms = get_the_terms($post_id, 'status');
+    if (!empty($terms)) {
+        // Get the first term object
+        $term = array_shift($terms);
+        // Set the value to the term slug
+        $value = $term->slug;
+    }
+    return $value;
+}

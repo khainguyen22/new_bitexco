@@ -1493,12 +1493,10 @@ p#alt-text-description {
     display: none;
 }
 
-// style admin 
-// .wp-admin img {
-//     width: unset;
-//     height: unset;
-// }
-
+// archive
+.archive {
+    margin: 150px 0;
+}
 
 @import './scss/bando';
 @import './scss/chitietbando2';
