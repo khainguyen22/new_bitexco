@@ -131,7 +131,7 @@ $other_info = get_field('other_info_danh_muc_du_an', 'option');
                                         </span>
                                         <div>
                                             <strong> <?php _e('Sản lượng thiết kế: ') ?></strong>
-                                            <span><?php echo paint_if_exist(get_field("quanlity")); ?></span>
+                                            <span><?php echo paint_if_exist(get_field("quantity")); ?></span>
                                         </div>
                                     </li>
                                     <li class="size-text-16 d-flex">
@@ -142,7 +142,11 @@ $other_info = get_field('other_info_danh_muc_du_an', 'option');
                                         </span>
                                         <div>
                                             <strong> <?php _e('Địa chỉ: ') ?></strong>
-                                            <span> <?php echo paint_if_exist(get_field("location")); ?> </span>
+                                            <span>
+                                                <a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank">
+                                                    <?php echo get_field('address', get_the_ID()) ?>
+                                                </a>
+                                            </span>
                                         </div>
                                     </li>
                                     <li class="size-text-16 d-flex">
