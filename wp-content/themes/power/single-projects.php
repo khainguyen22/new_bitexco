@@ -157,7 +157,7 @@ $other_info = get_field('other_info_danh_muc_du_an', 'option');
                                         </span>
                                         <div>
                                             <strong> <?php _e('Liên hệ: ') ?></strong>
-                                            <span> <a href="tel:<?php echo formatPhoneNumber(get_field("phone")); ?>"><?php echo formatPhoneNumber(get_field("phone")); ?></a></span>
+                                            <span> <a href="tel:<?php echo formatedPhoneNumber(get_field("phone", get_the_ID())); ?>"><?php echo formatedPhoneNumber(get_field("phone", get_the_ID())); ?></a></span>
                                         </div>
                                     </li>
                                 </ul>
