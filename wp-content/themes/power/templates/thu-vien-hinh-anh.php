@@ -23,12 +23,25 @@
 		 
  }
 
+ if (isset($_GET['slug'])) {
+	$slug = $_GET['slug'];
+	$hydroelectric_plant_name = array(
+ 
+		'taxonomy' =>  'hydroelectric_plant_name',
+
+		'field'    => 'slug',
+
+		'terms'    => $slug,
+
+	);
+}
+
  $args_image = array(
  
 		 'post_type' => 'library',
  
 		 'tax_query' => array(
- 
+				'relation' => 'AND',
 				 array(
  
 						 'taxonomy' =>  'type_library',
@@ -38,6 +51,7 @@
 						 'terms'    => $the_slug_image,
  
 				 ),
+				 $hydroelectric_plant_name
  
 		 ),
  
@@ -88,13 +102,13 @@
  
 												 <div class="button-submit">
  
-														 <button class="btn btn-search btn-submit image active">Tìm kiếm</button>
+														 <button class="btn btn-search btn-submit image active"><?php _e('Tìm kiếm')?></button>
  
 												 </div>
  
 												 <div class="button-reset">
  
-														 <button class="btn btn-reset">Đặt lại</button>
+														 <button class="btn btn-reset"><?php _e('Đặt lại')?></button>
  
 												 </div>
  
@@ -128,14 +142,20 @@
  
 																		 $images = get_field('image') ?>
  
-																		 <div class="wrap-content <?php echo $count % 2 != 0 ? "flex-row-reverse" : "" ?>">
+																		 <div class="wrap-content <?php echo $count % 2 != 0 ? "flex-row-reverse" : "" ?>" data-post-id="<?php echo get_the_ID()?>">
  
 																				 <div class="slider">
  
 																						 <div class="vrmedia-gallery">
  
-																								 <?php echo do_shortcode(get_field('shortcode_ultimate_gallery', get_the_ID())) ?>
- 
+																								 <!-- START UNITE GALLERY LITE 1.7.56 -->
+																								 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(  ) . '/access/js/unite-gallery.min.js'?>"></script>
+																								 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(  ) . '/access/js/unite-gallery-default-theme.js'?>"></script>
+																									<div id="hydroelectric-plant-<?php echo $count?>">
+																											<?php foreach ($images['gallery'] as $key => $value) : ?>
+																												<img src="<?php echo $value; ?>" alt="<?php echo "Image ". $key?>" data-image="<?php echo $value;?>">
+																											<?php endforeach;?>
+																									</div>
 																								 <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
  
 																										 <rect opacity="0.7" x="2.6167" y="3.35938" width="20.9328" height="20.8282" rx="2" fill="#0D0D0E" />
@@ -143,14 +163,71 @@
 																										 <path d="M18.3023 11.8898C18.1934 11.5862 17.9042 11.3833 17.5802 11.3833H14.8092L13.8035 8.6308C13.6931 8.32976 13.4054 8.12891 13.0829 8.12891C12.7604 8.12891 12.4727 8.32976 12.3623 8.6308L11.3565 11.3833H8.58561C8.2616 11.3833 7.97234 11.5862 7.86349 11.8898C7.75463 12.1934 7.84918 12.532 8.1001 12.7364L10.2286 14.4694L9.09155 17.5804C8.98014 17.8865 9.07571 18.2293 9.3297 18.4342C9.58421 18.6391 9.94092 18.6605 10.2184 18.4881L13.0829 16.7068L15.9473 18.4881C16.072 18.5659 16.2131 18.604 16.3536 18.604C16.5253 18.604 16.696 18.5466 16.8361 18.4342C17.0901 18.2293 17.1856 17.8865 17.0742 17.5804L15.9371 14.4694L18.0657 12.7364C18.3166 12.532 18.4111 12.1934 18.3023 11.8898Z" fill="#DAA622" />
  
 																								 </svg>
+																								 <script type="text/javascript">
+																									window.onload = function (e) {
+																										if (typeof ugCheckForErrors == "undefined") {
+																											document.getElementById("hydroelectric-plant-<?php echo $count ?>").innerHTML =
+																												"<span style='color:red'>Unite Gallery Error - gallery js and css files not included in the footer. Please make sure that wp_footer() function is added to your theme.</span>";
+																										} else {
+																											ugCheckForErrors("hydroelectric-plant-<?php echo $count ?>", "jquery");
+																										}
+																									};
+
+																									
+
+																									jQuery("#hydroelectric-plant-<?php echo $count?>").unitegallery({
+  full_width: "true",
+  gallery_width: "900",
+  gallery_height: "323",
+  gallery_theme_info: "Default Theme",
+  enable_category_tabs: "false",
+  gallery_min_width: "600",
+  gallery_min_height: "100",
+  theme_enable_fullscreen_button: "true",
+  theme_enable_play_button: "true",
+  theme_enable_hidepanel_button: "true",
+  theme_enable_text_panel: "false",
+  theme_hide_panel_under_width: "480",
+  gallery_skin: "default",
+  gallery_images_preload_type: "minimal",
+  gallery_autoplay: "true",
+  gallery_play_interval: "3000",
+  gallery_pause_on_mouseover: "true",
+  gallery_mousewheel_role: "none",
+  gallery_control_keyboard: "true",
+  gallery_carousel: "true",
+  gallery_preserve_ratio: "true",
+  gallery_shuffle: "false",
+	// Strip panel
+
+	// Thumb
+  thumb_width: "60",
+  thumb_height: "35",
+
+	// Slider
+  slider_controls_always_on: "true",
+																									});
+
+																								 </script>
  
 																						 </div>
  
 																				 </div>
  
 																				 <div class="content">
+																						<div class="hydroelectric-plant-name">
+																								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+																										<path d="M1.66797 2.4974C1.66797 2.03716 2.04106 1.66406 2.5013 1.66406H9.16797C9.38898 1.66406 9.60094 1.75186 9.75722 1.90814L18.0906 10.2415C18.416 10.5669 18.416 11.0945 18.0906 11.42L11.4239 18.0867C11.0985 18.4121 10.5708 18.4121 10.2454 18.0867L1.91205 9.75332C1.75577 9.59704 1.66797 9.38508 1.66797 9.16406V2.4974ZM3.33464 3.33073V8.81888L10.8346 16.3189L16.3228 10.8307L8.82279 3.33073H3.33464Z" fill="#7E8189" />
+																										<path d="M7.5013 6.2474C7.5013 6.93775 6.94166 7.4974 6.2513 7.4974C5.56095 7.4974 5.0013 6.93775 5.0013 6.2474C5.0013 5.55704 5.56095 4.9974 6.2513 4.9974C6.94166 4.9974 7.5013 5.55704 7.5013 6.2474Z" fill="#7E8189" />
+																								</svg>
+																								<?php
+																								foreach (get_the_terms(get_the_ID(), 'hydroelectric_plant_name') as $key => $value) : ?>
+																										<a href="<?php echo get_site_url() . '/thu-vien/hinh-anh/?slug=' . $value->slug?>"><span><?php _e($value->name) ?></span></a>
+																								<?php endforeach;
+																								?>
+																						</div>
  
-																						 <span class="text-underline">ALBUM1</span>
+																						 <span class="text-underline"><?php _e('ALBUM ' . ($count + 1))?></span>
  
 																						 <h5 class="title"> <a href="<?php the_permalink() ?>"><?php echo the_title() ?></a></h5>
  
@@ -184,9 +261,9 @@
  
 																										 <span class="text">
  
-																												 <strong>Loại hình:</strong>
+																												 <strong><?php _e('Loại hình: ')?></strong>
  
-																												 <span><?php echo  paint_if_exist($images['type']) ?></span>
+																												 <span><?php echo  paint_if_exist($images['type']->name) ?></span>
  
 																										 </span>
  
@@ -222,7 +299,7 @@
  
 																										 <span class="text">
  
-																												 <strong>Ngày chụp:</strong>
+																												 <strong><?php _e('Ngày chụp: ')?></strong>
  
 																												 <span><?php echo  paint_if_exist($images['date']) ?></span>
  
@@ -244,7 +321,7 @@
  
 																										 <span class="text">
  
-																												 <strong>Vị trí:</strong>
+																												 <strong><?php _e('Vị trí: ')?></strong>
  
 																												 <span><?php echo  paint_if_exist($images['address']) ?></span>
  
@@ -268,7 +345,7 @@
  
 																										 <span class="text">
  
-																												 <strong>Số ảnh:</strong>
+																												 <strong><?php _e('Số ảnh: ')?></strong>
  
 																												 <span><?php echo  paint_if_exist($images['count_image']) ?></span>
  
@@ -277,8 +354,6 @@
 																								 </div>
  
 																						 </div>
- 
- 
  
 																						 <div class="desc">
  
@@ -298,6 +373,69 @@
 														 <?php endif; ?>
  
 												 </section>
+												 <section>
+
+<nav aria-label="Page navigation example m-auto" class="pagination justify-content-center custom-pagination">
+
+		<?php
+
+		global $wp_query;
+
+		$custom_query = '';
+
+		if ($custom_query) $main_query = $custom_query;
+
+		else $main_query = $wp_query;
+
+		$paged = ($paged) ? $paged : get_query_var('paged');
+
+		$big = 999999999;
+
+		$total = isset($main_query->max_num_pages) ? $main_query->max_num_pages : '';
+
+		if ($total > 1) echo '<ul class="pagination justify-content-center custom-pagination">';
+
+		echo paginate_links(array(
+
+				'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+
+				'format' => '?paged=%#%',
+
+				'current' => max(1, $paged),
+
+				'show_all'     => false,
+
+
+
+				'total' => $the_query_post_image->max_num_pages,
+
+				'mid_size' => '3',
+
+				'prev_text'    => __('<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+				<path d="M15 5L9.66939 11.2191C9.2842 11.6684 9.2842 12.3316 9.66939 12.7809L15 19" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round"></path>
+
+				</svg>
+
+				<span>Trước</span>', 'Bitexco'),
+
+				'next_text'    => __('<span>Sau</span>
+
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+				<path d="M9 19L14.3306 12.7809C14.7158 12.3316 14.7158 11.6684 14.3306 11.2191L9 5" stroke="#2B3F6C" stroke-width="1.5" stroke-linecap="round"></path>
+
+				</svg>', 'Bitexco'),
+
+		));
+
+		if ($total > 1) echo '</ul>';
+
+		?>
+
+</nav>
+
+</section>
 										 </div>
 								 </div>
  
