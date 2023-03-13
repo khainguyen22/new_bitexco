@@ -172,9 +172,9 @@ jQuery(document).ready(function ($) {
 
 		change_single_select_tax('taxonomy-type');
 
-		change_single_select_tax('field-all');
+		change_single_select_tax('field');
 
-		change_single_select_tax('type_projects-all');
+		change_single_select_tax('type_projects');
 
 
 

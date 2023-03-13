@@ -462,8 +462,10 @@ get_header();
 						</div>
 
 					<?php endwhile; ?>
+					<?php else :
+					get_template_part('template-parts/project-none');
 
-				<?php endif; ?>
+				endif; ?>
 
 			</div>
 
