@@ -10,9 +10,8 @@
     $navigation = '';
 
     if ($banner) {
-    
         $navigation = $banner['main_navigation'];
-    }
+    }   
 ?>
 <section class="banner" style='background-image:url("<?php echo $banner['background']; ?>")'>
 

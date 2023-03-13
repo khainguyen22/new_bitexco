@@ -456,11 +456,11 @@ get_header();
 
             var marker, i = 0;
 
-            var markerImage = 'https://power.dtts.com.vn/wp-content/uploads/2023/02/Frame-427319445-1.png';
-
+            var markerImage = '';
 
             <?php if ($query->have_posts()) : ?>
                 <?php while ($query->have_posts()) : $query->the_post() ?>
+                    markerImage = 'https://power.dtts.com.vn/wp-content/uploads/2023/02/Frame-427319445-1.png';
                     var locationInfo = '';
                     locationInfo += '<div class="iw-content-box">';
                     locationInfo += '<div class="iw-content">';
