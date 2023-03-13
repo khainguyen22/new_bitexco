@@ -177,7 +177,7 @@ get_header();
 									<h6> <a href="<?php the_permalink() ?>"><?php echo the_title() ?></a></h6>
 									<?php if (get_field("icon")) : ?><img class="icon" src="<?php echo get_field("icon"); ?>" alt="icon"><?php endif; ?>
 								</div>
-								<?php if (get_field("company")) : ?>
+								<?php if (get_the_terms(get_the_ID(), 'project_company')) : ?>
 									<div class="filter-company">
 										<div class="icon_svg">
 											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
