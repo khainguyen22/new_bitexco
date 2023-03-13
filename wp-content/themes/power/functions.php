@@ -41,7 +41,7 @@ if (!function_exists('theme_enqueue_styles')) {
         // wp_enqueue_style('custom.css', get_stylesheet_directory_uri() . '/access/styles/custom.css', array(), false);
 
         wp_enqueue_script('script-jquery', get_template_directory_uri() . '/access/js/jquery.min.js', array('jquery'), 1.2, false);
-        
+
         wp_enqueue_script('unite-gallery-script', get_template_directory_uri() . '/access/js/unite-gallery-script.js', array('jquery'), null, false);
 
         wp_enqueue_script('lightslider', get_template_directory_uri() . '/access/js/lightslider.js', array('jquery'), 1.1, false);
@@ -1435,7 +1435,8 @@ function formatPhoneNumber($phone)
 {
     $phone_check  = preg_replace('/[^0-9]/', '', $phone);
     $country_code = '+84';
-    
+    echo  $phone_check;
+    die;
     $phoneNumber = $country_code . substr($phone_check, 1);
     if (strlen($phone_check) > 10) {
         $countryCode = substr($phoneNumber, 0, strlen($phoneNumber) - 10);
@@ -1452,6 +1453,8 @@ function formatPhoneNumber($phone)
         $nextThree = substr($phoneNumber, 0, 3);
         $lastFour = substr($phoneNumber, 3, 4);
         $phoneNumber = $nextThree . ' ' . $lastFour;
+    } else if (strlen($phone_check) < 7) {
+        $phoneNumber = '';
     }
     return $phoneNumber;
 }
@@ -1565,18 +1568,3 @@ function my_comment_redirect()
     }
 }
 add_action('comment_post', 'my_comment_redirect');
-
-add_filter('acf/update_value/name=<status>', 'update_field_slug_taxonomy', 10, 3);
-
-function update_field_slug_taxonomy($value, $post_id, $field)
-{
-    // Get the current taxonomy term for the post
-    $terms = get_the_terms($post_id, 'status');
-    if (!empty($terms)) {
-        // Get the first term object
-        $term = array_shift($terms);
-        // Set the value to the term slug
-        $value = $term->slug;
-    }
-    return $value;
-}

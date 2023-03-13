@@ -89,6 +89,7 @@ if ($cong_xuat_lap_dat) {
     }
 }
 
+
 include 'Classes/PHPExcel/IOFactory.php';
 
 $inputFileName = __DIR__ . '/Bitexco.xlsx';
@@ -148,6 +149,7 @@ get_header();
 
 ?>
 
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
 
 <script src="https://unpkg.com/chart.js-plugin-labels-dv/dist/chartjs-plugin-labels.min.js"></script>
 
@@ -240,6 +242,8 @@ get_header();
         chart.render();
 
     }
+
+
 
     function explodePie(e) {
 
@@ -433,7 +437,7 @@ get_header();
 
                                 <div class="d-flex wrap_counter">
 
-                                    <h2 class="number counter notranslate" data-number="3">0
+                                    <h2 class="number  notranslate" data-number="3">3
                                     </h2>
 
                                     <span class="unit_percent"><span>%</span></span>
@@ -562,7 +566,7 @@ get_header();
 
 
 <script>
-    cong_suat_lap_dat
+    // cong_suat_lap_dat
 
     var data_cong_xuat_lap_dat_nam = <?php echo json_encode($cong_xuat_lap_dat_nam); ?>;
 
@@ -794,6 +798,7 @@ get_header();
     // tong_san_luong
 
     var data_tong_san_luong_nam = <?php echo json_encode($tong_san_luong_nam); ?>;
+
     var data_tong_san_luong_thuy_dien = <?php echo json_encode($tong_san_luong_thuy_dien); ?>;
 
     var data_tong_san_luong_dien_mat_troi = <?php echo json_encode($tong_san_luong_dien_mat_troi); ?>;
@@ -802,104 +807,34 @@ get_header();
 
     var data_tong_san_luong = [];
 
-    var arr_data_tong_san_luong_thuy_dien = [];
-    var arr_data_tong_san_luong_dien_mat_troi = [];
-    var arr_data_tong_san_luong_nang_luong_khac = [];
-    for (let item of data_tong_san_luong_thuy_dien) {
-        if (!isNaN(item)) {
-            arr_data_tong_san_luong_thuy_dien.push(parseFloat(item));
-        } else {
-            arr_data_tong_san_luong_thuy_dien.push(item);
-        }
-    }
-    for (let item of data_tong_san_luong_dien_mat_troi) {
-        if (!isNaN(item)) {
-            arr_data_tong_san_luong_dien_mat_troi.push(parseFloat(item));
-        } else {
-            arr_data_tong_san_luong_dien_mat_troi.push(item);
-        }
-    }
+    const arr_data_tong_san_luong_thuy_dien = data_tong_san_luong_thuy_dien.map(str => {
 
-    for (let item of data_tong_san_luong_nang_luong_khac) {
-        if (!isNaN(item)) {
-            arr_data_tong_san_luong_nang_luong_khac.push(parseFloat(item));
-        } else {
-            arr_data_tong_san_luong_nang_luong_khac.push(item);
-        }
-    }
+        return parseInt(str, 10);
 
+    });
 
+    const arr_data_tong_san_luong_dien_mat_troi = data_tong_san_luong_dien_mat_troi.map(str => {
 
+        return parseInt(str, 10);
 
+    });
 
+    const arr_data_tong_san_luong_nang_luong_khac = data_tong_san_luong_nang_luong_khac.map(str => {
 
+        return parseInt(str, 10);
 
-
-
-
+    });
 
     if (arr_data_tong_san_luong_thuy_dien.length === arr_data_tong_san_luong_dien_mat_troi.length) {
 
-        for (let i = 0; i < arr_data_tong_san_luong_thuy_dien.length; i++) {
+        for (let index_2 = 0; index_2 < arr_data_tong_san_luong_thuy_dien.length; index_2++) {
 
-            data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[i] + arr_data_tong_san_luong_dien_mat_troi[
-                i] + arr_data_tong_san_luong_nang_luong_khac[i])
+            data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[index_2] + arr_data_tong_san_luong_dien_mat_troi[
+                index_2] + arr_data_tong_san_luong_nang_luong_khac[index_2])
 
         }
 
     } else {}
-
-    const data_tong_san_luong_format = data_tong_san_luong.map(number => number.toLocaleString('en-GB', {
-        minimumFractionDigits: getDecimalPlaces(number),
-        maximumFractionDigits: getDecimalPlaces(number),
-        useGrouping: true
-    }));
-
-    function getDecimalPlaces(num) {
-        const match = num.toString().match(/\.(\d+)/);
-        if (match) {
-            return match[1].length;
-        } else {
-            return 0;
-        }
-    }
-
-
-    console.log('data_tong_san_luong_thuy_dien', data_tong_san_luong_thuy_dien);
-    console.log('data_tong_san_luong_dien_mat_troi', data_tong_san_luong_dien_mat_troi);
-    console.log('data_tong_san_luong_nang_luong_khac', data_tong_san_luong_nang_luong_khac);
-
-
-
-    console.log("arr_data_tong_san_luong_thuy_dien", arr_data_tong_san_luong_thuy_dien);
-    console.log("arr_data_tong_san_luong_dien_mat_troi", arr_data_tong_san_luong_dien_mat_troi);
-    console.log("arr_tong_san_luong_nang_luong_khac", arr_data_tong_san_luong_nang_luong_khac);
-    console.log("data_tong_san_luong", data_tong_san_luong);
-    console.log("data_tong_san_luong_format", data_tong_san_luong_format);
-
-
-    // const arr_data_tong_san_luong_dien_mat_troi = data_tong_san_luong_dien_mat_troi.map(str => {
-
-    //     return parseInt(str, 10);
-
-    // });
-
-    // const arr_data_tong_san_luong_nang_luong_khac = data_tong_san_luong_nang_luong_khac.map(str => {
-
-    //     return parseInt(str, 10);
-
-    // });
-
-    // if (arr_data_tong_san_luong_thuy_dien.length === arr_data_tong_san_luong_dien_mat_troi.length) {
-
-    //     for (let index_2 = 0; index_2 < arr_data_tong_san_luong_thuy_dien.length; index_2++) {
-
-    //         data_tong_san_luong.push(arr_data_tong_san_luong_thuy_dien[index_2] + arr_data_tong_san_luong_dien_mat_troi[
-    //             index_2] + arr_data_tong_san_luong_nang_luong_khac[index_2])
-
-    //     }
-
-    // } else {}
 
     const config_tong_san_luong = {
 
@@ -1037,12 +972,7 @@ get_header();
                     align: 'start',
                 },
                 datalabels: {
-                    formatter: function(value, context) {
-                        return value.toLocaleString('en-GB', {
-                            minimumFractionDigits: 1,
-                            maximumFractionDigits: 1
-                        });
-                    },
+
                     align: 'top',
 
                     display: true
