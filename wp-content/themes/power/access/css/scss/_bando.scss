@@ -141,9 +141,10 @@
 
         .figures {
             display: flex;
-            justify-content: space-between;
             margin-top: 48px;
-            column-gap: 119px;
+            -moz-column-gap: 20px;
+            justify-content: space-evenly;
+            column-gap: 20px;
 
             .figure-column {
 

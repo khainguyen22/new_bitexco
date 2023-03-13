@@ -181,9 +181,9 @@ add_action('init', 'register_taxonomy_project_location', 0);
 function register_taxonomy_project_company()
 {
     $labels = array(
-        'name'                       => _x('Công ty thực hiện dự án', 'Taxonomy General Name', 'shtheme'),
-        'singular_name'              => _x('Công ty thực hiện dự án', 'Taxonomy Singular Name', 'shtheme'),
-        'menu_name'                  => __('Công ty thực hiện dự án', 'shtheme'),
+        'name'                       => _x('Công ty thực hiện', 'Taxonomy General Name', 'shtheme'),
+        'singular_name'              => _x('Công ty thực hiện', 'Taxonomy Singular Name', 'shtheme'),
+        'menu_name'                  => __('Công ty thực hiện', 'shtheme'),
         'all_items'                  => __('All Items', 'shtheme'),
         'parent_item'                => __('Parent Item', 'shtheme'),
         'parent_item_colon'          => __('Parent Item:', 'shtheme'),
@@ -204,7 +204,7 @@ function register_taxonomy_project_company()
     );
     $args = array(
         'hierarchical'              => true,
-        'label'                     => 'Công ty thực hiện',
+        'label'                     => 'Công ty',
         'show_ui'                   => true,
         'query_var'                 => true,
         'show_admin_column'         => true,

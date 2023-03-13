@@ -337,7 +337,7 @@ get_header();
 
 								</div>
 
-								<?php if (get_field("company")) : ?>
+								<?php if (get_the_terms(get_the_ID(), 'project_company')) : ?>
 
 									<div class="filter-company">
 
