@@ -7028,7 +7028,7 @@ header .search .search-bar:hover::after {
   width: 150%;
   height: auto;
   z-index: 1;
-  float: right;
+  position: absolute;
 }
 #hydroelectric-plant .gallery-item img {
   box-shadow: 1px 1px 6px 1px;
