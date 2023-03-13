@@ -1,33 +1,9 @@
 <?php
 
 
-
 /**
-
-Template Name: Danh muc du an / ban do
-
- **/
-
-//  $args = [
-
-//     'post_type' => 'projects',
-
-//     'posts_per_page' => -1,
-
-// ];
-// $query = new WP_Query($args);
-
-// if ($query->have_posts()) : ? >
-
-//     < ?php while ($query->have_posts()) : $query->the_post() ? >
-//     < ?php echo get_term_by('id', get_field('company', get_the_ID()), 'project_company')->name? >
-//     < ?php echo get_field('company', get_the_ID())? >
-//     < ?php endwhile; ? >
-
-// < ?php endif;
-
-
-// die;
+ * Template Name: Danh muc du an / ban do
+ */
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REDIRECT_URL]";
 $request_uri = "$_SERVER[REDIRECT_URL]";
@@ -460,7 +436,7 @@ get_header();
 
             <?php if ($query->have_posts()) : ?>
                 <?php while ($query->have_posts()) : $query->the_post() ?>
-                    markerImage = 'https://power.dtts.com.vn/wp-content/uploads/2023/02/Frame-427319445-1.png';
+                    markerImage = '<?php echo get_field('icon', get_the_ID(  ))?>';
                     var locationInfo = '';
                     locationInfo += '<div class="iw-content-box">';
                     locationInfo += '<div class="iw-content">';
@@ -476,7 +452,7 @@ get_header();
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_14816_50741)"><path d="M10.7016 4.00326L6.1119 10.1036C5.45796 10.9728 6.07905 12.217 7.16686 12.217H9.10382L8.30675 15.1529C8.02222 16.2009 9.39472 16.8742 10.05 16.0096L14.5515 10.0688C15.2103 9.20017 14.59 7.95142 13.4996 7.95142H11.5993L12.4871 4.89689C12.8013 3.81638 11.3792 3.10275 10.7016 4.00326ZM13.4996 9.12334C13.6231 9.12334 13.6923 9.26248 13.6178 9.36056C13.6178 9.36064 13.6177 9.36076 13.6176 9.36084L9.68421 14.5519L10.4355 11.7846C10.5366 11.4122 10.2557 11.0452 9.87003 11.0452H7.16686C7.04393 11.0452 6.97436 10.9065 7.04831 10.8082L11.1227 5.39275L10.2562 8.37384C10.2047 8.55084 10.2396 8.74173 10.3502 8.88916C10.4609 9.03654 10.6345 9.1233 10.8188 9.1233H13.4996V9.12334Z" fill="#7E8189"/><path d="M3.33016 15.9581C4.72723 17.5988 6.66016 18.7013 8.77281 19.0625C9.09129 19.117 9.39453 18.9032 9.44914 18.5838C9.50367 18.2648 9.28934 17.962 8.97039 17.9075C5.11141 17.2475 2.31055 13.922 2.31055 10C2.31055 6.5275 4.50645 3.52293 7.6882 2.42172L7.47836 2.79418C7.31953 3.07614 7.4193 3.43344 7.70125 3.59227C7.98328 3.75117 8.34055 3.65125 8.49938 3.36942L9.38211 1.80258C9.53813 1.52559 9.44332 1.17563 9.1743 1.01324L7.63438 0.0842997C7.35723 -0.0828096 6.99715 0.00621382 6.83 0.283362C6.66285 0.560433 6.75195 0.92055 7.02902 1.08774L7.37141 1.2943C5.81352 1.82524 4.41133 2.77227 3.33016 4.04188C1.91695 5.70141 1.13867 7.81735 1.13867 10C1.13867 12.1827 1.91695 14.2986 3.33016 15.9581Z" fill="#7E8189"/><path d="M11.8937 0.937186C11.5749 0.882654 11.272 1.09699 11.2175 1.41597C11.1629 1.73492 11.3773 2.03773 11.6962 2.09226C15.5552 2.75222 18.3561 6.07777 18.3561 9.99973C18.3561 13.4722 16.1602 16.4768 12.9784 17.578L13.1882 17.2055C13.3471 16.9236 13.2473 16.5662 12.9654 16.4074C12.6834 16.2486 12.3261 16.3483 12.1673 16.6303L11.2845 18.1971C11.1289 18.4732 11.222 18.8232 11.4923 18.9864L13.0322 19.9154C13.3095 20.0827 13.6695 19.9933 13.8366 19.7164C14.0037 19.4393 13.9146 19.0792 13.6375 18.912L13.2951 18.7054C14.853 18.1745 16.2552 17.2275 17.3364 15.9578C18.7496 14.2983 19.5279 12.1823 19.5279 9.99969C19.5279 7.81707 18.7496 5.70109 17.3364 4.04156C15.9394 2.40097 14.0064 1.29847 11.8937 0.937186Z" fill="#7E8189"/></g><defs><clipPath id="clip0_14816_50741"><rect width="20" height="20" fill="white" transform="translate(0.333496)"/></clipPath></defs></svg>';
-                    locationInfo += '<p><strong>Loại hình: </strong><?php echo get_term_by('id', get_field('type', get_the_ID()), 'project_company')->name ?></p>';
+                    locationInfo += '<p><strong>Loại hình: </strong><?php echo get_term_by('id', get_field('type', get_the_ID()), 'project_type')->name ?></p>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.8335 5C2.8335 3.61929 3.95278 2.5 5.3335 2.5H15.3335C16.7142 2.5 17.8335 3.61929 17.8335 5V15C17.8335 16.3807 16.7142 17.5 15.3335 17.5H5.3335C3.95278 17.5 2.8335 16.3807 2.8335 15V5Z" stroke="#7E8189" stroke-width="1.5"/><path d="M2.8335 6.66667H17.8335" stroke="#7E8189" stroke-width="1.5" stroke-linejoin="round"/><path d="M14.0837 1.25L14.0837 3.75" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.58366 1.25L6.58366 3.75" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.75 9.99935H6.58333" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.9165 9.99935H10.7498" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.0835 9.99935H14.9168" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.75 13.3324H6.58333" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.9165 13.3324H10.7498" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.0835 13.3324H14.9168" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
