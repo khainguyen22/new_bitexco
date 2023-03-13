@@ -1393,6 +1393,10 @@ p#alt-text-description {
   display: none;
 }
 
+.archive {
+  margin: 150px 0;
+}
+
 .banner .container {
   max-width: 1240px;
   margin: auto;
@@ -1744,7 +1748,7 @@ p#alt-text-description {
   }
 }
 .single-project .single-project-map-content {
-  margin-top: 121px;
+  margin-top: 108px;
 }
 .single-project .single-project-map-content svg {
   margin-right: 10px;
