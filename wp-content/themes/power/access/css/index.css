@@ -6954,7 +6954,7 @@ header .search .search-bar:hover::after {
 
 #hydroelectric-plant {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 64px 0;
 }

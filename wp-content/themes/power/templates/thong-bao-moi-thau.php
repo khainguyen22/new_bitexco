@@ -235,26 +235,14 @@ if (isset($banner)) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args = array(
 		'post_type' => 'tender_notice',
-		'posts_per_page' => -1,
+		'posts_per_page' => 8,
 		'paged' => $paged,
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'status',
-				'field' => 'slug',
-				'terms' => array(
-					'in-releasing',
-					'coming-soon',
-					'expired'
-				),
-			)
-		),
 		'meta_key' => 'releasing_status', // Custom field to sort by
 		'orderby' => array(
 			'meta_value' => 'ASC', // Sort by ascending order of meta_value
-			'taxonomy' => 'ASC' // Then sort by ascending order of taxonomy terms
 		),
 		// 'orderby' => 'meta_value',
-		'order' => 'DESC' // Sort in ascending order
+		'order' => 'ASC' // Sort in ascending order
 	);
 
 	$query = new WP_Query($args);

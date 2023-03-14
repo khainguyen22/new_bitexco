@@ -40,9 +40,10 @@ function tender_notice_render($query, $paged = 1)
 			<div class="item" data-post-ID="<?php echo get_the_ID() ?>">
 				<div class="d-flex justify-content-between head">
 					<h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6>
-					<?php foreach (get_the_terms(get_the_ID(), 'status') as $key => $value) : ?>
-						<span class="status status-info status-<?php echo paint_if_exist($value->slug) ?>"><?php echo paint_if_exist($value->name) ?></span>
-					<?php endforeach; ?>
+					<?php
+									$status = get_field('releasing_status', get_the_ID());
+								?>
+								<a href="<?php echo '' . get_site_url() . '/' . $status->taxonomy . '/' .  $status->slug . ''; ?>"><span class="status status-info status-<?php echo  $status->slug ?>"><?php echo $status->name; ?></span></a>
 				</div>
 				<div class="content">
 					<span class="tag">
