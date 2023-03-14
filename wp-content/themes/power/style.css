@@ -12,3 +12,29 @@ Tags:
 */
 
 
+body .map-luoi-dien{
+	padding-bottom:0px;
+}
+.ket-qua-san-xuat .main .bieu-do-cong-suat-lap-dat {
+  padding-bottom: 120px;
+}
+body .historical-grow-page section.period-grow .container .historical-period .period-line .year.year-2{margin-top:190px}
+body .historical-grow-page section.period-grow .container .historical-period .period-line .year.year-3{margin-top: -120px;}
+
+body .historical-grow-page section.period-grow .container .historical-period .period-line .year.year-4{margin-top: 71px;}
+body .historical-grow-page section.period-grow .container .historical-period .period-line .year.year-5{margin-top: -265px;}
+body .historical-grow-page section.period-grow.period-3 .container .historical-period .period-line .year.year-2{margin-top:650px}
+body .historical-grow-page section.period-grow.period-3 .container .historical-period .period-line .year.year-3{margin-top: -125px;}
+body .historical-grow-page section.period-grow.period-3 .container .historical-period .period-line .year.year-4{margin-top: 330px;}
+.year.year-4.active {}
+.daterangepicker td.active, .daterangepicker td.active:hover {background:#DAA622  !important}
+
+button.applyBtn.btn.btn-sm.btn-primary {
+    background-color: #DAA622;
+    border-color: #DAA622;
+}
+.header .bottom-header .navbar .nav-list .nav-item .mega-sub-menu, .header .bottom-header .navbar #mega-menu-wrap-primary_menu #mega-menu-primary_menu .mega-menu-item .mega-sub-menu {background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), rgba(255, 255, 255, 0.6);}
+body.archive.tag {
+    padding-top: 120px;
+}
+.year.year-5.last-item.active {}
