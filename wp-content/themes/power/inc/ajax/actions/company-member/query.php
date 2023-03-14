@@ -1,9 +1,10 @@
 <?php
 
-function query_action_company_member($paged = '1') {
-	$name =isset( $_POST['data_name'])? $_POST['data_name']:'';
+function query_action_company_member($paged = '1')
+{
+	$name = isset($_POST['data_name']) ? $_POST['data_name'] : '';
 
-	$location = isset($_POST['data_location'])?$_POST['data_location']:'';
+	$location = isset($_POST['data_location']) ? $_POST['data_location'] : '';
 
 	$tax_query = array(
 
@@ -41,6 +42,9 @@ function query_action_company_member($paged = '1') {
 		'sentence' => true,
 
 		'tax_query' => $tax_query,
+
+		'orderby' => 'title',
+		'order' => 'ASC',
 
 	];
 

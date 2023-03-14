@@ -1,5 +1,6 @@
 <?php
 get_header();
+setPostViews(get_the_ID());
 ?>
 
 <div class="selection-result-single custom-single-page">

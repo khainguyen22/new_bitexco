@@ -46,6 +46,8 @@ $args = array(
 	'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
 
 	'post_status' => 'publish',
+	'orderby' => 'title',
+	'order' => 'ASC',
 
 );
 
@@ -70,6 +72,8 @@ $filter = array(
 		),
 
 	),
+	'orderby' => 'title',
+	'order' => 'ASC',
 
 );
 
@@ -139,7 +143,7 @@ get_header();
 
 	<section class="filter-post-section">
 
-		<div   class="filter-post-container">
+		<div class="filter-post-container">
 
 			<div class="small-form-filter">
 
@@ -462,7 +466,7 @@ get_header();
 						</div>
 
 					<?php endwhile; ?>
-					<?php else :
+				<?php else :
 					get_template_part('template-parts/project-none');
 
 				endif; ?>

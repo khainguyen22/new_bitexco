@@ -1,5 +1,5 @@
 <?php
-
+setPostViews(get_the_ID());
 /**
  * Template Name: Dịch vụ
  */

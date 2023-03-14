@@ -29,6 +29,8 @@ $args = array(
 	),
 	'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
 	'post_status' => 'publish',
+	'orderby' => 'title',
+	'order' => 'ASC',
 );
 
 $filter = array(
@@ -42,6 +44,8 @@ $filter = array(
 			'terms'    => $the_slug,
 		),
 	),
+	'orderby' => 'title',
+	'order' => 'ASC',
 );
 
 $filter = new WP_Query($filter);
