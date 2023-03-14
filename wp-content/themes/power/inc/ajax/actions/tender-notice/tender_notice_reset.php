@@ -5,6 +5,12 @@ function tender_notice_reset_action() {
 		'post_type'=> 'tender_notice',
 		'posts_per_page' => 8,
 		'paged' =>  1,
+		'meta_key' => 'releasing_status', // Custom field to sort by
+		'orderby' => array(
+			'meta_value' => 'ASC', // Sort by ascending order of meta_value
+		),
+		// 'orderby' => 'meta_value',
+		'order' => 'ASC' // Sort in ascending order
 	];
 
 	$query = new WP_Query($args);
