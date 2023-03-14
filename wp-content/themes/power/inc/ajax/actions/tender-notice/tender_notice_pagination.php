@@ -60,8 +60,16 @@ function tender_pag_action()
 		'sentence' => true,
 		'tax_query' => $tax_query,
 		'meta_query' => $date_query_by_meta,
+		'meta_key' => 'releasing_status', // Custom field to sort by
+		'orderby' => array(
+			'meta_value' => 'ASC', // Sort by ascending order of meta_value
+		),
+		// 'orderby' => 'meta_value',
+		'order' => 'ASC' // Sort in ascending order
+		
 
 	];
+
 	$query = new WP_Query($args);
 	echo tender_notice_render($query, $paged);
 	die;
