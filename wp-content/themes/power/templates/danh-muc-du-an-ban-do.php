@@ -474,7 +474,7 @@ get_header();
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
                     locationInfo += '<svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.146 8.08333C17.146 12.9398 11.621 18 10.2397 18C8.8585 18 3.3335 12.9398 3.3335 8.08333C3.3335 4.17132 6.42553 1 10.2397 1C14.054 1 17.146 4.17132 17.146 8.08333Z" stroke="#7E8189" stroke-width="1.5"/><circle cx="2.65625" cy="2.65625" r="2.65625" transform="matrix(-1 0 0 1 12.896 5.25)" stroke="#7E8189" stroke-width="1.5"/></svg>';
-                    locationInfo += '<p><strong>Địa chỉ: </strong><?php echo get_field('address', get_the_ID()) ?></p>';
+                    locationInfo += '<p><strong>Địa chỉ: </strong><a href="<?php echo get_field('map_link', get_the_ID()) ?>" target="_blank"><?php echo get_field('address', get_the_ID()) ?></a></p>';
                     locationInfo += '<svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.0835 14.25L10.9141 9.78095C11.2993 9.33156 11.2993 8.66844 10.9141 8.21905L7.0835 3.75" stroke="#D1D5DB" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/></svg>';
                     locationInfo += '</div>';
                     locationInfo += '<div class="d-flex location-info-row">';
