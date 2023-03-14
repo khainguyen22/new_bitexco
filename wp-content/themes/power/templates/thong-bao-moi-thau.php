@@ -248,19 +248,16 @@ if (isset($banner)) {
 				),
 			)
 		),
-		'meta_key' => 'status', // Custom field to sort by
-		// 'orderby' => array(
-		// 	'meta_value' => 'ASC', // Sort by ascending order of meta_value
-		// 	'taxonomy' => 'ASC' // Then sort by ascending order of taxonomy terms
-		// ),
-		'orderby' => 'meta_value',
+		'meta_key' => 'releasing_status', // Custom field to sort by
+		'orderby' => array(
+			'meta_value' => 'ASC', // Sort by ascending order of meta_value
+			'taxonomy' => 'ASC' // Then sort by ascending order of taxonomy terms
+		),
+		// 'orderby' => 'meta_value',
 		'order' => 'DESC' // Sort in ascending order
 	);
 
 	$query = new WP_Query($args);
-
-
-
 
 	$pagination = paginate_links(array(
 
@@ -329,9 +326,9 @@ if (isset($banner)) {
 									<h6 class="title"><?php echo paint_if_exist(get_the_title(get_the_ID())) ?></h6>
 								</a>
 								<?php
-								$taxonomy_slug = get_field('status');
-								$term = get_term_by('slug', $taxonomy_slug, 'status'); ?>
-								<a href="<?php echo '' . get_site_url() . '/' . $term->taxonomy . '/' .  $term->slug . ''; ?>"><span class="status status-info status-<?php echo  $term->slug ?>"><?php echo $term->name; ?></span></a>
+									$status = get_field('releasing_status', get_the_ID());
+								?>
+								<a href="<?php echo '' . get_site_url() . '/' . $status->taxonomy . '/' .  $status->slug . ''; ?>"><span class="status status-info status-<?php echo  $status->slug ?>"><?php echo $status->name; ?></span></a>
 							</div>
 
 							<div class="content">
