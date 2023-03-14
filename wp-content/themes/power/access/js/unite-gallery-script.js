@@ -2,6 +2,7 @@ jQuery(document).ready(function($){
   $('.gallery-item').magnificPopup({
     type: 'image',
     mainClass: 'mfp-with-zoom', 
+    preload: [0, 6],
     gallery:{
         enabled:true
       },

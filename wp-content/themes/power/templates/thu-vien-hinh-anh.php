@@ -200,6 +200,21 @@
 
 	// Slider
   slider_controls_always_on: true,
+
+	slider_progress_indicator_type: "bar",
+	slider_progress_indicator_align_hor: "center",
+	slider_progress_indicator_align_vert: "bottom",
+	slider_progress_indicator_offset_hor: "16",
+	slider_progress_indicator_offset_vert: "0",
+	slider_progressbar_color: "#DAA622",
+	slider_progressbar_opacity: "0.8",
+	slider_progressbar_line_width: "4",
+	slider_progresspie_color1: "#b5b5b5",
+	slider_progresspie_color2: "#e5e5e5",
+	slider_progresspie_stroke_width: "6",
+	slider_progresspie_width: "30",
+	slider_progresspie_height: "30",
+
 	theme_enable_fullscreen_button: true,	//show, hide the theme fullscreen button. The position in the theme is constant
 	theme_enable_play_button: true,			//show, hide the theme play button. The position in the theme is constant
 	theme_enable_hidepanel_button: true,	//show, hide the hidepanel button

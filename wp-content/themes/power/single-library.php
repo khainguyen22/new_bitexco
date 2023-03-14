@@ -46,29 +46,16 @@ get_header();
 
                     <section class="article">
                         <article>
-                            <!-- START UNITE GALLERY LITE 1.7.56 -->
-                            <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(  ) . '/access/js/unite-gallery.min.js'?>"></script>
-                            <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(  ) . '/access/js/unite-gallery-default-theme.js'?>"></script>
-
                             <div class="article-container">
                                 <?php $images = get_field('image') ?>
                                 
                                 <div id="hydroelectric-plant">
-                                        <?php foreach ($images['gallery'] as $key => $value) : ?>
-                                               <a class="gallery-item" href="<?php echo $value?>"> <img src="<?php echo $value; ?>" alt="<?php echo "Image ". $key?>" data-image="<?php echo $value;?>"></a>
-                                        <?php endforeach;?>
+                                    <?php foreach ($images['gallery'] as $key => $value) : ?>
+                                            <a class="gallery-item" href="<?php echo $value?>"> <img src="<?php echo $value; ?>" alt="<?php echo "Image ". $key?>" data-image="<?php echo $value;?>" width="auto" height="auto"></a>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
-                            <script>
-                                window.onload = function (e) {
-                                    if (typeof ugCheckForErrors == "undefined") {
-                                        document.getElementById("hydroelectric-plant").innerHTML =
-                                            "<span style='color:red'>Unite Gallery Error - gallery js and css files not included in the footer. Please make sure that wp_footer() function is added to your theme.</span>";
-                                    } else {
-                                        ugCheckForErrors("hydroelectric-plant", "jquery");
-                                    }
-                                };
-                            </script>
+                          
                         </article>
                     </section>
 
