@@ -8,7 +8,6 @@ function query_action_projects_list($paged)
 
 	$location = isset($_POST['data_location']) ? $_POST['data_location'] : '';
 
-	$type = isset($_POST['data_type']) ? $_POST['data_type'] : '';
 
 	$company = isset($_POST['data_company']) ? $_POST['data_company'] : '';
 
@@ -44,25 +43,6 @@ function query_action_projects_list($paged)
 			'field' => 'slug',
 
 			'terms' => $location,
-
-			'compare' => 'LIKE',
-
-			'operator' => 'IN'
-
-		);
-	}
-
-
-
-	if (isset($type) && $type != "") {
-
-		$tax_query[] = array(
-
-			'taxonomy' => 'project_type',
-
-			'field' => 'slug',
-
-			'terms' => $type,
 
 			'compare' => 'LIKE',
 

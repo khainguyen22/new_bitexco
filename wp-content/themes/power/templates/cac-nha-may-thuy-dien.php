@@ -150,7 +150,7 @@ $filter = new WP_Query($filter);
 
 
 
-$the_query_post = new WP_Query($args);
+$query = new WP_Query($args);
 
 
 
@@ -242,7 +242,7 @@ get_header();
 
 
 
-        <div   class="filter-post-container">
+        <div class="filter-post-container">
 
 
 
@@ -456,11 +456,11 @@ get_header();
 
 
 
-                <?php if ($the_query_post->have_posts()) : ?>
+                <?php if ($query->have_posts()) : ?>
 
 
 
-                    <?php while ($the_query_post->have_posts()) : $the_query_post->the_post();
+                    <?php while ($query->have_posts()) : $query->the_post();
 
 
 
@@ -512,7 +512,7 @@ get_header();
 
 
 
-                                <?php if (get_field("company")) : ?>
+                                <?php if (get_the_terms(get_the_ID(), 'project_company')) : ?>
 
 
 
@@ -786,7 +786,7 @@ get_header();
 
 
 
-                        'total' => $the_query_post->max_num_pages,
+                        'total' => $query->max_num_pages,
 
 
 

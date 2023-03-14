@@ -1281,8 +1281,6 @@ jQuery(document).ready(function ($) {
 
         $location = $('.form-filter-area  .item.active').attr('data-value');
 
-        $type = $('.form-filter-type  .item.active').attr('data-value');
-
         $.ajax({
 
             url: ajaxObject1.ajaxurl,
@@ -1298,8 +1296,6 @@ jQuery(document).ready(function ($) {
                 data_name: $name,
 
                 data_location: $location,
-
-                data_type: $type,
 
                 data_company: $company,
 
@@ -1320,8 +1316,6 @@ jQuery(document).ready(function ($) {
             },
 
             success(data) {
-
-                console.log(data);
 
                 var results = data.split('|');
 
