@@ -235,7 +235,7 @@ if (isset($banner)) {
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args = array(
 		'post_type' => 'tender_notice',
-		'posts_per_page' => -1,
+		'posts_per_page' => 8,
 		'paged' => $paged,
 		'meta_key' => 'releasing_status', // Custom field to sort by
 		'orderby' => array(
