@@ -1212,7 +1212,6 @@ include(get_template_directory() . '/inc/post-types/thong-tin-bao-chi.php');
 function paint_if_exist($param)
 
 {
-
     return isset($param) ? $param : '';
 }
 
@@ -1291,7 +1290,6 @@ function posts_custom_column_views($column_name, $id)
 {
 
     if ($column_name === 'post_views') {
-
         echo getPostViews(get_the_ID());
     }
 }
@@ -1307,7 +1305,7 @@ function csw_search_form_fc()
 ?>
 
     <form id="searchForm" class="csw-search-form d-flex align-items-center" method="get" action="<?php echo get_home_url() ?>">
-        <span class="error-message d-none">Vui lòng nhập thông tin tìm kiếm.</span>
+        <span class="error-message d-none"><?php _e('Vui lòng nhập thông tin tìm kiếm.') ?></span>
         <button type="submit" class="btn-submit-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
 
                 <circle cx="11" cy="11.5" r="8" stroke="#0D0D0E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

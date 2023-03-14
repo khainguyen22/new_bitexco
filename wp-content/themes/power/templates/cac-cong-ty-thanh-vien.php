@@ -44,8 +44,8 @@ $args = array(
 
     'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
 
-
-
+	'orderby' => 'title',
+	'order' => 'ASC',
 );
 
 
@@ -64,6 +64,8 @@ $filter = array(
 
     'posts_per_page' => 999999,
 
+	'orderby' => 'title',
+	'order' => 'ASC',
 
 
 );

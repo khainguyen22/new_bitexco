@@ -84,6 +84,10 @@ function query_action_projects_list($paged)
 
 		'tax_query' => $tax_query,
 
+
+		'orderby' => 'title',
+		'order' => 'ASC',
+
 	];
 
 	$query = new WP_Query($args);

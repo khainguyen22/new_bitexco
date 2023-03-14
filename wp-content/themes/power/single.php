@@ -1,6 +1,6 @@
 <?php
-get_header();
-// get_template_part('sections/specia', 'breadcrumb'); 
+get_header(); 
+setPostViews(get_the_ID());
 ?>
 
 <!-- Blog & Sidebar Section -->

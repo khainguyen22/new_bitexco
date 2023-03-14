@@ -1,15 +1,10 @@
 <?php
 get_header();
 // get_template_part('sections/specia', 'breadcrumb'); 
+setPostViews(get_the_ID());
 ?>
 
 <!-- Blog & Sidebar Section -->
-<script>
-
-</script>
-<style>
-
-</style>
 
 <div class="details_news_page">
     <section class="article article-breadcrumbs">

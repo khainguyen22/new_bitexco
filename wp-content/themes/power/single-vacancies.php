@@ -1,5 +1,7 @@
 <?php
 $banner = get_field('banner_danh_sach_tuyen_dung', 'option');
+$other_info = get_field('other_info_danh_sach_tuyen_dung', 'option');
+setPostViews(get_the_ID());
 get_header(); ?>
 
 <!-- Blog & Sidebar Section -->
@@ -19,7 +21,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <div class="banner" style='background-image:url("<?php echo isset($featured_img_url) ? $featured_img_url : $banner['background'] ?>")'>
+            <div class="banner" style='background-image:url("<?php echo (!empty($featured_img_url)) ? $featured_img_url : $banner['background'] ?>")'>
                 <div class="wrap_banner">
                     <div class="container">
                         <div class="content">
@@ -195,7 +197,7 @@ get_header(); ?>
                                     <?php endif; ?>
                                 </div>
                                 <div class="history">
-                                    <a href="">
+                                    <a href="/danh-sach-tuyen-dung">
                                         <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M4.33336 1.33594L1.31487 4.35442C0.956891 4.7124 0.956892 5.2928 1.31487 5.65079L4.33336 8.66927M1.58336 5.00261L14.4167 5.00261" stroke="#DAA622" stroke-width="1.5" stroke-linecap="round" />
                                         </svg>
@@ -222,76 +224,63 @@ get_header(); ?>
                 </div>
             </div>
         <?php endwhile; ?>
+        <?php if ($other_info) : ?>
+            <section class="other-information">
+                <div class="other-container">
+                    <div class="other-content hover-zoom">
+                        <?php foreach ($other_info as $value) : ?>
+                            <a href="<?php echo $value['link']; ?>" class="hydro-electric-news" style="background-image:url('<?php echo $value['image']; ?>')"><span class="text"><?php echo $value['text']; ?></span> </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
     <?php endif; ?>
-
-<div class="form">
-    <div class="file-image">
-        <div class="image">
-            <img src="http://power-test.bitexcopower.com.vn/wp-content/uploads/2023/03/ung_tuyen.png">
-        </div>
-        <div class="upload_file_image">
-            <p>Ảnh hồ sơ</p>
-            [file* image]
-        </div>
-    </div>
-    <div class="main_info">
-        <div class="name item">
-            <label> Họ và Tên<span class="required">*</span>
-                [text* your-name autocomplete:name placeholder "Nhập họ và tên"] </label>
-        </div>
-        <div class="birthday item">
-            <label> Ngày tháng năm sinh<span class="required">*</span>
-                [date* birthday min:1960-01-01 max:2010-01-01 placeholder "Nhập ngày tháng năm sinh"] </label>
-        </div>
-        <div class="tel_phone item">
-            <label>Số điện thoại<span class="required">*</span>
-                [tel* tel_number placeholder "Nhập số điện thoại"]</label>
-        </div>
-        <div class="email item">
-            <label> Email<span class="required">*</span>
-                [email* your-email autocomplete:email placeholder "Nhập email"] </label>
-        </div>
-        <div class="location item">
-            <label> Khu vực bạn muốn làm việc<span class="required">*</span>
-                [text* your-location placeholder "Nhập khu vực"] </label>
-        </div>
-        <div class="location item">
-            <label> Lĩnh vực bạn muốn làm việc<span class="required">*</span>
-[select* your-field placeholder "Chọn lĩnh vực"  first_as_label "Phòng/ban" "Lĩnh vực 1" "Lĩnh vực 2" "Lĩnh vực 3"]</label>
-        </div>
-        <div class="w-100">
-            <label class="w-100"> Ghi chú
-                [textarea note your-message] </label>
-        </div>
-    </div>
-    <div class="file_cv">
-        <div class="title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M14.2203 8.91755L8.62238 14.5155C7.15791 15.9799 4.78354 15.9799 3.31907 14.5155V14.5155C1.85461 13.051 1.85461 10.6766 3.31907 9.21218L10.0955 2.43573C11.0718 1.45942 12.6547 1.45943 13.631 2.43574V2.43574C14.6074 3.41205 14.6074 4.99496 13.631 5.97127L6.77043 12.8319C6.28227 13.32 5.49082 13.32 5.00266 12.8319V12.8319C4.51451 12.3437 4.51451 11.5523 5.00266 11.0641L10.6848 5.38201" stroke="#7E8189" stroke-width="1.5" stroke-linecap="round" />
-            </svg>
-            <span> CV của bạn </span>
-            <span class="required">*</span>
-        </div>
-        [file file-cv filetypes:pdf|doc|docx]
-
-    </div>
-    <div class="sub_label_file">
-        <span>Tối đa: 2MB</span>
-        <span>Định dạng: pdf, doc, docx.</span>
-    </div>
-    <div class="footer-form">
-        <div class="capcha">
-
-        </div>
-        <div class="wrap_submit">
-            <div class="close"> <button type="button" data-dismiss="modal" aria-label="Close"> Hủy </button>
-            </div>
-            <div class="submit">
-                [submit "Submit"]
+    <!-- Modal -->
+    <div class="modal fade" id="popup_ung_tuyen" tabindex="-1" role="dialog" aria-labelledby="popup_ung_tuyen_title" aria-hidden="true" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle "><?php _e('Đơn tự ứng tuyển') ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.00056 14.9994L15 1" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1.00055 1.00056L15 15" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <?php echo do_shortcode('[contact-form-7 id="3281" title="Popup hồ sơ ứng tuyển"]'); ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Modal  successfully -->
+    <div class="modal fade" id="popup_ung_tuyen_successfully" tabindex="-1" role="dialog" aria-labelledby="popup_ung_tuyen_successfully_title" aria-hidden="true" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.00056 14.9994L15 1" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M1.00055 1.00056L15 15" stroke="#434449" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="modal-body text-center">
+                    <div class="icon">
+                        <svg width="71" height="70" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" width="70" height="70" rx="35" fill="#DAA622" />
+                            <path d="M37.549 46.1597H25.2115C21.854 46.1597 19.1253 43.4284 19.1253 40.0722V28.6097C19.1253 25.2534 21.8553 22.5222 25.2115 22.5222H44.4615C47.8253 22.5222 50.5615 25.2534 50.5615 28.6097V33.1472C50.5615 33.7684 51.0653 34.2722 51.6865 34.2722C52.3078 34.2722 52.8115 33.7684 52.8115 33.1472V28.6097C52.8115 24.0122 49.0653 20.2734 44.4603 20.2734H25.2115C20.614 20.2734 16.874 24.0134 16.874 28.6097V40.0722C16.874 44.6697 20.614 48.4097 25.2115 48.4097H37.549C38.1703 48.4097 38.674 47.9059 38.674 47.2847C38.674 46.6634 38.1703 46.1597 37.549 46.1597Z" fill="white" />
+                            <path d="M45.8449 27.9041L35.5311 32.0229C35.0874 32.2016 34.5936 32.2016 34.1499 32.0229L23.8374 27.9041C23.2624 27.6754 22.6061 27.9541 22.3749 28.5316C22.1436 29.1091 22.4249 29.7629 23.0024 29.9941L33.3149 34.1129C33.8074 34.3091 34.3249 34.4079 34.8411 34.4079C35.3574 34.4079 35.8749 34.3091 36.3674 34.1129L46.6811 29.9941C47.2574 29.7629 47.5399 29.1091 47.3086 28.5316C47.0774 27.9541 46.4199 27.6766 45.8449 27.9041Z" fill="white" />
+                            <path d="M46.8719 35.2188C42.8732 35.2188 39.6182 38.4725 39.6182 42.4713C39.6182 46.47 42.8732 49.7238 46.8719 49.7238C50.8707 49.7238 54.1257 46.47 54.1257 42.4713C54.1257 38.4725 50.8707 35.2188 46.8719 35.2188ZM46.8719 47.4738C44.1132 47.4738 41.8694 45.23 41.8694 42.4713C41.8694 39.7125 44.1132 37.4687 46.8719 37.4687C49.6307 37.4687 51.8744 39.7125 51.8744 42.4713C51.8744 45.23 49.6307 47.4738 46.8719 47.4738Z" fill="white" />
+                            <path d="M48.2489 40.5536L46.1439 42.2486L45.6714 41.6473C45.2877 41.1573 44.5814 41.0723 44.0914 41.4561C43.6027 41.8398 43.5177 42.5461 43.9014 43.0348L45.0764 44.5336C45.2614 44.7698 45.5339 44.9236 45.8327 44.9573C45.8752 44.9623 45.9177 44.9648 45.9614 44.9648C46.2164 44.9648 46.4652 44.8786 46.6664 44.7161L49.6589 42.3061C50.1427 41.9161 50.2189 41.2086 49.8302 40.7236C49.4427 40.2423 48.7339 40.1623 48.2489 40.5536Z" fill="white" />
+                        </svg>
+                    </div>
+                    <h6><?php _e('Hồ sơ của bạn đã được gửi đi thành công!') ?></h6>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php get_footer(); ?>

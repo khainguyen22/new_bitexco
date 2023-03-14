@@ -46,6 +46,8 @@ $args = array(
     'paged' => (get_query_var('paged') ? get_query_var('paged') : 1),
 
     'post_status' => 'publish',
+	'orderby' => 'title',
+	'order' => 'ASC',
 
 );
 
@@ -70,6 +72,8 @@ $filter = array(
         ),
 
     ),
+	'orderby' => 'title',
+	'order' => 'ASC',
 
 );
 

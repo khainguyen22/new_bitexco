@@ -2,7 +2,7 @@
 $events = get_field('events', 'option');
 $banner = $events['banner'];
 get_header(); ?>
-
+setPostViews(get_the_ID());
 <!-- Blog & Sidebar Section -->
 
 <div class="custom-single-page  details_event">

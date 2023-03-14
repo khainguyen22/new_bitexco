@@ -2,6 +2,7 @@
 get_header();
 setPostViews(get_the_ID());
 $other_info = get_field('other_info_danh_muc_du_an', 'option');
+setPostViews(get_the_ID());
 ?>
 
 <!-- Blog & Sidebar Section -->
